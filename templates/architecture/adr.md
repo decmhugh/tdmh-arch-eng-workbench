@@ -1,6 +1,6 @@
 # ADR <ADR-ID>: <short decision title>
 
-- Status: `Proposed`
+- Status: `Proposed` | `Approved` | `Rejected` | `Superseded`
 - Date proposed: <YYYY-MM-DD>
 - Decision owner: <name or role>
 - Related requirement IDs:

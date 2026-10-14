@@ -5,4 +5,4 @@
 - [x] T3 Create the ADR template with stable IDs, linked requirements or concerns, options, criteria, decision, rationale, consequences, evidence, status, and approval/replacement fields (AC4, AC5, AC6, AC8, AC9).
 - [x] T4 Document the workflow from business-context review through viewpoint selection and explicit ADR approval before implementation authorization (AC5, AC6, AC7, AC10).
 - [x] T5 Add README links to the architecture templates and workflow (AC10).
-- [ ] T6 Review every deliverable against the acceptance criteria and verify all referenced paths and links resolve (AC1-AC10).
+- [x] T6 Review every deliverable against the acceptance criteria and verify all referenced paths and links resolve (AC1-AC10).

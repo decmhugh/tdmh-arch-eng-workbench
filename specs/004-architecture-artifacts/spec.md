@@ -1,6 +1,6 @@
 # Spec: Business context, viewpoints, and ADR workflow
 
-Status: Draft
+Status: Approved
 
 ## Problem / Why
 
