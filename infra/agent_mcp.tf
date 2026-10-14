@@ -1,6 +1,6 @@
 locals {
   agent_mcp_session_table_name = "${local.prefix}-agent-mcp-sessions"
-  agent_mcp_session_key_alias = "alias/${local.prefix}-agent-mcp-sessions"
+  agent_mcp_session_key_alias  = "alias/${local.prefix}-agent-mcp-sessions"
 }
 
 resource "aws_kms_key" "agent_mcp_sessions" {
