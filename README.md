@@ -1,0 +1,2 @@
+# tdmh-arch-eng-workbench
+VS Code-centred multi-agent system that converts business requirements into BTABoK- aligned architecture viewpoints, architectural decisions, JIRA work items, Python application code, AWS infrastructure and tests—with human governance and end-to-end traceability.
