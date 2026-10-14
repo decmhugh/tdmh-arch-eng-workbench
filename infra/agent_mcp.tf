@@ -1,5 +1,21 @@
 locals {
   agent_mcp_session_table_name = "${local.prefix}-agent-mcp-sessions"
+  agent_mcp_session_key_alias = "alias/${local.prefix}-agent-mcp-sessions"
+}
+
+resource "aws_kms_key" "agent_mcp_sessions" {
+  description             = "Encrypts the ${local.prefix} Agent MCP session table"
+  enable_key_rotation     = true
+  deletion_window_in_days = 30
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "aws_kms_alias" "agent_mcp_sessions" {
+  name          = local.agent_mcp_session_key_alias
+  target_key_id = aws_kms_key.agent_mcp_sessions.key_id
 }
 
 resource "aws_dynamodb_table" "agent_mcp_sessions" {
@@ -18,7 +34,8 @@ resource "aws_dynamodb_table" "agent_mcp_sessions" {
   }
 
   server_side_encryption {
-    enabled = true
+    enabled     = true
+    kms_key_arn = aws_kms_key.agent_mcp_sessions.arn
   }
 }
 

@@ -1,6 +1,6 @@
 # Spec: Customer-managed KMS key for MCP session table
 
-Status: Draft
+Status: Approved
 
 ## Problem / Why
 
