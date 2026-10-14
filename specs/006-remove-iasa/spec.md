@@ -1,6 +1,6 @@
 # Spec: Remove IASA corpus features and references
 
-Status: Draft
+Status: Approved
 
 ## Problem / Why
 
