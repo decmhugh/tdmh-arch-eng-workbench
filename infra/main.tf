@@ -24,7 +24,13 @@ resource "aws_apigatewayv2_stage" "default" {
     throttling_burst_limit = 5
   }
 
-  depends_on = [module.agent_invoke, module.agent_mcp]
+  route_settings {
+    route_key              = "ANY /gateway/mcp"
+    throttling_rate_limit  = 2
+    throttling_burst_limit = 5
+  }
+
+  depends_on = [module.agent_invoke, module.agent_mcp, module.gateway_mcp]
 }
 
 module "hello" {

@@ -18,6 +18,12 @@ variable "api_exec_arn" {
   type = string
 }
 
+variable "authorizer_id" {
+  type        = string
+  default     = null
+  description = "Optional API Gateway Lambda authorizer ID; when set the route requires it."
+}
+
 variable "environment" {
   type    = map(string)
   default = {}

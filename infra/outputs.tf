@@ -13,3 +13,15 @@ output "agent_ecr_repository_url" {
 output "agent_runtime_arn" {
   value = try(aws_bedrockagentcore_agent_runtime.agent[0].agent_runtime_arn, null)
 }
+
+output "agent_mcp_url" {
+  value = "${trimsuffix(aws_apigatewayv2_stage.default.invoke_url, "/")}/agent/mcp"
+}
+
+output "gateway_mcp_url" {
+  value = "${trimsuffix(aws_apigatewayv2_stage.default.invoke_url, "/")}/gateway/mcp"
+}
+
+output "mcp_token_secret_arn" {
+  value = aws_secretsmanager_secret.mcp_token.arn
+}

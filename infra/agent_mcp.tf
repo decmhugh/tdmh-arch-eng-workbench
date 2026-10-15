@@ -54,14 +54,15 @@ data "aws_iam_policy_document" "agent_mcp" {
 }
 
 module "agent_mcp" {
-  source       = "./modules/lambda_endpoint"
-  name         = "${local.prefix}-agent-mcp"
-  source_dir   = "${path.root}/../src/agent_mcp"
-  route_key    = "ANY /agent/mcp"
-  api_id       = aws_apigatewayv2_api.this.id
-  api_exec_arn = aws_apigatewayv2_api.this.execution_arn
-  timeout      = 60
-  memory_size  = 256
+  source        = "./modules/lambda_endpoint"
+  name          = "${local.prefix}-agent-mcp"
+  source_dir    = "${path.root}/../src/agent_mcp"
+  route_key     = "ANY /agent/mcp"
+  api_id        = aws_apigatewayv2_api.this.id
+  api_exec_arn  = aws_apigatewayv2_api.this.execution_arn
+  authorizer_id = aws_apigatewayv2_authorizer.mcp_bearer.id
+  timeout       = 60
+  memory_size   = 256
   environment = {
     AGENT_RUNTIME_ARN_PARAM = local.agent_ssm_name
     MCP_SESSION_TABLE       = aws_dynamodb_table.agent_mcp_sessions.name
