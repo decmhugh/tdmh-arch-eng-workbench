@@ -1,0 +1,53 @@
+component: "feature-build-capability-requests"
+title: "Feature Build / Capability Requests"
+description: "Centralize capability requests from ACP use-case owners that require platform integration, enhancement, or feature work. Requests are captured during discovery, assessed against the ACP Capability Map, refined through requirements and design, and decomposed into Jira sub-tasks during D3."
+
+# Current gate status
+current_gate: D0
+status: draft
+spec_type: platform
+gate_status: "Discovery in progress"
+
+# Ownership
+owner: "TBD"
+team: "EDAE ACP Product Team"
+
+# External links
+jira_epic: "EACPP-1386"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113335861832"
+repo: ""
+
+# Dependencies (other component specs this depends on)
+depends_on: []
+
+# Gate history
+gates:
+  d0:
+    status: draft
+    pr: "https://bitbucket.sunlifecorp.com/projects/EDAEACP/repos/acp-product-specs/pull-requests/65"
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+
+created_at: "2026-09-24"
+last_updated: "2026-09-24"

@@ -1,0 +1,87 @@
+component: gateway-environment-strategy
+title: "Luminate Gateway & Environment Strategy"
+description: |
+  Target topology for how Sun Life runs the DEV / SIT / STAGE / PROD workload environments of the production Luminate control plane: one production control plane governs every environment and region, and each environment's gateways run in that environment's own AWS workload account (dev, test for SIT, stage, prod), in each serving region (today ca-central-1 and us-east-1, with a defined procedure for adding further regions), calling Amazon Bedrock in that same account.
+
+  Revised 2026-10-06 after the Luminate Gateway Environment Deployment Model session, which agreed this middle ground in response to section 2.3 of the Infrastructure, Platform and Network Security Directive. The only communication between environments is each gateway's outbound, authenticated, content-free control link to the control plane, submitted for approval through a new ATG and ISRA.
+
+  h2. Problem Statement
+  • All eight gateways run in the production account, so non-production and stage traffic, Bedrock use and operator access sit there
+  • No ATG or ISRA covers one control plane governing gateways in other environments' accounts
+  • Segregation of duties between platform administration and business use is not documented end to end
+  • The portal cannot yet separate deployment authority by environment, and separated governance duties are switched off
+  • Gateway trust assumes the production account: identity is taken from the request and signing keys are fetched in-cluster
+  • Gateway hostnames name clusters, so every move breaks agent configuration
+  • The test and stage accounts have no us-east-1 cluster
+
+  h2. Opportunity
+  • Each environment's traffic, Bedrock spend and blast radius in its own account, with one governance record across all of them
+  • Cross-environment communication reduced to one enumerable, inspectable control link per gateway
+  • Promotion that is self-service in DEV and SIT and approval-gated in STAGE and PROD, with no production change on one person's authority
+  • Gateway moves invisible to business teams through friendly hostnames
+
+  h2. Acceptance Criteria
+  • ATG and ISRA decided for the topology and its control link
+  • Every account has a cluster in each serving region; each environment's gateways run in its account and call Bedrock there
+  • A further region can be added by a published procedure, with no design change
+  • Gateways are trusted only as themselves and reach the control plane only over the control link
+  • Every gateway is on a friendly hostname that business teams use
+  • Deployment authority is per environment; STAGE and PROD promotion runs through approval chains that exclude the requester and owner; governance duties are separated in code; every production change is maker-checker
+  • Model Risk's checklist enforces in STAGE and PROD and observes in DEV and SIT
+  • One workload promoted DEV to PROD across the four accounts; no business workload on a lower install
+
+  h2. In Scope
+  • Gateway placement per account and region; the high-level architecture and data flows
+  • The control link and its position against IPNSD 2.3; gateway trust
+  • Segregation of duties, personas and the promotion process
+  • Governance per environment; data isolation; availability of the control plane
+  • Friendly gateway hostnames; the missing us-east-1 clusters
+  • The procedure and naming for adding further serving regions
+  • The ATG and ISRA package
+
+  h2. Out of Scope
+  • Deploying or upgrading the control plane itself - sunlife-deployment (EACPP-596)
+  • Relocating the control plane to us-east-1 - us-cutover (EACPP-1407)
+  • Gateways operated by business units - consortium Federated Gateways (ACPDIS-124)
+  • Authoring Model Risk's rule content - acp-cmrm-policy-as-code, governance-content-packs
+  • Onboarding any specific use case
+
+current_gate: D3
+status: in-review
+spec_type: platform
+owner: "Sun Life ACP Product Team"
+team: "EDAE ACP"
+
+jira_epic: "EACPP-1089"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113162945070"
+repo: "EDAEACP/acp-product-specs"
+atg_reference: ""
+isra_reference: ""
+
+depends_on:
+  - sunlife-deployment
+  - governance-intake
+  - governance-content-packs
+
+gates:
+  d0:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []

@@ -1,0 +1,1362 @@
+WEBVTT
+
+
+[00:00:03] Justin Collery: Alrighty.
+
+[00:00:08] Justin Collery: <v Seth Chalmers>Yeah, Cliff's Notes, I got it working.
+
+[00:00:08] Justin Collery: All running through the gateway,</v>
+
+[00:00:14] Justin Collery: <v Seth Chalmers>have a sample harness that we can use for
+
+[00:00:14] Justin Collery: that.</v>
+
+[00:00:19] Justin Collery: <v Seth Chalmers>I also synced with Greg on the
+
+[00:00:19] Justin Collery: authentication method.</v>
+
+[00:00:24] Seth Chalmers: And reason like pure CLI based.
+
+[00:00:29] Seth Chalmers: <v Seth Chalmers>authentication for cloud code and doing
+
+[00:00:29] Seth Chalmers: entra federation into our internal key</v>
+
+[00:00:37] Seth Chalmers: <v Seth Chalmers>cloak.
+
+[00:00:37] Seth Chalmers: So it's ultimately key cloak that's doing</v>
+
+[00:00:42] Seth Chalmers: <v Seth Chalmers>the authentication for cloud code for the
+
+[00:00:42] Seth Chalmers: gateway, but it hits a entra provider.</v>
+
+[00:00:50] Seth Chalmers: <v Seth Chalmers>that I set up in Keycloak behind the
+
+[00:00:50] Seth Chalmers: scenes,</v>
+
+[00:00:54] Seth Chalmers: <v Seth Chalmers>which will hopefully give us user
+
+[00:00:54] Seth Chalmers: attribution.</v>
+
+[00:00:58] Seth Chalmers: <v Seth Chalmers>I needed the Azure SSO team to set up
+
+[00:00:58] Seth Chalmers: that additional redirect URL for the</v>
+
+[00:01:04] Seth Chalmers: <v Seth Chalmers>portal for the Keycloak entry provider.
+
+[00:01:04] Seth Chalmers: And then I should be able to.</v>
+
+[00:01:10] Seth Chalmers: <v Seth Chalmers>fully test and that we're actually
+
+[00:01:10] Seth Chalmers: getting like the user within the</v>
+
+[00:01:15] Seth Chalmers: <v Seth Chalmers>authentication.
+
+[00:01:15] Seth Chalmers: And then we'll be able to kind of do user</v>
+
+[00:01:19] Seth Chalmers: <v Seth Chalmers>attribution of the calls that we're going
+
+[00:01:19] Seth Chalmers: to the gateway.</v>
+
+[00:01:24] Seth Chalmers: So it's kind of the clips notes. Yeah.
+
+[00:01:25] Justin Collery: Okay.
+
+[00:01:28] Justin Collery: <v Justin Collery>I could nearly cry what Joy Seth.
+
+[00:01:28] Justin Collery: That's really good. Okay,</v>
+
+[00:01:34] Justin Collery: so that's great news. That's brilliant.
+
+[00:01:39] Justin Collery: So...
+
+[00:01:41] Justin Collery: <v Justin Collery>The method then,
+
+[00:01:41] Justin Collery: so that works for clawed code and you're</v>
+
+[00:01:44] Justin Collery: able to validate clawed code.
+
+[00:01:46] Seth Chalmers: Yeah.
+
+[00:01:47] Seth Chalmers: <v Justin Collery>Okay, any concerns? So the script is fine.
+
+[00:01:47] Seth Chalmers: You're developing on a Mac or a Windows</v>
+
+[00:01:53] Justin Collery: machine?
+
+[00:01:54] Seth Chalmers: I was on a Mac.
+
+[00:01:55] Seth Chalmers: <v Justin Collery>You're on a Mac, okay.
+
+[00:01:55] Seth Chalmers: Do we have any concerns that the method</v>
+
+[00:01:58] Seth Chalmers: <v Justin Collery>won't work on Windows or is it just a
+
+[00:01:58] Seth Chalmers: fairly simple script that should be</v>
+
+[00:02:02] Justin Collery: portable from Mac to Windows?
+
+[00:02:04] Seth Chalmers: Should be portable. Yeah, no concerns.
+
+[00:02:06] Seth Chalmers: <v Justin Collery>Brilliant. Okay.
+
+[00:02:06] Seth Chalmers: I'm actually very confident that the same</v>
+
+[00:02:11] Seth Chalmers: <v Justin Collery>method will work to get the desktop
+
+[00:02:11] Seth Chalmers: products working as well. So to get,</v>
+
+[00:02:16] Seth Chalmers: <v Justin Collery>you know,
+
+[00:02:16] Seth Chalmers: Claude Chat and Claude Cowork working on</v>
+
+[00:02:20] Seth Chalmers: <v Justin Collery>the machine on a machine,
+
+[00:02:20] Seth Chalmers: I think that will work also.</v>
+
+[00:02:26] Seth Chalmers: <v Justin Collery>If you, okay, cloud.
+
+[00:02:26] Seth Chalmers: ai is blocked at the moment,</v>
+
+[00:02:31] Justin Collery: so I'm not sure how we can test it.
+
+[00:02:37] Justin Collery: <v Justin Collery>I'll have a chat with some people to see.
+
+[00:02:37] Justin Collery: I would love to, Seth, if you want to,</v>
+
+[00:02:41] Justin Collery: <v Justin Collery>by the way,
+
+[00:02:41] Justin Collery: if you want to cheque user attribution,</v>
+
+[00:02:44] Justin Collery: <v Justin Collery>I mean, by all means, tell me,
+
+[00:02:44] Justin Collery: add me to the AD group and I'll point my</v>
+
+[00:02:47] Justin Collery: <v Justin Collery>Claude instance at it and you can get 2
+
+[00:02:47] Justin Collery: users going through it to see if that</v>
+
+[00:02:51] Justin Collery: <v Justin Collery>works. If you want to do that,
+
+[00:02:51] Justin Collery: I'm more than open to that.</v>
+
+[00:02:55] Justin Collery: And then my only other...
+
+[00:02:57] Justin Collery: <v Justin Collery>My only other concern, so I'm comfortable,
+
+[00:02:57] Justin Collery: more than comfortable that your method</v>
+
+[00:03:02] Justin Collery: <v Justin Collery>will work well for the desktop
+
+[00:03:02] Justin Collery: applications.</v>
+
+[00:03:05] Justin Collery: <v Justin Collery>And the last piece of the puzzle then is
+
+[00:03:05] Justin Collery: the Office add-ins.</v>
+
+[00:03:09] Justin Collery: <v Justin Collery>And you can set those to use SSO,
+
+[00:03:09] Justin Collery: so I think they will work,</v>
+
+[00:03:13] Justin Collery: <v Justin Collery>but I'm not as confident on that as I am
+
+[00:03:13] Justin Collery: with the other two.</v>
+
+[00:03:17] Justin Collery: But that's a really good start.
+
+[00:03:19] Justin Collery: <v Seth Chalmers>Yeah, yeah, we can test that as well.
+
+[00:03:19] Justin Collery: I didn't get into the office plugins yet.</v>
+
+[00:03:24] Justin Collery: <v Justin Collery>Yeah,
+
+[00:03:24] Justin Collery: it's they're going to be difficult to</v>
+
+[00:03:27] Justin Collery: test set because...
+
+[00:03:29] Justin Collery: <v Justin Collery>They won't enable the Office plugins on
+
+[00:03:29] Justin Collery: your regular account.</v>
+
+[00:03:32] Justin Collery: <v Justin Collery>They'll only do it on a test account,
+
+[00:03:32] Justin Collery: or at least they wouldn't when I was</v>
+
+[00:03:36] Justin Collery: <v Justin Collery>doing my POC.
+
+[00:03:36] Justin Collery: And then we have to get a couple of URLs</v>
+
+[00:03:39] Justin Collery: <v Justin Collery>enabled, unblocked,
+
+[00:03:39] Justin Collery: in order to be able to download the</v>
+
+[00:03:42] Justin Collery: <v Justin Collery>plugin, or the add-in, I should say,
+
+[00:03:42] Justin Collery: in order to get it set up.</v>
+
+[00:03:45] Justin Collery: <v Justin Collery>So there's a little bit of work for me to
+
+[00:03:45] Justin Collery: do there.</v>
+
+[00:03:49] Justin Collery: <v Justin Collery>Okay, so is there, do you need, I mean,
+
+[00:03:49] Justin Collery: on the face of it, Seth,</v>
+
+[00:03:53] Justin Collery: <v Justin Collery>you made amazing progress. I mean,
+
+[00:03:53] Justin Collery: it seems great. What do you need from me?</v>
+
+[00:04:00] Justin Collery: <v Seth Chalmers>Well, not much honestly.
+
+[00:04:00] Justin Collery: So we'll need to do the office plugins.</v>
+
+[00:04:05] Justin Collery: <v Seth Chalmers>So when we can figure that out,
+
+[00:04:05] Justin Collery: we can test that. Other than that,</v>
+
+[00:04:10] Justin Collery: <v Seth Chalmers>everything seems to be working.
+
+[00:04:10] Justin Collery: So I just have that Azure SSO ticket</v>
+
+[00:04:15] Seth Chalmers: opened as of yesterday.
+
+[00:04:19] Seth Chalmers: <v Seth Chalmers>So I'd like to do the end-to-end again,
+
+[00:04:19] Seth Chalmers: make sure we're actually getting the user</v>
+
+[00:04:24] Seth Chalmers: <v Seth Chalmers>attribution and kind of redo this whole
+
+[00:04:24] Seth Chalmers: flow.</v>
+
+[00:04:28] Seth Chalmers: <v Seth Chalmers>This last bit on the bottom is out of
+
+[00:04:28] Seth Chalmers: date.</v>
+
+[00:04:31] Seth Chalmers: <v Seth Chalmers>We got all the models available in the
+
+[00:04:31] Seth Chalmers: account to work with Cloud Code.</v>
+
+[00:04:36] Seth Chalmers: <v Seth Chalmers>So I need to take this out at the bottom
+
+[00:04:36] Seth Chalmers: of the architecture.</v>
+
+[00:04:41] Seth Chalmers: <v Seth Chalmers>Yeah, everything seems to be good.
+
+[00:04:41] Seth Chalmers: So I'd just like to test that last piece,</v>
+
+[00:04:43] Justin Collery: All right.
+
+[00:04:45] Seth Chalmers: essentially.
+
+[00:04:46] Seth Chalmers: <v Justin Collery>All right, Seth,
+
+[00:04:46] Seth Chalmers: so a couple of questions then. As I said,</v>
+
+[00:04:50] Seth Chalmers: <v Justin Collery>I'm so free today with a weird head,
+
+[00:04:50] Seth Chalmers: so it's all coming to me now.</v>
+
+[00:04:54] Seth Chalmers: <v Justin Collery>The model list,
+
+[00:04:54] Seth Chalmers: how does the model list get updated?</v>
+
+[00:04:58] Seth Chalmers: <v Justin Collery>Is that like maintained by you guys?
+
+[00:04:58] Seth Chalmers: Is it a human or does it update itself</v>
+
+[00:05:03] Justin Collery: automatically? So as you know...
+
+[00:05:05] Justin Collery: <v Justin Collery>Opus 5.2 is added next week.
+
+[00:05:05] Justin Collery: Does that automatically appear or how</v>
+
+[00:05:08] Justin Collery: does that model list managed?
+
+[00:05:11] Justin Collery: <v Seth Chalmers>It's all through Bedrock.
+
+[00:05:11] Justin Collery: So whatever we have available in our</v>
+
+[00:05:15] Justin Collery: <v Seth Chalmers>account essentially for Bedrock,
+
+[00:05:15] Justin Collery: the Claude models,</v>
+
+[00:05:18] Seth Chalmers: that's what's available for Claude code.
+
+[00:05:21] Seth Chalmers: <v Justin Collery>Brilliant. Okay. So, I mean, awesome. Now,
+
+[00:05:21] Seth Chalmers: then the next question I have is the</v>
+
+[00:05:27] Seth Chalmers: <v Justin Collery>account or accounts in the background.
+
+[00:05:27] Seth Chalmers: Do in order when we operationalize this</v>
+
+[00:05:33] Seth Chalmers: <v Justin Collery>and roll this out,
+
+[00:05:33] Seth Chalmers: do we need to get more accounts set up to</v>
+
+[00:05:37] Seth Chalmers: <v Justin Collery>point at or are we just going on your
+
+[00:05:37] Seth Chalmers: accounts?</v>
+
+[00:05:42] Seth Chalmers: <v Seth Chalmers>Just our accounts should, yeah,
+
+[00:05:42] Seth Chalmers: just ours should be fine.</v>
+
+[00:05:42] Justin Collery: This is the bedrock instances.
+
+[00:05:46] Justin Collery: <v Seth Chalmers>I think we are going to hit limits
+
+[00:05:46] Justin Collery: eventually once we get enough traffic</v>
+
+[00:05:51] Justin Collery: <v Seth Chalmers>through this,
+
+[00:05:51] Justin Collery: but AWS has some account limits.</v>
+
+[00:05:54] Justin Collery: <v Seth Chalmers>You can kind of increase on your account
+
+[00:05:54] Justin Collery: once you're consistently hitting that.</v>
+
+[00:05:57] Justin Collery: Yeah.
+
+[00:06:00] Justin Collery: <v Seth Chalmers>And then there's also like bedrock token
+
+[00:06:00] Justin Collery: scaling.</v>
+
+[00:06:03] Justin Collery: <v Seth Chalmers>guidance from AWS that we can even
+
+[00:06:03] Justin Collery: further scale and maybe get a bunch of</v>
+
+[00:06:08] Justin Collery: <v Seth Chalmers>other accounts that we can kind of float
+
+[00:06:08] Justin Collery: traffic through.</v>
+
+[00:06:12] Justin Collery: <v Seth Chalmers>So there's strategies to mitigate all of
+
+[00:06:12] Justin Collery: that.</v>
+
+[00:06:13] Justin Collery: Yeah.
+
+[00:06:16] Justin Collery: <v Justin Collery>Yeah, very good.
+
+[00:06:16] Justin Collery: So we can use the SP account. Okay,</v>
+
+[00:06:19] Justin Collery: <v Justin Collery>and then the last really important
+
+[00:06:19] Justin Collery: question I have is,</v>
+
+[00:06:23] Justin Collery: <v Justin Collery>there's going to be a requirement here
+
+[00:06:23] Justin Collery: that at some point in the future,</v>
+
+[00:06:27] Justin Collery: <v Justin Collery>there's a thing that we cannot talk about,
+
+[00:06:27] Justin Collery: but there's going to be all the latest</v>
+
+[00:06:32] Justin Collery: <v Justin Collery>models are going to be available in the
+
+[00:06:32] Justin Collery: Canadian region.</v>
+
+[00:06:37] Justin Collery: <v Justin Collery>So we will want to have two endpoints.
+
+[00:06:37] Justin Collery: So the Canadian users go to the Canadian</v>
+
+[00:06:41] Justin Collery: <v Justin Collery>endpoints, their data never leaves Canada,
+
+[00:06:41] Justin Collery: and everybody else can go to the US</v>
+
+[00:06:46] Justin Collery: <v Justin Collery>endpoint. That one is fine.
+
+[00:06:46] Justin Collery: How does that fit in with your overall</v>
+
+[00:06:49] Justin Collery: <v Justin Collery>scheme of things?
+
+[00:06:49] Justin Collery: It could be two endpoints,</v>
+
+[00:06:52] Justin Collery: <v Justin Collery>it could be two, whatever.
+
+[00:06:52] Justin Collery: We can do anything, but just...</v>
+
+[00:06:55] Justin Collery: <v Justin Collery>To solve the technical thing,
+
+[00:06:55] Justin Collery: we can have any, you know,</v>
+
+[00:06:58] Justin Collery: <v Justin Collery>it's an open field,
+
+[00:06:58] Justin Collery: but we do need to be able to segregate</v>
+
+[00:07:01] Justin Collery: <v Justin Collery>the traffic based on the user's AD group,
+
+[00:07:01] Justin Collery: or let's say, or something like that.</v>
+
+[00:07:06] Justin Collery: <v Seth Chalmers>Yeah, we should be able to do that.
+
+[00:07:06] Justin Collery: On the ACP end,</v>
+
+[00:07:10] Justin Collery: <v Seth Chalmers>we maintain kind of the models and what
+
+[00:07:10] Justin Collery: region they're for.</v>
+
+[00:07:15] Justin Collery: <v Seth Chalmers>So it would probably be a configuration
+
+[00:07:15] Justin Collery: within the harness that we've made to say</v>
+
+[00:07:22] Seth Chalmers: like this user is coming from a US.
+
+[00:07:25] Justin Collery: Yep.
+
+[00:07:26] Justin Collery: <v Seth Chalmers>This used to come from US,
+
+[00:07:26] Justin Collery: direct them to US models,</v>
+
+[00:07:28] Justin Collery: <v Seth Chalmers>that type of thing.
+
+[00:07:28] Justin Collery: I think it should be possible,</v>
+
+[00:07:29] Justin Collery: Yep.
+
+[00:07:30] Seth Chalmers: but we need to test it, yeah.
+
+[00:07:32] Seth Chalmers: <v Justin Collery>Okay, that's cool. So actually, and then,
+
+[00:07:32] Seth Chalmers: so do you use, in my head,</v>
+
+[00:07:36] Seth Chalmers: <v Justin Collery>I was thinking we might have to give a
+
+[00:07:36] Seth Chalmers: different URL or a different path or</v>
+
+[00:07:41] Seth Chalmers: <v Justin Collery>something to the end user.
+
+[00:07:41] Seth Chalmers: Are you saying that you think that within,</v>
+
+[00:07:45] Seth Chalmers: <v Justin Collery>oh, there's a trouble, I see a flat, well,
+
+[00:07:45] Seth Chalmers: no, no, tell me, are you saying that...</v>
+
+[00:07:51] Seth Chalmers: <v Justin Collery>The ACP,
+
+[00:07:51] Seth Chalmers: we just have one ACP and it will route</v>
+
+[00:07:54] Seth Chalmers: <v Justin Collery>the traffic to a geography based on where
+
+[00:07:54] Seth Chalmers: the user is coming from rather than</v>
+
+[00:07:59] Justin Collery: having two ACPs.
+
+[00:08:01] Justin Collery: <v Seth Chalmers>Yeah,
+
+[00:08:01] Justin Collery: so we have like a multi-gateway model per</v>
+
+[00:08:05] Justin Collery: <v Seth Chalmers>region.
+
+[00:08:05] Justin Collery: So we have like full dev set stage prod</v>
+
+[00:08:09] Justin Collery: <v Seth Chalmers>per like region gateways essentially.
+
+[00:08:09] Justin Collery: So we can just point US users at a US</v>
+
+[00:08:15] Seth Chalmers: instance.
+
+[00:08:16] Justin Collery: Yep, perfect.
+
+[00:08:18] Seth Chalmers: So it should be fine.
+
+[00:08:19] Seth Chalmers: <v Justin Collery>Yeah, yeah, great. Okay,
+
+[00:08:19] Seth Chalmers: so now I am going to cry. Seth,</v>
+
+[00:08:22] Justin Collery: that's beautiful.
+
+[00:08:26] Justin Collery: <v Lalit Summan>And just to add to that, Justin, as well,
+
+[00:08:26] Justin Collery: the alignment from enterprise</v>
+
+[00:08:31] Justin Collery: <v Lalit Summan>architecture is to have one portal for
+
+[00:08:31] Justin Collery: ACP, right, not multiple.</v>
+
+[00:08:35] Justin Collery: <v Lalit Summan>And like Seth mentioned,
+
+[00:08:35] Justin Collery: multiple gateways for the different</v>
+
+[00:08:39] Lalit Summan: regions that require it.
+
+[00:08:41] Lalit Summan: <v Justin Collery>So one portal but multiple gateways, yes,
+
+[00:08:41] Lalit Summan: yeah, yeah. So the concern,</v>
+
+[00:08:45] Lalit Summan: <v Justin Collery>as I was sort of saying is the concern
+
+[00:08:45] Lalit Summan: was that you don't want a Canadian user</v>
+
+[00:08:49] Lalit Summan: <v Justin Collery>to be typing on their keyboard and then
+
+[00:08:49] Lalit Summan: for that traffic to go to the US and a</v>
+
+[00:08:53] Lalit Summan: <v Justin Collery>gateway in the US to say, oh,
+
+[00:08:53] Lalit Summan: you're in Canada,</v>
+
+[00:08:55] Lalit Summan: <v Justin Collery>let's send you back up to Canada because
+
+[00:08:55] Lalit Summan: the data would have left,</v>
+
+[00:08:58] Lalit Summan: <v Justin Collery>you know what I mean?
+
+[00:08:58] Lalit Summan: You needed to stay in Canada. So,</v>
+
+[00:08:59] Lalit Summan: Yeah.
+
+[00:09:01] Lalit Summan: <v Justin Collery>but it sounds like you've got that in
+
+[00:09:01] Lalit Summan: hand.</v>
+
+[00:09:01] Lalit Summan: Yeah.
+
+[00:09:05] Lalit Summan: Yep.
+
+[00:09:06] Lalit Summan: <v Justin Collery>All right. Beautiful. Okay,
+
+[00:09:06] Lalit Summan: so in terms of next steps, then if you,</v>
+
+[00:09:12] Lalit Summan: <v Justin Collery>if there's anything in particular you
+
+[00:09:12] Lalit Summan: need from me, let me know.</v>
+
+[00:09:17] Lalit Summan: <v Justin Collery>It's obvious to me now that I need to get
+
+[00:09:17] Lalit Summan: you, I need to get the claude.</v>
+
+[00:09:23] Justin Collery: ai URLs unblocked and
+
+[00:09:25] Justin Collery: <v Justin Collery>to enable you to get your hands on some
+
+[00:09:25] Justin Collery: of this software.</v>
+
+[00:09:30] Justin Collery: <v Justin Collery>I'm going to work on that.
+
+[00:09:30] Justin Collery: The problem is that I'm not sure that</v>
+
+[00:09:33] Justin Collery: <v Justin Collery>they'll give that to us until the ATG
+
+[00:09:33] Justin Collery: goes through and I'm not sure when I'm</v>
+
+[00:09:38] Justin Collery: <v Justin Collery>slated to bring this to ATG.
+
+[00:09:38] Justin Collery: I'm sort of fighting for a slot as soon</v>
+
+[00:09:42] Justin Collery: <v Justin Collery>as I can. As soon as we get that ATG,
+
+[00:09:42] Justin Collery: that'll be fine. They'll open it all up,</v>
+
+[00:09:46] Justin Collery: but that's probably...
+
+[00:09:48] Justin Collery: <v Justin Collery>I don't know that I can get it opened up
+
+[00:09:48] Justin Collery: before that.</v>
+
+[00:09:52] Justin Collery: <v Seth Chalmers>Okay, yeah,
+
+[00:09:52] Justin Collery: we've done just Israel's before and then</v>
+
+[00:09:56] Justin Collery: <v Seth Chalmers>get the unblock depending.
+
+[00:09:56] Justin Collery: Sometimes they're okay with that,</v>
+
+[00:09:59] Seth Chalmers: but up to you, yeah.
+
+[00:10:01] Seth Chalmers: <v Justin Collery>Yeah, yeah, okay, okay.
+
+[00:10:01] Seth Chalmers: That's good to know, right? I'll,</v>
+
+[00:10:04] Seth Chalmers: <v Justin Collery>because I can't bring the ATG won't get
+
+[00:10:04] Seth Chalmers: approved until the user is done. So,</v>
+
+[00:10:07] Seth Chalmers: <v Justin Collery>and the user is on my list to get that
+
+[00:10:07] Seth Chalmers: done. So maybe,</v>
+
+[00:10:10] Seth Chalmers: <v Justin Collery>and I've done a lot of work on that
+
+[00:10:10] Seth Chalmers: already.</v>
+
+[00:10:12] Seth Chalmers: <v Justin Collery>So if we can get that over the line quick
+
+[00:10:12] Seth Chalmers: enough, maybe that unblocks us,</v>
+
+[00:10:15] Justin Collery: which would be great.
+
+[00:10:17] Justin Collery: <v Seth Chalmers>Yeah, yeah,
+
+[00:10:17] Justin Collery: because I noticed that I was trying to</v>
+
+[00:10:21] Justin Collery: <v Seth Chalmers>test the cloud code with our AI
+
+[00:10:21] Justin Collery: consortium Slack,</v>
+
+[00:10:24] Justin Collery: <v Seth Chalmers>and it goes to that cloud.
+
+[00:10:24] Justin Collery: ai URL and then blocks us, so yeah.</v>
+
+[00:10:30] Seth Chalmers: But yeah, that sounds good.
+
+[00:10:32] Justin Collery: All right.
+
+[00:10:33] Justin Collery: <v Pavithra Viswanathan>So as next steps, right?
+
+[00:10:33] Justin Collery: So while you are away, Seth,</v>
+
+[00:10:36] Justin Collery: <v Pavithra Viswanathan>is there anything else that we can do to
+
+[00:10:36] Justin Collery: make progress while we are also waiting</v>
+
+[00:10:40] Pavithra Viswanathan: on the strand ATG to be completed?
+
+[00:10:44] Pavithra Viswanathan: <v Seth Chalmers>Yep,
+
+[00:10:44] Pavithra Viswanathan: I'm hoping the ticket I put through today</v>
+
+[00:10:47] Pavithra Viswanathan: <v Seth Chalmers>will be unblocked. If not,
+
+[00:10:47] Pavithra Viswanathan: I'll pass everything over to Ranjula for</v>
+
+[00:10:52] Pavithra Viswanathan: <v Seth Chalmers>another item on his list while I'm gone.
+
+[00:10:52] Pavithra Viswanathan: But it's all set up.</v>
+
+[00:10:56] Pavithra Viswanathan: <v Seth Chalmers>It's just basically running a test script
+
+[00:10:56] Pavithra Viswanathan: that I have to make sure that we get the</v>
+
+[00:11:03] Seth Chalmers: user attribution there.
+
+[00:11:04] Seth Chalmers: <v Seth Chalmers>then we should be basically all set up
+
+[00:11:04] Seth Chalmers: until we're ready Justin to test like</v>
+
+[00:11:11] Seth Chalmers: <v Seth Chalmers>office tools or whatever next steps.
+
+[00:11:11] Seth Chalmers: On our side,</v>
+
+[00:11:12] Justin Collery: Yeah.
+
+[00:11:15] Justin Collery: <v Seth Chalmers>we still have the kind of cost chargeback
+
+[00:11:15] Justin Collery: thing to work on.</v>
+
+[00:11:21] Seth Chalmers: So that would be the big item.
+
+[00:11:21] Pavithra Viswanathan: Yeah.
+
+[00:11:24] Seth Chalmers: That, yeah.
+
+[00:11:24] Justin Collery: Yeah.
+
+[00:11:26] Pavithra Viswanathan: Hello.
+
+[00:11:27] Pavithra Viswanathan: <v Robert Chin>Is Rob Granstein going to be owning
+
+[00:11:27] Pavithra Viswanathan: Claude similar to GitHub Copilot</v>
+
+[00:11:31] Robert Chin: chargeback, Justin?
+
+[00:11:34] Justin Collery: Sorry, say that again.
+
+[00:11:35] Robert Chin: Ohh, it's for like a...
+
+[00:11:38] Robert Chin: <v Robert Chin>I guess this is Cowork, not Claude Code.
+
+[00:11:38] Robert Chin: Is Rob Grant's, you know,</v>
+
+[00:11:41] Justin Collery: But.
+
+[00:11:42] Justin Collery: <v Robert Chin>Rob Grant owns all the GitHub, Copilot,
+
+[00:11:42] Justin Collery: Chargeback, all that kind of stuff.</v>
+
+[00:11:46] Justin Collery: <v Robert Chin>Is he going to be owning this Claude Code
+
+[00:11:46] Justin Collery: tool as well?</v>
+
+[00:11:51] Justin Collery: <v Robert Chin>From an operational perspective,
+
+[00:11:51] Justin Collery: like if that, you know,</v>
+
+[00:11:51] Justin Collery: That's good.
+
+[00:11:54] Justin Collery: <v Robert Chin>then that would make sense if we send all
+
+[00:11:54] Justin Collery: the data to him to kind of incorporate</v>
+
+[00:11:58] Justin Collery: <v Robert Chin>into his current chargeback approach,
+
+[00:11:58] Justin Collery: that would be kind of good.</v>
+
+[00:12:00] Justin Collery: At.
+
+[00:12:02] Justin Collery: <v Justin Collery>Yeah, let me have a chat with Rob,
+
+[00:12:02] Justin Collery: because I was about to have a chat with</v>
+
+[00:12:05] Justin Collery: <v Justin Collery>Shane Rin and the desktop people to see,
+
+[00:12:05] Justin Collery: to see, okay, Rob, here's the deal, right?</v>
+
+[00:12:10] Justin Collery: <v Justin Collery>This one is a little bit awkward, right?
+
+[00:12:10] Justin Collery: And I was on the hunt to find the owner.</v>
+
+[00:12:10] Robert Chin: Okay.
+
+[00:12:14] Robert Chin: <v Justin Collery>Rob Gant is absolutely the correct person
+
+[00:12:14] Robert Chin: when it comes to Claude code,</v>
+
+[00:12:18] Robert Chin: <v Justin Collery>but then there's co-work,
+
+[00:12:18] Robert Chin: which is kind of like Claude code for non.</v>
+
+[00:12:19] Robert Chin: Mm.
+
+[00:12:21] Robert Chin: Yeah.
+
+[00:12:21] Justin Collery: ..
+
+[00:12:22] Justin Collery: <v Justin Collery>techie type people and then it becomes
+
+[00:12:22] Justin Collery: more of a desktop and I was about to have</v>
+
+[00:12:23] Robert Chin: Mhm.
+
+[00:12:25] Robert Chin: Yeah.
+
+[00:12:26] Robert Chin: <v Justin Collery>those conversations,
+
+[00:12:26] Robert Chin: see well who wants to own it.</v>
+
+[00:12:28] Justin Collery: So I'll have a chat first with Rob.
+
+[00:12:29] Justin Collery: <v Robert Chin>Yeah, because once you find that owner,
+
+[00:12:29] Justin Collery: yeah, once you find that owner,</v>
+
+[00:12:33] Justin Collery: <v Robert Chin>then we'll just tag them in the telemetry
+
+[00:12:33] Justin Collery: data to say, you know what,</v>
+
+[00:12:33] Justin Collery: Yeah.
+
+[00:12:37] Justin Collery: <v Robert Chin>send data and the cost to this group,
+
+[00:12:37] Justin Collery: and then they can consolidate all the</v>
+
+[00:12:41] Justin Collery: <v Robert Chin>recovery that they want to do.
+
+[00:12:41] Justin Collery: So it keeps it consistent.</v>
+
+[00:12:45] Justin Collery: <v Justin Collery>Yeah, and actually within that as well,
+
+[00:12:45] Justin Collery: I'm guessing for both groups,</v>
+
+[00:12:48] Justin Collery: <v Justin Collery>there is this requirement where like AVPs
+
+[00:12:48] Justin Collery: or people who in the call centre will</v>
+
+[00:12:52] Justin Collery: <v Justin Collery>want some form of a report so that they
+
+[00:12:52] Justin Collery: can see the big spenders and the people</v>
+
+[00:12:56] Justin Collery: <v Justin Collery>who maybe aren't making enough use of the
+
+[00:12:56] Justin Collery: tools and you know, that sort of thing.</v>
+
+[00:13:00] Robert Chin: Yeah.
+
+[00:13:00] Robert Chin: <v Justin Collery>So,
+
+[00:13:00] Robert Chin: and it'd be the same requirement for both.</v>
+
+[00:13:03] Justin Collery: So,
+
+[00:13:04] Seth Chalmers: Yeah.
+
+[00:13:05] Justin Collery: Okay.
+
+[00:13:08] Justin Collery: <v Justin Collery>Awesome. Awesome. Okay,
+
+[00:13:08] Justin Collery: so what are we missing then?</v>
+
+[00:13:09] Robert Chin: Pretty cool.
+
+[00:13:10] Pavithra Viswanathan: Ohh.
+
+[00:13:11] Pavithra Viswanathan: <v Justin Collery>What else do we think?
+
+[00:13:11] Pavithra Viswanathan: Anything that I'm forgetting?</v>
+
+[00:13:18] Pavithra Viswanathan: <v Seth Chalmers>Technically sound,
+
+[00:13:18] Pavithra Viswanathan: I think just the chargeback model is</v>
+
+[00:13:21] Pavithra Viswanathan: <v Seth Chalmers>going to be the biggest thing,
+
+[00:13:21] Pavithra Viswanathan: so we'll work on that.</v>
+
+[00:13:22] Justin Collery: Okay.
+
+[00:13:24] Justin Collery: <v Robert Chin>Yeah, but yeah, yeah. Well,
+
+[00:13:24] Justin Collery: now the chargeback model, Justin, like,</v>
+
+[00:13:25] Justin Collery: It's brilliant.
+
+[00:13:29] Justin Collery: <v Robert Chin>are you looking for,
+
+[00:13:29] Justin Collery: you think these folks look for real time,</v>
+
+[00:13:32] Justin Collery: <v Robert Chin>like very real time,
+
+[00:13:32] Justin Collery: or just because the whole...</v>
+
+[00:13:37] Justin Collery: <v Robert Chin>the way that AWS builds,
+
+[00:13:37] Justin Collery: like you get the real time like pricing,</v>
+
+[00:13:40] Justin Collery: <v Robert Chin>what we get from like Bedrock,
+
+[00:13:40] Justin Collery: things like that.</v>
+
+[00:13:42] Justin Collery: <v Robert Chin>And then at the end of the month is when
+
+[00:13:42] Justin Collery: they run all their big processing of</v>
+
+[00:13:46] Justin Collery: <v Robert Chin>actual financial transactions where they
+
+[00:13:46] Justin Collery: add in tax and then there's an enterprise</v>
+
+[00:13:50] Justin Collery: <v Robert Chin>discount factor that gets added at the
+
+[00:13:50] Justin Collery: month end and stuff like that.</v>
+
+[00:13:53] Justin Collery: <v Robert Chin>So do we need it to match exactly what's
+
+[00:13:53] Justin Collery: hitting the financial books or is it just</v>
+
+[00:13:57] Robert Chin: more...
+
+[00:13:58] Robert Chin: Notional.
+
+[00:14:00] Robert Chin: Spend that we're looking for.
+
+[00:14:00] Justin Collery: Yeah.
+
+[00:14:02] Justin Collery: <v Justin Collery>Alright,
+
+[00:14:02] Justin Collery: so they they they will get the OK,</v>
+
+[00:14:04] Justin Collery: <v Justin Collery>so I'm working through it, Rob. OK,
+
+[00:14:04] Justin Collery: so think of my think of my thing right,</v>
+
+[00:14:05] Robert Chin: Okay.
+
+[00:14:08] Robert Chin: <v Justin Collery>so they they will need I guess some
+
+[00:14:08] Robert Chin: report at the end which gives them the</v>
+
+[00:14:12] Robert Chin: Mm-hmm.
+
+[00:14:12] Robert Chin: <v Justin Collery>actuals right, just for information,
+
+[00:14:12] Robert Chin: but it's the day-to-day is like just the</v>
+
+[00:14:16] Robert Chin: <v Justin Collery>notional thing of just keep you know
+
+[00:14:16] Robert Chin: managing your team, yeah, yeah, so.</v>
+
+[00:14:17] Robert Chin: <v Robert Chin>Okay, how many tokens they've been using?
+
+[00:14:17] Robert Chin: Okay, okay.</v>
+
+[00:14:20] Robert Chin: <v Robert Chin>And then the month end they'll get their
+
+[00:14:20] Robert Chin: final bill.</v>
+
+[00:14:22] Robert Chin: <v Justin Collery>Yeah, exactly. Yeah.
+
+[00:14:22] Robert Chin: So if you think about it, you know,</v>
+
+[00:14:25] Robert Chin: <v Justin Collery>you've got a team of developers, you know,
+
+[00:14:25] Robert Chin: if somebody isn't using any tokens at all,</v>
+
+[00:14:29] Robert Chin: <v Justin Collery>well, you know,
+
+[00:14:29] Robert Chin: is it a thing that we need to train them</v>
+
+[00:14:31] Robert Chin: <v Justin Collery>up on how to use the tools, right?
+
+[00:14:31] Robert Chin: And then if somebody else is burning</v>
+
+[00:14:34] Robert Chin: <v Justin Collery>through $1,000 worth of tokens a day, or,
+
+[00:14:34] Robert Chin: you know, some sort of massive thing,</v>
+
+[00:14:38] Robert Chin: <v Justin Collery>you know, maybe it's like, here,
+
+[00:14:38] Robert Chin: what are you doing?</v>
+
+[00:14:40] Robert Chin: <v Justin Collery>There's going to be a better way to do
+
+[00:14:40] Robert Chin: this.</v>
+
+[00:14:40] Robert Chin: Yeah.
+
+[00:14:43] Robert Chin: <v Justin Collery>So it doesn't have to be totally accurate,
+
+[00:14:43] Robert Chin: it's just a feel for, you know,</v>
+
+[00:14:46] Robert Chin: <v Justin Collery>who's burning lots of tokens and who's
+
+[00:14:46] Robert Chin: burning none.</v>
+
+[00:14:51] Robert Chin: <v Robert Chin>Yeah, no, that makes sense.
+
+[00:14:51] Robert Chin: out-of-the-box,</v>
+
+[00:14:53] Robert Chin: <v Robert Chin>what does Cloud Code offer for that kind
+
+[00:14:53] Robert Chin: of reporting, or do they?</v>
+
+[00:14:56] Robert Chin: <v Justin Collery>They don't,
+
+[00:14:56] Robert Chin: unless you go with the enterprise plan</v>
+
+[00:14:58] Robert Chin: <v Justin Collery>and then you can see it all,
+
+[00:14:58] Robert Chin: but in Claude Code itself it doesn't give</v>
+
+[00:15:00] Robert Chin: Ohh.
+
+[00:15:01] Justin Collery: you anything.
+
+[00:15:02] Justin Collery: <v Robert Chin>Okay,
+
+[00:15:02] Justin Collery: so it's not like GitHub Copilot where</v>
+
+[00:15:04] Robert Chin: there's some kind of mechanism.
+
+[00:15:06] Robert Chin: <v Justin Collery>I think there is a tool there where you
+
+[00:15:06] Robert Chin: can say cost and you can see yourself and</v>
+
+[00:15:09] Robert Chin: <v Justin Collery>it will tell you per session,
+
+[00:15:09] Robert Chin: like how much you've burned through</v>
+
+[00:15:13] Robert Chin: <v Justin Collery>tokens and how much money you've used.
+
+[00:15:13] Robert Chin: But that's not, that just is for you.</v>
+
+[00:15:14] Robert Chin: Yeah.
+
+[00:15:16] Robert Chin: <v Justin Collery>It's not something that you could share
+
+[00:15:16] Robert Chin: with the manager easily, I think,</v>
+
+[00:15:20] Justin Collery: which is the requirement.
+
+[00:15:22] Robert Chin: Okay.
+
+[00:15:25] Robert Chin: <v Justin Collery>Are you, what are you thinking about Rob?
+
+[00:15:25] Robert Chin: You're thinking from the...</v>
+
+[00:15:28] Robert Chin: <v Robert Chin>Well, I'm just curious, like, yeah,
+
+[00:15:28] Robert Chin: like GitHub CodePala,</v>
+
+[00:15:31] Robert Chin: <v Robert Chin>how do we get that data today? Like,
+
+[00:15:31] Robert Chin: who does that analysis today in terms of,</v>
+
+[00:15:35] Robert Chin: <v Robert Chin>you know, who's using it,
+
+[00:15:35] Robert Chin: who's not using it enough?</v>
+
+[00:15:38] Robert Chin: <v Robert Chin>Where do we get that?
+
+[00:15:38] Robert Chin: How do they do that today?</v>
+
+[00:15:39] Robert Chin: <v Pavithra Viswanathan>GitHub Copilot has an API for cost and it
+
+[00:15:39] Robert Chin: provides all the details of the user and</v>
+
+[00:15:45] Robert Chin: <v Pavithra Viswanathan>the usage and then we map it with the AD
+
+[00:15:45] Robert Chin: groups to see who the manager is and all</v>
+
+[00:15:51] Robert Chin: <v Pavithra Viswanathan>of that.
+
+[00:15:51] Robert Chin: But GitHub Copilot offers an API just for</v>
+
+[00:15:55] Pavithra Viswanathan: cost.
+
+[00:15:56] Pavithra Viswanathan: <v Robert Chin>Yeah, so, like,
+
+[00:15:56] Pavithra Viswanathan: is there a system today then that manager</v>
+
+[00:15:59] Pavithra Viswanathan: <v Robert Chin>is going to see how their team is using
+
+[00:15:59] Pavithra Viswanathan: GitHub Copilot on a day-to-day,</v>
+
+[00:16:02] Pavithra Viswanathan: <v Robert Chin>where they can get that trend analysis to
+
+[00:16:02] Pavithra Viswanathan: see whether or not there's anything that</v>
+
+[00:16:05] Pavithra Viswanathan: Yeah.
+
+[00:16:06] Robert Chin: needs to be done to change behavior?
+
+[00:16:07] Robert Chin: <v Pavithra Viswanathan>Yeah, from what it last, yeah,
+
+[00:16:07] Robert Chin: from what it last remember,</v>
+
+[00:16:10] Robert Chin: <v Pavithra Viswanathan>it's not on a day-to-day basis that is
+
+[00:16:10] Robert Chin: getting published.</v>
+
+[00:16:14] Robert Chin: <v Pavithra Viswanathan>It's more like a retrofit of a monthly
+
+[00:16:14] Robert Chin: usage, things like that,</v>
+
+[00:16:17] Robert Chin: <v Pavithra Viswanathan>that gets published.
+
+[00:16:17] Robert Chin: But things might have changed.</v>
+
+[00:16:20] Robert Chin: <v Pavithra Viswanathan>I'm not sure what's the latest process.
+
+[00:16:20] Robert Chin: Dunal might be the right person to</v>
+
+[00:16:24] Robert Chin: Was that who who ran that?
+
+[00:16:25] Pavithra Viswanathan: connect for GitHub code. Dunal, yeah.
+
+[00:16:27] Pavithra Viswanathan: I can the name in the chat.
+
+[00:16:29] Pavithra Viswanathan: <v Robert Chin>Yeah,
+
+[00:16:29] Pavithra Viswanathan: because I'm wondering if we could</v>
+
+[00:16:31] Pavithra Viswanathan: <v Robert Chin>leverage that and push the data to that
+
+[00:16:31] Pavithra Viswanathan: process.</v>
+
+[00:16:35] Pavithra Viswanathan: <v Seth Chalmers>I think they're looking to remove that
+
+[00:16:35] Pavithra Viswanathan: process.</v>
+
+[00:16:35] Robert Chin: Push the cloud data.
+
+[00:16:39] Seth Chalmers: It's a very manual, not good process.
+
+[00:16:43] Seth Chalmers: <v Robert Chin>They want to evolve and take our data
+
+[00:16:43] Seth Chalmers: then.</v>
+
+[00:16:48] Seth Chalmers: <v Seth Chalmers>Yeah,
+
+[00:16:48] Seth Chalmers: like this will use the exact model we</v>
+
+[00:16:51] Seth Chalmers: <v Seth Chalmers>need to work through for our other
+
+[00:16:51] Seth Chalmers: centralised imprints patterns.</v>
+
+[00:16:54] Robert Chin: Yeah.
+
+[00:16:56] Robert Chin: <v Robert Chin>Like if they're owning the dev tools,
+
+[00:16:56] Robert Chin: I'm wondering if they want to,</v>
+
+[00:16:59] Robert Chin: <v Robert Chin>when it's part of their, you know,
+
+[00:16:59] Robert Chin: rebuild, they take our data,</v>
+
+[00:17:03] Robert Chin: <v Robert Chin>take their current data,
+
+[00:17:03] Robert Chin: and then build a target solution.</v>
+
+[00:17:06] Robert Chin: <v Robert Chin>I just don't want them building a new
+
+[00:17:06] Robert Chin: solution, us building a new solution,</v>
+
+[00:17:10] Robert Chin: <v Robert Chin>Kin's group building a new solution.
+
+[00:17:10] Robert Chin: We should centralise all that usage.</v>
+
+[00:17:14] Robert Chin: And what I'm kind of like end user.
+
+[00:17:17] Robert Chin: <v Robert Chin>End user LLM usage, I guess.
+
+[00:17:17] Robert Chin: Like one team should want to charge back</v>
+
+[00:17:20] Robert Chin: <v Robert Chin>for that, right? And whether it's,
+
+[00:17:20] Robert Chin: you know, the majority is, let's say,</v>
+
+[00:17:24] Robert Chin: <v Robert Chin>in the dev tools operation,
+
+[00:17:24] Robert Chin: maybe they should. I don't know.</v>
+
+[00:17:28] Robert Chin: <v Justin Collery>I brought it out to that, Rob.
+
+[00:17:28] Robert Chin: It's not just end users, right?</v>
+
+[00:17:31] Robert Chin: <v Justin Collery>Let's say in the individual or the GRS
+
+[00:17:31] Robert Chin: space,</v>
+
+[00:17:33] Robert Chin: <v Justin Collery>I come up with 10 different agents and
+
+[00:17:33] Robert Chin: they're running and they're going through</v>
+
+[00:17:37] Robert Chin: <v Justin Collery>the ACP.
+
+[00:17:37] Robert Chin: You might want to have a chargeback,</v>
+
+[00:17:40] Robert Chin: <v Justin Collery>a way to charge back those agents as well.
+
+[00:17:40] Robert Chin: And it could follow the same pattern if</v>
+
+[00:17:44] Justin Collery: you build it with that in mind.
+
+[00:17:47] Justin Collery: <v Seth Chalmers>Yeah, and that's what we're building, Rob,
+
+[00:17:47] Justin Collery: on the Lemonade end.</v>
+
+[00:17:50] Robert Chin: Yeah.
+
+[00:17:51] Robert Chin: <v Robert Chin>And do we think, okay, okay,
+
+[00:17:51] Robert Chin: so we'll figure out if who that best</v>
+
+[00:17:55] Robert Chin: <v Robert Chin>belongs. If it is an eDay function,
+
+[00:17:55] Robert Chin: we can talk to Ellis through that to see</v>
+
+[00:17:59] Robert Chin: <v Robert Chin>if, are we building a new product?
+
+[00:17:59] Robert Chin: Are we building a new Sun Life product</v>
+
+[00:18:03] Robert Chin: <v Robert Chin>here that needs to be built out in the
+
+[00:18:03] Robert Chin: whole chargeback scheme?</v>
+
+[00:18:09] Robert Chin: <v Seth Chalmers>So all of the attribution should be
+
+[00:18:09] Robert Chin: happening like in Luminate, like our ACP.</v>
+
+[00:18:13] Robert Chin: <v Robert Chin>Yeah. And I know we'll have all the data.
+
+[00:18:13] Robert Chin: We'll have all the data. Yeah.</v>
+
+[00:18:14] Robert Chin: <v Seth Chalmers>The mechanism,
+
+[00:18:14] Robert Chin: the mechanism of chargeback is what's</v>
+
+[00:18:18] Justin Collery: Yeah.
+
+[00:18:18] Seth Chalmers: missing.
+
+[00:18:19] Seth Chalmers: <v Robert Chin>Yeah,
+
+[00:18:19] Seth Chalmers: so we got to figure out where that</v>
+
+[00:18:21] Seth Chalmers: <v Robert Chin>mechanism falls, Justin,
+
+[00:18:21] Seth Chalmers: because ultimately,</v>
+
+[00:18:23] Seth Chalmers: <v Robert Chin>the owner of each of these tools are
+
+[00:18:23] Seth Chalmers: responsible for, you know,</v>
+
+[00:18:26] Seth Chalmers: <v Robert Chin>owning their product to the consumer to
+
+[00:18:26] Seth Chalmers: say, hey, you know what,</v>
+
+[00:18:27] Lalit Summan: Yeah.
+
+[00:18:30] Lalit Summan: <v Robert Chin>this is the product we're offering.
+
+[00:18:30] Lalit Summan: This is support. Like,</v>
+
+[00:18:33] Lalit Summan: <v Robert Chin>if you look at Cowork, well,
+
+[00:18:33] Lalit Summan: can the CTO organisation be providing the</v>
+
+[00:18:36] Lalit Summan: <v Robert Chin>support? Like,
+
+[00:18:36] Lalit Summan: are they going to have resources assigned</v>
+
+[00:18:39] Robert Chin: to?
+
+[00:18:40] Robert Chin: Cork.
+
+[00:18:41] Robert Chin: <v Justin Collery>Yeah,
+
+[00:18:41] Robert Chin: they will have to the desktop team are</v>
+
+[00:18:42] Robert Chin: The OK.
+
+[00:18:43] Justin Collery: pushing it down, so yeah.
+
+[00:18:45] Justin Collery: <v Robert Chin>So they're going to have a chargeback to
+
+[00:18:45] Justin Collery: the clients to say, hey,</v>
+
+[00:18:48] Justin Collery: <v Robert Chin>if I want to sign up for Cowork,
+
+[00:18:48] Justin Collery: CTO is going to charge me whatever,</v>
+
+[00:18:52] Justin Collery: <v Robert Chin>$10 a month plus usage. So in that case,
+
+[00:18:52] Justin Collery: they would own the product from a</v>
+
+[00:18:56] Justin Collery: <v Robert Chin>financial perspective to do the monthly
+
+[00:18:56] Justin Collery: chargeback, right?</v>
+
+[00:18:59] Justin Collery: <v Robert Chin>So I think you just have to find an owner
+
+[00:18:59] Justin Collery: of the service from a financial</v>
+
+[00:19:02] Justin Collery: Yeah.
+
+[00:19:03] Robert Chin: perspective, and we'll provide them the.
+
+[00:19:04] Justin Collery: Yeah.
+
+[00:19:05] Justin Collery: <v Robert Chin>data telemetry,
+
+[00:19:05] Justin Collery: which Seth is going to have all the</v>
+
+[00:19:08] Justin Collery: Gotcha.
+
+[00:19:08] Justin Collery: <v Robert Chin>details and then they can deal with it,
+
+[00:19:08] Justin Collery: right?</v>
+
+[00:19:10] Justin Collery: Yeah, yeah.
+
+[00:19:11] Justin Collery: <v Robert Chin>But then plot code wouldn't be Kins,
+
+[00:19:11] Justin Collery: it would be maybe Rob Grant.</v>
+
+[00:19:15] Justin Collery: Yeah, yeah, another chat with Rob.
+
+[00:19:17] Justin Collery: <v Robert Chin>Yeah, so you just have to work out,
+
+[00:19:17] Justin Collery: figure that out, so that we, um,</v>
+
+[00:19:21] Robert Chin: that's all clean.
+
+[00:19:22] Robert Chin: <v Justin Collery>Yeah, okay, cool,
+
+[00:19:22] Robert Chin: but you guys have the technical stuff in</v>
+
+[00:19:26] Justin Collery: hand here at the back, so brilliant.
+
+[00:19:27] Justin Collery: <v Robert Chin>Yes, we have all the data.
+
+[00:19:27] Justin Collery: Whoever wants the data that can use the</v>
+
+[00:19:30] Robert Chin: data, that'd be good.
+
+[00:19:30] Justin Collery: Yeah.
+
+[00:19:32] Justin Collery: Awesome.
+
+[00:19:33] Justin Collery: <v Justin Collery>Okay,
+
+[00:19:33] Justin Collery: anything else then that we're missing or</v>
+
+[00:19:36] Justin Collery: I need to get to you guys?
+
+[00:19:40] Seth Chalmers: I think that's it.
+
+[00:19:43] Justin Collery: How long are you off for Seth?
+
+[00:19:45] Seth Chalmers: Ten days, I'll be back on the 30th. Yeah.
+
+[00:19:46] Seth Chalmers: <v Justin Collery>Oh gosh, not too bad.
+
+[00:19:46] Seth Chalmers: They said I thought you were gone for</v>
+
+[00:19:49] Seth Chalmers: <v Justin Collery>months.
+
+[00:19:49] Seth Chalmers: I thought Ranjula was going to be busy.</v>
+
+[00:19:53] Seth Chalmers: <v Ranjula Rowel>Oh yes,
+
+[00:19:53] Seth Chalmers: I was going to tell that since the code</v>
+
+[00:19:56] Seth Chalmers: <v Ranjula Rowel>is going through ACP,
+
+[00:19:56] Seth Chalmers: the only requirement I have is I need</v>
+
+[00:20:01] Ranjula Rowel: unlimited access.
+
+[00:20:03] Pavithra Viswanathan: What?
+
+[00:20:03] Seth Chalmers: Yeah.
+
+[00:20:04] Robert Chin: That's OK. We on the day to talk to Seth.
+
+[00:20:04] Pavithra Viswanathan: Yeah.
+
+[00:20:05] Pavithra Viswanathan: <v Ranjula Rowel>That's all, that's all.
+
+[00:20:05] Pavithra Viswanathan: I will make myself and set have them</v>
+
+[00:20:07] Justin Collery: Yeah.
+
+[00:20:07] Seth Chalmers: I.
+
+[00:20:09] Seth Chalmers: <v Ranjula Rowel>unlimited tokens,
+
+[00:20:09] Seth Chalmers: so then I don't have to request any extra</v>
+
+[00:20:13] Ranjula Rowel: token, go through that pain again.
+
+[00:20:15] Robert Chin: Yeah.
+
+[00:20:16] Seth Chalmers: Yeah.
+
+[00:20:16] Justin Collery: Yeah.
+
+[00:20:18] Pavithra Viswanathan: Nice try, Ranjula.
+
+[00:20:19] Justin Collery: Yeah.
+
+[00:20:24] Ranjula Rowel: Yeah.
+
+[00:20:24] Ranjula Rowel: <v Justin Collery>Yeah, yeah, so Justin,
+
+[00:20:24] Ranjula Rowel: you're using 10 billion tokens a day.</v>
+
+[00:20:24] Ranjula Rowel: Okay.
+
+[00:20:25] Ranjula Rowel: <v Robert Chin>We'll use that,
+
+[00:20:25] Ranjula Rowel: we'll use that as a test case. OK, Justin,</v>
+
+[00:20:27] Justin Collery: What are you doing?
+
+[00:20:28] Ranjula Rowel: Yeah.
+
+[00:20:29] Robert Chin: you're on vacation. What the heck?
+
+[00:20:38] Pavithra Viswanathan: Thank you, everyone.
+
+[00:20:43] Ranjula Rowel: Thank you.
+
+[00:20:45] Seth Chalmers: Thank you, Justin.

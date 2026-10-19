@@ -1,0 +1,233 @@
+<mxfile host="app.diagrams.net" agent="acp-product-specs" version="24.7.17">
+  <diagram id="risk-classification-rollup" name="Risk classification roll-up">
+    <mxGraphModel dx="1800" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1820" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Risk classification — how agent, model and MCP-server bands relate to the AI use case" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontStyle=1;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="40" y="24" width="1100" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="The use case classification sets the bounds. A resource classification is checked against them — it does not sum into them." style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#546e7a;" vertex="1" parent="1">
+          <mxGeometry x="40" y="52" width="1200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ===== GOVERNANCE BY DESIGN LANE ===== -->
+        <mxCell id="gbdLane" value="" style="rounded=1;arcSize=6;html=0;fillColor=#ede7f6;strokeColor=#5e35b1;strokeWidth=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="96" width="380" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="gbdLaneT" value="GOVERNANCE INTAKE &amp; RISK TRIAGE" style="text;html=0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#5e35b1;" vertex="1" parent="1">
+          <mxGeometry x="58" y="106" width="300" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="gbdLaneS" value="owns the use-case classification and every re-classification" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#7e57c2;" vertex="1" parent="1">
+          <mxGeometry x="58" y="124" width="340" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="intake" value="Use-case intake" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#5e35b1;fontSize=12;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="64" y="156" width="332" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="intakeS" value="pre-populated from the exported use-case pack — not blank" style="text;html=0;align=center;fontSize=10;fontColor=#2e7d32;" vertex="1" parent="1">
+          <mxGeometry x="64" y="192" width="332" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="triage" value="Risk triage — CMRM questionnaire" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#5e35b1;fontSize=12;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="64" y="244" width="332" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="triageS" value="Impact-led: worst credible outcome for a person.&#10;5 impact + 7 likelihood questions → AA / A / B / C / D.&#10;Inherent — scored before any control is credited." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="64" y="278" width="332" height="56" as="geometry" />
+        </mxCell>
+
+        <mxCell id="approve" value="Explicit risk approval" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#5e35b1;fontSize=12;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="64" y="366" width="332" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="approveS" value="A band the platform computes is a proposal until this lands" style="text;html=0;align=center;fontSize=10;fontColor=#78909c;" vertex="1" parent="1">
+          <mxGeometry x="64" y="398" width="332" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="reclass" value="Re-classification happens here — not in the control plane" style="rounded=1;arcSize=10;html=0;fillColor=#f3e5f5;strokeColor=#8e24aa;fontSize=11;fontStyle=1;fontColor=#6a1b9a;align=center;" vertex="1" parent="1">
+          <mxGeometry x="64" y="450" width="332" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="openq1" value="OPEN — does a breached agent trigger a use-case&#10;re-classification, or must the use case move first?" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#c62828;spacingLeft=4;" vertex="1" parent="1">
+          <mxGeometry x="74" y="504" width="340" height="34" as="geometry" />
+        </mxCell>
+
+        <!-- ===== ACP LANE ===== -->
+        <mxCell id="acpLane" value="" style="rounded=1;arcSize=4;html=0;fillColor=#f5f9ff;strokeColor=#1565c0;strokeWidth=1;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="96" width="1310" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="acpLaneT" value="AGENTIC CONTROL PLANE" style="text;html=0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#1565c0;" vertex="1" parent="1">
+          <mxGeometry x="488" y="106" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="acpLaneS" value="computes and publishes bands · never decides the rigor they require" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#1976d2;" vertex="1" parent="1">
+          <mxGeometry x="488" y="124" width="480" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Use case hub -->
+        <mxCell id="usecase" value="AI USE CASE" style="rounded=1;arcSize=8;html=0;fillColor=#fff8e1;strokeColor=#f9a825;strokeWidth=2;fontSize=13;fontStyle=1;fontColor=#8d6e00;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="498" y="160" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="usecaseS" value="= a platform project&#10;&#10;use-case band  (low … critical)&#10;APM ref · governance intake ref&#10;&#10;This band is the ceiling every&#10;resource inside must sit under." style="text;html=0;align=left;verticalAlign=top;fontSize=11;fontColor=#6d5200;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="498" y="196" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ucGap" value="GAP — the platform does not sweep or band a project.&#10;The band can be stored on it; nothing enforces it." style="rounded=1;arcSize=12;html=0;fillColor=#ffebee;strokeColor=#c62828;fontSize=10;fontColor=#b71c1c;align=left;spacingLeft=8;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="498" y="370" width="300" height="46" as="geometry" />
+        </mxCell>
+
+        <!-- Resources -->
+        <mxCell id="resBox" value="" style="rounded=1;arcSize=6;html=0;fillColor=#fafafa;strokeColor=#b0bec5;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="866" y="160" width="472" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="resBoxT" value="GOVERNED RESOURCES — classified by the control plane" style="text;html=0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#546e7a;" vertex="1" parent="1">
+          <mxGeometry x="882" y="170" width="440" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="agent" value="Agent" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=12;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="882" y="196" width="440" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="agentS" value="autonomy · tools bound · destructive capability · data reach&#10;credentials · MCP servers bound · delegation" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="882" y="220" width="440" height="32" as="geometry" />
+        </mxCell>
+
+        <mxCell id="model" value="Model" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=12;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="882" y="264" width="440" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="modelS" value="OSFI E-23 model risk tier · region · approval state" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="882" y="288" width="440" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mcp" value="MCP server" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=12;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="882" y="324" width="440" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="mcpS" value="data classification · PII / PCI / government data&#10;destructive tools · inbound auth · outbound credentials" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="882" y="348" width="440" height="32" as="geometry" />
+        </mxCell>
+
+        <mxCell id="resNote" value="A different instrument at each level. The use case asks what could happen to a person;&#10;a resource asks what it can reach and what authority it holds." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#546e7a;spacingLeft=2;" vertex="1" parent="1">
+          <mxGeometry x="866" y="424" width="480" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- Containment check -->
+        <mxCell id="check" value="CONTAINMENT CHECK" style="rounded=1;arcSize=8;html=0;fillColor=#ffffff;strokeColor=#37474f;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#263238;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="1406" y="160" width="358" height="118" as="geometry" />
+        </mxCell>
+        <mxCell id="checkS" value="Is each resource band at or below&#10;the use-case band?&#10;Runs continuously, not once at intake." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#546e7a;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="1406" y="196" width="358" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ok" value="Within bounds — no action" style="rounded=1;arcSize=12;html=0;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=11;fontStyle=1;fontColor=#1b5e20;" vertex="1" parent="1">
+          <mxGeometry x="1406" y="298" width="358" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="breach" value="Above bounds — divergence finding" style="rounded=1;arcSize=12;html=0;fillColor=#ffebee;strokeColor=#c62828;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#b71c1c;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1406" y="354" width="358" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="breachS" value="The agent grew past what the use case&#10;was assessed for. The control plane raises it;&#10;governance decides whether to re-classify." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#c62828;spacingLeft=14;" vertex="1" parent="1">
+          <mxGeometry x="1406" y="380" width="358" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="a0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#2e7d32;strokeWidth=2;endArrow=block;endFill=1;exitX=0;exitY=0.15;entryX=1;entryY=0.5;" edge="1" parent="1" source="usecase" target="intake">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a0L" value="0 · export the&#10;use-case pack" style="edgeLabel;html=0;align=center;fontSize=10;fontStyle=1;fontColor=#1b5e20;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="a0">
+          <mxGeometry x="0" relative="1" as="geometry"><mxPoint y="-26" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#5e35b1;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.55;" edge="1" parent="1" source="triage" target="usecase">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1L" value="1 · sets the band" style="edgeLabel;html=0;align=center;fontSize=10;fontColor=#5e35b1;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="a1">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#f9a825;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.25;entryX=0;entryY=0.2;" edge="1" parent="1" source="usecase" target="resBox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2L" value="2 · bounds" style="edgeLabel;html=0;align=center;fontSize=10;fontColor=#8d6e00;labelBackgroundColor=#f5f9ff;" vertex="1" connectable="0" parent="a2">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#607d8b;strokeWidth=2;endArrow=block;endFill=1;exitX=0;exitY=0.85;entryX=1;entryY=0.85;dashed=1;" edge="1" parent="1" source="resBox" target="usecase">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3L" value="3 · rolls up as evidence" style="edgeLabel;html=0;align=center;fontSize=10;fontColor=#546e7a;labelBackgroundColor=#f5f9ff;" vertex="1" connectable="0" parent="a3">
+          <mxGeometry x="0.25" relative="1" as="geometry"><mxPoint y="-12" as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#37474f;strokeWidth=2;endArrow=block;endFill=1;exitX=1;exitY=0.3;entryX=0;entryY=0.4;" edge="1" parent="1" source="resBox" target="check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4L" value="4 · compare" style="edgeLabel;html=0;align=center;fontSize=10;fontColor=#37474f;labelBackgroundColor=#f5f9ff;" vertex="1" connectable="0" parent="a4">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#c62828;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="breach" target="reclass">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1585" y="604" /><mxPoint x="24" y="604" /><mxPoint x="24" y="472" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a5L" value="finding goes back to governance — the control plane detects, governance decides" style="edgeLabel;html=0;align=center;fontSize=10;fontStyle=1;fontColor=#c62828;labelBackgroundColor=#ffffff;" vertex="1" connectable="0" parent="a5">
+          <mxGeometry x="0.1" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ===== ENVIRONMENT STRIP ===== -->
+        <mxCell id="envBox" value="" style="rounded=1;arcSize=4;html=0;fillColor=#eceff1;strokeColor=#607d8b;" vertex="1" parent="1">
+          <mxGeometry x="40" y="644" width="1740" height="116" as="geometry" />
+        </mxCell>
+        <mxCell id="envT" value="WHEN A BAND BITES" style="text;html=0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#37474f;" vertex="1" parent="1">
+          <mxGeometry x="58" y="654" width="300" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="envS" value="Classification runs everywhere from the start. What changes by environment is whether it blocks." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#607d8b;" vertex="1" parent="1">
+          <mxGeometry x="58" y="672" width="760" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="envDev" value="DEV · SIT — observe" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#2e7d32;fontSize=11;fontStyle=1;fontColor=#1b5e20;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="58" y="696" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="envDevS" value="Self-serve. Bands are computed and recorded; nothing is denied." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="58" y="718" width="530" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="envGate" value="PROMOTION GATE" style="rounded=1;arcSize=12;html=0;fillColor=#fff8e1;strokeColor=#f9a825;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#8d6e00;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="612" y="696" width="530" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="envGateS" value="Export the pack → pre-populate intake → approval → obligations for the target band." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#8d6e00;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="612" y="718" width="530" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="envProd" value="STAGE · PROD — enforce" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#c62828;fontSize=11;fontStyle=1;fontColor=#b71c1c;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1166" y="696" width="596" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="envProdS" value="A resource outside its use case&apos;s bounds does not run." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="1166" y="718" width="596" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ===== INHERENT VS CONTROLS ===== -->
+        <mxCell id="inhBox" value="" style="rounded=1;arcSize=4;html=0;fillColor=#fbf6f6;strokeColor=#efd3d3;" vertex="1" parent="1">
+          <mxGeometry x="40" y="784" width="1740" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="inhT" value="INHERENT RISK, AND CONTROLS KEPT SEPARATE FROM IT" style="text;html=0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#b71c1c;" vertex="1" parent="1">
+          <mxGeometry x="58" y="794" width="620" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="inhS" value="Model risk is tracked on an inherent basis — scored independently of the controls, with controls carried alongside as mitigations.&#10;A control must never quietly lower a band, or the register stops showing what is actually being run." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#8d6e00;" vertex="1" parent="1">
+          <mxGeometry x="58" y="812" width="1000" height="32" as="geometry" />
+        </mxCell>
+
+        <mxCell id="inh1" value="INHERENT — what it could do" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#c62828;fontSize=11;fontStyle=1;fontColor=#b71c1c;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="58" y="850" width="840" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="inh1S" value="data reach · autonomy · destructive capability · external exposure · regulatory scope · model tier&#10;This alone produces the band." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="58" y="872" width="840" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="inh2" value="CONTROLS — carried, not netted off" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#2e7d32;fontSize=11;fontStyle=1;fontColor=#1b5e20;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="922" y="850" width="840" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="inh2S" value="registration + ownership · inbound authentication · human review · evaluations · guardrails&#10;Tracked as mitigations against the obligations the band demands." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="922" y="872" width="840" height="30" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

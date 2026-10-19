@@ -1,0 +1,3725 @@
+WEBVTT
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/9-0
+00:00:03.148 --> 00:00:04.268
+<v Lalit Summan>The transcription now.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/12-0
+00:00:08.348 --> 00:00:13.088
+<v Lalit Summan>Okay, so let's quickly get into it.
+Do we know what the ACP is? Any questions,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/12-1
+00:00:13.088 --> 00:00:16.928
+<v Lalit Summan>anything that you need clarification on?
+I'll give an overview,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/12-2
+00:00:16.928 --> 00:00:21.548
+<v Lalit Summan>but please feel free to ask questions,
+kind of see if it makes sense or not.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/12-3
+00:00:21.548 --> 00:00:23.468
+<v Lalit Summan>So I'll share my screen quickly.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/13-0
+00:00:26.628 --> 00:00:27.628
+<v Lalit Summan>Let me know when you can see it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/11-0
+00:00:28.588 --> 00:00:29.228
+<v Vineet A Gupta>Yes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/14-0
+00:00:29.948 --> 00:00:30.268
+<v Lalit Summan>Awesome.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/15-0
+00:00:31.308 --> 00:00:34.483
+<v Lalit Summan>Always a meme,
+good thing to start with a meme, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/15-1
+00:00:34.483 --> 00:00:38.697
+<v Lalit Summan>We know this, everybody knows this,
+agents are peripherating everywhere.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/15-2
+00:00:38.697 --> 00:00:42.507
+<v Lalit Summan>It's going to be in Sun Life everywhere.
+So it's a good thing to,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/15-3
+00:00:42.507 --> 00:00:46.952
+<v Lalit Summan>it's a good problem to solve for.
+It's great that we have agents everywhere,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/15-4
+00:00:46.952 --> 00:00:51.108
+<v Lalit Summan>but we do lack the enterprise visibility
+on it. If somebody was to ask.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/17-0
+00:00:51.548 --> 00:00:55.294
+<v Lalit Summan>how many AI or agentic agents are running
+in production today or in any</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/17-1
+00:00:55.294 --> 00:00:58.935
+<v Lalit Summan>environments, very hard to say.
+Even to regulate which models they're</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/17-2
+00:00:58.935 --> 00:01:01.327
+<v Lalit Summan>going to be using,
+how much they're spending,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/17-3
+00:01:01.327 --> 00:01:04.188
+<v Lalit Summan>we don't have a central registry that
+does that today.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/18-0
+00:01:05.028 --> 00:01:09.027
+<v Lalit Summan>When we have OSFI regulatory requirements
+that are coming our way,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/18-1
+00:01:09.027 --> 00:01:12.191
+<v Lalit Summan>we need a single defragmented way to do
+this, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/18-2
+00:01:12.191 --> 00:01:16.846
+<v Lalit Summan>If OSFI says show us some evidence for
+how these agents are making decisions,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/18-3
+00:01:16.846 --> 00:01:20.725
+<v Lalit Summan>we don't do this centrally today.
+Some teams may do it one-offs,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/18-4
+00:01:20.725 --> 00:01:23.948
+<v Lalit Summan>but it doesn't kind of have a centralised
+capability.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/19-0
+00:01:24.828 --> 00:01:28.371
+<v Lalit Summan>We want to build this once.
+If multiple teams are building it,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/19-1
+00:01:28.371 --> 00:01:32.756
+<v Lalit Summan>you're doing the same thing 15 times over.
+And not only is it more expensive,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/19-2
+00:01:32.756 --> 00:01:37.423
+<v Lalit Summan>but then you have irregular audit trails
+that are independent and probably need to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/19-3
+00:01:37.423 --> 00:01:41.078
+<v Lalit Summan>be re-engineered over time.
+We need this for a security posture,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/19-4
+00:01:41.078 --> 00:01:42.708
+<v Lalit Summan>audit trail that I mentioned.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/20-0
+00:01:43.148 --> 00:01:46.302
+<v Lalit Summan>And if something goes wrong with the
+agents,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/20-1
+00:01:46.302 --> 00:01:51.837
+<v Lalit Summan>they go awry for any particular reason,
+cost, harmful output, lack of control,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/20-2
+00:01:51.837 --> 00:01:56.953
+<v Lalit Summan>we need central kill switches.
+To be able to kill an agent or to stop an</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/20-3
+00:01:56.953 --> 00:02:02.348
+<v Lalit Summan>agent in sub-seconds is an important
+enterprise-wide capability to build on.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/21-0
+00:02:03.868 --> 00:02:07.383
+<v Lalit Summan>So what we're trying to do,
+we're trying to solve,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/21-1
+00:02:07.383 --> 00:02:12.413
+<v Lalit Summan>is build a one control plane that can be
+consumed by multiple customers.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/21-2
+00:02:12.413 --> 00:02:17.787
+<v Lalit Summan>It has to be OSFI ready from day one,
+which means all of the packaging from a</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/21-3
+00:02:17.787 --> 00:02:21.439
+<v Lalit Summan>regulatory point of view, the metrics,
+the policies,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/21-4
+00:02:21.439 --> 00:02:23.988
+<v Lalit Summan>all go into the single pane of glass.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/22-0
+00:02:24.828 --> 00:02:28.183
+<v Lalit Summan>It helps you go from ideation to
+production quickly.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/22-1
+00:02:28.183 --> 00:02:33.056
+<v Lalit Summan>We can govern the costs of all of the
+agents with caps, with token metering,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/22-2
+00:02:33.056 --> 00:02:36.220
+<v Lalit Summan>all in one spot at scale,
+have the kill switches,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/22-3
+00:02:36.220 --> 00:02:40.207
+<v Lalit Summan>and this is going to be platform agnostic.
+It's bedrock today,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/22-4
+00:02:40.207 --> 00:02:43.308
+<v Lalit Summan>it could be Azure tomorrow,
+Cortex is coming in.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/23-0
+00:02:43.548 --> 00:02:47.357
+<v Lalit Summan>So,
+we're building this in-house and platform</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/23-1
+00:02:47.357 --> 00:02:52.656
+<v Lalit Summan>agnostic. So, what is a control plane?
+What is a control plane?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/23-2
+00:02:52.656 --> 00:02:57.127
+<v Lalit Summan>It is a single place where every agent is
+registered,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/23-3
+00:02:57.127 --> 00:03:02.508
+<v Lalit Summan>given permissions through tools and data,
+where we watch it run.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/24-0
+00:03:02.828 --> 00:03:07.946
+<v Lalit Summan>and stop when it's needed.
+You have different interfaces that people</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/24-1
+00:03:07.946 --> 00:03:12.916
+<v Lalit Summan>are building their agents in.
+Could be Cloud, it could be Copilot,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/24-2
+00:03:12.916 --> 00:03:16.996
+<v Lalit Summan>GitHub Copilot,
+it could be AWS Quick or Agent Core or</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/24-3
+00:03:16.996 --> 00:03:20.408
+<v Lalit Summan>different orchestration strands is coming
+up.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/24-4
+00:03:20.408 --> 00:03:25.748
+<v Lalit Summan>All of those requests that are built
+within these different interfaces.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/25-0
+00:03:26.348 --> 00:03:28.508
+<v Lalit Summan>will flow through the ejector control
+plane.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/27-0
+00:03:29.468 --> 00:03:33.365
+<v Lalit Summan>And as it goes through the control plane,
+it hits the infrastructure.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/27-1
+00:03:33.365 --> 00:03:36.927
+<v Lalit Summan>That's where the data,
+the platform services, and cloud agents,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/27-2
+00:03:36.927 --> 00:03:41.158
+<v Lalit Summan>and so the cloud services are enabled.
+So think of this as your air traffic</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/27-3
+00:03:41.158 --> 00:03:44.943
+<v Lalit Summan>control, and as agents land,
+they're governed and monitored through</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/27-4
+00:03:44.943 --> 00:03:47.559
+<v Lalit Summan>this,
+and then passed through to the runway as</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/27-5
+00:03:47.559 --> 00:03:47.948
+<v Lalit Summan>needed.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/28-0
+00:03:49.388 --> 00:03:53.487
+<v Lalit Summan>The value of this thing, the ACP provides,
+visibility and control,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/28-1
+00:03:53.487 --> 00:03:57.158
+<v Lalit Summan>you see governance stop these things,
+trust and compliance.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/28-2
+00:03:57.158 --> 00:04:01.379
+<v Lalit Summan>This is a defensive governance play.
+And we want to speed and scale.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/28-3
+00:04:01.379 --> 00:04:06.028
+<v Lalit Summan>This allows you to not worry about the
+governance, the AI governance layer,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/28-4
+00:04:06.028 --> 00:04:10.494
+<v Lalit Summan>but more focus on your use cases.
+This foundation should be available to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/28-5
+00:04:10.494 --> 00:04:11.228
+<v Lalit Summan>all regions.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/29-0
+00:04:11.348 --> 00:04:14.428
+<v Lalit Summan>Across all different types of
+environments, now there have been.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/30-0
+00:04:13.708 --> 00:04:19.684
+<v Vineet A Gupta>How does it help in speed and scale?
+Is it because of the fast track</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/30-1
+00:04:19.684 --> 00:04:23.148
+<v Vineet A Gupta>governance? Is it related to that? Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/32-0
+00:04:21.788 --> 00:04:25.852
+<v Lalit Summan>Exactly, yeah. Yeah,
+so when you decide to go into the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/32-1
+00:04:25.852 --> 00:04:31.171
+<v Lalit Summan>productionized state of your use cases,
+we are enabling the monitoring,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/32-2
+00:04:31.171 --> 00:04:35.678
+<v Lalit Summan>the cost profiling,
+any packaging you need from a regulatory</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/32-3
+00:04:35.678 --> 00:04:39.741
+<v Lalit Summan>point of view,
+all of that becomes a byproduct of when</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/32-4
+00:04:39.741 --> 00:04:41.588
+<v Lalit Summan>you promote these things.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/33-0
+00:04:41.948 --> 00:04:44.828
+<v Lalit Summan>So, you're not in, yeah, go ahead.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/31-0
+00:04:42.428 --> 00:04:42.908
+<v Vineet A Gupta>Sood.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/36-0
+00:04:44.788 --> 00:04:49.105
+<v Vineet A Gupta>No, no, no, I was just talking.
+So basically because we'll have a</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/36-1
+00:04:49.105 --> 00:04:53.617
+<v Vineet A Gupta>standard structure in place,
+that's why the governance will be so it</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/36-2
+00:04:53.617 --> 00:04:58.456
+<v Vineet A Gupta>won't be tackled at a use case basis.
+But once we have this overall infra</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/36-3
+00:04:58.456 --> 00:05:03.688
+<v Vineet A Gupta>through like gone through governance,
+every use case going through that kind of</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/36-4
+00:05:03.688 --> 00:05:05.388
+<v Vineet A Gupta>falls under that umbrella.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/35-0
+00:05:04.028 --> 00:05:07.628
+<v Lalit Summan>Exactly, exactly. I think that's right,
+alright.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/37-0
+00:05:05.708 --> 00:05:06.228
+<v Vineet A Gupta>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/38-0
+00:05:07.268 --> 00:05:07.548
+<v Vineet A Gupta>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/40-0
+00:05:07.388 --> 00:05:11.794
+<v Pavithra Viswanathan>Yeah, just to add to that, right,
+we will have the governance by design</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/40-1
+00:05:11.794 --> 00:05:15.894
+<v Pavithra Viswanathan>layer integrated part of the CCP.
+So for the stage and production,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/39-0
+00:05:14.228 --> 00:05:14.428
+<v Vineet A Gupta>Mm.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/40-2
+00:05:15.894 --> 00:05:19.565
+<v Pavithra Viswanathan>we will have that integrated, right?
+So instead of, I mean,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/40-3
+00:05:19.565 --> 00:05:22.808
+<v Pavithra Viswanathan>this doesn't change how the use case gets,
+you know,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/40-4
+00:05:22.808 --> 00:05:25.929
+<v Pavithra Viswanathan>the governance process for a use case
+necessarily,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/40-5
+00:05:25.929 --> 00:05:30.028
+<v Pavithra Viswanathan>but this is to include and make it
+automated part of the pipeline.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/41-0
+00:05:30.508 --> 00:05:33.260
+<v Pavithra Viswanathan>So that's a future stage.
+So we will have the governance by design</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/41-1
+00:05:33.260 --> 00:05:35.148
+<v Pavithra Viswanathan>integrated for stage and product
+deployments.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/42-0
+00:05:37.228 --> 00:05:42.595
+<v Lalit Summan>Thanks, Rigya. Awesome. Quickly,
+I'll go through this in terms of the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/42-1
+00:05:42.595 --> 00:05:48.652
+<v Lalit Summan>ecosystem, right? I kind of touched it.
+We have the builder platforms that are</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/42-2
+00:05:48.652 --> 00:05:52.485
+<v Lalit Summan>across Sun Life.
+These could be GitHub co-pilots,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/42-3
+00:05:52.485 --> 00:05:55.628
+<v Lalit Summan>Cloud Code, Kiro, you have orchestration.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/43-0
+00:05:56.028 --> 00:05:59.630
+<v Lalit Summan>frameworks around Landgraf, Strands,
+Agent Core.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/43-1
+00:05:59.630 --> 00:06:05.290
+<v Lalit Summan>And then you have the personal agents
+that people are using today. Copilots,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/43-2
+00:06:05.290 --> 00:06:08.818
+<v Lalit Summan>AWS Quick.
+You'll see tools embedded within the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/43-3
+00:06:08.818 --> 00:06:12.861
+<v Lalit Summan>services that we use.
+Workday will have agents and the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/43-4
+00:06:12.861 --> 00:06:15.948
+<v Lalit Summan>different ecosystems that people built in.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/44-0
+00:06:16.028 --> 00:06:20.904
+<v Lalit Summan>all of those are kind of going to be
+governed through the agentic control</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/44-1
+00:06:20.904 --> 00:06:26.373
+<v Lalit Summan>plane. Now, this question is around, hey,
+if I built an agentic workflow for build</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/44-2
+00:06:26.373 --> 00:06:29.865
+<v Lalit Summan>PowerPoints,
+asking people to register that use case</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/44-3
+00:06:29.865 --> 00:06:35.268
+<v Lalit Summan>for their particular productivity gain is
+not something that they're going to do.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/45-0
+00:06:35.348 --> 00:06:38.391
+<v Lalit Summan>or even forget to do.
+And it's no fault of anybody,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/45-1
+00:06:38.391 --> 00:06:42.253
+<v Lalit Summan>it's just not how people work.
+So when it comes to platforms like</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/45-2
+00:06:42.253 --> 00:06:45.530
+<v Lalit Summan>Copilot QUIC,
+we're not asking people to register those</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/45-3
+00:06:45.530 --> 00:06:48.398
+<v Lalit Summan>agents,
+but what we will be working on is behind</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/45-4
+00:06:48.398 --> 00:06:51.499
+<v Lalit Summan>the scenes integrating those platforms
+with the ACP.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/45-5
+00:06:51.499 --> 00:06:55.068
+<v Lalit Summan>So as agents are built within those
+platforms, they show up.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/46-0
+00:06:55.628 --> 00:06:58.234
+<v Lalit Summan>within the control plane behind the
+scenes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/46-1
+00:06:58.234 --> 00:07:01.313
+<v Lalit Summan>Now for use cases that do have to go to
+production,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/46-2
+00:07:01.313 --> 00:07:04.096
+<v Lalit Summan>we'll work with you on the self-service
+model,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/46-3
+00:07:04.096 --> 00:07:08.832
+<v Lalit Summan>which is going to be worked on in Q4,
+so that you're able to add your agents to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/46-4
+00:07:08.832 --> 00:07:13.332
+<v Lalit Summan>the ACP in order to go to production
+following the Gov by Design process as</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/46-5
+00:07:13.332 --> 00:07:13.628
+<v Lalit Summan>well.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/47-0
+00:07:14.788 --> 00:07:19.584
+<v Lalit Summan>yada yada, it goes through the cycle.
+You can see it going down to the control</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/47-1
+00:07:19.584 --> 00:07:22.620
+<v Lalit Summan>plane, data layers,
+back to the technology layer,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/47-2
+00:07:22.620 --> 00:07:27.476
+<v Lalit Summan>and back up to the builder platform.
+So the trick is not to reinvent the wheel,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/47-3
+00:07:27.476 --> 00:07:31.908
+<v Lalit Summan>but leverage a lot of the things that
+exist from capability perspective.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/47-4
+00:07:31.908 --> 00:07:35.794
+<v Lalit Summan>In terms of features,
+I'll quickly show you a demo on what this</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/47-5
+00:07:35.794 --> 00:07:37.068
+<v Lalit Summan>looks and feels like.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/48-0
+00:07:37.228 --> 00:07:41.176
+<v Lalit Summan>but there'll be an inventory,
+a catalogue of all the agents that exist</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/48-1
+00:07:41.176 --> 00:07:43.844
+<v Lalit Summan>today,
+what rights and identity that they have.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/48-2
+00:07:43.844 --> 00:07:48.180
+<v Lalit Summan>One of the things we're hearing a lot
+about our customers is the on behalf of</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/48-3
+00:07:48.180 --> 00:07:52.350
+<v Lalit Summan>capability. So if I am building an agent,
+all of my access and identity is</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/48-4
+00:07:52.350 --> 00:07:56.797
+<v Lalit Summan>inherited by the agent and on behalf of
+being able to have access to everything</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/48-5
+00:07:56.797 --> 00:08:00.188
+<v Lalit Summan>that I have access to.
+So that's something we're working on.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/49-0
+00:08:00.828 --> 00:08:06.648
+<v Lalit Summan>Evaluations is another capability that
+will include. These are things,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/49-1
+00:08:06.648 --> 00:08:12.303
+<v Lalit Summan>these are metrics around toxicity, bias,
+task completion for agents,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/49-2
+00:08:12.303 --> 00:08:17.548
+<v Lalit Summan>task performance, costs.
+All of these things are things that we</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/49-3
+00:08:17.548 --> 00:08:20.908
+<v Lalit Summan>have to showcase within the control pane.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/50-0
+00:08:21.148 --> 00:08:25.383
+<v Lalit Summan>monitoring, of course,
+and life cycle from when it goes from</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/50-1
+00:08:25.383 --> 00:08:29.410
+<v Lalit Summan>sandbox to production,
+we will walk through that as well.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/50-2
+00:08:29.410 --> 00:08:33.298
+<v Lalit Summan>In terms of how we're building this Asia
+control plane,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/50-3
+00:08:33.298 --> 00:08:38.435
+<v Lalit Summan>you might have heard about this.
+There is an industry-led alliance across</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/50-4
+00:08:38.435 --> 00:08:41.628
+<v Lalit Summan>the three companies headed by a vendor
+called</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/51-0
+00:08:41.868 --> 00:08:45.559
+<v Lalit Summan>Lightworks,
+we are all founding members of this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/51-1
+00:08:45.559 --> 00:08:51.057
+<v Lalit Summan>We're not asking them to build it,
+but we have contributed our resources</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/51-2
+00:08:51.057 --> 00:08:56.328
+<v Lalit Summan>within the consortium to build this out,
+to co-build this out across.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/51-3
+00:08:56.328 --> 00:09:01.148
+<v Lalit Summan>So Scotiabank, Sun Life, and Telus,
+we're taking our use cases.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/52-0
+00:09:01.188 --> 00:09:05.979
+<v Lalit Summan>We're providing our developers to live
+within the consortium development team</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/52-1
+00:09:05.979 --> 00:09:09.542
+<v Lalit Summan>and build that out.
+The reason why we're doing this is a,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/52-2
+00:09:09.542 --> 00:09:13.472
+<v Lalit Summan>we become the founding members,
+we get to control what's built,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/52-3
+00:09:13.472 --> 00:09:17.035
+<v Lalit Summan>how it's built,
+and we get scale with the different teams</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/52-4
+00:09:17.035 --> 00:09:20.290
+<v Lalit Summan>that are being,
+that are also adding their features.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/52-5
+00:09:20.290 --> 00:09:21.948
+<v Lalit Summan>So if Scotia has a feature.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/53-0
+00:09:22.828 --> 00:09:26.348
+<v Lalit Summan>We can leverage it from them.
+It's built within the same code base.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/54-0
+00:09:27.508 --> 00:09:29.068
+<v Lalit Summan>Just to quickly go through this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/59-0
+00:09:30.028 --> 00:09:33.241
+<v Vineet A Gupta>In terms of Lalit,
+if you go to the previous slide,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/55-0
+00:09:31.708 --> 00:09:32.108
+<v Lalit Summan>Yep.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/59-1
+00:09:33.241 --> 00:09:37.318
+<v Vineet A Gupta>since you mentioned like there are three
+founding members, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/56-0
+00:09:33.308 --> 00:09:33.628
+<v Lalit Summan>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/57-0
+00:09:36.108 --> 00:09:36.428
+<v Lalit Summan>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/59-2
+00:09:37.318 --> 00:09:42.445
+<v Vineet A Gupta>And we are kind of building this platform.
+I consider this as a ACP as a platform,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/58-0
+00:09:41.228 --> 00:09:41.628
+<v Lalit Summan>Sure.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/59-3
+00:09:42.445 --> 00:09:47.263
+<v Vineet A Gupta>right? Is it like okay, like a good proxy?
+So is there any risk of like cross</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/59-4
+00:09:47.263 --> 00:09:49.548
+<v Vineet A Gupta>contamination of data across because?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/61-0
+00:09:49.828 --> 00:09:55.125
+<v Vineet A Gupta>I know we'll be doing it individually in
+our own servers and everything,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/60-0
+00:09:53.948 --> 00:09:54.188
+<v Lalit Summan>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/61-1
+00:09:55.125 --> 00:10:00.348
+<v Vineet A Gupta>but is there any risk of, again,
+cross-contamination of data use cases?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-0
+00:10:00.828 --> 00:10:03.451
+<v Lalit Summan>That's a good question.
+Where they're building,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-1
+00:10:03.451 --> 00:10:06.401
+<v Lalit Summan>they're not building.
+They're building in an isolated</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-2
+00:10:06.401 --> 00:10:09.296
+<v Lalit Summan>environment where everybody's
+contributing the code.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-3
+00:10:09.296 --> 00:10:12.737
+<v Lalit Summan>Every founding member gets their own
+version of the code base.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-4
+00:10:12.737 --> 00:10:17.053
+<v Lalit Summan>So it gets pushed through as an image.
+It comes through our ECR as we download</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/62-0
+00:10:13.708 --> 00:10:14.188
+<v Vineet A Gupta>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-5
+00:10:17.053 --> 00:10:19.293
+<v Lalit Summan>it.
+Just because we're building together</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/64-6
+00:10:19.293 --> 00:10:19.948
+<v Lalit Summan>doesn't mean</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/66-0
+00:10:20.188 --> 00:10:24.032
+<v Lalit Summan>that we're operating the same code base.
+We take that code base,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/63-0
+00:10:22.828 --> 00:10:23.148
+<v Vineet A Gupta>Mark.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/66-1
+00:10:24.032 --> 00:10:28.644
+<v Lalit Summan>install it within our EC2s and run it on
+EKS. Scotia might do something else,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/66-2
+00:10:28.644 --> 00:10:33.256
+<v Lalit Summan>Telus might do something else, right?
+So we're not operating from one control</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/66-3
+00:10:33.256 --> 00:10:35.976
+<v Lalit Summan>plane. We're building it together.
+That code,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/66-4
+00:10:35.976 --> 00:10:39.228
+<v Lalit Summan>the code base gets shipped off to each of
+the members.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/68-0
+00:10:39.708 --> 00:10:43.340
+<v Lalit Summan>And every six to eight weeks,
+we get into a prioritisation exercise</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/68-1
+00:10:43.340 --> 00:10:47.772
+<v Lalit Summan>where we list our top 20 features that we
+want to build and we push it back to the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/68-2
+00:10:47.772 --> 00:10:50.548
+<v Lalit Summan>consortium.
+Does that answer your question, Vineet?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/67-0
+00:10:51.468 --> 00:10:52.028
+<v Vineet A Gupta>Yep, yep.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/69-0
+00:10:53.948 --> 00:10:58.150
+<v Lalit Summan>So again, just to kind of highlight,
+so this is a consortium team across the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/69-1
+00:10:58.150 --> 00:11:01.151
+<v Lalit Summan>three companies.
+We have 5 engineers that are embedded</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/69-2
+00:11:01.151 --> 00:11:03.934
+<v Lalit Summan>within the development team.
+Telus has their five,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/69-3
+00:11:03.934 --> 00:11:07.426
+<v Lalit Summan>Scotia has their five,
+and there's 15 engineers that the vendor</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/69-4
+00:11:07.426 --> 00:11:11.301
+<v Lalit Summan>Lightworks is bringing to the table.
+So you have 30 engineers that are</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/69-5
+00:11:11.301 --> 00:11:12.828
+<v Lalit Summan>building features within it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/70-0
+00:11:13.708 --> 00:11:18.475
+<v Lalit Summan>each team brings their list of 20.
+So Walter is our senior principal</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/70-1
+00:11:18.475 --> 00:11:23.725
+<v Lalit Summan>engineer that is taking our 20 features,
+ranking it across all of the other</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/70-2
+00:11:23.725 --> 00:11:27.524
+<v Lalit Summan>features and building this up.
+And we get feedback of,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/70-3
+00:11:27.524 --> 00:11:32.428
+<v Lalit Summan>we've done this just once last week,
+but we're just starting this new.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/71-0
+00:11:33.228 --> 00:11:36.512
+<v Lalit Summan>Every quarter,
+we're supposed to get a new version with</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/71-1
+00:11:36.512 --> 00:11:40.909
+<v Lalit Summan>the features that we prioritized.
+Once that is built within the consortium</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/71-2
+00:11:40.909 --> 00:11:43.606
+<v Lalit Summan>team,
+it comes over into the Sun Life product</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/71-3
+00:11:43.606 --> 00:11:46.303
+<v Lalit Summan>team,
+which Pavithra and Ranjula and team are</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/71-4
+00:11:46.303 --> 00:11:49.294
+<v Lalit Summan>leading.
+Pavithra as the product owner and Ranjula</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/71-5
+00:11:49.294 --> 00:11:51.228
+<v Lalit Summan>as a principal software engineer.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/72-0
+00:11:51.628 --> 00:11:55.272
+<v Lalit Summan>to embed it,
+but also integrate it within Sun Life and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/72-1
+00:11:55.272 --> 00:12:00.108
+<v Lalit Summan>onboard users based on the use cases,
+which is what we're meeting today.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/73-0
+00:12:00.988 --> 00:12:05.616
+<v Lalit Summan>And so that's kind of the cycle that goes
+on. We have a mobilisation team,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/73-1
+00:12:05.616 --> 00:12:09.256
+<v Lalit Summan>but code's built here.
+It's brought into the product team.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/73-2
+00:12:09.256 --> 00:12:13.143
+<v Lalit Summan>The engineers within the team activate or
+install the product,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/73-3
+00:12:13.143 --> 00:12:17.216
+<v Lalit Summan>get the images set up,
+make sure it's running, onboard the users,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/73-4
+00:12:17.216 --> 00:12:22.028
+<v Lalit Summan>and we give back the cycle for any new
+features through the consortium again.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/74-0
+00:12:23.788 --> 00:12:27.891
+<v Lalit Summan>The product team is up and running now.
+Pavithra has a product role and Ranjula</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/74-1
+00:12:27.891 --> 00:12:29.788
+<v Lalit Summan>number actively onboarding use cases.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/75-0
+00:12:32.588 --> 00:12:36.600
+<v Lalit Summan>So let me just quickly jump into a quick
+demo so you can see what I'm talking</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/75-1
+00:12:36.600 --> 00:12:36.908
+<v Lalit Summan>about.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/76-0
+00:12:40.148 --> 00:12:41.148
+<v Lalit Summan>Can you see my screen?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/77-0
+00:12:43.108 --> 00:12:43.468
+<v Vineet A Gupta>Yash.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/78-0
+00:12:43.308 --> 00:12:47.241
+<v Lalit Summan>So this is our dev instance that is up
+and running now.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/78-1
+00:12:47.241 --> 00:12:53.069
+<v Lalit Summan>This is where we're onboarding our users
+to get their kind of feet wet in terms of</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/78-2
+00:12:53.069 --> 00:12:58.547
+<v Lalit Summan>what the projected control plane is.
+You see we have about 32 agents that are</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/78-3
+00:12:58.547 --> 00:13:02.268
+<v Lalit Summan>already registered within the platform.
+There are 8.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/79-0
+00:13:02.668 --> 00:13:06.775
+<v Lalit Summan>servers and models that are,
+and the foundational models that are</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/79-1
+00:13:06.775 --> 00:13:10.135
+<v Lalit Summan>available for the agents to use.
+I click on an agent,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/79-2
+00:13:10.135 --> 00:13:13.371
+<v Lalit Summan>you can see all the ones that are being
+registered.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/79-3
+00:13:13.371 --> 00:13:17.726
+<v Lalit Summan>Your use case would show up in a,
+you'd register it in a similar way.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/79-4
+00:13:17.726 --> 00:13:22.268
+<v Lalit Summan>And if I was to pick one that's kind of
+being used here, so MBX is here.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/80-0
+00:13:22.348 --> 00:13:26.396
+<v Lalit Summan>We click on this one,
+you can see across the usage and cost how</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/80-1
+00:13:26.396 --> 00:13:31.330
+<v Lalit Summan>that's going, some of the token usage,
+you get all the metrics that are built</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/80-2
+00:13:31.330 --> 00:13:34.935
+<v Lalit Summan>within it here.
+So that's from an agentic point of view.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/80-3
+00:13:34.935 --> 00:13:39.805
+<v Lalit Summan>You have applications that teams are
+building on here that you'll get to see</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/80-4
+00:13:39.805 --> 00:13:42.588
+<v Lalit Summan>some more details on the foundation
+models.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/81-0
+00:13:42.748 --> 00:13:47.533
+<v Lalit Summan>that all of the agents have access to and
+what it costs as new models are made</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/81-1
+00:13:47.533 --> 00:13:50.198
+<v Lalit Summan>available within Sun Lives through
+Bedrock.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/81-2
+00:13:50.198 --> 00:13:54.982
+<v Lalit Summan>These are the ones that show up here,
+and you can see the inferencing cost for</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/81-3
+00:13:54.982 --> 00:13:58.677
+<v Lalit Summan>each one of them as well.
+And should your use cases have MCP</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/81-4
+00:13:58.677 --> 00:14:01.766
+<v Lalit Summan>service,
+which you develop and you need to monitor</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/81-5
+00:14:01.766 --> 00:14:02.068
+<v Lalit Summan>them,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/82-0
+00:14:02.908 --> 00:14:08.483
+<v Lalit Summan>They also are presented here as well,
+so you can see who has been active using</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/82-1
+00:14:08.483 --> 00:14:13.774
+<v Lalit Summan>it, how many tools are available.
+Those metrics are built in here as well,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/82-2
+00:14:13.774 --> 00:14:14.268
+<v Lalit Summan>and so.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/83-0
+00:14:16.188 --> 00:14:19.881
+<v Lalit Summan>And when we talk about governance,
+it's not all in place yet,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/83-1
+00:14:19.881 --> 00:14:23.872
+<v Lalit Summan>but as you add policies for the different
+use cases that you have,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/83-2
+00:14:23.872 --> 00:14:27.029
+<v Lalit Summan>they show up on here.
+And I'll quickly bring up the,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/83-3
+00:14:27.029 --> 00:14:31.497
+<v Lalit Summan>this one doesn't have the gateways here,
+but let me bring up the prod one.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/83-4
+00:14:31.497 --> 00:14:32.628
+<v Lalit Summan>Give me one second.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/84-0
+00:14:37.228 --> 00:14:37.468
+<v Lalit Summan>Mm.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/85-0
+00:14:38.828 --> 00:14:42.668
+<v Lalit Summan>That was a sandbox or the dev environment
+that I showed on.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/85-1
+00:14:42.668 --> 00:14:47.852
+<v Lalit Summan>This is a production one that's up and
+running. And if you look at the gateways,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/85-2
+00:14:47.852 --> 00:14:52.332
+<v Lalit Summan>so ideally, it never shows up for me.
+Ranjula, maybe it does for you,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/85-3
+00:14:52.332 --> 00:14:56.428
+<v Lalit Summan>but within the production environment,
+there are four gateways.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/85-4
+00:14:56.428 --> 00:15:00.908
+<v Lalit Summan>There will be dev, sit, stage,
+and production. We will be onboarding.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/86-0
+00:15:01.308 --> 00:15:06.773
+<v Lalit Summan>You'll be able to self-serve into the dev
+instance and into stage to build your use</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/86-1
+00:15:06.773 --> 00:15:10.871
+<v Lalit Summan>cases. To go into production,
+to go into stage and production,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/86-2
+00:15:10.871 --> 00:15:16.010
+<v Lalit Summan>you'll need to have the governance by
+design approvals so you can self-promote</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/86-3
+00:15:16.010 --> 00:15:20.108
+<v Lalit Summan>into those environments.
+So that's what we're working towards.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/87-0
+00:15:20.428 --> 00:15:25.588
+<v Lalit Summan>That's no use cases have been onboarded
+to production as far as I know,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/87-1
+00:15:25.588 --> 00:15:30.748
+<v Lalit Summan>but we're working towards that by
+mid-October as one of the early ones.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/88-0
+00:15:31.988 --> 00:15:35.241
+<v Hardik Pillai>Lalit, one question.
+So when the projects or agents are</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/88-1
+00:15:35.241 --> 00:15:38.668
+<v Hardik Pillai>onboarded, would this be a real time data,
+near real time?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/90-0
+00:15:39.148 --> 00:15:42.782
+<v Lalit Summan>Yes, that's the idea. Keep me honest,
+Ranjula. I don't want to speak on you now,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/89-0
+00:15:40.908 --> 00:15:41.228
+<v Hardik Pillai>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/90-1
+00:15:42.782 --> 00:15:43.948
+<v Lalit Summan>but that's the idea of it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/92-0
+00:15:44.348 --> 00:15:47.468
+<v Ranjula Rowel>Yeah, that's right. Absolutely, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/91-0
+00:15:46.348 --> 00:15:46.748
+<v Hardik Pillai>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/96-0
+00:15:49.148 --> 00:15:53.449
+<v Lalit Summan>And part of that, that's a requirement,
+Hardik, is if an agent does go wrong,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/93-0
+00:15:51.468 --> 00:15:51.868
+<v Hardik Pillai>Yep.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/96-1
+00:15:53.449 --> 00:15:57.860
+<v Lalit Summan>the costs go up, alerts have to be built,
+the right team members have to make a</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/96-2
+00:15:57.860 --> 00:16:01.388
+<v Lalit Summan>decision on stopping that, right?
+So that's what I requirement.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/94-0
+00:15:59.948 --> 00:16:00.748
+<v Hardik Pillai>Right, right.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/97-0
+00:16:04.268 --> 00:16:06.668
+<v Lalit Summan>So, so that's the Luminate card. Yeah,
+go ahead.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/95-0
+00:16:05.148 --> 00:16:05.708
+<v Satya Kant>Lalit.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/99-0
+00:16:08.108 --> 00:16:11.927
+<v Satya Kant>You, sorry,
+you also told about application also,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/99-1
+00:16:11.927 --> 00:16:15.668
+<v Satya Kant>right? How the application logs look like?
+Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/98-0
+00:16:13.868 --> 00:16:14.548
+<v Lalit Summan>Application.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/100-0
+00:16:16.868 --> 00:16:19.388
+<v Lalit Summan>How the application ops look like? Sorry,
+what was the question?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/102-0
+00:16:20.268 --> 00:16:22.108
+<v Satya Kant>Log, log, log of this, I mean.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/101-0
+00:16:21.628 --> 00:16:21.868
+<v Lalit Summan>Oh.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/104-0
+00:16:23.388 --> 00:16:25.468
+<v Satya Kant>Yeah, like, like, pharmacy child work.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/103-0
+00:16:23.468 --> 00:16:23.948
+<v Lalit Summan>Um...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/105-0
+00:16:25.948 --> 00:16:28.804
+<v Lalit Summan>Yeah, Ranjula,
+would you know the log detailing?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/105-1
+00:16:28.804 --> 00:16:30.668
+<v Lalit Summan>I don't have the details on you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/106-0
+00:16:33.588 --> 00:16:35.308
+<v Ranjula Rowel>What do you want to know about?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/107-0
+00:16:36.028 --> 00:16:39.788
+<v Lalit Summan>The application logs that are generated
+when the applications are onboarded here.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/110-0
+00:16:40.748 --> 00:16:44.208
+<v Satya Kant>Yeah,
+because most of the use cases are similar</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/108-0
+00:16:41.228 --> 00:16:41.628
+<v Ranjula Rowel>It.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/110-1
+00:16:44.208 --> 00:16:48.244
+<v Satya Kant>to application,
+I just wanted to tell them, but anyway,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/109-0
+00:16:46.588 --> 00:16:47.068
+<v Ranjula Rowel>Mhm.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/113-0
+00:16:48.108 --> 00:16:51.918
+<v Ranjula Rowel>Yeah, so,
+so this is application is like a just a</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/110-2
+00:16:48.244 --> 00:16:48.748
+<v Satya Kant>Salman.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/113-1
+00:16:51.918 --> 00:16:56.794
+<v Ranjula Rowel>example. If I give you,
+let's say you have a UI and you have to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/113-2
+00:16:56.794 --> 00:17:01.137
+<v Ranjula Rowel>do authentication through Azure portal,
+Azure AD, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/113-3
+00:17:01.137 --> 00:17:06.851
+<v Ranjula Rowel>So then you onboard the application and
+you get the application ID, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/112-0
+00:17:02.028 --> 00:17:02.428
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/113-4
+00:17:06.851 --> 00:17:11.499
+<v Ranjula Rowel>The similar concept here,
+because if you want to talk to ACP</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/113-5
+00:17:11.499 --> 00:17:12.108
+<v Ranjula Rowel>gateway.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/114-0
+00:17:12.148 --> 00:17:17.095
+<v Ranjula Rowel>you need the credentials.
+So that's why we create application and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/114-1
+00:17:17.095 --> 00:17:22.566
+<v Ranjula Rowel>we give the credentials to communicate to
+the ACP from that application.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/114-2
+00:17:22.566 --> 00:17:28.636
+<v Ranjula Rowel>So this application is like a UI chatbot
+and you will have to have the secret ID</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/114-3
+00:17:28.636 --> 00:17:32.908
+<v Ranjula Rowel>and the secret storage somewhere,
+maybe your hashi code.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/115-0
+00:17:32.948 --> 00:17:38.129
+<v Ranjula Rowel>for the AWS Secret Manager.
+And when you start communicating to the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/115-1
+00:17:38.129 --> 00:17:42.014
+<v Ranjula Rowel>gateway,
+you have to get the token and you have to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/115-2
+00:17:42.014 --> 00:17:44.908
+<v Ranjula Rowel>pass the token for validation purpose.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/116-0
+00:17:46.668 --> 00:17:54.523
+<v Ranjula Rowel>So you can get a secret in two ways by
+creating an application or you could get</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/116-1
+00:17:54.523 --> 00:17:57.468
+<v Ranjula Rowel>a secret for an agent as well.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/119-0
+00:17:59.788 --> 00:18:05.999
+<v Ranjula Rowel>So, two way of doing things. So,
+if you can you go to the application,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/119-1
+00:18:05.999 --> 00:18:10.110
+<v Ranjula Rowel>I can you can show you go to pharmacy
+chatbot.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/119-2
+00:18:10.110 --> 00:18:15.708
+<v Ranjula Rowel>These are also pharmacy chatbot is
+something you can't see. OK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/117-0
+00:18:16.428 --> 00:18:18.729
+<v Lalit Summan>Maybe you have access,
+because I think something's restricted</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/120-0
+00:18:17.108 --> 00:18:17.228
+<v Ranjula Rowel>Chew.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/117-1
+00:18:18.729 --> 00:18:18.988
+<v Lalit Summan>online.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/121-0
+00:18:19.788 --> 00:18:20.268
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/118-0
+00:18:19.868 --> 00:18:20.108
+<v Pavithra Viswanathan>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/123-0
+00:18:21.548 --> 00:18:24.832
+<v Ranjula Rowel>Yeah,
+it's basically it's like providing the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/123-1
+00:18:24.832 --> 00:18:28.481
+<v Ranjula Rowel>access,
+the credentials to the ACP that you could</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/123-2
+00:18:28.481 --> 00:18:34.318
+<v Ranjula Rowel>create an application or we can provide
+the access credential for a given agent</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/123-3
+00:18:34.318 --> 00:18:37.821
+<v Ranjula Rowel>as well.
+So that's the idea that we are keeping</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/123-4
+00:18:37.821 --> 00:18:38.988
+<v Ranjula Rowel>the application.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/122-0
+00:18:41.868 --> 00:18:42.428
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/124-0
+00:18:42.828 --> 00:18:43.108
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/126-0
+00:18:43.628 --> 00:18:46.637
+<v Lalit Summan>And I know there's a trace in the audit
+trail, Ranjula,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/126-1
+00:18:46.637 --> 00:18:49.753
+<v Lalit Summan>there's traces that can be followed
+through for each one.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/126-2
+00:18:49.753 --> 00:18:54.265
+<v Lalit Summan>I don't have access to it for some reason,
+but maybe we can show you that something</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/126-3
+00:18:54.265 --> 00:18:58.348
+<v Lalit Summan>on a separate call to show you what's
+being traced and the logging details.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/125-0
+00:18:58.308 --> 00:19:00.828
+<v Satya Kant>Yeah. No, it's a lot. Thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/127-0
+00:19:01.468 --> 00:19:01.868
+<v Lalit Summan>Awesome.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/128-0
+00:19:03.708 --> 00:19:07.628
+<v Lalit Summan>Okay, so any more questions,
+any questions, any concerns about ACP?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/129-0
+00:19:12.828 --> 00:19:17.599
+<v Lalit Summan>So we're in a position to onboard you to
+the sandbox environment to get started.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/129-1
+00:19:17.599 --> 00:19:21.133
+<v Lalit Summan>In order to do so,
+we just wanted to get closer to what the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/129-2
+00:19:21.133 --> 00:19:24.136
+<v Lalit Summan>use case is,
+what it is that the team is trying to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/129-3
+00:19:24.136 --> 00:19:26.904
+<v Lalit Summan>accomplish here.
+So that way we understand the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/129-4
+00:19:26.904 --> 00:19:30.026
+<v Lalit Summan>requirements,
+we'll create a design session with the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/129-5
+00:19:30.026 --> 00:19:32.028
+<v Lalit Summan>team, walk you through the design.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/133-0
+00:19:32.428 --> 00:19:37.467
+<v Lalit Summan>and then begin the onboarding process
+based on the requirements that you need,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/133-1
+00:19:37.467 --> 00:19:40.593
+<v Lalit Summan>right?
+So over to you to help us understand what</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/133-2
+00:19:40.593 --> 00:19:43.654
+<v Lalit Summan>the RANS dealer transfer and express
+system is,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/133-3
+00:19:43.654 --> 00:19:46.588
+<v Lalit Summan>and we'd love to kind of be a closer to
+that.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/131-0
+00:19:48.108 --> 00:19:53.479
+<v Hardik Pillai>Sure, thanks, Lalit. Satya,
+do you would you like to? Yeah, alright,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/130-0
+00:19:49.228 --> 00:19:49.548
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/132-0
+00:19:52.948 --> 00:19:56.108
+<v Ranjula Rowel>Like, if you want, I can, sorry.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/131-1
+00:19:53.479 --> 00:19:53.868
+<v Hardik Pillai>yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/134-0
+00:19:54.028 --> 00:19:58.980
+<v Vineet A Gupta>I, I think it,
+and also I think it'll be a good idea to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/134-1
+00:19:58.980 --> 00:20:04.108
+<v Vineet A Gupta>bring in, like, if you can display the P.
+P.T. Yep, like.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/136-0
+00:20:05.788 --> 00:20:09.823
+<v Ranjula Rowel>Yeah, Satya, Satya, just to show you,
+this is the view.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/135-0
+00:20:05.868 --> 00:20:07.308
+<v Vineet A Gupta>Or something, okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/136-1
+00:20:09.823 --> 00:20:15.515
+<v Ranjula Rowel>This is where you have the application
+and you can restrict all the boundaries</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/136-2
+00:20:15.515 --> 00:20:21.351
+<v Ranjula Rowel>for what this application have access to.
+So this application has access to this</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/136-3
+00:20:21.351 --> 00:20:27.331
+<v Ranjula Rowel>type of modules and also NCP server or it
+could be this application can be used to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/136-4
+00:20:27.331 --> 00:20:30.068
+<v Ranjula Rowel>access this agent. This is the visual.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/138-0
+00:20:30.788 --> 00:20:36.389
+<v Ranjula Rowel>representation of what you have access to.
+So you can be managed.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/138-1
+00:20:36.389 --> 00:20:43.264
+<v Ranjula Rowel>Let's say if a model that is not being
+granted access and you try to access that</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/138-2
+00:20:43.264 --> 00:20:47.931
+<v Ranjula Rowel>model, it will get denied.
+You won't have that access.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/138-3
+00:20:47.931 --> 00:20:49.628
+<v Ranjula Rowel>So this is the idea.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/139-0
+00:20:50.028 --> 00:20:57.521
+<v Ranjula Rowel>you're having application have a multiple
+outbound entries as well as if you want</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/139-1
+00:20:57.521 --> 00:21:04.465
+<v Ranjula Rowel>to restrict that in the agent level,
+you could go to agent and provide that</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/139-2
+00:21:04.465 --> 00:21:08.668
+<v Ranjula Rowel>access policies as well.
+So if I go pharmacy.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/140-0
+00:21:09.388 --> 00:21:14.728
+<v Ranjula Rowel>and this would have a agent and these are
+the agent would have access to.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/140-1
+00:21:14.728 --> 00:21:20.428
+<v Ranjula Rowel>So it's all depend on your use case,
+how you want to set up from the ACP side.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/142-0
+00:21:25.228 --> 00:21:29.175
+<v Ranjula Rowel>And about the traces,
+these are all the login traces.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/141-0
+00:21:25.468 --> 00:21:26.028
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/142-1
+00:21:29.175 --> 00:21:32.757
+<v Ranjula Rowel>Each and every request is coming to the
+gateway.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/142-2
+00:21:32.757 --> 00:21:35.388
+<v Ranjula Rowel>You would see all the traces logins.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/143-0
+00:21:37.628 --> 00:21:43.422
+<v Ranjula Rowel>with the event details and there will be
+some more details being added.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/143-1
+00:21:43.422 --> 00:21:50.182
+<v Ranjula Rowel>So we just have to get the latest version
+from the consortium and deploy within our</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/143-2
+00:21:50.182 --> 00:21:51.308
+<v Ranjula Rowel>ecosystem. So.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/144-0
+00:21:52.468 --> 00:21:58.129
+<v Ranjula Rowel>Yeah, these are all about the tracing.
+Each and every request is going through</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/144-1
+00:21:58.129 --> 00:21:58.988
+<v Ranjula Rowel>our gateway.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/145-0
+00:22:01.868 --> 00:22:02.428
+<v Satya Kant>Qin.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/148-0
+00:22:05.068 --> 00:22:07.586
+<v Lalit Summan>And once you get onboarded to the Sandbox
+team,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/148-1
+00:22:07.586 --> 00:22:10.157
+<v Lalit Summan>you'll be able to kind of play around
+with this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/146-0
+00:22:08.108 --> 00:22:08.228
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/148-2
+00:22:10.157 --> 00:22:13.200
+<v Lalit Summan>The idea is to get you to not only
+onboard your use case,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/147-0
+00:22:13.068 --> 00:22:13.268
+<v Vineet A Gupta>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/148-3
+00:22:13.200 --> 00:22:17.501
+<v Lalit Summan>but also give us feedback on some of the
+features that are required in the future</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/148-4
+00:22:17.501 --> 00:22:17.868
+<v Lalit Summan>builds.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/149-0
+00:22:20.028 --> 00:22:22.711
+<v Ranjula Rowel>Yeah,
+and all the pricing details and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/149-1
+00:22:22.711 --> 00:22:26.028
+<v Ranjula Rowel>everything, you could take it from here.
+Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/152-0
+00:22:28.108 --> 00:22:31.068
+<v Satya Kant>And all this driving detail is coming
+from AWS.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/151-0
+00:22:28.428 --> 00:22:29.148
+<v Ranjula Rowel>Over to you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/150-0
+00:22:28.748 --> 00:22:29.028
+<v Lalit Summan>Chew.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/155-0
+00:22:32.028 --> 00:22:36.668
+<v Ranjula Rowel>Yeah, it's yeah,
+so wherever you call the bedrock and the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/153-0
+00:22:32.228 --> 00:22:32.828
+<v Satya Kant>Call center.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/155-1
+00:22:36.668 --> 00:22:43.468
+<v Ranjula Rowel>response would contain all the tokens and
+including the input, output, cache, input,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/155-2
+00:22:43.468 --> 00:22:47.948
+<v Ranjula Rowel>cache, output,
+all the tokens that it's coming from the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/155-3
+00:22:47.948 --> 00:22:50.108
+<v Ranjula Rowel>bedrock, it stored it here.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/156-0
+00:22:51.468 --> 00:22:51.708
+<v Ranjula Rowel>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/154-0
+00:22:52.508 --> 00:22:52.948
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/157-0
+00:22:53.548 --> 00:22:53.828
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/158-0
+00:22:55.228 --> 00:22:55.388
+<v Satya Kant>Oh.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/160-0
+00:22:55.788 --> 00:22:58.628
+<v Lalit Summan>Thank you, Ranjula. Yeah,
+over to your team.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/159-0
+00:22:57.508 --> 00:22:58.068
+<v Ranjula Rowel>No problem.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/162-0
+00:22:59.628 --> 00:23:03.727
+<v Satya Kant>Okay, let me share my screen.
+We'll just walk through the use case and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/162-1
+00:23:03.727 --> 00:23:07.421
+<v Satya Kant>the high-level architecture to see how it
+is fit with this ACP.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/162-2
+00:23:07.421 --> 00:23:08.748
+<v Satya Kant>Let me share my screen.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/163-0
+00:23:16.828 --> 00:23:17.868
+<v Satya Kant>Hope my screen is visible.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/164-0
+00:23:18.268 --> 00:23:19.308
+<v Hardik Pillai>Yep, we can see, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/165-0
+00:23:20.748 --> 00:23:21.188
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/166-0
+00:23:23.388 --> 00:23:26.856
+<v Satya Kant>On the left-hand side,
+I just wanted to talk about a business</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/166-1
+00:23:26.856 --> 00:23:29.708
+<v Satya Kant>problem quickly so that we can able to
+understand.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/167-0
+00:23:31.228 --> 00:23:36.270
+<v Satya Kant>This tool is for a transfer expense.
+It's Sunlight,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/167-1
+00:23:36.270 --> 00:23:42.668
+<v Satya Kant>how the transfer happened from the other
+institution to Sunlight.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/168-0
+00:23:43.668 --> 00:23:48.178
+<v Satya Kant>And this is regarding that,
+based on the current data,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/168-1
+00:23:48.178 --> 00:23:55.148
+<v Satya Kant>1 million external transfer requests come
+to us every year, OK, to with our advisor.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/169-0
+00:23:56.508 --> 00:24:00.970
+<v Satya Kant>What are advisors?
+Do they manually fill out a transfer form,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/169-1
+00:24:00.970 --> 00:24:05.576
+<v Satya Kant>sometimes by pen and paper, by pen,
+and sometimes editable PDF?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/169-2
+00:24:05.576 --> 00:24:10.397
+<v Satya Kant>That advisors do manually,
+then advisors send those transfer forms</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/169-3
+00:24:10.397 --> 00:24:12.268
+<v Satya Kant>to our dealer office team.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/170-0
+00:24:13.828 --> 00:24:15.308
+<v Satya Kant>What dealer of steam do?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/171-0
+00:24:16.268 --> 00:24:21.317
+<v Satya Kant>They validate that transfer form to
+cheque it is in a good order or not in a</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/171-1
+00:24:21.317 --> 00:24:25.776
+<v Satya Kant>good order. To cheque that,
+they need to validate information there</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/171-2
+00:24:25.776 --> 00:24:30.890
+<v Satya Kant>in the transfer form with system like
+Universe to cheque about client detail,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/171-3
+00:24:30.890 --> 00:24:32.988
+<v Satya Kant>his name, and other information.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/172-0
+00:24:34.028 --> 00:24:38.908
+<v Satya Kant>They also validate account detail in the
+relinquishing institution.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/173-0
+00:24:39.948 --> 00:24:41.628
+<v Satya Kant>They'll also cheque about the statements.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/174-0
+00:24:42.668 --> 00:24:45.152
+<v Satya Kant>And they'll also cheque the signature.
+I mean,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/174-1
+00:24:45.152 --> 00:24:47.583
+<v Satya Kant>this I just talked about with the high
+level,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/174-2
+00:24:47.583 --> 00:24:51.388
+<v Satya Kant>so they do those validation to make sure
+that order is I go or Negi go.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/175-0
+00:24:52.428 --> 00:24:56.197
+<v Satya Kant>And all those processes they do manually.
+So,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/175-1
+00:24:56.197 --> 00:25:00.703
+<v Satya Kant>there's a human who see the form on the
+laptop screen,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/175-2
+00:25:00.703 --> 00:25:05.373
+<v Satya Kant>the way they open the universe system,
+they'll validate,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/175-3
+00:25:05.373 --> 00:25:11.681
+<v Satya Kant>they'll validate with institutional,
+and this entire process takes almost 10</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/175-4
+00:25:11.681 --> 00:25:12.828
+<v Satya Kant>to 15 minutes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/176-0
+00:25:13.988 --> 00:25:19.711
+<v Satya Kant>And everything is manual,
+which many times has human mistakes and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/176-1
+00:25:19.711 --> 00:25:24.827
+<v Satya Kant>very difficult to scale.
+And it takes 10 to 15 minutes for</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/176-2
+00:25:24.827 --> 00:25:27.948
+<v Satya Kant>performance. So we see over here is.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/177-0
+00:25:29.148 --> 00:25:36.938
+<v Satya Kant>the big opportunity to put AI in place to
+automate those all manual process using</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/177-1
+00:25:36.938 --> 00:25:42.828
+<v Satya Kant>AI. So if you see right hand side on this,
+what we have done.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/180-0
+00:25:43.948 --> 00:25:47.148
+<v Vineet A Gupta>There's a question,
+Satya Lalit has a question.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/178-0
+00:25:44.548 --> 00:25:45.148
+<v Satya Kant>What is it?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/179-0
+00:25:44.988 --> 00:25:47.068
+<v Hardik Pillai>Lalit, you have a, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/185-0
+00:25:46.988 --> 00:25:51.184
+<v Lalit Summan>Sorry, Satya, just want to again,
+we're not from... Yeah, sorry about that.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/183-0
+00:25:47.508 --> 00:25:50.788
+<v Satya Kant>Yeah, I'm not able to see the skin, yeah,
+yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/181-0
+00:25:48.988 --> 00:25:49.388
+<v Vineet A Gupta>Tough.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/182-0
+00:25:50.428 --> 00:25:50.908
+<v Hardik Pillai>No, no.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/185-1
+00:25:51.184 --> 00:25:54.882
+<v Lalit Summan>So, we're not from the from this world.
+So, when you say transfer,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/185-2
+00:25:54.882 --> 00:25:58.028
+<v Lalit Summan>these are transfer of funds account.
+What is a transfer?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/184-0
+00:25:56.388 --> 00:25:56.508
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/189-0
+00:25:56.828 --> 00:26:02.745
+<v Vineet A Gupta>Yeah, yeah, so these are transfer,
+like they could be anything RRSP or like</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/186-0
+00:26:02.268 --> 00:26:02.548
+<v Lalit Summan>Good.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/189-1
+00:26:02.745 --> 00:26:08.272
+<v Vineet A Gupta>the like the direct contributions which
+RPP, any it could be anything,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/189-2
+00:26:08.272 --> 00:26:11.308
+<v Vineet A Gupta>so these kind of wealth related assets.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/187-0
+00:26:09.108 --> 00:26:09.868
+<v Lalit Summan>Got it, okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/188-0
+00:26:11.708 --> 00:26:13.148
+<v Lalit Summan>Okay, good to know. Okay, thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/190-0
+00:26:12.948 --> 00:26:13.268
+<v Vineet A Gupta>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/191-0
+00:26:13.868 --> 00:26:16.820
+<v Satya Kant>Yeah,
+so we as a broker actually help our</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/191-1
+00:26:16.820 --> 00:26:22.160
+<v Satya Kant>client to transfer their portfolio from
+one institute to another institute.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/191-2
+00:26:22.160 --> 00:26:26.377
+<v Satya Kant>So this is for that.
+We have almost 250 plus working on the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/191-3
+00:26:26.377 --> 00:26:26.868
+<v Satya Kant>dealer.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/196-0
+00:26:27.788 --> 00:26:32.330
+<v Lalit Summan>So as an example, so just to double click,
+so this will register in my head.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/192-0
+00:26:27.988 --> 00:26:28.388
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/196-1
+00:26:32.330 --> 00:26:37.107
+<v Lalit Summan>So if I am either coming from outside of
+Sun Life, that's a transfer in request,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/196-2
+00:26:37.107 --> 00:26:40.233
+<v Lalit Summan>or if I'm doing Sun Life,
+say I'm going to manually,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/193-0
+00:26:37.388 --> 00:26:37.428
+<v Satya Kant>I.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/194-0
+00:26:37.388 --> 00:26:38.028
+<v Vineet A Gupta>Yes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/196-3
+00:26:40.233 --> 00:26:43.654
+<v Lalit Summan>not that I will,
+but that is also facilitated by the same</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/196-4
+00:26:43.654 --> 00:26:43.948
+<v Lalit Summan>team.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/198-0
+00:26:44.508 --> 00:26:47.577
+<v Hardik Pillai>Yes, that so,
+so many nominee to nominee transfer out,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/195-0
+00:26:44.988 --> 00:26:46.108
+<v Satya Kant>Yes, yes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/197-0
+00:26:46.188 --> 00:26:46.388
+<v Lalit Summan>Birt.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/198-1
+00:26:47.577 --> 00:26:51.148
+<v Hardik Pillai>external transfer in,
+everything is handled by this team, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/199-0
+00:26:51.148 --> 00:26:52.588
+<v Lalit Summan>Got it. Okay. Thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/201-0
+00:26:53.468 --> 00:26:57.228
+<v Satya Kant>But our current tool currently support
+transferring up for now.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/200-0
+00:26:53.948 --> 00:26:54.188
+<v Lalit Summan>The.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/204-0
+00:26:56.908 --> 00:27:01.468
+<v Lalit Summan>Got it. And in good order,
+not in good order. That's what I do.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/203-0
+00:26:58.348 --> 00:26:58.748
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-0
+00:27:01.068 --> 00:27:04.564
+<v Satya Kant>No doubt, yeah, so to do that,
+there are multiple business rules,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-1
+00:27:04.564 --> 00:27:07.635
+<v Satya Kant>but important is that the client should
+match. Basically,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-2
+00:27:07.635 --> 00:27:11.554
+<v Satya Kant>the form which advisor field is a
+different system and where the customer</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-3
+00:27:11.554 --> 00:27:14.043
+<v Satya Kant>details is a different system.
+So they do KYC,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-4
+00:27:14.043 --> 00:27:17.115
+<v Satya Kant>their account number get generated into
+any other system.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-5
+00:27:17.115 --> 00:27:19.975
+<v Satya Kant>Do we need to match that the transfer
+form is coming,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/205-6
+00:27:19.975 --> 00:27:21.828
+<v Satya Kant>it is for the same customer or not?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/206-0
+00:27:22.268 --> 00:27:26.955
+<v Satya Kant>And that form has all the required
+details on that. For that,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/206-1
+00:27:26.955 --> 00:27:31.717
+<v Satya Kant>lots of manual effort, we do. Okay.
+On a solution perspective,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/206-2
+00:27:31.717 --> 00:27:35.421
+<v Satya Kant>we created this tool.
+So this is an application.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/206-3
+00:27:35.421 --> 00:27:41.468
+<v Satya Kant>This is not a typical agentic application
+you can say. Over here, we have a UI.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/207-0
+00:27:41.548 --> 00:27:51.115
+<v Satya Kant>Posted on OpenShift cluster, OK,
+which is talking to Lambda present in AWS,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/207-1
+00:27:51.115 --> 00:27:55.268
+<v Satya Kant>and that Lambda talk to backdrop.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/208-0
+00:27:56.388 --> 00:28:00.741
+<v Satya Kant>where we have all the models.
+What we have done in this member process,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/208-1
+00:28:00.741 --> 00:28:04.851
+<v Satya Kant>there's two important parts.
+One is extraction of the data from the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/208-2
+00:28:04.851 --> 00:28:08.478
+<v Satya Kant>PDF. So all those forms are in PDF,
+scan or computer print.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/208-3
+00:28:08.478 --> 00:28:12.407
+<v Satya Kant>So one is to extract the data.
+In this area, and then the first,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/208-4
+00:28:12.407 --> 00:28:15.308
+<v Satya Kant>we are extracting the data from the form,
+okay?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/209-0
+00:28:15.468 --> 00:28:16.748
+<v Satya Kant>Once we expected that.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/210-0
+00:28:18.348 --> 00:28:21.530
+<v Satya Kant>We have expose our universe API to that
+AI engine.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/210-1
+00:28:21.530 --> 00:28:26.521
+<v Satya Kant>I'm calling AI engine because I'm not
+calling AI agent because it does not have</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/210-2
+00:28:26.521 --> 00:28:31.325
+<v Satya Kant>tool, it does not have any reasoning.
+It's a straightforward sequential flow</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/210-3
+00:28:31.325 --> 00:28:35.504
+<v Satya Kant>what we have. Once you get the form,
+accept it. After the accepts,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/210-4
+00:28:35.504 --> 00:28:38.748
+<v Satya Kant>validate with the universe,
+do all your validation.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/211-0
+00:28:38.988 --> 00:28:44.530
+<v Satya Kant>and then decide it is I go and I go.
+And that result will get displayed on the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/211-1
+00:28:44.530 --> 00:28:50.281
+<v Satya Kant>UI where dealer ops and dealer ops people
+can see and they inform the advisor and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/211-2
+00:28:50.281 --> 00:28:54.981
+<v Satya Kant>they'll have that process for any
+transfer related other activity.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/211-3
+00:28:54.981 --> 00:28:58.908
+<v Satya Kant>So that is in a high level.
+Any question Lalit on that?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/215-0
+00:29:00.588 --> 00:29:04.324
+<v Pavithra Viswanathan>One question,
+so with respect to this flow and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/212-0
+00:29:00.708 --> 00:29:01.228
+<v Satya Kant>Not anyone.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/215-1
+00:29:04.324 --> 00:29:08.456
+<v Pavithra Viswanathan>architecture,
+so is it right to say there is a LLM,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/215-2
+00:29:08.456 --> 00:29:13.860
+<v Pavithra Viswanathan>like a call to the LLM and inferencing
+and extraction from the PDF,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/213-0
+00:29:13.468 --> 00:29:13.748
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/215-3
+00:29:13.860 --> 00:29:18.628
+<v Pavithra Viswanathan>but there isn't any agent workflow or
+agents or MCP server?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/214-0
+00:29:19.468 --> 00:29:19.868
+<v Satya Kant>No.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/216-0
+00:29:20.748 --> 00:29:20.988
+<v Satya Kant>No.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/217-0
+00:29:20.868 --> 00:29:21.148
+<v Pavithra Viswanathan>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/219-0
+00:29:22.748 --> 00:29:23.228
+<v Lalit Summan>And it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/218-0
+00:29:22.988 --> 00:29:23.708
+<v Satya Kant>I can.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/220-0
+00:29:25.028 --> 00:29:25.948
+<v Lalit Summan>So, you got quite something?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/221-0
+00:29:26.588 --> 00:29:27.148
+<v Satya Kant>Moghal.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/222-0
+00:29:29.308 --> 00:29:34.381
+<v Lalit Summan>Once it's validated,
+is there a form that's filled out after</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/222-1
+00:29:34.381 --> 00:29:38.539
+<v Lalit Summan>the fact?
+Is there any correction that has to be?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/222-2
+00:29:38.539 --> 00:29:44.609
+<v Lalit Summan>So say something in the LLM decides one
+of the fields has to be changed.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/222-3
+00:29:44.609 --> 00:29:48.268
+<v Lalit Summan>Does it go corrected or does it just
+raise?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/223-0
+00:29:48.988 --> 00:29:51.308
+<v Lalit Summan>A flag for the advisor to work.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/227-0
+00:29:53.148 --> 00:29:56.621
+<v Satya Kant>It will raise the flag.
+Every business rule associated with</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/224-0
+00:29:54.908 --> 00:29:55.388
+<v Lalit Summan>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/227-1
+00:29:56.621 --> 00:30:00.036
+<v Satya Kant>certain attribute, certain frame,
+something did not match,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/227-2
+00:30:00.036 --> 00:30:02.814
+<v Satya Kant>it will just raise.
+We will publish the report,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/227-3
+00:30:02.814 --> 00:30:06.287
+<v Satya Kant>the full-fledged report.
+We're not updating anything in the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/225-0
+00:30:03.468 --> 00:30:04.268
+<v Lalit Summan>Okay, got it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/226-0
+00:30:05.948 --> 00:30:06.108
+<v Lalit Summan>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/227-4
+00:30:06.287 --> 00:30:08.428
+<v Satya Kant>interesting form. It just validation.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/228-0
+00:30:09.708 --> 00:30:12.108
+<v Lalit Summan>And is this in production today?
+This is live.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/230-0
+00:30:12.988 --> 00:30:13.948
+<v Satya Kant>This is in, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/229-0
+00:30:13.228 --> 00:30:13.788
+<v Hardik Pillai>It is.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/231-0
+00:30:14.508 --> 00:30:14.708
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/232-0
+00:30:14.908 --> 00:30:16.988
+<v Lalit Summan>OK, so it's actually.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/233-0
+00:30:18.988 --> 00:30:22.190
+<v Lalit Summan>And we're processing it with the volume
+that's being processed through this tool</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/233-1
+00:30:22.190 --> 00:30:22.348
+<v Lalit Summan>now.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/234-0
+00:30:23.988 --> 00:30:24.748
+<v Lalit Summan>Have you gone?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/235-0
+00:30:24.508 --> 00:30:24.988
+<v Satya Kant>Ohh.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/239-0
+00:30:25.868 --> 00:30:30.019
+<v Hardik Pillai>Lalit, it's been a month or so,
+but we are yet to get that details around</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/239-1
+00:30:30.019 --> 00:30:34.561
+<v Hardik Pillai>how much of the adoption has happened.
+So we don't really have those numbers yet</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/239-2
+00:30:34.561 --> 00:30:36.748
+<v Hardik Pillai>with us. I can get those numbers, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/237-0
+00:30:35.148 --> 00:30:35.868
+<v Lalit Summan>Got it, okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/238-0
+00:30:38.028 --> 00:30:38.348
+<v Satya Kant>Thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/240-0
+00:30:38.828 --> 00:30:41.581
+<v Vineet A Gupta>Yeah, Hardik, also, let's also get that,
+like,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/240-1
+00:30:41.581 --> 00:30:46.209
+<v Vineet A Gupta>are they processing only at a specific,
+like, for a test for initial analysis?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/240-2
+00:30:46.209 --> 00:30:51.071
+<v Vineet A Gupta>Are they processing only specific type of
+forms or like everything together? Like,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/240-3
+00:30:51.071 --> 00:30:55.523
+<v Vineet A Gupta>do they have a set number to test this?
+Because I know when we started this</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/240-4
+00:30:55.523 --> 00:30:57.748
+<v Vineet A Gupta>initially, it was for a specific type.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/244-0
+00:30:57.828 --> 00:31:02.082
+<v Vineet A Gupta>things like RRSP forms or something and
+then they expanded it to everything,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/241-0
+00:30:59.948 --> 00:31:00.308
+<v Hardik Pillai>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/244-1
+00:31:02.082 --> 00:31:04.623
+<v Vineet A Gupta>right?
+So let's just ask for testing as well.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/243-0
+00:31:03.868 --> 00:31:04.188
+<v Hardik Pillai>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/244-2
+00:31:04.623 --> 00:31:05.948
+<v Vineet A Gupta>How are they doing that?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/250-0
+00:31:06.508 --> 00:31:10.429
+<v Hardik Pillai>So we need that, I already know,
+so they are doing it for all. And yeah,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/245-0
+00:31:07.868 --> 00:31:08.188
+<v Vineet A Gupta>The.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/247-0
+00:31:09.948 --> 00:31:10.428
+<v Vineet A Gupta>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/250-1
+00:31:10.429 --> 00:31:13.382
+<v Hardik Pillai>and all the team members are now
+basically on to this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/250-2
+00:31:13.382 --> 00:31:16.766
+<v Hardik Pillai>So adoption is there,
+but I just need to know the numbers that</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/248-0
+00:31:16.748 --> 00:31:17.508
+<v Vineet A Gupta>Okay, okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/250-3
+00:31:16.766 --> 00:31:18.108
+<v Hardik Pillai>are being processed here.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/249-0
+00:31:19.468 --> 00:31:19.748
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/254-0
+00:31:21.028 --> 00:31:27.669
+<v Satya Kant>When I initially talked, Vineet on that,
+is currently just taking two to three</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/254-1
+00:31:27.669 --> 00:31:31.788
+<v Satya Kant>minutes max for one transfer, so validate,
+yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/252-0
+00:31:28.828 --> 00:31:29.308
+<v Vineet A Gupta>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/253-0
+00:31:30.348 --> 00:31:30.668
+<v Vineet A Gupta>Chew.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/256-0
+00:31:33.468 --> 00:31:37.039
+<v Satya Kant>Do you want me to show the architecture
+also? Oh no, not on the detail,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/256-1
+00:31:37.039 --> 00:31:39.468
+<v Satya Kant>but high level.
+How the AWS component look like?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/255-0
+00:31:38.428 --> 00:31:41.068
+<v Lalit Summan>Yes, please. Yes, please, that would help.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/257-0
+00:31:40.988 --> 00:31:41.788
+<v Ranjula Rowel>Yes, please.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/258-0
+00:31:42.108 --> 00:31:44.508
+<v Hardik Pillai>Lalit, do you need a quick demo on this?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/259-0
+00:31:45.148 --> 00:31:45.548
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/262-0
+00:31:47.308 --> 00:31:50.513
+<v Lalit Summan>I don't know, Ranjula, Pavithra,
+do you think we need a demo with help?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/262-1
+00:31:50.513 --> 00:31:53.139
+<v Lalit Summan>We have 11 minutes on,
+be fair to the team to make sure we</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/267-0
+00:31:52.588 --> 00:31:55.856
+<v Hardik Pillai>So we don't really have to process Lalit.
+We already have the results.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/260-0
+00:31:52.908 --> 00:31:53.228
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/262-2
+00:31:53.139 --> 00:31:53.628
+<v Lalit Summan>capture it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/261-0
+00:31:53.388 --> 00:31:54.108
+<v Pavithra Viswanathan>Thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/263-0
+00:31:55.068 --> 00:31:55.428
+<v Satya Kant>Bent.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/267-1
+00:31:55.856 --> 00:31:59.308
+<v Hardik Pillai>We'll just quickly show you how does it
+look like, right? Yeah. I think...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/265-0
+00:31:56.108 --> 00:31:58.828
+<v Lalit Summan>Okay. Okay, perfect. Yep, please.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/268-0
+00:31:58.028 --> 00:32:01.347
+<v Pavithra Viswanathan>Yeah, and besides this use case, sorry,
+just one question though.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/264-0
+00:31:58.348 --> 00:31:58.668
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/268-1
+00:32:01.347 --> 00:32:04.616
+<v Pavithra Viswanathan>Besides this use case,
+did you also have some of the use case to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/268-2
+00:32:04.616 --> 00:32:05.068
+<v Pavithra Viswanathan>showcase?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/271-0
+00:32:07.148 --> 00:32:09.379
+<v Hardik Pillai>No,
+for this one we are prepared for</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/271-1
+00:32:09.379 --> 00:32:11.188
+<v Hardik Pillai>transferring only. Yeah, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/272-0
+00:32:09.628 --> 00:32:12.708
+<v Pavithra Viswanathan>Just okay, okay, okay,
+then we should be okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/270-0
+00:32:10.508 --> 00:32:12.108
+<v Lalit Summan>Yeah, yeah, yeah,
+guess what this would mean.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/269-0
+00:32:11.108 --> 00:32:11.228
+<v Vineet A Gupta>Yes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/274-0
+00:32:13.308 --> 00:32:13.628
+<v Lalit Summan>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/273-0
+00:32:13.388 --> 00:32:13.588
+<v Hardik Pillai>No.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/275-0
+00:32:13.708 --> 00:32:18.021
+<v Satya Kant>I think first, let me show the demo,
+then figure time we can talk the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/275-1
+00:32:18.021 --> 00:32:19.068
+<v Satya Kant>architecture, OK?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/276-0
+00:32:20.988 --> 00:32:25.609
+<v Satya Kant>This is the user interface of this tool,
+so this is in the production, and,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/276-1
+00:32:25.609 --> 00:32:28.588
+<v Satya Kant>as I said before,
+it is hosted on the OpenShift.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/277-0
+00:32:29.948 --> 00:32:31.628
+<v Satya Kant>Currently, and it is.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/278-0
+00:32:33.148 --> 00:32:38.128
+<v Satya Kant>SSO authentication on the back end.
+So if you see in the form in the right</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/278-1
+00:32:38.128 --> 00:32:41.249
+<v Satya Kant>corner,
+there's an option where you can upload</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/278-2
+00:32:41.249 --> 00:32:45.100
+<v Satya Kant>the form. So when you click,
+you go to the browse button,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/278-3
+00:32:45.100 --> 00:32:48.952
+<v Satya Kant>you can upload the form.
+And once the form gets uploaded,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/278-4
+00:32:48.952 --> 00:32:53.068
+<v Satya Kant>you can start the validation.
+This tool also supports French.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/280-0
+00:32:55.148 --> 00:32:58.627
+<v Satya Kant>Okay, to save our time,
+I have just processed 2 form and let me</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/280-1
+00:32:58.627 --> 00:33:03.030
+<v Satya Kant>show you the form also how it looks like.
+So this is the transfer form Lalit was</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/280-2
+00:33:03.030 --> 00:33:06.345
+<v Satya Kant>talking about, right?
+Where it is say all the detail name of</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/280-3
+00:33:06.345 --> 00:33:10.313
+<v Satya Kant>the customer account detail and other
+information what is they wanted to</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/280-4
+00:33:10.313 --> 00:33:13.628
+<v Satya Kant>transfer and then the segment also
+signature as well as the.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/281-0
+00:33:14.028 --> 00:33:14.988
+<v Satya Kant>Account is statement.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/279-0
+00:33:15.468 --> 00:33:15.868
+<v Lalit Summan>Got it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/282-0
+00:33:16.068 --> 00:33:16.548
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/283-0
+00:33:18.628 --> 00:33:22.342
+<v Satya Kant>I have processed two different types of
+one, one for Igo and one for Nigo.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/283-1
+00:33:22.342 --> 00:33:26.451
+<v Satya Kant>So this is for the Nigo. When you process,
+at the end you will get this result out</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/283-2
+00:33:26.451 --> 00:33:26.748
+<v Satya Kant>of it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/285-0
+00:33:27.708 --> 00:33:32.127
+<v Satya Kant>OK, over here,
+the high level detail which the team need,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/285-1
+00:33:32.127 --> 00:33:38.449
+<v Satya Kant>and then to validate, we have total 12,
+14 steps for every step. It says that, OK,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/285-2
+00:33:38.449 --> 00:33:43.858
+<v Satya Kant>is it how it is passed? Like,
+in that case, it says that it is failed,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/285-3
+00:33:43.858 --> 00:33:46.828
+<v Satya Kant>and it is failed because the name is...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/286-0
+00:33:46.908 --> 00:33:51.573
+<v Satya Kant>Name does not matching the name in the
+form and the name in our universe system</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/286-1
+00:33:51.573 --> 00:33:53.788
+<v Satya Kant>is not matching, so it's not included.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/287-0
+00:33:55.428 --> 00:33:55.868
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/288-0
+00:33:56.428 --> 00:33:56.748
+<v Satya Kant>Um...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/289-0
+00:33:57.828 --> 00:34:00.108
+<v Satya Kant>Better about Igo in good order.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/290-0
+00:34:01.228 --> 00:34:05.746
+<v Satya Kant>All the different steps matched,
+all validation passed,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/290-1
+00:34:05.746 --> 00:34:10.748
+<v Satya Kant>so it has all validation like seen
+validation advisor detail.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/291-0
+00:34:11.708 --> 00:34:16.582
+<v Satya Kant>Relinquishing information, another,
+so everything get passed.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/291-1
+00:34:16.582 --> 00:34:20.748
+<v Satya Kant>It says that this I go and they can use
+this report.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/293-0
+00:34:21.828 --> 00:34:27.493
+<v Vineet A Gupta>So, Satya, in case of Negi, what happens?
+Like, do we just display that, okay,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/293-1
+00:34:27.493 --> 00:34:32.728
+<v Vineet A Gupta>this is not a not in good order,
+and do we generate some kind of actions</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/293-2
+00:34:32.728 --> 00:34:37.388
+<v Vineet A Gupta>for these guys? Like,
+what do you need to do next? Or is like...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/297-0
+00:34:36.348 --> 00:34:40.959
+<v Hardik Pillai>So, yeah, so Vineet actions, not, I mean,
+we don't really trigger anything,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/292-0
+00:34:36.748 --> 00:34:37.148
+<v Satya Kant>So.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/297-1
+00:34:40.959 --> 00:34:44.173
+<v Hardik Pillai>but Satya, if we can go up,
+so what happens, Vineet,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/297-2
+00:34:44.173 --> 00:34:47.388
+<v Hardik Pillai>is after we get an I go click on the
+draught e-mail.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/294-0
+00:34:44.228 --> 00:34:44.348
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/295-0
+00:34:48.268 --> 00:34:48.508
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/296-0
+00:34:48.348 --> 00:34:48.828
+<v Vineet A Gupta>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/300-0
+00:34:49.068 --> 00:34:53.412
+<v Hardik Pillai>They basically have to send a response on
+everything that has been wrong with this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/298-0
+00:34:52.508 --> 00:34:54.668
+<v Vineet A Gupta>Okay, got it. Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/300-1
+00:34:53.412 --> 00:34:55.739
+<v Hardik Pillai>So this automatically is generated for
+them.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/300-2
+00:34:55.739 --> 00:34:58.428
+<v Hardik Pillai>They just need to copy this and send it.
+That's it.</v>
+
+NOTE Redacted for privacy: 11 cues between 00:34:58 and 00:35:13 contained personal remarks unrelated to the use case.
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/310-0
+00:35:14.148 --> 00:35:14.508
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/311-0
+00:35:14.348 --> 00:35:14.668
+<v Hardik Pillai>Yep.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/312-0
+00:35:16.828 --> 00:35:18.508
+<v Satya Kant>OK, any any more question on this?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/313-0
+00:35:21.348 --> 00:35:22.188
+<v Lalit Summan>No, it's good.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/314-0
+00:35:23.548 --> 00:35:25.388
+<v Satya Kant>Okay, I can quickly</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/318-0
+00:35:26.428 --> 00:35:30.242
+<v Vineet A Gupta>In terms of next step, like,
+but let's cheque with the Lalit and team.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/315-0
+00:35:26.948 --> 00:35:27.628
+<v Satya Kant>Open the app.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/318-1
+00:35:30.242 --> 00:35:34.002
+<v Vineet A Gupta>So do you need the architecture
+walkthrough right away or in terms of</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/318-2
+00:35:34.002 --> 00:35:38.138
+<v Vineet A Gupta>like just to go to the next steps?
+Do we need to go through the architecture</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/316-0
+00:35:37.148 --> 00:35:37.548
+<v Lalit Summan>Hut.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/318-3
+00:35:38.138 --> 00:35:39.588
+<v Vineet A Gupta>or is there something else?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-0
+00:35:39.948 --> 00:35:43.223
+<v Lalit Summan>It would be just because we're
+transcribing this and just to get a high</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/317-0
+00:35:40.108 --> 00:35:40.588
+<v Ranjula Rowel>It.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-1
+00:35:43.223 --> 00:35:45.770
+<v Lalit Summan>level overview,
+the next step here is we'll do a design</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-2
+00:35:45.770 --> 00:35:49.044
+<v Lalit Summan>review with your team. Vineet,
+once we've captured all the requirements</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/319-0
+00:35:47.748 --> 00:35:48.228
+<v Vineet A Gupta>Mhm.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-3
+00:35:49.044 --> 00:35:51.955
+<v Lalit Summan>through the transcript,
+the design review will be just breaking</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-4
+00:35:51.955 --> 00:35:55.548
+<v Lalit Summan>down of this is what we think you need
+from the ACP, this is what's available.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-5
+00:35:55.548 --> 00:35:58.777
+<v Lalit Summan>Are there any new architectural patterns
+that we have to come up with?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/320-0
+00:35:56.988 --> 00:35:57.068
+<v Vineet A Gupta>The.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/322-6
+00:35:58.777 --> 00:35:59.868
+<v Lalit Summan>We'll do the assessment.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/325-0
+00:36:00.188 --> 00:36:02.813
+<v Lalit Summan>And then we can do a deep dive there as
+well, but just a quick,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/321-0
+00:36:00.388 --> 00:36:00.868
+<v Vineet A Gupta>Mmh.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/325-1
+00:36:02.813 --> 00:36:05.068
+<v Lalit Summan>like maybe a two or three minute view of
+it will help.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/323-0
+00:36:03.228 --> 00:36:04.348
+<v Vineet A Gupta>Perfect, sure.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/324-0
+00:36:05.308 --> 00:36:05.628
+<v Vineet A Gupta>Sure.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/326-0
+00:36:05.388 --> 00:36:08.803
+<v Ranjula Rowel>And also,
+do you guys need some sort of a</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/326-1
+00:36:08.803 --> 00:36:13.113
+<v Ranjula Rowel>guardrails?
+Do you have any data restrictions or any</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/326-2
+00:36:13.113 --> 00:36:15.308
+<v Ranjula Rowel>other special requirements?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/327-0
+00:36:19.068 --> 00:36:19.548
+<v Satya Kant>Um...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/331-0
+00:36:21.188 --> 00:36:25.808
+<v Satya Kant>No data guarders.
+We're not sending data to CloudWatch.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/328-0
+00:36:23.948 --> 00:36:24.428
+<v Ranjula Rowel>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/331-1
+00:36:25.808 --> 00:36:30.511
+<v Satya Kant>We are storing those forms into S3,
+but we have, I mean,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/331-2
+00:36:30.511 --> 00:36:35.956
+<v Satya Kant>we are deleting that after one day.
+I think after 30 days, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/329-0
+00:36:35.148 --> 00:36:35.708
+<v Ranjula Rowel>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/331-3
+00:36:35.956 --> 00:36:38.348
+<v Satya Kant>So we're not restoring those.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/330-0
+00:36:37.068 --> 00:36:37.988
+<v Ranjula Rowel>Yeah, OK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/336-0
+00:36:39.548 --> 00:36:43.184
+<v Hardik Pillai>For monitoring purposes,
+we are also storing some things,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/336-1
+00:36:43.184 --> 00:36:46.756
+<v Hardik Pillai>but then we have a retention period of 90
+days for that,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/332-0
+00:36:43.308 --> 00:36:43.468
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/336-2
+00:36:46.756 --> 00:36:49.388
+<v Hardik Pillai>and then we delete it after that, so yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/333-0
+00:36:46.908 --> 00:36:47.468
+<v Satya Kant>Nadine.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/334-0
+00:36:48.028 --> 00:36:48.508
+<v Ranjula Rowel>Book.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/337-0
+00:36:49.628 --> 00:36:51.628
+<v Pavithra Viswanathan>And this is in production today, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/335-0
+00:36:49.868 --> 00:36:50.188
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/338-0
+00:36:51.868 --> 00:36:52.988
+<v Hardik Pillai>It is, it is, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/339-0
+00:36:52.628 --> 00:36:53.068
+<v Satya Kant>Yes.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/340-0
+00:36:53.148 --> 00:36:56.908
+<v Pavithra Viswanathan>Yeah, and by any chance,
+do you know the LVT rating for this?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/341-0
+00:36:58.588 --> 00:36:59.948
+<v Hardik Pillai>Sorry, what was that, Pavithra?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/342-0
+00:36:59.868 --> 00:37:00.348
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/343-0
+00:37:00.108 --> 00:37:01.708
+<v Pavithra Viswanathan>Del a del VT rating.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/345-0
+00:37:02.668 --> 00:37:07.993
+<v Pavithra Viswanathan>Like is it like I think it's customer
+facing right or advisor facing?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/345-1
+00:37:07.993 --> 00:37:11.948
+<v Pavithra Viswanathan>You would have a rating non-functional
+requirement.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/344-0
+00:37:09.228 --> 00:37:10.148
+<v Vineet A Gupta>Advisor this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/347-0
+00:37:10.588 --> 00:37:14.807
+<v Hardik Pillai>It's not the advisor facing Pavithra.
+It is for the dealer ops team.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/347-1
+00:37:14.807 --> 00:37:19.697
+<v Hardik Pillai>The team uses it to process these forms,
+which they were doing manually before.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/346-0
+00:37:16.308 --> 00:37:16.668
+<v Pavithra Viswanathan>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/347-2
+00:37:19.697 --> 00:37:23.548
+<v Hardik Pillai>Are you talking about the risk rating by
+any chance, Pavithra?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/351-0
+00:37:21.388 --> 00:37:25.231
+<v Pavithra Viswanathan>OK, yeah, yeah, so no,
+the availability rating, so you know,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/351-1
+00:37:25.231 --> 00:37:28.695
+<v Pavithra Viswanathan>if it goes down,
+is there a that will be a time period</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/351-2
+00:37:28.695 --> 00:37:32.348
+<v Pavithra Viswanathan>before which the application has to come
+up, right? So...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/348-0
+00:37:30.948 --> 00:37:31.068
+<v Vineet A Gupta>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/349-0
+00:37:33.068 --> 00:37:33.388
+<v Lalit Summan>No.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/350-0
+00:37:33.548 --> 00:37:33.668
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/352-0
+00:37:33.588 --> 00:37:33.788
+<v Pavithra Viswanathan>It.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/354-0
+00:37:34.028 --> 00:37:38.508
+<v Hardik Pillai>I'm not aware, I'll find out,
+but I'm not sure, yeah, yeah, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/353-0
+00:37:36.428 --> 00:37:38.108
+<v Satya Kant>Yeah, I'll also need to cheque that.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/357-0
+00:37:39.308 --> 00:37:43.284
+<v Pavithra Viswanathan>Okay, because we are prioritizing,
+or I would say like, you know,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/355-0
+00:37:40.348 --> 00:37:40.988
+<v Lalit Summan>Yeah, this one.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/357-1
+00:37:43.284 --> 00:37:45.995
+<v Pavithra Viswanathan>just because we are testing our voters
+here,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/357-2
+00:37:45.995 --> 00:37:50.211
+<v Pavithra Viswanathan>so we are prioritising LVT4 like
+non-critical applications. That way,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/357-3
+00:37:50.211 --> 00:37:53.946
+<v Pavithra Viswanathan>if anything goes wrong,
+we have tested it out before we start</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/357-4
+00:37:53.946 --> 00:37:59.066
+<v Pavithra Viswanathan>onboarding, you know, high risk use cases.
+So just wanted to see where your use case</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/356-0
+00:37:57.228 --> 00:37:57.548
+<v Hardik Pillai>OK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/357-5
+00:37:59.066 --> 00:37:59.788
+<v Pavithra Viswanathan>falls under.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/359-0
+00:38:01.628 --> 00:38:04.010
+<v Hardik Pillai>Okay,
+I'm guessing it should be low risk</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/359-1
+00:38:04.010 --> 00:38:07.204
+<v Hardik Pillai>Pavithra because it is not customer or
+advisor facing,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/359-2
+00:38:07.204 --> 00:38:10.108
+<v Hardik Pillai>but I'll still get that exact number
+rating. Yep.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/358-0
+00:38:09.068 --> 00:38:09.228
+<v Pavithra Viswanathan>No.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/360-0
+00:38:10.508 --> 00:38:13.708
+<v Lalit Summan>And if it helps,
+I'll just quickly pop this on the screen.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/361-0
+00:38:15.668 --> 00:38:16.028
+<v Lalit Summan>Right.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/362-0
+00:38:17.308 --> 00:38:24.108
+<v Lalit Summan>LVT like 4 and LVT1, LVT1 meaning maximum.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/363-0
+00:38:24.988 --> 00:38:28.882
+<v Lalit Summan>30 minute downtime a month,
+less than 5 minutes per incident.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/363-1
+00:38:28.882 --> 00:38:32.839
+<v Lalit Summan>This is the crown jewel,
+same crown jewel applications at that</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/363-2
+00:38:32.839 --> 00:38:38.051
+<v Lalit Summan>level. LBT 4, like there's more leeway,
+like we can get in business hours, 9 to 5,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/363-3
+00:38:38.051 --> 00:38:42.259
+<v Lalit Summan>AST time, resolve incident.
+We can have a day of downtime of this,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/363-4
+00:38:42.259 --> 00:38:44.268
+<v Lalit Summan>like we're trying to understand.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/364-0
+00:38:44.388 --> 00:38:48.928
+<v Lalit Summan>what level of production support is
+required when we do promote this into</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/364-1
+00:38:48.928 --> 00:38:54.081
+<v Lalit Summan>production, at least from our side, right?
+And we need to know what the application</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/364-2
+00:38:54.081 --> 00:38:57.148
+<v Lalit Summan>kind of availability and reliability
+ratings are.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/365-0
+00:38:57.708 --> 00:39:01.388
+<v Hardik Pillai>Got it, and so Lalit,
+who determines this rating?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/368-0
+00:39:02.828 --> 00:39:05.546
+<v Lalit Summan>So like, for example,
+the teams that own the application when</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/366-0
+00:39:03.548 --> 00:39:04.108
+<v Ranjula Rowel>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/368-1
+00:39:05.546 --> 00:39:09.008
+<v Lalit Summan>they are promoting it to production,
+these are one of the things that come up.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/367-0
+00:39:08.268 --> 00:39:08.348
+<v Ranjula Rowel>I.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/368-2
+00:39:09.008 --> 00:39:12.076
+<v Lalit Summan>When you have an APM record,
+I don't know if you've got an APM record</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/368-3
+00:39:12.076 --> 00:39:12.908
+<v Lalit Summan>on this yet or not.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/369-0
+00:39:14.348 --> 00:39:15.228
+<v Hardik Pillai>Satya, where?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/370-0
+00:39:17.548 --> 00:39:20.268
+<v Satya Kant>Um, APM ID you're talking about?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/372-0
+00:39:20.828 --> 00:39:23.308
+<v Lalit Summan>Yeah, the ID. Ranjula can keep me honest,
+but...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/371-0
+00:39:21.468 --> 00:39:21.868
+<v Satya Kant>Appiah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/373-0
+00:39:23.868 --> 00:39:24.268
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/374-0
+00:39:24.508 --> 00:39:24.788
+<v Satya Kant>Neb.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/376-0
+00:39:25.388 --> 00:39:27.628
+<v Pavithra Viswanathan>Your business users usually advise.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/375-0
+00:39:25.828 --> 00:39:26.188
+<v Satya Kant>Van.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/377-0
+00:39:28.428 --> 00:39:29.068
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/378-0
+00:39:29.468 --> 00:39:30.348
+<v Ranjula Rowel>Yeah, you should.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/379-0
+00:39:29.468 --> 00:39:32.988
+<v Pavithra Viswanathan>Your business plan to contact,
+they would be the person who would advise.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/381-0
+00:39:33.788 --> 00:39:36.931
+<v Ranjula Rowel>Yeah,
+also that would trigger if somebody is</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/381-1
+00:39:36.931 --> 00:39:40.213
+<v Ranjula Rowel>supporting from AOS side for this
+application,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/381-2
+00:39:40.213 --> 00:39:45.242
+<v Ranjula Rowel>they would have been asked these
+questions because LVT ratings and all,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/380-0
+00:39:42.668 --> 00:39:43.228
+<v Hardik Pillai>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/381-3
+00:39:45.242 --> 00:39:50.828
+<v Ranjula Rowel>it belongs to them mostly, like, you know,
+they would have to react, right? So.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/382-0
+00:39:50.028 --> 00:39:55.342
+<v Hardik Pillai>So they should be able to help us with
+this rating, right? OK, OK, OK, OK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/383-0
+00:39:53.228 --> 00:39:56.908
+<v Ranjula Rowel>Yeah, they should be having, yeah,
+maybe the business might have, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/382-1
+00:39:55.342 --> 00:39:55.908
+<v Hardik Pillai>Perfect.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/385-0
+00:39:55.828 --> 00:39:59.167
+<v Pavithra Viswanathan>Yeah, when you entered the production,
+this would have been some of the</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/385-1
+00:39:59.167 --> 00:40:01.948
+<v Pavithra Viswanathan>questions that you guys would have asked
+during transition.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/384-0
+00:40:02.468 --> 00:40:02.748
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/386-0
+00:40:03.708 --> 00:40:04.988
+<v Satya Kant>Yes, Pavithra, we had.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/388-0
+00:40:04.268 --> 00:40:06.963
+<v Hardik Pillai>Let,
+let a second get back for withdraw on</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/389-0
+00:40:06.028 --> 00:40:09.540
+<v Satya Kant>We'll we'll check, yeah,
+but we hired a SMB team on this.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/387-0
+00:40:06.948 --> 00:40:07.508
+<v Pavithra Viswanathan>No problem.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/388-1
+00:40:06.963 --> 00:40:08.028
+<v Hardik Pillai>this, yeah, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/389-1
+00:40:09.540 --> 00:40:13.900
+<v Satya Kant>I think they followed all those required
+steps. We can get that report,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/389-2
+00:40:13.900 --> 00:40:14.868
+<v Satya Kant>let me tell you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/391-0
+00:40:14.908 --> 00:40:16.308
+<v Ranjula Rowel>They should be having that for sure.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/390-0
+00:40:16.708 --> 00:40:16.948
+<v Hardik Pillai>But.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/392-0
+00:40:17.268 --> 00:40:19.188
+<v Satya Kant>Yeah, I remember, yeah, there's something.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/393-0
+00:40:24.428 --> 00:40:24.628
+<v Hardik Pillai>Lai.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/394-0
+00:40:26.868 --> 00:40:32.231
+<v Ranjula Rowel>And if you could share the architecture
+diagram as well,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/394-1
+00:40:32.231 --> 00:40:37.028
+<v Ranjula Rowel>that would help us to do the design from
+our side.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/396-0
+00:40:38.228 --> 00:40:39.268
+<v Satya Kant>I'll do that.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/395-0
+00:40:38.468 --> 00:40:38.948
+<v Hardik Pillai>Sure.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/398-0
+00:40:39.668 --> 00:40:40.788
+<v Ranjula Rowel>Yeah, thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/397-0
+00:40:39.828 --> 00:40:40.268
+<v Lalit Summan>Sweet.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/401-0
+00:40:41.588 --> 00:40:46.242
+<v Lalit Summan>So the next steps for us is we'll
+transcribe this call, put it into our D0,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/399-0
+00:40:42.228 --> 00:40:42.428
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/401-1
+00:40:46.242 --> 00:40:48.998
+<v Lalit Summan>our requirements document.
+We'll design the,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/401-2
+00:40:48.998 --> 00:40:52.305
+<v Lalit Summan>based on the requirements,
+we'll create a design doc,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/401-3
+00:40:52.305 --> 00:40:55.918
+<v Lalit Summan>we'll share it back with the team.
+Once we have consensus,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/401-4
+00:40:55.918 --> 00:41:00.388
+<v Lalit Summan>we'll assign an engineer on our team to
+help you onboard, which means...</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/403-0
+00:41:00.508 --> 00:41:03.902
+<v Lalit Summan>And it's a pretty quick process.
+Ranjula is kind of really needing that</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/402-0
+00:41:03.108 --> 00:41:03.508
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/403-1
+00:41:03.902 --> 00:41:06.542
+<v Lalit Summan>space. We'll create a folder,
+give you the permissions,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/403-2
+00:41:06.542 --> 00:41:07.908
+<v Lalit Summan>here are the links, go at it.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/404-0
+00:41:08.868 --> 00:41:09.028
+<v Hardik Pillai>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/406-0
+00:41:09.388 --> 00:41:13.630
+<v Satya Kant>Um, let me, a quick last question.
+We know it was just on time from our</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/406-1
+00:41:13.630 --> 00:41:16.753
+<v Satya Kant>perspective,
+there's no code refactoring any changes</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/406-2
+00:41:16.753 --> 00:41:20.228
+<v Satya Kant>needed for this migration tool.
+They're all smooth, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/405-0
+00:41:18.068 --> 00:41:18.308
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/410-0
+00:41:20.868 --> 00:41:24.416
+<v Ranjula Rowel>No,
+it's needed from you because right now</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/410-1
+00:41:24.416 --> 00:41:30.521
+<v Ranjula Rowel>you are calling your own bedrock in your
+workload account, right? So you,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/408-0
+00:41:30.388 --> 00:41:31.348
+<v Satya Kant>Right, right.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/410-2
+00:41:30.521 --> 00:41:37.286
+<v Ranjula Rowel>so we would be providing a similar kind
+of a like, you know, Boto 3 SDK. We have,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/410-3
+00:41:37.286 --> 00:41:39.348
+<v Ranjula Rowel>we call that harness SDK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/411-0
+00:41:39.788 --> 00:41:45.348
+<v Ranjula Rowel>which has all the capabilities,
+how you could call the ACP.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/409-0
+00:41:40.228 --> 00:41:40.708
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/412-0
+00:41:46.628 --> 00:41:50.268
+<v Ranjula Rowel>the gateway.
+So you would have to import that SDK and</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/412-1
+00:41:50.268 --> 00:41:53.908
+<v Ranjula Rowel>you have to make the code change in your
+lambda side.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/416-0
+00:41:54.988 --> 00:42:00.499
+<v Ranjula Rowel>Because right now you must be calling the,
+like, you know, motor 3 runtime,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/413-0
+00:41:55.268 --> 00:41:55.828
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/414-0
+00:41:58.148 --> 00:41:58.268
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/416-1
+00:42:00.499 --> 00:42:05.140
+<v Ranjula Rowel>the bedrock call, right?
+So that would replace with our harness</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/415-0
+00:42:02.548 --> 00:42:02.788
+<v Satya Kant>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/416-2
+00:42:05.140 --> 00:42:10.868
+<v Ranjula Rowel>SDK that would call the our LLN gateway,
+the ACP gateway, to call the bedrock.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/418-0
+00:42:13.508 --> 00:42:14.828
+<v Satya Kant>OKOK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/417-0
+00:42:13.748 --> 00:42:14.788
+<v Ranjula Rowel>Yeah, yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/419-0
+00:42:15.748 --> 00:42:19.843
+<v Ranjula Rowel>So we will provide you all the details,
+what is needed,</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/419-1
+00:42:19.843 --> 00:42:25.107
+<v Ranjula Rowel>and we have all the documentations,
+how you could call and harness SDK.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/419-2
+00:42:25.107 --> 00:42:30.664
+<v Ranjula Rowel>So once we have everything is ready,
+we will share all the details with you</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/419-3
+00:42:30.664 --> 00:42:35.708
+<v Ranjula Rowel>guys with the secret and the secret IDs
+and the secret keys. So and.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/421-0
+00:42:36.068 --> 00:42:40.660
+<v Ranjula Rowel>With the detailed instruction,
+how you could on like onboarding plus</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/421-1
+00:42:40.660 --> 00:42:43.188
+<v Ranjula Rowel>making the code change from your side.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/420-0
+00:42:44.308 --> 00:42:44.708
+<v Hardik Pillai>Show.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/422-0
+00:42:45.508 --> 00:42:45.708
+<v Ranjula Rowel>Yeah.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/424-0
+00:42:46.948 --> 00:42:47.508
+<v Hardik Pillai>Sounds good, right?</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/423-0
+00:42:47.308 --> 00:42:47.748
+<v Satya Kant>Okay.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/425-0
+00:42:50.548 --> 00:42:50.868
+<v Lalit Summan>Chew.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/426-0
+00:42:53.348 --> 00:42:53.748
+<v Hardik Pillai>I like.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/427-0
+00:42:53.468 --> 00:42:53.908
+<v Vineet A Gupta>Of course.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/428-0
+00:42:54.628 --> 00:42:55.188
+<v Satya Kant>Thank you.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/429-0
+00:42:55.388 --> 00:42:57.508
+<v Hardik Pillai>Thanks, thanks a lot. Yep, alright,
+bye bye.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/434-0
+00:42:55.588 --> 00:42:58.628
+<v Vineet A Gupta>Sure. Thank you. Thank you.
+Have a good day.</v>
+
+28002c9e-9dfd-4139-9cfb-8af5beb14d08/431-0
+00:42:57.188 --> 00:42:58.148
+<v Satya Kant>Excellent. Thank you.</v>

@@ -1,0 +1,160 @@
+# Frontmatter Schema Configuration
+# =================================
+# Simplified schema for acp-specs documentation frontmatter validation.
+# Based on Cloud Doc Validator v2.1, adapted for spec-driven development.
+#
+# Schema Version: 1.0
+# Compatible with: TechDocs, Backstage, MkDocs
+
+version: "1.0"
+schema_name: "ACP Specs Frontmatter"
+
+# =============================================================================
+# VALIDATION SETTINGS
+# =============================================================================
+
+validation:
+  staleness:
+    threshold_days: 90
+    warn_at_days: 60
+  
+  exclude_patterns:
+    - "*.template.md"
+    - "node_modules/**"
+    - ".venv/**"
+    - "site/**"
+    - ".copilot-planning/**"
+
+# =============================================================================
+# FIELD DEFINITIONS
+# =============================================================================
+
+fields:
+  # ---------------------------------------------------------------------------
+  # REQUIRED FIELDS - Must be present for document to pass validation
+  # ---------------------------------------------------------------------------
+  required:
+    title:
+      type: string
+      description: "Document title for navigation and metadata"
+      min_length: 5
+      max_length: 100
+      indexed: true
+      searchable: true
+
+    description:
+      type: string
+      description: "Brief 1-2 sentence summary for search and AI routing"
+      min_length: 20
+      max_length: 300
+      indexed: true
+      searchable: true
+
+    status:
+      type: enum
+      description: "Document lifecycle status"
+      values:
+        - DRAFT
+        - IN_REVIEW
+        - PUBLISHED
+        - ARCHIVED
+        - DEPRECATED
+      indexed: true
+      filterable: true
+      default: DRAFT
+
+  # ---------------------------------------------------------------------------
+  # RECOMMENDED FIELDS - Warnings if missing, not errors
+  # ---------------------------------------------------------------------------
+  recommended:
+    owner:
+      type: object
+      description: "Ownership information tied to Backstage/Nova catalog"
+      properties:
+        group:
+          type: string
+          description: "Backstage group entity (format: group:default/<group-name>)"
+          pattern: "^group:(default|team)/[a-z0-9-]+$"
+          backstage_entity: true
+
+    lastUpdated:
+      type: date
+      description: "Date of last content modification"
+      format: "YYYY-MM-DD"
+      indexed: true
+      sortable: true
+
+    routing:
+      type: object
+      description: "AI routing configuration for GitHub Copilot and RAG"
+      properties:
+        keywords:
+          type: array
+          items:
+            type: string
+          min_items: 3
+          max_items: 15
+          indexed: true
+          searchable: true
+        capabilities:
+          type: array
+          items:
+            type: string
+          filterable: true
+        audience:
+          type: array
+          items:
+            type: string
+            enum:
+              - developer
+              - operator
+              - architect
+              - end-user
+              - admin
+          filterable: true
+
+  # ---------------------------------------------------------------------------
+  # OPTIONAL FIELDS
+  # ---------------------------------------------------------------------------
+  optional:
+    type:
+      type: enum
+      description: "Document type"
+      values:
+        - HowTo
+        - Reference
+        - ADR
+        - Runbook
+        - Tutorial
+        - Spec
+
+    component:
+      type: string
+      description: "Component identifier (for spec documents)"
+
+    gate:
+      type: enum
+      description: "Current maturity gate (for spec documents)"
+      values:
+        - D0
+        - D1
+        - D2
+        - D3
+        - D4
+        - done
+
+    jira_epic:
+      type: string
+      description: "Linked Jira epic key (e.g., EACPP-123)"
+      pattern: "^[A-Z]+-[0-9]+$"
+
+    spec_type:
+      type: enum
+      description: "Classification used to group specs in the index and to route them into the O7 delivery report"
+      values:
+        - onboarding    # onboarding a business-group use case onto ACP
+        - integration   # connecting an existing system to ACP
+        - platform      # ACP platform/product capability itself
+        - governance    # governance, risk and compliance scope
+      indexed: true
+      filterable: true

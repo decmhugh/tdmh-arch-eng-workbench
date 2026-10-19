@@ -1,0 +1,56 @@
+# {Component Name} — spec.yaml template
+# Copy this to specs/{spec_type}/{component}/spec.yaml and fill in values
+
+component: "{component-name}"           # e.g., agent-registry
+title: "{Human-Readable Title}"         # e.g., Agent Registry
+description: "{One-line description}"
+
+# Current gate status
+current_gate: D0                        # D0 | D1 | D2 | D3 | D4 | done  <- the gate lives HERE, not in status
+status: draft                           # draft | in-review | approved | not-started
+spec_type: platform                     # onboarding | integration | platform | governance | pattern
+                                        # pattern also requires specs/{spec_type}/{component}/pattern.md,
+                                        # started from docs/templates/pattern.md
+gate_status: ""                         # optional free-text note, never parsed
+
+# Ownership
+owner: "{Tech Lead name}"
+team: "{Team name}"
+
+# External links
+jira_epic: "{EACPP-XX}"                 # Jira epic key
+agileplace_card: "{card_id}"            # AgilePlace card ID (optional)
+confluence_page: ""                     # Filled after first Confluence sync
+repo: "{repo-name}"                     # Related source code repo
+
+# Dependencies (other component specs this depends on)
+depends_on:
+  - "{other-component}"
+
+# Gate history (filled as gates are completed)
+gates:
+  d0:
+    status: draft                       # draft | in-review | approved
+    pr: ""                              # PR URL
+    approved_date: ""                   # YYYY-MM-DD
+    reviewers: []
+  d1:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []

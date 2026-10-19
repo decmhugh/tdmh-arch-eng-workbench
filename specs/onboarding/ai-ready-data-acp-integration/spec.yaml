@@ -1,0 +1,88 @@
+component: ai-ready-data-acp-integration
+title: Onboard the AI-Ready Data Use Case to ACP
+description: "ACP assists the Data Control Plane's AI-Ready Data use case with MCP\
+  \ server registration and testing on Luminate: register the AI-Ready Data MCP server\
+  \ in the Luminate catalog, publish its tools for discovery, route tool traffic through\
+  \ the governed gateway, provide a repeatable end-to-end test the use-case team can\
+  \ run unaided, and document the onboarding path in luminate-user-guides.\n\nSupersedes\
+  \ the internal-build spec T1KACP/acp-specs/specs/ai-ready-data (EACPP-545), which\
+  \ proposed ACP as the runtime enforcement layer for the AI-Ready Data Framework\
+  \ \u2014 a DataProduct read model in acp-core, clearance intersection in the internal\
+  \ ai-gateway, clearance-to-Snowflake RBAC mapping, an AI-readiness lifecycle gate,\
+  \ Collibra lineage and compliance reporting. That scope is retired: the runtime\
+  \ is now Luminate, and ACP's role narrowed to registration, routing and testing.\
+  \ Classification, contracts, masking and RBAC remain with the Data Control Plane\
+  \ (DPEP / Sirius), which enforces them at the data tier.\n\nTwo planes, one guardrail\
+  \ chain: the Data Control Plane governs the data, ACP governs the agent's route\
+  \ to it. This spec builds only the seam.\n\nh2. Problem Statement\n\u2022 AI-Ready\
+  \ Data tooling is not registered in the Luminate catalog \u2014 use is not discoverable,\
+  \ scoped or audited\n\u2022 No governed egress path \u2014 agents call the tooling\
+  \ directly, so no audit ledger entry, no policy check, no kill switch\n\u2022 No\
+  \ repeatable test path for the use-case team to prove their MCP server works end\
+  \ to end against Luminate\n\u2022 Onboarding requirements undocumented \u2014 what\
+  \ the team provides and what they get back restarts every conversation\n\u2022 The\
+  \ seam between the two planes \u2014 an agent reaching certified data through a\
+  \ governed tool \u2014 is missing\n\nh2. Opportunity\n\u2022 The AI-Ready Data toolset\
+  \ becomes a first-class governed capability with no new runtime service\n\u2022\
+  \ A worked example of the two-plane model \u2014 DCP certifies the data, ACP governs\
+  \ the agent's route\n\u2022 A reusable MCP onboarding path that aims, orcc and waldo\
+  \ also need\n\u2022 Low cost and near-term \u2014 registration and testing against\
+  \ an already-deployed Luminate dev environment\n\nh2. Acceptance Criteria\n\u2022\
+  \ AI-Ready Data MCP server registered in the Luminate catalog and visible to the\
+  \ use-case team\n\u2022 Tools discoverable through the catalog with owner, scopes\
+  \ and tags populated\n\u2022 Tool traffic routed through the Luminate gateway \u2014\
+  \ authorized, traced, killable; no direct unaudited calls\n\u2022 An invocation\
+  \ is retrievable end to end after the fact\n\u2022 The end-to-end test is repeatable\
+  \ by the use-case team without ACP assistance\n\u2022 Onboarding path published\
+  \ in luminate-user-guides and linked from the ACP onboarding guide\n\nh2. In Scope\
+  \ (MVP)\n\u2022 MCP server registration in the Luminate catalog (owner, project,\
+  \ scope tokens, mandatory tags)\n\u2022 Tool catalog publication and discovery\n\
+  \u2022 Governed routing through the Luminate gateway\n\u2022 Repeatable end-to-end\
+  \ test: register, discover, invoke, audit, kill switch, latency comparison\n\u2022\
+  \ Onboarding documentation contributed to luminate-user-guides\n\u2022 Harness SDK\
+  \ (acp-harness-sdk) integration where the use case calls programmatically\n\u2022\
+  \ Staged registration \u2014 read-only tools first, mutating tools second\n\nh2.\
+  \ Out of Scope (Backlog)\n\u2022 Runtime classification enforcement in ACP \u2014\
+  \ clearance intersection, field-level allow/redact/deny, DataProduct read model\n\
+  \u2022 Clearance to Snowflake RBAC mapping \u2014 Sirius Snowfort owns grants\n\u2022\
+  \ AI-readiness lifecycle gate \u2014 belongs in governance-intake as a per-band\
+  \ obligation if it returns\n\u2022 Collibra lineage publishing and classification\
+  \ reconciliation\n\u2022 Classification-compliance and masking-effectiveness reporting\n\
+  \u2022 Authoring or running the AI-Ready Data Framework workflow \u2014 owned by\
+  \ the Data Control Plane\n\u2022 Defining or changing the Sun Life classification\
+  \ taxonomy \u2014 consumed as-is\n"
+current_gate: D3
+status: draft
+last_updated: '2026-09-08'
+gate_status: "D0-D2 approved 2026-09-08 - design agreed, onboarding of the AI-Ready Data MCP server begins against dev Luminate. D3 active, not signed off. D2 re-verified against Luminate main 284008a19: the catalog path, scope_tokens and the status disable are confirmed. Two controls the earlier draft missed are now DD-9 (requires_delegated_identity, without which the data tier's masking evaluates the gateway rather than the caller) and DD-10 (governance_state, which starts at not_evaluated and moves only through the guarded transition). T10 and T11 carry them."
+spec_type: onboarding
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-1077
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113222845162"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- sunlife-deployment
+- aws-harness-integration
+gates:
+  d0:
+    status: approved
+    pr: ''
+    approved_date: '2026-09-08'
+    reviewers: []
+  d1:
+    status: approved
+    pr: ''
+    approved_date: '2026-09-08'
+    reviewers: []
+  d2:
+    status: approved
+    pr: ''
+    approved_date: '2026-09-08'
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []

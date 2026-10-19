@@ -1,0 +1,71 @@
+<mxfile host="acp-product-specs" agent="copilot" version="1">
+  <diagram id="governed-call" name="The governed call — the spine every pattern shares">
+    <mxGraphModel dx="1520" dy="700" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1520" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="app" value="Your app&#10;&#10;agent · service · notebook&#10;SDK or raw HTTP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=13;fontStyle=1;verticalAlign=middle;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="230" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cp" value="ACP control plane" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#F6F3FB;strokeColor=#4527A0;verticalAlign=top;align=left;spacingLeft=12;fontSize=13;fontStyle=1;fontColor=#4527A0;" vertex="1" parent="1">
+          <mxGeometry x="400" y="70" width="620" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="portal" value="Portal&#10;/api/v1/iam/auth/token&#10;CheckAccess" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=13;fontStyle=1;verticalAlign=middle;fontColor=#4527A0;" vertex="1" parent="cp">
+          <mxGeometry x="40" y="50" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="gw" value="Gateway&#10;&#10;/llm  ·  /mcp  ·  /a2a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;verticalAlign=middle;fontColor=#1B5E20;" vertex="1" parent="cp">
+          <mxGeometry x="40" y="230" width="240" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="policy" value="Policy decision&#10;&#10;access policies · quotas&#10;guardrails · kill switch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=11;verticalAlign=middle;fontColor=#7F6000;" vertex="1" parent="cp">
+          <mxGeometry x="340" y="50" width="240" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cpfoot" value="Authorization happens HERE, centrally — never in your app, and never in the upstream provider.&#10;One identity, one policy decision, one audit record, whichever pattern you picked." style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#4527A0;" vertex="1" parent="cp">
+          <mxGeometry x="40" y="380" width="540" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="up" value="Upstream" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FAFAFA;strokeColor=#546E7A;dashed=1;verticalAlign=top;align=left;spacingLeft=12;fontSize=13;fontStyle=1;fontColor=#37474F;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="120" width="350" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="model" value="Model provider&#10;Bedrock — whose account depends on the pattern" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;fontStyle=1;verticalAlign=middle;fontColor=#4472A8;" vertex="1" parent="up">
+          <mxGeometry x="25" y="50" width="300" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp" value="MCP server&#10;registered tools" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;fontStyle=1;verticalAlign=middle;fontColor=#4472A8;" vertex="1" parent="up">
+          <mxGeometry x="25" y="142" width="300" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="a2a" value="Another agent&#10;via /a2a" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;fontSize=12;fontStyle=1;verticalAlign=middle;fontColor=#4472A8;" vertex="1" parent="up">
+          <mxGeometry x="25" y="224" width="300" height="66" as="geometry" />
+        </mxCell>
+
+        <mxCell id="obs" value="Langfuse / OTel&#10;traces · token counts · cost attribution" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=12;fontStyle=1;verticalAlign=middle;fontColor=#4527A0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="560" width="340" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1" value="1 · client_credentials" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#4527A0;fontSize=11;fontStyle=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" edge="1" parent="1" source="app" target="portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" value="2 · Bearer JWT · ~300s" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#4527A0;dashed=1;fontSize=11;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.12;entryDx=0;entryDy=0;" edge="1" parent="1" source="portal" target="app">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" value="3 · Bearer + request" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#82b366;strokeWidth=2;fontSize=11;fontStyle=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="app" target="gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s45" value="4 · CheckAccess gRPC&#10;5 · allow / deny + guardrails" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;fontSize=11;startArrow=classic;startFill=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="cp" source="gw" target="portal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" value="6 · forward — the ONLY step&#10;the patterns differ in" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#B85450;strokeWidth=2;fontSize=11;fontStyle=1;fontColor=#B85450;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="gw" target="up">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#9673A6;dashed=1;fontSize=11;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="cp" target="obs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="foot" value="The patterns differ only in step 6 — whose account's Bedrock is invoked, and therefore who AWS bills. Steps 1 to 5 are identical whichever pattern you chose." style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=12;fontStyle=2;fontColor=#147EBA;" vertex="1" parent="1">
+          <mxGeometry x="40" y="648" width="1440" height="34" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

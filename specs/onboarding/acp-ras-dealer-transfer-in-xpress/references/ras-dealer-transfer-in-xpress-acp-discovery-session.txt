@@ -1,0 +1,2922 @@
+WEBVTT
+
+
+[00:00:03] Lalit Summan: The transcription now.
+
+
+[00:00:08] Lalit Summan: Okay, so let's quickly get into it.
+Do we know what the ACP is? Any questions,
+
+
+[00:00:13] Lalit Summan: anything that you need clarification on?
+I'll give an overview,
+
+
+[00:00:16] Lalit Summan: but please feel free to ask questions,
+kind of see if it makes sense or not.
+
+
+[00:00:21] Lalit Summan: So I'll share my screen quickly.
+
+
+[00:00:26] Lalit Summan: Let me know when you can see it.
+
+
+[00:00:28] Vineet A Gupta: Yes.
+
+
+[00:00:29] Lalit Summan: Awesome.
+
+
+[00:00:31] Lalit Summan: Always a meme,
+good thing to start with a meme, right?
+
+
+[00:00:34] Lalit Summan: We know this, everybody knows this,
+agents are peripherating everywhere.
+
+
+[00:00:38] Lalit Summan: It's going to be in Sun Life everywhere.
+So it's a good thing to,
+
+
+[00:00:42] Lalit Summan: it's a good problem to solve for.
+It's great that we have agents everywhere,
+
+
+[00:00:46] Lalit Summan: but we do lack the enterprise visibility
+on it. If somebody was to ask.
+
+
+[00:00:51] Lalit Summan: how many AI or agentic agents are running
+in production today or in any
+
+
+[00:00:55] Lalit Summan: environments, very hard to say.
+Even to regulate which models they're
+
+
+[00:00:58] Lalit Summan: going to be using,
+how much they're spending,
+
+
+[00:01:01] Lalit Summan: we don't have a central registry that
+does that today.
+
+
+[00:01:05] Lalit Summan: When we have OSFI regulatory requirements
+that are coming our way,
+
+
+[00:01:09] Lalit Summan: we need a single defragmented way to do
+this, right?
+
+
+[00:01:12] Lalit Summan: If OSFI says show us some evidence for
+how these agents are making decisions,
+
+
+[00:01:16] Lalit Summan: we don't do this centrally today.
+Some teams may do it one-offs,
+
+
+[00:01:20] Lalit Summan: but it doesn't kind of have a centralised
+capability.
+
+
+[00:01:24] Lalit Summan: We want to build this once.
+If multiple teams are building it,
+
+
+[00:01:28] Lalit Summan: you're doing the same thing 15 times over.
+And not only is it more expensive,
+
+
+[00:01:32] Lalit Summan: but then you have irregular audit trails
+that are independent and probably need to
+
+
+[00:01:37] Lalit Summan: be re-engineered over time.
+We need this for a security posture,
+
+
+[00:01:41] Lalit Summan: audit trail that I mentioned.
+
+
+[00:01:43] Lalit Summan: And if something goes wrong with the
+agents,
+
+
+[00:01:46] Lalit Summan: they go awry for any particular reason,
+cost, harmful output, lack of control,
+
+
+[00:01:51] Lalit Summan: we need central kill switches.
+To be able to kill an agent or to stop an
+
+
+[00:01:56] Lalit Summan: agent in sub-seconds is an important
+enterprise-wide capability to build on.
+
+
+[00:02:03] Lalit Summan: So what we're trying to do,
+we're trying to solve,
+
+
+[00:02:07] Lalit Summan: is build a one control plane that can be
+consumed by multiple customers.
+
+
+[00:02:12] Lalit Summan: It has to be OSFI ready from day one,
+which means all of the packaging from a
+
+
+[00:02:17] Lalit Summan: regulatory point of view, the metrics,
+the policies,
+
+
+[00:02:21] Lalit Summan: all go into the single pane of glass.
+
+
+[00:02:24] Lalit Summan: It helps you go from ideation to
+production quickly.
+
+
+[00:02:28] Lalit Summan: We can govern the costs of all of the
+agents with caps, with token metering,
+
+
+[00:02:33] Lalit Summan: all in one spot at scale,
+have the kill switches,
+
+
+[00:02:36] Lalit Summan: and this is going to be platform agnostic.
+It's bedrock today,
+
+
+[00:02:40] Lalit Summan: it could be Azure tomorrow,
+Cortex is coming in.
+
+
+[00:02:43] Lalit Summan: So,
+we're building this in-house and platform
+
+
+[00:02:47] Lalit Summan: agnostic. So, what is a control plane?
+What is a control plane?
+
+
+[00:02:52] Lalit Summan: It is a single place where every agent is
+registered,
+
+
+[00:02:57] Lalit Summan: given permissions through tools and data,
+where we watch it run.
+
+
+[00:03:02] Lalit Summan: and stop when it's needed.
+You have different interfaces that people
+
+
+[00:03:07] Lalit Summan: are building their agents in.
+Could be Cloud, it could be Copilot,
+
+
+[00:03:12] Lalit Summan: GitHub Copilot,
+it could be AWS Quick or Agent Core or
+
+
+[00:03:16] Lalit Summan: different orchestration strands is coming
+up.
+
+
+[00:03:20] Lalit Summan: All of those requests that are built
+within these different interfaces.
+
+
+[00:03:26] Lalit Summan: will flow through the ejector control
+plane.
+
+
+[00:03:29] Lalit Summan: And as it goes through the control plane,
+it hits the infrastructure.
+
+
+[00:03:33] Lalit Summan: That's where the data,
+the platform services, and cloud agents,
+
+
+[00:03:36] Lalit Summan: and so the cloud services are enabled.
+So think of this as your air traffic
+
+
+[00:03:41] Lalit Summan: control, and as agents land,
+they're governed and monitored through
+
+
+[00:03:44] Lalit Summan: this,
+and then passed through to the runway as
+
+
+[00:03:47] Lalit Summan: needed.
+
+
+[00:03:49] Lalit Summan: The value of this thing, the ACP provides,
+visibility and control,
+
+
+[00:03:53] Lalit Summan: you see governance stop these things,
+trust and compliance.
+
+
+[00:03:57] Lalit Summan: This is a defensive governance play.
+And we want to speed and scale.
+
+
+[00:04:01] Lalit Summan: This allows you to not worry about the
+governance, the AI governance layer,
+
+
+[00:04:06] Lalit Summan: but more focus on your use cases.
+This foundation should be available to
+
+
+[00:04:10] Lalit Summan: all regions.
+
+
+[00:04:11] Lalit Summan: Across all different types of
+environments, now there have been.
+
+
+[00:04:13] Vineet A Gupta: How does it help in speed and scale?
+Is it because of the fast track
+
+
+[00:04:19] Vineet A Gupta: governance? Is it related to that? Okay.
+
+
+[00:04:21] Lalit Summan: Exactly, yeah. Yeah,
+so when you decide to go into the
+
+
+[00:04:25] Lalit Summan: productionized state of your use cases,
+we are enabling the monitoring,
+
+
+[00:04:31] Lalit Summan: the cost profiling,
+any packaging you need from a regulatory
+
+
+[00:04:35] Lalit Summan: point of view,
+all of that becomes a byproduct of when
+
+
+[00:04:39] Lalit Summan: you promote these things.
+
+
+[00:04:41] Lalit Summan: So, you're not in, yeah, go ahead.
+
+
+[00:04:42] Vineet A Gupta: Sood.
+
+
+[00:04:44] Vineet A Gupta: No, no, no, I was just talking.
+So basically because we'll have a
+
+
+[00:04:49] Vineet A Gupta: standard structure in place,
+that's why the governance will be so it
+
+
+[00:04:53] Vineet A Gupta: won't be tackled at a use case basis.
+But once we have this overall infra
+
+
+[00:04:58] Vineet A Gupta: through like gone through governance,
+every use case going through that kind of
+
+
+[00:05:03] Vineet A Gupta: falls under that umbrella.
+
+
+[00:05:04] Lalit Summan: Exactly, exactly. I think that's right,
+alright.
+
+
+[00:05:05] Vineet A Gupta: Okay.
+
+
+[00:05:07] Vineet A Gupta: Okay.
+
+
+[00:05:07] Pavithra Viswanathan: Yeah, just to add to that, right,
+we will have the governance by design
+
+
+[00:05:11] Pavithra Viswanathan: layer integrated part of the CCP.
+So for the stage and production,
+
+
+[00:05:14] Vineet A Gupta: Mm.
+
+
+[00:05:15] Pavithra Viswanathan: we will have that integrated, right?
+So instead of, I mean,
+
+
+[00:05:19] Pavithra Viswanathan: this doesn't change how the use case gets,
+you know,
+
+
+[00:05:22] Pavithra Viswanathan: the governance process for a use case
+necessarily,
+
+
+[00:05:25] Pavithra Viswanathan: but this is to include and make it
+automated part of the pipeline.
+
+
+[00:05:30] Pavithra Viswanathan: So that's a future stage.
+So we will have the governance by design
+
+
+[00:05:33] Pavithra Viswanathan: integrated for stage and product
+deployments.
+
+
+[00:05:37] Lalit Summan: Thanks, Rigya. Awesome. Quickly,
+I'll go through this in terms of the
+
+
+[00:05:42] Lalit Summan: ecosystem, right? I kind of touched it.
+We have the builder platforms that are
+
+
+[00:05:48] Lalit Summan: across Sun Life.
+These could be GitHub co-pilots,
+
+
+[00:05:52] Lalit Summan: Cloud Code, Kiro, you have orchestration.
+
+
+[00:05:56] Lalit Summan: frameworks around Landgraf, Strands,
+Agent Core.
+
+
+[00:05:59] Lalit Summan: And then you have the personal agents
+that people are using today. Copilots,
+
+
+[00:06:05] Lalit Summan: AWS Quick.
+You'll see tools embedded within the
+
+
+[00:06:08] Lalit Summan: services that we use.
+Workday will have agents and the
+
+
+[00:06:12] Lalit Summan: different ecosystems that people built in.
+
+
+[00:06:16] Lalit Summan: all of those are kind of going to be
+governed through the agentic control
+
+
+[00:06:20] Lalit Summan: plane. Now, this question is around, hey,
+if I built an agentic workflow for build
+
+
+[00:06:26] Lalit Summan: PowerPoints,
+asking people to register that use case
+
+
+[00:06:29] Lalit Summan: for their particular productivity gain is
+not something that they're going to do.
+
+
+[00:06:35] Lalit Summan: or even forget to do.
+And it's no fault of anybody,
+
+
+[00:06:38] Lalit Summan: it's just not how people work.
+So when it comes to platforms like
+
+
+[00:06:42] Lalit Summan: Copilot QUIC,
+we're not asking people to register those
+
+
+[00:06:45] Lalit Summan: agents,
+but what we will be working on is behind
+
+
+[00:06:48] Lalit Summan: the scenes integrating those platforms
+with the ACP.
+
+
+[00:06:51] Lalit Summan: So as agents are built within those
+platforms, they show up.
+
+
+[00:06:55] Lalit Summan: within the control plane behind the
+scenes.
+
+
+[00:06:58] Lalit Summan: Now for use cases that do have to go to
+production,
+
+
+[00:07:01] Lalit Summan: we'll work with you on the self-service
+model,
+
+
+[00:07:04] Lalit Summan: which is going to be worked on in Q4,
+so that you're able to add your agents to
+
+
+[00:07:08] Lalit Summan: the ACP in order to go to production
+following the Gov by Design process as
+
+
+[00:07:13] Lalit Summan: well.
+
+
+[00:07:14] Lalit Summan: yada yada, it goes through the cycle.
+You can see it going down to the control
+
+
+[00:07:19] Lalit Summan: plane, data layers,
+back to the technology layer,
+
+
+[00:07:22] Lalit Summan: and back up to the builder platform.
+So the trick is not to reinvent the wheel,
+
+
+[00:07:27] Lalit Summan: but leverage a lot of the things that
+exist from capability perspective.
+
+
+[00:07:31] Lalit Summan: In terms of features,
+I'll quickly show you a demo on what this
+
+
+[00:07:35] Lalit Summan: looks and feels like.
+
+
+[00:07:37] Lalit Summan: but there'll be an inventory,
+a catalogue of all the agents that exist
+
+
+[00:07:41] Lalit Summan: today,
+what rights and identity that they have.
+
+
+[00:07:43] Lalit Summan: One of the things we're hearing a lot
+about our customers is the on behalf of
+
+
+[00:07:48] Lalit Summan: capability. So if I am building an agent,
+all of my access and identity is
+
+
+[00:07:52] Lalit Summan: inherited by the agent and on behalf of
+being able to have access to everything
+
+
+[00:07:56] Lalit Summan: that I have access to.
+So that's something we're working on.
+
+
+[00:08:00] Lalit Summan: Evaluations is another capability that
+will include. These are things,
+
+
+[00:08:06] Lalit Summan: these are metrics around toxicity, bias,
+task completion for agents,
+
+
+[00:08:12] Lalit Summan: task performance, costs.
+All of these things are things that we
+
+
+[00:08:17] Lalit Summan: have to showcase within the control pane.
+
+
+[00:08:21] Lalit Summan: monitoring, of course,
+and life cycle from when it goes from
+
+
+[00:08:25] Lalit Summan: sandbox to production,
+we will walk through that as well.
+
+
+[00:08:29] Lalit Summan: In terms of how we're building this Asia
+control plane,
+
+
+[00:08:33] Lalit Summan: you might have heard about this.
+There is an industry-led alliance across
+
+
+[00:08:38] Lalit Summan: the three companies headed by a vendor
+called
+
+
+[00:08:41] Lalit Summan: Lightworks,
+we are all founding members of this.
+
+
+[00:08:45] Lalit Summan: We're not asking them to build it,
+but we have contributed our resources
+
+
+[00:08:51] Lalit Summan: within the consortium to build this out,
+to co-build this out across.
+
+
+[00:08:56] Lalit Summan: So Scotiabank, Sun Life, and Telus,
+we're taking our use cases.
+
+
+[00:09:01] Lalit Summan: We're providing our developers to live
+within the consortium development team
+
+
+[00:09:05] Lalit Summan: and build that out.
+The reason why we're doing this is a,
+
+
+[00:09:09] Lalit Summan: we become the founding members,
+we get to control what's built,
+
+
+[00:09:13] Lalit Summan: how it's built,
+and we get scale with the different teams
+
+
+[00:09:17] Lalit Summan: that are being,
+that are also adding their features.
+
+
+[00:09:20] Lalit Summan: So if Scotia has a feature.
+
+
+[00:09:22] Lalit Summan: We can leverage it from them.
+It's built within the same code base.
+
+
+[00:09:27] Lalit Summan: Just to quickly go through this.
+
+
+[00:09:30] Vineet A Gupta: In terms of Lalit,
+if you go to the previous slide,
+
+
+[00:09:31] Lalit Summan: Yep.
+
+
+[00:09:33] Vineet A Gupta: since you mentioned like there are three
+founding members, right?
+
+
+[00:09:33] Lalit Summan: Yeah.
+
+
+[00:09:36] Lalit Summan: Yeah.
+
+
+[00:09:37] Vineet A Gupta: And we are kind of building this platform.
+I consider this as a ACP as a platform,
+
+
+[00:09:41] Lalit Summan: Sure.
+
+
+[00:09:42] Vineet A Gupta: right? Is it like okay, like a good proxy?
+So is there any risk of like cross
+
+
+[00:09:47] Vineet A Gupta: contamination of data across because?
+
+
+[00:09:49] Vineet A Gupta: I know we'll be doing it individually in
+our own servers and everything,
+
+
+[00:09:53] Lalit Summan: Yeah.
+
+
+[00:09:55] Vineet A Gupta: but is there any risk of, again,
+cross-contamination of data use cases?
+
+
+[00:10:00] Lalit Summan: That's a good question.
+Where they're building,
+
+
+[00:10:03] Lalit Summan: they're not building.
+They're building in an isolated
+
+
+[00:10:06] Lalit Summan: environment where everybody's
+contributing the code.
+
+
+[00:10:09] Lalit Summan: Every founding member gets their own
+version of the code base.
+
+
+[00:10:12] Lalit Summan: So it gets pushed through as an image.
+It comes through our ECR as we download
+
+
+[00:10:13] Vineet A Gupta: Okay.
+
+
+[00:10:17] Lalit Summan: it.
+Just because we're building together
+
+
+[00:10:19] Lalit Summan: doesn't mean
+
+
+[00:10:20] Lalit Summan: that we're operating the same code base.
+We take that code base,
+
+
+[00:10:22] Vineet A Gupta: Mark.
+
+
+[00:10:24] Lalit Summan: install it within our EC2s and run it on
+EKS. Scotia might do something else,
+
+
+[00:10:28] Lalit Summan: Telus might do something else, right?
+So we're not operating from one control
+
+
+[00:10:33] Lalit Summan: plane. We're building it together.
+That code,
+
+
+[00:10:35] Lalit Summan: the code base gets shipped off to each of
+the members.
+
+
+[00:10:39] Lalit Summan: And every six to eight weeks,
+we get into a prioritisation exercise
+
+
+[00:10:43] Lalit Summan: where we list our top 20 features that we
+want to build and we push it back to the
+
+
+[00:10:47] Lalit Summan: consortium.
+Does that answer your question, Vineet?
+
+
+[00:10:51] Vineet A Gupta: Yep, yep.
+
+
+[00:10:53] Lalit Summan: So again, just to kind of highlight,
+so this is a consortium team across the
+
+
+[00:10:58] Lalit Summan: three companies.
+We have 5 engineers that are embedded
+
+
+[00:11:01] Lalit Summan: within the development team.
+Telus has their five,
+
+
+[00:11:03] Lalit Summan: Scotia has their five,
+and there's 15 engineers that the vendor
+
+
+[00:11:07] Lalit Summan: Lightworks is bringing to the table.
+So you have 30 engineers that are
+
+
+[00:11:11] Lalit Summan: building features within it.
+
+
+[00:11:13] Lalit Summan: each team brings their list of 20.
+So Walter is our senior principal
+
+
+[00:11:18] Lalit Summan: engineer that is taking our 20 features,
+ranking it across all of the other
+
+
+[00:11:23] Lalit Summan: features and building this up.
+And we get feedback of,
+
+
+[00:11:27] Lalit Summan: we've done this just once last week,
+but we're just starting this new.
+
+
+[00:11:33] Lalit Summan: Every quarter,
+we're supposed to get a new version with
+
+
+[00:11:36] Lalit Summan: the features that we prioritized.
+Once that is built within the consortium
+
+
+[00:11:40] Lalit Summan: team,
+it comes over into the Sun Life product
+
+
+[00:11:43] Lalit Summan: team,
+which Pavithra and Ranjula and team are
+
+
+[00:11:46] Lalit Summan: leading.
+Pavithra as the product owner and Ranjula
+
+
+[00:11:49] Lalit Summan: as a principal software engineer.
+
+
+[00:11:51] Lalit Summan: to embed it,
+but also integrate it within Sun Life and
+
+
+[00:11:55] Lalit Summan: onboard users based on the use cases,
+which is what we're meeting today.
+
+
+[00:12:00] Lalit Summan: And so that's kind of the cycle that goes
+on. We have a mobilisation team,
+
+
+[00:12:05] Lalit Summan: but code's built here.
+It's brought into the product team.
+
+
+[00:12:09] Lalit Summan: The engineers within the team activate or
+install the product,
+
+
+[00:12:13] Lalit Summan: get the images set up,
+make sure it's running, onboard the users,
+
+
+[00:12:17] Lalit Summan: and we give back the cycle for any new
+features through the consortium again.
+
+
+[00:12:23] Lalit Summan: The product team is up and running now.
+Pavithra has a product role and Ranjula
+
+
+[00:12:27] Lalit Summan: number actively onboarding use cases.
+
+
+[00:12:32] Lalit Summan: So let me just quickly jump into a quick
+demo so you can see what I'm talking
+
+
+[00:12:36] Lalit Summan: about.
+
+
+[00:12:40] Lalit Summan: Can you see my screen?
+
+
+[00:12:43] Vineet A Gupta: Yash.
+
+
+[00:12:43] Lalit Summan: So this is our dev instance that is up
+and running now.
+
+
+[00:12:47] Lalit Summan: This is where we're onboarding our users
+to get their kind of feet wet in terms of
+
+
+[00:12:53] Lalit Summan: what the projected control plane is.
+You see we have about 32 agents that are
+
+
+[00:12:58] Lalit Summan: already registered within the platform.
+There are 8.
+
+
+[00:13:02] Lalit Summan: servers and models that are,
+and the foundational models that are
+
+
+[00:13:06] Lalit Summan: available for the agents to use.
+I click on an agent,
+
+
+[00:13:10] Lalit Summan: you can see all the ones that are being
+registered.
+
+
+[00:13:13] Lalit Summan: Your use case would show up in a,
+you'd register it in a similar way.
+
+
+[00:13:17] Lalit Summan: And if I was to pick one that's kind of
+being used here, so MBX is here.
+
+
+[00:13:22] Lalit Summan: We click on this one,
+you can see across the usage and cost how
+
+
+[00:13:26] Lalit Summan: that's going, some of the token usage,
+you get all the metrics that are built
+
+
+[00:13:31] Lalit Summan: within it here.
+So that's from an agentic point of view.
+
+
+[00:13:34] Lalit Summan: You have applications that teams are
+building on here that you'll get to see
+
+
+[00:13:39] Lalit Summan: some more details on the foundation
+models.
+
+
+[00:13:42] Lalit Summan: that all of the agents have access to and
+what it costs as new models are made
+
+
+[00:13:47] Lalit Summan: available within Sun Lives through
+Bedrock.
+
+
+[00:13:50] Lalit Summan: These are the ones that show up here,
+and you can see the inferencing cost for
+
+
+[00:13:54] Lalit Summan: each one of them as well.
+And should your use cases have MCP
+
+
+[00:13:58] Lalit Summan: service,
+which you develop and you need to monitor
+
+
+[00:14:01] Lalit Summan: them,
+
+
+[00:14:02] Lalit Summan: They also are presented here as well,
+so you can see who has been active using
+
+
+[00:14:08] Lalit Summan: it, how many tools are available.
+Those metrics are built in here as well,
+
+
+[00:14:13] Lalit Summan: and so.
+
+
+[00:14:16] Lalit Summan: And when we talk about governance,
+it's not all in place yet,
+
+
+[00:14:19] Lalit Summan: but as you add policies for the different
+use cases that you have,
+
+
+[00:14:23] Lalit Summan: they show up on here.
+And I'll quickly bring up the,
+
+
+[00:14:27] Lalit Summan: this one doesn't have the gateways here,
+but let me bring up the prod one.
+
+
+[00:14:31] Lalit Summan: Give me one second.
+
+
+[00:14:37] Lalit Summan: Mm.
+
+
+[00:14:38] Lalit Summan: That was a sandbox or the dev environment
+that I showed on.
+
+
+[00:14:42] Lalit Summan: This is a production one that's up and
+running. And if you look at the gateways,
+
+
+[00:14:47] Lalit Summan: so ideally, it never shows up for me.
+Ranjula, maybe it does for you,
+
+
+[00:14:52] Lalit Summan: but within the production environment,
+there are four gateways.
+
+
+[00:14:56] Lalit Summan: There will be dev, sit, stage,
+and production. We will be onboarding.
+
+
+[00:15:01] Lalit Summan: You'll be able to self-serve into the dev
+instance and into stage to build your use
+
+
+[00:15:06] Lalit Summan: cases. To go into production,
+to go into stage and production,
+
+
+[00:15:10] Lalit Summan: you'll need to have the governance by
+design approvals so you can self-promote
+
+
+[00:15:16] Lalit Summan: into those environments.
+So that's what we're working towards.
+
+
+[00:15:20] Lalit Summan: That's no use cases have been onboarded
+to production as far as I know,
+
+
+[00:15:25] Lalit Summan: but we're working towards that by
+mid-October as one of the early ones.
+
+
+[00:15:31] Hardik Pillai: Lalit, one question.
+So when the projects or agents are
+
+
+[00:15:35] Hardik Pillai: onboarded, would this be a real time data,
+near real time?
+
+
+[00:15:39] Lalit Summan: Yes, that's the idea. Keep me honest,
+Ranjula. I don't want to speak on you now,
+
+
+[00:15:40] Hardik Pillai: Okay.
+
+
+[00:15:42] Lalit Summan: but that's the idea of it.
+
+
+[00:15:44] Ranjula Rowel: Yeah, that's right. Absolutely, yeah.
+
+
+[00:15:46] Hardik Pillai: Okay.
+
+
+[00:15:49] Lalit Summan: And part of that, that's a requirement,
+Hardik, is if an agent does go wrong,
+
+
+[00:15:51] Hardik Pillai: Yep.
+
+
+[00:15:53] Lalit Summan: the costs go up, alerts have to be built,
+the right team members have to make a
+
+
+[00:15:57] Lalit Summan: decision on stopping that, right?
+So that's what I requirement.
+
+
+[00:15:59] Hardik Pillai: Right, right.
+
+
+[00:16:04] Lalit Summan: So, so that's the Luminate card. Yeah,
+go ahead.
+
+
+[00:16:05] Satya Kant: Lalit.
+
+
+[00:16:08] Satya Kant: You, sorry,
+you also told about application also,
+
+
+[00:16:11] Satya Kant: right? How the application logs look like?
+Yeah.
+
+
+[00:16:13] Lalit Summan: Application.
+
+
+[00:16:16] Lalit Summan: How the application ops look like? Sorry,
+what was the question?
+
+
+[00:16:20] Satya Kant: Log, log, log of this, I mean.
+
+
+[00:16:21] Lalit Summan: Oh.
+
+
+[00:16:23] Satya Kant: Yeah, like, like, pharmacy child work.
+
+
+[00:16:23] Lalit Summan: Um...
+
+
+[00:16:25] Lalit Summan: Yeah, Ranjula,
+would you know the log detailing?
+
+
+[00:16:28] Lalit Summan: I don't have the details on you.
+
+
+[00:16:33] Ranjula Rowel: What do you want to know about?
+
+
+[00:16:36] Lalit Summan: The application logs that are generated
+when the applications are onboarded here.
+
+
+[00:16:40] Satya Kant: Yeah,
+because most of the use cases are similar
+
+
+[00:16:41] Ranjula Rowel: It.
+
+
+[00:16:44] Satya Kant: to application,
+I just wanted to tell them, but anyway,
+
+
+[00:16:46] Ranjula Rowel: Mhm.
+
+
+[00:16:48] Ranjula Rowel: Yeah, so,
+so this is application is like a just a
+
+
+[00:16:48] Satya Kant: Salman.
+
+
+[00:16:51] Ranjula Rowel: example. If I give you,
+let's say you have a UI and you have to
+
+
+[00:16:56] Ranjula Rowel: do authentication through Azure portal,
+Azure AD, right?
+
+
+[00:17:01] Ranjula Rowel: So then you onboard the application and
+you get the application ID, right?
+
+
+[00:17:02] Satya Kant: Yeah.
+
+
+[00:17:06] Ranjula Rowel: The similar concept here,
+because if you want to talk to ACP
+
+
+[00:17:11] Ranjula Rowel: gateway.
+
+
+[00:17:12] Ranjula Rowel: you need the credentials.
+So that's why we create application and
+
+
+[00:17:17] Ranjula Rowel: we give the credentials to communicate to
+the ACP from that application.
+
+
+[00:17:22] Ranjula Rowel: So this application is like a UI chatbot
+and you will have to have the secret ID
+
+
+[00:17:28] Ranjula Rowel: and the secret storage somewhere,
+maybe your hashi code.
+
+
+[00:17:32] Ranjula Rowel: for the AWS Secret Manager.
+And when you start communicating to the
+
+
+[00:17:38] Ranjula Rowel: gateway,
+you have to get the token and you have to
+
+
+[00:17:42] Ranjula Rowel: pass the token for validation purpose.
+
+
+[00:17:46] Ranjula Rowel: So you can get a secret in two ways by
+creating an application or you could get
+
+
+[00:17:54] Ranjula Rowel: a secret for an agent as well.
+
+
+[00:17:59] Ranjula Rowel: So, two way of doing things. So,
+if you can you go to the application,
+
+
+[00:18:05] Ranjula Rowel: I can you can show you go to pharmacy
+chatbot.
+
+
+[00:18:10] Ranjula Rowel: These are also pharmacy chatbot is
+something you can't see. OK.
+
+
+[00:18:16] Lalit Summan: Maybe you have access,
+because I think something's restricted
+
+
+[00:18:17] Ranjula Rowel: Chew.
+
+
+[00:18:18] Lalit Summan: online.
+
+
+[00:18:19] Ranjula Rowel: Yeah.
+
+
+[00:18:19] Pavithra Viswanathan: Yeah.
+
+
+[00:18:21] Ranjula Rowel: Yeah,
+it's basically it's like providing the
+
+
+[00:18:24] Ranjula Rowel: access,
+the credentials to the ACP that you could
+
+
+[00:18:28] Ranjula Rowel: create an application or we can provide
+the access credential for a given agent
+
+
+[00:18:34] Ranjula Rowel: as well.
+So that's the idea that we are keeping
+
+
+[00:18:37] Ranjula Rowel: the application.
+
+
+[00:18:41] Satya Kant: Okay.
+
+
+[00:18:42] Ranjula Rowel: Yeah.
+
+
+[00:18:43] Lalit Summan: And I know there's a trace in the audit
+trail, Ranjula,
+
+
+[00:18:46] Lalit Summan: there's traces that can be followed
+through for each one.
+
+
+[00:18:49] Lalit Summan: I don't have access to it for some reason,
+but maybe we can show you that something
+
+
+[00:18:54] Lalit Summan: on a separate call to show you what's
+being traced and the logging details.
+
+
+[00:18:58] Satya Kant: Yeah. No, it's a lot. Thank you.
+
+
+[00:19:01] Lalit Summan: Awesome.
+
+
+[00:19:03] Lalit Summan: Okay, so any more questions,
+any questions, any concerns about ACP?
+
+
+[00:19:12] Lalit Summan: So we're in a position to onboard you to
+the sandbox environment to get started.
+
+
+[00:19:17] Lalit Summan: In order to do so,
+we just wanted to get closer to what the
+
+
+[00:19:21] Lalit Summan: use case is,
+what it is that the team is trying to
+
+
+[00:19:24] Lalit Summan: accomplish here.
+So that way we understand the
+
+
+[00:19:26] Lalit Summan: requirements,
+we'll create a design session with the
+
+
+[00:19:30] Lalit Summan: team, walk you through the design.
+
+
+[00:19:32] Lalit Summan: and then begin the onboarding process
+based on the requirements that you need,
+
+
+[00:19:37] Lalit Summan: right?
+So over to you to help us understand what
+
+
+[00:19:40] Lalit Summan: the RANS dealer transfer and express
+system is,
+
+
+[00:19:43] Lalit Summan: and we'd love to kind of be a closer to
+that.
+
+
+[00:19:48] Hardik Pillai: Sure, thanks, Lalit. Satya,
+do you would you like to? Yeah, alright,
+
+
+[00:19:49] Ranjula Rowel: Yeah.
+
+
+[00:19:52] Ranjula Rowel: Like, if you want, I can, sorry.
+
+
+[00:19:53] Hardik Pillai: yeah.
+
+
+[00:19:54] Vineet A Gupta: I, I think it,
+and also I think it'll be a good idea to
+
+
+[00:19:58] Vineet A Gupta: bring in, like, if you can display the P.
+P.T. Yep, like.
+
+
+[00:20:05] Ranjula Rowel: Yeah, Satya, Satya, just to show you,
+this is the view.
+
+
+[00:20:05] Vineet A Gupta: Or something, okay.
+
+
+[00:20:09] Ranjula Rowel: This is where you have the application
+and you can restrict all the boundaries
+
+
+[00:20:15] Ranjula Rowel: for what this application have access to.
+So this application has access to this
+
+
+[00:20:21] Ranjula Rowel: type of modules and also NCP server or it
+could be this application can be used to
+
+
+[00:20:27] Ranjula Rowel: access this agent. This is the visual.
+
+
+[00:20:30] Ranjula Rowel: representation of what you have access to.
+So you can be managed.
+
+
+[00:20:36] Ranjula Rowel: Let's say if a model that is not being
+granted access and you try to access that
+
+
+[00:20:43] Ranjula Rowel: model, it will get denied.
+You won't have that access.
+
+
+[00:20:47] Ranjula Rowel: So this is the idea.
+
+
+[00:20:50] Ranjula Rowel: you're having application have a multiple
+outbound entries as well as if you want
+
+
+[00:20:57] Ranjula Rowel: to restrict that in the agent level,
+you could go to agent and provide that
+
+
+[00:21:04] Ranjula Rowel: access policies as well.
+So if I go pharmacy.
+
+
+[00:21:09] Ranjula Rowel: and this would have a agent and these are
+the agent would have access to.
+
+
+[00:21:14] Ranjula Rowel: So it's all depend on your use case,
+how you want to set up from the ACP side.
+
+
+[00:21:25] Ranjula Rowel: And about the traces,
+these are all the login traces.
+
+
+[00:21:25] Satya Kant: Okay.
+
+
+[00:21:29] Ranjula Rowel: Each and every request is coming to the
+gateway.
+
+
+[00:21:32] Ranjula Rowel: You would see all the traces logins.
+
+
+[00:21:37] Ranjula Rowel: with the event details and there will be
+some more details being added.
+
+
+[00:21:43] Ranjula Rowel: So we just have to get the latest version
+from the consortium and deploy within our
+
+
+[00:21:50] Ranjula Rowel: ecosystem. So.
+
+
+[00:21:52] Ranjula Rowel: Yeah, these are all about the tracing.
+Each and every request is going through
+
+
+[00:21:58] Ranjula Rowel: our gateway.
+
+
+[00:22:01] Satya Kant: Qin.
+
+
+[00:22:05] Lalit Summan: And once you get onboarded to the Sandbox
+team,
+
+
+[00:22:07] Lalit Summan: you'll be able to kind of play around
+with this.
+
+
+[00:22:08] Satya Kant: Yeah.
+
+
+[00:22:10] Lalit Summan: The idea is to get you to not only
+onboard your use case,
+
+
+[00:22:13] Vineet A Gupta: Yeah.
+
+
+[00:22:13] Lalit Summan: but also give us feedback on some of the
+features that are required in the future
+
+
+[00:22:17] Lalit Summan: builds.
+
+
+[00:22:20] Ranjula Rowel: Yeah,
+and all the pricing details and
+
+
+[00:22:22] Ranjula Rowel: everything, you could take it from here.
+Yeah.
+
+
+[00:22:28] Satya Kant: And all this driving detail is coming
+from AWS.
+
+
+[00:22:28] Ranjula Rowel: Over to you.
+
+
+[00:22:28] Lalit Summan: Chew.
+
+
+[00:22:32] Ranjula Rowel: Yeah, it's yeah,
+so wherever you call the bedrock and the
+
+
+[00:22:32] Satya Kant: Call center.
+
+
+[00:22:36] Ranjula Rowel: response would contain all the tokens and
+including the input, output, cache, input,
+
+
+[00:22:43] Ranjula Rowel: cache, output,
+all the tokens that it's coming from the
+
+
+[00:22:47] Ranjula Rowel: bedrock, it stored it here.
+
+
+[00:22:51] Ranjula Rowel: Okay.
+
+
+[00:22:52] Satya Kant: Okay.
+
+
+[00:22:53] Ranjula Rowel: Yeah.
+
+
+[00:22:55] Satya Kant: Oh.
+
+
+[00:22:55] Lalit Summan: Thank you, Ranjula. Yeah,
+over to your team.
+
+
+[00:22:57] Ranjula Rowel: No problem.
+
+
+[00:22:59] Satya Kant: Okay, let me share my screen.
+We'll just walk through the use case and
+
+
+[00:23:03] Satya Kant: the high-level architecture to see how it
+is fit with this ACP.
+
+
+[00:23:07] Satya Kant: Let me share my screen.
+
+
+[00:23:16] Satya Kant: Hope my screen is visible.
+
+
+[00:23:18] Hardik Pillai: Yep, we can see, yeah.
+
+
+[00:23:20] Satya Kant: Okay.
+
+
+[00:23:23] Satya Kant: On the left-hand side,
+I just wanted to talk about a business
+
+
+[00:23:26] Satya Kant: problem quickly so that we can able to
+understand.
+
+
+[00:23:31] Satya Kant: This tool is for a transfer expense.
+It's Sunlight,
+
+
+[00:23:36] Satya Kant: how the transfer happened from the other
+institution to Sunlight.
+
+
+[00:23:43] Satya Kant: And this is regarding that,
+based on the current data,
+
+
+[00:23:48] Satya Kant: 1 million external transfer requests come
+to us every year, OK, to with our advisor.
+
+
+[00:23:56] Satya Kant: What are advisors?
+Do they manually fill out a transfer form,
+
+
+[00:24:00] Satya Kant: sometimes by pen and paper, by pen,
+and sometimes editable PDF?
+
+
+[00:24:05] Satya Kant: That advisors do manually,
+then advisors send those transfer forms
+
+
+[00:24:10] Satya Kant: to our dealer office team.
+
+
+[00:24:13] Satya Kant: What dealer of steam do?
+
+
+[00:24:16] Satya Kant: They validate that transfer form to
+cheque it is in a good order or not in a
+
+
+[00:24:21] Satya Kant: good order. To cheque that,
+they need to validate information there
+
+
+[00:24:25] Satya Kant: in the transfer form with system like
+Universe to cheque about client detail,
+
+
+[00:24:30] Satya Kant: his name, and other information.
+
+
+[00:24:34] Satya Kant: They also validate account detail in the
+relinquishing institution.
+
+
+[00:24:39] Satya Kant: They'll also cheque about the statements.
+
+
+[00:24:42] Satya Kant: And they'll also cheque the signature.
+I mean,
+
+
+[00:24:45] Satya Kant: this I just talked about with the high
+level,
+
+
+[00:24:47] Satya Kant: so they do those validation to make sure
+that order is I go or Negi go.
+
+
+[00:24:52] Satya Kant: And all those processes they do manually.
+So,
+
+
+[00:24:56] Satya Kant: there's a human who see the form on the
+laptop screen,
+
+
+[00:25:00] Satya Kant: the way they open the universe system,
+they'll validate,
+
+
+[00:25:05] Satya Kant: they'll validate with institutional,
+and this entire process takes almost 10
+
+
+[00:25:11] Satya Kant: to 15 minutes.
+
+
+[00:25:13] Satya Kant: And everything is manual,
+which many times has human mistakes and
+
+
+[00:25:19] Satya Kant: very difficult to scale.
+And it takes 10 to 15 minutes for
+
+
+[00:25:24] Satya Kant: performance. So we see over here is.
+
+
+[00:25:29] Satya Kant: the big opportunity to put AI in place to
+automate those all manual process using
+
+
+[00:25:36] Satya Kant: AI. So if you see right hand side on this,
+what we have done.
+
+
+[00:25:43] Vineet A Gupta: There's a question,
+Satya Lalit has a question.
+
+
+[00:25:44] Satya Kant: What is it?
+
+
+[00:25:44] Hardik Pillai: Lalit, you have a, yeah.
+
+
+[00:25:46] Lalit Summan: Sorry, Satya, just want to again,
+we're not from... Yeah, sorry about that.
+
+
+[00:25:47] Satya Kant: Yeah, I'm not able to see the skin, yeah,
+yeah.
+
+
+[00:25:48] Vineet A Gupta: Tough.
+
+
+[00:25:50] Hardik Pillai: No, no.
+
+
+[00:25:51] Lalit Summan: So, we're not from the from this world.
+So, when you say transfer,
+
+
+[00:25:54] Lalit Summan: these are transfer of funds account.
+What is a transfer?
+
+
+[00:25:56] Satya Kant: Yeah.
+
+
+[00:25:56] Vineet A Gupta: Yeah, yeah, so these are transfer,
+like they could be anything RRSP or like
+
+
+[00:26:02] Lalit Summan: Good.
+
+
+[00:26:02] Vineet A Gupta: the like the direct contributions which
+RPP, any it could be anything,
+
+
+[00:26:08] Vineet A Gupta: so these kind of wealth related assets.
+
+
+[00:26:09] Lalit Summan: Got it, okay.
+
+
+[00:26:11] Lalit Summan: Okay, good to know. Okay, thank you.
+
+
+[00:26:12] Vineet A Gupta: Yeah.
+
+
+[00:26:13] Satya Kant: Yeah,
+so we as a broker actually help our
+
+
+[00:26:16] Satya Kant: client to transfer their portfolio from
+one institute to another institute.
+
+
+[00:26:22] Satya Kant: So this is for that.
+We have almost 250 plus working on the
+
+
+[00:26:26] Satya Kant: dealer.
+
+
+[00:26:27] Lalit Summan: So as an example, so just to double click,
+so this will register in my head.
+
+
+[00:26:27] Satya Kant: Okay.
+
+
+[00:26:32] Lalit Summan: So if I am either coming from outside of
+Sun Life, that's a transfer in request,
+
+
+[00:26:37] Lalit Summan: or if I'm doing Sun Life,
+say I'm going to manually,
+
+
+[00:26:37] Satya Kant: I.
+
+
+[00:26:37] Vineet A Gupta: Yes.
+
+
+[00:26:40] Lalit Summan: not that I will,
+but that is also facilitated by the same
+
+
+[00:26:43] Lalit Summan: team.
+
+
+[00:26:44] Hardik Pillai: Yes, that so,
+so many nominee to nominee transfer out,
+
+
+[00:26:44] Satya Kant: Yes, yes.
+
+
+[00:26:46] Lalit Summan: Birt.
+
+
+[00:26:47] Hardik Pillai: external transfer in,
+everything is handled by this team, yeah.
+
+
+[00:26:51] Lalit Summan: Got it. Okay. Thank you.
+
+
+[00:26:53] Satya Kant: But our current tool currently support
+transferring up for now.
+
+
+[00:26:53] Lalit Summan: The.
+
+
+[00:26:56] Lalit Summan: Got it. And in good order,
+not in good order. That's what I do.
+
+
+[00:26:58] Satya Kant: Okay.
+
+
+[00:27:01] Satya Kant: No doubt, yeah, so to do that,
+there are multiple business rules,
+
+
+[00:27:04] Satya Kant: but important is that the client should
+match. Basically,
+
+
+[00:27:07] Satya Kant: the form which advisor field is a
+different system and where the customer
+
+
+[00:27:11] Satya Kant: details is a different system.
+So they do KYC,
+
+
+[00:27:14] Satya Kant: their account number get generated into
+any other system.
+
+
+[00:27:17] Satya Kant: Do we need to match that the transfer
+form is coming,
+
+
+[00:27:19] Satya Kant: it is for the same customer or not?
+
+
+[00:27:22] Satya Kant: And that form has all the required
+details on that. For that,
+
+
+[00:27:26] Satya Kant: lots of manual effort, we do. Okay.
+On a solution perspective,
+
+
+[00:27:31] Satya Kant: we created this tool.
+So this is an application.
+
+
+[00:27:35] Satya Kant: This is not a typical agentic application
+you can say. Over here, we have a UI.
+
+
+[00:27:41] Satya Kant: Posted on OpenShift cluster, OK,
+which is talking to Lambda present in AWS,
+
+
+[00:27:51] Satya Kant: and that Lambda talk to backdrop.
+
+
+[00:27:56] Satya Kant: where we have all the models.
+What we have done in this member process,
+
+
+[00:28:00] Satya Kant: there's two important parts.
+One is extraction of the data from the
+
+
+[00:28:04] Satya Kant: PDF. So all those forms are in PDF,
+scan or computer print.
+
+
+[00:28:08] Satya Kant: So one is to extract the data.
+In this area, and then the first,
+
+
+[00:28:12] Satya Kant: we are extracting the data from the form,
+okay?
+
+
+[00:28:15] Satya Kant: Once we expected that.
+
+
+[00:28:18] Satya Kant: We have expose our universe API to that
+AI engine.
+
+
+[00:28:21] Satya Kant: I'm calling AI engine because I'm not
+calling AI agent because it does not have
+
+
+[00:28:26] Satya Kant: tool, it does not have any reasoning.
+It's a straightforward sequential flow
+
+
+[00:28:31] Satya Kant: what we have. Once you get the form,
+accept it. After the accepts,
+
+
+[00:28:35] Satya Kant: validate with the universe,
+do all your validation.
+
+
+[00:28:38] Satya Kant: and then decide it is I go and I go.
+And that result will get displayed on the
+
+
+[00:28:44] Satya Kant: UI where dealer ops and dealer ops people
+can see and they inform the advisor and
+
+
+[00:28:50] Satya Kant: they'll have that process for any
+transfer related other activity.
+
+
+[00:28:54] Satya Kant: So that is in a high level.
+Any question Lalit on that?
+
+
+[00:29:00] Pavithra Viswanathan: One question,
+so with respect to this flow and
+
+
+[00:29:00] Satya Kant: Not anyone.
+
+
+[00:29:04] Pavithra Viswanathan: architecture,
+so is it right to say there is a LLM,
+
+
+[00:29:08] Pavithra Viswanathan: like a call to the LLM and inferencing
+and extraction from the PDF,
+
+
+[00:29:13] Satya Kant: Yeah.
+
+
+[00:29:13] Pavithra Viswanathan: but there isn't any agent workflow or
+agents or MCP server?
+
+
+[00:29:19] Satya Kant: No.
+
+
+[00:29:20] Satya Kant: No.
+
+
+[00:29:20] Pavithra Viswanathan: Okay.
+
+
+[00:29:22] Lalit Summan: And it.
+
+
+[00:29:22] Satya Kant: I can.
+
+
+[00:29:25] Lalit Summan: So, you got quite something?
+
+
+[00:29:26] Satya Kant: Moghal.
+
+
+[00:29:29] Lalit Summan: Once it's validated,
+is there a form that's filled out after
+
+
+[00:29:34] Lalit Summan: the fact?
+Is there any correction that has to be?
+
+
+[00:29:38] Lalit Summan: So say something in the LLM decides one
+of the fields has to be changed.
+
+
+[00:29:44] Lalit Summan: Does it go corrected or does it just
+raise?
+
+
+[00:29:48] Lalit Summan: A flag for the advisor to work.
+
+
+[00:29:53] Satya Kant: It will raise the flag.
+Every business rule associated with
+
+
+[00:29:54] Lalit Summan: Okay.
+
+
+[00:29:56] Satya Kant: certain attribute, certain frame,
+something did not match,
+
+
+[00:30:00] Satya Kant: it will just raise.
+We will publish the report,
+
+
+[00:30:02] Satya Kant: the full-fledged report.
+We're not updating anything in the
+
+
+[00:30:03] Lalit Summan: Okay, got it.
+
+
+[00:30:05] Lalit Summan: Okay.
+
+
+[00:30:06] Satya Kant: interesting form. It just validation.
+
+
+[00:30:09] Lalit Summan: And is this in production today?
+This is live.
+
+
+[00:30:12] Satya Kant: This is in, yeah.
+
+
+[00:30:13] Hardik Pillai: It is.
+
+
+[00:30:14] Satya Kant: Yeah.
+
+
+[00:30:14] Lalit Summan: OK, so it's actually.
+
+
+[00:30:18] Lalit Summan: And we're processing it with the volume
+that's being processed through this tool
+
+
+[00:30:22] Lalit Summan: now.
+
+
+[00:30:23] Lalit Summan: Have you gone?
+
+
+[00:30:24] Satya Kant: Ohh.
+
+
+[00:30:25] Hardik Pillai: Lalit, it's been a month or so,
+but we are yet to get that details around
+
+
+[00:30:30] Hardik Pillai: how much of the adoption has happened.
+So we don't really have those numbers yet
+
+
+[00:30:34] Hardik Pillai: with us. I can get those numbers, yeah.
+
+
+[00:30:35] Lalit Summan: Got it, okay.
+
+
+[00:30:38] Satya Kant: Thank you.
+
+
+[00:30:38] Vineet A Gupta: Yeah, Hardik, also, let's also get that,
+like,
+
+
+[00:30:41] Vineet A Gupta: are they processing only at a specific,
+like, for a test for initial analysis?
+
+
+[00:30:46] Vineet A Gupta: Are they processing only specific type of
+forms or like everything together? Like,
+
+
+[00:30:51] Vineet A Gupta: do they have a set number to test this?
+Because I know when we started this
+
+
+[00:30:55] Vineet A Gupta: initially, it was for a specific type.
+
+
+[00:30:57] Vineet A Gupta: things like RRSP forms or something and
+then they expanded it to everything,
+
+
+[00:30:59] Hardik Pillai: Yeah.
+
+
+[00:31:02] Vineet A Gupta: right?
+So let's just ask for testing as well.
+
+
+[00:31:03] Hardik Pillai: Yeah.
+
+
+[00:31:04] Vineet A Gupta: How are they doing that?
+
+
+[00:31:06] Hardik Pillai: So we need that, I already know,
+so they are doing it for all. And yeah,
+
+
+[00:31:07] Vineet A Gupta: The.
+
+
+[00:31:09] Vineet A Gupta: Okay.
+
+
+[00:31:10] Hardik Pillai: and all the team members are now
+basically on to this.
+
+
+[00:31:13] Hardik Pillai: So adoption is there,
+but I just need to know the numbers that
+
+
+[00:31:16] Vineet A Gupta: Okay, okay.
+
+
+[00:31:16] Hardik Pillai: are being processed here.
+
+
+[00:31:19] Satya Kant: Yeah.
+
+
+[00:31:21] Satya Kant: When I initially talked, Vineet on that,
+is currently just taking two to three
+
+
+[00:31:27] Satya Kant: minutes max for one transfer, so validate,
+yeah.
+
+
+[00:31:28] Vineet A Gupta: Okay.
+
+
+[00:31:30] Vineet A Gupta: Chew.
+
+
+[00:31:33] Satya Kant: Do you want me to show the architecture
+also? Oh no, not on the detail,
+
+
+[00:31:37] Satya Kant: but high level.
+How the AWS component look like?
+
+
+[00:31:38] Lalit Summan: Yes, please. Yes, please, that would help.
+
+
+[00:31:40] Ranjula Rowel: Yes, please.
+
+
+[00:31:42] Hardik Pillai: Lalit, do you need a quick demo on this?
+
+
+[00:31:45] Satya Kant: Yeah.
+
+
+[00:31:47] Lalit Summan: I don't know, Ranjula, Pavithra,
+do you think we need a demo with help?
+
+
+[00:31:50] Lalit Summan: We have 11 minutes on,
+be fair to the team to make sure we
+
+
+[00:31:52] Hardik Pillai: So we don't really have to process Lalit.
+We already have the results.
+
+
+[00:31:52] Ranjula Rowel: Yeah.
+
+
+[00:31:53] Lalit Summan: capture it.
+
+
+[00:31:53] Pavithra Viswanathan: Thank you.
+
+
+[00:31:55] Satya Kant: Bent.
+
+
+[00:31:55] Hardik Pillai: We'll just quickly show you how does it
+look like, right? Yeah. I think...
+
+
+[00:31:56] Lalit Summan: Okay. Okay, perfect. Yep, please.
+
+
+[00:31:58] Pavithra Viswanathan: Yeah, and besides this use case, sorry,
+just one question though.
+
+
+[00:31:58] Ranjula Rowel: Yeah.
+
+
+[00:32:01] Pavithra Viswanathan: Besides this use case,
+did you also have some of the use case to
+
+
+[00:32:04] Pavithra Viswanathan: showcase?
+
+
+[00:32:07] Hardik Pillai: No,
+for this one we are prepared for
+
+
+[00:32:09] Hardik Pillai: transferring only. Yeah, yeah.
+
+
+[00:32:09] Pavithra Viswanathan: Just okay, okay, okay,
+then we should be okay.
+
+
+[00:32:10] Lalit Summan: Yeah, yeah, yeah,
+guess what this would mean.
+
+
+[00:32:11] Vineet A Gupta: Yes.
+
+
+[00:32:13] Lalit Summan: Yeah.
+
+
+[00:32:13] Hardik Pillai: No.
+
+
+[00:32:13] Satya Kant: I think first, let me show the demo,
+then figure time we can talk the
+
+
+[00:32:18] Satya Kant: architecture, OK?
+
+
+[00:32:20] Satya Kant: This is the user interface of this tool,
+so this is in the production, and,
+
+
+[00:32:25] Satya Kant: as I said before,
+it is hosted on the OpenShift.
+
+
+[00:32:29] Satya Kant: Currently, and it is.
+
+
+[00:32:33] Satya Kant: SSO authentication on the back end.
+So if you see in the form in the right
+
+
+[00:32:38] Satya Kant: corner,
+there's an option where you can upload
+
+
+[00:32:41] Satya Kant: the form. So when you click,
+you go to the browse button,
+
+
+[00:32:45] Satya Kant: you can upload the form.
+And once the form gets uploaded,
+
+
+[00:32:48] Satya Kant: you can start the validation.
+This tool also supports French.
+
+
+[00:32:55] Satya Kant: Okay, to save our time,
+I have just processed 2 form and let me
+
+
+[00:32:58] Satya Kant: show you the form also how it looks like.
+So this is the transfer form Lalit was
+
+
+[00:33:03] Satya Kant: talking about, right?
+Where it is say all the detail name of
+
+
+[00:33:06] Satya Kant: the customer account detail and other
+information what is they wanted to
+
+
+[00:33:10] Satya Kant: transfer and then the segment also
+signature as well as the.
+
+
+[00:33:14] Satya Kant: Account is statement.
+
+
+[00:33:15] Lalit Summan: Got it.
+
+
+[00:33:16] Satya Kant: Okay.
+
+
+[00:33:18] Satya Kant: I have processed two different types of
+one, one for Igo and one for Nigo.
+
+
+[00:33:22] Satya Kant: So this is for the Nigo. When you process,
+at the end you will get this result out
+
+
+[00:33:26] Satya Kant: of it.
+
+
+[00:33:27] Satya Kant: OK, over here,
+the high level detail which the team need,
+
+
+[00:33:32] Satya Kant: and then to validate, we have total 12,
+14 steps for every step. It says that, OK,
+
+
+[00:33:38] Satya Kant: is it how it is passed? Like,
+in that case, it says that it is failed,
+
+
+[00:33:43] Satya Kant: and it is failed because the name is...
+
+
+[00:33:46] Satya Kant: Name does not matching the name in the
+form and the name in our universe system
+
+
+[00:33:51] Satya Kant: is not matching, so it's not included.
+
+
+[00:33:55] Satya Kant: Okay.
+
+
+[00:33:56] Satya Kant: Um...
+
+
+[00:33:57] Satya Kant: Better about Igo in good order.
+
+
+[00:34:01] Satya Kant: All the different steps matched,
+all validation passed,
+
+
+[00:34:05] Satya Kant: so it has all validation like seen
+validation advisor detail.
+
+
+[00:34:11] Satya Kant: Relinquishing information, another,
+so everything get passed.
+
+
+[00:34:16] Satya Kant: It says that this I go and they can use
+this report.
+
+
+[00:34:21] Vineet A Gupta: So, Satya, in case of Negi, what happens?
+Like, do we just display that, okay,
+
+
+[00:34:27] Vineet A Gupta: this is not a not in good order,
+and do we generate some kind of actions
+
+
+[00:34:32] Vineet A Gupta: for these guys? Like,
+what do you need to do next? Or is like...
+
+
+[00:34:36] Hardik Pillai: So, yeah, so Vineet actions, not, I mean,
+we don't really trigger anything,
+
+
+[00:34:36] Satya Kant: So.
+
+
+[00:34:40] Hardik Pillai: but Satya, if we can go up,
+so what happens, Vineet,
+
+
+[00:34:44] Hardik Pillai: is after we get an I go click on the
+draught e-mail.
+
+
+[00:34:44] Satya Kant: Yeah.
+
+
+[00:34:48] Satya Kant: Yeah.
+
+
+[00:34:48] Vineet A Gupta: Okay.
+
+
+[00:34:49] Hardik Pillai: They basically have to send a response on
+everything that has been wrong with this.
+
+
+[00:34:52] Vineet A Gupta: Okay, got it. Yeah.
+
+
+[00:34:53] Hardik Pillai: So this automatically is generated for
+them.
+
+
+[00:34:55] Hardik Pillai: They just need to copy this and send it.
+That's it.
+
+NOTE Redacted for privacy: 11 cues between 00:34:58 and 00:35:13 contained personal remarks unrelated to the use case.
+
+
+[00:35:14] Satya Kant: Yeah.
+
+
+[00:35:14] Hardik Pillai: Yep.
+
+
+[00:35:16] Satya Kant: OK, any any more question on this?
+
+
+[00:35:21] Lalit Summan: No, it's good.
+
+
+[00:35:23] Satya Kant: Okay, I can quickly
+
+
+[00:35:26] Vineet A Gupta: In terms of next step, like,
+but let's cheque with the Lalit and team.
+
+
+[00:35:26] Satya Kant: Open the app.
+
+
+[00:35:30] Vineet A Gupta: So do you need the architecture
+walkthrough right away or in terms of
+
+
+[00:35:34] Vineet A Gupta: like just to go to the next steps?
+Do we need to go through the architecture
+
+
+[00:35:37] Lalit Summan: Hut.
+
+
+[00:35:38] Vineet A Gupta: or is there something else?
+
+
+[00:35:39] Lalit Summan: It would be just because we're
+transcribing this and just to get a high
+
+
+[00:35:40] Ranjula Rowel: It.
+
+
+[00:35:43] Lalit Summan: level overview,
+the next step here is we'll do a design
+
+
+[00:35:45] Lalit Summan: review with your team. Vineet,
+once we've captured all the requirements
+
+
+[00:35:47] Vineet A Gupta: Mhm.
+
+
+[00:35:49] Lalit Summan: through the transcript,
+the design review will be just breaking
+
+
+[00:35:51] Lalit Summan: down of this is what we think you need
+from the ACP, this is what's available.
+
+
+[00:35:55] Lalit Summan: Are there any new architectural patterns
+that we have to come up with?
+
+
+[00:35:56] Vineet A Gupta: The.
+
+
+[00:35:58] Lalit Summan: We'll do the assessment.
+
+
+[00:36:00] Lalit Summan: And then we can do a deep dive there as
+well, but just a quick,
+
+
+[00:36:00] Vineet A Gupta: Mmh.
+
+
+[00:36:02] Lalit Summan: like maybe a two or three minute view of
+it will help.
+
+
+[00:36:03] Vineet A Gupta: Perfect, sure.
+
+
+[00:36:05] Vineet A Gupta: Sure.
+
+
+[00:36:05] Ranjula Rowel: And also,
+do you guys need some sort of a
+
+
+[00:36:08] Ranjula Rowel: guardrails?
+Do you have any data restrictions or any
+
+
+[00:36:13] Ranjula Rowel: other special requirements?
+
+
+[00:36:19] Satya Kant: Um...
+
+
+[00:36:21] Satya Kant: No data guarders.
+We're not sending data to CloudWatch.
+
+
+[00:36:23] Ranjula Rowel: Okay.
+
+
+[00:36:25] Satya Kant: We are storing those forms into S3,
+but we have, I mean,
+
+
+[00:36:30] Satya Kant: we are deleting that after one day.
+I think after 30 days, right?
+
+
+[00:36:35] Ranjula Rowel: Okay.
+
+
+[00:36:35] Satya Kant: So we're not restoring those.
+
+
+[00:36:37] Ranjula Rowel: Yeah, OK.
+
+
+[00:36:39] Hardik Pillai: For monitoring purposes,
+we are also storing some things,
+
+
+[00:36:43] Hardik Pillai: but then we have a retention period of 90
+days for that,
+
+
+[00:36:43] Satya Kant: Yeah.
+
+
+[00:36:46] Hardik Pillai: and then we delete it after that, so yeah.
+
+
+[00:36:46] Satya Kant: Nadine.
+
+
+[00:36:48] Ranjula Rowel: Book.
+
+
+[00:36:49] Pavithra Viswanathan: And this is in production today, right?
+
+
+[00:36:49] Ranjula Rowel: Yeah.
+
+
+[00:36:51] Hardik Pillai: It is, it is, yeah.
+
+
+[00:36:52] Satya Kant: Yes.
+
+
+[00:36:53] Pavithra Viswanathan: Yeah, and by any chance,
+do you know the LVT rating for this?
+
+
+[00:36:58] Hardik Pillai: Sorry, what was that, Pavithra?
+
+
+[00:36:59] Satya Kant: Yeah.
+
+
+[00:37:00] Pavithra Viswanathan: Del a del VT rating.
+
+
+[00:37:02] Pavithra Viswanathan: Like is it like I think it's customer
+facing right or advisor facing?
+
+
+[00:37:07] Pavithra Viswanathan: You would have a rating non-functional
+requirement.
+
+
+[00:37:09] Vineet A Gupta: Advisor this.
+
+
+[00:37:10] Hardik Pillai: It's not the advisor facing Pavithra.
+It is for the dealer ops team.
+
+
+[00:37:14] Hardik Pillai: The team uses it to process these forms,
+which they were doing manually before.
+
+
+[00:37:16] Pavithra Viswanathan: Okay.
+
+
+[00:37:19] Hardik Pillai: Are you talking about the risk rating by
+any chance, Pavithra?
+
+
+[00:37:21] Pavithra Viswanathan: OK, yeah, yeah, so no,
+the availability rating, so you know,
+
+
+[00:37:25] Pavithra Viswanathan: if it goes down,
+is there a that will be a time period
+
+
+[00:37:28] Pavithra Viswanathan: before which the application has to come
+up, right? So...
+
+
+[00:37:30] Vineet A Gupta: Yeah.
+
+
+[00:37:33] Lalit Summan: No.
+
+
+[00:37:33] Satya Kant: Yeah.
+
+
+[00:37:33] Pavithra Viswanathan: It.
+
+
+[00:37:34] Hardik Pillai: I'm not aware, I'll find out,
+but I'm not sure, yeah, yeah, yeah.
+
+
+[00:37:36] Satya Kant: Yeah, I'll also need to cheque that.
+
+
+[00:37:39] Pavithra Viswanathan: Okay, because we are prioritizing,
+or I would say like, you know,
+
+
+[00:37:40] Lalit Summan: Yeah, this one.
+
+
+[00:37:43] Pavithra Viswanathan: just because we are testing our voters
+here,
+
+
+[00:37:45] Pavithra Viswanathan: so we are prioritising LVT4 like
+non-critical applications. That way,
+
+
+[00:37:50] Pavithra Viswanathan: if anything goes wrong,
+we have tested it out before we start
+
+
+[00:37:53] Pavithra Viswanathan: onboarding, you know, high risk use cases.
+So just wanted to see where your use case
+
+
+[00:37:57] Hardik Pillai: OK.
+
+
+[00:37:59] Pavithra Viswanathan: falls under.
+
+
+[00:38:01] Hardik Pillai: Okay,
+I'm guessing it should be low risk
+
+
+[00:38:04] Hardik Pillai: Pavithra because it is not customer or
+advisor facing,
+
+
+[00:38:07] Hardik Pillai: but I'll still get that exact number
+rating. Yep.
+
+
+[00:38:09] Pavithra Viswanathan: No.
+
+
+[00:38:10] Lalit Summan: And if it helps,
+I'll just quickly pop this on the screen.
+
+
+[00:38:15] Lalit Summan: Right.
+
+
+[00:38:17] Lalit Summan: LVT like 4 and LVT1, LVT1 meaning maximum.
+
+
+[00:38:24] Lalit Summan: 30 minute downtime a month,
+less than 5 minutes per incident.
+
+
+[00:38:28] Lalit Summan: This is the crown jewel,
+same crown jewel applications at that
+
+
+[00:38:32] Lalit Summan: level. LBT 4, like there's more leeway,
+like we can get in business hours, 9 to 5,
+
+
+[00:38:38] Lalit Summan: AST time, resolve incident.
+We can have a day of downtime of this,
+
+
+[00:38:42] Lalit Summan: like we're trying to understand.
+
+
+[00:38:44] Lalit Summan: what level of production support is
+required when we do promote this into
+
+
+[00:38:48] Lalit Summan: production, at least from our side, right?
+And we need to know what the application
+
+
+[00:38:54] Lalit Summan: kind of availability and reliability
+ratings are.
+
+
+[00:38:57] Hardik Pillai: Got it, and so Lalit,
+who determines this rating?
+
+
+[00:39:02] Lalit Summan: So like, for example,
+the teams that own the application when
+
+
+[00:39:03] Ranjula Rowel: Okay.
+
+
+[00:39:05] Lalit Summan: they are promoting it to production,
+these are one of the things that come up.
+
+
+[00:39:08] Ranjula Rowel: I.
+
+
+[00:39:09] Lalit Summan: When you have an APM record,
+I don't know if you've got an APM record
+
+
+[00:39:12] Lalit Summan: on this yet or not.
+
+
+[00:39:14] Hardik Pillai: Satya, where?
+
+
+[00:39:17] Satya Kant: Um, APM ID you're talking about?
+
+
+[00:39:20] Lalit Summan: Yeah, the ID. Ranjula can keep me honest,
+but...
+
+
+[00:39:21] Satya Kant: Appiah.
+
+
+[00:39:23] Ranjula Rowel: Yeah.
+
+
+[00:39:24] Satya Kant: Neb.
+
+
+[00:39:25] Pavithra Viswanathan: Your business users usually advise.
+
+
+[00:39:25] Satya Kant: Van.
+
+
+[00:39:28] Satya Kant: Yeah.
+
+
+[00:39:29] Ranjula Rowel: Yeah, you should.
+
+
+[00:39:29] Pavithra Viswanathan: Your business plan to contact,
+they would be the person who would advise.
+
+
+[00:39:33] Ranjula Rowel: Yeah,
+also that would trigger if somebody is
+
+
+[00:39:36] Ranjula Rowel: supporting from AOS side for this
+application,
+
+
+[00:39:40] Ranjula Rowel: they would have been asked these
+questions because LVT ratings and all,
+
+
+[00:39:42] Hardik Pillai: Okay.
+
+
+[00:39:45] Ranjula Rowel: it belongs to them mostly, like, you know,
+they would have to react, right? So.
+
+
+[00:39:50] Hardik Pillai: So they should be able to help us with
+this rating, right? OK, OK, OK, OK.
+
+
+[00:39:53] Ranjula Rowel: Yeah, they should be having, yeah,
+maybe the business might have, yeah.
+
+
+[00:39:55] Hardik Pillai: Perfect.
+
+
+[00:39:55] Pavithra Viswanathan: Yeah, when you entered the production,
+this would have been some of the
+
+
+[00:39:59] Pavithra Viswanathan: questions that you guys would have asked
+during transition.
+
+
+[00:40:02] Ranjula Rowel: Yeah.
+
+
+[00:40:03] Satya Kant: Yes, Pavithra, we had.
+
+
+[00:40:04] Hardik Pillai: Let,
+let a second get back for withdraw on
+
+
+[00:40:06] Satya Kant: We'll we'll check, yeah,
+but we hired a SMB team on this.
+
+
+[00:40:06] Pavithra Viswanathan: No problem.
+
+
+[00:40:06] Hardik Pillai: this, yeah, yeah.
+
+
+[00:40:09] Satya Kant: I think they followed all those required
+steps. We can get that report,
+
+
+[00:40:13] Satya Kant: let me tell you.
+
+
+[00:40:14] Ranjula Rowel: They should be having that for sure.
+
+
+[00:40:16] Hardik Pillai: But.
+
+
+[00:40:17] Satya Kant: Yeah, I remember, yeah, there's something.
+
+
+[00:40:24] Hardik Pillai: Lai.
+
+
+[00:40:26] Ranjula Rowel: And if you could share the architecture
+diagram as well,
+
+
+[00:40:32] Ranjula Rowel: that would help us to do the design from
+our side.
+
+
+[00:40:38] Satya Kant: I'll do that.
+
+
+[00:40:38] Hardik Pillai: Sure.
+
+
+[00:40:39] Ranjula Rowel: Yeah, thank you.
+
+
+[00:40:39] Lalit Summan: Sweet.
+
+
+[00:40:41] Lalit Summan: So the next steps for us is we'll
+transcribe this call, put it into our D0,
+
+
+[00:40:42] Satya Kant: Yeah.
+
+
+[00:40:46] Lalit Summan: our requirements document.
+We'll design the,
+
+
+[00:40:48] Lalit Summan: based on the requirements,
+we'll create a design doc,
+
+
+[00:40:52] Lalit Summan: we'll share it back with the team.
+Once we have consensus,
+
+
+[00:40:55] Lalit Summan: we'll assign an engineer on our team to
+help you onboard, which means...
+
+
+[00:41:00] Lalit Summan: And it's a pretty quick process.
+Ranjula is kind of really needing that
+
+
+[00:41:03] Ranjula Rowel: Yeah.
+
+
+[00:41:03] Lalit Summan: space. We'll create a folder,
+give you the permissions,
+
+
+[00:41:06] Lalit Summan: here are the links, go at it.
+
+
+[00:41:08] Hardik Pillai: Yeah.
+
+
+[00:41:09] Satya Kant: Um, let me, a quick last question.
+We know it was just on time from our
+
+
+[00:41:13] Satya Kant: perspective,
+there's no code refactoring any changes
+
+
+[00:41:16] Satya Kant: needed for this migration tool.
+They're all smooth, right?
+
+
+[00:41:18] Ranjula Rowel: Yeah.
+
+
+[00:41:20] Ranjula Rowel: No,
+it's needed from you because right now
+
+
+[00:41:24] Ranjula Rowel: you are calling your own bedrock in your
+workload account, right? So you,
+
+
+[00:41:30] Satya Kant: Right, right.
+
+
+[00:41:30] Ranjula Rowel: so we would be providing a similar kind
+of a like, you know, Boto 3 SDK. We have,
+
+
+[00:41:37] Ranjula Rowel: we call that harness SDK.
+
+
+[00:41:39] Ranjula Rowel: which has all the capabilities,
+how you could call the ACP.
+
+
+[00:41:40] Satya Kant: Yeah.
+
+
+[00:41:46] Ranjula Rowel: the gateway.
+So you would have to import that SDK and
+
+
+[00:41:50] Ranjula Rowel: you have to make the code change in your
+lambda side.
+
+
+[00:41:54] Ranjula Rowel: Because right now you must be calling the,
+like, you know, motor 3 runtime,
+
+
+[00:41:55] Satya Kant: Okay.
+
+
+[00:41:58] Satya Kant: Okay.
+
+
+[00:42:00] Ranjula Rowel: the bedrock call, right?
+So that would replace with our harness
+
+
+[00:42:02] Satya Kant: Yeah.
+
+
+[00:42:05] Ranjula Rowel: SDK that would call the our LLN gateway,
+the ACP gateway, to call the bedrock.
+
+
+[00:42:13] Satya Kant: OKOK.
+
+
+[00:42:13] Ranjula Rowel: Yeah, yeah.
+
+
+[00:42:15] Ranjula Rowel: So we will provide you all the details,
+what is needed,
+
+
+[00:42:19] Ranjula Rowel: and we have all the documentations,
+how you could call and harness SDK.
+
+
+[00:42:25] Ranjula Rowel: So once we have everything is ready,
+we will share all the details with you
+
+
+[00:42:30] Ranjula Rowel: guys with the secret and the secret IDs
+and the secret keys. So and.
+
+
+[00:42:36] Ranjula Rowel: With the detailed instruction,
+how you could on like onboarding plus
+
+
+[00:42:40] Ranjula Rowel: making the code change from your side.
+
+
+[00:42:44] Hardik Pillai: Show.
+
+
+[00:42:45] Ranjula Rowel: Yeah.
+
+
+[00:42:46] Hardik Pillai: Sounds good, right?
+
+
+[00:42:47] Satya Kant: Okay.
+
+
+[00:42:50] Lalit Summan: Chew.
+
+
+[00:42:53] Hardik Pillai: I like.
+
+
+[00:42:53] Vineet A Gupta: Of course.
+
+
+[00:42:54] Satya Kant: Thank you.
+
+
+[00:42:55] Hardik Pillai: Thanks, thanks a lot. Yep, alright,
+bye bye.
+
+
+[00:42:55] Vineet A Gupta: Sure. Thank you. Thank you.
+Have a good day.
+
+
+[00:42:57] Satya Kant: Excellent. Thank you.

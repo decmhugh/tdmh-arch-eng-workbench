@@ -1,0 +1,40 @@
+component: governance-intake
+title: "Governance Intake & Risk Classification (Sun Life) \u2014 Product Spec"
+description: 'Sun Life product-team spec for the governance intake + risk-classification
+  process on the Luminate stack: an AI-assisted intake (Amazon Quick) that runs the
+  reusable risk-triage engine (consortium governance-risk-triage) seeded with CMRM''s
+  GenAI Model Risk Classification Field Guide, maps the resulting risk band to Sun
+  Life Model Risk tiers, binds validation requirements and required evaluations per
+  band (CMRM policies + evaluation metric guide), routes PIA/ISRA/ATG to ServiceNow,
+  syncs Archer as GRC system-of-record, and drives the Luminate Agent/Model/MCP registry
+  lifecycle and gated deployments. Consumes the generic consortium engines; all Sun
+  Life specifics (Field Guide, sub-codes, OSFI frequencies, Archer/ServiceNow) are
+  configured here, not forked upstream. Supersedes the legacy internal governance-integration
+  (EACPP-21) for the Luminate go-forward.'
+current_gate: D3
+status: draft
+spec_type: governance
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-877
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113090363890"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- sunlife-deployment
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []

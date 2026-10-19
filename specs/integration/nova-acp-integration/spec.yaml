@@ -1,0 +1,42 @@
+component: nova-acp-integration
+confluence_url: ''
+created_at: 2026-08-10
+description: "Enable self-service agent registration from NOVA UI into ACP governance\
+  \ framework with unified catalogue, compliance controls, and MicroVM observability.\n\
+  \nh2. Problem Statement\n\u2022 Developers have no standardized pathway to register\
+  \ agents from NOVA into ACP\n\u2022 Coding agents run in isolation without centralized\
+  \ observability or audit trails\n\u2022 Multiple portals required (friction for\
+  \ adoption)\n\u2022 Compliance blind spot for high-risk coding agents with CLI/write\
+  \ access\n\nh2. Success Criteria\n\u2022 Agents can be registered into ACP from\
+  \ NOVA UI without manual ACP access\n\u2022 Time to register an agent: < 5 minutes\n\
+  \u2022 100% audit trail coverage for agent registration and execution\n\u2022 80%\
+  \ developer adoption within 3 months\n\u2022 All agent lifecycle events flow through\
+  \ ACP governance framework\n\nh2. Acceptance Criteria\n\u2022 NOVA \u2192 ACP agent\
+  \ registration API integration complete\n\u2022 Self-service registration UI flow\
+  \ operational in NOVA\n\u2022 Authorization workflow enforced (team lead + security\
+  \ approval required)\n\u2022 MicroVM observability integrated with ACP monitoring\n\
+  \u2022 Rate limiting and quota enforcement per agent configured\n\u2022 Production\
+  \ deployment with zero manual registrations required\n\nh2. In Scope (MVP)\n\u2022\
+  \ NOVA \u2192 ACP agent registration API contract\n\u2022 Self-service registration\
+  \ UI in NOVA\n\u2022 Classification of agent types (read-only vs. CLI/write access)\n\
+  \u2022 Authorization workflow (team lead + security approval)\n\u2022 Audit trail\
+  \ for all registration events\n\u2022 MicroVM observability integration with ACP\
+  \ monitoring\n\u2022 Standard auth support (MS EntraID / Okta)\n\nh2. Out of Scope\
+  \ (Backlog)\n\u2022 IDP agent catalogue sync (future integration)\n\u2022 Cross-region\
+  \ failover and global DNS routing\n\u2022 Non-standard auth environments (e.g.,\
+  \ DentaQuest legacy)\n\u2022 Runtime policy enforcement (e.g., blocking agents based\
+  \ on signals)\n\u2022 Agent update/rollback workflows\n\nSource of truth: acp-specs/specs/integration/nova-acp-integration/\
+  \ (D0-D3)\n"
+gate_status: "D1 and D2 drafted 2026-09-04 for the Nova/EA working session. D0 is superseded
+  in five respects — see d1-requirements.md \xA70. Blocked on Q-1 (which Nova entity model an
+  ACP provider targets) before any provider work starts."
+jira_epic: EACPP-895
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113134338468"
+last_updated: 2026-09-04
+reviewers:
+- pavithra.viswanathan@sunlife.com
+- kristy.ashley@sunlife.com
+current_gate: D2
+status: draft
+spec_type: integration
+title: NOVA & ACP Integration

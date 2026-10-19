@@ -1,0 +1,1921 @@
+WEBVTT
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/8-0
+00:00:03.332 --> 00:00:07.864
+<v Lalit Summan>why it exists, what we, what's the intent.
+Before we get into the product demo,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/8-1
+00:00:07.864 --> 00:00:10.922
+<v Lalit Summan>Andy and Mahmood,
+in terms of any questions about the</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/8-2
+00:00:10.922 --> 00:00:11.772
+<v Lalit Summan>product itself.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/9-0
+00:00:17.292 --> 00:00:18.972
+<v Mahmoud Khalil>For me, I have no questions.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/11-0
+00:00:20.012 --> 00:00:23.747
+<v Andy Zhu>Yeah,
+I think Robert last week gave us a pretty</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/11-1
+00:00:23.747 --> 00:00:28.181
+<v Andy Zhu>decent kind of overview of what's what we
+should expect.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/10-0
+00:00:27.932 --> 00:00:28.052
+<v Lalit Summan>Yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/11-2
+00:00:28.181 --> 00:00:34.172
+<v Andy Zhu>So I think some questions I think will
+come after we heard the training. So,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/11-3
+00:00:34.172 --> 00:00:35.572
+<v Andy Zhu>all right, thanks.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/12-0
+00:00:36.412 --> 00:00:40.011
+<v Lalit Summan>Yeah, we have the ACP,
+we call it Luminate,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/12-1
+00:00:40.011 --> 00:00:46.800
+<v Lalit Summan>up and running within our dev environment.
+So that's what Seth will showcase today</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/12-2
+00:00:46.800 --> 00:00:47.372
+<v Lalit Summan>for us.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/13-0
+00:00:50.052 --> 00:00:51.652
+<v Lalit Summan>Whenever you're ready, Sid, no pleasure.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/14-0
+00:00:51.692 --> 00:00:52.572
+<v Seth Chalmers>Let me see.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/17-0
+00:01:05.812 --> 00:01:09.052
+<v Seth Chalmers>OK, so while that's going up,
+we'll just open up the portal here.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/23-0
+00:01:17.532 --> 00:01:26.616
+<v Seth Chalmers>So this is the Luminate portal today.
+It's got basically agents, MCP servers,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/23-1
+00:01:26.616 --> 00:01:35.932
+<v Seth Chalmers>models, applications. So we've got a, oh,
+there it is. We've got a interactive.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/27-0
+00:01:36.732 --> 00:01:42.972
+<v Seth Chalmers>UI where you can go and register your
+agents, your MCP servers, models, apps,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/27-1
+00:01:42.972 --> 00:01:44.492
+<v Seth Chalmers>that sort of thing.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/28-0
+00:01:48.412 --> 00:01:49.612
+<v Seth Chalmers>And...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/31-0
+00:01:51.852 --> 00:01:58.665
+<v Seth Chalmers>This is the beauty of doing stuff in dev.
+It looks like a bunch of stuff was</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/31-1
+00:01:58.665 --> 00:02:03.001
+<v Seth Chalmers>deleted.
+But so we've got basically models here.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/31-2
+00:02:03.001 --> 00:02:09.990
+<v Seth Chalmers>These are being synced from Bedrock.
+We also have some stuff underway for like</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/31-3
+00:02:09.990 --> 00:02:11.052
+<v Seth Chalmers>self-hosted.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/32-0
+00:02:11.212 --> 00:02:15.744
+<v Seth Chalmers>models within the Sun Life environment.
+So we've actually,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/32-1
+00:02:15.744 --> 00:02:21.735
+<v Seth Chalmers>we're working on a pattern to establish
+like pulling small language models or</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/32-2
+00:02:21.735 --> 00:02:28.033
+<v Seth Chalmers>essentially any language models that have
+gone through legal review over into our</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/32-3
+00:02:28.033 --> 00:02:31.412
+<v Seth Chalmers>Sun Life environment.
+So we deploy them on.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/35-0
+00:02:31.532 --> 00:02:36.639
+<v Seth Chalmers>EKS, serve them.
+And the advantage of the ACP is that once</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/35-1
+00:02:36.639 --> 00:02:41.314
+<v Seth Chalmers>all the traffic is going through one of
+our gateways,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/35-2
+00:02:41.314 --> 00:02:45.122
+<v Seth Chalmers>we can set policies on agents,
+MCP servers,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/35-3
+00:02:45.122 --> 00:02:52.047
+<v Seth Chalmers>and models and applications to allow that
+connection to take place if the right</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/35-4
+00:02:52.047 --> 00:02:53.692
+<v Seth Chalmers>policies are there.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/36-0
+00:02:55.612 --> 00:02:57.372
+<v Seth Chalmers>So if I take a look at this one.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/41-0
+00:02:58.812 --> 00:03:04.917
+<v Seth Chalmers>You can kind of see how this works out.
+But we have various agents and policies</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/41-1
+00:03:04.917 --> 00:03:10.029
+<v Seth Chalmers>that govern their action.
+So you can see this policy assistant has</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/41-2
+00:03:10.029 --> 00:03:15.065
+<v Seth Chalmers>access to Claude 3 Haiku.
+It's got access to an MCP server called</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/41-3
+00:03:15.065 --> 00:03:17.812
+<v Seth Chalmers>Claims Tools. And so let's just see.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/44-0
+00:03:19.532 --> 00:03:21.852
+<v Seth Chalmers>if it's just a UI glitch.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/51-0
+00:03:30.612 --> 00:03:37.437
+<v Seth Chalmers>So what I've got here is just a local
+kind of chat bot wrapper around some of</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/51-1
+00:03:37.437 --> 00:03:43.737
+<v Seth Chalmers>the stuff registered in Luminate.
+So all of this is running in Bedrock.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/51-2
+00:03:43.737 --> 00:03:50.212
+<v Seth Chalmers>So there's an orchestrator agent which
+makes agent to agent calls over to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/54-0
+00:03:50.292 --> 00:03:54.751
+<v Seth Chalmers>other agents that are also deployed in
+Bedrock Agent Core.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/54-1
+00:03:54.751 --> 00:03:58.983
+<v Seth Chalmers>So they're deployed as Agent Core runtime
+environments.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/54-2
+00:03:58.983 --> 00:04:03.517
+<v Seth Chalmers>And so the claims intake agent,
+when I make a request over,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/54-3
+00:04:03.517 --> 00:04:09.563
+<v Seth Chalmers>it first goes to the orchestrator agent,
+makes a call over to one of its worker</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/54-4
+00:04:09.563 --> 00:04:10.092
+<v Seth Chalmers>agents.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/55-0
+00:04:10.732 --> 00:04:17.569
+<v Seth Chalmers>all of the interactions like the agent to
+agent call, discovering the MCP tools,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/55-1
+00:04:17.569 --> 00:04:22.127
+<v Seth Chalmers>actually making the call to Cloud 3 Haiku
+in Bedrock,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/55-2
+00:04:22.127 --> 00:04:29.132
+<v Seth Chalmers>all of this is kind of governed through
+Luminate. And so basically this agent and.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/58-0
+00:04:29.532 --> 00:04:35.118
+<v Seth Chalmers>the models are only able to be called
+with associated access policies.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/58-1
+00:04:35.118 --> 00:04:41.569
+<v Seth Chalmers>And so hopefully this works as well. Yeah.
+So what I've done behind the scenes is</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/58-2
+00:04:41.569 --> 00:04:47.312
+<v Seth Chalmers>kind of demo a blocked request.
+And so I tried to make internally within</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/58-3
+00:04:47.312 --> 00:04:48.492
+<v Seth Chalmers>the agent code.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/63-0
+00:04:48.892 --> 00:04:53.645
+<v Seth Chalmers>This is essentially just trying to get it
+to call an Opus model.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/63-1
+00:04:53.645 --> 00:04:58.544
+<v Seth Chalmers>And if I go back to the policy,
+this only has access to Cloud 3 IQ</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/63-2
+00:04:58.544 --> 00:05:02.931
+<v Seth Chalmers>running in Bedrock.
+So when I go and try and make a call to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/63-3
+00:05:02.931 --> 00:05:08.415
+<v Seth Chalmers>an Opus level model, it's banned.
+So essentially when it makes the call to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/63-4
+00:05:08.415 --> 00:05:09.292
+<v Seth Chalmers>the gateway,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/66-0
+00:05:09.772 --> 00:05:14.328
+<v Seth Chalmers>There's a policy that says you can't
+access this model,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/66-1
+00:05:14.328 --> 00:05:19.534
+<v Seth Chalmers>and so the access is denied and no
+further requests go through.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/66-2
+00:05:19.534 --> 00:05:23.683
+<v Seth Chalmers>And that's kind of the basic operation of
+the ACP.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/66-3
+00:05:23.683 --> 00:05:29.052
+<v Seth Chalmers>And this kind of allows us to implement
+many types of guardrails.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/67-0
+00:05:29.612 --> 00:05:34.057
+<v Seth Chalmers>So it could be trying to call an agent
+that doesn't have access to,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/67-1
+00:05:34.057 --> 00:05:39.548
+<v Seth Chalmers>another model that doesn't have access to,
+an MCP server it doesn't have access to,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/67-2
+00:05:39.548 --> 00:05:43.404
+<v Seth Chalmers>or there can be like bedrock guardrails
+which are applied.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/67-3
+00:05:43.404 --> 00:05:48.372
+<v Seth Chalmers>Let's say we want to filter some of the
+output, or it's trying to make a...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/68-0
+00:05:48.572 --> 00:05:53.440
+<v Seth Chalmers>a request or leak some secrets.
+These are sorts of things that we can</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/68-1
+00:05:53.440 --> 00:05:58.587
+<v Seth Chalmers>control because all of the interaction
+for the agent is going through the</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/68-2
+00:05:58.587 --> 00:06:02.064
+<v Seth Chalmers>gateway.
+It can also be a budgeting constraint or</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/68-3
+00:06:02.064 --> 00:06:06.515
+<v Seth Chalmers>any types of token limits we might want
+to place on this agent.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/68-4
+00:06:06.515 --> 00:06:08.532
+<v Seth Chalmers>So all of these are features.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/75-0
+00:06:08.892 --> 00:06:14.999
+<v Seth Chalmers>that we can set within Luminate.
+And you can kind of have a visual of like</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/75-1
+00:06:14.999 --> 00:06:20.781
+<v Seth Chalmers>what usage is going through.
+You can see the requests that I just made</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/75-2
+00:06:20.781 --> 00:06:27.132
+<v Seth Chalmers>in here. So you can see the token usage,
+the model calls, that sort of thing.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/82-0
+00:06:28.892 --> 00:06:32.649
+<v Seth Chalmers>And then coming soon is also all the
+evaluations.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/82-1
+00:06:32.649 --> 00:06:38.285
+<v Seth Chalmers>So you can see any tests that were done,
+like using tools like LangFuse or</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/82-2
+00:06:38.285 --> 00:06:44.221
+<v Seth Chalmers>OpenLayer, open source tooling as well.
+And because everything's going through</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/82-3
+00:06:44.221 --> 00:06:48.279
+<v Seth Chalmers>the gateway,
+we can also see all of these metrics and</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/82-4
+00:06:48.279 --> 00:06:49.932
+<v Seth Chalmers>stuff per agent model.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/83-0
+00:06:50.332 --> 00:06:52.332
+<v Seth Chalmers>MCP server as well.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/86-0
+00:06:56.532 --> 00:07:02.172
+<v Seth Chalmers>And that's kind of the basic gist of it.
+I'm not sure if there's any questions.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/91-0
+00:07:04.092 --> 00:07:07.929
+<v Andy Zhu>Yeah, and again,
+thanks for the for the presentation.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/91-1
+00:07:07.929 --> 00:07:13.612
+<v Andy Zhu>I guess I just have a quick question. So,
+you basically the demo is around this</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/91-2
+00:07:13.612 --> 00:07:18.159
+<v Andy Zhu>Asian core and, like,
+is a usage case of an Asian core and plus</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/91-3
+00:07:18.159 --> 00:07:23.132
+<v Andy Zhu>the MCP server combined in this use case,
+and we're just wondering...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/93-0
+00:07:23.372 --> 00:07:27.989
+<v Andy Zhu>Is that kind of like a mandatory thing to
+work with ACP?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/93-1
+00:07:27.989 --> 00:07:34.468
+<v Andy Zhu>It has to do with MCP or MCP with Agent
+Core, that kind of stuff, or it's just,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/93-2
+00:07:34.468 --> 00:07:36.412
+<v Andy Zhu>you know, this use case.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/96-0
+00:07:37.852 --> 00:07:42.238
+<v Seth Chalmers>Just this use case,
+so it also works like with OpenShift</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/96-1
+00:07:42.238 --> 00:07:46.854
+<v Seth Chalmers>deployed MCP servers,
+any type of Kubernetes environment as</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/96-2
+00:07:46.854 --> 00:07:52.239
+<v Seth Chalmers>well are all also supported.
+So the goal of the ACP is essentially to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/96-3
+00:07:52.239 --> 00:07:55.932
+<v Seth Chalmers>integrate with any type of agent tech
+platform.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/99-0
+00:07:57.292 --> 00:08:04.149
+<v Andy Zhu>I see. And the other, sorry,
+the other question I had was around,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/99-1
+00:08:04.149 --> 00:08:12.252
+<v Andy Zhu>so one of the playing point we're trying
+to resolve with Omega is that the...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/103-0
+00:08:15.532 --> 00:08:21.610
+<v Andy Zhu>Sorry, I hit the mute button,
+but the access problem we were having was</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/103-1
+00:08:21.610 --> 00:08:27.098
+<v Andy Zhu>a lot of tools were invoking,
+and right now we're operating on a</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/103-2
+00:08:27.098 --> 00:08:31.572
+<v Andy Zhu>functional ID-based access. Sorry,
+give me a second.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/102-0
+00:08:32.972 --> 00:08:33.452
+<v Seth Chalmers>Good.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/106-0
+00:08:37.212 --> 00:08:41.912
+<v Andy Zhu>All right, sorry guys. So,
+so first we're we're we're operating on</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/106-1
+00:08:41.912 --> 00:08:47.453
+<v Andy Zhu>the functionality based. So, for example,
+right now we're accessing tools like</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/106-2
+00:08:47.453 --> 00:08:51.030
+<v Andy Zhu>Jenkins or Bitbuckets or even OpenShift
+sometimes,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/106-3
+00:08:51.030 --> 00:08:56.641
+<v Andy Zhu>but those are based on the access of the
+of the functionality itself instead of</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/106-4
+00:08:56.641 --> 00:09:01.481
+<v Andy Zhu>the actual access of the users,
+which raised the concern of security</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/106-5
+00:09:01.481 --> 00:09:01.972
+<v Andy Zhu>issues.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/107-0
+00:09:02.652 --> 00:09:08.716
+<v Andy Zhu>and potentially allowing 1 user to have
+access to some places that they're not</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/107-1
+00:09:08.716 --> 00:09:13.859
+<v Andy Zhu>supposed to have access to.
+And we were told kind of in their last</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/107-2
+00:09:13.859 --> 00:09:18.849
+<v Andy Zhu>meeting that potentially,
+potentially that ACP can resolve this.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/107-3
+00:09:18.849 --> 00:09:21.612
+<v Andy Zhu>Do you have anything to add on that?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/108-0
+00:09:22.492 --> 00:09:27.226
+<v Seth Chalmers>Yep, yeah,
+so this is one of the main problems that</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/108-1
+00:09:27.226 --> 00:09:33.325
+<v Seth Chalmers>the ACP is meant to solve.
+So what you're describing is like an on</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/108-2
+00:09:33.325 --> 00:09:40.517
+<v Seth Chalmers>behalf of flow where a user invokes an
+agent which invokes a tool and you want</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/108-3
+00:09:40.517 --> 00:09:40.972
+<v Seth Chalmers>that.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/111-0
+00:09:41.212 --> 00:09:46.648
+<v Seth Chalmers>users access to be delegated to that
+agent to basically restrict least</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/111-1
+00:09:46.648 --> 00:09:50.400
+<v Seth Chalmers>privilege,
+like whatever that MCP server tool is</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/111-2
+00:09:50.400 --> 00:09:55.912
+<v Seth Chalmers>exposing to the user's access.
+So there's a few moving pieces that need</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/109-0
+00:09:52.572 --> 00:09:52.732
+<v Andy Zhu>Ohh.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/110-0
+00:09:54.092 --> 00:09:54.412
+<v Andy Zhu>Yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/111-3
+00:09:55.912 --> 00:10:01.578
+<v Seth Chalmers>to be done to make that happen,
+but the ACP has all the back-end plumbing</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/111-4
+00:10:01.578 --> 00:10:03.492
+<v Seth Chalmers>to do those on behalf of.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/112-0
+00:10:03.572 --> 00:10:07.565
+<v Seth Chalmers>flows now.
+So if you have a application or something</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/112-1
+00:10:07.565 --> 00:10:12.537
+<v Seth Chalmers>like that, like Omega,
+and you have users signing in through SSO,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/112-2
+00:10:12.537 --> 00:10:17.659
+<v Seth Chalmers>they invoke an agent or MCP tool,
+which is integrated with the ACP,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/112-3
+00:10:17.659 --> 00:10:21.652
+<v Seth Chalmers>we can do that token exchange on behalf
+of the user.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/115-0
+00:10:22.852 --> 00:10:29.795
+<v Seth Chalmers>pass that on to the agent on the MCP
+server in kind, kind of along that chain.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/115-1
+00:10:29.795 --> 00:10:37.178
+<v Seth Chalmers>But that requires those tools that you're
+getting access to. So Jenkins, Bitbucket,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/115-2
+00:10:37.178 --> 00:10:42.012
+<v Seth Chalmers>these sorts of things as MCP servers.
+And there's a...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/114-0
+00:10:41.252 --> 00:10:42.132
+<v Andy Zhu>I see.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/116-0
+00:10:42.212 --> 00:10:48.219
+<v Seth Chalmers>There's work across the organization to
+make these kinds of MCP servers available.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/116-1
+00:10:48.219 --> 00:10:52.705
+<v Seth Chalmers>So those obviously I don't think are
+developed at this point,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/116-2
+00:10:52.705 --> 00:10:56.613
+<v Seth Chalmers>but once they're developed and registered
+in the ECP,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/116-3
+00:10:56.613 --> 00:11:01.172
+<v Seth Chalmers>we can handle all of those concerns in
+that on behalf of flow.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/117-0
+00:11:01.892 --> 00:11:07.635
+<v Andy Zhu>Ohh, that sounds that sounds great,
+because right now we're we're facing kind</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/117-1
+00:11:07.635 --> 00:11:10.874
+<v Andy Zhu>of a kind of confusing situation right
+now,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/117-2
+00:11:10.874 --> 00:11:16.985
+<v Andy Zhu>which right now we're not onboarded like
+every all the tools we're having is still</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/117-3
+00:11:16.985 --> 00:11:22.212
+<v Andy Zhu>like direct invoking instead of an MCP
+server for our agent for Omega.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/119-0
+00:11:23.252 --> 00:11:27.857
+<v Andy Zhu>And the reason behind it is that we
+learned that MCP internally within</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/119-1
+00:11:27.857 --> 00:11:33.240
+<v Andy Zhu>SunLife is not allowed to make internal
+API codes, just which is kind of the case,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/119-2
+00:11:33.240 --> 00:11:36.936
+<v Andy Zhu>but if we like,
+if we have the like company approved MCP</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/119-3
+00:11:36.936 --> 00:11:40.892
+<v Andy Zhu>for, you know, tools like Bitbuckets,
+and that would be a...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/121-0
+00:11:41.492 --> 00:11:47.931
+<v Andy Zhu>That would be great to enforce,
+but I guess the last question I have is</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/121-1
+00:11:47.931 --> 00:11:55.353
+<v Andy Zhu>how does the integration of the ACP looks
+like and what kind of efforts need to be</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/121-2
+00:11:55.353 --> 00:11:57.052
+<v Andy Zhu>put in there? Yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/128-0
+00:11:57.812 --> 00:12:01.333
+<v Seth Chalmers>Yeah,
+so we have a few kind of bits of</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/128-1
+00:12:01.333 --> 00:12:07.834
+<v Seth Chalmers>documentation to get you started.
+So we have a harness that we provide.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/128-2
+00:12:07.834 --> 00:12:14.605
+<v Seth Chalmers>It's A Python kind of client that you can
+import that will help you along,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/128-3
+00:12:14.605 --> 00:12:16.772
+<v Seth Chalmers>basically switching your</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/133-0
+00:12:17.172 --> 00:12:22.120
+<v Seth Chalmers>current agent or deployment over to using
+the ACP. So essentially,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/133-1
+00:12:22.120 --> 00:12:28.028
+<v Seth Chalmers>how do you route to the ACP's gateway?
+So there's some changes you need to make</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/133-2
+00:12:28.028 --> 00:12:32.680
+<v Seth Chalmers>to your code if you're not already using
+some type of gateway.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/133-3
+00:12:32.680 --> 00:12:37.332
+<v Seth Chalmers>And so we have like full user guides and
+everything like that.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/138-0
+00:12:37.812 --> 00:12:41.666
+<v Seth Chalmers>And then once we get you onboarded to the
+platform itself,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/138-1
+00:12:41.666 --> 00:12:45.847
+<v Seth Chalmers>we have a set of user guides for
+interacting with the platform,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/138-2
+00:12:45.847 --> 00:12:48.852
+<v Seth Chalmers>registering MCP servers,
+all that good stuff.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/143-0
+00:12:52.572 --> 00:12:57.262
+<v Andy Zhu>I see, perfect. So it's,
+I'm hearing about something related to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/143-1
+00:12:57.262 --> 00:13:02.024
+<v Andy Zhu>deployments around this,
+or do we need to add ACP as part of the</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/143-2
+00:13:02.024 --> 00:13:05.761
+<v Andy Zhu>deployment,
+or do we need to deploy why ACP? Like,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/143-3
+00:13:05.761 --> 00:13:08.692
+<v Andy Zhu>what's that part relationship look like?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/145-0
+00:13:09.572 --> 00:13:12.773
+<v Seth Chalmers>Yeah,
+so the biggest part is registering like</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/145-1
+00:13:12.773 --> 00:13:18.130
+<v Seth Chalmers>agents and MCP servers particularly.
+So if you have a new MCP server as part</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/144-0
+00:13:17.252 --> 00:13:17.412
+<v Andy Zhu>Yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/145-2
+00:13:18.130 --> 00:13:22.374
+<v Seth Chalmers>of your application that you want to
+integrate with the ACP,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/145-3
+00:13:22.374 --> 00:13:27.036
+<v Seth Chalmers>it'll need to be registered.
+And if you have like existing agents,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/145-4
+00:13:27.036 --> 00:13:29.332
+<v Seth Chalmers>those also need to be registered.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/148-0
+00:13:29.972 --> 00:13:36.552
+<v Seth Chalmers>And so that's done today through the UI.
+And then once those things are registered,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/148-1
+00:13:36.552 --> 00:13:42.034
+<v Seth Chalmers>Luminate will give you like OAuth
+credentials and things like that to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/148-2
+00:13:42.034 --> 00:13:45.559
+<v Seth Chalmers>connect.
+And then the biggest change is just</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/148-3
+00:13:45.559 --> 00:13:48.692
+<v Seth Chalmers>within your actual agent. So your agent.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/149-0
+00:13:48.772 --> 00:13:51.905
+<v Seth Chalmers>Well,
+instead of like making a direct call to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/149-1
+00:13:51.905 --> 00:13:54.901
+<v Seth Chalmers>Bedrock or a particular MCP tool or
+server,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/149-2
+00:13:54.901 --> 00:13:59.736
+<v Seth Chalmers>it'll instead be routing all of its
+traffic through the ACP's gateway.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/149-3
+00:13:59.736 --> 00:14:02.733
+<v Seth Chalmers>So that's something we deploy and
+maintain.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/149-4
+00:14:02.733 --> 00:14:08.249
+<v Seth Chalmers>You don't have to deploy it yourself,
+but you have to make a slight code change,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/149-5
+00:14:08.249 --> 00:14:10.292
+<v Seth Chalmers>basically point your agent at.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/150-0
+00:14:10.692 --> 00:14:14.746
+<v Seth Chalmers>the gateway. MCP servers,
+it just follows all of the regular,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/150-1
+00:14:14.746 --> 00:14:17.885
+<v Seth Chalmers>if you have a custom MCP server deployed
+today,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/150-2
+00:14:17.885 --> 00:14:23.313
+<v Seth Chalmers>it's basically just the registration step
+and then getting some credentials issued</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/150-3
+00:14:23.313 --> 00:14:27.890
+<v Seth Chalmers>through the Luminate portal.
+So not really any code change that needs</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/150-4
+00:14:27.890 --> 00:14:29.852
+<v Seth Chalmers>to happen for your MCP server.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/151-0
+00:14:31.412 --> 00:14:36.632
+<v Andy Zhu>Sounds good, sounds good.
+I guess the final question I have, well,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/151-1
+00:14:36.632 --> 00:14:39.904
+<v Andy Zhu>it was,
+it sounds like everything is very</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/151-2
+00:14:39.904 --> 00:14:44.967
+<v Andy Zhu>buildable and great and just less bit of
+concern, which is like,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/151-3
+00:14:44.967 --> 00:14:51.199
+<v Andy Zhu>so right now we don't have MCP and then
+it feels like the whole point of ACP is</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/151-4
+00:14:51.199 --> 00:14:52.212
+<v Andy Zhu>to build was.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/152-0
+00:14:53.012 --> 00:14:57.821
+<v Andy Zhu>So guarantees and guard rules on the MCP.
+So we first,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/152-1
+00:14:57.821 --> 00:15:04.466
+<v Andy Zhu>I guess we first need to integrate with
+the MCP first if we need, you know,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/152-2
+00:15:04.466 --> 00:15:09.712
+<v Andy Zhu>to actually apply the ACP. And also,
+if we, like right now,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/152-3
+00:15:09.712 --> 00:15:16.182
+<v Andy Zhu>I'm just a bit concerned about the
+latencies and everything because right</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/152-4
+00:15:16.182 --> 00:15:16.532
+<v Andy Zhu>now.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/153-0
+00:15:17.332 --> 00:15:22.886
+<v Andy Zhu>It's a direct tool calling for us,
+and it's really pretty time consuming,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/153-1
+00:15:22.886 --> 00:15:28.665
+<v Andy Zhu>and if you're integrating with ACP,
+I think it serves like a middle layer in</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/153-2
+00:15:28.665 --> 00:15:32.568
+<v Andy Zhu>between the function calling and the
+backlog calls.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/153-3
+00:15:32.568 --> 00:15:37.972
+<v Andy Zhu>Will it introduce a greater kind of
+latency, because if we reintegrate?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/154-0
+00:15:38.452 --> 00:15:41.849
+<v Andy Zhu>Originally,
+it was just a regular to calling,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/154-1
+00:15:41.849 --> 00:15:47.757
+<v Andy Zhu>and it will then become like the code
+invoking the backrock and calling the MCP</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/154-2
+00:15:47.757 --> 00:15:52.704
+<v Andy Zhu>API, but in the middle layer,
+there's also an ACP in between them,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/154-3
+00:15:52.704 --> 00:15:57.652
+<v Andy Zhu>which kind of raised me a little bit
+concerns about the latencies.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/155-0
+00:15:58.052 --> 00:16:03.206
+<v Andy Zhu>Just want to see how things are you guys
+are observing right now. Like,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/155-1
+00:16:03.206 --> 00:16:04.852
+<v Andy Zhu>is it bad or it's okay?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/156-0
+00:16:05.732 --> 00:16:08.887
+<v Seth Chalmers>Yeah,
+it's like routing through the gateway</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/156-1
+00:16:08.887 --> 00:16:14.264
+<v Seth Chalmers>does add latency if you're not already
+routing through a different type of</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/156-2
+00:16:14.264 --> 00:16:17.920
+<v Seth Chalmers>gateway.
+So it's about like 50 milliseconds to 100</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/156-3
+00:16:17.920 --> 00:16:21.576
+<v Seth Chalmers>milliseconds,
+which is pretty immaterial if you're</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/156-4
+00:16:21.576 --> 00:16:24.372
+<v Seth Chalmers>already making like a bedrock LLM call.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/157-0
+00:16:25.012 --> 00:16:29.892
+<v Seth Chalmers>So you could see there in the local host,
+the...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/160-0
+00:16:32.292 --> 00:16:36.223
+<v Seth Chalmers>the call is not like too much added
+latency.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/160-1
+00:16:36.223 --> 00:16:40.852
+<v Seth Chalmers>The biggest bottleneck is still the LLM
+call itself.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/163-0
+00:16:43.572 --> 00:16:47.259
+<v Andy Zhu>Ohh, that's perfect. Uh, well,
+this whole question that I have,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/163-1
+00:16:47.259 --> 00:16:49.332
+<v Andy Zhu>and thanks for that. Um, this Chris.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/164-0
+00:16:48.732 --> 00:16:52.359
+<v Robert Chin>What, when you had mentioned guardrails,
+Andy,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/164-1
+00:16:52.359 --> 00:16:56.372
+<v Robert Chin>are you using an existing bedrock
+guardrails today?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/167-0
+00:16:56.932 --> 00:17:00.256
+<v Andy Zhu>No, not really.
+We're simply invoking them right now.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/167-1
+00:17:00.256 --> 00:17:04.503
+<v Andy Zhu>And by guard rails, I'm not,
+actually I'm not that familiar with all</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/167-2
+00:17:04.503 --> 00:17:08.750
+<v Andy Zhu>the background guard rails.
+Do you mind if you explain a little bit,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/167-3
+00:17:08.750 --> 00:17:11.212
+<v Andy Zhu>like what kind of guard rails are there?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/168-0
+00:17:09.892 --> 00:17:12.701
+<v Robert Chin>Yeah, like, like,
+are you like looking for general</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/168-1
+00:17:12.701 --> 00:17:15.566
+<v Robert Chin>guardrails, like, you know,
+filtering out toxicity,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/168-2
+00:17:15.566 --> 00:17:16.612
+<v Robert Chin>that kind of stuff?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/169-0
+00:17:18.212 --> 00:17:19.372
+<v Andy Zhu>I don't think that.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/172-0
+00:17:18.532 --> 00:17:22.897
+<v Robert Chin>Are you talking about,
+are you guardrailing your content in</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/172-1
+00:17:22.897 --> 00:17:27.626
+<v Robert Chin>terms of what gets, you know,
+your responses are like right now?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/172-2
+00:17:27.626 --> 00:17:31.919
+<v Robert Chin>I think your Omega,
+are you using a PG vector on Postgres?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/172-3
+00:17:31.919 --> 00:17:35.120
+<v Robert Chin>Is that where your knowledge base is
+today?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/171-0
+00:17:32.932 --> 00:17:33.612
+<v Andy Zhu>Yeah, yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/172-4
+00:17:35.120 --> 00:17:38.612
+<v Robert Chin>And are you using Bedrock Knowledge Base
+today?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/173-0
+00:17:39.012 --> 00:17:40.772
+<v Robert Chin>Or OK.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/176-0
+00:17:39.652 --> 00:17:42.457
+<v Andy Zhu>No,
+it's PG Victor and it's all customized.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/176-1
+00:17:42.457 --> 00:17:47.366
+<v Andy Zhu>I think there are some cart rails,
+but not exactly like bad rock cart rails,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/174-0
+00:17:47.092 --> 00:17:47.652
+<v Robert Chin>Okay.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/176-2
+00:17:47.366 --> 00:17:51.892
+<v Andy Zhu>but like over personally defined cart
+rails and stuff like that, yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/175-0
+00:17:48.852 --> 00:17:49.332
+<v Robert Chin>Okay.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/177-0
+00:17:52.212 --> 00:17:55.092
+<v Robert Chin>Okay,
+and then you're hitting that and then</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/177-1
+00:17:55.092 --> 00:18:00.198
+<v Robert Chin>you're doing your retrieve and then you
+send your retrieve results to Bedrock</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/177-2
+00:18:00.198 --> 00:18:05.172
+<v Robert Chin>today for processing and summarization,
+then you return it to the React UI.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/180-0
+00:18:02.452 --> 00:18:07.602
+<v Andy Zhu>Right, right, yeah, so, yeah,
+so most of the backlog interaction we</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/178-0
+00:18:06.692 --> 00:18:07.092
+<v Robert Chin>Okay.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/180-1
+00:18:07.602 --> 00:18:11.541
+<v Andy Zhu>have is really just invoking the the end,
+you know,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/180-2
+00:18:11.541 --> 00:18:16.994
+<v Andy Zhu>and LMs instead of like actually
+performing all the backlog kind of and</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/180-3
+00:18:16.994 --> 00:18:20.932
+<v Andy Zhu>features like guardrails and stuff like
+that, yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/179-0
+00:18:18.212 --> 00:18:18.692
+<v Robert Chin>Okay.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/181-0
+00:18:21.092 --> 00:18:22.772
+<v Andy Zhu>Right now, I need that right now.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/182-0
+00:18:21.572 --> 00:18:25.252
+<v Robert Chin>Okay, so with the ACP then,
+you're really just looking to hit...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/183-0
+00:18:26.692 --> 00:18:30.146
+<v Robert Chin>It's really the LLM call that you're
+looking for the ACP to do.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/183-1
+00:18:30.146 --> 00:18:34.408
+<v Robert Chin>Like you don't have multi-agents or
+anything happening in this Omega solution,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/183-2
+00:18:34.408 --> 00:18:34.732
+<v Robert Chin>right?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-0
+00:18:35.732 --> 00:18:39.752
+<v Andy Zhu>We are looking for, ohh,
+we're looking forward to that. Yeah, well,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-1
+00:18:39.752 --> 00:18:44.246
+<v Andy Zhu>right now we're having a lot of tools.
+Here's some Bitbuckets, Artifactory,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-2
+00:18:44.246 --> 00:18:47.024
+<v Andy Zhu>I mean,
+Artifactory by Jenkins and potentially</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-3
+00:18:47.024 --> 00:18:49.626
+<v Andy Zhu>OpenShift in the future.
+CCD is coming too,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-4
+00:18:49.626 --> 00:18:52.759
+<v Andy Zhu>so all of those are in separate tool sets
+right now,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-5
+00:18:52.759 --> 00:18:56.779
+<v Andy Zhu>but we can't we could definitely make it
+them into separate agents,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/184-6
+00:18:56.779 --> 00:18:58.612
+<v Andy Zhu>and it does make sense to make.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/185-0
+00:18:58.652 --> 00:19:03.377
+<v Andy Zhu>them into separate agents in the long run.
+So, but right now, yeah,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/185-1
+00:19:03.377 --> 00:19:09.214
+<v Andy Zhu>it's a single agent kind of architecture
+right now. But yeah, that's the situation,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/185-2
+00:19:09.214 --> 00:19:09.492
+<v Andy Zhu>yes.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/186-0
+00:19:11.372 --> 00:19:15.395
+<v Robert Chin>Okay, so, okay, so I guess the first step,
+I guess if you wanted to,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/186-1
+00:19:15.395 --> 00:19:20.059
+<v Robert Chin>if you look for ACP capabilities, I guess,
+like the first thing is moving your,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/186-2
+00:19:20.059 --> 00:19:23.965
+<v Robert Chin>is it moving the bedrock stuff then, Seth,
+over to the AI gateway,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/186-3
+00:19:23.965 --> 00:19:26.530
+<v Robert Chin>is that like would be the first
+transition,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/186-4
+00:19:26.530 --> 00:19:30.086
+<v Robert Chin>because I'm trying to think from a
+registration perspective,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/186-5
+00:19:30.086 --> 00:19:31.252
+<v Robert Chin>it's not really a...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/187-0
+00:19:31.412 --> 00:19:36.016
+<v Robert Chin>agent that you have here.
+It's like a knowledge chatbot solution.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/187-1
+00:19:36.016 --> 00:19:37.132
+<v Robert Chin>Is that correct?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/189-0
+00:19:37.812 --> 00:19:44.292
+<v Andy Zhu>Yeah, well, it does have agentic features,
+but most of them are still...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/188-0
+00:19:44.132 --> 00:19:44.372
+<v Seth Chalmers>Oh.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/190-0
+00:19:45.492 --> 00:19:48.680
+<v Andy Zhu>Like, direct to go, like, no, no,
+like bad rock agents,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/190-1
+00:19:48.680 --> 00:19:51.412
+<v Andy Zhu>but like customized agents kind of stuff,
+yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/191-0
+00:19:53.012 --> 00:19:56.645
+<v Seth Chalmers>So yeah,
+we have a full user guides for chat bots</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/191-1
+00:19:56.645 --> 00:20:00.206
+<v Seth Chalmers>as well.
+So we'll get you looped in with Ranjula</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/191-2
+00:20:00.206 --> 00:20:06.165
+<v Seth Chalmers>and the product team who's kind of moved
+over their chat bot solution to the ACP.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/191-3
+00:20:06.165 --> 00:20:10.161
+<v Seth Chalmers>So we also have all the user guides for
+those as well.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/191-4
+00:20:10.161 --> 00:20:14.812
+<v Seth Chalmers>This broader question of the MCP servers
+though for tools like.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/194-0
+00:20:14.852 --> 00:20:19.883
+<v Seth Chalmers>Bitbucket and Jenkins.
+I'm reaching out right now to like Greg O.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/194-1
+00:20:19.883 --> 00:20:25.524
+<v Seth Chalmers>on the Enterprise Architecture team.
+I think we'll have to talk with like</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/194-2
+00:20:25.524 --> 00:20:28.955
+<v Seth Chalmers>DevOps,
+Enterprise DevOps and stuff for what</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/194-3
+00:20:28.955 --> 00:20:33.452
+<v Seth Chalmers>their plans are for MCP servers for
+Jenkins and Bitbucket.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/196-0
+00:20:33.932 --> 00:20:39.345
+<v Seth Chalmers>Because it probably doesn't make sense
+for like you guys to implement that you'd</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/196-1
+00:20:39.345 --> 00:20:44.892
+<v Seth Chalmers>want to make use of their MCP server just
+within your chat body or agent solution.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/197-0
+00:20:46.812 --> 00:20:49.980
+<v Andy Zhu>Yeah,
+that's kind of what we've been thinking.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/197-1
+00:20:49.980 --> 00:20:55.169
+<v Andy Zhu>Yeah, we want an MCP for Bitbucket,
+and we want MCP for stuff like OpenShift</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/197-2
+00:20:55.169 --> 00:20:59.213
+<v Andy Zhu>or an artifactory,
+and but those stuff customized solutions</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/197-3
+00:20:59.213 --> 00:21:04.267
+<v Andy Zhu>are really limited on, you know,
+stuff like access, and especially on the,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/197-4
+00:21:04.267 --> 00:21:07.367
+<v Andy Zhu>yeah,
+it's purely on the personal credentials</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/197-5
+00:21:07.367 --> 00:21:09.052
+<v Andy Zhu>and all this stuff, yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/198-0
+00:21:09.132 --> 00:21:13.459
+<v Andy Zhu>That, if you can reach out to to Greg,
+that will be definitely very helpful.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/198-1
+00:21:13.459 --> 00:21:13.852
+<v Andy Zhu>Thanks.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/199-0
+00:21:14.252 --> 00:21:16.917
+<v Seth Chalmers>Absolutely, yeah.
+So we'll get that off to the side,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/199-1
+00:21:16.917 --> 00:21:19.280
+<v Seth Chalmers>but yeah,
+we can get you started with like the</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/199-2
+00:21:19.280 --> 00:21:21.743
+<v Seth Chalmers>basic,
+like moving over your chat bot to the ACP</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/199-3
+00:21:21.743 --> 00:21:25.665
+<v Seth Chalmers>and then those like generalized MCP
+servers will probably be a later addition</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/199-4
+00:21:25.665 --> 00:21:26.972
+<v Seth Chalmers>after we sync with DevOps.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/200-0
+00:21:30.652 --> 00:21:31.132
+<v Andy Zhu>Sounds good.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/201-0
+00:21:33.132 --> 00:21:36.452
+<v Lalit Summan>So then set as the next item to,
+at some point next week,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/201-1
+00:21:36.452 --> 00:21:39.772
+<v Lalit Summan>set up the review,
+the design review calls with the team.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/202-0
+00:21:41.212 --> 00:21:44.238
+<v Seth Chalmers>Yeah,
+so I guess you might have already passed</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/202-1
+00:21:44.238 --> 00:21:47.909
+<v Seth Chalmers>this along, Andy,
+but do you guys have like a high level</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/202-2
+00:21:47.909 --> 00:21:51.772
+<v Seth Chalmers>architecture document or something you
+can pass over to us?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/203-0
+00:21:52.572 --> 00:21:54.972
+<v Andy Zhu>Yep, let me find it for you.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/205-0
+00:21:56.892 --> 00:22:00.275
+<v Seth Chalmers>Yeah, it doesn't need to be right now,
+but whenever you get a chance,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/205-1
+00:22:00.275 --> 00:22:03.126
+<v Seth Chalmers>just send that over.
+And then what we'll do on our side is</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/205-2
+00:22:03.126 --> 00:22:05.784
+<v Seth Chalmers>like just map out what the integration
+will look like.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/204-0
+00:22:05.092 --> 00:22:05.532
+<v Andy Zhu>Really?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/205-3
+00:22:05.784 --> 00:22:09.167
+<v Seth Chalmers>Then we can present it back to you,
+just make sure everything's good,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/205-4
+00:22:09.167 --> 00:22:12.598
+<v Seth Chalmers>and then we can get you onto the
+onboarding queue to get you hooked in</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/205-5
+00:22:12.598 --> 00:22:14.772
+<v Seth Chalmers>with the product team to go and test it
+out.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/206-0
+00:22:16.332 --> 00:22:19.263
+<v Andy Zhu>And maybe, yeah,
+I'll send it to to you later,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/206-1
+00:22:19.263 --> 00:22:24.128
+<v Andy Zhu>but definitely we I'll bring it back to
+my team as well to to the senior more</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/206-2
+00:22:24.128 --> 00:22:28.057
+<v Andy Zhu>senior members of the team,
+and then as well as the manager to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/206-3
+00:22:28.057 --> 00:22:31.862
+<v Andy Zhu>discuss the, you know,
+the migration and all the efforts and</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/206-4
+00:22:31.862 --> 00:22:35.167
+<v Andy Zhu>planning,
+and I'll get back on to you and see if we.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/206-5
+00:22:35.167 --> 00:22:35.292
+<v Andy Zhu>..</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/208-0
+00:22:35.372 --> 00:22:38.046
+<v Andy Zhu>Actually going to make that migration
+happening,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/208-1
+00:22:38.046 --> 00:22:42.138
+<v Andy Zhu>or we gotta wait till like all the MCPS
+from the enterprise side is ready,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/208-2
+00:22:42.138 --> 00:22:45.957
+<v Andy Zhu>then then we can proceed with the
+migration, then we can have find a,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/208-3
+00:22:45.957 --> 00:22:49.612
+<v Andy Zhu>you know, more proper and better plans,
+but yeah, but that's fine.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/209-0
+00:22:49.292 --> 00:22:56.138
+<v Mahmoud Khalil>I have a question about the ACP.
+Is it environment agnostic or it has to</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/209-1
+00:22:56.138 --> 00:23:03.452
+<v Mahmoud Khalil>be production environment for it to
+accept like migration of a product to it?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/210-0
+00:23:05.772 --> 00:23:09.692
+<v Seth Chalmers>We'll map to all the SDLC environments,
+so dev set, stage, prod.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/211-0
+00:23:10.812 --> 00:23:12.252
+<v Mahmoud Khalil>Okay, excellent.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/213-0
+00:23:14.452 --> 00:23:18.224
+<v Robert Chin>And then I'm going to end off with a
+question to ask everybody.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/213-1
+00:23:18.224 --> 00:23:22.998
+<v Robert Chin>How did you come about engaging us for
+ACP? It's kind of like, who referred you?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/213-2
+00:23:22.998 --> 00:23:24.412
+<v Robert Chin>And what was the driver?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/214-0
+00:23:28.332 --> 00:23:31.419
+<v Andy Zhu>I guess this question needs to be
+referred to Chris. I think, Chris,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/214-1
+00:23:31.419 --> 00:23:32.492
+<v Andy Zhu>you brought it up for...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/219-0
+00:23:32.092 --> 00:23:37.663
+<v Mahmoud Khalil>Yeah. Well,
+you told us about it in the other meeting</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/219-1
+00:23:37.663 --> 00:23:46.226
+<v Mahmoud Khalil>about the synchronization in the chatbot.
+You explained a little about the ACP and</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/215-0
+00:23:39.292 --> 00:23:40.412
+<v Robert Chin>Oh, the knowledge.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/216-0
+00:23:41.612 --> 00:23:43.532
+<v Robert Chin>Yes, okay, okay, okay.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/217-0
+00:23:45.732 --> 00:23:46.172
+<v Robert Chin>Yes.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/219-2
+00:23:46.226 --> 00:23:53.035
+<v Mahmoud Khalil>Walter talked about it.
+Then I always been interested in security</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/218-0
+00:23:47.692 --> 00:23:49.132
+<v Robert Chin>Okay, gotcha.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/219-3
+00:23:53.035 --> 00:23:54.892
+<v Mahmoud Khalil>and secure coding.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/220-0
+00:23:55.052 --> 00:23:58.412
+<v Mahmoud Khalil>And we were looking up for a solution.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/223-0
+00:23:59.692 --> 00:24:03.522
+<v Mahmoud Khalil>For the access,
+because every time we try to invoke a</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/223-1
+00:24:03.522 --> 00:24:06.926
+<v Mahmoud Khalil>tool,
+it's like you have to get API keys and we</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/223-2
+00:24:06.926 --> 00:24:10.118
+<v Mahmoud Khalil>cannot get a super user,
+it's just not safe.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/223-3
+00:24:10.118 --> 00:24:13.664
+<v Mahmoud Khalil>So we were looking for a solution for
+governance.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/222-0
+00:24:11.372 --> 00:24:11.852
+<v Robert Chin>Mhm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/223-4
+00:24:13.664 --> 00:24:16.572
+<v Mahmoud Khalil>Turns out that you guys already have one.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/226-0
+00:24:17.532 --> 00:24:20.255
+<v Robert Chin>Yeah,
+like when we talk about the MCP servers,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/226-1
+00:24:20.255 --> 00:24:23.325
+<v Robert Chin>things like that,
+we have to just keep in mind that,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/226-2
+00:24:23.325 --> 00:24:27.149
+<v Robert Chin>you know, the service owners,
+they'll be the ones that, you know,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/226-3
+00:24:27.149 --> 00:24:31.725
+<v Robert Chin>like Seth's going to talk to the owners,
+like Bitbucket and people want to get</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/225-0
+00:24:29.852 --> 00:24:30.332
+<v Mahmoud Khalil>Mhm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/226-4
+00:24:31.725 --> 00:24:36.012
+<v Robert Chin>into MCP servers, like ServiceNow,
+Athlasian, so those owners actually...</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/228-0
+00:24:36.172 --> 00:24:40.102
+<v Robert Chin>They own the governance,
+they own the setup and enabling of those</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/228-1
+00:24:40.102 --> 00:24:43.258
+<v Robert Chin>MCP servers.
+We don't actually have any control over</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/228-2
+00:24:43.258 --> 00:24:45.818
+<v Robert Chin>that,
+but with the ACP is going to be that</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/228-3
+00:24:45.818 --> 00:24:50.760
+<v Robert Chin>integration bridge to say, you know what,
+here's an approved MCP server out there.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/228-4
+00:24:50.760 --> 00:24:54.332
+<v Robert Chin>Come through here, the ACP,
+to get that connection through.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/227-0
+00:24:52.732 --> 00:24:53.292
+<v Mahmoud Khalil>Mhm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/230-0
+00:24:54.812 --> 00:24:58.298
+<v Robert Chin>But we don't have any control over
+enabling any MCP servers.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/230-1
+00:24:58.298 --> 00:25:02.412
+<v Robert Chin>The service owners ultimately have to
+enable that. It's like, we can't,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/230-2
+00:25:02.412 --> 00:25:06.184
+<v Robert Chin>you know, it's like Atlasian,
+we've been trying to get access to,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/230-3
+00:25:06.184 --> 00:25:08.755
+<v Robert Chin>you know, the MCP servers,
+things like that,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/230-4
+00:25:08.755 --> 00:25:13.041
+<v Robert Chin>but then there's blocks limitations.
+So you still have to kind of wait for</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/230-5
+00:25:13.041 --> 00:25:16.012
+<v Robert Chin>those owners to step up and say, yep,
+I'm going to.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/231-0
+00:25:16.172 --> 00:25:18.754
+<v Robert Chin>make an MCP server available to the
+organization,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/231-1
+00:25:18.754 --> 00:25:22.782
+<v Robert Chin>we won't be able to solve that because
+we're not those service owners we can,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/229-0
+00:25:22.012 --> 00:25:22.492
+<v Mahmoud Khalil>Yeah.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/231-2
+00:25:22.782 --> 00:25:23.092
+<v Robert Chin>right?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/233-0
+00:25:23.852 --> 00:25:28.370
+<v Mahmoud Khalil>That makes sense, yeah.
+If the team that owns each tool,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/232-0
+00:25:25.532 --> 00:25:25.972
+<v Robert Chin>Right.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/233-1
+00:25:28.370 --> 00:25:32.332
+<v Mahmoud Khalil>they made the MCP,
+then everybody can reuse them.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/234-0
+00:25:32.012 --> 00:25:34.499
+<v Robert Chin>Yeah,
+I think some folks are thinking that we</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/234-1
+00:25:34.499 --> 00:25:38.175
+<v Robert Chin>have the ASP has enough power to kind of
+turn on those MCP servers,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/234-2
+00:25:38.175 --> 00:25:41.905
+<v Robert Chin>which we would love to do,
+because we too would like access to them,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/234-3
+00:25:41.905 --> 00:25:44.500
+<v Robert Chin>but yeah,
+that's kind of where our power stops,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/234-4
+00:25:44.500 --> 00:25:48.879
+<v Robert Chin>but we can definitely govern which ones
+are approved and have access to them and</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/234-5
+00:25:48.879 --> 00:25:49.852
+<v Robert Chin>make it, you know.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/235-0
+00:25:50.212 --> 00:25:53.132
+<v Robert Chin>have a single access through the ACP
+gateways.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/236-0
+00:25:55.212 --> 00:26:00.972
+<v Mahmoud Khalil>Can you govern like access to API
+directly? Why it's exclusively MCB?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/238-0
+00:26:03.452 --> 00:26:06.891
+<v Robert Chin>Who would, let's say,
+own that API or like, what's an example?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/237-0
+00:26:03.852 --> 00:26:04.252
+<v Seth Chalmers>And.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/238-1
+00:26:06.891 --> 00:26:08.092
+<v Robert Chin>What are you thinking?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/242-0
+00:26:08.852 --> 00:26:15.726
+<v Mahmoud Khalil>Like any API, like MCP is just at the end,
+probably gonna be either connected to a</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/239-0
+00:26:13.132 --> 00:26:13.612
+<v Robert Chin>Mhm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/242-1
+00:26:15.726 --> 00:26:21.441
+<v Mahmoud Khalil>database because there is no API exist,
+or is the calling API again,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/241-0
+00:26:20.252 --> 00:26:20.732
+<v Robert Chin>Mhm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/242-2
+00:26:21.441 --> 00:26:25.831
+<v Mahmoud Khalil>which creates latency.
+So why do we need MCP server?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/242-3
+00:26:25.831 --> 00:26:28.812
+<v Mahmoud Khalil>Can we just govern that call to API?</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/244-0
+00:26:30.732 --> 00:26:34.726
+<v Seth Chalmers>So you can,
+but all of these like the on behalf of</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/244-1
+00:26:34.726 --> 00:26:39.582
+<v Seth Chalmers>like token exchange,
+it's built for agentic communication and</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/244-2
+00:26:39.582 --> 00:26:45.300
+<v Seth Chalmers>MCPs. So within that MCP server,
+you can make a direct API call and like</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/244-3
+00:26:45.300 --> 00:26:49.372
+<v Seth Chalmers>we're doing similar things in the data
+space where.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/243-0
+00:26:46.732 --> 00:26:47.212
+<v Mahmoud Khalil>Mhm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/246-0
+00:26:49.852 --> 00:26:54.988
+<v Seth Chalmers>It's all ultimately APIs behind the
+scenes making the request to Snowflake or</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/246-1
+00:26:54.988 --> 00:26:59.334
+<v Seth Chalmers>AWS or whatever the tool is,
+but the MCP server is kind of just a</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/246-2
+00:26:59.334 --> 00:27:04.733
+<v Seth Chalmers>wrapper around it that allows us to kind
+of do this token exchange and follow the</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/245-0
+00:27:03.132 --> 00:27:03.772
+<v Mahmoud Khalil>Mm-hmm.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/246-3
+00:27:04.733 --> 00:27:05.852
+<v Seth Chalmers>agentic concepts.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/247-0
+00:27:08.812 --> 00:27:11.794
+<v Mahmoud Khalil>Okay, makes sense.
+Just for organization purposes,</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/247-1
+00:27:11.794 --> 00:27:13.372
+<v Mahmoud Khalil>it's just easier to manage.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/248-0
+00:27:16.012 --> 00:27:16.332
+<v Mahmoud Khalil>Hey.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/250-0
+00:27:17.532 --> 00:27:20.274
+<v Mahmoud Khalil>Well,
+thank you guys so much for taking the</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/250-1
+00:27:20.274 --> 00:27:23.452
+<v Mahmoud Khalil>time to present this to us.
+It's very interesting.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/249-0
+00:27:21.292 --> 00:27:22.172
+<v Robert Chin>No, thanks.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/251-0
+00:27:25.652 --> 00:27:26.332
+<v Seth Chalmers>Of course, yep.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/252-0
+00:27:26.412 --> 00:27:27.052
+<v Robert Chin>Awesome.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/256-0
+00:27:27.372 --> 00:27:28.972
+<v Lalit Summan>Thanks, everyone. Thank you, Seth.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/257-0
+00:27:28.452 --> 00:27:29.372
+<v Robert Chin>Hey, thanks everybody.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/260-0
+00:27:29.132 --> 00:27:30.492
+<v Mahmoud Khalil>Okay, thank you. Bye.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/259-0
+00:27:29.532 --> 00:27:30.012
+<v Seth Chalmers>Thanks all.</v>
+
+d65b2046-ddf9-48d7-9e6f-3ec2ba04e0f1/262-0
+00:27:30.732 --> 00:27:31.772
+<v Andy Zhu>Chris, take care.</v>

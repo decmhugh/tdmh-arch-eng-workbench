@@ -1,0 +1,85 @@
+component: us-acp-deployment-operations
+title: "Onboard US team members to test ACP"
+description: |
+  US ACP Deployment & Operations is the strategy and execution plan to deploy a dedicated ACP (Agentic Control Plane) instance into the US DCP environment and onboard the US operations infrastructure team to manage it across all US business divisions (Insurance, Health, Investment Management, etc.).
+
+  The strategy responds to growing demand from US divisions for AI agent development without centralized governance, compliance tracking, or audit evidence collection. ACP deployment into US DCP addresses this by providing: (1) unified agent registry across all US divisions; (2) risk-tier-driven governance (AA/A/B/C/D classification); (3) immutable audit ledger for regulatory discovery; (4) graduated governance primitives (killswitches, HITL, recertification workflows); and (5) operational handoff to US DCP infrastructure team for day-to-day management.
+
+  This D0 defines the scope, dependencies, stakeholders, and success criteria for US ACP go-live, targeting deployment to production US DCP by Q4 2026.
+
+  h2. Problem Statement
+  • No centralized agent governance in US region — agents developed independently across divisions without unified registry or compliance evidence
+  • Manual governance cannot scale — current manual approaches work for handful of agents, fail for multi-division deployment
+  • Fragmented agent implementations — no standardized oversight, audit trails, or compliance evidence collection; creates regulatory risk
+  • No operational ownership model — ACP exists as consortium product; no dedicated US operations team staffed/trained to run US instance
+  • Lack of agent registry and risk-ranking — no unified inventory of agents, data access, or risk classification; cannot demonstrate governance to regulators
+  • Regulatory readiness gap — OSFI, NAIC, state insurance regulators expect evidence of governance; Sun Life US cannot provide today
+  • Training and enablement gap — US DCP team and business unit stakeholders untrained on ACP platform, agent registration, governance responsibilities
+
+  h2. Opportunity
+  • Unified agent registry for US divisions — all agents across US divisions in single ACP instance with federated visibility and risk-based governance per division
+  • Scalable governance framework — agent inventory, risk classification, policy enforcement, and audit trails scale without manual overhead
+  • Compliance evidence ready — OSFI, NAIC, regulators, and internal auditors can access unified governance registry and audit ledger
+  • Regulatory confidence — ACP demonstrates consistent agent governance, risk ranking, and due diligence controls across all divisions
+  • Operational handoff to DCP — US DCP team becomes operational owner; day-to-day support decoupled from consortium engineers
+  • Live pilot and validation environment — connect existing US agent implementations to validate agent routing, governance policies, compliance evidence collection
+  • Competitive advantage through faster deployment — risk-based governance allows low-risk agents quick deployment while maintaining rigorous high-risk controls
+  • Federated multi-region foundation — design US deployment for future federation across Canada, SLC, MFS; avoid rework at cross-BG scale
+
+  h2. Acceptance Criteria
+  • Dedicated ACP instance running in US DCP with multi-AZ failover, disaster recovery validated
+  • US DCP infrastructure team trained on ACP operations, platform architecture, incident response, policy management
+  • At least one active US agent implementation connected and routing through ACP; governance policies tested end-to-end
+  • Risk tier classification (AA/A/B/C/D) framework defined and communicated to all US divisions
+  • Killswitch, HITL, audit fidelity, and key recertification workflows operational and tested
+  • HIPAA compliance validation complete; data residency constraints enforced
+  • Multi-division governance isolation verified; access controls prevent cross-division policy conflicts
+  • Compliance evidence package generated for OSFI E-23, NAIC, Colorado CAIA, HIPAA; regulator-ready exports functional
+  • Team escalation and support model defined; handoff from consortium engineers to DCP team documented
+  • Go-live checklist complete: ATG approval, security assessment, operational readiness validation, change management approved
+  • >95% first-time agent deployment success rate; support tickets <5% of registrations
+  • Internal Audit pre-assessment passed; audit procedures documented
+
+  h2. In Scope (MVP)
+  • US ACP instance deployed to production US DCP region(s)
+  • Multi-AZ deployment, disaster recovery, failover procedures
+  • US DCP infrastructure team trained and operational
+  • Agent registry connected to one or more active US implementations
+  • Risk tier classification framework and training materials
+  • Killswitch, HITL, audit ledger, and key recertification operational
+  • HIPAA compliance validated for regulated data routing
+  • Multi-division policy scoping and isolation
+  • Compliance evidence collection and reporting (OSFI, NAIC, HIPAA)
+  • Team escalation and support model definition
+  • Regulatory pre-engagement (OSFI, NAIC briefing)
+  • Internal Audit coordination and pre-assessment
+
+  h2. Out of Scope (Backlog)
+  • Advanced compliance reporting and quarterly regulatory automation
+  • Cost attribution and chargeback per division
+  • Multi-region federation (Canada, SLC, MFS) — requires separate deployment strategy
+  • Advanced threat detection and anomaly alerting
+  • Inference governance (separate retention for AI-generated inferences)
+  • Self-healing governance (automated rollback, auto-recertification)
+  • CLI-based governance tools for developer self-service evaluation
+
+jira_epic: EACPP-914
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113135124912"
+current_gate: D0
+status: draft
+spec_type: onboarding
+gate_status: Discovery in progress — team assignment and requirements finalization
+reviewers:
+  - eric.robson@sunlife.com
+  - lalit.summan@sunlife.com
+created_at: '2026-08-12'
+confluence_url: ''
+last_updated: '2026-08-12'
+notes: |
+  This D0 consolidates the US BG strategic direction from the US DCP & Agent overview meeting (July 2026). Key decisions: (1) deploy ACP directly to US DCP, skip internal MVP; (2) design for federated multi-region model from start; (3) DCP infrastructure team owns operations post-launch; (4) consortium engineers provide platform oversight and feature development.
+
+  Critical dependencies: Luminate Control Plane governance primitives (killswitch, HITL, risk_tier) must be LIVE before US go-live. US DCP team assignment by 2026-08-22. ATG approval target: 2026-09-15. Production go-live target: 2026-11-15.
+
+  Next steps: Confirm US DCP team; lock compliance framework; submit ATG; identify pilot agents; schedule training.
+
+  Related: EACPP-913 (Luminate Control Plane governance platform), EACPP-909 (AIMS use case), EACPP-911 (ORCC use case), EACPP-912 (MDx use case)

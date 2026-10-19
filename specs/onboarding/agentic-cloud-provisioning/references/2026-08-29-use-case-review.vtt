@@ -1,0 +1,1737 @@
+WEBVTT
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/12-0
+00:00:03.414 --> 00:00:06.626
+<v @1>why I asked for it.
+So we have an agentic solution,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/12-1
+00:00:06.626 --> 00:00:09.592
+<v @1>deterministic,
+that helps us with provisioning,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/12-2
+00:00:09.592 --> 00:00:14.163
+<v @1>making all the decisions required,
+and then kicking off our automation to</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/12-3
+00:00:14.163 --> 00:00:16.696
+<v @1>provision.
+The LM itself isn't doing any</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/12-4
+00:00:16.696 --> 00:00:20.155
+<v @1>provisioning.
+But we're blocked right now because we're</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/12-5
+00:00:20.155 --> 00:00:24.974
+<v @1>using Agent Gateway to do that because we
+want policies and we need it to be.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/14-0
+00:00:25.214 --> 00:00:29.121
+<v @1>super locked into just what we want it to
+do, so it doesn't go rogue.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/14-1
+00:00:29.121 --> 00:00:33.586
+<v @1>And it was asked that we wait for the
+agenda control plane and use that instead</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/14-2
+00:00:33.586 --> 00:00:37.772
+<v @1>before we even go to ETAB for approval.
+So we have it all running in test.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/14-3
+00:00:37.772 --> 00:00:42.070
+<v @1>It's really about can we start using the
+agenda control plane at that point?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/14-4
+00:00:42.070 --> 00:00:46.702
+<v @1>And our comfort level you have with what
+we've done in terms of saying, hey, yeah,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/14-5
+00:00:46.702 --> 00:00:49.214
+<v @1>we're aligned with the agenda control
+plane.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/15-0
+00:00:49.654 --> 00:00:54.147
+<v @1>And we can start going ahead and when
+certain features are ready on the control</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/15-1
+00:00:54.147 --> 00:00:58.023
+<v @1>plane, we just migrate to that.
+So that's really where I want to get</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/15-2
+00:00:58.023 --> 00:01:01.898
+<v @1>alignment on so that you guys can say
+thumbs up at ETAB, we're good,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/15-3
+00:01:01.898 --> 00:01:03.134
+<v @1>and there's no issues.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/16-0
+00:01:04.894 --> 00:01:07.665
+<v Seth Chalmers>Absolutely.
+So I guess what are those types of</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/16-1
+00:01:07.665 --> 00:01:10.494
+<v Seth Chalmers>controls you're looking for out of the
+gateway?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/17-0
+00:01:11.294 --> 00:01:15.471
+<v @1>But Sri, maybe that's where you can help.
+Can you show how we're using the agent</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/17-1
+00:01:15.471 --> 00:01:19.699
+<v @1>gateway today to do control functions and
+then that probably how you can probably</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/17-2
+00:01:19.699 --> 00:01:22.174
+<v @1>say this is ready or this not ready,
+et cetera.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/24-0
+00:01:24.094 --> 00:01:28.795
+<v Srikanth Ramasubramanian>Yeah, for sure. Unfortunately,
+I have no clean way of really showing</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/24-1
+00:01:28.795 --> 00:01:32.337
+<v Srikanth Ramasubramanian>this in one place.
+There's a lot of stuff going on.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/24-2
+00:01:32.337 --> 00:01:36.834
+<v Srikanth Ramasubramanian>But more or less, Seth,
+you've seen some of the work that we were</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/18-0
+00:01:32.574 --> 00:01:33.054
+<v Seth Chalmers>Yep.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/24-3
+00:01:36.834 --> 00:01:40.717
+<v Srikanth Ramasubramanian>doing in the lab cluster with the aging
+gateway already.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/23-0
+00:01:39.454 --> 00:01:39.854
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/24-4
+00:01:40.717 --> 00:01:43.374
+<v Srikanth Ramasubramanian>My take on this is we're already using.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/28-0
+00:01:43.454 --> 00:01:48.533
+<v Srikanth Ramasubramanian>like vanilla agent gateway to go LLM,
+to go to MCP, to do agent to agent.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/28-1
+00:01:48.533 --> 00:01:53.749
+<v Srikanth Ramasubramanian>It seems like it will be a clean
+replacement or an addition on top of this.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/28-2
+00:01:53.749 --> 00:01:58.896
+<v Srikanth Ramasubramanian>Like, hey, you don't go to bedrock,
+you go to the ACP plane instead. This,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/28-3
+00:01:58.896 --> 00:02:03.014
+<v Srikanth Ramasubramanian>everything that goes today to our agent
+gateway deployment.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/30-0
+00:02:03.374 --> 00:02:07.690
+<v Srikanth Ramasubramanian>just goes to Luminate, comes back in,
+and then we get all of our regular</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/30-1
+00:02:07.690 --> 00:02:11.651
+<v Srikanth Ramasubramanian>functionality. Seems that way,
+seems fairly straightforward to me,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/29-0
+00:02:09.374 --> 00:02:09.574
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/30-2
+00:02:11.651 --> 00:02:15.672
+<v Srikanth Ramasubramanian>but if you have any questions about how
+everything else is working,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/30-3
+00:02:15.672 --> 00:02:16.854
+<v Srikanth Ramasubramanian>I'm happy to answer.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/33-0
+00:02:17.694 --> 00:02:22.015
+<v Seth Chalmers>Nope, that's it.
+And so just from your picture here, yeah,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/33-1
+00:02:22.015 --> 00:02:26.702
+<v Seth Chalmers>we have Agent Gateway,
+we have a custom proxy out in front that</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/33-2
+00:02:26.702 --> 00:02:30.876
+<v Seth Chalmers>does authorization, authentication,
+all that good stuff.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/33-3
+00:02:30.876 --> 00:02:36.515
+<v Seth Chalmers>It'll handle all the routing as Agent
+Gateway does today for agents, models,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/33-4
+00:02:36.515 --> 00:02:37.614
+<v Seth Chalmers>MCP tools, etc.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/37-0
+00:02:38.174 --> 00:02:42.854
+<v Seth Chalmers>But like you mentioned,
+I'll just hit the ACP for registered MCP</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/37-1
+00:02:42.854 --> 00:02:48.470
+<v Seth Chalmers>servers, agents, models, et cetera.
+We also handle a lot of the cross-cutting</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/37-2
+00:02:48.470 --> 00:02:51.998
+<v Seth Chalmers>concerns.
+So I see you have length views kind of</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/37-3
+00:02:51.998 --> 00:02:55.454
+<v Seth Chalmers>dotted out.
+Is that currently in your stack or?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/38-0
+00:02:56.094 --> 00:02:59.034
+<v Srikanth Ramasubramanian>It is,
+it has some problems with deployment DMS</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/38-1
+00:02:59.034 --> 00:03:03.077
+<v Srikanth Ramasubramanian>because it wants to deploy to the main,
+sorry, the public schema.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/38-2
+00:03:03.077 --> 00:03:06.752
+<v Srikanth Ramasubramanian>So we have to kind of fix it before it
+gets into the stack.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/38-3
+00:03:06.752 --> 00:03:10.734
+<v Srikanth Ramasubramanian>But it was part of where we envisioned
+observability would live.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/42-0
+00:03:11.454 --> 00:03:14.657
+<v Seth Chalmers>Okay, yeah,
+and so a lot of that observability is</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/39-0
+00:03:13.614 --> 00:03:13.774
+<v Srikanth Ramasubramanian>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/42-1
+00:03:14.657 --> 00:03:18.756
+<v Seth Chalmers>being handled in the ACP.
+So that's another component you could</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/42-2
+00:03:18.756 --> 00:03:22.279
+<v Seth Chalmers>probably swap out.
+So we have our internal line views,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/42-3
+00:03:22.279 --> 00:03:26.378
+<v Seth Chalmers>which is because you're routing
+everything through the gateway,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/42-4
+00:03:26.378 --> 00:03:30.734
+<v Seth Chalmers>we're taking in all those traces,
+observability metrics, et cetera.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/44-0
+00:03:31.214 --> 00:03:35.711
+<v Seth Chalmers>and then also integrating with governance
+platforms that you can do your</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/44-1
+00:03:35.711 --> 00:03:40.208
+<v Seth Chalmers>evaluations and things like that.
+And it's all cataloged within the ACP.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/44-2
+00:03:40.208 --> 00:03:44.089
+<v Seth Chalmers>So you can eventually,
+and this is a feature we're working on,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/44-3
+00:03:44.089 --> 00:03:48.894
+<v Seth Chalmers>but produce like compliance reports for
+offs fee or NIST or things like that.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/48-0
+00:03:49.934 --> 00:03:52.368
+<v Srikanth Ramasubramanian>Perfect,
+so we wouldn't need to have a standalone</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/43-0
+00:03:50.334 --> 00:03:50.374
+<v @1>Ah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/48-1
+00:03:52.368 --> 00:03:55.240
+<v Srikanth Ramasubramanian>deployment here,
+we'll just leverage yours and we get like</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/48-2
+00:03:55.240 --> 00:03:58.696
+<v Srikanth Ramasubramanian>a project in there saying, "Hey,
+this is the infra-platforms line fuse</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/48-3
+00:03:58.696 --> 00:04:00.837
+<v Srikanth Ramasubramanian>project.
+We'll get all of our judge set up,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/48-4
+00:04:00.837 --> 00:04:04.147
+<v Srikanth Ramasubramanian>we'll get the observability metrics,
+traces, everything that works.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/48-5
+00:04:04.147 --> 00:04:07.214
+<v Srikanth Ramasubramanian>I have a I have a question for you,
+which is maybe slightly...</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/47-0
+00:04:04.334 --> 00:04:04.654
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/51-0
+00:04:08.574 --> 00:04:12.749
+<v Srikanth Ramasubramanian>Deviating away from how ACP was in the
+architecture diagrams that I saw today.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/51-1
+00:04:12.749 --> 00:04:15.497
+<v Srikanth Ramasubramanian>Agent Gateway is also doing an internal
+lot for us,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/51-2
+00:04:15.497 --> 00:04:19.037
+<v Srikanth Ramasubramanian>so some consumer comes to us from Nova,
+from VS Code, from A to A.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/51-3
+00:04:19.037 --> 00:04:23.159
+<v Srikanth Ramasubramanian>We're sending them to our agent gateway
+because our agent gateway is enrolled</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/51-4
+00:04:23.159 --> 00:04:26.964
+<v Srikanth Ramasubramanian>with Entra, and we can see, hey,
+this person's a valid cloud Automation</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/51-5
+00:04:26.964 --> 00:04:27.334
+<v Srikanth Ramasubramanian>member.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/52-0
+00:04:27.454 --> 00:04:31.756
+<v Srikanth Ramasubramanian>they can go in and use these tools.
+Is that where ACP would also fit in or</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/52-1
+00:04:31.756 --> 00:04:36.574
+<v Srikanth Ramasubramanian>can we continue to use this and then only
+route to you for MCP, Agent, and Bedrock?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/56-0
+00:04:38.014 --> 00:04:43.229
+<v Seth Chalmers>So our proxy in front of Agent Gateway is
+handling a lot of those concerns.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/56-1
+00:04:43.229 --> 00:04:48.444
+<v Seth Chalmers>Once you kind of get into like the on
+behalf of flows and things like that,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/56-2
+00:04:48.444 --> 00:04:53.452
+<v Seth Chalmers>tools like Entra can fall short.
+And we're also doing a lot of the other</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/56-3
+00:04:53.452 --> 00:04:55.854
+<v Seth Chalmers>cross-cutting concerns within that.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/58-0
+00:04:56.734 --> 00:05:01.896
+<v Seth Chalmers>essentially sidecar in front of Agent
+Gateway before, like the guardrails,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/58-1
+00:05:01.896 --> 00:05:05.131
+<v Seth Chalmers>rate limiting,
+some of the cost and budgeting,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/58-2
+00:05:05.131 --> 00:05:08.848
+<v Seth Chalmers>things like that.
+That's all happening within our ACP</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/58-3
+00:05:08.848 --> 00:05:12.840
+<v Seth Chalmers>implementation.
+So you wouldn't want to be doing your own</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/58-4
+00:05:12.840 --> 00:05:14.974
+<v Seth Chalmers>authentication to any of those.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/57-0
+00:05:13.374 --> 00:05:15.854
+<v Srikanth Ramasubramanian>So the front door is also ACP then.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/60-0
+00:05:16.734 --> 00:05:19.294
+<v Srikanth Ramasubramanian>So any client comes in,
+they come in through ACP.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/59-0
+00:05:17.134 --> 00:05:17.534
+<v Seth Chalmers>Yep.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/61-0
+00:05:19.934 --> 00:05:20.254
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/62-0
+00:05:20.254 --> 00:05:21.934
+<v @1>So, you're not integrated with Entra?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/65-0
+00:05:22.894 --> 00:05:29.522
+<v Seth Chalmers>So we are, so we do like Entra for SSO,
+but ACP has its internal key cloak</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/63-0
+00:05:24.014 --> 00:05:24.334
+<v @1>Bell.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/65-1
+00:05:29.522 --> 00:05:30.494
+<v Seth Chalmers>deployment.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/64-0
+00:05:30.974 --> 00:05:31.374
+<v @1>Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/66-0
+00:05:32.254 --> 00:05:35.471
+<v Seth Chalmers>So yeah,
+well basically the other identity</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/66-1
+00:05:35.471 --> 00:05:38.014
+<v Seth Chalmers>providers federate into key cloak.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/67-0
+00:05:39.094 --> 00:05:42.260
+<v @1>So, we would then, I think, Srikanth,
+as you asked,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/67-1
+00:05:42.260 --> 00:05:47.130
+<v @1>I just want to make sure I'm clear. So,
+we want to do an entra off token setup.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/67-2
+00:05:47.130 --> 00:05:52.122
+<v @1>We would get the token through the ACP
+versus our own. OK, that's cool. OK, yeah,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/68-0
+00:05:50.414 --> 00:05:53.823
+<v Seth Chalmers>Yep, yep.
+So you can also register apps as well</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/67-3
+00:05:52.122 --> 00:05:52.974
+<v @1>which is fine.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/68-1
+00:05:53.823 --> 00:05:57.801
+<v Seth Chalmers>within the ACP.
+So this is a feature of the new like AI</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/68-2
+00:05:57.801 --> 00:06:01.494
+<v Seth Chalmers>consortium, Luminate.
+So you can register your app,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/68-3
+00:06:01.494 --> 00:06:05.969
+<v Seth Chalmers>whether that be a chat bot or whatever,
+your application here.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/68-4
+00:06:05.969 --> 00:06:10.728
+<v Seth Chalmers>And then you can basically create
+policies between agents, models,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/68-5
+00:06:10.728 --> 00:06:13.214
+<v Seth Chalmers>MCP servers as you would just with.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/69-0
+00:06:13.374 --> 00:06:17.782
+<v Seth Chalmers>agents and things like that.
+And we manage the credentials for you.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/69-1
+00:06:17.782 --> 00:06:20.894
+<v Seth Chalmers>You can go into the UI, generate new ones,
+etc.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/70-0
+00:06:21.494 --> 00:06:23.054
+<v @1>OK, and then yeah, we would.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/71-0
+00:06:24.214 --> 00:06:27.605
+<v @1>Do we add our own policies or do we have
+to go through like a request, hey,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/71-1
+00:06:27.605 --> 00:06:30.639
+<v @1>can you update this policy?
+Do you have any idea on the operational</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/71-2
+00:06:30.639 --> 00:06:31.174
+<v @1>aspects yet?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/73-0
+00:06:31.974 --> 00:06:36.053
+<v Seth Chalmers>You can update policies as well.
+So we have concepts of project</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/73-1
+00:06:36.053 --> 00:06:38.857
+<v Seth Chalmers>administrators, owners, et cetera.
+So yeah,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/73-2
+00:06:38.857 --> 00:06:41.534
+<v Seth Chalmers>you can administer your own project. Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/72-0
+00:06:39.854 --> 00:06:40.494
+<v @1>That's cool.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/75-0
+00:06:41.374 --> 00:06:44.943
+<v Matthew David Andrew Clark>With key cloak being used,
+how are we going to rotate the client</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/75-1
+00:06:44.943 --> 00:06:49.062
+<v Matthew David Andrew Clark>secret in a timely fashion? Like,
+we're going to have to store this in our</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/75-2
+00:06:49.062 --> 00:06:51.588
+<v Matthew David Andrew Clark>vault, I'm guessing.
+And then how do we have,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/75-3
+00:06:51.588 --> 00:06:55.761
+<v Matthew David Andrew Clark>is it in the backlog to have some
+automated rotation so it's not stuff that</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/74-0
+00:06:55.214 --> 00:06:55.374
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/75-4
+00:06:55.761 --> 00:06:57.134
+<v Matthew David Andrew Clark>we're doing all the time?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/76-0
+00:06:57.694 --> 00:07:01.130
+<v Seth Chalmers>It is, yeah.
+So that's all supported within the new AI</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/76-1
+00:07:01.130 --> 00:07:05.252
+<v Seth Chalmers>consortium, like ACP today.
+So they do credential rotation within</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/76-2
+00:07:05.252 --> 00:07:09.812
+<v Seth Chalmers>Secrets Manager, Google, Azure,
+and we're working on the HashiCorp Vault</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/76-3
+00:07:09.812 --> 00:07:13.061
+<v Seth Chalmers>integration.
+So we're going to be working with that</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/76-4
+00:07:13.061 --> 00:07:15.934
+<v Seth Chalmers>team as well to get that working in Sun
+Life.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/77-0
+00:07:19.374 --> 00:07:23.438
+<v Srikanth Ramasubramanian>And is there something we can do in like
+the next couple of weeks to like put</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/77-1
+00:07:23.438 --> 00:07:25.835
+<v Srikanth Ramasubramanian>something into our cluster,
+route it through?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/77-2
+00:07:25.835 --> 00:07:29.534
+<v Srikanth Ramasubramanian>I know you offered a package up to the
+MDX folks to do the same thing.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/80-0
+00:07:30.494 --> 00:07:35.320
+<v Seth Chalmers>Yep, we got everything going in DEV.
+So if you're comfortable with a bit of a</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/80-1
+00:07:35.320 --> 00:07:39.156
+<v Seth Chalmers>rougher experience,
+I can pass you along the documentation we</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/80-2
+00:07:39.156 --> 00:07:42.312
+<v Seth Chalmers>got right now.
+Lalit and product team will get you</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/80-3
+00:07:42.312 --> 00:07:46.024
+<v Seth Chalmers>looped in on the use case.
+So create the spec documents and</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/80-4
+00:07:46.024 --> 00:07:50.974
+<v Seth Chalmers>everything for the final integration,
+but we can get you up and running in DEV.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/81-0
+00:07:51.854 --> 00:07:53.174
+<v Seth Chalmers>We can work offline on that.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/82-0
+00:07:53.774 --> 00:07:54.734
+<v Srikanth Ramasubramanian>Okay, that's perfect.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/83-0
+00:07:59.374 --> 00:08:03.513
+<v @1>From our implementation perspective,
+it looks like we're pretty much aligned</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/83-1
+00:08:03.513 --> 00:08:06.416
+<v @1>though. Is that fair to say?
+Like there's no gotchas.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/83-2
+00:08:06.416 --> 00:08:07.814
+<v @1>I've heard at least. Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/84-0
+00:08:06.734 --> 00:08:10.734
+<v Seth Chalmers>Yeah. Swap the gateway, essentially. Yep.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/85-0
+00:08:10.654 --> 00:08:11.694
+<v @1>Yeah, okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/86-0
+00:08:12.854 --> 00:08:15.854
+<v @1>When's your production date for the
+gateway?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/89-0
+00:08:18.254 --> 00:08:21.406
+<v Seth Chalmers>This week,
+we're just waiting on SSO for the website.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/87-0
+00:08:18.494 --> 00:08:18.894
+<v Lalit Summan>Bye.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/89-1
+00:08:21.406 --> 00:08:25.960
+<v Seth Chalmers>So I've got it deployed in production.
+So we're basically just waiting on SSO</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/88-0
+00:08:21.854 --> 00:08:22.574
+<v @1>Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/89-2
+00:08:25.960 --> 00:08:26.894
+<v Seth Chalmers>for the website.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/91-0
+00:08:28.894 --> 00:08:29.854
+<v Matthew David Andrew Clark>In all night.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/92-0
+00:08:28.974 --> 00:08:30.734
+<v Seth Chalmers>Change windows until next week though.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/90-0
+00:08:29.134 --> 00:08:29.454
+<v @1>Um...</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/93-0
+00:08:31.134 --> 00:08:32.494
+<v Matthew David Andrew Clark>We're expecting everything like...</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/95-0
+00:08:31.294 --> 00:08:33.863
+<v @1>Yeah, that's fine.
+We got to get DEV cooked in anyways,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/95-1
+00:08:33.863 --> 00:08:34.734
+<v @1>so but that's cool.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/94-0
+00:08:34.334 --> 00:08:34.654
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/97-0
+00:08:35.294 --> 00:08:38.661
+<v Matthew David Andrew Clark>Well, our DEV agents,
+would they connect to your prod though?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/97-1
+00:08:38.661 --> 00:08:42.679
+<v Matthew David Andrew Clark>I'm hoping they would versus what we've
+done with Vault where we have SID</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/97-2
+00:08:42.679 --> 00:08:45.774
+<v Matthew David Andrew Clark>connected to SID.
+I hope it's not like that. Yeah, okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/101-0
+00:08:44.174 --> 00:08:47.619
+<v Seth Chalmers>Yeah, yeah,
+our product will manage all environments,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/98-0
+00:08:47.294 --> 00:08:47.854
+<v Matthew David Andrew Clark>Ukil.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/101-1
+00:08:47.619 --> 00:08:52.405
+<v Seth Chalmers>all regions, that sort of thing. Yeah.
+But we'll get you on the DEV first,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/99-0
+00:08:48.974 --> 00:08:50.494
+<v Matthew David Andrew Clark>Okay, makes sense.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/101-2
+00:08:52.405 --> 00:08:54.574
+<v Seth Chalmers>obviously, just to test stuff out.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/100-0
+00:08:52.974 --> 00:08:53.694
+<v @1>Yeah, for.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/103-0
+00:08:55.254 --> 00:08:58.057
+<v @1>Yeah, that's cool.
+I think the ask really was like,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/103-1
+00:08:58.057 --> 00:09:02.261
+<v @1>we want to be one of the use cases.
+Do you think this is a good fit for your,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/103-2
+00:09:02.261 --> 00:09:06.627
+<v @1>because I think you're approved for only
+so many use cases at ETAB when you went</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/103-3
+00:09:06.627 --> 00:09:09.214
+<v @1>through.
+Can we be one of those use cases then?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/102-0
+00:09:07.934 --> 00:09:08.174
+<v Lalit Summan>Ohh.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/105-0
+00:09:09.694 --> 00:09:11.714
+<v Lalit Summan>Yeah,
+so we are coming up with two artifacts</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/105-1
+00:09:11.714 --> 00:09:15.394
+<v Lalit Summan>that we have to make internally is what
+constitutes something to be registered in</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/105-2
+00:09:15.394 --> 00:09:17.682
+<v Lalit Summan>the ACP, right?
+Not everything has to go into ACP,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/105-3
+00:09:17.682 --> 00:09:20.420
+<v Lalit Summan>so we're kind of scratching our heads on
+that, to be honest,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/105-4
+00:09:20.420 --> 00:09:22.574
+<v Lalit Summan>in terms of what that would look and feel
+like.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/106-0
+00:09:21.534 --> 00:09:25.035
+<v @1>Oh, really? What would be an exception?
+Do you have an example of what an</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/106-1
+00:09:25.035 --> 00:09:25.934
+<v @1>exception would be?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/109-0
+00:09:25.854 --> 00:09:29.762
+<v Lalit Summan>If if I'm creating my own core build
+agent and that's creating slides for me,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/109-1
+00:09:29.762 --> 00:09:33.120
+<v Lalit Summan>is it that business critical that I need
+to do that? I don't know.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/109-2
+00:09:33.120 --> 00:09:36.527
+<v Lalit Summan>I think some of the things happening in
+the agentic builder is not.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/107-0
+00:09:34.094 --> 00:09:34.574
+<v @1>Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/109-3
+00:09:36.527 --> 00:09:38.832
+<v Lalit Summan>Things like your use case definitely
+qualify.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/109-4
+00:09:38.832 --> 00:09:42.440
+<v Lalit Summan>I just we have to put some rigor around
+what that looks and feels like.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/109-5
+00:09:42.440 --> 00:09:44.494
+<v Lalit Summan>And second, how do we prioritize what is?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-0
+00:09:44.534 --> 00:09:47.270
+<v Lalit Summan>at the top of the list, right? So far,
+the use cases,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/108-0
+00:09:46.254 --> 00:09:46.654
+<v @1>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-1
+00:09:47.270 --> 00:09:51.576
+<v Lalit Summan>we've got about 12 already that have come
+our way. The ones we're starting off with,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-2
+00:09:51.576 --> 00:09:55.173
+<v Lalit Summan>because this is the first new batch of
+kind of onboarding we're doing,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-3
+00:09:55.173 --> 00:09:57.706
+<v Lalit Summan>starting with the low complexity,
+low risks ones,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-4
+00:09:57.706 --> 00:10:01.657
+<v Lalit Summan>just to get us kind of get our feet wet
+in terms of what this looks and feels</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-5
+00:10:01.657 --> 00:10:04.089
+<v Lalit Summan>like,
+but also kind of build a rigor around how</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/110-6
+00:10:04.089 --> 00:10:06.014
+<v Lalit Summan>we want to take this on going forward.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-0
+00:10:06.734 --> 00:10:09.262
+<v Lalit Summan>DEV,
+I think we've got a pretty good handle on</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-1
+00:10:09.262 --> 00:10:12.919
+<v Lalit Summan>it with the work that Seth, Mark,
+and Rob have been doing. So yeah,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-2
+00:10:12.919 --> 00:10:15.770
+<v Lalit Summan>definitely,
+I do see this as a value add in terms of</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-3
+00:10:15.770 --> 00:10:19.212
+<v Lalit Summan>adding to the ACP. The initial replacing,
+swapping the gateway,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-4
+00:10:19.212 --> 00:10:22.869
+<v Lalit Summan>we can start there in DEV,
+and then the longer term onboarding into</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-5
+00:10:22.869 --> 00:10:25.988
+<v Lalit Summan>DEV, SID, prod,
+we can have that as a spec created within</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-6
+00:10:25.988 --> 00:10:28.731
+<v Lalit Summan>our backlog,
+and we'll work through that with your</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/111-7
+00:10:28.731 --> 00:10:29.054
+<v Lalit Summan>teams.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/112-0
+00:10:29.374 --> 00:10:29.454
+<v Lalit Summan>Oh.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/115-0
+00:10:29.814 --> 00:10:33.389
+<v @1>What does that mean for timing?
+Longer term concerns, right?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/113-0
+00:10:31.174 --> 00:10:31.454
+<v Lalit Summan>No.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/115-1
+00:10:33.389 --> 00:10:37.668
+<v @1>We've been delayed because Melisa wants
+us to really go through the ACP.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/115-2
+00:10:37.668 --> 00:10:42.239
+<v @1>So prod's gonna be ready next week.
+Like we could be ready to go to prod once</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/114-0
+00:10:38.054 --> 00:10:38.174
+<v Lalit Summan>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/115-3
+00:10:42.239 --> 00:10:43.294
+<v @1>your prod's ready.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/118-0
+00:10:44.734 --> 00:10:48.014
+<v @1>What would prevent us from doing that or
+what do we need to do that?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/116-0
+00:10:45.054 --> 00:10:46.014
+<v Lalit Summan>To uh, Seth.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/117-0
+00:10:46.254 --> 00:10:46.734
+<v Mark Hanson>Thank you.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/120-0
+00:10:48.734 --> 00:10:52.423
+<v Lalit Summan>I don't think we have any,
+like we haven't stood up the operational</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/120-1
+00:10:52.423 --> 00:10:55.407
+<v Lalit Summan>kind of op model yet. SLAs,
+if something does go awry,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/120-2
+00:10:55.407 --> 00:10:58.174
+<v Lalit Summan>the remediation,
+we have to figure that out still.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/124-0
+00:10:58.334 --> 00:11:02.181
+<v @1>I'm good. I'm good with whatever it is.
+Like we have Karen on the ops side,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/124-1
+00:11:02.181 --> 00:11:05.724
+<v @1>so we have added and invested in the
+consortium as well. So I'm like,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/121-0
+00:11:02.374 --> 00:11:02.654
+<v Lalit Summan>Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/122-0
+00:11:04.814 --> 00:11:05.534
+<v Lalit Summan>Perfect, okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/124-2
+00:11:05.724 --> 00:11:09.976
+<v @1>like trying to figure out how we can be a
+first class citizen because of our shared</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/124-3
+00:11:09.976 --> 00:11:12.254
+<v @1>investment.
+It really is where I'm going at.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/123-0
+00:11:12.694 --> 00:11:13.534
+<v Lalit Summan>I got it, I got it.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/125-0
+00:11:12.814 --> 00:11:16.400
+<v Robert Chin>Okay, so your driver, which is good,
+your driver is Melisa wants you in there.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/125-1
+00:11:16.400 --> 00:11:20.168
+<v Robert Chin>And that's kind of what we're trying to
+prioritize, saying what's your big driver?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/125-2
+00:11:20.168 --> 00:11:22.574
+<v Robert Chin>So you, that's your driver, that's good.
+So we have.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-0
+00:11:21.854 --> 00:11:23.784
+<v @1>Yeah,
+like we're not allowed to go to ETAB</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-1
+00:11:23.784 --> 00:11:27.511
+<v @1>until we get this conversation done. Like,
+so we wanted to present at ETAB and I'm</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/126-0
+00:11:25.214 --> 00:11:27.134
+<v Robert Chin>Ah, okay, okay, okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-2
+00:11:27.511 --> 00:11:30.204
+<v @1>like, well, Lisa,
+like everybody else is going, why not us?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/127-0
+00:11:27.614 --> 00:11:27.814
+<v Lalit Summan>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/128-0
+00:11:28.654 --> 00:11:29.934
+<v Robert Chin>Got it. Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-3
+00:11:30.204 --> 00:11:33.033
+<v @1>But for some reason,
+she really wants the infrastructure stuff</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/130-0
+00:11:31.054 --> 00:11:33.774
+<v Robert Chin>Yeah, no, no, that's good. Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-4
+00:11:33.033 --> 00:11:36.175
+<v @1>going through it. So I'm like, fine,
+no problem. So speed is kind of,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/131-0
+00:11:35.534 --> 00:11:36.574
+<v Robert Chin>That's perfect.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-5
+00:11:36.175 --> 00:11:39.587
+<v @1>we've been sitting and waiting for,
+I don't know, most in a while and like,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/135-6
+00:11:39.587 --> 00:11:43.134
+<v @1>we've been waiting for a while for this,
+so we're really excited to like even.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/132-0
+00:11:39.814 --> 00:11:40.174
+<v Robert Chin>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/133-0
+00:11:42.094 --> 00:11:43.294
+<v Robert Chin>OK, yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/136-0
+00:11:43.534 --> 00:11:45.359
+<v @1>help out test it.
+We're okay if things break.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/136-1
+00:11:45.359 --> 00:11:48.494
+<v @1>I get not worried about that because I
+know it's all about a learning journey.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/134-0
+00:11:46.734 --> 00:11:46.974
+<v Robert Chin>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/139-0
+00:11:48.974 --> 00:11:52.334
+<v Robert Chin>Okay, well, that's good. Because, yeah,
+we work with the other folks as well and</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/137-0
+00:11:49.134 --> 00:11:49.374
+<v Lalit Summan>Two.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/139-1
+00:11:52.334 --> 00:11:54.201
+<v Robert Chin>trying to figure out, you know,
+like the US,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/139-2
+00:11:54.201 --> 00:11:56.814
+<v Robert Chin>they have business needs to go there for
+compliance and stuff,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/139-3
+00:11:56.814 --> 00:11:58.722
+<v Robert Chin>so we're just trying to prioritize
+everybody,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/139-4
+00:11:58.722 --> 00:12:00.174
+<v Robert Chin>but it's good that you have a need.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/138-0
+00:11:58.814 --> 00:11:59.214
+<v @1>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/141-0
+00:12:01.534 --> 00:12:02.414
+<v Robert Chin>A sanction need.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/140-0
+00:12:02.414 --> 00:12:02.574
+<v Lalit Summan>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/147-0
+00:12:03.374 --> 00:12:07.565
+<v @1>And we're good to help out as needed.
+Like we're not just, obviously we're,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/143-0
+00:12:06.454 --> 00:12:06.814
+<v Robert Chin>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/147-1
+00:12:07.565 --> 00:12:11.921
+<v @1>we have similar knowledge and skill set.
+So anything that we can do to make it</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/144-0
+00:12:11.854 --> 00:12:12.654
+<v Robert Chin>No, for sure.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/147-2
+00:12:11.921 --> 00:12:15.229
+<v @1>easier resource wise or what's capable,
+like allowed to do,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/147-3
+00:12:15.229 --> 00:12:17.214
+<v @1>we're good to partner there as well.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/145-0
+00:12:18.814 --> 00:12:19.294
+<v Seth Chalmers>Awesome.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/146-0
+00:12:19.214 --> 00:12:19.694
+<v Robert Chin>Sounds good.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/148-0
+00:12:22.494 --> 00:12:22.894
+<v Lalit Summan>True.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/149-0
+00:12:22.734 --> 00:12:23.134
+<v @1>Three.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/150-0
+00:12:24.894 --> 00:12:29.450
+<v Srikanth Ramasubramanian>This one's probably for Seth. Seth,
+is there a link or a document that you</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/150-1
+00:12:29.450 --> 00:12:33.034
+<v Srikanth Ramasubramanian>can send me that lists out the versions
+of each component?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/150-2
+00:12:33.034 --> 00:12:37.894
+<v Srikanth Ramasubramanian>We're attached to a specific version.
+Well, actually the latest version of AEG,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/150-3
+00:12:37.894 --> 00:12:40.931
+<v Srikanth Ramasubramanian>we're on 1.4.
+1 because I had issues with bedrock</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/150-4
+00:12:40.931 --> 00:12:42.814
+<v Srikanth Ramasubramanian>routing for specific endpoints.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/151-0
+00:12:42.974 --> 00:12:45.974
+<v Srikanth Ramasubramanian>in previous versions.
+I just wanted to see if there's any...</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/153-0
+00:12:47.854 --> 00:12:51.054
+<v Srikanth Ramasubramanian>legroom to move versions or if it's going
+to be fixed at something.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/155-0
+00:12:53.534 --> 00:12:56.272
+<v Seth Chalmers>Yeah, I'll pass that along to you.
+I have to,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/155-1
+00:12:56.272 --> 00:13:00.974
+<v Seth Chalmers>I don't have like a ready to give you a
+document right now, but I'll put that.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/154-0
+00:13:02.414 --> 00:13:02.814
+<v Srikanth Ramasubramanian>Thank you.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/156-0
+00:13:06.654 --> 00:13:09.254
+<v @1>So, so next step is what lead the.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/158-0
+00:13:10.254 --> 00:13:13.374
+<v @1>Who talks to who or how do we get going
+on the techie side of it?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/157-0
+00:13:10.334 --> 00:13:10.734
+<v Lalit Summan>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/159-0
+00:13:13.854 --> 00:13:16.266
+<v Lalit Summan>Yeah, for sure. I think the first step,
+Seth,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/159-1
+00:13:16.266 --> 00:13:20.409
+<v Lalit Summan>is the kind of getting them access to DEV
+with replacing the gateway. Quickly,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/159-2
+00:13:20.409 --> 00:13:24.762
+<v Lalit Summan>we can do that relatively quickly in the
+DEV environment. The next steps there is,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/159-3
+00:13:24.762 --> 00:13:27.908
+<v Lalit Summan>we'll have an engineer,
+sounds like Karen is already there,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/159-4
+00:13:27.908 --> 00:13:30.793
+<v Lalit Summan>assigned to this spec that we create out
+of this call,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/159-5
+00:13:30.793 --> 00:13:34.254
+<v Lalit Summan>and we'll do the back and forth of
+getting you up and running in.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/160-0
+00:13:34.574 --> 00:13:38.563
+<v Lalit Summan>In the other environments as well,
+so I mean, it's gonna be a little clunky,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/160-1
+00:13:38.563 --> 00:13:40.894
+<v Lalit Summan>but we'll get through it together as a
+team.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/162-0
+00:13:41.614 --> 00:13:44.805
+<v @1>Awesome. That's great.
+So then Sri and Seth and Matt,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/161-0
+00:13:42.574 --> 00:13:42.614
+<v Lalit Summan>I.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/162-1
+00:13:44.805 --> 00:13:46.814
+<v @1>most of you guys just work it out.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-0
+00:13:47.894 --> 00:13:51.074
+<v @1>And then Mohsen, maybe, I don't know,
+inside the architecture community,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/163-0
+00:13:47.934 --> 00:13:48.534
+<v Seth Chalmers>Sounds good.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-1
+00:13:51.074 --> 00:13:54.602
+<v @1>if we can maybe finally get on the agenda
+for any tab saying we're going forward</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-2
+00:13:54.602 --> 00:13:58.087
+<v @1>with it. And I want all the other stuff.
+Like we have temporal and other things</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-3
+00:13:58.087 --> 00:14:01.442
+<v @1>that are not the organization layer.
+That's really the primary focus of what</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-4
+00:14:01.442 --> 00:14:03.402
+<v @1>we're trying to do,
+not in scope of the ACP.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-5
+00:14:03.402 --> 00:14:05.711
+<v @1>So I really want to get that moving
+forward, Mohsen,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/164-6
+00:14:05.711 --> 00:14:06.974
+<v @1>now that we're at this point.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/165-0
+00:14:06.254 --> 00:14:13.905
+<v Mohsen Norouzi>Yeah, yeah, like temporal is in move.
+I'm just waiting for the ETAB schedule to</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/165-1
+00:14:13.905 --> 00:14:18.304
+<v Mohsen Norouzi>assign to it. Mary was telling me that,
+like,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/165-2
+00:14:18.304 --> 00:14:23.947
+<v Mohsen Norouzi>it's going to be at the end of September
+or early October,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/165-3
+00:14:23.947 --> 00:14:27.294
+<v Mohsen Norouzi>but everything else is ready, so...</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/167-0
+00:14:27.694 --> 00:14:31.857
+<v @1>Okay, I'll figure that out. If that's,
+I don't know why we're getting delayed,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/166-0
+00:14:29.134 --> 00:14:29.614
+<v Mohsen Norouzi>Chow.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/167-1
+00:14:31.857 --> 00:14:34.334
+<v @1>but try to jump in,
+see if Melisa can help us.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/169-0
+00:14:33.534 --> 00:14:37.082
+<v Mohsen Norouzi>And, yeah,
+and that temporal is not just for us,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/169-1
+00:14:37.082 --> 00:14:42.440
+<v Mohsen Norouzi>it's basically a general use case,
+like we have temporal approved for the</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/169-2
+00:14:42.440 --> 00:14:44.974
+<v Mohsen Norouzi>prod use case for our for our work.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-0
+00:14:43.694 --> 00:14:45.547
+<v @1>Yeah,
+I'm not worried about the temporal</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-1
+00:14:45.547 --> 00:14:47.716
+<v @1>specific,
+just trying to highlight for Seth and</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/170-0
+00:14:46.894 --> 00:14:47.534
+<v Mohsen Norouzi>Yeah, yeah, yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-2
+00:14:47.716 --> 00:14:49.660
+<v @1>team,
+like we have our whole orchestration</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/171-0
+00:14:49.294 --> 00:14:50.094
+<v Mohsen Norouzi>Exactly.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-3
+00:14:49.660 --> 00:14:51.875
+<v @1>layer that this is kind of we want to
+show, hey,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/172-0
+00:14:51.214 --> 00:14:51.614
+<v Mohsen Norouzi>Chow.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/173-0
+00:14:51.694 --> 00:14:52.014
+<v Matthew David Andrew Clark>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-4
+00:14:51.875 --> 00:14:54.044
+<v @1>our layers integrating with ACP and we're
+good.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/174-0
+00:14:53.414 --> 00:14:54.014
+<v Mohsen Norouzi>Mm-hmm.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-5
+00:14:54.044 --> 00:14:57.479
+<v @1>So that piece is what I'm talking about,
+not one, it's not one tool for us.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/175-0
+00:14:55.214 --> 00:14:55.934
+<v Mohsen Norouzi>Yep, yep.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/177-6
+00:14:57.479 --> 00:14:58.654
+<v @1>This stuff isn't one tool.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/176-0
+00:14:57.614 --> 00:14:58.094
+<v Mohsen Norouzi>Right.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/178-0
+00:14:57.934 --> 00:15:00.250
+<v Matthew David Andrew Clark>Yeah,
+the interesting part though is because I</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/178-1
+00:15:00.250 --> 00:15:04.093
+<v Matthew David Andrew Clark>was talking to Seth briefly the other day,
+it was key cloak aspect because on</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/178-2
+00:15:04.093 --> 00:15:08.134
+<v Matthew David Andrew Clark>temporal we'll have to do similar things
+with machine credentials and things like</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/178-3
+00:15:08.134 --> 00:15:11.534
+<v Matthew David Andrew Clark>that with authentication where it does
+OAuth. So that's where I was.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/180-0
+00:15:12.734 --> 00:15:17.255
+<v Matthew David Andrew Clark>I know we were thinking maybe we just do
+something custom versus use Noctur or</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/180-1
+00:15:17.255 --> 00:15:20.517
+<v Matthew David Andrew Clark>Entra and then key cloak was the other
+option out there.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/180-2
+00:15:20.517 --> 00:15:23.722
+<v Matthew David Andrew Clark>So I don't know if maybe this is a future
+conversation,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/180-3
+00:15:23.722 --> 00:15:27.957
+<v Matthew David Andrew Clark>but I was talking to Greg a little bit
+about it too. And he's like, well,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/180-4
+00:15:27.957 --> 00:15:31.734
+<v Matthew David Andrew Clark>maybe you could leverage the ACP's key
+cloak. And I'm like, well.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/181-0
+00:15:32.094 --> 00:15:35.219
+<v Matthew David Andrew Clark>Maybe,
+but is that then sprawl to the ACP and</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/181-1
+00:15:35.219 --> 00:15:40.517
+<v Matthew David Andrew Clark>getting them outside their kind of their
+focus area too? Yes, it can be done,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/181-2
+00:15:40.517 --> 00:15:42.894
+<v Matthew David Andrew Clark>but does it make sense to do? Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/184-0
+00:15:41.214 --> 00:15:45.038
+<v @1>So I'll leave those conversations to you
+techies. I, hey, make it secure.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/184-1
+00:15:45.038 --> 00:15:47.880
+<v @1>Don't break security rules.
+I think that's number one.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/182-0
+00:15:47.134 --> 00:15:47.854
+<v Matthew David Andrew Clark>That's the plan.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/184-2
+00:15:47.880 --> 00:15:51.703
+<v @1>So if it's custom and version two is key
+cloak or whatever, like I don't,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/184-3
+00:15:51.703 --> 00:15:55.579
+<v @1>like just do we have to do right now and
+think about it in versions versus</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/184-4
+00:15:55.579 --> 00:15:58.937
+<v @1>perfection at the gate,
+but the perfection part is be secure how</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/184-5
+00:15:58.937 --> 00:15:59.454
+<v @1>you do it.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/183-0
+00:15:59.294 --> 00:15:59.454
+<v Mark Hanson>No.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/185-0
+00:15:59.894 --> 00:16:01.934
+<v @1>Kinda can go in stages, I would say.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/186-0
+00:16:02.814 --> 00:16:03.134
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/187-0
+00:16:03.534 --> 00:16:04.014
+<v @1>Okay.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/188-0
+00:16:03.854 --> 00:16:04.334
+<v Matthew David Andrew Clark>close.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/189-0
+00:16:06.414 --> 00:16:06.894
+<v @1>Mhm.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/190-0
+00:16:06.494 --> 00:16:09.381
+<v Lalit Summan>And just from a for you to be unblocked
+for ETAP,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/190-1
+00:16:09.381 --> 00:16:12.326
+<v Lalit Summan>the work that we do in getting you
+started in DEV,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/190-2
+00:16:12.326 --> 00:16:16.656
+<v Lalit Summan>does that do the trick for you, Shayne?
+Does that get you to have the ETAP</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/190-3
+00:16:16.656 --> 00:16:19.774
+<v Lalit Summan>conversations or does something else
+that's required?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/192-0
+00:16:19.814 --> 00:16:22.023
+<v @1>I'll find out most and I'll take that
+forward.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/192-1
+00:16:22.023 --> 00:16:24.466
+<v @1>This is the last piece of our box of
+investigation.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/192-2
+00:16:24.466 --> 00:16:28.320
+<v @1>We have all the mark to your point, Gen.
+A triage. We're doing all the paperwork,</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/192-3
+00:16:28.320 --> 00:16:31.374
+<v @1>PAA. We've got all that stuff lined up.
+This was the last piece.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/191-0
+00:16:28.974 --> 00:16:29.134
+<v Mohsen Norouzi>Chin.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/193-0
+00:16:32.654 --> 00:16:35.774
+<v Seth Chalmers>Worth getting lined up with Colin and
+Anirban or?</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/197-0
+00:16:35.694 --> 00:16:37.998
+<v @1>Yeah,
+all the Anirban booked me a meeting as</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/194-0
+00:16:36.654 --> 00:16:37.294
+<v Mohsen Norouzi>Yeah, yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/197-1
+00:16:37.998 --> 00:16:40.814
+<v @1>well to have a conversation about
+something different.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/195-0
+00:16:39.214 --> 00:16:39.374
+<v Seth Chalmers>Good.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/197-2
+00:16:40.814 --> 00:16:43.271
+<v @1>So on this same topic,
+so we're lined up there.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/197-3
+00:16:43.271 --> 00:16:46.650
+<v @1>Just want to make sure the questions are
+we technically lined up.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/197-4
+00:16:46.650 --> 00:16:50.745
+<v @1>We always said we were on paper before
+something came out and this kind of just</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/197-5
+00:16:50.745 --> 00:16:53.254
+<v @1>does that check mark that yeah,
+we are lined up.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/196-0
+00:16:54.254 --> 00:16:54.654
+<v Seth Chalmers>Awesome.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/207-0
+00:16:54.974 --> 00:16:57.738
+<v @1>Awesome,
+so I'll leave it with the techies to get</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/207-1
+00:16:57.738 --> 00:17:01.220
+<v @1>stuff done, and Matt,
+most of you guys have things on our side</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/207-2
+00:17:01.220 --> 00:17:05.586
+<v @1>process wise you need, just let me know,
+but appreciate the partnership, guys.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/198-0
+00:17:02.974 --> 00:17:03.454
+<v Mohsen Norouzi>Sure.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/199-0
+00:17:03.534 --> 00:17:03.774
+<v Mark Hanson>The.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/200-0
+00:17:05.014 --> 00:17:06.014
+<v Lalit Summan>Appreciate it. Thank you.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/207-3
+00:17:05.586 --> 00:17:10.174
+<v @1>I can say, guys, all guys in a room. Oh,
+we failed the diversity check. All right.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/203-0
+00:17:09.614 --> 00:17:09.934
+<v Seth Chalmers>Yeah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/202-0
+00:17:10.094 --> 00:17:10.174
+<v Lalit Summan>Ah.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/204-0
+00:17:11.294 --> 00:17:11.694
+<v Mohsen Norouzi>So.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/212-0
+00:17:11.494 --> 00:17:14.414
+<v @1>All right, thanks all.
+Have a great weekend. Thank you.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/214-0
+00:17:12.254 --> 00:17:14.814
+<v Lalit Summan>Thank you. Thanks. Yeah, thanks. Bye.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/210-0
+00:17:12.814 --> 00:17:14.174
+<v Seth Chalmers>Thanks, guys. See ya.</v>
+
+60d83cdd-631b-44bb-ba3f-a82df7bb081d/211-0
+00:17:12.934 --> 00:17:14.094
+<v Robert Chin>Thanks, everybody. Bye.</v>

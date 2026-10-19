@@ -1,0 +1,2733 @@
+WEBVTT
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/10-0
+00:00:03.344 --> 00:00:07.054
+<v Lalit Summan>we go through with our users in terms of
+requirements,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/10-1
+00:00:07.054 --> 00:00:11.237
+<v Lalit Summan>in terms of what your use case is.
+So we'll go through those,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/10-2
+00:00:11.237 --> 00:00:15.016
+<v Lalit Summan>but before we dive into anything with any
+requirements,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/10-3
+00:00:15.016 --> 00:00:19.266
+<v Lalit Summan>are you aware of what the ACP is in terms
+of have you seen it?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/10-4
+00:00:19.266 --> 00:00:23.314
+<v Lalit Summan>Do you have an overview?
+We want to meet you where you are,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/10-5
+00:00:23.314 --> 00:00:24.664
+<v Lalit Summan>so I'd love to know.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/11-0
+00:00:25.184 --> 00:00:28.184
+<v Lalit Summan>How are you thinking about this? Like,
+what do you know about the AC?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/13-0
+00:00:29.944 --> 00:00:35.684
+<v Kulas Angeles>I was part of the initial team that was
+looking at ACP right before it went to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/13-1
+00:00:35.684 --> 00:00:40.263
+<v Kulas Angeles>the consortium. So yeah,
+but Anuj and Usha might probably just</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/12-0
+00:00:38.424 --> 00:00:41.064
+<v Lalit Summan>Okay, right, right, right, right, yeah,
+yeah, right about this.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/13-2
+00:00:40.263 --> 00:00:45.567
+<v Kulas Angeles>have very high level understanding of it.
+So if you have like, you know,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/13-3
+00:00:45.567 --> 00:00:50.146
+<v Kulas Angeles>a quick five minute intro as to what it
+is and what it can do,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/13-4
+00:00:50.146 --> 00:00:52.544
+<v Kulas Angeles>that will be beneficial for them.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/14-0
+00:00:52.744 --> 00:00:55.634
+<v Kulas Angeles>Yeah, I've seen the demo,
+like I think a couple of months back,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/14-1
+00:00:55.634 --> 00:00:58.750
+<v Kulas Angeles>I think said later demo in one of the EDA
+meetings, but beyond that,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/14-2
+00:00:58.750 --> 00:00:59.744
+<v Kulas Angeles>I haven't seen it. OK.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/19-0
+00:01:00.504 --> 00:01:03.068
+<v Lalit Summan>Got it,
+and it's probably evolved since then.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/19-1
+00:01:03.068 --> 00:01:05.632
+<v Lalit Summan>Ernest said, if you want to do a quick,
+like,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/16-0
+00:01:03.704 --> 00:01:05.944
+<v Kulas Angeles>Ohh yeah, for sure,
+and the week it evolves.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/19-2
+00:01:05.632 --> 00:01:08.921
+<v Lalit Summan>quick five-minute demo just to get folks
+familiar with it,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/19-3
+00:01:08.921 --> 00:01:12.824
+<v Lalit Summan>so that we were all talking apples and
+oranges for apples and apples.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/24-0
+00:01:13.384 --> 00:01:17.237
+<v Seth Chalmers>Yep,
+I'll just link some pages here so you can</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/24-1
+00:01:17.237 --> 00:01:22.977
+<v Seth Chalmers>follow along. These are just like 101,
+what is the ACP overview page.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/24-2
+00:01:22.977 --> 00:01:29.372
+<v Seth Chalmers>So what is the agentic control plane?
+It's essentially a governance layer for</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/24-3
+00:01:29.372 --> 00:01:34.292
+<v Seth Chalmers>agentic solutions.
+So how that works in practice is we have</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/24-4
+00:01:34.292 --> 00:01:34.784
+<v Seth Chalmers>the...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/26-0
+00:01:35.184 --> 00:01:39.492
+<v Seth Chalmers>Illuminate portal.
+It's kind of like the front end UI and</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/26-1
+00:01:39.492 --> 00:01:45.584
+<v Seth Chalmers>all interactions agentic communication
+goes through one of our governed gateways.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/26-2
+00:01:45.584 --> 00:01:50.115
+<v Seth Chalmers>That allows us to gather all the metrics,
+the observability,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/26-3
+00:01:50.115 --> 00:01:54.424
+<v Seth Chalmers>placed guardrails on actions, etc.
+So that's kind of the.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/31-0
+00:01:54.744 --> 00:02:00.222
+<v Seth Chalmers>the heart of how all this works together.
+How it's deployed here,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/31-1
+00:02:00.222 --> 00:02:06.697
+<v Seth Chalmers>we have a set of environments that have
+some fundamental kind of architecture</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/31-2
+00:02:06.697 --> 00:02:10.848
+<v Seth Chalmers>pieces in the back end that make
+everything work.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/31-3
+00:02:10.848 --> 00:02:14.584
+<v Seth Chalmers>So it has key cloak as an identity
+provider.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/34-0
+00:02:15.064 --> 00:02:21.253
+<v Seth Chalmers>underneath this does machine to machine
+and also allows federation of our other</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/34-1
+00:02:21.253 --> 00:02:24.966
+<v Seth Chalmers>identity providers like Entra and Okta
+into it.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/34-2
+00:02:24.966 --> 00:02:31.388
+<v Seth Chalmers>So we can integrate with chatbots and all
+that good stuff and enable the on behalf</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/34-3
+00:02:31.388 --> 00:02:33.864
+<v Seth Chalmers>of flow. So a user signing into.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/35-0
+00:02:33.944 --> 00:02:39.291
+<v Seth Chalmers>a chat bot as an example and delegating
+some work over to an agent to make that</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/35-1
+00:02:39.291 --> 00:02:43.969
+<v Seth Chalmers>token exchange pass through happen.
+You need a identity provider that</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/35-2
+00:02:43.969 --> 00:02:49.250
+<v Seth Chalmers>properly implements a few RFCs with that
+token exchange and Key Cloak is that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/35-3
+00:02:49.250 --> 00:02:54.664
+<v Seth Chalmers>The other identity providers we have at
+Sun Life don't necessarily fulfill that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/39-0
+00:02:54.824 --> 00:02:58.504
+<v Seth Chalmers>today and this is a consortium decision
+what we brought in.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/39-1
+00:02:58.504 --> 00:03:02.798
+<v Seth Chalmers>So this is the major change from the
+internal build. Other than that,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/39-2
+00:03:02.798 --> 00:03:05.620
+<v Seth Chalmers>we have a lot of cool stuff like the
+gateway.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/39-3
+00:03:05.620 --> 00:03:08.871
+<v Seth Chalmers>There's kind of like a proxy sidecar in
+front of it,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/39-4
+00:03:08.871 --> 00:03:13.103
+<v Seth Chalmers>which does authentication and
+authorization. And then agent gateway,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/39-5
+00:03:13.103 --> 00:03:17.704
+<v Seth Chalmers>the open source package is what's
+essentially used for the routing behind.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/40-0
+00:03:18.584 --> 00:03:23.830
+<v Seth Chalmers>We have an internal lang fuse,
+which grabs traces, tokens, cost metrics.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/40-1
+00:03:23.830 --> 00:03:27.927
+<v Seth Chalmers>We also have like model and agent
+evaluation frameworks,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/40-2
+00:03:27.927 --> 00:03:32.599
+<v Seth Chalmers>which can run out this.
+So if you don't have your own evaluation</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/40-3
+00:03:32.599 --> 00:03:36.984
+<v Seth Chalmers>tool or anything like that,
+you can use our centrally hosted</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/45-0
+00:03:37.384 --> 00:03:43.888
+<v Seth Chalmers>length views instance for LLM as a judge
+in these various evaluation flows.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/45-1
+00:03:43.888 --> 00:03:50.393
+<v Seth Chalmers>We integrate with essentially all of the
+platforms as Sun Life, Open Shift,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/45-2
+00:03:50.393 --> 00:03:54.330
+<v Seth Chalmers>Bedrock Agent Core, EKS,
+all those platforms,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/45-3
+00:03:54.330 --> 00:03:56.984
+<v Seth Chalmers>essentially internal traffic is</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/52-0
+00:03:57.784 --> 00:04:03.674
+<v Seth Chalmers>good to go. Snowflake as well,
+but not like currently officially</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/52-1
+00:04:03.674 --> 00:04:09.292
+<v Seth Chalmers>supported. But to make all this happen,
+we have a Python SDK,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/52-2
+00:04:09.292 --> 00:04:16.269
+<v Seth Chalmers>a harness that you can utilize, import,
+makes the general communication much</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/52-3
+00:04:16.269 --> 00:04:16.904
+<v Seth Chalmers>easier.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/55-0
+00:04:17.144 --> 00:04:22.466
+<v Seth Chalmers>So switching over your current code,
+a lot of people are just making direct</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/55-1
+00:04:22.466 --> 00:04:27.999
+<v Seth Chalmers>calls over to Bedrock or whatever. This,
+the SDK kind of allows you to quickly</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/55-2
+00:04:27.999 --> 00:04:33.322
+<v Seth Chalmers>switch over your traffic to basically
+using the gateway and the credentials</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/55-3
+00:04:33.322 --> 00:04:36.824
+<v Seth Chalmers>that we issue you from the portal.
+So that's the.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/56-0
+00:04:36.864 --> 00:04:42.142
+<v Seth Chalmers>basic shape of it,
+what the Luminate portal looks like today.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/56-1
+00:04:42.142 --> 00:04:42.824
+<v Seth Chalmers>Go back.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/61-0
+00:04:45.704 --> 00:04:49.723
+<v Seth Chalmers>So we have agents, MCP servers,
+models registered.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/61-1
+00:04:49.723 --> 00:04:53.978
+<v Seth Chalmers>We're hooked in with all the existing
+bedrock models.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/61-2
+00:04:53.978 --> 00:04:59.967
+<v Seth Chalmers>So we'll set you up in the portal.
+I already sent over the configuration to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/61-3
+00:04:59.967 --> 00:05:03.513
+<v Seth Chalmers>Kulas.
+We can add everyone else over to that</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/61-4
+00:05:03.513 --> 00:05:04.144
+<v Seth Chalmers>project.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/64-0
+00:05:04.944 --> 00:05:07.866
+<v Seth Chalmers>But you essentially get access to the
+portal,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/64-1
+00:05:07.866 --> 00:05:12.439
+<v Seth Chalmers>you have sunlifeservice access to do most
+of the things you need to do.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/64-2
+00:05:12.439 --> 00:05:16.060
+<v Seth Chalmers>That final action,
+which after you register some agents,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/64-3
+00:05:16.060 --> 00:05:21.142
+<v Seth Chalmers>applications, models, or MCP servers,
+you finally want to get all that deployed</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/64-4
+00:05:21.142 --> 00:05:24.064
+<v Seth Chalmers>and get a credential back so you can
+actually</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/67-0
+00:05:24.264 --> 00:05:28.101
+<v Seth Chalmers>interact.
+That's the final step that requires us on</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/67-1
+00:05:28.101 --> 00:05:32.086
+<v Seth Chalmers>the product team. So you'll say,
+I'm ready to deploy,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/67-2
+00:05:32.086 --> 00:05:37.031
+<v Seth Chalmers>we'll get you set up on the gateway,
+you'll get a credential back,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/67-3
+00:05:37.031 --> 00:05:42.270
+<v Seth Chalmers>and then you can start working.
+For all the interactions which are not</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/67-4
+00:05:42.270 --> 00:05:43.304
+<v Seth Chalmers>like a direct.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/68-0
+00:05:43.864 --> 00:05:46.730
+<v Seth Chalmers>agent calling a model or anything like
+that,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/68-1
+00:05:46.730 --> 00:05:51.316
+<v Seth Chalmers>those kind of fall into an application
+flow. So things like a chat bot,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/68-2
+00:05:51.316 --> 00:05:55.647
+<v Seth Chalmers>we're also doing like a cloud code POC.
+I think orchestra is local,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/68-3
+00:05:55.647 --> 00:05:59.023
+<v Seth Chalmers>so this is probably the path you would
+take as well.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/68-4
+00:05:59.023 --> 00:06:03.864
+<v Seth Chalmers>So you can register your application and
+then you'll make a policy between.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/70-0
+00:06:04.264 --> 00:06:07.824
+<v Seth Chalmers>your application and a model,
+like whatever you want to call</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/70-1
+00:06:07.824 --> 00:06:10.859
+<v Seth Chalmers>essentially.
+And that's how the kind of interaction</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/70-2
+00:06:10.859 --> 00:06:15.412
+<v Seth Chalmers>works. And then you'll just, again,
+route everything through your application</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/70-3
+00:06:15.412 --> 00:06:17.864
+<v Seth Chalmers>through the gateway to make that LLM call.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/69-0
+00:06:18.264 --> 00:06:18.744
+<v Kulas Angeles>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/73-0
+00:06:20.024 --> 00:06:23.660
+<v Kulas Angeles>Good question. Yeah, I mean,
+the question was more around the models.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/73-1
+00:06:23.660 --> 00:06:27.505
+<v Kulas Angeles>Like, when you say models, say,
+is it that I have to configure my own AWS</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/73-2
+00:06:27.505 --> 00:06:29.791
+<v Kulas Angeles>account? Like,
+I'll take a simple use case.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/73-3
+00:06:29.791 --> 00:06:33.844
+<v Kulas Angeles>Let's say we have a chart board and I
+have a Lambda in which I'm running the,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/73-4
+00:06:33.844 --> 00:06:37.221
+<v Kulas Angeles>like, bedroll inference.
+So does it mean that I have to use your</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/73-5
+00:06:37.221 --> 00:06:38.624
+<v Kulas Angeles>SDK within my Lambda board?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/77-0
+00:06:38.984 --> 00:06:42.492
+<v Kulas Angeles>And then is it like,
+because I'm using Red Bedrock right with</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/77-1
+00:06:42.492 --> 00:06:45.548
+<v Kulas Angeles>their APIs,
+so is it like you will be providing after</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/77-2
+00:06:45.548 --> 00:06:50.302
+<v Kulas Angeles>that the models like through ACP or is it
+like still it stays within my AWS account</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/77-3
+00:06:50.302 --> 00:06:54.264
+<v Kulas Angeles>and plus like I'm trying to understand
+the integration piece of that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/76-0
+00:06:51.384 --> 00:06:51.784
+<v Seth Chalmers>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/82-0
+00:06:54.784 --> 00:06:57.878
+<v Seth Chalmers>Yeah, great question.
+So we support both models.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/82-1
+00:06:57.878 --> 00:07:03.247
+<v Seth Chalmers>So A centralized inference model where we
+do all the LLM inferencing on your behalf,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/82-2
+00:07:03.247 --> 00:07:06.278
+<v Seth Chalmers>those go through our accounts.
+That's also how,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/82-3
+00:07:06.278 --> 00:07:10.826
+<v Seth Chalmers>I know Kulas we were talking,
+we're also doing the small language model</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/82-4
+00:07:10.826 --> 00:07:12.784
+<v Seth Chalmers>hosting on ACP. That goes to...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/86-0
+00:07:13.064 --> 00:07:17.724
+<v Seth Chalmers>us as well. So we have, as an example,
+Gemma 4 E to be hosted in our dev</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/86-1
+00:07:17.724 --> 00:07:21.427
+<v Seth Chalmers>instance and EKS clusters,
+we're serving that as a model.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/83-0
+00:07:19.784 --> 00:07:19.984
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/86-2
+00:07:21.427 --> 00:07:26.343
+<v Seth Chalmers>So you can similarly register your
+application, make a policy to that model.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/86-3
+00:07:26.343 --> 00:07:29.662
+<v Seth Chalmers>And depending on whatever route you want
+to choose,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/86-4
+00:07:29.662 --> 00:07:32.344
+<v Seth Chalmers>you can also use your own Bedrock account.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/89-0
+00:07:32.424 --> 00:07:36.662
+<v Seth Chalmers>as well. So we can set that up.
+We have a service catalog policy that</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/89-1
+00:07:36.662 --> 00:07:41.264
+<v Seth Chalmers>gets deployed into your account and then
+our gateway role assumes into your</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/89-2
+00:07:41.264 --> 00:07:45.624
+<v Seth Chalmers>account to make the better call or it's
+centrally and we do it for you.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/90-0
+00:07:46.984 --> 00:07:51.651
+<v Kulas Angeles>I do have a question on the central one.
+Will that be the setup for the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/90-1
+00:07:51.651 --> 00:07:55.735
+<v Kulas Angeles>foreseeable future?
+Meaning because tokens is always an issue,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/90-2
+00:07:55.735 --> 00:07:58.717
+<v Kulas Angeles>right?
+You're using it and people have to pay</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/90-3
+00:07:58.717 --> 00:08:02.024
+<v Kulas Angeles>for the token.
+So how does that costing look like?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/91-0
+00:08:02.424 --> 00:08:06.618
+<v Seth Chalmers>Yep, that's our go forward model.
+We're still working out the full</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/91-1
+00:08:06.618 --> 00:08:11.375
+<v Seth Chalmers>chargeback to cost centers and all that.
+But that's in the works right now,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/91-2
+00:08:11.375 --> 00:08:14.755
+<v Seth Chalmers>going through the next ETAB approval for
+October 9th.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/91-3
+00:08:14.755 --> 00:08:17.948
+<v Seth Chalmers>And then we have to develop that
+chargeback model,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/91-4
+00:08:17.948 --> 00:08:20.264
+<v Seth Chalmers>but that is the go forward direction.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/92-0
+00:08:21.064 --> 00:08:24.929
+<v Seth Chalmers>It has a host of advantages,
+like you don't obviously need a Bedrock</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/92-1
+00:08:24.929 --> 00:08:28.907
+<v Seth Chalmers>account. We're doing that for you.
+And then the consortium directions,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/92-2
+00:08:28.907 --> 00:08:31.484
+<v Seth Chalmers>we can just hot swap providers in the
+future.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/92-3
+00:08:31.484 --> 00:08:36.023
+<v Seth Chalmers>So let's say we want to move away from
+Bedrock or whatever, do anthropic direct.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/92-4
+00:08:36.023 --> 00:08:38.264
+<v Seth Chalmers>That allows us to do that pretty simply.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/94-0
+00:08:39.544 --> 00:08:43.063
+<v Kulas Angeles>Okay, nice.
+So I'm assuming this won't work for our</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/94-1
+00:08:43.063 --> 00:08:48.273
+<v Kulas Angeles>current implementation of Orchestra
+because we use GitHub Copilot right now.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/94-2
+00:08:48.273 --> 00:08:53.755
+<v Kulas Angeles>So if for us to be able to onboard our
+application here, we have to use the bed,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/94-3
+00:08:53.755 --> 00:08:56.800
+<v Kulas Angeles>for now, Bedrock as our LLM provider,
+right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/93-0
+00:08:55.224 --> 00:08:56.144
+<v Seth Chalmers>That's right, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/94-4
+00:08:56.800 --> 00:08:59.304
+<v Kulas Angeles>So we can move on from language mode.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/95-0
+00:08:59.704 --> 00:09:03.734
+<v Kulas Angeles>I would probably just use the free one
+for now, right? So,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/95-1
+00:09:03.734 --> 00:09:05.784
+<v Kulas Angeles>it's technically free for now.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/97-0
+00:09:06.664 --> 00:09:11.523
+<v Seth Chalmers>Yeah, the small language model,
+we have no like chargeback mechanism,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/97-1
+00:09:11.523 --> 00:09:17.145
+<v Seth Chalmers>so it'll just be us kind of getting the
+cost on that if you want to try that one</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/97-2
+00:09:17.145 --> 00:09:20.825
+<v Seth Chalmers>out. Otherwise,
+most of our testing is like with the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/96-0
+00:09:18.304 --> 00:09:18.664
+<v Kulas Angeles>Thank you.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/97-3
+00:09:20.825 --> 00:09:24.504
+<v Seth Chalmers>lower very cheap models,
+Haiku and things like that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/98-0
+00:09:24.824 --> 00:09:26.584
+<v Kulas Angeles>How about the bedrock, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/99-0
+00:09:29.304 --> 00:09:34.504
+<v Kulas Angeles>How do you have a call center mechanism
+detection right now?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/100-0
+00:09:36.664 --> 00:09:36.824
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/102-0
+00:09:36.664 --> 00:09:41.601
+<v Seth Chalmers>So most of the use cases are using their
+own Bedrock account still,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/102-1
+00:09:41.601 --> 00:09:46.104
+<v Seth Chalmers>so all those charges still just go back
+to the account owner.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/101-0
+00:09:44.824 --> 00:09:45.464
+<v Kulas Angeles>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/105-0
+00:09:46.424 --> 00:09:53.024
+<v Kulas Angeles>So, you can just map it, right? OK,
+just found this link with that. Hello,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/104-0
+00:09:50.984 --> 00:09:52.024
+<v Seth Chalmers>But afterwards.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/103-0
+00:09:51.304 --> 00:09:51.784
+<v Lalit Summan>It's not.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/105-1
+00:09:53.024 --> 00:09:54.344
+<v Kulas Angeles>sorry, this is.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/106-0
+00:10:02.624 --> 00:10:02.944
+<v Kulas Angeles>Thanks, sir.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/107-0
+00:10:03.024 --> 00:10:06.653
+<v Seth Chalmers>So once that's all in place,
+you'll be able to see like your project,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/107-1
+00:10:06.653 --> 00:10:08.624
+<v Seth Chalmers>what the spend is, that sort of thing.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/109-0
+00:10:09.344 --> 00:10:11.495
+<v Kulas Angeles>So,
+the question might be the token cost</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/109-1
+00:10:11.495 --> 00:10:14.538
+<v Kulas Angeles>which you're seeing on right now on ACP,
+like on this UI,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/109-2
+00:10:14.538 --> 00:10:18.367
+<v Kulas Angeles>is it the real token cost coming from
+directly from the Bell Rock API or</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/109-3
+00:10:18.367 --> 00:10:22.407
+<v Kulas Angeles>entropy or anything which I'm using,
+or is it the estimated upgraded on your</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/109-4
+00:10:22.407 --> 00:10:23.824
+<v Kulas Angeles>end, like at the ACP level?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/108-0
+00:10:24.424 --> 00:10:25.584
+<v Seth Chalmers>It's the exact cost.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/110-0
+00:10:27.504 --> 00:10:29.824
+<v Kulas Angeles>Exact cost,
+because they have exposed the endpoint.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/113-0
+00:10:28.384 --> 00:10:30.461
+<v Lalit Summan>It is,
+if you won't calculate any new costs,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/113-1
+00:10:30.461 --> 00:10:32.630
+<v Lalit Summan>right?
+We're just gonna leverage where they're</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/113-2
+00:10:32.630 --> 00:10:33.184
+<v Lalit Summan>coming from.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/114-0
+00:10:33.824 --> 00:10:34.064
+<v Seth Chalmers>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/116-0
+00:10:34.544 --> 00:10:37.924
+<v Kulas Angeles>Yeah, I mean, I was just asking that,
+let's say I invoke agent,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/116-1
+00:10:37.924 --> 00:10:40.301
+<v Kulas Angeles>I'm sending a prompt.
+Is that your counting,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/116-2
+00:10:40.301 --> 00:10:44.527
+<v Kulas Angeles>like what is going in and coming out,
+or is it like you are directly getting it</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/116-3
+00:10:44.527 --> 00:10:45.584
+<v Kulas Angeles>from the way to all?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/118-0
+00:10:46.504 --> 00:10:49.544
+<v Seth Chalmers>Right from Bedrock,
+so it's by the provider.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/117-0
+00:10:47.744 --> 00:10:47.984
+<v Lalit Summan>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/120-0
+00:10:47.904 --> 00:10:50.504
+<v Kulas Angeles>Yeah, actual actual values here.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/119-0
+00:10:50.944 --> 00:10:51.344
+<v Seth Chalmers>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/123-0
+00:10:53.024 --> 00:10:56.642
+<v Lalit Summan>Because part of what we want to avoid is
+chasing our tail for validation of token</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/123-1
+00:10:56.642 --> 00:10:58.627
+<v Lalit Summan>cons,
+but you're used to one layer with your</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/122-0
+00:10:58.544 --> 00:10:59.424
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/123-2
+00:10:58.627 --> 00:11:01.672
+<v Lalit Summan>workload accounts. We have our own.
+We don't want to play that game.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/123-3
+00:11:01.672 --> 00:11:04.055
+<v Lalit Summan>It's just going to be a waste of money
+for everybody.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/123-4
+00:11:04.055 --> 00:11:05.864
+<v Lalit Summan>So just referencing it with the best way.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/124-0
+00:11:08.864 --> 00:11:12.741
+<v Kulas Angeles>In the future, the back end for this one,
+since, you know,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/124-1
+00:11:12.741 --> 00:11:18.261
+<v Kulas Angeles>consortium is the consortium players are
+also using the same implementation, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/124-2
+00:11:18.261 --> 00:11:23.386
+<v Kulas Angeles>Will we be using the same back end for
+everyone or Sun Life will have its own</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/124-3
+00:11:23.386 --> 00:11:25.424
+<v Kulas Angeles>instance? Scotia will have one.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/131-0
+00:11:27.744 --> 00:11:31.358
+<v Seth Chalmers>So yeah,
+so we maintain it all on the Sun Life</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/131-1
+00:11:31.358 --> 00:11:34.664
+<v Seth Chalmers>side.
+So the code base is in a shared like</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/125-0
+00:11:32.144 --> 00:11:32.624
+<v Kulas Angeles>Mookken.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/131-2
+00:11:34.664 --> 00:11:38.894
+<v Seth Chalmers>GitHub enterprise,
+but we have our own like deployment</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/128-0
+00:11:36.544 --> 00:11:36.864
+<v Kulas Angeles>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/131-3
+00:11:38.894 --> 00:11:44.123
+<v Seth Chalmers>pipelines and everything.
+And so we maintain and create and support</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/131-4
+00:11:44.123 --> 00:11:45.584
+<v Seth Chalmers>all of that on the.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/132-0
+00:11:45.744 --> 00:11:46.464
+<v Seth Chalmers>Something outside.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/135-0
+00:11:47.504 --> 00:11:52.304
+<v Kulas Angeles>So infrastructure stays with Sun Life and
+the different consortium players</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/138-0
+00:11:52.144 --> 00:11:54.544
+<v Seth Chalmers>Yeah, yeah, exactly.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/135-1
+00:11:52.304 --> 00:11:52.944
+<v Kulas Angeles>basically.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/136-0
+00:11:53.264 --> 00:11:54.544
+<v Lalit Summan>Yeah, translated you.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/137-0
+00:11:54.064 --> 00:11:54.704
+<v Kulas Angeles>OK, all right.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/146-0
+00:11:55.984 --> 00:11:59.571
+<v Seth Chalmers>Yeah,
+because everyone has a pretty different</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/146-1
+00:11:59.571 --> 00:12:03.861
+<v Seth Chalmers>environment.
+So we found there's no way to even really</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/146-2
+00:12:03.861 --> 00:12:08.930
+<v Seth Chalmers>do a shared infrastructure.
+Because like the consortium members,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/146-3
+00:12:08.930 --> 00:12:14.624
+<v Seth Chalmers>they are like the consulting team that
+kind of runs Luminate Lightworks.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-0
+00:12:15.184 --> 00:12:19.793
+<v Seth Chalmers>they have like a reference deployment,
+but we couldn't make use of most of it at</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-1
+00:12:19.793 --> 00:12:22.980
+<v Seth Chalmers>Sun Life just because some things are
+done by the CCOE,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-2
+00:12:22.980 --> 00:12:26.623
+<v Seth Chalmers>other things are done by DMS for Postgres
+and things like that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/148-0
+00:12:25.024 --> 00:12:25.264
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-3
+00:12:26.623 --> 00:12:29.582
+<v Seth Chalmers>So basically just made our own deployment
+template.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-4
+00:12:29.582 --> 00:12:33.281
+<v Seth Chalmers>And this is kind of the topology.
+We have a dev test stage prod.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/150-0
+00:12:29.744 --> 00:12:30.304
+<v Kulas Angeles>OK, nice.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-5
+00:12:33.281 --> 00:12:36.582
+<v Seth Chalmers>Our lower environments,
+after we go through these initial</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/151-6
+00:12:36.582 --> 00:12:37.664
+<v Seth Chalmers>onboardings, we'll.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/154-0
+00:12:37.704 --> 00:12:42.478
+<v Seth Chalmers>what I onboarded you on is our Illuminate
+DevOps like our sandbox instance.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/154-1
+00:12:42.478 --> 00:12:45.682
+<v Seth Chalmers>In the future,
+everything's just going through the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/154-2
+00:12:45.682 --> 00:12:48.635
+<v Seth Chalmers>production instance.
+So we have this stood up.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/154-3
+00:12:48.635 --> 00:12:52.781
+<v Seth Chalmers>We just haven't run any real use cases
+through all of the stages.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/154-4
+00:12:52.781 --> 00:12:57.744
+<v Seth Chalmers>We've done our own internal testing on
+all of this, but this is kind of the...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/155-0
+00:12:57.904 --> 00:13:02.796
+<v Seth Chalmers>topology. It'll be SDLC environment,
+but those are gateways which you interact</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/155-1
+00:13:02.796 --> 00:13:06.635
+<v Seth Chalmers>with as a consumer,
+and then you promote your workloads along</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/155-2
+00:13:06.635 --> 00:13:09.545
+<v Seth Chalmers>that.
+And there's various guardrails differing</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/155-3
+00:13:09.545 --> 00:13:12.704
+<v Seth Chalmers>depending on what gateway you're
+interacting with.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/157-0
+00:13:15.384 --> 00:13:19.897
+<v Kulas Angeles>And we are still using spec driven, right,
+to develop this.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/157-1
+00:13:19.897 --> 00:13:25.840
+<v Kulas Angeles>So are you using GitHub Copilot still for
+development or you have plugged into</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/156-0
+00:13:21.024 --> 00:13:21.304
+<v Seth Chalmers>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/157-2
+00:13:25.840 --> 00:13:28.624
+<v Kulas Angeles>Bedrock for the LLMs for development?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/164-0
+00:13:29.024 --> 00:13:33.450
+<v Seth Chalmers>Still GitHub Copilot.
+We just got a use case though on Cloud</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/160-0
+00:13:30.664 --> 00:13:31.464
+<v Kulas Angeles>Get a compiler.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/164-1
+00:13:33.450 --> 00:13:37.803
+<v Seth Chalmers>Code integration.
+So Justin Colin is running with that one.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/164-2
+00:13:37.803 --> 00:13:43.680
+<v Seth Chalmers>So we're testing that everything works
+through the ACP and running the inference</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/164-3
+00:13:43.680 --> 00:13:46.945
+<v Seth Chalmers>through our gateway.
+So at least personally,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/164-4
+00:13:46.945 --> 00:13:50.864
+<v Seth Chalmers>I'd like to switch over to that once it's
+good to go.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/163-0
+00:13:52.544 --> 00:13:53.264
+<v Kulas Angeles>All right.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/167-0
+00:13:54.584 --> 00:13:57.984
+<v Lalit Summan>Any, any, any more questions, team on PCP?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/174-0
+00:13:59.344 --> 00:14:02.910
+<v Kulas Angeles>I think it's like,
+I'd like to go through documentation and</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/174-1
+00:14:02.910 --> 00:14:05.822
+<v Kulas Angeles>then, yeah, yeah,
+so I think Seth sent out a few</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/174-2
+00:14:05.822 --> 00:14:10.399
+<v Kulas Angeles>documentation, which is pretty good, yeah,
+yeah, I think this is good, yeah,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/170-0
+00:14:08.144 --> 00:14:09.424
+<v Seth Chalmers>Yeah, Niall would want to.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/174-3
+00:14:10.399 --> 00:14:12.064
+<v Kulas Angeles>so we for in addition for...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/173-0
+00:14:10.864 --> 00:14:13.424
+<v Seth Chalmers>Yeah, all of the specs, ohh, go ahead,
+sorry.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/177-0
+00:14:14.504 --> 00:14:16.879
+<v Kulas Angeles>No,
+I was just saying that for integration</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/177-1
+00:14:16.879 --> 00:14:21.243
+<v Kulas Angeles>now we'll use dev environment, right?
+And then in future we'll do the product,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/177-2
+00:14:21.243 --> 00:14:24.281
+<v Kulas Angeles>right? Yeah,
+so we are supposed to just do the POC for</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/177-3
+00:14:24.281 --> 00:14:24.944
+<v Kulas Angeles>dev for now.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/178-0
+00:14:26.624 --> 00:14:30.464
+<v Kulas Angeles>And then separate onboarding,
+I'm assuming, once we go stage and frog.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/184-0
+00:14:31.744 --> 00:14:34.830
+<v Seth Chalmers>Yeah,
+once you're good on the sandbox instance,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/184-1
+00:14:34.830 --> 00:14:39.138
+<v Seth Chalmers>we're promoting everyone over.
+We'll take what you got in sandbox,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/181-0
+00:14:36.384 --> 00:14:37.904
+<v Kulas Angeles>Ohh, okay, nice.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/184-2
+00:14:39.138 --> 00:14:43.960
+<v Seth Chalmers>move it over to the prod instance,
+and then you'll have to follow the SDLC</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/184-3
+00:14:43.960 --> 00:14:46.853
+<v Seth Chalmers>environments,
+as you guys are used to on QE.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/184-4
+00:14:46.853 --> 00:14:50.904
+<v Seth Chalmers>But those are just different gateways
+which you interact with.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/188-0
+00:14:51.824 --> 00:14:56.084
+<v Seth Chalmers>And then particularly stage and
+production of a lot of extra controls,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/188-1
+00:14:56.084 --> 00:15:00.524
+<v Seth Chalmers>integrations with governance by design,
+bottle risk, all that good stuff.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/187-0
+00:14:58.064 --> 00:14:58.304
+<v Kulas Angeles>Mm.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/188-2
+00:15:00.524 --> 00:15:04.304
+<v Seth Chalmers>So those are kind of enforced within
+these environment layers.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/189-0
+00:15:07.184 --> 00:15:13.184
+<v Kulas Angeles>Seth, is there a cost to onboard,
+you know, once we are in operational mode?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/190-0
+00:15:14.784 --> 00:15:15.984
+<v Lalit Summan>There, there will be.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/191-0
+00:15:15.024 --> 00:15:16.104
+<v Seth Chalmers>Talk a little bit.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/193-0
+00:15:15.464 --> 00:15:19.024
+<v Kulas Angeles>The first onboard and use uh, illuminate.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/192-0
+00:15:17.824 --> 00:15:18.224
+<v Lalit Summan>Yes.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/196-0
+00:15:19.504 --> 00:15:23.514
+<v Lalit Summan>Yes, there will be one, Kulas,
+and something that we're working on the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/196-1
+00:15:23.514 --> 00:15:26.846
+<v Lalit Summan>chargeback model.
+It's one thing for our customers to know</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/196-2
+00:15:26.846 --> 00:15:30.687
+<v Lalit Summan>their token and LLM cost.
+There's a cost to a onboard and there's a</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/196-3
+00:15:30.687 --> 00:15:34.867
+<v Lalit Summan>cost to keep the thing running.
+We just haven't baselined the team's cost</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/196-4
+00:15:34.867 --> 00:15:38.764
+<v Lalit Summan>yet, whether it'll be a tower,
+whether it'll be a subscription cost,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/196-5
+00:15:38.764 --> 00:15:41.984
+<v Lalit Summan>we haven't figured that out.
+That's part of what the Q4.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/198-0
+00:15:42.144 --> 00:15:45.409
+<v Lalit Summan>priorities will be,
+but you can imagine there'll be compute</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/198-1
+00:15:45.409 --> 00:15:49.709
+<v Lalit Summan>costs that the ACP has that we have to
+pay for, let alone the personnel costs,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/197-0
+00:15:49.424 --> 00:15:50.424
+<v Kulas Angeles>That's right, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/198-2
+00:15:49.709 --> 00:15:53.845
+<v Lalit Summan>let alone the operational costs.
+So those ones will have to be articulated.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/198-3
+00:15:53.845 --> 00:15:56.784
+<v Lalit Summan>We're working on that in Q4 as one of the
+priorities.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/199-0
+00:15:58.184 --> 00:16:03.944
+<v Kulas Angeles>Okay, is there an early bird discount,
+though? All right, okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/200-0
+00:16:01.024 --> 00:16:04.883
+<v Lalit Summan>Always, always, always, always.
+I give you a discount if I need the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/200-1
+00:16:04.883 --> 00:16:07.664
+<v Lalit Summan>number. Right now,
+we just get onto the sandbox.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/201-0
+00:16:06.744 --> 00:16:10.064
+<v Kulas Angeles>Okay, alright, I hold you to that, Lalit.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-0
+00:16:10.584 --> 00:16:14.604
+<v Lalit Summan>Yeah, yeah, I mean, I don't,
+we're trying to onboard as many as we can</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-1
+00:16:14.604 --> 00:16:18.001
+<v Lalit Summan>for two reasons. One,
+to get our end users comfortable with</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-2
+00:16:18.001 --> 00:16:20.946
+<v Lalit Summan>what it is and get their toes wet.
+But also for us,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-3
+00:16:20.946 --> 00:16:24.626
+<v Lalit Summan>the product team is probably a month,
+a little over a month old.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-4
+00:16:24.626 --> 00:16:28.930
+<v Lalit Summan>So we're trying to put all the bearings
+in place, all the process in place.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-5
+00:16:28.930 --> 00:16:32.157
+<v Lalit Summan>Seth and team,
+Ranjula and team have done a great job of</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/202-6
+00:16:32.157 --> 00:16:32.384
+<v Lalit Summan>just</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/203-0
+00:16:32.784 --> 00:16:37.381
+<v Lalit Summan>assembling the Luminate code base within
+Sun Life from the consortium.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/203-1
+00:16:37.381 --> 00:16:40.749
+<v Lalit Summan>And we've onboarded above 5 or 6 use
+cases already.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/203-2
+00:16:40.749 --> 00:16:44.245
+<v Lalit Summan>So lightning speed for sure.
+None in prod yet though,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/203-3
+00:16:44.245 --> 00:16:49.037
+<v Lalit Summan>but there are candidates for us to go
+into production with a few that are</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/203-4
+00:16:49.037 --> 00:16:51.304
+<v Lalit Summan>coming up and probably going to hit</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/204-0
+00:16:51.384 --> 00:16:55.184
+<v Lalit Summan>production onboarding in mid-October-ish.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/207-0
+00:16:58.704 --> 00:17:02.928
+<v Kulas Angeles>So, when we say chargeback model,
+say chargeback to the development, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/207-1
+00:17:02.928 --> 00:17:03.984
+<v Kulas Angeles>Let's say who is...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/213-0
+00:17:06.064 --> 00:17:10.676
+<v Kulas Angeles>Or is it there would be a way to charge
+back to our users, for example,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/208-0
+00:17:10.224 --> 00:17:10.864
+<v Lalit Summan>To talk.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/213-1
+00:17:10.676 --> 00:17:15.223
+<v Kulas Angeles>in a way that's a different one.
+I think the charge back is the use of</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/209-0
+00:17:14.624 --> 00:17:15.504
+<v Lalit Summan>That's right, yes.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/213-2
+00:17:15.223 --> 00:17:18.875
+<v Kulas Angeles>Luminate, right?
+And then the charge back for the use of</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/213-3
+00:17:18.875 --> 00:17:23.294
+<v Kulas Angeles>the LLMs is separate, right?
+So the use of Luminate is on top of the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/212-0
+00:17:19.104 --> 00:17:21.424
+<v Lalit Summan>It's separate, yeah, yeah, so.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/213-4
+00:17:23.294 --> 00:17:24.704
+<v Kulas Angeles>charge. OK, let's say.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/216-0
+00:17:24.624 --> 00:17:29.904
+<v Lalit Summan>So your business unit would be paying to
+use the services of ACP.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/214-0
+00:17:24.904 --> 00:17:25.824
+<v Kulas Angeles>We have orchestra, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/215-0
+00:17:29.584 --> 00:17:30.864
+<v Kulas Angeles>That's right. OK.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/216-1
+00:17:29.904 --> 00:17:35.024
+<v Lalit Summan>Your individual consumption of tokens and
+LLMs, that is on you,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/216-2
+00:17:35.024 --> 00:17:40.064
+<v Lalit Summan>that is not something that we're going to
+charge additionally.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/217-0
+00:17:43.184 --> 00:17:46.344
+<v Kulas Angeles>You'll figure out the accounting in the
+backend, basically, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/218-0
+00:17:45.664 --> 00:17:47.504
+<v Lalit Summan>No, nice. It's fun work.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/221-0
+00:17:48.704 --> 00:17:53.897
+<v Seth Chalmers>Yeah, hold on, yep, yeah,
+we'd like to get to a like a user level,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/219-0
+00:17:49.184 --> 00:17:50.224
+<v Kulas Angeles>Right, that's right.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/221-1
+00:17:53.897 --> 00:18:00.022
+<v Seth Chalmers>especially for things like cloud code,
+like GitHub Copilot, sure you're aware,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/221-2
+00:18:00.022 --> 00:18:03.665
+<v Seth Chalmers>has a lot of issues with the chargeback
+today,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/220-0
+00:18:01.264 --> 00:18:01.584
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/221-3
+00:18:03.665 --> 00:18:07.464
+<v Seth Chalmers>so we're think looking to solve that,
+so Greggo.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/223-0
+00:18:07.544 --> 00:18:12.427
+<v Seth Chalmers>and that is trying to help with getting
+this going with cloud code as well.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/222-0
+00:18:10.304 --> 00:18:10.704
+<v Kulas Angeles>Thanks.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/223-1
+00:18:12.427 --> 00:18:17.504
+<v Seth Chalmers>So we'll have to figure out all these
+issues when we go through this use case.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/224-0
+00:18:19.744 --> 00:18:20.224
+<v Kulas Angeles>Mhm.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/225-0
+00:18:22.784 --> 00:18:25.687
+<v Lalit Summan>Just from an orchestra,
+so any other questions you could listen</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/225-1
+00:18:25.687 --> 00:18:25.824
+<v Lalit Summan>to?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/226-0
+00:18:25.784 --> 00:18:30.810
+<v Kulas Angeles>I have other questions,
+so are we are there requests once we have</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/226-1
+00:18:30.810 --> 00:18:36.293
+<v Kulas Angeles>to that the for the onboarding?
+Usha was asking if is there an expected</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/226-2
+00:18:36.293 --> 00:18:41.015
+<v Kulas Angeles>timeline for your for the people doing
+TOC on this one? Like,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/226-3
+00:18:41.015 --> 00:18:46.727
+<v Kulas Angeles>because we are expecting you might be
+asking us for some feedback as well,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/226-4
+00:18:46.727 --> 00:18:47.184
+<v Kulas Angeles>right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/228-0
+00:18:50.144 --> 00:18:53.717
+<v Seth Chalmers>Yeah,
+no expected timeline or milestones right</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/228-1
+00:18:53.717 --> 00:18:57.139
+<v Seth Chalmers>now.
+It's so I started up those teams chats.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/228-2
+00:18:57.139 --> 00:19:03.601
+<v Seth Chalmers>We're doing that for all of our use cases,
+working through any issues on this. Yeah,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/227-0
+00:19:01.824 --> 00:19:03.704
+<v Kulas Angeles>We manage it there, OK.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/228-3
+00:19:03.601 --> 00:19:08.544
+<v Seth Chalmers>so that's how we're gathering feedback
+right now. In the future.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/229-0
+00:19:08.944 --> 00:19:12.613
+<v Seth Chalmers>All new onboardings will just be going
+through that prod instance.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/229-1
+00:19:12.613 --> 00:19:16.008
+<v Seth Chalmers>So all the early birds are in our dev
+sandbox instance. Yeah,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/229-2
+00:19:16.008 --> 00:19:18.144
+<v Seth Chalmers>we're just working with your timelines.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/230-0
+00:19:22.624 --> 00:19:28.620
+<v Lalit Summan>In the ACP Orchestra chat, the Teams chat,
+I think Kulas here, you're part of that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/230-1
+00:19:28.620 --> 00:19:31.904
+<v Lalit Summan>You've got the onboarding instructions
+there.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/232-0
+00:19:36.544 --> 00:19:40.784
+<v Kulas Angeles>Yeah, I think with my screen is hanging,
+the internet is failing.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/231-0
+00:19:41.304 --> 00:19:41.824
+<v Lalit Summan>Mm.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/233-0
+00:19:46.264 --> 00:19:48.864
+<v Kulas Angeles>Yeah, how do we?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/234-0
+00:19:52.784 --> 00:19:53.424
+<v Kulas Angeles>Good morning.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/236-0
+00:19:55.744 --> 00:19:58.304
+<v Kulas Angeles>Sorry, our internet, the three of us,
+is failing us.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/235-0
+00:19:59.024 --> 00:19:59.504
+<v Lalit Summan>Dear.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/237-0
+00:19:59.344 --> 00:20:01.864
+<v Seth Chalmers>Yeah, I'll robo. I'll.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/238-0
+00:20:04.464 --> 00:20:07.824
+<v Seth Chalmers>I'll add everyone I can see on the chat
+right now.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/239-0
+00:20:11.664 --> 00:20:13.184
+<v Lalit Summan>I think they're completely frozen now.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/240-0
+00:20:14.864 --> 00:20:15.584
+<v Lalit Summan>We love them.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/241-0
+00:20:17.624 --> 00:20:20.224
+<v Lalit Summan>Anuj, can you guys hear us?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/242-0
+00:20:25.504 --> 00:20:26.144
+<v Robert Chin>I'm still here.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/243-0
+00:20:26.624 --> 00:20:27.584
+<v Kulas Angeles>Yes, please.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/244-0
+00:20:33.304 --> 00:20:35.824
+<v Lalit Summan>And the corporate networks down,
+what's happening?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/245-0
+00:20:39.744 --> 00:20:42.944
+<v Kulas Angeles>Okay,
+I was fair enough to see if it saves us a</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/245-1
+00:20:42.944 --> 00:20:46.944
+<v Kulas Angeles>bit. This is bad.
+The two of us is experiencing this issue.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/246-0
+00:20:48.704 --> 00:20:49.984
+<v Seth Chalmers>Someone call AT.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/247-0
+00:20:53.824 --> 00:20:56.784
+<v Lalit Summan>Just from a from a business lens
+perspective.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/248-0
+00:20:56.384 --> 00:20:57.344
+<v Kulas Angeles>In us.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/249-0
+00:21:04.384 --> 00:21:05.664
+<v Kulas Angeles>That's right, that's true.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/250-0
+00:21:06.744 --> 00:21:08.224
+<v Kulas Angeles>Okay, is it better now? Can you hear us?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/252-0
+00:21:08.704 --> 00:21:10.784
+<v Lalit Summan>Yeah, I can hear you now. We can hear you.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/251-0
+00:21:10.224 --> 00:21:10.704
+<v Seth Chalmers>Yep.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/253-0
+00:21:11.584 --> 00:21:13.304
+<v Kulas Angeles>OK, perfect. Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/255-0
+00:21:14.464 --> 00:21:17.707
+<v Lalit Summan>And just from a use case perspective,
+Kulas and team, like,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/255-1
+00:21:17.707 --> 00:21:21.330
+<v Lalit Summan>what are we trying to achieve by
+onboarding this to the ACP? Like,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/255-2
+00:21:21.330 --> 00:21:25.439
+<v Lalit Summan>what are the some success criteria?
+What are the requirements that you have</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/255-3
+00:21:25.439 --> 00:21:26.304
+<v Lalit Summan>to onboard this?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/258-0
+00:21:31.024 --> 00:21:34.242
+<v Kulas Angeles>Yeah,
+so that's a very good question and</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/258-1
+00:21:34.242 --> 00:21:39.188
+<v Kulas Angeles>actually a timely one.
+So we are in the process of deciding on</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/258-2
+00:21:39.188 --> 00:21:45.075
+<v Kulas Angeles>what Orchestra 2.0 will look like.
+And it's looking like it will be devoid</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/258-3
+00:21:45.075 --> 00:21:51.120
+<v Kulas Angeles>of just using GitHub Copilot as a LLM
+provider and probably using Bedrock or</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/258-4
+00:21:51.120 --> 00:21:51.984
+<v Kulas Angeles>Cloud Code.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/259-0
+00:21:52.064 --> 00:21:58.750
+<v Kulas Angeles>Or, at a, atropic directly, right? So,
+what we are thinking is that we can have</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/259-1
+00:21:58.750 --> 00:22:03.012
+<v Kulas Angeles>two use cases.
+One is for the test case generator,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/259-2
+00:22:03.012 --> 00:22:08.528
+<v Kulas Angeles>which is ready now. So,
+that's our agent that just generates test</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/259-3
+00:22:08.528 --> 00:22:12.624
+<v Kulas Angeles>cases.
+It also all have its own bedrock account.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/260-0
+00:22:12.704 --> 00:22:17.275
+<v Kulas Angeles>which is probably easier to onboard.
+And then for Orchestra,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/260-1
+00:22:17.275 --> 00:22:21.772
+<v Kulas Angeles>we are working on moving it out of GitHub
+Copilot as a POC.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/260-2
+00:22:21.772 --> 00:22:26.793
+<v Kulas Angeles>So that could be the second use case that
+we'll have for our team.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/260-3
+00:22:26.793 --> 00:22:32.264
+<v Kulas Angeles>And there I think we'll try to use the
+models provided by. That's right.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/261-0
+00:22:32.344 --> 00:22:36.144
+<v Kulas Angeles>That's right,
+so you don't have to run the API. Okay,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/261-1
+00:22:36.144 --> 00:22:39.241
+<v Kulas Angeles>yeah,
+that's why we are excited about this,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/261-2
+00:22:39.241 --> 00:22:44.379
+<v Kulas Angeles>because the gateway that you are
+providing will definitely save us a lot</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/261-3
+00:22:44.379 --> 00:22:49.657
+<v Kulas Angeles>of coding time or analysis time,
+which we'll just probably be reusing. So,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/261-4
+00:22:49.657 --> 00:22:50.784
+<v Kulas Angeles>yeah, I think...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/263-0
+00:22:51.464 --> 00:22:56.766
+<v Kulas Angeles>Two use cases are what we are thinking of.
+The POC for Orchestra is totally</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/263-1
+00:22:56.766 --> 00:23:00.883
+<v Kulas Angeles>exploratory as of the moment,
+but the test case generator,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/263-2
+00:23:00.883 --> 00:23:04.371
+<v Kulas Angeles>which has been in existence for more than
+a year,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/263-3
+00:23:04.371 --> 00:23:09.744
+<v Kulas Angeles>is stable enough for it to be an actual
+application onboarded to illuminate.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/262-0
+00:23:12.184 --> 00:23:12.624
+<v Seth Chalmers>Yes.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/264-0
+00:23:12.384 --> 00:23:15.418
+<v Lalit Summan>So one is a POC use case,
+and so I just want to make sure it</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/264-1
+00:23:15.418 --> 00:23:18.304
+<v Lalit Summan>captured the second one.
+What's the second use case code?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/266-0
+00:23:19.184 --> 00:23:23.694
+<v Kulas Angeles>The first use case is the POC for
+orchestra.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/266-1
+00:23:23.694 --> 00:23:27.904
+<v Kulas Angeles>The second one is the test case generator.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/265-0
+00:23:28.224 --> 00:23:28.944
+<v Lalit Summan>Got it. Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/269-0
+00:23:28.824 --> 00:23:32.791
+<v Kulas Angeles>Right,
+so that that was our first tab at using</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/269-1
+00:23:32.791 --> 00:23:37.772
+<v Kulas Angeles>Bedrock for generating AI components,
+AI tests, right? So,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/267-0
+00:23:36.544 --> 00:23:36.944
+<v Lalit Summan>Got it.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/269-2
+00:23:37.772 --> 00:23:43.513
+<v Kulas Angeles>that's that stable already,
+while Orchestra needs a bit of work for</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/269-3
+00:23:43.513 --> 00:23:44.864
+<v Kulas Angeles>it to be more...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/271-0
+00:23:45.744 --> 00:23:50.304
+<v Kulas Angeles>You know, free of GitHub Copilot, yeah,
+that's right.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/268-0
+00:23:48.064 --> 00:23:48.544
+<v Lalit Summan>Got it.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/270-0
+00:23:49.624 --> 00:23:50.624
+<v Lalit Summan>And, and.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/272-0
+00:23:51.424 --> 00:23:55.663
+<v Lalit Summan>And I recall and seeing some demos and
+some overviews of orchestra.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/272-1
+00:23:55.663 --> 00:24:00.588
+<v Lalit Summan>Usha and Greg have kind of provided a lot
+of overviews on this great overview,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/272-2
+00:24:00.588 --> 00:24:05.264
+<v Lalit Summan>but there are about 14 agents that are
+within the workflow, if I'm honest.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/275-0
+00:24:05.264 --> 00:24:08.852
+<v Kulas Angeles>Oh, we have 27 agents now,
+but when we do move,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/273-0
+00:24:07.664 --> 00:24:09.104
+<v Lalit Summan>Oh, good. Okay, 27.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/275-1
+00:24:08.852 --> 00:24:14.758
+<v Kulas Angeles>when we probably onboard to Luminate,
+we'll just go back to the basics, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/275-2
+00:24:14.758 --> 00:24:19.991
+<v Kulas Angeles>Like starting with the test strategies,
+planner cases, and execution,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/274-0
+00:24:15.024 --> 00:24:15.504
+<v Lalit Summan>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/275-3
+00:24:19.991 --> 00:24:22.384
+<v Kulas Angeles>and defect trial probably about.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/276-0
+00:24:22.424 --> 00:24:24.104
+<v Kulas Angeles>And 12, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/277-0
+00:24:23.824 --> 00:24:27.046
+<v Lalit Summan>Okay,
+and is the goal to onboard each of those</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/277-1
+00:24:27.046 --> 00:24:31.024
+<v Lalit Summan>agents onto the ACP for kind of
+monitoring and oversight?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/278-0
+00:24:32.144 --> 00:24:35.450
+<v Kulas Angeles>Yes, that's right. Oh,
+one question that I have is that since</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/278-1
+00:24:35.450 --> 00:24:37.104
+<v Kulas Angeles>orchestra has always been spec.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/279-0
+00:24:38.624 --> 00:24:44.384
+<v Kulas Angeles>in terms of the skills and instructions,
+where do you keep the agent instructions?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/279-1
+00:24:44.384 --> 00:24:49.797
+<v Kulas Angeles>Do you keep it in Luminate or do you
+still keep it in an empty file or a flat</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/279-2
+00:24:49.797 --> 00:24:50.144
+<v Kulas Angeles>file?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/282-0
+00:24:52.384 --> 00:24:57.275
+<v Seth Chalmers>So this Luminate today does not support
+the skills registry.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/282-1
+00:24:57.275 --> 00:25:03.849
+<v Seth Chalmers>So this is like Bedrock agents or agent
+core agents or like a Kubernetes deployed</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/280-0
+00:24:58.384 --> 00:24:58.864
+<v Kulas Angeles>Mhm.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/282-2
+00:25:03.849 --> 00:25:07.778
+<v Seth Chalmers>agent.
+And typically you'll keep your skills and</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/282-3
+00:25:07.778 --> 00:25:10.264
+<v Seth Chalmers>all that within the agent code.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/285-0
+00:25:10.464 --> 00:25:16.205
+<v Seth Chalmers>So let's say within Python or whatever,
+you can also reference them from your</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/281-0
+00:25:11.984 --> 00:25:12.304
+<v Kulas Angeles>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/283-0
+00:25:14.384 --> 00:25:15.544
+<v Kulas Angeles>Okay, no.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/285-1
+00:25:16.205 --> 00:25:20.327
+<v Seth Chalmers>container as well.
+So that would be just like basically</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/285-2
+00:25:20.327 --> 00:25:25.332
+<v Seth Chalmers>contained within your agent runtime,
+which you maintain and deploy.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/285-3
+00:25:25.332 --> 00:25:30.264
+<v Seth Chalmers>But we are coming out with the skills
+registry. It's just an idea.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/287-0
+00:25:30.384 --> 00:25:35.207
+<v Seth Chalmers>phase right now. So in the future,
+this AI catalog will have a skills</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/287-1
+00:25:35.207 --> 00:25:39.824
+<v Seth Chalmers>registry, plug-in registry,
+that sort of thing, but not built yet.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/287-2
+00:25:39.824 --> 00:25:43.613
+<v Seth Chalmers>So that's to come.
+And that'll integrate with the Nova</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/287-3
+00:25:43.613 --> 00:25:49.264
+<v Seth Chalmers>skills registry that they're coming out
+with as well, so that we can share those.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/286-0
+00:25:46.144 --> 00:25:46.384
+<v Kulas Angeles>Ha.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/288-0
+00:25:49.584 --> 00:25:52.624
+<v Seth Chalmers>skill files and instructions and prompts
+and things like that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/289-0
+00:25:54.224 --> 00:25:59.290
+<v Kulas Angeles>So in a nutshell,
+we are looking at probably integrating</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/289-1
+00:25:59.290 --> 00:26:03.824
+<v Kulas Angeles>with the Bitbucket or in the future
+GitHub skills.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/290-0
+00:26:04.744 --> 00:26:05.184
+<v Kulas Angeles>Right.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/291-0
+00:26:05.984 --> 00:26:09.072
+<v Seth Chalmers>Yeah,
+get based skills registry is likely how</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/291-1
+00:26:09.072 --> 00:26:13.504
+<v Seth Chalmers>it will be implemented.
+That's the standard way to do those. Yep.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/293-0
+00:26:15.024 --> 00:26:18.418
+<v Kulas Angeles>OK, and Lalit, like,
+like we have been working with you to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/293-1
+00:26:18.418 --> 00:26:22.273
+<v Kulas Angeles>integrate open layer as well,
+so how does that fit in in the whole</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/293-2
+00:26:22.273 --> 00:26:26.934
+<v Kulas Angeles>ecosystem? Like, like if we start with CP,
+would ACP would have integration with</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/292-0
+00:26:23.904 --> 00:26:24.144
+<v Lalit Summan>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/293-3
+00:26:26.934 --> 00:26:29.984
+<v Kulas Angeles>open layer,
+or is it like that would be independent?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/295-0
+00:26:29.704 --> 00:26:34.350
+<v Lalit Summan>Yeah, that's a great question.
+So when we talk about evaluator services,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/295-1
+00:26:34.350 --> 00:26:38.232
+<v Lalit Summan>right, within the ACP,
+so ACP is going to do a lot more than</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/295-2
+00:26:38.232 --> 00:26:39.824
+<v Lalit Summan>what Open Air does today.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/294-0
+00:26:40.904 --> 00:26:41.144
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/296-0
+00:26:41.784 --> 00:26:47.797
+<v Lalit Summan>When you talk about evaluations in terms
+of how your agents are performing, bias,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/296-1
+00:26:47.797 --> 00:26:52.930
+<v Lalit Summan>toxicity, task completion metrics,
+those today can be done within the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/296-2
+00:26:52.930 --> 00:26:56.524
+<v Lalit Summan>Luminate product,
+because LangFuse is an option,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/296-3
+00:26:56.524 --> 00:27:01.584
+<v Lalit Summan>but we want to extend that and test that
+out with OpenLayer as well.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/299-0
+00:27:01.824 --> 00:27:06.595
+<v Lalit Summan>So when we talk about the ways of
+evaluating what these agents are doing,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/299-1
+00:27:06.595 --> 00:27:11.947
+<v Lalit Summan>open there would be one of those elements
+that would be within the ACP to help you</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/299-2
+00:27:11.947 --> 00:27:15.494
+<v Lalit Summan>figure out how to do it.
+It's a pilot phase right now.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/299-3
+00:27:15.494 --> 00:27:20.588
+<v Lalit Summan>The direction from the consortium at the
+moment in terms of how we're going to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/299-4
+00:27:20.588 --> 00:27:21.104
+<v Lalit Summan>evaluate</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/301-0
+00:27:21.344 --> 00:27:26.236
+<v Lalit Summan>and because create metrics on evaluations
+is through Lang views.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/301-1
+00:27:26.236 --> 00:27:32.483
+<v Lalit Summan>What you'll see is we'll work on the next
+quarter of integrating OpenLayer and ACP</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/300-0
+00:27:29.144 --> 00:27:29.464
+<v Kulas Angeles>Thank you.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/301-2
+00:27:32.483 --> 00:27:38.504
+<v Lalit Summan>in the dev environment to see if Lang
+views or OpenLayer says one's better than</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/301-3
+00:27:38.504 --> 00:27:39.784
+<v Lalit Summan>the other or not.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/304-0
+00:27:40.584 --> 00:27:44.757
+<v Kulas Angeles>Yeah, so, so the idea is that we would,
+like, we would integrate with ACP,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/304-1
+00:27:44.757 --> 00:27:47.984
+<v Kulas Angeles>and ACP will provide us the service,
+right? I mean, nice.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/302-0
+00:27:45.504 --> 00:27:46.144
+<v Lalit Summan>Exactly.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-0
+00:27:47.824 --> 00:27:51.760
+<v Lalit Summan>Yeah, yeah, that's the idea, right?
+Because you want to make this modular</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/303-0
+00:27:50.864 --> 00:27:51.424
+<v Seth Chalmers>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-1
+00:27:51.760 --> 00:27:54.633
+<v Lalit Summan>overtime, right? Tomorrow, if there is,
+I don't know,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-2
+00:27:54.633 --> 00:27:58.622
+<v Lalit Summan>like ragas you want to use or another
+framework or SDK you want to use for</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/305-0
+00:27:55.664 --> 00:27:56.064
+<v Kulas Angeles>Yep.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-3
+00:27:58.622 --> 00:28:01.442
+<v Lalit Summan>monitoring,
+you should be able to flip and switch to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-4
+00:28:01.442 --> 00:28:03.889
+<v Lalit Summan>those.
+And not all teams are going to use the</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-5
+00:28:03.889 --> 00:28:07.187
+<v Lalit Summan>same SDKs for evaluation.
+So we'll kind of add those features</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/306-6
+00:28:07.187 --> 00:28:08.464
+<v Lalit Summan>within the ACP overtime.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/307-0
+00:28:10.224 --> 00:28:13.401
+<v Seth Chalmers>Yeah, yeah,
+it's built to basically turn an open</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/307-1
+00:28:13.401 --> 00:28:18.784
+<v Seth Chalmers>layer into an evidence producer alongside
+any other platform like Lalit mentioned.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/308-0
+00:28:21.584 --> 00:28:25.626
+<v Kulas Angeles>All right, fair. This is exciting,
+just in time, right,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/308-1
+00:28:25.626 --> 00:28:29.308
+<v Kulas Angeles>for everything that we are,
+we will be working on.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/308-2
+00:28:29.308 --> 00:28:32.917
+<v Kulas Angeles>I think those are all the questions that
+we have,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/308-3
+00:28:32.917 --> 00:28:38.981
+<v Kulas Angeles>and I think you've sent the documentation
+out to one board out to move forward with</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/308-4
+00:28:38.981 --> 00:28:40.064
+<v Kulas Angeles>the POC, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/311-0
+00:28:41.024 --> 00:28:44.931
+<v Lalit Summan>I did have a couple more questions,
+if that's okay, Kulas and team.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/311-1
+00:28:44.931 --> 00:28:48.380
+<v Lalit Summan>I just want to get closer to,
+as you prioritize internally,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/309-0
+00:28:45.104 --> 00:28:45.384
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/310-0
+00:28:46.944 --> 00:28:47.184
+<v Kulas Angeles>Sure.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/311-2
+00:28:48.380 --> 00:28:52.805
+<v Lalit Summan>there's a set of questions we want to
+just get clarity on intent and kind of</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/311-3
+00:28:52.805 --> 00:28:55.563
+<v Lalit Summan>urgency.
+Is this expected to go into production</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/311-4
+00:28:55.563 --> 00:28:58.666
+<v Lalit Summan>anytime soon?
+Are you seeing this as a productionized</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/311-5
+00:28:58.666 --> 00:28:59.184
+<v Lalit Summan>use case?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/312-0
+00:29:01.904 --> 00:29:06.544
+<v Kulas Angeles>For, yes, for, yeah, for both use cases,
+yes, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/313-0
+00:29:07.824 --> 00:29:11.315
+<v Lalit Summan>Would you know the timing by any chance?
+Like is this this quarter, next quarter,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/313-1
+00:29:11.315 --> 00:29:13.104
+<v Lalit Summan>last week, like what are we talking about?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/314-0
+00:29:14.384 --> 00:29:17.184
+<v Kulas Angeles>Yeah, end of year is probably our target.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/315-0
+00:29:17.824 --> 00:29:20.352
+<v Lalit Summan>OK,
+to have both use cases in production by</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/315-1
+00:29:20.352 --> 00:29:21.904
+<v Lalit Summan>the end of end of the year.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/316-0
+00:29:22.304 --> 00:29:25.559
+<v Kulas Angeles>The first use case is already in
+production, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/316-1
+00:29:25.559 --> 00:29:30.255
+<v Kulas Angeles>So it's just really integrating it with
+ACP. But yeah, for both use cases,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/316-2
+00:29:30.255 --> 00:29:32.384
+<v Kulas Angeles>we are looking at the end of year.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/317-0
+00:29:33.144 --> 00:29:37.424
+<v Lalit Summan>And do you know the LVT rating on the use
+cases here or no?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/322-0
+00:29:38.984 --> 00:29:44.180
+<v Kulas Angeles>It's still not. Okay, well, yeah,
+it's tricky when we say production</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/318-0
+00:29:39.744 --> 00:29:40.544
+<v Lalit Summan>Tell Willsie.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/322-1
+00:29:44.180 --> 00:29:49.377
+<v Kulas Angeles>because we have endorsed the dev
+environment to our users as if it's</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/322-2
+00:29:49.377 --> 00:29:53.218
+<v Kulas Angeles>production, right?
+So people are using it already.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/319-0
+00:29:50.784 --> 00:29:51.264
+<v Lalit Summan>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/320-0
+00:29:53.104 --> 00:29:53.584
+<v Lalit Summan>Got it.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/322-3
+00:29:53.218 --> 00:29:58.264
+<v Kulas Angeles>When we talk about production,
+it's people using it already, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/323-0
+00:29:58.504 --> 00:30:00.794
+<v Kulas Angeles>Yeah,
+it's not like that's probably a problem,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/321-0
+00:29:59.064 --> 00:29:59.504
+<v Lalit Summan>Birt.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/323-1
+00:30:00.794 --> 00:30:03.376
+<v Kulas Angeles>yeah, right?
+So that's more like a work in progress.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/323-2
+00:30:03.376 --> 00:30:04.984
+<v Kulas Angeles>We want to target, um, like that.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/324-0
+00:30:06.304 --> 00:30:08.863
+<v Lalit Summan>But those 10 to 12 agents that you'd
+onboard,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/324-1
+00:30:08.863 --> 00:30:11.922
+<v Lalit Summan>you'd want to have monitoring on that and
+assessments.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/324-2
+00:30:11.922 --> 00:30:14.704
+<v Lalit Summan>That would be kind of a production state
+for ACP.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/326-0
+00:30:15.264 --> 00:30:18.397
+<v Kulas Angeles>I think for now it will be dev when we
+are doing POC,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/326-1
+00:30:18.397 --> 00:30:22.808
+<v Kulas Angeles>but the idea is that we want to move the
+orchestra to production and we are</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/326-2
+00:30:22.808 --> 00:30:27.508
+<v Kulas Angeles>already working on like having all the
+governance approved. Yes, ATG and Israel.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/326-3
+00:30:27.508 --> 00:30:30.584
+<v Kulas Angeles>Once we have that,
+then it will be production. Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/325-0
+00:30:27.824 --> 00:30:28.224
+<v Lalit Summan>Something.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/327-0
+00:30:31.664 --> 00:30:33.824
+<v Lalit Summan>And the timeline is still Q4 for that,
+right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/329-0
+00:30:34.704 --> 00:30:35.664
+<v Kulas Angeles>End of Q4, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/330-0
+00:30:37.264 --> 00:30:41.505
+<v Lalit Summan>And are there any regulatory or any like
+cost fee or requirements that we have to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/330-1
+00:30:41.505 --> 00:30:43.264
+<v Lalit Summan>be aware of when we're doing this?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/331-0
+00:30:45.744 --> 00:30:48.659
+<v Kulas Angeles>Well,
+we are in contact with our process person</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/331-1
+00:30:48.659 --> 00:30:51.939
+<v Kulas Angeles>on this one,
+and the only requirement for the testing</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/331-2
+00:30:51.939 --> 00:30:56.130
+<v Kulas Angeles>or quality engineering is really having
+proof that testing happened.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/331-3
+00:30:56.130 --> 00:30:58.864
+<v Kulas Angeles>So that's the only OSPHI requirement for
+us.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/332-0
+00:31:04.864 --> 00:31:05.424
+<v Lalit Summan>Um...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/333-0
+00:31:04.864 --> 00:31:07.504
+<v Kulas Angeles>And it's incorporated into the agents
+that we have, yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/334-0
+00:31:08.864 --> 00:31:11.732
+<v Lalit Summan>Do you know, Seth, if, if I don't,
+I don't understand,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/334-1
+00:31:11.732 --> 00:31:14.130
+<v Lalit Summan>is this baked into the Gov by Design
+process?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/334-2
+00:31:14.130 --> 00:31:17.676
+<v Lalit Summan>I don't know if Orchestra is part of the
+testing phase or anything.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/334-3
+00:31:17.676 --> 00:31:21.744
+<v Lalit Summan>Do any artifacts have you produced out of
+Orchestra as part of Gov by Design?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/336-0
+00:31:25.584 --> 00:31:31.104
+<v Seth Chalmers>The go by design process is like
+generally for all agents and models.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/335-0
+00:31:25.904 --> 00:31:26.264
+<v Lalit Summan>David.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/339-0
+00:31:34.744 --> 00:31:39.192
+<v Seth Chalmers>I don't know if if you're referring to
+anything else, will it? Like,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/339-1
+00:31:39.192 --> 00:31:42.544
+<v Seth Chalmers>do you mean orchestra integrating with
+governments?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/338-0
+00:31:39.344 --> 00:31:39.824
+<v Lalit Summan>Um...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/340-0
+00:31:41.424 --> 00:31:45.284
+<v Lalit Summan>Like, like,
+for Orchestra helps you create test cases</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/340-1
+00:31:45.284 --> 00:31:50.860
+<v Lalit Summan>for your use cases for your applications.
+If they're Gen. AI or AI use cases,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/340-2
+00:31:50.860 --> 00:31:56.436
+<v Lalit Summan>does Orchestra have to produce any test
+cases so Gov and Design can say, yep,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/340-3
+00:31:56.436 --> 00:31:58.224
+<v Lalit Summan>that's good? Do you know?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/341-0
+00:31:59.744 --> 00:32:00.784
+<v Lalit Summan>Katharine.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/342-0
+00:32:00.224 --> 00:32:04.548
+<v Seth Chalmers>They might use orchestra to generate the
+test cases for sure,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/342-1
+00:32:04.548 --> 00:32:09.988
+<v Seth Chalmers>but the evidence that governments by
+design and like Illuminate were building</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/342-2
+00:32:09.988 --> 00:32:13.824
+<v Seth Chalmers>towards is more around like the
+evaluations typically,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/342-3
+00:32:13.824 --> 00:32:19.264
+<v Seth Chalmers>so that's what they have their policies
+set up, and then evidence of testing.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/343-0
+00:32:19.384 --> 00:32:24.773
+<v Seth Chalmers>to Kulas point.
+So all that's recorded as evidence within</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/343-1
+00:32:24.773 --> 00:32:25.424
+<v Seth Chalmers>Archer.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/344-0
+00:32:28.784 --> 00:32:32.526
+<v Lalit Summan>Those are all the big questions that I
+had. Rob or Mark,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/344-1
+00:32:32.526 --> 00:32:35.744
+<v Lalit Summan>any questions before we start kind of
+taking on?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/345-0
+00:32:37.024 --> 00:32:37.664
+<v Lalit Summan>Next steps.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/346-0
+00:32:39.144 --> 00:32:40.704
+<v Mark Hanson>Well, for me, that was good.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/347-0
+00:32:41.104 --> 00:32:41.904
+<v Robert Chin>Yeah, that's good.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/348-0
+00:32:43.664 --> 00:32:47.011
+<v Lalit Summan>So just next steps as well.
+So based on this conversation,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/348-1
+00:32:47.011 --> 00:32:50.244
+<v Lalit Summan>we'll create what we call a D0 or
+requirements document.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/348-2
+00:32:50.244 --> 00:32:54.385
+<v Lalit Summan>You're familiar with SCD anyway.
+The team will set up a design review to</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/348-3
+00:32:54.385 --> 00:32:56.938
+<v Lalit Summan>make sure based on the specs we've
+gathered,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/348-4
+00:32:56.938 --> 00:32:59.661
+<v Lalit Summan>we have a design review that we can agree
+upon,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/348-5
+00:32:59.661 --> 00:33:02.384
+<v Lalit Summan>and then we'll assign this to our product
+team.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/350-0
+00:33:02.784 --> 00:33:07.780
+<v Lalit Summan>To start onboarding into the environment,
+I think you have what you need to get</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/350-1
+00:33:07.780 --> 00:33:12.902
+<v Lalit Summan>started based on what said said in our in
+our ACP orchestra chat. Keep me honest,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/350-2
+00:33:12.902 --> 00:33:17.024
+<v Lalit Summan>I think they can get started without too
+much of our help, but...</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/349-0
+00:33:16.224 --> 00:33:16.544
+<v Kulas Angeles>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/352-0
+00:33:19.424 --> 00:33:21.344
+<v Kulas Angeles>Yeah, I started a bit, so I think we can.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/351-0
+00:33:22.144 --> 00:33:22.704
+<v Lalit Summan>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/354-0
+00:33:23.024 --> 00:33:26.361
+<v Seth Chalmers>Yep,
+so as soon as Anuj and Usharani sign in,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/354-1
+00:33:26.361 --> 00:33:31.876
+<v Seth Chalmers>you can just basically call us you have
+the permissions to add them to your</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/354-2
+00:33:31.876 --> 00:33:37.027
+<v Seth Chalmers>project. All of the guides are in there,
+yep. Or we can do it for you,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/353-0
+00:33:33.824 --> 00:33:34.224
+<v Kulas Angeles>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/354-3
+00:33:37.027 --> 00:33:38.624
+<v Seth Chalmers>just send a ping over.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/356-0
+00:33:39.504 --> 00:33:42.252
+<v Kulas Angeles>Yeah,
+we do have the chat for support anyway,</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/356-1
+00:33:42.252 --> 00:33:44.224
+<v Kulas Angeles>so thank you for setting this up.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/355-0
+00:33:43.464 --> 00:33:43.744
+<v Seth Chalmers>Yep.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/357-0
+00:33:45.184 --> 00:33:47.664
+<v Lalit Summan>Awesome.
+So the next step from the team is we'll</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/357-1
+00:33:47.664 --> 00:33:51.764
+<v Lalit Summan>set up a design review call based on what
+we've gathered here today on the call.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/357-2
+00:33:51.764 --> 00:33:55.762
+<v Lalit Summan>That's why transcription is important.
+And then we can kind of figure out next</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/357-3
+00:33:55.762 --> 00:33:58.344
+<v Lalit Summan>steps after then once we get assigned to
+our team.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/359-0
+00:34:00.744 --> 00:34:05.024
+<v Kulas Angeles>Alright, but on our end,
+we can we can start exploring, right?</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/358-0
+00:34:04.464 --> 00:34:04.944
+<v Lalit Summan>Yeah.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/360-0
+00:34:05.984 --> 00:34:06.704
+<v Lalit Summan>Yeah, absolutely.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/361-0
+00:34:07.184 --> 00:34:08.024
+<v Kulas Angeles>All right, perfect.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/362-0
+00:34:09.104 --> 00:34:09.264
+<v Kulas Angeles>Okay.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/363-0
+00:34:10.464 --> 00:34:13.184
+<v Kulas Angeles>Thank you very much, everyone.
+This is very exciting.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/365-0
+00:34:14.344 --> 00:34:15.424
+<v Lalit Summan>Indeed, it is a setting.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/364-0
+00:34:14.464 --> 00:34:14.944
+<v Kulas Angeles>Thank you.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/367-0
+00:34:15.744 --> 00:34:16.944
+<v Seth Chalmers>Yeah, thanks all.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/368-0
+00:34:17.424 --> 00:34:18.064
+<v Lalit Summan>Thank you, team.</v>
+
+6b006560-2a0a-459a-84f1-a7e3dc358179/369-0
+00:34:17.584 --> 00:34:18.304
+<v Kulas Angeles>Okay, bye.</v>

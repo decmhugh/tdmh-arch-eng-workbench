@@ -1,0 +1,2434 @@
+WEBVTT
+
+
+[00:00:03] Justin Collery: don't do this straight on to the agentic
+control plane,
+
+
+[00:00:06] Justin Collery: we're probably going to have to create
+something that's really like an agentic
+
+
+[00:00:11] Justin Collery: control plane to proxy all the traffic
+through.
+
+
+[00:00:14] Justin Collery: And that just seems like a duplication of
+effort, right?
+
+
+[00:00:15] Lalit Summan: Waste, yeah, into waste.
+
+
+[00:00:17] Justin Collery: So there's my pitch for saying,
+I think you should put this one right up
+
+
+[00:00:21] Justin Collery: at the top, right?
+
+
+[00:00:23] Justin Collery: Yeah.
+
+
+[00:00:24] Lalit Summan: Yeah, I figured when we spoke last week,
+I was talking to Pavithra about, hey,
+
+
+[00:00:28] Lalit Summan: which ones are high priority use cases.
+And we're working through the framework
+
+
+[00:00:32] Lalit Summan: now. It's not clear cut yet,
+but we're almost there.
+
+
+[00:00:35] Lalit Summan: But I thought we talked about last week,
+it was going to go to production,
+
+
+[00:00:39] Lalit Summan: but it sounds like maybe not. Maybe.
+
+
+[00:00:41] Justin Collery: I'm okay, so I'm going through different,
+I'm going through different folks, right,
+
+
+[00:00:45] Lalit Summan: OK, right, OK.
+
+
+[00:00:46] Justin Collery: to get everybody aligned, right?
+And so when it comes to, okay,
+
+
+[00:00:50] Justin Collery: one of the plans was we'll just set up
+loads of workload accounts, right?
+
+
+[00:00:54] Justin Collery: Every group that wants it,
+we just have a workload account and we'll
+
+
+[00:00:58] Justin Collery: have a gateway there and people can just
+access it that way.
+
+
+[00:01:01] Justin Collery: There's too much technical debt and it's
+just loads of workload accounts,
+
+
+[00:01:04] Justin Collery: so it doesn't make any sense.
+So then it's like, cool, okay,
+
+
+[00:01:07] Justin Collery: we'll have one workload account for each
+region and we'll just route everybody
+
+
+[00:01:10] Justin Collery: through that one workload account.
+And then it's like, okay,
+
+
+[00:01:12] Justin Collery: but now we've got to figure out billing
+and we've got to figure out access
+
+
+[00:01:14] Lalit Summan: You want to?
+
+
+[00:01:15] Justin Collery: control and whatever. All right,
+so that's, there's a bit of work involved,
+
+
+[00:01:19] Justin Collery: right?
+There's some engineering involved there.
+
+
+[00:01:20] Justin Collery: And so as I go through all those
+conversations, I come back to it.
+
+
+[00:01:23] Justin Collery: In the end,
+I just want to go through the agent
+
+
+[00:01:26] Justin Collery: control plane.
+So maybe just going through the control
+
+
+[00:01:29] Justin Collery: plane from day one, if we can,
+sort of saves us from doing throwaway
+
+
+[00:01:32] Justin Collery: work.
+That's very similar to what I hope you
+
+
+[00:01:34] Justin Collery: guys are doing anyway.
+
+
+[00:01:36] Lalit Summan: Yep, I love it. That makes a lot of sense.
+So the way this works,
+
+
+[00:01:39] Lalit Summan: I think we talked about this a bit in the
+last call, Justin,
+
+
+[00:01:43] Lalit Summan: but I'll just quickly kind of bring you
+up to speed on how this engagement's
+
+
+[00:01:47] Lalit Summan: going to work between our teams.
+So you have line of sight of what to
+
+
+[00:01:50] Lalit Summan: expect next and how this is going to
+proceed, right?
+
+
+[00:01:53] Lalit Summan: So you're speaking with the product team
+here, right?
+
+
+[00:01:56] Lalit Summan: Pavithra is going to be the product owner.
+
+
+[00:01:58] Lalit Summan: You have Seth as a technical lead, Mark,
+as the as the delivery lead,
+
+
+[00:02:02] Lalit Summan: and so David is our scrum master,
+is gonna move, sorry,
+
+
+[00:02:06] Lalit Summan: is gonna move things along in our within
+our product team,
+
+
+[00:02:08] Mark Hanson: The nothing, Van.
+
+
+[00:02:09] Lalit Summan: but in terms of the flow of things, right,
+just I have like 15 PowerPoints open,
+
+
+[00:02:10] Justin Collery: Yep.
+
+
+[00:02:14] Lalit Summan: just bear with me, give me one second.
+
+
+[00:02:17] Lalit Summan: Here, I won't take too much time;
+I want to get into the requirements and
+
+
+[00:02:22] Lalit Summan: stuff,
+so let me know when you can see my screen.
+
+
+[00:02:27] Justin Collery: I can see your screen.
+
+
+[00:02:27] Lalit Summan: I'm not going to go through the labyrinth
+in full detail, right?
+
+
+[00:02:30] Lalit Summan: So what we're doing today is this part
+here,
+
+
+[00:02:33] Lalit Summan: the use case delivery and capability
+review to understand what problem
+
+
+[00:02:36] Lalit Summan: statements we're trying to do,
+what success looks like.
+
+
+[00:02:39] Lalit Summan: We already mentioned we're not going to
+production with this,
+
+
+[00:02:42] Lalit Summan: but if you don't build it,
+we're going to end up doing something on
+
+
+[00:02:45] Lalit Summan: our own, then there's a risk in doing so,
+right? So we'll do that.
+
+
+[00:02:49] Lalit Summan: Right after that call,
+when we would take the transcript from
+
+
+[00:02:53] Lalit Summan: this call and create something called a
+discovery artifact spec with it,
+
+
+[00:02:57] Lalit Summan: and you're probably familiar with it,
+but it then helps us create the
+
+
+[00:03:00] Lalit Summan: requirements and the design document
+which our team creates.
+
+
+[00:03:04] Lalit Summan: We'll come back to you and talk about,
+hey, are you cool with the design?
+
+
+[00:03:07] Lalit Summan: There'll be a design review meeting book
+next.
+
+
+[00:03:11] Lalit Summan: And then if you're good with it,
+our product team,
+
+
+[00:03:14] Lalit Summan: led by Pavithra and David here,
+are going to start working on it.
+
+
+[00:03:18] Lalit Summan: And what you'll see in that engagement
+with Seth on kind of the kind of
+
+
+[00:03:22] Lalit Summan: shouldering that conversation is a Teams
+chat being set up. Your team members,
+
+
+[00:03:27] Lalit Summan: our team members, just have a couple.
+
+
+[00:03:30] Lalit Summan: kind of back and forth and getting this
+up and ready.
+
+
+[00:03:33] Lalit Summan: The goal is to eventually get you
+onboarded and give you the user guides to
+
+
+[00:03:36] Lalit Summan: do what you need to do.
+So that's kind of how we're approaching
+
+
+[00:03:39] Lalit Summan: this.
+
+
+[00:03:41] Lalit Summan: Does it make sense? That's the approach.
+Okay, so with that,
+
+
+[00:03:43] Lalit Summan: we'll record these calls to get the
+requirements.
+
+
+[00:03:46] Lalit Summan: So we have a kind of structured way of
+doing this. I'll ask,
+
+
+[00:03:49] Lalit Summan: and this is largely Justin,
+not to be pedantic about this,
+
+
+[00:03:52] Lalit Summan: but more about instead of giving you a
+form to fill out and you do it and then
+
+
+[00:03:55] Lalit Summan: we review it and then we play that ticket
+tennis over time,
+
+
+[00:03:58] Lalit Summan: just get this out on a conversation.
+
+
+[00:04:01] Lalit Summan: and both will just capture it.
+So just want to get an overview of what
+
+
+[00:04:04] Lalit Summan: the agentic,
+of the Anthropic client product use case
+
+
+[00:04:07] Lalit Summan: is,
+why you need it to be onboarded to the
+
+
+[00:04:09] Lalit Summan: ACP, what success looks like,
+technical and regulatory requirements,
+
+
+[00:04:13] Lalit Summan: and then Pavithra will just kind of ask
+pointed questions in terms of to help us
+
+
+[00:04:17] Lalit Summan: prioritize this folder.
+So that's kind of the structure of the
+
+
+[00:04:20] Lalit Summan: program.
+
+
+[00:04:22] Lalit Summan: So, so quickly,
+so please give us some sort of a high
+
+
+[00:04:25] Lalit Summan: level overview of what the Anthropic
+client product use case is so that we
+
+
+[00:04:30] Lalit Summan: know.
+
+
+[00:04:31] Justin Collery: Yep.
+So what we would like to do is we would
+
+
+[00:04:33] Justin Collery: like to onboard the Anthropic client
+products for knowledge work within Sun
+
+
+[00:04:38] Justin Collery: Life.
+So knowledge work consists of developers
+
+
+[00:04:40] Lalit Summan: Okay.
+
+
+[00:04:41] Justin Collery: obviously do knowledge work,
+so you could use Cloud Code for writing
+
+
+[00:04:45] Justin Collery: code,
+but there's loads of other people that do
+
+
+[00:04:48] Justin Collery: knowledge work that isn't.
+
+
+[00:04:50] Justin Collery: At cloud code, right,
+development type work, it's co-work,
+
+
+[00:04:53] Justin Collery: so they're making spreadsheets,
+they're whatever, doing presentations,
+
+
+[00:04:57] Justin Collery: they're whatever, doing analyzing code,
+for instance, right?
+
+
+[00:04:58] Lalit Summan: Okay.
+
+
+[00:05:01] Justin Collery: I do a whole lot of that sort of stuff,
+right? So not writing code.
+
+
+[00:05:05] Justin Collery: So there's that group of people that want
+to do stuff.
+
+
+[00:05:08] Justin Collery: Then there is another group and they want
+to use.
+
+
+[00:05:11] Justin Collery: the Anthropic client products installed
+on their local machine. So Cloud Code,
+
+
+[00:05:14] Justin Collery: Cloud Cowork, Cloud Chat,
+and we want to route that traffic.
+
+
+[00:05:17] Lalit Summan: Okay.
+
+
+[00:05:17] Justin Collery: We want to do a thing called third-party
+inference within those products,
+
+
+[00:05:21] Justin Collery: which allows you to route the traffic
+through any gateway.
+
+
+[00:05:24] Justin Collery: So we want that gateway to be the control
+plane.
+
+
+[00:05:27] Lalit Summan: And these are just LLM calls or what else
+is it for everything?
+
+
+[00:05:27] Justin Collery: Yep.
+
+
+[00:05:32] Justin Collery: When you say that they are just LLM calls,
+but the LLM calls will have potentially 2
+
+
+[00:05:38] Lalit Summan: The MCP tools, MCP servers, all of that,
+would that get as part of those,
+
+
+[00:05:38] Justin Collery: calls in the...
+
+
+[00:05:43] Lalit Summan: would that be connected to the ACP?
+
+
+[00:05:46] Justin Collery: I wouldn't, it would if there was any.
+
+
+[00:05:51] Lalit Summan: Okay.
+
+
+[00:05:51] Justin Collery: Right, so at the as an opening gambit,
+we're treating MCP separate to the
+
+
+[00:05:55] Justin Collery: products themselves.
+So if we want to open up some data
+
+
+[00:05:58] Justin Collery: products, whatever,
+that will be a separate project is not
+
+
+[00:06:01] Justin Collery: part of this, right?
+But we do want them to be able to have
+
+
+[00:06:02] Lalit Summan: Got it. Okay. Okay. Got it. Okay.
+
+
+[00:06:04] Justin Collery: tool calls.
+So because you can imagine in Claude code,
+
+
+[00:06:07] Justin Collery: let's say there could be a tool call to
+write a file or a tool call to read a
+
+
+[00:06:11] Justin Collery: file and whatever. So.
+
+
+[00:06:13] Justin Collery: And that doesn't go through MCP and we
+don't want to stop.
+
+
+[00:06:16] Justin Collery: That's like a core functionality.
+We don't want to stop, obviously,
+
+
+[00:06:19] Justin Collery: that sort of stuff from happening.
+So that's going on from there, right?
+
+
+[00:06:23] Justin Collery: That's one side of it.
+Then another side of it is there are some
+
+
+[00:06:27] Justin Collery: business units that don't deal with PII
+or anything like that. Again,
+
+
+[00:06:30] Justin Collery: they work on spreadsheets and.
+
+
+[00:06:32] Justin Collery: PowerPoint presentations and stuff like
+that.
+
+
+[00:06:35] Justin Collery: And Claude has add-ins for Microsoft
+Office products.
+
+
+[00:06:38] Justin Collery: And we want to enable those add-ins as
+well.
+
+
+[00:06:40] Justin Collery: They work almost exactly the same way.
+In terms of like the gateway,
+
+
+[00:06:44] Justin Collery: I don't believe there's any difference in
+the calls that are made.
+
+
+[00:06:48] Justin Collery: So in terms of the API call,
+it's exactly the same as all the other
+
+
+[00:06:52] Justin Collery: ones.
+
+
+[00:06:54] Justin Collery: We just need to manage how the SSO log or
+how the authentication.
+
+
+[00:06:57] Justin Collery: I'm not exactly sure how that would work
+in conjunction with the ACP. Right.
+
+
+[00:07:01] Justin Collery: And in fact, in both of them,
+not exactly sure how it will work. Right.
+
+
+[00:07:04] Justin Collery: I'm interested to hear how you guys are
+going to do that. But obviously,
+
+
+[00:07:07] Justin Collery: both of them,
+what I would like is for them to be
+
+
+[00:07:10] Justin Collery: authenticated using an AD group or.
+
+
+[00:07:11] Justin Collery: something similar to that, right?
+But I don't know what your views are on
+
+
+[00:07:15] Justin Collery: that, but that's,
+there has to be some sort of a control
+
+
+[00:07:18] Justin Collery: mechanism. There has to be some way,
+I mean, that's, I guess,
+
+
+[00:07:21] Justin Collery: inherent in the ACP.
+Say some people get it and some people
+
+
+[00:07:23] Justin Collery: don't. Before we ask questions then,
+right, I'll go with,
+
+
+[00:07:26] Justin Collery: so the basic requirement is we want to be
+able to send these calls through the ACP.
+
+
+[00:07:32] Justin Collery: The sort of secondary requirements then
+revolve around there has to be a
+
+
+[00:07:36] Justin Collery: chargeback model.
+So if all of this goes to one workload
+
+
+[00:07:40] Justin Collery: account,
+then there has to be a chargeback model
+
+
+[00:07:43] Justin Collery: to basically send those bills back to the
+right place.
+
+
+[00:07:46] Justin Collery: Or if you have a way of splitting them
+into many workload accounts.
+
+
+[00:07:50] Justin Collery: I'm cool with that too.
+You just need to tell me how that works,
+
+
+[00:07:54] Justin Collery: right?
+I don't have a bias as to which way,
+
+
+[00:07:56] Justin Collery: but there has to be a way that the people
+in my team,
+
+
+[00:07:59] Justin Collery: that their usage gets billed to my team
+and the people in another team,
+
+
+[00:08:03] Justin Collery: their usage gets billed to their team.
+So that will be important.
+
+
+[00:08:06] Justin Collery: And then at the very end of my list of
+requirements, out of that,
+
+
+[00:08:10] Justin Collery: the basically the AVPs and above,
+the people who pay the bills,
+
+
+[00:08:13] Justin Collery: they need to have some visibility into
+who's generating the bills.
+
+
+[00:08:17] Justin Collery: So like a simple report that says 10
+people in your cost centre are using it
+
+
+[00:08:21] Justin Collery: and here's how much money they've spent.
+Now maybe that comes from the finance
+
+
+[00:08:25] Justin Collery: people, I'm not really sure, right?
+But there has to be some way to get that
+
+
+[00:08:29] Justin Collery: information back.
+
+
+[00:08:30] Justin Collery: to the people who are paying the bills.
+
+
+[00:08:34] Lalit Summan: And these are just token cost per se,
+or are these like A.W.
+
+
+[00:08:36] Lalit Summan: at the workload accounts as what cost is
+like what are we looking at?
+
+
+[00:08:39] Justin Collery: It's really just, there's,
+I don't think there is, it's token costs.
+
+
+[00:08:41] Lalit Summan: Yeah.
+
+
+[00:08:43] Lalit Summan: Okay.
+
+
+[00:08:44] Seth Chalmers: So just digging into that cost, Justin,
+is just bedrock calls in scope or you
+
+
+[00:08:49] Seth Chalmers: would eventually want to maybe move to
+like anthropic direct billing or some
+
+
+[00:08:54] Seth Chalmers: other provider?
+
+
+[00:08:56] Justin Collery: I think it's going to be always Bedrock
+Direct. For now, it's just Bedrock Direct.
+
+
+[00:09:01] Seth Chalmers: Okay.
+
+
+[00:09:04] Justin Collery: Getting another data provider on board is
+difficult and slow. And if we can,
+
+
+[00:09:07] Justin Collery: the security people are much more
+comfortable if we can keep all of our
+
+
+[00:09:11] Justin Collery: data within our own security perimeter.
+
+
+[00:09:14] Seth Chalmers: Okay.
+
+
+[00:09:17] Lalit Summan: And all of these products are going to be
+used in a in a dev non-production
+
+
+[00:09:21] Lalit Summan: environment for now is is a.
+
+
+[00:09:23] Justin Collery: Yeah, non-production environment.
+And what I mean by that, Lalit,
+
+
+[00:09:27] Justin Collery: is like there is no PII.
+There's going to be absolutely 0 customer
+
+
+[00:09:30] Justin Collery: data, right? That's forbidden.
+And the use cases, as I say,
+
+
+[00:09:32] Lalit Summan: Yeah, yeah.
+
+
+[00:09:34] Justin Collery: they're going to be analysis and finance
+people might use it or whatever,
+
+
+[00:09:38] Justin Collery: but it's not like we're not using it to
+process claims.
+
+
+[00:09:41] Justin Collery: We're not using it to whatever onboard
+client. We're not, as I say,
+
+
+[00:09:45] Justin Collery: there's no PII.
+
+
+[00:09:46] Justin Collery: Nothing like that at all.
+Those are different use cases.
+
+
+[00:09:49] Justin Collery: They'll have to stand on their own merits.
+
+
+[00:09:52] Seth Chalmers: And so I guess technically digging into
+that a little bit before you move on,
+
+
+[00:09:56] Seth Chalmers: those would be controls you're looking to
+see in the gateway implementation,
+
+
+[00:09:56] Lalit Summan: Yeah.
+
+
+[00:09:59] Seth Chalmers: obviously,
+because there's nothing stopping people
+
+
+[00:10:02] Seth Chalmers: from putting PII into prompts and things
+like that.
+
+
+[00:10:04] Seth Chalmers: So you'd want to make sure that because
+things are going through the gateway,
+
+
+[00:10:08] Seth Chalmers: that's being controlled.
+
+
+[00:10:10] Justin Collery: Yes, I mean, that would be great,
+but that's not a requirement for me day.
+
+
+[00:10:14] Justin Collery: I mean, I don't,
+if that isn't their day one, right,
+
+
+[00:10:16] Justin Collery: I'll still get them to say, yeah,
+you can use these products,
+
+
+[00:10:19] Justin Collery: you have to use it in the right way.
+So that's okay, right,
+
+
+[00:10:22] Justin Collery: if they're not there day one.
+But obviously,
+
+
+[00:10:24] Justin Collery: one of the big benefits of going through
+the ACP is as those pieces of
+
+
+[00:10:27] Justin Collery: functionality come on board,
+you get the benefit of them.
+
+
+[00:10:30] Lalit Summan: Yeah.
+
+
+[00:10:31] Seth Chalmers: Yeah,
+and then just like on the direct access
+
+
+[00:10:34] Seth Chalmers: to PII,
+how would you be looking for that to be
+
+
+[00:10:37] Seth Chalmers: controlled?
+Because obviously if I as a person just
+
+
+[00:10:40] Seth Chalmers: making a tool call on my local machine,
+like there's nothing stopping me from
+
+
+[00:10:45] Seth Chalmers: accessing PII if I have access to it,
+if things are not going through the ACP
+
+
+[00:10:50] Seth Chalmers: essentially.
+
+
+[00:10:51] Justin Collery: And even if they are going through the
+ACP, I mean,
+
+
+[00:10:54] Justin Collery: I could still probably download some PII,
+put it on my machine and right and give
+
+
+[00:10:58] Justin Collery: it right. So,
+so that so the controls there are human
+
+
+[00:11:01] Justin Collery: controls at the moment, right?
+I don't have a programmatic way to stop
+
+
+[00:11:05] Justin Collery: that.
+People are going to have to promise that
+
+
+[00:11:06] Seth Chalmers: Okay.
+
+
+[00:11:08] Justin Collery: they use the tools responsibly.
+
+
+[00:11:10] Seth Chalmers: Okay.
+
+
+[00:11:11] Lalit Summan: May I miss this person?
+
+
+[00:11:11] Justin Collery: Actually, Seth, just sorry,
+just one other little thing on that,
+
+
+[00:11:15] Justin Collery: right?
+That maybe it's good for you to know as
+
+
+[00:11:18] Justin Collery: well, right? So, your,
+let's say your name and your e-mail
+
+
+[00:11:21] Justin Collery: address and your phone number are PII,
+right? Even though, right,
+
+
+[00:11:25] Justin Collery: you're an employee or whatever,
+the security folk are okay with that
+
+
+[00:11:29] Justin Collery: level of PII.
+
+
+[00:11:30] Justin Collery: Right, so if it's incidental PII,
+where it's your name and your e-mail
+
+
+[00:11:34] Justin Collery: address and your phone number,
+and I'm not like trying to do a report on
+
+
+[00:11:38] Justin Collery: you personally,
+it just happens that your name or e-mail
+
+
+[00:11:41] Justin Collery: address is in the code or it's in the
+document.
+
+
+[00:11:45] Justin Collery: That's okay.
+People are comfortable with that.
+
+
+[00:11:47] Justin Collery: But anything more than that, they're not.
+
+
+[00:11:49] Seth Chalmers: Makes sense, yeah.
+
+
+[00:11:52] Lalit Summan: I may have missed this, Justin.
+Is this today the client products?
+
+
+[00:11:55] Lalit Summan: Are they in a workload account or
+multiple workload accounts?
+
+
+[00:11:58] Justin Collery: Well, at the moment,
+they're not used at all.
+
+
+[00:12:00] Justin Collery: I'm looking for a way to make them
+available. So, and that's what I'm saying.
+
+
+[00:12:02] Lalit Summan: Eaton.
+
+
+[00:12:04] Justin Collery: I don't have a bias now, right?
+Originally, I had said, look,
+
+
+[00:12:06] Justin Collery: we can have them all in their own
+workload accounts, but they're just,
+
+
+[00:12:10] Justin Collery: you end up with like technical sprawl.
+And, you know,
+
+
+[00:12:12] Justin Collery: certainly there was going to be too many
+gateways that we would have to support.
+
+
+[00:12:16] Justin Collery: So one gateway,
+even if that's spread it out to many
+
+
+[00:12:19] Justin Collery: workload accounts, that'd be cool.
+
+
+[00:12:20] Justin Collery: Gotta mind, you know, or else we build.
+
+
+[00:12:21] Lalit Summan: Start.
+
+
+[00:12:22] Seth Chalmers: Yeah, yeah, so just...
+
+
+[00:12:23] Pavithra Viswanathan: Is there any specific timeline you're
+looking at Justin?
+
+
+[00:12:26] Justin Collery: Yeah, yeah,
+I want to get this done in October.
+
+
+[00:12:31] Lalit Summan: Halloween or?
+
+
+[00:12:32] Justin Collery: Halloween, yeah, okay.
+So this is a new requirement, right?
+
+
+[00:12:36] Justin Collery: I understand that, right?
+And I'm saying that slightly tongue in
+
+
+[00:12:36] Lalit Summan: No.
+
+
+[00:12:39] Justin Collery: cheek.
+I certainly had the intent for myself was
+
+
+[00:12:42] Justin Collery: to have this project up and running at
+least to some people in October.
+
+
+[00:12:46] Justin Collery: But that was on the intent that we would
+just stand up workload accounts and have
+
+
+[00:12:50] Justin Collery: a sort of a boilerplate thing that we
+could do.
+
+
+[00:12:53] Justin Collery: Right. So if we're going through the ACP,
+I understand that there's timelines,
+
+
+[00:12:58] Justin Collery: but I would love to get even some people
+on board on the 31st of October.
+
+
+[00:13:03] Justin Collery: That will be fantastic, right?
+We can add people afterwards. So.
+
+
+[00:13:09] Seth Chalmers: I am extremely interested in seeing this
+happen.
+
+
+[00:13:12] Justin Collery: Yeah.
+
+
+[00:13:12] Lalit Summan: Thank you.
+
+
+[00:13:14] Seth Chalmers: So, I think we can make some of the money.
+
+
+[00:13:15] Pavithra Viswanathan: Like all use cases, right, Seth?
+
+
+[00:13:16] Lalit Summan: But.
+
+
+[00:13:17] Justin Collery: Yeah.
+
+
+[00:13:17] Seth Chalmers: No, but this one in particular,
+I would really love to use Cloud Code
+
+
+[00:13:22] Seth Chalmers: just for myself. So on that,
+like just for us,
+
+
+[00:13:22] Lalit Summan: Dope.
+
+
+[00:13:25] Seth Chalmers: like this is a good use case for the
+centralized inference, Lalit and Pavithra,
+
+
+[00:13:25] Justin Collery: It's.
+
+
+[00:13:30] Seth Chalmers: like not delegating to different workload
+accounts,
+
+
+[00:13:33] Seth Chalmers: kind of like what streams like Vulkan and
+stuff where.
+
+
+[00:13:37] Lalit Summan: Yeah.
+
+
+[00:13:38] Seth Chalmers: Looking towards and we just do like per
+project per user kind of attribution
+
+
+[00:13:43] Seth Chalmers: within the ACP level and then like a
+phased approach on what we're delivering
+
+
+[00:13:48] Seth Chalmers: when because I think like I've been
+talking Justin with Greg on all this.
+
+
+[00:13:53] Seth Chalmers: I'm sure you're with Greg. Yeah,
+because they're working on like all the
+
+
+[00:13:53] Justin Collery: Yeah, yeah. Oh, brilliant. Yeah, yeah,
+yeah.
+
+
+[00:13:58] Seth Chalmers: agent skills.
+
+
+[00:13:59] Seth Chalmers: stuff with Nova that would eventually
+like we want to integrate that into the
+
+
+[00:14:03] Seth Chalmers: MCP,
+like have an agent skills registry and
+
+
+[00:14:05] Seth Chalmers: all those,
+but those like you're saying are kind of
+
+
+[00:14:08] Seth Chalmers: nice to have feature features and things
+like that. Yeah.
+
+
+[00:14:13] Seth Chalmers: And so like in terms of getting things
+working, like would you be able to,
+
+
+[00:14:17] Seth Chalmers: like we'll probably get into this in the
+design,
+
+
+[00:14:20] Seth Chalmers: like provide us a clad code installation,
+point it to the gateways and basically
+
+
+[00:14:25] Seth Chalmers: prove everything works, yeah.
+
+
+[00:14:27] Justin Collery: Yeah, I can, yeah.
+And I'm happy to help in any way, right?
+
+
+[00:14:31] Justin Collery: So I have, okay,
+I can get Claude Code installed in your
+
+
+[00:14:34] Justin Collery: machine too, by the way.
+I can send you the instructions so you
+
+
+[00:14:38] Justin Collery: can do the tests on Claude Code.
+I have the Claude client products
+
+
+[00:14:38] Lalit Summan: Yeah.
+
+
+[00:14:42] Justin Collery: installed on my machine because we did
+the POC last month,
+
+
+[00:14:45] Justin Collery: so I can point those at it.
+
+
+[00:14:47] Justin Collery: and I can certainly work with one of the
+guys to get the office plugins turned on.
+
+
+[00:14:51] Justin Collery: Now he'll probably look for an ATG for me
+before he'll do those, but look,
+
+
+[00:14:55] Justin Collery: we'll knock over one thing at a time.
+I have some of them anyway. Right,
+
+
+[00:14:59] Justin Collery: so I'll work with you.
+I'm also very interested to get this up
+
+
+[00:15:03] Justin Collery: and running.
+
+
+[00:15:04] Seth Chalmers: Yes, please. Yeah, sounds great.
+
+
+[00:15:05] Justin Collery: Yeah.
+
+
+[00:15:07] Justin Collery: I'm taking a note set to send you
+instructions for now to get everything
+
+
+[00:15:10] Seth Chalmers: Yeah.
+
+
+[00:15:10] Justin Collery: installed.
+
+
+[00:15:12] Pavithra Viswanathan: Yeah, in terms of governance need, like,
+do we have this triage in place,
+
+
+[00:15:18] Pavithra Viswanathan: and we have in place? How is it?
+
+
+[00:15:21] Justin Collery: So I'm working through the,
+they're all in progress, Pavithra.
+
+
+[00:15:26] Justin Collery: So the ISRA getting into ETAB at the
+moment is a nightmare.
+
+
+[00:15:30] Justin Collery: So it will be probably the tail end,
+about the same time as we're ready by the
+
+
+[00:15:35] Justin Collery: time I get to ETAB. So,
+but I'm on the slate for the middle of
+
+
+[00:15:40] Justin Collery: October, I think at the moment.
+
+
+[00:15:43] Pavithra Viswanathan: OK.
+
+
+[00:15:45] Pavithra Viswanathan: I think we should be okay for dev.
+It's just about making sure we have all
+
+
+[00:15:47] Justin Collery: Yeah.
+
+
+[00:15:49] Pavithra Viswanathan: those things in place,
+at least in progress,
+
+
+[00:15:51] Justin Collery: Yeah.
+
+
+[00:15:52] Pavithra Viswanathan: just so that we can have that knocked off.
+And from a business value perspective,
+
+
+[00:15:56] Pavithra Viswanathan: I'm thinking for you to use ACP,
+central inference.
+
+
+[00:15:59] Pavithra Viswanathan: That's one of the things that you
+mentioned,
+
+
+[00:16:02] Pavithra Viswanathan: and also managing different workload
+accounts.
+
+
+[00:16:05] Pavithra Viswanathan: You don't want to create and that's one
+of the things.
+
+
+[00:16:07] Pavithra Viswanathan: Anything else that you would like to
+highlight?
+
+
+[00:16:10] Justin Collery: So going through the, well, it, Pavithra,
+I do not envy you this task,
+
+
+[00:16:14] Justin Collery: but on the other way,
+it's like the easiest task in the world.
+
+
+[00:16:18] Justin Collery: I can't enable these products really
+without having the ACP there.
+
+
+[00:16:21] Justin Collery: So every piece of value that's going to
+be unlocked from the business,
+
+
+[00:16:22] Pavithra Viswanathan: Yeah.
+
+
+[00:16:25] Justin Collery: from I want all the architects to use
+this for generating architects.
+
+
+[00:16:29] Justin Collery: artifacts.
+I want all of the business architecture
+
+
+[00:16:32] Justin Collery: teams to use this to do analysis of code
+and analysis of business processes and
+
+
+[00:16:36] Justin Collery: all that sort of stuff.
+I can't do that without the ACP.
+
+
+[00:16:40] Justin Collery: I want the financial teams to use all of
+these plugins to do, you know,
+
+
+[00:16:44] Justin Collery: the analysis on their spreadsheets and
+whatever it is,
+
+
+[00:16:47] Justin Collery: whatever finance people do, right.
+
+
+[00:16:49] Justin Collery: I can't do that without the ACP.
+So it's very difficult for me to give you,
+
+
+[00:16:54] Justin Collery: those are ideas of the value,
+but really the value it unlocks is every
+
+
+[00:16:56] Pavithra Viswanathan: And.
+
+
+[00:16:58] Justin Collery: use case that you could possibly imagine
+needs to have this go through the ACP to
+
+
+[00:17:04] Justin Collery: enable it.
+
+
+[00:17:06] Lalit Summan: Thanks.
+
+
+[00:17:06] Pavithra Viswanathan: That helps.
+Just wanted to document these things that
+
+
+[00:17:09] Pavithra Viswanathan: we need reference,
+but we might forget the call that we had
+
+
+[00:17:12] Lalit Summan: Yeah.
+
+
+[00:17:12] Justin Collery: Di.
+
+
+[00:17:12] Pavithra Viswanathan: now,
+so it's good for us to have that at the
+
+
+[00:17:13] Justin Collery: Yeah, yeah.
+
+
+[00:17:15] Pavithra Viswanathan: end.
+
+
+[00:17:15] Lalit Summan: I appreciate you calling that out, Justin,
+as well,
+
+
+[00:17:15] Justin Collery: There are.
+
+
+[00:17:18] Lalit Summan: because part of what we try and the team
+has to do is justify the value, right?
+
+
+[00:17:21] Justin Collery: Yeah.
+
+
+[00:17:22] Lalit Summan: So when we have folks like you beating
+the drum on, look,
+
+
+[00:17:25] Lalit Summan: this is kind of a pillar to get these
+things out the door.
+
+
+[00:17:28] Lalit Summan: It becomes an easier conversation for us.
+So I do appreciate you pointing that up.
+
+
+[00:17:30] Justin Collery: Yeah.
+
+
+[00:17:32] Lalit Summan: A question for maybe Seth,
+how similar is this to the MDX?
+
+
+[00:17:35] Lalit Summan: Requests that they have with rerouting,
+this is different and you slapping around,
+
+
+[00:17:39] Lalit Summan: but I'm trying to understand,
+don't they have something similar?
+
+
+[00:17:40] Seth Chalmers: Um...
+
+
+[00:17:44] Seth Chalmers: could basically replace what they're
+doing with MDX, but I need to say it,
+
+
+[00:17:48] Lalit Summan: Yeah.
+
+
+[00:17:49] Seth Chalmers: but this like fundamentally kind of like,
+we have a lot of problems with like
+
+
+[00:17:54] Seth Chalmers: GitHub Copilot because it cannot,
+we can't mandate that things go through a
+
+
+[00:17:59] Seth Chalmers: gateway.
+So that's kind of like the fundamental
+
+
+[00:18:00] Justin Collery: Yeah.
+
+
+[00:18:00] Lalit Summan: Birt.
+
+
+[00:18:02] Seth Chalmers: problem.
+
+
+[00:18:03] Seth Chalmers: this solves for us as an organization,
+Justin, to your point. So yeah.
+
+
+[00:18:08] Justin Collery: Yeah.
+
+
+[00:18:10] Lalit Summan: And are there,
+as you go through your approvals,
+
+
+[00:18:14] Lalit Summan: are there any like OSFI, or like OWASP,
+NIST,
+
+
+[00:18:17] Lalit Summan: ISO standards we have to look out for?
+We work with the MRM team and at some
+
+
+[00:18:22] Lalit Summan: point the agentic control pane would feed
+into archers of the world, right, to...
+
+
+[00:18:26] Justin Collery: Yes.
+
+
+[00:18:29] Justin Collery: So...
+
+
+[00:18:34] Justin Collery: Okay,
+for what we're talking about right here,
+
+
+[00:18:36] Justin Collery: right now, not really, right?
+Because remember,
+
+
+[00:18:38] Lalit Summan: Okay.
+
+
+[00:18:39] Justin Collery: I've carefully said in this one,
+there's no PII, right,
+
+
+[00:18:42] Justin Collery: to get us that first step.
+But inherent in that,
+
+
+[00:18:43] Lalit Summan: Right.
+
+
+[00:18:45] Justin Collery: what I've said is every future,
+if you don't fit within this box that
+
+
+[00:18:49] Justin Collery: I've drawn,
+then you have to do a separate ISRA and
+
+
+[00:18:52] Justin Collery: a separate PIA and a separate Gen.
+AI risk triage.
+
+
+[00:18:54] Lalit Summan: Right.
+
+
+[00:18:55] Justin Collery: And it's going to have to go through
+
+
+[00:18:58] Justin Collery: you know, the ACP, right?
+That's when you get your OSFI, you know,
+
+
+[00:18:59] Lalit Summan: Basically, yeah.
+
+
+[00:19:02] Justin Collery: concerns and stuff like that.
+So it comes in. So we're, again,
+
+
+[00:19:05] Justin Collery: right to Pavithra's question,
+we're putting the groundwork, right,
+
+
+[00:19:09] Justin Collery: the foundation in that's creating the
+value for all of those follow-on projects
+
+
+[00:19:13] Justin Collery: when we do want to do more advanced use
+cases.
+
+
+[00:19:17] Lalit Summan: Publicly.
+
+
+[00:19:21] Pavithra Viswanathan: And I'm assuming it's LVT4 based on it's
+going to be just in dev,
+
+
+[00:19:21] Lalit Summan: Exactly.
+
+
+[00:19:26] Pavithra Viswanathan: it's not end user facing.
+Would you say it's LVT4?
+
+
+[00:19:30] Justin Collery: I would say that's Peru, yeah.
+
+
+[00:19:34] Justin Collery: Hey, Rob.
+
+
+[00:19:35] Lalit Summan: Rob.
+
+
+[00:19:36] Robert Chin: Hey there.
+
+
+[00:19:37] Lalit Summan: Thanks for joining, Rob.
+There's about 10 use cases and they're
+
+
+[00:19:40] Lalit Summan: all assigned to you.
+That's a take away from me.
+
+
+[00:19:42] Robert Chin: All right,
+and I'm going to say they're all out of
+
+
+[00:19:43] Justin Collery: And.
+
+
+[00:19:44] Robert Chin: scope.
+
+
+[00:19:45] Justin Collery: We had said they were all going to be
+done by next Friday.
+
+
+[00:19:46] Seth Chalmers: Yeah.
+
+
+[00:19:48] Robert Chin: Yeah.
+
+
+[00:19:49] Seth Chalmers: Yeah.
+
+
+[00:19:51] Lalit Summan: Okay,
+I think we've got so technically we're
+
+
+[00:19:53] Lalit Summan: good.
+
+
+[00:19:54] Pavithra Viswanathan: And it's LLM inference, right?
+So there's an existing pattern as well,
+
+
+[00:19:58] Pavithra Viswanathan: Seth, right? Nothing new needed.
+
+
+[00:20:01] Seth Chalmers: Yeah.
+
+
+[00:20:03] Lalit Summan: This will catch you up, Rob, as well.
+This will kind of keep us honest.
+
+
+[00:20:07] Lalit Summan: Justin and team are enabling the
+anthropic client products,
+
+
+[00:20:12] Lalit Summan: which are your code,
+all of those things within Sun Life.
+
+
+[00:20:16] Lalit Summan: That needs to be onboarded to ACP.
+And what they want to start with is just
+
+
+[00:20:21] Lalit Summan: inferencing LLMs through the ACP.
+
+
+[00:20:23] Lalit Summan: With with with those client products, um,
+they're looking to get this done by
+
+
+[00:20:30] Lalit Summan: October, um, and...
+
+
+[00:20:33] Lalit Summan: Different workload accounts,
+single workload account,
+
+
+[00:20:36] Lalit Summan: we'll figure that we're going to start
+small. We have this up and running now,
+
+
+[00:20:40] Lalit Summan: so Justin is ready to go.
+I think we're in a good spot.
+
+
+[00:20:43] Lalit Summan: And the value really here is around using
+this as a new platform to build going
+
+
+[00:20:47] Lalit Summan: forward, right?
+So the cloud code on fire within some
+
+
+[00:20:50] Lalit Summan: light bulb will be a problem.
+
+
+[00:20:51] Lalit Summan: If you don't have this covered in some
+way, so did I did I miss anything, Justin?
+
+
+[00:20:56] Lalit Summan: I think that's the gist of your...
+
+
+[00:20:58] Justin Collery: Yep, that's the gist of it.
+And I would say as well, this is, look,
+
+
+[00:21:01] Justin Collery: we'll do our own testing and stuff,
+but it's high profile up to, you know,
+
+
+[00:21:05] Justin Collery: Jessica is looking to get her hands on
+this to do stuff on it.
+
+
+[00:21:08] Justin Collery: So we'll prove it out,
+make sure it's all working before we send
+
+
+[00:21:12] Justin Collery: it up to Jessica, but it's, you know,
+got good profile.
+
+
+[00:21:16] Robert Chin: This is Cloud Cowork.
+You're not doing anything with Copilot
+
+
+[00:21:19] Robert Chin: Cowork as well, right?
+Which is powered by Cloud Cowork.
+
+
+[00:21:20] Justin Collery: And.
+
+
+[00:21:22] Justin Collery: No, right, Rob, but here's my argument,
+right? This, we're sent,
+
+
+[00:21:26] Justin Collery: literally the purpose of this meeting is
+we're going to send everything through
+
+
+[00:21:30] Justin Collery: the control plane from day one, right?
+I don't know if Microsoft Copilot goes
+
+
+[00:21:34] Justin Collery: through the control plane or Cowork.
+
+
+[00:21:36] Seth Chalmers: Yeah.
+
+
+[00:21:36] Lalit Summan: Not today.
+
+
+[00:21:37] Justin Collery: goes through the control plane.
+So this is a way to,
+
+
+[00:21:40] Justin Collery: it's exactly the same,
+you know it's exactly the same piece of
+
+
+[00:21:44] Justin Collery: software, right? They did a deal together.
+So, but they bill for it separately,
+
+
+[00:21:46] Robert Chin: Yeah.
+
+
+[00:21:49] Justin Collery: I understand.
+So this keeps all of that within our,
+
+
+[00:21:52] Justin Collery: so the advantage of doing it this way,
+one,
+
+
+[00:21:54] Justin Collery: it goes through the agentic control plane
+and two,
+
+
+[00:21:57] Justin Collery: it stays within our bedrock environment.
+
+
+[00:21:59] Justin Collery: the data never leaves our security
+perimeter.
+
+
+[00:22:01] Justin Collery: So those are the reasons why we want to
+do it this way rather than do it another
+
+
+[00:22:05] Justin Collery: way.
+
+
+[00:22:08] Robert Chin: Sounds good. Who's owning this solution?
+Or going to be?
+
+
+[00:22:15] Justin Collery: In terms of the client, it's well,
+I don't know who owns it actually,
+
+
+[00:22:19] Justin Collery: in like in that,
+like you got the ACP now owns the
+
+
+[00:22:22] Justin Collery: inference part of it.
+
+
+[00:22:23] Robert Chin: Well, that's kind of where I'm going.
+Just trying to figure out who do we loop
+
+
+[00:22:27] Robert Chin: in from an owner finance perspective,
+because the biggest thing with any
+
+
+[00:22:31] Robert Chin: solution in this whole company is a
+billing process and finance.
+
+
+[00:22:35] Robert Chin: So trying to figure out,
+especially when you're talking with any
+
+
+[00:22:38] Robert Chin: end user solution, end user services,
+like who do we work with to kind of
+
+
+[00:22:42] Robert Chin: figure that out?
+
+
+[00:22:44] Justin Collery: So, I held the ad here, Rob, right? So,
+the...
+
+
+[00:22:45] Robert Chin: Like, who's deploying it?
+Who's deploying cowork?
+
+
+[00:22:48] Justin Collery: So, as in technically deploying it,
+so the way I'm setting it up.
+
+
+[00:22:51] Robert Chin: Yeah, like who will enable, yeah.
+
+
+[00:22:53] Justin Collery: It's the desktop team,
+so it's going to be packaged up as a
+
+
+[00:22:55] Robert Chin: Okay.
+
+
+[00:22:56] Justin Collery: software package, and they will deploy it.
+I'm still working it through.
+
+
+[00:22:59] Justin Collery: I've got a couple of things to do for
+them. They may, whatever.
+
+
+[00:23:01] Justin Collery: We've got to figure out,
+they're responsible for that, right?
+
+
+[00:23:04] Robert Chin: Okay.
+
+
+[00:23:04] Justin Collery: There's a couple of different ways of
+achieving it.
+
+
+[00:23:06] Justin Collery: And then in terms of who pays for it,
+at the moment, it's a chargeback model.
+
+
+[00:23:10] Justin Collery: So if you're an AVP and you want your
+staff to have access to it,
+
+
+[00:23:11] Robert Chin: Yeah.
+
+
+[00:23:12] Justin Collery: you'll request access, you'll get access,
+and it'll go back to your cost centre.
+
+
+[00:23:16] Robert Chin: And who owns that?
+Like who owns a vendor relationship with..
+
+
+[00:23:20] Robert Chin: .
+
+
+[00:23:21] Justin Collery: With if there's no event,
+who get with it's AWS, there's no,
+
+
+[00:23:21] Robert Chin: Who gets a Bell?
+
+
+[00:23:25] Justin Collery: it's the same bill, there's no new bill.
+
+
+[00:23:25] Robert Chin: OK, OK, OK, so, OK, OK, so purely,
+so it'll be deployed on the desktop level,
+
+
+[00:23:32] Robert Chin: and then, OK.
+
+
+[00:23:35] Justin Collery: And then it's a chargeback model,
+so if you're the if you're the owner of
+
+
+[00:23:38] Justin Collery: the cost centre,
+the bill goes back to you.
+
+
+[00:23:40] Robert Chin: Yeah, okay. Okay. Yeah, okay,
+we'll see how that goes.
+
+
+[00:23:43] Robert Chin: There's a client that gets deployed from
+the desktop team,
+
+
+[00:23:47] Robert Chin: and then that's tied to a cost centre,
+we think.
+
+
+[00:23:51] Justin Collery: So you're okay, so this is well,
+this actually goes Seth to my thing about
+
+
+[00:23:55] Justin Collery: so access I think should be controlled by
+AD group.
+
+
+[00:23:59] Justin Collery: And so it is one of the requirements that
+there's the chargeback element.
+
+
+[00:24:03] Justin Collery: So we need to know how many tokens people
+have used in order to do the chargeback.
+
+
+[00:24:08] Justin Collery: So I'll need direction from you guys as
+to.
+
+
+[00:24:11] Justin Collery: How that, how that might work?
+How do I know how much each person has
+
+
+[00:24:14] Justin Collery: spent?
+
+
+[00:24:15] Seth Chalmers: Yeah, so I was mentioning this before,
+Rob,
+
+
+[00:24:18] Seth Chalmers: this is like our centralized versus like
+delegated charge back and sort of
+
+
+[00:24:23] Seth Chalmers: inference model.
+So I just got off a call with the Anirban,
+
+
+[00:24:23] Robert Chin: Yeah.
+
+
+[00:24:26] Seth Chalmers: and he's going to get us all looped in on
+#1, the cost model, and then #2,
+
+
+[00:24:31] Seth Chalmers: like how this centralized inference will.
+
+
+[00:24:34] Seth Chalmers: work because we have a bunch of use cases
+now that want to make use of the
+
+
+[00:24:39] Seth Chalmers: centralized inference model rather than
+the bedrock call being made in each
+
+
+[00:24:43] Robert Chin: Yeah.
+
+
+[00:24:43] Seth Chalmers: individual workload account,
+like happens today,
+
+
+[00:24:46] Seth Chalmers: because that makes the chargeback cleaner,
+but things messier on the control plane
+
+
+[00:24:51] Seth Chalmers: side.
+So at least from what has been described,
+
+
+[00:24:54] Seth Chalmers: we'll have the user level.
+
+
+[00:24:56] Seth Chalmers: We'll be able to attribute that to token
+spend on Luminate or the ACP.
+
+
+[00:25:00] Seth Chalmers: We just need to work out like how we can
+actually get that cost back to cost
+
+
+[00:25:05] Seth Chalmers: centers.
+So I think that's on us to determine not
+
+
+[00:25:09] Seth Chalmers: the installation of cloud code.
+
+
+[00:25:11] Robert Chin: Yeah, Lalit, you may want to bring in, um,
+she's the one I bring in, uh, Ellis.
+
+
+[00:25:15] Lalit Summan: Lisa, OK.
+
+
+[00:25:16] Robert Chin: Yeah,
+because she manages all the charge back,
+
+
+[00:25:19] Robert Chin: so she'll have to figure out who on her
+team will manage this on the financial
+
+
+[00:25:23] Robert Chin: back end, so you logistics.
+
+
+[00:25:24] Pavithra Viswanathan: We discussed,
+we had a call this morning with Ellis and
+
+
+[00:25:27] Pavithra Viswanathan: this was brought up as well and she was
+suggesting that we involve corporate
+
+
+[00:25:29] Robert Chin: Okay.
+
+
+[00:25:32] Pavithra Viswanathan: finance for this.
+
+
+[00:25:34] Pavithra Viswanathan: Of...
+
+
+[00:25:34] Lalit Summan: Yeah.
+
+
+[00:25:36] Lalit Summan: Did we get a contact?
+Was it Tyler Pavithra for the chargebacks?
+
+
+[00:25:40] Pavithra Viswanathan: I put up the name, but...
+
+
+[00:25:41] Lalit Summan: Yeah.
+
+
+[00:25:43] Pavithra Viswanathan: Mark, I just forgot them.
+
+
+[00:25:44] Lalit Summan: OK, got it. Yeah, yeah,
+we had this conversation earlier today,
+
+
+[00:25:48] Lalit Summan: Rob, with with Ellis, yeah, to call.
+
+
+[00:25:49] Robert Chin: OK, perfect.
+
+
+[00:25:52] Pavithra Viswanathan: And would you be the point of contact as
+architect, Justin?
+
+
+[00:25:56] Justin Collery: For Claude, yes, correct.
+
+
+[00:25:59] Justin Collery: I did just in terms if it helps you guys
+out at all, right?
+
+
+[00:26:02] Justin Collery: When I was going down the,
+I'm going to just set up a gateway myself.
+
+
+[00:26:06] Justin Collery: Rob, the business case for me here,
+the push for me is if I don't use the ACP
+
+
+[00:26:10] Justin Collery: from day one,
+and I do want to use the ACP at some
+
+
+[00:26:13] Justin Collery: point in the future,
+but if I didn't do it day one,
+
+
+[00:26:16] Justin Collery: I end up having to set up a gateway.
+
+
+[00:26:18] Justin Collery: And then I end up having to set up the
+chargeback myself.
+
+
+[00:26:21] Justin Collery: And I end up having to basically
+duplicate a lot of the functionality that
+
+
+[00:26:23] Lalit Summan: With open.
+
+
+[00:26:25] Robert Chin: Mhm.
+
+
+[00:26:25] Justin Collery: you guys would be doing.
+So it doesn't make sense, right?
+
+
+[00:26:28] Justin Collery: It makes more sense to do it right the
+first time. Anyway, in this journey,
+
+
+[00:26:32] Justin Collery: the lady that I had reached out to about
+chargebacks was Kathy Kwan.
+
+
+[00:26:36] Justin Collery: I put her name here.
+
+
+[00:26:38] Justin Collery: just in case that helps. And her,
+when I got on to her, she'd said,
+
+
+[00:26:42] Justin Collery: you need to talk to these people.
+It was the Finance Expense Management
+
+
+[00:26:46] Justin Collery: team.
+
+
+[00:26:50] Justin Collery: So,
+that might that might help in terms of,
+
+
+[00:26:52] Justin Collery: and the reason that the reason I got
+those was one of the other architects,
+
+
+[00:26:57] Justin Collery: what's his name,
+and then one of the other architects said,
+
+
+[00:27:00] Justin Collery: look at there is already pipelines in
+place for chargebacks go through AWS
+
+
+[00:27:04] Justin Collery: workload accounts,
+and all you need to do is piggyback on
+
+
+[00:27:07] Justin Collery: one of those existing.
+
+
+[00:27:09] Justin Collery: Chargeback mechanisms.
+
+
+[00:27:12] Robert Chin: or the current mechanisms.
+
+
+[00:27:14] Justin Collery: Yeah.
+
+
+[00:27:15] Robert Chin: Yeah, current mechanisms, yeah,
+the workload accounts go to a cost centre.
+
+
+[00:27:18] Robert Chin: So it's by workload accounts now.
+
+
+[00:27:21] Justin Collery: If the room where?
+
+
+[00:27:24] Robert Chin: In Appiah.
+
+
+[00:27:26] Justin Collery: Yeah.
+
+
+[00:27:26] Robert Chin: So we can figure out how to do that.
+We may need to do it. So actually, yeah,
+
+
+[00:27:32] Robert Chin: depending how we hit bedrock, what we,
+the other one you may need to involve,
+
+
+[00:27:38] Robert Chin: Lalit is the Cloud FinOps team.
+
+
+[00:27:43] Robert Chin: What's his name? Ma.
+
+
+[00:27:44] Lalit Summan: Which?
+
+
+[00:27:48] Robert Chin: Because right now they, yeah, Manan, yeah,
+because they do all the they do all the
+
+
+[00:27:48] Lalit Summan: Manan, Manan, yeah.
+
+
+[00:27:52] Robert Chin: direct flow through AWS chargebacks today,
+so if we're going to be pulling out
+
+
+[00:27:56] Robert Chin: something then they have to pull it out
+from their reporting that goes to finance,
+
+
+[00:28:00] Robert Chin: so we'll have to just kind of figure it
+out, yeah,
+
+
+[00:28:03] Robert Chin: work with him to kind of figure out,
+maybe you can integrate the view into.
+
+
+[00:28:07] Robert Chin: Everybody goes into App Tuner to get a...
+
+
+[00:28:10] Robert Chin: what's hitting their cost centres.
+So we may just need to plug it back into
+
+
+[00:28:14] Robert Chin: them so they can continue seeing that
+single, yep, that's it,
+
+
+[00:28:17] Robert Chin: to get that single view in terms of like
+Justin,
+
+
+[00:28:20] Robert Chin: you can go in and see what your cost
+center spend is on AWS Services.
+
+
+[00:28:25] Lalit Summan: So, are you saying we would integrate?
+
+
+[00:28:28] Robert Chin: I'm not sure how we would do that,
+but yeah, we'd have to figure out.
+
+
+[00:28:31] Robert Chin: We can figure out.
+
+
+[00:28:31] Seth Chalmers: It's going to be different because it's
+not going to be like they're going to
+
+
+[00:28:34] Seth Chalmers: have a workload account for each one of
+these things.
+
+
+[00:28:38] Seth Chalmers: that we can charge back to,
+it's going to be we'll have to map like
+
+
+[00:28:42] Seth Chalmers: specific cost centres to users,
+like AD group with users within that AD
+
+
+[00:28:46] Seth Chalmers: group to particular cost centres.
+And we'd be tracking like user level
+
+
+[00:28:50] Robert Chin: Yeah.
+
+
+[00:28:51] Seth Chalmers: token usage and things like that in the
+ACP. So essentially,
+
+
+[00:28:55] Seth Chalmers: how do we get that cost centre back to
+the actual.
+
+
+[00:28:59] Seth Chalmers: Like, turns back to that cost centre.
+
+
+[00:29:02] Seth Chalmers: If it's just everything's going through
+our workload accounts,
+
+
+[00:29:05] Seth Chalmers: we don't have per business unit or costs
+in their workload accounts.
+
+
+[00:29:10] Robert Chin: Yeah.
+
+
+[00:29:10] Seth Chalmers: But we can figure it out.
+
+
+[00:29:13] Robert Chin: Yeah,
+so they would basically hit all the
+
+
+[00:29:15] Robert Chin: bedrock charges would go to one workload
+account cost centre,
+
+
+[00:29:19] Robert Chin: and then you'd have to have a downstream
+process to take those bedrock costs and
+
+
+[00:29:23] Robert Chin: redistribute them.
+
+
+[00:29:24] Seth Chalmers: Yeah.
+
+
+[00:29:26] Justin Collery: Another way, Seth,
+is not a full solution for you, right?
+
+
+[00:29:29] Justin Collery: But as a partial solution,
+is that information is also available in
+
+
+[00:29:33] Justin Collery: ServiceNow, SailPoint, or Ariba.
+Greg O gave me this info,
+
+
+[00:29:37] Justin Collery: so probably the same way he might have
+talked to you about the same thing, right?
+
+
+[00:29:41] Seth Chalmers: Yeah.
+
+
+[00:29:42] Justin Collery: So you can,
+through either of those systems,
+
+
+[00:29:45] Justin Collery: you can look at an ACF2 ID or you can
+look at a user and get the cost centre
+
+
+[00:29:49] Justin Collery: that they're associated with.
+So that might give you the answer.
+
+
+[00:29:52] Justin Collery: The reason I say it's not a full solution
+for you is I think in your other
+
+
+[00:29:55] Justin Collery: requirements, there might be,
+you have an agent that's coming in and
+
+
+[00:29:58] Justin Collery: coming through here, so it's not a person,
+right?
+
+
+[00:30:01] Justin Collery: And so how do you find a cost centre for
+an agent? I'm not sure.
+
+
+[00:30:04] Justin Collery: What a good solution is for that?
+
+
+[00:30:07] Justin Collery: But,
+but that might give you some of the
+
+
+[00:30:09] Justin Collery: information that you need.
+
+
+[00:30:10] Robert Chin: Yeah,
+maybe I'll take what GitHub Copilot is
+
+
+[00:30:10] Seth Chalmers: Thanks.
+
+
+[00:30:12] Robert Chin: using as well, whatever,
+wherever they're getting their data from.
+
+
+[00:30:14] Robert Chin: You could probably just use that data
+source because they charge back token
+
+
+[00:30:18] Robert Chin: usage.
+
+
+[00:30:19] Justin Collery: They do, and as I said,
+it's Greg O that gave me this info,
+
+
+[00:30:19] Robert Chin: GitHub Copilot.
+
+
+[00:30:24] Justin Collery: so I suspect it's one of these. Yeah,
+yeah.
+
+
+[00:30:27] Robert Chin: Process.
+
+
+[00:30:28] Justin Collery: But he said it was causing a pain at the
+moment.
+
+
+[00:30:30] Justin Collery: I'm not sure how they were doing it.
+It was an issue for them. And he was,
+
+
+[00:30:32] Robert Chin: Yeah.
+
+
+[00:30:33] Justin Collery: the reason he,
+I think the reason he had this
+
+
+[00:30:34] Justin Collery: information to hand was because he was
+trying to solve the same problem right
+
+
+[00:30:37] Justin Collery: now.
+
+
+[00:30:38] Robert Chin: Yeah,
+everybody across finance has that problem
+
+
+[00:30:38] Seth Chalmers: It's very.
+
+
+[00:30:41] Justin Collery: Yeah.
+
+
+[00:30:41] Seth Chalmers: It's very manual today,
+is what Greg was telling me behind the
+
+
+[00:30:42] Robert Chin: in that.
+
+
+[00:30:44] Robert Chin: Yeah.
+
+
+[00:30:45] Seth Chalmers: scenes. So I think,
+like Anirban mentioned,
+
+
+[00:30:48] Seth Chalmers: we'll rally all the architects on this
+solution and get something automated that
+
+
+[00:30:53] Seth Chalmers: we can do through Luminator, the ACP.
+
+
+[00:30:56] Robert Chin: Yeah.
+
+
+[00:30:59] Lalit Summan: I think we got everything we need to
+start, right?
+
+
+[00:31:02] Lalit Summan: So I think just in next steps,
+we'll create our requirements,
+
+
+[00:31:05] Lalit Summan: our discovery document,
+and the next session will be a design
+
+
+[00:31:09] Lalit Summan: review with you and anybody else you
+invite. So look out for that.
+
+
+[00:31:14] Justin Collery: Brilliant. Look, I really appreciate it.
+Awesome work.
+
+
+[00:31:17] Justin Collery: And anything I can do to help,
+let me know and I'll be there.
+
+
+[00:31:20] Seth Chalmers: Thanks, Justin.
+
+
+[00:31:21] Lalit Summan: Awesome. Thanks, Justin. Bye. Thanks,
+everybody.
+
+
+[00:31:21] Pavithra Viswanathan: Thank you so much.
+
+
+[00:31:21] Justin Collery: Brilliant. Cool. Thanks all. Bye now.
+
+
+[00:31:23] Seth Chalmers: Lai.

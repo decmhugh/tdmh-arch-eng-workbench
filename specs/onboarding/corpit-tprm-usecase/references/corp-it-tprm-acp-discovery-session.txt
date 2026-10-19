@@ -1,0 +1,1989 @@
+WEBVTT
+
+
+[00:00:03] Lalit Summan: We structure these meetings with our
+clients just to get an understanding of
+
+
+[00:00:07] Lalit Summan: what the use case is, why it's important,
+and we'll go through like a structured
+
+
+[00:00:11] Lalit Summan: series of questions and answers.
+So it helps us formulate our requirements
+
+
+[00:00:15] Lalit Summan: documents within our process.
+We do use the SDD,
+
+
+[00:00:18] Lalit Summan: the spec driven development process.
+We capture your requirements,
+
+
+[00:00:21] Lalit Summan: we break them under tasks,
+and then Seth and the product team then
+
+
+[00:00:25] Lalit Summan: breaks them up and assigns them to the
+team to work on.
+
+
+[00:00:28] Lalit Summan: So without further ado,
+we'll get right into it. So first,
+
+
+[00:00:31] Lalit Summan: thanks for joining. Appreciate it.
+For CorpAI T,
+
+
+[00:00:34] Grant Du: Thank you.
+
+
+[00:00:34] Lalit Summan: there are two use cases that are already
+in flight, right, that we're working on.
+
+
+[00:00:39] Lalit Summan: I don't know if you're aware, everyone,
+but there is the aims.
+
+
+[00:00:43] Grant Du: Yeah, but these are aims and ORCC, right?
+
+
+[00:00:46] Lalit Summan: Right, that's right. Perfect.
+And this is the third use case, right?
+
+
+[00:00:47] Grant Du: Okay.
+
+
+[00:00:50] Lalit Summan: So I know from the AIMS perspective,
+I saw it in a dev environment,
+
+
+[00:00:54] Lalit Summan: we have onboarded a few use cases working
+with Geeta closely.
+
+
+[00:00:58] Lalit Summan: That's been progressing well.
+Not sure Deepankar.
+
+
+[00:01:00] Grant Du: Oh, let me, sorry, sorry,
+one quick question.
+
+
+[00:01:03] Grant Du: We understand there's two versions of ACD,
+right? One is internal,
+
+
+[00:01:07] Grant Du: the other is Luminate.
+So for the two products,
+
+
+[00:01:09] Lalit Summan: Good.
+
+
+[00:01:10] Grant Du: are they onboarding to the internal one
+or to Luminate?
+
+
+[00:01:14] Lalit Summan: To Luminate our internal MVP,
+that was cool, great.
+
+
+[00:01:15] Grant Du: Puneet.
+
+
+[00:01:17] Lalit Summan: We did a lot of learning.
+That's not we're onboarding anybody to
+
+
+[00:01:21] Lalit Summan: anymore, right? So,
+and just to baseline and just to get
+
+
+[00:01:23] Grant Du: Okay, perfect. Thanks.
+
+
+[00:01:24] Lalit Summan: everybody understanding of where ACP is.
+I don't know, Seth,
+
+
+[00:01:28] Lalit Summan: if you want to pop up the Luminate dev
+environment to just to showcase where we
+
+
+[00:01:32] Seth Chalmers: Sure.
+
+
+[00:01:32] Lalit Summan: are with the AIMS use case.
+
+
+[00:01:35] Lalit Summan: I think that would just help kind of
+baseline everyone.
+
+
+[00:01:46] Lalit Summan: So this is the dev environment for them.
+
+
+[00:01:50] Seth Chalmers: Yep,
+so we're onboarding a bunch of different
+
+
+[00:01:54] Seth Chalmers: use cases. Aims is one of them.
+So a bit of a different onboarding than
+
+
+[00:02:00] Seth Chalmers: typical like an agent core agent or
+anything like that.
+
+
+[00:02:04] Seth Chalmers: I think most of the Aims stuff at least
+was done just in a...
+
+
+[00:02:10] Seth Chalmers: lambdas with direct calls to Bedrock for
+LLMs.
+
+
+[00:02:10] Lalit Summan: Yeah.
+
+
+[00:02:14] Seth Chalmers: So we're just starting with onboarding
+basically all those lambdas as agents
+
+
+[00:02:20] Seth Chalmers: themselves and then working with our
+harness.
+
+
+[00:02:23] Seth Chalmers: We have like a Python SDK that you can
+import that makes the various
+
+
+[00:02:29] Seth Chalmers: functionality within ACP a bit easier.
+
+
+[00:02:32] Seth Chalmers: for you to do and basically migrate your
+current code from just making direct
+
+
+[00:02:38] Seth Chalmers: calls for agents, MCP,
+or models to now routing all of your
+
+
+[00:02:43] Seth Chalmers: traffic through one of our gateways.
+So that's kind of the fundamental change,
+
+
+[00:02:49] Seth Chalmers: but it's all open AI format compatible,
+so it works with.
+
+
+[00:02:53] Seth Chalmers: various tools like LangChain and things
+like that out-of-the-box.
+
+
+[00:02:58] Seth Chalmers: So that's where we're at with a bunch of
+use cases right now,
+
+
+[00:03:02] Seth Chalmers: basically just getting agents,
+MCPs onboarded,
+
+
+[00:03:06] Seth Chalmers: and then helping people through the SDK
+process of utilizing it to make some code
+
+
+[00:03:11] Seth Chalmers: changes.
+
+
+[00:03:13] Seth Chalmers: to work with ACP.
+
+
+[00:03:15] Grant Du: In our case,
+we have a couple of agents that will run
+
+
+[00:03:19] Grant Du: on agent core,
+and this is a good fit right to that
+
+
+[00:03:23] Grant Du: solution.
+
+
+[00:03:24] Seth Chalmers: Exactly, yeah. So we have a,
+and I'll send it after this,
+
+
+[00:03:28] Seth Chalmers: we have a bunch of samples for Agent Core,
+like using our SDK and all that.
+
+
+[00:03:32] Grant Du: Mmh.
+
+
+[00:03:33] Seth Chalmers: So if it's already on Agent Core,
+it'll be much simpler.
+
+
+[00:03:41] Lalit Summan: Awesome, so we're lined, good. Okay,
+so this meeting is to just captured the
+
+
+[00:03:48] Lalit Summan: overall.
+
+
+[00:03:50] Lalit Summan: essence of what the TPR and the third
+party risk management use case is and why
+
+
+[00:03:54] Lalit Summan: it needs to be onboarded to ACP.
+So the team here,
+
+
+[00:03:57] Lalit Summan: the product team here is new to this use
+case. We'd love to understand what it is,
+
+
+[00:04:02] Lalit Summan: why the business urgency is there and why
+you need it to be onboarded to ACP.
+
+
+[00:04:06] Lalit Summan: So if maybe you can help shed light on
+that,
+
+
+[00:04:08] Lalit Summan: really help us gather the requirements.
+
+
+[00:04:11] Grant Du: Sure. And Deepankar,
+maybe I'll share our ATG presentation.
+
+
+[00:04:16] Grant Du: You can talk maybe a quick overview and I
+can walk through our solution at a high
+
+
+[00:04:22] Grant Du: level.
+
+
+[00:04:24] Deepankar Pant: Absolutely.
+
+
+[00:04:25] Grant Du: If you don't mind,
+do you guys see my screen?
+
+
+[00:04:26] Deepankar Pant: Sam.
+
+
+[00:04:28] Lalit Summan: It's loading, yep, I can see.
+
+
+[00:04:30] Grant Du: OK, let me just make a little bit.
+
+
+[00:04:35] Grant Du: Okay,
+I think we can jump to the overview slide
+
+
+[00:04:39] Grant Du: and Deepankar can talk this at high level
+and I walk through the solution.
+
+
+[00:04:44] Deepankar Pant: Yeah.
+
+
+[00:04:46] Deepankar Pant: Absolutely.
+So I'll give a one minute rundown of the
+
+
+[00:04:50] Deepankar Pant: use case. So in TPRM process,
+the TPRM team has to roll out certain
+
+
+[00:04:55] Deepankar Pant: risk questionnaires to our vendor
+partners on an external facing ServiceNow
+
+
+[00:05:00] Deepankar Pant: portal itself. The vendors come in,
+they provide answers to.
+
+
+[00:05:05] Deepankar Pant: Those questions mostly yes and no,
+with some having some rationale as well,
+
+
+[00:05:10] Deepankar Pant: and then they submit it back within
+ServiceNow and then relationship managers
+
+
+[00:05:16] Deepankar Pant: within Sun Life,
+they check all those responses against
+
+
+[00:05:19] Deepankar Pant: our policies to assess if there's a risk
+pertaining to those vendors for their for
+
+
+[00:05:25] Deepankar Pant: those questionnaires, right? And then...
+
+
+[00:05:28] Deepankar Pant: take the decisions basis that.
+So it takes a lot of time,
+
+
+[00:05:32] Deepankar Pant: it takes a lot of effort.
+That is the process we are trying to
+
+
+[00:05:36] Deepankar Pant: automate essentially.
+So the solution is as soon as a new
+
+
+[00:05:39] Deepankar Pant: response to a questionnaire is received
+by ServiceNow, AI solution gets triggered.
+
+
+[00:05:44] Deepankar Pant: And then instead, you know,
+the AI solution actually pulls ServiceNow
+
+
+[00:05:48] Deepankar Pant: every four hours to look for any new ones.
+
+
+[00:05:51] Deepankar Pant: does the analysis,
+checks with the manuals and guidelines
+
+
+[00:05:55] Deepankar Pant: that they have,
+creates and derives the risk rating,
+
+
+[00:05:58] Deepankar Pant: creates a PDF analysis document and
+pushes it back to ServiceNow, right?
+
+
+[00:06:02] Deepankar Pant: Wherein again,
+the RMs can see it and then, you know,
+
+
+[00:06:05] Deepankar Pant: take their final call.
+So that's the solution or the business
+
+
+[00:06:09] Deepankar Pant: problem we are solving here.
+
+
+[00:06:12] Grant Du: Yeah, thank you, Baker. Oh, go ahead.
+
+
+[00:06:12] Lalit Summan: Toyin.
+
+
+[00:06:16] Seth Chalmers: Can you,
+so this seems like kind of similar to a
+
+
+[00:06:19] Seth Chalmers: lot of the like governance by design work.
+How does that kind of relate together?
+
+
+[00:06:26] Deepankar Pant: So that's an interesting one.
+So we understand that it does. However,
+
+
+[00:06:27] Grant Du: Good question.
+
+
+[00:06:30] Deepankar Pant: the governance by design would be,
+you know, doing one module of it,
+
+
+[00:06:34] Deepankar Pant: not the entire one.
+We already had a discussion with
+
+
+[00:06:37] Deepankar Pant: Katharine a few weeks back,
+and then we sort of agreed on that.
+
+
+[00:06:41] Deepankar Pant: We'll continue on this path and then
+business at the discussions as well.
+
+
+[00:06:46] Deepankar Pant: And then when they get to a stage where
+they are ready to pick up this piece as
+
+
+[00:06:51] Deepankar Pant: part of their governance by design
+roadmap,
+
+
+[00:06:54] Deepankar Pant: we'll reconvene and see how we can reuse
+and leverage some of these components.
+
+
+[00:06:58] Seth Chalmers: Okay, cool.
+
+
+[00:06:59] Deepankar Pant: So that's where we are on this, yeah.
+
+
+[00:07:03] Grant Du: And with that,
+maybe I'll just jump to the solution
+
+
+[00:07:07] Grant Du: architecture. Again,
+as Deepankar mentioned,
+
+
+[00:07:11] Grant Du: we kind of have a couple of sections here.
+At a high level,
+
+
+[00:07:15] Grant Du: this is more like a deterministic
+workflow based, you know,
+
+
+[00:07:20] Grant Du: AI agenic solution.
+
+
+[00:07:22] Grant Du: Three main pieces.
+The first one on the left,
+
+
+[00:07:25] Grant Du: this is the ServiceNow TPRM.
+As Deepankar mentioned,
+
+
+[00:07:28] Grant Du: we have a third-party questionnaire that
+we need to pull and then, you know,
+
+
+[00:07:33] Grant Du: load into the AI solution for analysis.
+So this would be every four hours because
+
+
+[00:07:39] Grant Du: we don't want to load.
+
+
+[00:07:40] Grant Du: a lot of, you know,
+add a lot of workload to TPRM.
+
+
+[00:07:44] Grant Du: So it's not,
+so we kind of poll every four hours.
+
+
+[00:07:47] Grant Du: If there are questionnaires, attachment,
+we'll extract these data and put into S3
+
+
+[00:07:53] Grant Du: bucket. And from there,
+we're going to trigger this workflow,
+
+
+[00:07:57] Grant Du: which is more step function,
+kind of ox treated.
+
+
+[00:08:00] Grant Du: In a solution,
+we have two agents running on agent core.
+
+
+[00:08:04] Grant Du: One is more for risk assessment and the
+other is for validation. Again, you know,
+
+
+[00:08:10] Grant Du: behind the scenes,
+we're calling bedrock foundation models
+
+
+[00:08:14] Grant Du: with guardrails, leverage knowledge base.
+And the other few functions are more
+
+
+[00:08:19] Grant Du: lambda-based.
+
+
+[00:08:20] Grant Du: you know, doing document ingestion,
+report generation.
+
+
+[00:08:25] Grant Du: This would be a PDF format of the report,
+and then we're right back to ServiceNow
+
+
+[00:08:31] Grant Du: with API,
+go through the outbound like gateway.
+
+
+[00:08:35] Grant Du: So when we talk to different teams,
+you know, with...
+
+
+[00:08:40] Grant Du: AI architect like Anirban Colin with
+corporate architecture, you know,
+
+
+[00:08:45] Grant Du: Scott Moore and also Dragana,
+and we we got a recommendation that we
+
+
+[00:08:50] Grant Du: should onboard to ACP sooner than later,
+because this is more like either a
+
+
+[00:08:55] Grant Du: requirement or or a kind of a recommended
+way, right? So.
+
+
+[00:09:00] Grant Du: If we do that now, you know,
+we don't have to do a lot of rework later.
+
+
+[00:09:03] Grant Du: So that's kind of where, you know,
+we're coming from and that's why
+
+
+[00:09:06] Grant Du: Deepankar, you know, kind of request this.
+I'm going to pause that and see if
+
+
+[00:09:10] Grant Du: there's any questions or comments.
+
+
+[00:09:13] Pavithra Viswanathan: Where are we with the governance process
+here?
+
+
+[00:09:16] Pavithra Viswanathan: So I see that it's been presented in the
+tab. Do we have, you know,
+
+
+[00:09:20] Pavithra Viswanathan: is there is triage progressing and is
+trying to change in place?
+
+
+[00:09:25] Grant Du: Most of these related requests are
+already approved, like ISRA, you know,
+
+
+[00:09:29] Grant Du: whatever, but at the ETAB,
+we got conditional approval.
+
+
+[00:09:32] Grant Du: And that's why I said when we asked the
+question, we said,
+
+
+[00:09:35] Grant Du: this is a good question,
+because we already talked to governance
+
+
+[00:09:38] Grant Du: by design,
+but they still want us to kind of talk to
+
+
+[00:09:41] Grant Du: them again,
+make sure everybody is aligned.
+
+
+[00:09:43] Grant Du: So we'll have a few meetings lined up.
+
+
+[00:09:45] Grant Du: talk to governance team,
+talk to ServiceNow with enterprise
+
+
+[00:09:50] Grant Du: architecture.
+And that's the status we have at the
+
+
+[00:09:54] Grant Du: moment.
+
+
+[00:09:55] Pavithra Viswanathan: Do you have any detective timeline for
+production?
+
+
+[00:10:00] Deepankar Pant: Yep,
+we are targeting the first week of
+
+
+[00:10:03] Deepankar Pant: November for production.
+
+
+[00:10:07] Lalit Summan: Okay,
+and what does success look like here,
+
+
+[00:10:09] Lalit Summan: Grant to Deepankar?
+So those two agents built using agent
+
+
+[00:10:13] Lalit Summan: core, the risk and the validation agent,
+they would be registered within the ACP.
+
+
+[00:10:18] Lalit Summan: And what are you trying to evaluate or
+what is it that you're trying to do?
+
+
+[00:10:23] Lalit Summan: Is it just a registration?
+Is it rerouting?
+
+
+[00:10:27] Lalit Summan: To bedrock and what is the the the
+success look like here for for the TPRM
+
+
+[00:10:32] Lalit Summan: case?
+
+
+[00:10:33] Grant Du: That's a very good question.
+We're kind of new to this kind of ACP
+
+
+[00:10:37] Lalit Summan: Okay.
+
+
+[00:10:37] Grant Du: governance. So we try to, I think,
+follow the other corporate projects,
+
+
+[00:10:42] Grant Du: right? Aims or CC, you know,
+whatever the basic requirement we want to
+
+
+[00:10:45] Lalit Summan: Right.
+
+
+[00:10:46] Grant Du: follow.
+If there are some additional advance,
+
+
+[00:10:48] Grant Du: you know, we can,
+we want to look into that further.
+
+
+[00:10:54] Lalit Summan: So similar kind of pattern with aims and
+ORCC.
+
+
+[00:10:58] Grant Du: I, I would assume so.
+I don't depend on if you wanna wanna add
+
+
+[00:11:01] Grant Du: something to that, or Dragana.
+I know you join late,
+
+
+[00:11:04] Grant Du: but we try to kind of align with other
+corporate projects.
+
+
+[00:11:10] Dragana Sikimic: Sorry, I, I, I just jumped into the call,
+so, so what was the question?
+
+
+[00:11:11] Lalit Summan: Oops.
+
+
+[00:11:16] Grant Du: Yeah, I think, go ahead, Libby.
+
+
+[00:11:16] Lalit Summan: Yeah, the question. Yes, thanks for. Hey,
+Dragana, thanks for joining.
+
+
+[00:11:20] Dragana Sikimic: Yeah, hi.
+
+
+[00:11:21] Lalit Summan: The question is,
+while we onboard these two agents for the
+
+
+[00:11:25] Lalit Summan: TPRM use case,
+so the risk assessment and the validation
+
+
+[00:11:29] Lalit Summan: agent, onto ACP,
+what is what does success look like for
+
+
+[00:11:33] Lalit Summan: CorpAI, right? Like, is it?
+
+
+[00:11:35] Lalit Summan: just being onboarded to the ACP,
+are you looking for certain metrics,
+
+
+[00:11:40] Lalit Summan: certain ways of rerouting tokens,
+and what is success to play here for the
+
+
+[00:11:44] Lalit Summan: C schemes?
+
+
+[00:11:46] Dragana Sikimic: So, from my view, definitely,
+first of all,
+
+
+[00:11:49] Dragana Sikimic: we are following the Sun Life directions.
+We were told that we cannot go on
+
+
+[00:11:55] Dragana Sikimic: production if we are using Agent Core
+without ACP. That's one thing.
+
+
+[00:12:00] Dragana Sikimic: Another thing is all the benefits that
+ACP are bringing, like the control.
+
+
+[00:12:05] Dragana Sikimic: So I think
+
+
+[00:12:06] Dragana Sikimic: this will need to be discussed agent by
+agent.
+
+
+[00:12:10] Dragana Sikimic: What do we think the benefit will be?
+Let's say,
+
+
+[00:12:14] Dragana Sikimic: when do you want to put stop or you know,
+so so I don't think is one one answer
+
+
+[00:12:20] Dragana Sikimic: will fit every agent because the benefits
+will be per agent and what they.
+
+
+[00:12:25] Dragana Sikimic: about the functionality they are
+performing.
+
+
+[00:12:29] Lalit Summan: Understood.
+
+
+[00:12:30] Lalit Summan: And are there any regulatory requirements
+that have to be met using this use case?
+
+
+[00:12:35] Lalit Summan: Are there OSFI, NIST, OWASPs?
+Any of those considerations are needed as
+
+
+[00:12:40] Lalit Summan: part of your ATG or for integrated with
+ACP?
+
+
+[00:12:45] Dragana Sikimic: So, Grant,
+I'm pretty sure TPRM is all about.
+
+
+[00:12:51] Grant Du: Yeah, yeah,
+I think also it is definitely one of them,
+
+
+[00:12:54] Grant Du: right? Again, as we mentioned, you know,
+we do want to follow our standard and
+
+
+[00:13:00] Grant Du: guideline for these corporate-wide.
+
+
+[00:13:05] Lalit Summan: So you can you actually can go to
+production until it's integrated with ACP.
+
+
+[00:13:10] Lalit Summan: And you're targeting from November,
+early November.
+
+
+[00:13:14] Deepankar Pant: No, that's not a blocker.
+I don't think that's a blocker, Lalit,
+
+
+[00:13:18] Deepankar Pant: to be sure.
+We we meant we we said them that we will
+
+
+[00:13:18] Lalit Summan: Okay.
+
+
+[00:13:19] Grant Du: Mhm.
+
+
+[00:13:21] Deepankar Pant: onboard, you know, in future,
+and so we wanted to start the process
+
+
+[00:13:24] Lalit Summan: Right.
+
+
+[00:13:25] Deepankar Pant: essentially, so yeah,
+it's not a blocker for us to go to
+
+
+[00:13:28] Deepankar Pant: production.
+
+
+[00:13:29] Lalit Summan: Okay, it's not a hard requirement. Okay,
+good to know.
+
+
+[00:13:33] Seth Chalmers: Just getting some technical questions.
+So are the do the agents call any like
+
+
+[00:13:38] Seth Chalmers: MCP servers or tools or anything like
+that or just model calls?
+
+
+[00:13:43] Grant Du: I think it just the model cost,
+like in this release,
+
+
+[00:13:47] Grant Du: we don't have MCP in a solution.
+
+
+[00:13:50] Seth Chalmers: Okay,
+and any like evaluations or anything like
+
+
+[00:13:53] Seth Chalmers: that you want to done or are doing on
+these agents today?
+
+
+[00:14:00] Grant Du: Evaluation, I don't know, Deepankar,
+you guys can help with that.
+
+
+[00:14:00] Deepankar Pant: I don't.
+
+
+[00:14:06] Priyanshu Dhama: No, no,
+currently there is no evaluation pipeline
+
+
+[00:14:09] Priyanshu Dhama: as well.
+
+
+[00:14:10] Seth Chalmers: Okay,
+and I think at the beginning you
+
+
+[00:14:13] Seth Chalmers: mentioned a UI.
+Is that pictured here or this is the?
+
+
+[00:14:18] Grant Du: UI is pretty much on the ServiceNow side,
+because this is existing UI, right?
+
+
+[00:14:22] Seth Chalmers: Okay.
+
+
+[00:14:23] Grant Du: And we can, you know, enhance that.
+So with this whole flow, our risk team,
+
+
+[00:14:28] Grant Du: they have control,
+they can double check the result,
+
+
+[00:14:32] Grant Du: they can even, you know,
+override some of the scoring, whatever.
+
+
+[00:14:37] Grant Du: Right, so for this release,
+there's no additional UI,
+
+
+[00:14:39] Grant Du: but in the future,
+we can we can add if if needed.
+
+
+[00:14:42] Seth Chalmers: Okay, makes sense. Thanks.
+
+
+[00:14:45] Grant Du: Thank you.
+
+
+[00:14:47] Pavithra Viswanathan: What's the LED rating for this to have we
+established that?
+
+
+[00:14:52] Grant Du: Sorry, can you repeat that question?
+
+
+[00:14:54] Pavithra Viswanathan: The LBT rating, the operations.
+
+
+[00:14:56] Grant Du: Oh, LVT rating, I'll double check that.
+I think it's basically the,
+
+
+[00:15:01] Grant Du: I think we're using the same rating as
+TPRM. It's maybe L2V2T2.
+
+
+[00:15:06] Grant Du: I'll double check that,
+I'll get back to you.
+
+
+[00:15:11] Pavithra Viswanathan: Okay.
+
+
+[00:15:14] Pavithra Viswanathan: Yeah, because as a first wave, right,
+we are trying to target the applications
+
+
+[00:15:19] Pavithra Viswanathan: which are of low NVT rating, like in VT4,
+just so that we can do the POC and we can
+
+
+[00:15:24] Pavithra Viswanathan: test it to validate the technical
+readiness.
+
+
+[00:15:26] Pavithra Viswanathan: So I just wanted to make sure what you
+guys do so we can add it to the pipeline
+
+
+[00:15:28] Grant Du: Mmh.
+
+
+[00:15:31] Pavithra Viswanathan: accordingly.
+
+
+[00:15:33] Grant Du: Oh, I just found it.
+So the objective is L4 V4 T4. I mean,
+
+
+[00:15:37] Grant Du: this is a requirement, right?
+Capability is L2 V2 T2 for TPRM.
+
+
+[00:15:42] Grant Du: But if ACP, you know,
+has some other requirement, you know,
+
+
+[00:15:47] Grant Du: we're flexible.
+
+
+[00:15:50] Lalit Summan: Good.
+
+
+[00:15:57] Lalit Summan: Your agents here are connecting to
+ServiceNow.
+
+
+[00:16:00] Lalit Summan: There are no ServiceNow MCP servers that
+we have to manage or onboard into ACP.
+
+
+[00:16:07] Grant Du: Lalit, this, these are more kind of,
+how do I say, more independent.
+
+
+[00:16:11] Grant Du: They don't have integration with
+ServiceNow directly.
+
+
+[00:16:15] Grant Du: All the integration would go through I3
+bucket,
+
+
+[00:16:17] Lalit Summan: Okay.
+
+
+[00:16:18] Grant Du: like we extract data from a ServiceNow
+port on I3 input,
+
+
+[00:16:21] Grant Du: and the result would be on I3 output,
+and then we use ServiceNow API.
+
+
+[00:16:26] Grant Du: To upload these results,
+there's no direct connection between
+
+
+[00:16:30] Grant Du: ServiceNow and this this this agent.
+
+
+[00:16:34] Lalit Summan: Got it, okay.
+
+
+[00:16:38] Pavithra Viswanathan: Seth,
+will this fall under the existing
+
+
+[00:16:40] Pavithra Viswanathan: patterns that we have approval for,
+or do we need any,
+
+
+[00:16:43] Pavithra Viswanathan: are we waiting on any new patterns?
+
+
+[00:16:46] Seth Chalmers: This will be a standard pattern,
+just an agent calling LM.
+
+
+[00:16:50] Pavithra Viswanathan: Okay.
+
+
+[00:16:55] Lalit Summan: Okay, pretty straightforward.
+
+
+[00:16:58] Lalit Summan: I think we've gotten most of the
+technical regulatory requirements.
+
+
+[00:17:04] Lalit Summan: In terms of prioritization, Pavithra,
+I know we're going to prioritize this
+
+
+[00:17:08] Lalit Summan: with the other use cases.
+Just to give you an idea of what happens
+
+
+[00:17:12] Lalit Summan: next,
+after we gather the requirements grant,
+
+
+[00:17:15] Lalit Summan: Deepankar team is we review,
+we create something called a D0.
+
+
+[00:17:18] Lalit Summan: If you're familiar with the BMAT or STD
+ways of working, if you're not,
+
+
+[00:17:23] Lalit Summan: I can quickly.
+
+
+[00:17:23] Grant Du: I'm not familiar. Please explain that.
+Thank you.
+
+
+[00:17:24] Lalit Summan: Class something. OK, OK, sure, no problem.
+Let me just pull that up on the screen.
+
+
+[00:17:29] Lalit Summan: OK, give me one second.
+
+
+[00:17:30] Grant Du: Let me stop sharing.
+
+
+[00:17:37] Lalit Summan: OK,
+let me know when you can see the screen.
+
+
+[00:17:44] Grant Du: Oh, it's loading? Yeah, I can see it now.
+
+
+[00:17:47] Lalit Summan: Yeah, let me just bring this up.
+So at a high level,
+
+
+[00:17:51] Lalit Summan: what we're doing on the call today is
+capturing your opportunity here and
+
+
+[00:17:56] Lalit Summan: understanding the scope and risks and
+criteria here.
+
+
+[00:18:00] Lalit Summan: Once that happens internally within our
+team, the gray boxes here is when we
+
+
+[00:18:06] Lalit Summan: would create our MD file,
+the zero document that is essentially in
+
+
+[00:18:11] Lalit Summan: our workflow,
+the files that help us create the
+
+
+[00:18:14] Lalit Summan: documents that we need to give you
+context of what this looks and feels like.
+
+
+[00:18:20] Lalit Summan: I'll bring this up on the screen very,
+very quickly.
+
+
+[00:18:24] Lalit Summan: So if you talk about your AIMS use case.
+
+
+[00:18:28] Lalit Summan: This is what our D0 looks like.
+It gets a problem statement,
+
+
+[00:18:31] Lalit Summan: success criteria, so on and so forth.
+So then we can then take this and break
+
+
+[00:18:35] Lalit Summan: this out into small tasks that we have.
+There's an agentic flow,
+
+
+[00:18:39] Lalit Summan: so we'll transcribe this call,
+build it out into the, oops,
+
+
+[00:18:42] Lalit Summan: I didn't bring it up on the screen.
+
+
+[00:18:45] Lalit Summan: So what ends up happening is we create
+something like this.
+
+
+[00:18:48] Lalit Summan: We do this for your aims use case.
+What your use case is,
+
+
+[00:18:51] Lalit Summan: what the problem statement is,
+success criteria.
+
+
+[00:18:54] Lalit Summan: This all gets generated based on our
+conversation here today.
+
+
+[00:18:59] Lalit Summan: Once that happens,
+we go ahead and break down the design
+
+
+[00:19:02] Lalit Summan: requirements,
+which was Seth and the product team will
+
+
+[00:19:05] Lalit Summan: do.
+We'll do our design review with you to
+
+
+[00:19:07] Lalit Summan: bring that up, and then we end up,
+if it's an existing pattern,
+
+
+[00:19:11] Lalit Summan: nothing that new will end up building
+this internally,
+
+
+[00:19:14] Lalit Summan: and also a SME with your team and go out
+and deliver this for you over time, right?
+
+
+[00:19:19] Lalit Summan: We're starting here, we're going this way.
+We already have about 12 use cases that
+
+
+[00:19:24] Lalit Summan: we're working on,
+two of which are CorpAI T already.
+
+
+[00:19:27] Lalit Summan: What Pavithra and myself and the team
+will do is kind of just rank order the
+
+
+[00:19:31] Lalit Summan: priority of this with the existing use
+cases, right?
+
+
+[00:19:34] Lalit Summan: So that's how the flow works.
+It'll go into the discovery phase,
+
+
+[00:19:38] Lalit Summan: we'll go to design phase.
+
+
+[00:19:40] Lalit Summan: And I'll go ahead and try to give you the
+user guide so that there are steps that
+
+
+[00:19:44] Lalit Summan: you need to do to onboard your agents.
+We make sure we enable the patterns
+
+
+[00:19:48] Lalit Summan: behind the scenes so that it does show up
+on Luminate like it does for.
+
+
+[00:19:53] Lalit Summan: the AIMS use case. So if you see here,
+I'll quickly bring this up.
+
+
+[00:19:58] Lalit Summan: Such shows this in the beginning of the
+call to Dragana,
+
+
+[00:20:02] Lalit Summan: but you're seeing the AIMS agent,
+the root cause analysis agent,
+
+
+[00:20:07] Lalit Summan: the rubrics agent, and the incident agent,
+they're already in. The...
+
+
+[00:20:12] Lalit Summan: Dev environment,
+we work with Geeta to make sure she gets
+
+
+[00:20:15] Lalit Summan: what she needs and enable her to do the
+onboarding as well, right? So,
+
+
+[00:20:20] Lalit Summan: that's what would happen next.
+Any questions about the flow?
+
+
+[00:20:27] Lalit Summan: And, from a prioritization point of view,
+I'll pass it over to you, Pavithra,
+
+
+[00:20:31] Lalit Summan: in terms of just the questions regarding
+how we want to proceed,
+
+
+[00:20:34] Lalit Summan: some of the some of the requirements that
+we need.
+
+
+[00:20:34] Pavithra Viswanathan: Yeah, just one question.
+I think I've covered most of it.
+
+
+[00:20:38] Pavithra Viswanathan: Just one quick question with the regional
+architect. Like,
+
+
+[00:20:41] Pavithra Viswanathan: do we know who's the regional architect
+for this?
+
+
+[00:20:45] Grant Du: Ohh,
+I'm the solution architect for this one,
+
+
+[00:20:47] Grant Du: uh, Pavithra. Do you,
+when you say regional architect,
+
+
+[00:20:51] Grant Du: you talk about uh,
+like people like Scott Moore or...
+
+
+[00:20:55] Grant Du: Like my boss, Kumar,
+he's the he's a corporate architect,
+
+
+[00:20:59] Grant Du: right? Lead architect.
+
+
+[00:21:01] Pavithra Viswanathan: Okay, the enterprise architect, you know,
+the Colin and Nadine Van have advised us
+
+
+[00:21:05] Pavithra Viswanathan: to bring along the regional architects
+through the discovery stages as well.
+
+
+[00:21:09] Pavithra Viswanathan: So just wanted to make sure, you know,
+they looked at what that is. Yeah.
+
+
+[00:21:12] Dragana Sikimic: So...
+
+
+[00:21:13] Dragana Sikimic: So Pavithra,
+we do have always two architects.
+
+
+[00:21:14] Grant Du: Yeah.
+
+
+[00:21:17] Dragana Sikimic: One is related to the business units,
+so this is Grant in this case.
+
+
+[00:21:22] Dragana Sikimic: And we have a architect, Kamal,
+that recently joined the team.
+
+
+[00:21:27] Dragana Sikimic: So I suggest you keep him in the loop as
+well.
+
+
+[00:21:30] Pavithra Viswanathan: Would you be able to ping his name?
+
+
+[00:21:32] Dragana Sikimic: Yes.
+
+
+[00:21:42] Dragana Sikimic: Okay.
+
+
+[00:21:48] Pavithra Viswanathan: Yeah,
+I think I've captured most of the
+
+
+[00:21:50] Pavithra Viswanathan: priority items, Sally,
+from LVT perspective,
+
+
+[00:21:53] Pavithra Viswanathan: as well as production intent and all of
+that,
+
+
+[00:21:56] Pavithra Viswanathan: so we are good from prioritizing this in
+our pipeline.
+
+
+[00:21:59] Lalit Summan: Awesome.
+What usually happens next and Seth and
+
+
+[00:22:02] Lalit Summan: the product team is you'll see a Teams
+chat come up with ACP and your use case
+
+
+[00:22:08] Lalit Summan: when we're ready to have the design
+documents. So that'll be the next step.
+
+
+[00:22:12] Lalit Summan: You can expect a Teams chat created with
+somebody from our internal team,
+
+
+[00:22:17] Lalit Summan: with yourself, Grant and Kamal.
+
+
+[00:22:20] Lalit Summan: and it's me from our side,
+like Seth or Ranjula,
+
+
+[00:22:22] Lalit Summan: to help take this on for your next steps.
+So that will be,
+
+
+[00:22:25] Lalit Summan: if you don't hear back from us in the
+next week or so,
+
+
+[00:22:28] Lalit Summan: that's probably what you'd expect from a
+starting point.
+
+
+[00:22:31] Grant Du: Yeah, and if you can include Deepankar,
+you know, in that conversation,
+
+
+[00:22:36] Lalit Summan: Two.
+
+
+[00:22:36] Grant Du: maybe Priyanshu as well.
+Deepankar Priyanshu, I don't know,
+
+
+[00:22:40] Grant Du: do we need a,
+I know this is quite new to us,
+
+
+[00:22:43] Grant Du: do we need some knowledge session on
+design development? Or this is, I know,
+
+
+[00:22:48] Grant Du: Seth, your team have, and Lalit,
+you guys have a...
+
+
+[00:22:51] Grant Du: pretty good documentation.
+Is this something we can just, you know,
+
+
+[00:22:55] Grant Du: self-learning to kick off or we need some
+knowledge session?
+
+
+[00:22:58] Deepankar Pant: The question,
+is there any effort from our side
+
+
+[00:23:00] Deepankar Pant: required on this?
+
+
+[00:23:02] Seth Chalmers: Not really.
+So I'll send you over the spectrum and
+
+
+[00:23:06] Seth Chalmers: just kind of like how the process works,
+like all it went over. But yeah,
+
+
+[00:23:11] Seth Chalmers: the next bit would be we'll take all
+these requirements back.
+
+
+[00:23:15] Seth Chalmers: We'll basically create that D2 spec,
+the design spec.
+
+
+[00:23:18] Seth Chalmers: We'll schedule a meeting with you just to
+go over it,
+
+
+[00:23:22] Seth Chalmers: make sure the integration works.
+
+
+[00:23:24] Seth Chalmers: make sense, all that.
+That essentially is like an approval for
+
+
+[00:23:28] Seth Chalmers: the design.
+And then we'll break that down into tasks,
+
+
+[00:23:31] Seth Chalmers: and then we'll create that workplace chat
+with you to actually go and execute on
+
+
+[00:23:36] Seth Chalmers: the agent onboarding and help you through
+the process.
+
+
+[00:23:40] Seth Chalmers: So that's kind of the general bit.
+The only ask from you.
+
+
+[00:23:44] Seth Chalmers: for the design is essentially just walk
+through it with us,
+
+
+[00:23:47] Seth Chalmers: make sure it makes sense to you in terms
+of the integration,
+
+
+[00:23:50] Seth Chalmers: work through any questions on the ACP
+side if you're curious how the
+
+
+[00:23:53] Seth Chalmers: integration is going to work,
+and then ultimately we're just there to
+
+
+[00:23:56] Seth Chalmers: support you through the onboarding and
+any code changes and things like that you
+
+
+[00:24:00] Seth Chalmers: need to get working with the harness.
+
+
+[00:24:03] Deepankar Pant: Okay, that helps.
+What's the typical timeline for the
+
+
+[00:24:04] Dragana Sikimic: Yeah.
+
+
+[00:24:07] Deepankar Pant: implementation? This is your experience.
+
+
+[00:24:12] Seth Chalmers: I'm not sure if we have any like metrics
+on that right now,
+
+
+[00:24:16] Seth Chalmers: but if you're an agent core agent,
+like we have samples to get stuff done.
+
+
+[00:24:20] Seth Chalmers: So we could get stuff rolling like very
+quickly, depending on how like day or so.
+
+
+[00:24:25] Seth Chalmers: Like if you're already on agent core,
+it'll be some very simple code changes.
+
+
+[00:24:30] Seth Chalmers: And then the product team on our side
+just needs to set up some policies for
+
+
+[00:24:35] Seth Chalmers: you essentially to.
+
+
+[00:24:37] Seth Chalmers: log into the ACP UI and do what you need
+to do. So that's probably the longest,
+
+
+[00:24:41] Seth Chalmers: is just the learning curve of you signing
+into the Luminate portal,
+
+
+[00:24:45] Seth Chalmers: understanding what's going on.
+But the actual code change,
+
+
+[00:24:49] Seth Chalmers: if you're already on Agent Core,
+should be very quick.
+
+
+[00:24:53] Pavithra Viswanathan: Yeah,
+the implementation we are talking about
+
+
+[00:24:56] Pavithra Viswanathan: there right at the lower and lower
+environment,
+
+
+[00:24:58] Pavithra Viswanathan: so that's what we are referring to.
+
+
+[00:25:00] Seth Chalmers: Yeah.
+
+
+[00:25:02] Deepankar Pant: And then as we move through the
+environments,
+
+
+[00:25:05] Deepankar Pant: would your team still be required for any
+code related things?
+
+
+[00:25:09] Deepankar Pant: For the same code would be promoted
+through different environments, right?
+
+
+[00:25:13] Deepankar Pant: I'm just assuming some conflict changes
+might be required.
+
+
+[00:25:17] Seth Chalmers: Yep, yeah, so we'll in the,
+so I'll just go over this briefly since
+
+
+[00:25:23] Seth Chalmers: we have time.
+So we'll get you onboarded first into our
+
+
+[00:25:28] Seth Chalmers: dev instance.
+How this will work in practice is that
+
+
+[00:25:32] Seth Chalmers: there's just going to be 1 production
+Luminate portal.
+
+
+[00:25:38] Seth Chalmers: So after we go through all these POCs,
+we're going to start moving people on to
+
+
+[00:25:43] Seth Chalmers: the final production pattern for the ACP,
+which is 1 production portal you sign
+
+
+[00:25:48] Seth Chalmers: into and that manages all of your
+environments essentially.
+
+
+[00:25:52] Seth Chalmers: So if I go over to the gateways in our
+prod instance,
+
+
+[00:25:55] Seth Chalmers: very generally it's a per region,
+per environment gateway deployment.
+
+
+[00:26:00] Seth Chalmers: And so we have one for
+
+
+[00:26:01] Seth Chalmers: for dev, sit, stage, prod,
+and you'll promote your same agent along
+
+
+[00:26:06] Seth Chalmers: these environments. And so yeah,
+it'll essentially just be a config change
+
+
+[00:26:11] Seth Chalmers: of where things are moving.
+And all of that is orchestrated within
+
+
+[00:26:16] Seth Chalmers: our harness SDK.
+So you'll need like deployment
+
+
+[00:26:19] Seth Chalmers: credentials and everything along all
+these environments.
+
+
+[00:26:24] Seth Chalmers: obviously,
+and then like stage and prod are going to
+
+
+[00:26:27] Seth Chalmers: be gated. So in the future,
+we'll have teams like model risk and all
+
+
+[00:26:31] Seth Chalmers: that,
+which will be evaluating the policies for
+
+
+[00:26:34] Seth Chalmers: all of these agents,
+going in and assigning and approving
+
+
+[00:26:37] Seth Chalmers: deployments into stage and production.
+
+
+[00:26:41] Seth Chalmers: But all that's in the works,
+so we'll start with just the dev.
+
+
+[00:26:45] Seth Chalmers: And it's essentially just policies that
+you'll sign into the portal.
+
+
+[00:26:49] Seth Chalmers: You can self-register,
+or we'll help you through that process,
+
+
+[00:26:53] Seth Chalmers: essentially.
+
+
+[00:26:56] Deepankar Pant: Another quick one. So, okay,
+and my understanding is that we are still.
+
+
+[00:27:02] Deepankar Pant: ..
+
+
+[00:27:04] Deepankar Pant: under development for Luminate as well,
+right? This is not the final version.
+
+
+[00:27:08] Seth Chalmers: Yeah.
+
+
+[00:27:09] Deepankar Pant: So as the version changes,
+would there be an effort on our side as
+
+
+[00:27:14] Deepankar Pant: well to update our solution to continue
+using these and the new features?
+
+
+[00:27:21] Seth Chalmers: At this point,
+like the base functionality is there in
+
+
+[00:27:24] Seth Chalmers: terms of what you would interact with.
+When we're getting to more features like
+
+
+[00:27:28] Seth Chalmers: evaluations and stuff,
+if you want to take advantage of those
+
+
+[00:27:32] Seth Chalmers: features as they're released,
+that will be some code change.
+
+
+[00:27:36] Seth Chalmers: So in our SDK right now,
+we have some stubs for doing evaluation.
+
+
+[00:27:36] Deepankar Pant: Okay.
+
+
+[00:27:39] Seth Chalmers: So if you want to provide your own
+evaluation framework or utilize like lang
+
+
+[00:27:44] Seth Chalmers: views that we
+
+
+[00:27:45] Seth Chalmers: maintain centrally on the ECP.
+There will be flows for that.
+
+
+[00:27:49] Seth Chalmers: And that would be an example of a feature
+you'd want to take it or you might want
+
+
+[00:27:54] Seth Chalmers: to take advantage of.
+And then we'll have like a typical
+
+
+[00:27:57] Seth Chalmers: product release and release notes and
+integrations with the SDK,
+
+
+[00:28:01] Seth Chalmers: how you would take advantage of it if you
+want to.
+
+
+[00:28:04] Seth Chalmers: But just the base kind of deployment
+stuff.
+
+
+[00:28:07] Seth Chalmers: All that's pretty much there today,
+and that won't be changing on your end.
+
+
+[00:28:13] Deepankar Pant: Okay, that's good. Thank you.
+
+
+[00:28:19] Lalit Summan: Awesome. Any other questions?
+
+
+[00:28:20] Dragana Sikimic: So, we, so we are on production,
+eliminate right, or we will be?
+
+
+[00:28:26] Seth Chalmers: Will be all dev rated, yeah.
+
+
+[00:28:27] Dragana Sikimic: Oh, okay, okay.
+And I know on Friday I was off,
+
+
+[00:28:31] Dragana Sikimic: but they raised a concern about some
+models because we are using Canadian
+
+
+[00:28:37] Dragana Sikimic: models and Sandra booked meeting this
+week to discuss this.
+
+
+[00:28:42] Dragana Sikimic: So I don't know if Geeta resolved this
+with you.
+
+
+[00:28:47] Dragana Sikimic: Or we will have some workaround according
+to Sandra. She said that that one is a...
+
+
+[00:28:54] Lalit Summan: So, which Canadian model is this?
+
+
+[00:28:55] Dragana Sikimic: Is under NDA.
+
+
+[00:28:59] Dragana Sikimic: The AIMS is using Canadian model that's
+almost end of life. Yeah,
+
+
+[00:29:02] Lalit Summan: For here.
+
+
+[00:29:04] Dragana Sikimic: and Geeta said you are not going to
+onboard that.
+
+
+[00:29:10] Lalit Summan: You, I don't know which model did this.
+
+
+[00:29:11] Seth Chalmers: So we need to, yeah, so it was,
+it wasn't even available in Bedrock
+
+
+[00:29:16] Seth Chalmers: itself, at least in our accounts. So yeah,
+we'll take that back and we need to work
+
+
+[00:29:16] Dragana Sikimic: Mhm.
+
+
+[00:29:22] Seth Chalmers: with Sandra more generally on model,
+like per use case model assignment and
+
+
+[00:29:24] Dragana Sikimic: Okay.
+
+
+[00:29:27] Seth Chalmers: stuff like that.
+So all that's still under.
+
+
+[00:29:31] Seth Chalmers: under the works,
+but we're working through that for you
+
+
+[00:29:34] Dragana Sikimic: Okay, okay, okay, good. So, Deepankar,
+Geeta already went full past about this
+
+
+[00:29:34] Seth Chalmers: with aims.
+
+
+[00:29:41] Dragana Sikimic: ACP.
+I'm just checking with her if she will be
+
+
+[00:29:45] Dragana Sikimic: ready to do demo for our CorpAI team.
+But if not, if you need to ask her,
+
+
+[00:29:51] Dragana Sikimic: you can directly approach her.
+
+
+[00:29:55] Deepankar Pant: Who did?
+
+
+[00:29:55] Dragana Sikimic: Because we already onboarded this.
+
+
+[00:29:58] Deepankar Pant: What did you mention, Dragana?
+
+
+[00:30:00] Dragana Sikimic: Geeta, Geeta.
+
+
+[00:30:02] Deepankar Pant: Oh yeah, I don't know if I will with her.
+Can you just share her full name with me?
+
+
+[00:30:03] Dragana Sikimic: Yes.
+
+
+[00:30:08] Dragana Sikimic: Yes.
+
+
+[00:30:09] Deepankar Pant: Actually.
+
+
+[00:30:11] Lalit Summan: Working closely with her on the AMGS case
+with Adeel being out Deepankar,
+
+
+[00:30:15] Lalit Summan: she's been...
+
+
+[00:30:16] Lalit Summan: No.
+
+
+[00:30:16] Dragana Sikimic: Yeah, so she's uh...
+
+
+[00:30:16] Deepankar Pant: Ohh, okay, okay.
+
+
+[00:30:19] Dragana Sikimic: is helping build this as well. Yeah.
+
+
+[00:30:20] Deepankar Pant: Okay.
+
+
+[00:30:25] Dragana Sikimic: Okay, so Deepankar,
+you your MVP one or whatever number is
+
+
+[00:30:30] Dragana Sikimic: going live without agent core and ACP,
+right? That's the plan.
+
+
+[00:30:36] Dragana Sikimic: Okay,
+and then you want to incorporate in next
+
+
+[00:30:40] Dragana Sikimic: MVPs agent core and ACP. Okay.
+
+
+[00:30:43] Deepankar Pant: Right, yeah, yeah,
+we want to start the journey now,
+
+
+[00:30:47] Deepankar Pant: so that you know we are more comfortable
+with it, yeah.
+
+
+[00:30:48] Dragana Sikimic: Yes.
+
+
+[00:30:52] Dragana Sikimic: Okay.
+
+
+[00:30:55] Lalit Summan: Awesome. Any other questions, Dean?
+
+
+[00:30:58] Lalit Summan: Petrova said, I think we're good.
+I think we've got what we needed, right?
+
+
+[00:31:01] Dragana Sikimic: Perfect.
+I think we have a best team supporting us
+
+
+[00:31:02] Seth Chalmers: Yep.
+
+
+[00:31:02] Lalit Summan: See you.
+
+
+[00:31:05] Dragana Sikimic: in this onboarding.
+So much responsive and knowledgeable.
+
+
+[00:31:06] Lalit Summan: It's.
+
+
+[00:31:10] Dragana Sikimic: Thank you so much.
+
+
+[00:31:12] Lalit Summan: Yeah, we've got a good team.
+Thank you for your partnership again.
+
+
+[00:31:12] Dragana Sikimic: Thank you.
+
+
+[00:31:14] Dragana Sikimic: Yeah.
+
+
+[00:31:15] Lalit Summan: I know we're working together with the
+aims and ORCs next on the docket as well.
+
+
+[00:31:18] Lalit Summan: So we definitely value the partnership
+and thank you.
+
+
+[00:31:18] Dragana Sikimic: Birt.
+
+
+[00:31:20] Lalit Summan: I think we've got a solid team to say the
+least.
+
+
+[00:31:23] Dragana Sikimic: Perfect.
+
+
+[00:31:24] Grant Du: Thanks so much, guys.
+
+
+[00:31:24] Dragana Sikimic: Thank you.
+
+
+[00:31:25] Lalit Summan: Thanks, Tim. Take care.
+
+
+[00:31:26] Pavithra Viswanathan: Thank you.
+
+
+[00:31:26] Dragana Sikimic: Bye now. Thanks, all.
+
+
+[00:31:26] Deepankar Pant: Thank you, everyone. Bye.

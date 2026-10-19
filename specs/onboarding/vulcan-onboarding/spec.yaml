@@ -1,0 +1,33 @@
+component: vulcan-onboarding
+title: "Onboarding Vulcan to ACP: governed inference and tool access for remediation-as-a-service"
+description: |
+  Vulcan began as an agent a developer drove interactively through GitHub Copilot. The team is turning it into remediation as a service: a containerized OpenShift workload that ingests a vulnerability list, processes repositories at scale, and raises pull requests for engineer review. Two agents exist — a Modernizer (Snyk findings, Java and dependency upgrades) and a SAST Fixer (Checkmarx findings) — dispatched as Kubernetes Jobs by the AI Agent Orchestration API.
+
+  That shift breaks three things interactive operation was covering: Copilot inference is not licensed for an unattended workload; tool access runs on standing functional-ID tokens held inside the job pod; and nothing authoritative says the agent is still approved to run, because the orchestrator's registry is a JSON file on its own classpath.
+
+  ACP attaches at two seams that already exist. `vulcan.tools.llm.get_llm()` becomes a third provider pointed at the ACP gateway, so Bedrock is called from ACP's account and Vulcan needs no AWS workload account — the centralized-inference pattern ACP supports but has never run. `AgentRegistry.resolve()` becomes a call to ACP, so dispatch is gated on an authority outside Vulcan's own repository. Neither touches a LangGraph graph, a prompt or the Job factory.
+
+  Two gaps decide the shape: machine-to-machine authentication is default-off in every Sun Life environment and its trusted issuer is a single value that does not match Vulcan's Okta tokens (blocks the dispatch gate); and MCP `INJECTED_CREDENTIAL` is not implemented, so a PAT-fronted Bitbucket or scanner backend cannot be credentialed by the gateway (blocks brokered tool access). The inference half depends on neither, which is why it ships first.
+current_gate: D3
+status: approved
+spec_type: onboarding
+owner: Patrick Dufour
+team: DevOps
+jira_epic: EACPP-1133
+agileplace_card: ''
+confluence_page: 'https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113193648355'
+repo: ''
+depends_on: []
+gates:
+  d0:
+    status: approved
+    pr: '20'
+  d1:
+    status: approved
+    pr: '20'
+  d2:
+    status: approved
+    pr: '20'
+  d3:
+    status: draft
+    pr: '20'

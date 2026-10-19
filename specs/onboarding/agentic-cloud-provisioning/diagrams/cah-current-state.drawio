@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-08-31T00:00:00.000Z" agent="acp-product-specs" version="24.0.0" type="device">
+  <diagram id="cah-current-state" name="CAH current state">
+    <mxGraphModel dx="1600" dy="1000" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1240" pageHeight="880" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Agentic Cloud Provisioning Platform — current state, before ACP" style="text;html=0;fontSize=17;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="12" width="900" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="As asserted by the CAH team in the onboarding submission V2 (2026-08-30). ACP has not read these repositories." style="text;html=0;fontSize=11;fontColor=#666666;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="36" width="900" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="callers" value="Callers" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;align=left;spacing=6;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="70" width="560" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="Backstage&#10;request + approve UI" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#999999;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="46" y="98" width="132" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="C# Automation API&#10;service principal" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#999999;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="188" y="98" width="140" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="VS Code" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#999999;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="338" y="98" width="100" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="Nova client" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#999999;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="448" y="98" width="126" height="46" as="geometry" />
+        </mxCell>
+
+        <mxCell id="entra" value="Microsoft Entra ID&#10;application tokens&#10;verified on appid / tid&#10;no OBO, no end-user token" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="620" y="70" width="200" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="vault" value="HCP Vault + VSO&#10;agentgateway-tls-cert&#10;(leaf + CA + root)&#10;IAM-user Bedrock fallback" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="840" y="70" width="200" height="86" as="geometry" />
+        </mxCell>
+
+        <mxCell id="nlb" value="Internal NLB — L4 passthrough, backend protocol TCP, 443 → 5555" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="30" y="182" width="560" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cluster" value="CAH agentic EKS cluster — DEV / SIT / PROD, ca-central-1" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;verticalAlign=top;align=left;spacing=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="248" width="960" height="574" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ag" value="Solo.io AgentGateway v1.4.1 — the trust boundary and tool proxy" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;align=left;spacing=8;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="55" y="288" width="910" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="l5555" value=":5555 HTTPS — edge&#10;MCP, LangGraph routes, AG-fronted REST&#10;Entra jwtAuth, mode: strict&#10;+ authorization.rules on jwt.appid / jwt.tid&#10;TLS terminated in-pod" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="70" y="326" width="285" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="l5557" value=":5557 HTTP — east-west, three postures on one port&#10;• /mcp — no jwtAuth, pod identity + NetworkPolicy&#10;• A2A catch-all — Entra jwtAuth, audience pinned&#10;• /v1/chat/completions, /v1/embeddings — apiKey" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="368" y="326" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lout" value="Outbound to Bedrock&#10;SigV4, primary identity IRSA on the&#10;AgentGateway ServiceAccount;&#10;IAM-user-in-Vault fallback&#10;:19000 adminAddr, localhost-bound" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#6c8ebf;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="671" y="326" width="280" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lg" value="LangGraph agents&#10;Nova · CloudFlux · Stratosphere&#10;&#10;AGENT_PROFILE personas, entitled_tools&#10;per profile, identity lock, route allow-list&#10;&#10;MCP clients of AgentGateway" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="55" y="468" width="270" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="mcp" value="Federated MCP backends — nine&#10;webhook-receiver (provisioning-tools) · provisioning-mcp ·&#10;finops-mcp · cmdb-mcp · observability-mcp · secops-mcp ·&#10;devtools-mcp · aws-identity-mcp · datagravity-mcp&#10;&#10;Read-only helpers and side-effecting provisioning tools&#10;share a server — see D2 DD-5" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="468" width="350" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="a2a" value="A2A adapter&#10;GET /.well-known/agent.json&#10;JSON-RPC 2.0 A2A v0.2 tasks/send&#10;SSE tasks/sendSubscribe&#10;&#10;Holds only a Temporal client&#10;NetworkPolicy: AgentGateway only" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#d5e8d4;strokeColor=#82b366;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="705" y="468" width="260" height="112" as="geometry" />
+        </mxCell>
+
+        <mxCell id="hooks" value="webhook-receiver HTTP doors (AG-fronted)&#10;POST /trigger-workload-provisioning · GET /workload-provisioning-status/{workflow_id} · approve · reject&#10;WEBHOOK_AUTH_TOKEN is bypassed for AG-fronted prefixes — the gateway is the only thing in front" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff2cc;strokeColor=#d6b656;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="598" width="350" height="78" as="geometry" />
+        </mxCell>
+
+        <mxCell id="temporal" value="Temporal + workers — durable execution inside CAH's boundary&#10;8-phase workload provisioning workflow · retries, timeouts, persistence · opaque handle workload-acct-{name}-{8 hex}&#10;worker → Temporal gRPC on :5559 — engine-internal, explicitly not an ACP interface" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f8cecc;strokeColor=#b85450;align=left;verticalAlign=top;spacing=8;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="55" y="700" width="910" height="84" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bedrock" value="Amazon Bedrock&#10;CAH workload account&#10;&#10;us.anthropic.claude-&#10;sonnet-4-5&#10;claude-opus pin&#10;titan-embed-text-v2&#10;&#10;callers ca-central-1;&#10;model may resolve&#10;us-east-1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffe6cc;strokeColor=#d79b00;align=left;verticalAlign=top;spacing=6;fontSize=10;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1015" y="326" width="195" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note" value="What is missing today&#10;• No central registry — the approved set lives in CAH config&#10;• No first-party traceparent; LangGraph mints a server-side UUID request_id&#10;• Token tracking only; no cost, no budget, no chargeback join&#10;• No external policy authority; guardrails are product-level, not platform-level" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#b85450;dashed=1;align=left;verticalAlign=top;spacing=8;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="560" width="195" height="224" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=0.35;exitY=1;exitDx=0;exitDy=0;entryX=0.35;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="callers" target="nlb">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=0.2;exitY=1;exitDx=0;exitDy=0;entryX=0.35;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="nlb" target="l5555">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;dashed=1;strokeColor=#9673a6;exitX=0.1;exitY=1;exitDx=0;exitDy=0;entryX=0.92;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="entra" target="l5555">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="640" y="250" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;dashed=1;strokeColor=#9673a6;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.15;entryDx=0;entryDy=0;" edge="1" parent="1" source="vault" target="ag">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="940" y="260" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e5" value="/converse" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l5555" target="lg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=0.85;exitY=1;exitDx=0;exitDy=0;entryX=0.05;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l5555" target="hooks">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="312" y="592" /></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.55;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l5557" target="mcp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=0.9;exitY=1;exitDx=0;exitDy=0;entryX=0.35;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="l5557" target="a2a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#333333;exitX=1;exitY=0.12;exitDx=0;exitDy=0;entryX=0;entryY=0.85;entryDx=0;entryDy=0;" edge="1" parent="1" source="lg" target="l5557">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="SigV4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#d79b00;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="lout" target="bedrock">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#b85450;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.35;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="mcp" target="temporal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.55;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="hooks" target="temporal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;fontSize=9;strokeColor=#b85450;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.85;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a2a" target="temporal">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

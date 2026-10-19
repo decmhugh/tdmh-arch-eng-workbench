@@ -1,0 +1,68 @@
+component: agentic-cloud-provisioning
+title: 'Onboarding the Agentic Cloud Provisioning Platform to ACP: governing four
+  traffic classes across a business-unit gateway'
+description: "The Cloud Infra AI Platform \u2014 the CAH Agentic Stack, also called\
+  \ the Agentic Cloud Provisioning\nPlatform \u2014 already runs durable cloud-infrastructure\
+  \ work behind its own Solo.io AgentGateway:\nworkload account provisioning, FinOps\
+  \ analysis, CMDB and APM lookups, software audit and incident\nsummary, executed\
+  \ as Temporal workflows with LangGraph agents in front and nine federated MCP\n\
+  backends in between. It runs in test and expects to be production-ready within a\
+  \ week.\n\nIt is blocked for a governance reason rather than a technical one: an\
+  \ executive sponsor made\ngoing through ACP a precondition for the ETAB submission.\
+  \ The deliverable that unblocks the team\nis a defensible written statement of what\
+  \ ACP governs and what it does not, plus a working DEV\nslice that demonstrates\
+  \ it.\n\nACP governs four traffic classes across one surface \u2014 front door,\
+  \ agent to Bedrock, agent to\ntool/MCP, and agent to agent. No previous Sun Life\
+  \ use case has put all four through the gateway.\nThe integration is unusually cheap\
+  \ because ACP's gateway is the same agentgateway v1.4.1 binary\nthe team already\
+  \ runs, so MCP semantics are identical and there is no protocol translation.\n\n\
+  Three findings shape the work. Gateway reachability is the only hard blocker: every\
+  \ ACP gateway\nsets `slf.traefik.enabled: false` because no hostname, DNS record\
+  \ or certificate SAN exists\n(EACPP-1155, Funnel). A gateway cannot run in the consumer's\
+  \ cluster \u2014 it is a luminate-portal\nHelm release that dials an in-cluster\
+  \ service name and is admitted by a namespace-scoped\nNetworkPolicy \u2014 so the\
+  \ buildable shape is CAH egressing to an ACP-hosted gateway. And policy's\nfinest\
+  \ target is an MCP server, not a tool, so read-only helpers and side-effecting provisioning\n\
+  tools have to be split onto separate servers before \"provisioning is governed\"\
+  \ is true.\n\nCalling Bedrock in CAH's own account is achievable but constrains\
+  \ topology: the gateway's\ncredential chain carries one `spokeRoleArn` per Helm\
+  \ release, so gateway count becomes\nenvironments multiplied by spoke accounts.\n\
+  \nOn 2026-09-08 the OAuth question Temporal raises came in scope, having been parked at D0\n\
+  approval. The answer is a shared root of trust rather than a new dependency: Entra issues for\n\
+  Temporal (Web UI SSO, workers, namespace claims), ACP's Keycloak issues for callers into ACP,\n\
+  and ACP identity travels one hop past the gateway to CAH's side-effecting backend via the\n\
+  built token_forward mode. Temporal receives an assertion in the workflow input, never a token.\n\
+  Making ACP the issuer for Temporal was rejected on the architecture - Luminate federates\n\
+  identity inward and its own designs state the non-goal - not on preference. No platform\n\
+  capability is required, so no gap is raised. This also corrected a factual error: the identity\n\
+  mode enum has five values, not four, and the omitted token_forward is what the side-effecting\n\
+  tier needed.\n"
+current_gate: D3
+status: draft
+gate_status: D3 in draft. D0/D1/D2 remain approved (PR 21); the OAuth relationship with
+  Temporal was amended into them in place on 2026-09-08, adding FR-33/FR-34, DD-13, SC-12
+  and gap G-M.
+spec_type: onboarding
+owner: Srikanth Ramasubramanian
+team: Cloud Infra AI Platform (CAH)
+jira_epic: EACPP-1163
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113192894726"
+repo: ''
+depends_on: []
+gates:
+  d0:
+    status: approved
+    pr: '21'
+  d1:
+    status: approved
+    pr: '21'
+  d2:
+    status: approved
+    pr: '21'
+  d3:
+    status: draft
+    pr: ''
+  d4:
+    status: not-started
+    pr: ''

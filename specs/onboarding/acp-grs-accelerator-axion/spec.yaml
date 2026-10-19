@@ -1,0 +1,50 @@
+component: "acp-grs-accelerator-axion"
+title: "ACP GRS Accelerator for Axion"
+description: "Discovery of onboarding the GRS Accelerator / Axion use case onto ACP. The business context and desired outcomes remain to be confirmed with stakeholders."
+
+# Current gate status
+current_gate: D0
+status: draft
+spec_type: onboarding
+gate_status: "Discovery draft; stakeholder context and capability requirements are unconfirmed."
+
+# Ownership
+owner: "Sun Life Product Team"
+team: "EDAE ACP"
+
+# External links
+jira_epic: "EACPP-1443"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113336123931"
+repo: ""
+
+# Dependencies (other component specs this depends on)
+depends_on: []
+
+# Gate history
+gates:
+  d0:
+    status: draft
+    pr: "https://bitbucket.sunlifecorp.com/projects/EDAEACP/repos/acp-product-specs/pull-requests/72"
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []

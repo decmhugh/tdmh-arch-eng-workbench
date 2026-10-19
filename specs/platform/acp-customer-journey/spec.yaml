@@ -1,0 +1,55 @@
+component: acp-customer-journey
+title: "ACP Customer Journey (Phase 1) — Intake, Pattern Assessment & Enablement"
+description: "The interaction model for ACP intake: who is involved at each step from first contact with a business group through to a use case being specified, its pattern ruled existing-or-new, any new pattern built and verified, and the outcome communicated. Answers two questions that are currently answered differently each time — 'what is the process to be onboarded to ACP' (asked by business groups) and 'what is the process to build ACP capability when a use case does not fit an existing pattern' (asked inside the ACP Product Team). Defines six actors, a numbered hand-off register, a RACI with exactly one accountable party per step, the D0–D4 artefact each step produces, and the three conditional branches: exact match or new pattern required, ruled by the Regional Architect at 1.2; design changes requested or confirmed at 1.6; ACP versus Consortium delivery at 1.8. An exact match takes the short path and skips pattern definition and build entirely. Phase 1 only — steps 1.1 to 1.9, ending at a closing communication and the point a use case is ready to register an agent; registration, runtime and ongoing governance need a follow-on spec."
+
+# Current gate status
+current_gate: D2
+status: draft
+spec_type: platform
+
+# Ownership
+owner: "Yuling Liu"
+team: "EDAE ACP Product Team"
+
+# External links
+jira_epic: "EACPP-1134"                 # Journey spec epic; supersedes sub-task EACPP-1041 as the spec's record
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113171497505"
+repo: "acp-product-specs"               # Process spec — no implementation repo
+
+gate_status: "D2 draft. An entry gate before 1.1 checks that the business holds a completed GbyD GenAI Risk Triage Form and a ready MRM MBCT ID - ACP verifies presence and records it, does not approve, and pauses onboarding in the rare case either is missing (DD-19, IP-0). Restructured after review with ACP EA, RA and DA representatives (2026-09-04): Phase 1 is now 1.1-1.9. The pattern-fit ruling moved out of the Enterprise Architect's assessment into a step of its own at 1.2, owned by the Regional Architect (DD-17) - an exact match (1.2a) runs 1.3-1.6 and closes at 1.9, skipping pattern definition and build entirely; a new pattern (1.2b) initiates PIA/ISRA/ATG approval before specification starts, while a long-lead approval may complete during discovery and design but must be confirmed before 1.8 implementation or upstream delivery. A final delivery communication was added at 1.9, the only step contacting the End User during or after delivery (DD-18). RA covers CAN/US/ASIA/SLF/CORP/DBTS; DA covers Security-Incident, Integration, Cloud-Container and Observability. DQ-1 resolved by the 1.2a short path. CG-1 closed - pattern rejection was withdrawn, and the pattern question classifies rather than judges (DD-11). CG-2 resolved (DD-12). CG-3 closed - FDES is not a Phase 1 actor. CG-4 (per-step durations) open, non-blocking. CG-5 closed as an assumption - conditional approval returns to 1.2b-1 for rework, while outright refusal is out of scope and tracked as D0 R-9. DQ-7 open - the First Wave to self-serve transition is undesigned (DD-16). DQ-8 resolved - 1.2b-1 initiates approval, discovery and design may proceed, and ACP confirms approval before 1.8. DQ-9 open - nothing between 1.3 and 1.6 re-tests a wrong 1.2a ruling. At 1.2 the RA rules against two catalogues - integration-patterns for the adoption path, and agent-patterns for the applicable agent shapes and the SUB-E/SUB-I criteria (DD-8). Remaining before sign-off: EU and CT confirmation of their responsibility-model rows; a confirmation record naming every actor (NFR-3); ACP PO readability review; and publication to Confluence with confluence_page recorded (NFR-5)."
+
+# Dependencies (other component specs this depends on)
+depends_on:
+  - integration-patterns
+  - agent-patterns
+  - governance-intake
+  - engineer-onboarding
+
+# Gate history (filled as gates are completed)
+gates:
+  d0:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []

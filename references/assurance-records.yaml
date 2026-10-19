@@ -1,0 +1,261 @@
+# Sun Life assurance records raised for the Agentic Control Plane.
+#
+# THIS FILE IS THE SOURCE OF TRUTH FOR THE REGISTER.
+# docs/assurance-records.md is generated from it — never hand-edit that file.
+#
+#     python3 scripts/generate_assurance_register.py           # rebuild the page
+#     python3 scripts/generate_assurance_register.py --check   # CI: no-op + sweep
+#
+# Three record types, three ServiceNow tables:
+#   atg   ATG000nnnn   architecture governance   x_sulfc_atg_request
+#   isra  nn-nnnn       security risk assessment x_sulfc_vendor_ass_vendor_assessment
+#   gbyd  GBYDnnnnnnn   GenAI assessment         x_sulfc_genai_gen_ai
+#
+# --check also sweeps specs/ and docs/ for any identifier of those shapes that is not
+# declared below, and fails. That is the point of the file: a record raised in ServiceNow
+# and mentioned in one spec header stops being invisible to everyone else.
+#
+# ServiceNow is the system of record for the state of any of them. Nothing here queries it —
+# `state` is what this repository and Jira can evidence, and every row says where that
+# evidence came from.
+
+states:
+  approved: Governance has granted approval. The scope in `covers` is the approved scope.
+  in-review: Submitted; awaiting a decision.
+  drafting: A record number has been issued and the submission content is being written.
+  planned: A record is known to be needed; nothing has been raised yet.
+
+# Every record needs a `covers`. Where one is genuinely not known, set `covers: ~` and give
+# `source` — how we know the number exists at all. The generator lists those rows in a
+# "Needs confirming" block at the top of the page rather than letting an unscoped record sit
+# in the table looking as settled as the rest.
+
+records:
+  - key: acp-platform
+    scope: ACP platform
+    covers: >-
+      The platform and its supporting components — Luminate plus Langfuse, ClickHouse,
+      Valkey and the rest of the deployed tier.
+    atg: ATG0005196
+    isra: "26-0739"
+    isra_url: https://sunlife.service-now.com/nav_to.do?uri=x_sulfc_vendor_ass_vendor_assessment.do%3Fsys_id=aa746aeb3b4cc310e9d4223eb3e45ae5
+    component: sunlife-deployment
+    state: approved
+    note: >-
+      The broader of the two deployment approvals. DD-7 cites it explicitly for the
+      Langfuse data tier, to stop that tier being argued under the narrower IdP approval.
+    recorded_in:
+      - specs/platform/sunlife-deployment/d2-design.md
+
+  - key: internal-m2m-idp
+    scope: Internal M2M identity provider
+    covers: >-
+      Keycloak / Authentik as the M2M issuer for the Luminate workload. Deliberately
+      narrow: agentic M2M for this workload only — explicitly not an enterprise IdP,
+      and not edge-exposed. Widening that scope is a new governance conversation.
+    atg: ATG0005518
+    atg_url: https://sunlife.service-now.com/atg?id=ticket&table=x_sulfc_atg_request&sys_id=34e9753e2b06cb547c8ef5e2fe91bf7f&view=atg_controller_review
+    isra: "26-1565"
+    isra_url: http://sunlife.service-now.com/nav_to.do?uri=x_sulfc_vendor_ass_vendor_assessment.do%3Fsys_id=8b1cf13a2b46cb547c8ef5e2fe91bf79
+    component: sunlife-deployment
+    jira: EACPP-747
+    state: approved
+    note: >-
+      ETAB presented and approval granted; recorded in the spec on 2026-08-28 (commit
+      `70ab0dbd`, EACPP-596). **The Jira tickets were never closed** — EACPP-747 is
+      Implementing and its two children EACPP-748 (ATG review) and EACPP-749 (ISRA
+      assessment) are In Analysis, all last touched 2026-07-20 and still worded "in
+      progress". The spec is the newer source; the tickets are stale and need closing.
+    recorded_in:
+      - specs/platform/sunlife-deployment/d1-requirements.md
+      - specs/platform/sunlife-deployment/d2-design.md
+      - specs/platform/sunlife-deployment/d3-tasks.md
+
+  - key: slm-huggingface-unblock
+    scope: Hugging Face website unblock (SLM mirror)
+    covers: >-
+      Egress to huggingface.co for the small-language-model pipeline. The action plan
+      replaces the requested broad browser unblock with a read-only, scanned Artifactory
+      pull-through mirror scoped to a single server.
+    isra: "26-1260"
+    isra_url: https://sunlife.service-now.com/x_sulfc_vendor_ass_vendor_assessment.do?sys_id=8e57e3b033dd0b58e11ffe282e5c7b6c
+    risk: R011092
+    risk_rating: Low
+    component: slm-pipeline
+    jira: EACPP-559
+    state: in-review
+    actions:
+      - Submit the website unblock request.
+      - Reply to the Jira ticket to DevOps.
+    note: >-
+      **Open, with two actions outstanding.** The ServiceNow link is a row in a queue filtered
+      to `status != Cancelled` and `status != Completed`, so the record was neither closed nor
+      cancelled when that link was produced. Against that, the action plan in the repo is dated
+      2026-06-17, still says *Draft for ISA review*, and still carries **4 unfilled `<FILL:>`
+      placeholders** including the risk owner and the target date — while EACPP-559 (ISRA support
+      + Netskope unblock) is marked **Done**. The Jira ticket is the one that looks wrong.
+      EACPP-571 records that this ISRA was rated **Medium** at submission for an insufficiently
+      defined control posture.
+    recorded_in:
+      - specs/platform/slm-pipeline/artifacts/isra-r011092-action-plan.md
+
+  - key: mcp-server-patterns
+    scope: MCP server patterns
+    covers: >-
+      The substrate list in the pattern's Hosting page, quoted verbatim under *What ETAB
+      is being asked to approve*. A change to that list is a change to the assessed scope.
+    atg: ATG0005648
+    isra: "26-1904"
+    component: mcp-server-patterns
+    jira: EACPP-1176
+    state: drafting
+    note: >-
+      Numbers issued and the submission content is written — controls C-1–C-25 and
+      residual risks R-1–R-8 in `d2-design/assurance.md`. The two tasks that turn it
+      into an actual submission, EACPP-1274 (ETAB pack) and EACPP-1275 (control set
+      with evidence), are both still in **Funnel**.
+    recorded_in:
+      - specs/pattern/mcp-server-patterns/spec.yaml
+      - specs/pattern/mcp-server-patterns/pattern.md
+      - specs/pattern/mcp-server-patterns/d2-design/assurance.md
+
+  - key: agent-patterns
+    scope: Agent patterns
+    covers: >-
+      The four specified substrates plus the SUB-E / SUB-I admission criteria. A platform
+      admitted against those criteria is in assessed scope; changing the criteria is a
+      change to the assessed scope.
+    atg: ATG0005678
+    isra: "26-1956"
+    component: agent-patterns
+    jira: EACPP-1290
+    branch: spec/agent-patterns
+    state: drafting
+    note: >-
+      Numbers issued; controls C-1–C-35 and residual risks R-1–R-12 written. The spec
+      is **not on `main`** — it is D3 draft on an open pull request, so these numbers
+      are invisible to anyone reading the default branch.
+    recorded_in:
+      - specs/pattern/agent-patterns/spec.yaml
+      - specs/pattern/agent-patterns/pattern.md
+      - specs/pattern/agent-patterns/d2-design/assurance.md
+
+  - key: model-inference-patterns
+    scope: Model inference patterns
+    covers: >-
+      Centralized inference as specified in the pattern — cost attribution and model
+      access governance.
+    atg: ATG0005693
+    atg_url: https://sunlife.service-now.com/nav_to.do?uri=x_sulfc_atg_request.do?sys_id=9f3f3f0acf978314a77ab1ad5d851c38
+    isra: "26-1978"
+    isra_url: https://sunlife.service-now.com/x_sulfc_vendor_ass_vendor_assessment.do?sys_id=61de005ecf9f8314a77ab1ad5d851c20
+    gbyd: GBYD0001729
+    gbyd_url: https://sunlife.service-now.com/x_sulfc_genai_gen_ai.do?sys_id=507078a2cf1bcb14a77ab1ad5d851c37
+    component: model-inference-patterns
+    jira: EACPP-1320
+    branch: spec/model-inference-patterns
+    state: drafting
+    note: >-
+      The most completely recorded of the set, and the shape the others should copy: an ATG,
+      an ISRA **and** a GenAI assessment, with the ServiceNow URLs carried in `spec.yaml`
+      (`atg_url` / `isra_url`) rather than only the bare numbers. **GBYD0001729 is not yet in
+      `spec.yaml`** — it was supplied directly on 2026-09-17 and should be added alongside the
+      other two. The spec itself is **not on `main`**; D3 draft on an open pull request.
+    recorded_in:
+      - specs/pattern/model-inference-patterns/spec.yaml
+      - specs/pattern/model-inference-patterns/pattern.md
+      - specs/pattern/model-inference-patterns/d2-design/assurance.md
+
+  - key: slm-atg-0005454
+    scope: SLM pipeline — ATG0005454
+    covers: ~
+    source: >-
+      Supplied by Seth Chalmers on 2026-09-17, who confirmed it is for **Small Language
+      Models / SLM**, with the ServiceNow link below. It appears in **no** repository, on no
+      branch, and in no EACPP ticket — searched 2026-09-17.
+    atg: ATG0005454
+    atg_url: https://sunlife.service-now.com/atg?id=ticket&table=x_sulfc_atg_request&sys_id=17282d982bf983d0796bfbedec91bf52
+    component: slm-pipeline
+    state: in-review
+    note: >-
+      The programme is confirmed; what this record **assesses** is not. Whether it pairs with
+      26-1455, with 26-1590, or stands alone is unestablished, so it is listed as its own row
+      rather than merged into one.
+    recorded_in: []
+
+  - key: slm-isra-26-1455
+    scope: SLM pipeline — ISRA 26-1455
+    covers: ~
+    source: >-
+      Supplied by Seth Chalmers on 2026-09-17, who confirmed it is for **Small Language
+      Models / SLM**, without a link. It appears in **no** repository, on no branch, and in no
+      EACPP ticket — searched 2026-09-17.
+    isra: "26-1455"
+    component: slm-pipeline
+    state: in-review
+    recorded_in: []
+
+  - key: slm-isra-26-1590
+    scope: SLM pipeline — ISRA 26-1590
+    covers: ~
+    source: >-
+      Supplied by Seth Chalmers on 2026-09-17, who confirmed it is for **Small Language
+      Models / SLM**, without a link. It appears in **no** repository, on no branch, and in no
+      EACPP ticket — searched 2026-09-17.
+    isra: "26-1590"
+    component: slm-pipeline
+    state: in-review
+    recorded_in: []
+
+  - key: slm-generalized-pipeline
+    scope: Generalized SLM pipeline
+    covers: >-
+      The generalized pipeline rather than the single Hugging Face mirror already covered
+      by ISRA 26-1260.
+    component: slm-pipeline
+    jira: EACPP-568
+    state: planned
+    note: >-
+      EACPP-568 (*Generalized-pipeline ISRA + ATG submission package*) is in **Funnel**.
+      No ATG or ISRA number has been raised. Listed so the gap is visible rather than
+      discovered at submission time.
+    recorded_in: []
+
+  - key: luminate-gateway-topology
+    scope: Luminate gateways in their environment's workload account
+    covers: >-
+      One production Luminate control plane governing DEV, SIT, STAGE and PROD gateways that run
+      in the dev, test, stage and prod workload accounts in each serving region (today ca-central-1
+      and us-east-1, with a procedure for adding regions), and the
+      content-free control link from each gateway to the control plane (IPNSD section 2.3).
+      A delta on the ACP platform baseline (ATG0005196).
+    component: gateway-environment-strategy
+    jira: EACPP-1089
+    state: planned
+    note: >-
+      Agreed in the Luminate Gateway Environment Deployment Model session on 2026-10-06.
+      No ATG or ISRA number has been raised; the package is the spec's Assurance page
+      (D3 T34 and T35). May need a Security Exception if the control link is not accepted
+      under section 2.3.
+    recorded_in:
+      - specs/platform/gateway-environment-strategy/d2-design/assurance.md
+
+# Records of other kinds that come up in the same conversations. Not assurance
+# submissions, listed so nobody re-derives them from a spec footnote.
+related:
+  - id: APM0006505
+    kind: APM
+    what: The APM record for ACP.
+    recorded_in: specs/platform/sunlife-deployment/d2-design.md
+  - id: APM0004443
+    kind: APM
+    what: >-
+      The previous APM record for ACP, replaced by APM0006505. Some AWS resource tags still
+      carry it; re-tag them rather than treat it as a second record.
+    recorded_in: specs/platform/sunlife-deployment/d2-design.md
+  - id: CHG0547049
+    kind: ServiceNow change
+    what: >-
+      PROD RDS provisioning — four dedicated instances (luminate, keycloak, authentik,
+      langfuse). Paired with DMS request DMS-178186.
+    recorded_in: specs/platform/sunlife-deployment/d3-tasks.md

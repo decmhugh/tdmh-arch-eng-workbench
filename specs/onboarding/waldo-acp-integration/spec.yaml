@@ -1,0 +1,80 @@
+component: waldo-acp-integration
+title: "Onboard Waldo Use Case to ACP"
+description: |
+  Waldo ACP Integration onboards Waldo (CTO's production agent/chatbot platform) to the enterprise ACP governance framework: register the live Waldo-family agents and the MCP router, route the agreed model and MCP traffic through the Luminate gateway, and set governance for the incident management agent roadmap. Waldo operates in the Canadian region only.
+
+  h2. Problem Statement
+  • Waldo assets are not onboarded to ACP — the Luminate project and Owner access exist in dev, but no agent or MCP server is registered
+  • Waldo-family agents may already run in production unregistered — waldo, waldo-incidents, waldo-net1 and waldo-vroom all have prod manifests and router ACL entries
+  • No governance audit trail for incident triage (OSFI, NIST); LLM routing and tool selection are not governed
+  • Waldo's self-hosted Langfuse evaluations (confirmed in dev only) are not correlated with ACP evidence
+  • Tool risk boundary not agreed — Waldo reports 50+ MCP servers / ~500 tools; source shows 38 instances (~527 tools), 19 enabled in prod behind one aggregating router
+  • Waldo's tool identity, user attribution and third-party OAuth (3LO) tokens travel in custom headers that the Luminate gateway does not forward
+  • Multi-region expansion requires governance alignment — Canadian-only deployment
+
+  h2. Opportunity
+  • Register every live Waldo agent and the MCP router; reconcile the tool inventory and agree the policy boundary
+  • Correlated audit evidence — ACP gateway records plus Waldo telemetry linked by shared trace IDs
+  • Risk-based tool governance — AA/A/B/C/D tiers with ACP kill switch and access policy; human approval stays in Waldo
+  • Governed pathway for incident management agents and future Canadian-to-US expansion
+  • Reusable pattern for onboarding other orchestrators and agent platforms
+
+  h2. Acceptance Criteria
+  • Every live Waldo-family agent registered in ACP with complete asset metadata
+  • MCP inventory classified by risk tier at the agreed router/server/tool boundary
+  • Agreed incident triage model and MCP traffic routed through the ACP gateway; coverage measured against all Waldo call sites; latency within the agreed threshold
+  • Delegated identity, 3LO tool calls and router ACL proven through Luminate; agreed handling for sensitive streamed content (Luminate cannot redact streamed responses)
+  • ACP audit records retrievable for gateway traffic; Waldo-only evidence and Langfuse evaluations correlated by shared trace IDs
+  • Incident-agent deployment status confirmed and governance model approved
+  • OSFI/NIST evidence baseline established
+  • Technical onboarding specification delivered by ACP
+  • Zero disruption to incident response operations
+
+  h2. In Scope (MVP)
+  • Registration of all live Waldo agents and onboarding of the MCP router
+  • MCP inventory reconciliation and risk tier classification
+  • Model and MCP traffic routing through Luminate, with bypass detection and rollback
+  • Router authentication — the router trusts a single issuer, so a parallel deployment or dual-issuer support is needed
+  • Identity and third-party credential design (EACPP-1444; consortium ask ACPDIS-165) for header-based 3LO tokens, user attribution and the router agent ACL
+  • Incident management governance — approval-required tools, operator roles, router ACL default of allow_all
+  • Observability preservation (add traceparent) and Langfuse evaluation correlation
+  • Streaming compatibility (SDK streaming released in v0.16.0; synchronous and LLM-only) and streamed-response guardrail handling
+  • Incident agent governance design, compliance evidence baseline and regulatory clarification
+  • Technical onboarding specification from ACP
+
+  h2. Out of Scope (Backlog)
+  • Multi-agent orchestration between Waldo and external agents
+  • Inference governance and retention
+  • Cost attribution and chargeback per MCP
+  • Self-healing governance and automated remediation
+  • Advanced anomaly detection on execution patterns
+  • Multi-region federation
+  • HIPAA or privacy-specific governance
+  • MCP supply chain threat detection
+  • Developer self-service CLI tooling
+  • Replacing Waldo's 3LO vault before Luminate supports per-user third-party connections (ACPDIS-165)
+
+  h2. Timeline
+  The original August 2026 targets for the technical specification (2026-08-31), risk classification (2026-08-31) and design review (2026-09-15) have passed. All milestones will be rebaselined with Waldo and ACP after D0 approval.
+
+jira_epic: EACPP-987
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113133978028"
+owner: "Kalev Gonvick"
+current_gate: D0
+status: draft
+spec_type: onboarding
+gate_status: Discovery in progress — D0 revised after source review; awaiting Waldo review, technical specification and regulatory requirements
+reviewers:
+  - lalit.summan@sunlife.com
+  - bill.dubreuil@sunlife.com
+created_at: '2026-08-14'
+confluence_url: ''
+last_updated: '2026-10-01'
+notes: |
+  This D0 captures Waldo's ACP onboarding strategy from the CTO AI initiative planning session (August 2026). Key insights: (1) Waldo is a mature production platform (50+ MCPs, 500 tools, active incident triage use); (2) agentic roadmap (incident management agents) is urgent and expected Q3 2026; (3) no immediate regulatory urgency identified, but OSFI and governance requirements expected drivers; (4) primary dependency is detailed technical onboarding specification from ACP team.
+
+  Critical decision: position Waldo as enterprise orchestrator pattern for ACP; inform future multi-agent architecture and federated governance.
+
+  Next steps: ACP spec delivery; MCP risk classification; gateway design review; pilot MCP onboarding; agent approval; compliance baseline; Q3 pilot launch; Q4 full production rollout.
+
+  Related: EACPP-914 (US ACP Deployment), EACPP-909 (AIMS), EACPP-911 (ORCC), EACPP-912 (MDx)

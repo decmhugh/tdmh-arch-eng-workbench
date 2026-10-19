@@ -1,0 +1,1496 @@
+
+[00:00:16] Hilary.
+
+[00:00:16] OK, be true.
+
+[00:00:19] You?
+
+[00:00:21] I'm okay, how are you?
+
+[00:00:23] Going, yeah. What's going on?
+
+[00:00:29] Hey.
+
+[00:00:30] Good, good, good afternoon.
+
+[00:00:31] Yeah.
+
+[00:00:32] And.
+
+[00:00:32] Good afternoon.
+
+[00:00:34] Yeah.
+
+[00:00:34] Okay.
+
+[00:00:36] Hey, Pavithra.
+
+[00:00:39] Are we waiting for anyone else to join?
+I think we have full house.
+
+[00:00:44] Yeah, I think we get started.
+
+[00:00:45] Uh, Summan is the one, he is here.
+
+[00:00:46] Yeah, and Rob is up to you.
+
+[00:00:51] I think Rob Robert is out of office,
+so should be OK.
+
+[00:00:52] Hey, guys.
+
+[00:00:55] Yeah.
+
+[00:00:55] Yeah, yeah.
+
+[00:00:59] I think we can get started then.
+Thank you for everyone for joining the
+
+[00:01:02] call.
+
+[00:01:04] So I think we did meet a couple of weeks
+ago for our initial use case discovery
+
+[00:01:09] conversation with ACP and Khalil.
+So we did capture those use case details,
+
+[00:01:13] but from our conversation last week,
+Ankit,
+
+[00:01:16] it appears that there is a bit more to
+what we had in the beginning. Like,
+
+[00:01:20] you know, we would like to understand.
+
+[00:01:23] bit more about your use case,
+like what are the agents you have,
+
+[00:01:27] MCP servers if any,
+and probably an overview of your
+
+[00:01:30] architecture because the one that I had
+captured in our initial DO,
+
+[00:01:34] like the D01 is more around a POC use
+case and a production use case,
+
+[00:01:34] Yeah.
+
+[00:01:39] but we don't have much details besides
+those two.
+
+[00:01:42] So we would like to kind of.
+
+[00:01:46] Go a bit deeper so that we can capture
+our, you know,
+
+[00:01:49] these details in our use case and then we
+can, it will be better for our, you know,
+
+[00:01:50] Yeah.
+
+[00:01:53] design and the way we do this is a
+spectrum one, right? Like,
+
+[00:01:57] we start with different gatings are there,
+we start with D0 and then we move through
+
+[00:02:01] D1 and D2 for us to have a good design,
+we need to have a little bit more detail,
+
+[00:02:06] so...
+
+[00:02:07] And I know you already have advanced a
+bit more than what we had,
+
+[00:02:10] so who would be the right person?
+Over to you,
+
+[00:02:13] like is it Bishan or you who would give
+us an overview?
+
+[00:02:17] Bishan, you wanna kick off,
+or let me know if I if I it's on me?
+
+[00:02:18] Yeah.
+
+[00:02:20] Yeah, yeah, no, I can, I can go,
+I can get the background.
+
+[00:02:23] Go for it.
+
+[00:02:24] Sorry if my voice is a little low,
+I'm like under the weather,
+
+[00:02:29] but bear with me. So, yeah, I guess I can,
+I can get started, Pavithra. So, if I,
+
+[00:02:35] if I understand, like, do you,
+where should I start?
+
+[00:02:39] I guess just the technical architecture
+of it, or...
+
+[00:02:43] I think we showcased the platform
+capabilities in last few calls or at
+
+[00:02:48] least couple calls.
+So is there any starting point you want
+
+[00:02:51] me to go through?
+
+[00:02:53] So I'm thinking of two things, Bishan.
+One is for us to integrate with the ACP.
+
+[00:02:54] Okay.
+
+[00:02:57] What are the agents or the MCP servers?
+What are the details that you have?
+
+[00:03:01] That's one thing.
+And second thing would be an overview
+
+[00:03:02] Yep.
+
+[00:03:04] from the architecture perspective as well.
+
+[00:03:06] Hundred percent, so I can start with that.
+Let me share my screen. Um, I do have...
+
+[00:03:10] Yeah.
+
+[00:03:11] I just included the link to D0 what we
+have today, but as I mentioned,
+
+[00:03:11] Seth.
+
+[00:03:16] it just has basic information.
+And where I'm really hoping is out of
+
+[00:03:19] Yeah.
+
+[00:03:21] this call,
+we have much more details around it.
+
+[00:03:24] 100%, 100%.
+
+[00:03:24] Yeah, so, so Bishan,
+if you can touch on what are the all
+
+[00:03:28] integrations that Light LLM is our
+current ACP and Galileo code has, like,
+
+[00:03:33] Yes.
+
+[00:03:33] so when the virtual key gets created,
+what exactly the cost and other things
+
+[00:03:36] Yes.
+
+[00:03:38] get tracked,
+how we kind of integrate these two,
+
+[00:03:41] what model access, tool access,
+how it goes through.
+
+[00:03:45] If you can touch on that,
+that's going to be a good starting point.
+
+[00:03:48] Absolutely, no thanks, Ankit. So,
+so this is in kind of high level kind of
+
+[00:03:54] architecture. So,
+we are today referring to Gallia code in
+
+[00:03:58] the gateway,
+like the LLM models of the provision. So,
+
+[00:04:02] Gallia code is a custom written in-house
+product, but...
+
+[00:04:07] If you talk about the light LLM,
+how we have it,
+
+[00:04:12] so it's a EKS based kind of setup or
+environment. We do have like multiple,
+
+[00:04:19] oops, why is it frozen?
+We do have teams concept,
+
+[00:04:24] which is also like a role.
+
+[00:04:26] If you kind of relate to that, so each,
+you know, team is being created.
+
+[00:04:31] So let's say from a user experience
+perspective,
+
+[00:04:34] all they're doing is just interacting
+with Gallia code,
+
+[00:04:38] whether it's an end user or a system
+admin.
+
+[00:04:41] So if we were to set up a new team to
+onboard new case, a use case.
+
+[00:04:46] We just create a new team,
+assign some privileges to that team.
+
+[00:04:50] While this happens,
+it will also create those teams into like
+
+[00:04:54] LLM. So for example, if I refer to public,
+you know, team I created,
+
+[00:04:59] it would be also be available in this
+Galileo platform.
+
+[00:05:02] So it's like a bi-directional thing.
+
+[00:05:05] We do,
+and then in terms of like a permission
+
+[00:05:08] management and model access and such,
+it's also kind of tied to that team,
+
+[00:05:13] so which model do they get access to it,
+and then we can also control from the
+
+[00:05:18] platform itself, and then when,
+as a user who creates an agent,
+
+[00:05:22] it's just like a self-serve platform.
+
+[00:05:25] So user comes to the platform and then
+says, based on my permission,
+
+[00:05:30] I can do this or that. So in this case,
+I can do create agent,
+
+[00:05:34] then it kind of just creates an agent
+using that LLM, I guess, gateway.
+
+[00:05:39] And what it does is essentially creates a
+new virtual key for that.
+
+[00:05:44] app within that team.
+So it will kind of look something like
+
+[00:05:49] this.
+Virtual key is created and it is part of
+
+[00:05:53] the public team.
+It has the model inherited from the team
+
+[00:05:58] itself.
+But in terms of the runtime and the
+
+[00:06:02] skills, I want to talk two things.
+So Light LLM also offers the skills.
+
+[00:06:09] But we are not storing it directly here
+because we want to provide user a way to
+
+[00:06:16] do like a review perspective, right?
+So if I go to skills and upload a skill,
+
+[00:06:22] it will actually, you know, upload those.
+Let me see if I have it here open.
+
+[00:06:27] I should have it.
+
+[00:06:29] But it would actually upload those files
+into a Git repo,
+
+[00:06:33] which is called Galileo Skills,
+and then we have we have like different
+
+[00:06:38] branches for different environments,
+but basically it's like a it's like a
+
+[00:06:43] configuration on the platform itself over
+to the admin side, so if I go to admin.
+
+[00:06:49] General,
+and then I look for skills section. Oops,
+
+[00:06:52] here we go.
+So we kind of configure saying, hey,
+
+[00:06:54] this is our, you know,
+Azure DevOps tenant, and you know,
+
+[00:06:58] report URL is this,
+and then here's my branch.
+
+[00:07:01] So what it does is anytime a skill is
+uploaded,
+
+[00:07:03] it uploads to that particular branch,
+sorry, not particular to branch.
+
+[00:07:08] It creates a new branch from this,
+uploads that files.
+
+[00:07:11] To that branch, and then it will kind of,
+you know,
+
+[00:07:14] cheque in and do all this fun stuff,
+but ultimately what it translates to is
+
+[00:07:18] it gives a kind of automated or more nice,
+you know, process for the end user,
+
+[00:07:23] so you can see like, okay,
+these are the files in my Git report.
+
+[00:07:27] If I want to review the pull request,
+I can actually go into that,
+
+[00:07:30] and it's just a user interface we build
+custom.
+
+[00:07:34] that is backed by the Azure, kind of this,
+all of this.
+
+[00:07:37] So if I go to all the pull requests,
+all the complete pull request,
+
+[00:07:40] it was same thing,
+user can see it on the platform.
+
+[00:07:43] So we think this way,
+the business users are not technical,
+
+[00:07:46] so they don't know what is pull requests
+and such,
+
+[00:07:49] but at least they can have an experience
+like this, which is more.
+
+[00:07:53] minimalistic or simplistic, they can see,
+okay,
+
+[00:07:56] what changes are coming in in the skills.
+And as an admin of that team or role,
+
+[00:08:01] they can say,
+I approve and then merge and complete.
+
+[00:08:04] Once it happens,
+then if you're creating a new agent,
+
+[00:08:08] like over here,
+I don't want to type in everything,
+
+[00:08:11] but just go to the next.
+
+[00:08:13] So this section, it comes, you know,
+that skill available to them.
+
+[00:08:17] So they can choose like, okay,
+what skill do I want to use? And then,
+
+[00:08:21] you know, the agent is created. Again,
+this is all metadata, just creating it.
+
+[00:08:26] Our agent is then registered on the
+Galileo Gateway, sorry, not Galileo,
+
+[00:08:30] Galileo Code. And then.
+
+[00:08:32] If you were to trigger that agent through
+a chat, let's say,
+
+[00:08:36] it will automatically know, okay,
+this is a question about the skill,
+
+[00:08:41] for example, and then if it is,
+then it kind of routes it to a sandbox
+
+[00:08:46] skill runner,
+and then it kind of clones that skill,
+
+[00:08:49] fetches all the files it needs.
+
+[00:08:52] and then executes it into that sandbox
+and then disposes, forgets about it.
+
+[00:08:57] Anyway,
+I'll stop here because I'm talking too
+
+[00:09:00] much, but any questions?
+
+[00:09:02] Yeah,
+so thank you so much for giving us this
+
+[00:09:05] overview.
+So at least it gives us a high level
+
+[00:09:07] Birt.
+
+[00:09:07] overview of what all you do inside
+Galileo.
+
+[00:09:10] My question is more towards the agents.
+Like this one,
+
+[00:09:13] is it in POC at this point or is it in
+production at this point?
+
+[00:09:17] This is in production,
+so whole Galeo ecosystem, like Galeo Code,
+
+[00:09:21] Galeo Gateway, Galeo Workflows,
+Galeo Chat,
+
+[00:09:24] all four of them are in production.
+
+[00:09:26] Okay, so if it's in production,
+do we have agents already registered in
+
+[00:09:30] the production one?
+
+[00:09:32] So,
+we are in the process of getting the use
+
+[00:09:35] case into production,
+but the platform itself is in, you know,
+
+[00:09:38] deputy prod.
+The use cases or the agents you say that
+
+[00:09:41] Mhm.
+
+[00:09:42] is currently up to the UAT environment,
+so our agent, like you know,
+
+[00:09:45] Okay.
+
+[00:09:46] the business agent, they are in UAT up to.
+
+[00:09:49] Okay, so then I'm imagining like,
+you know, you would have MCP servers,
+
+[00:09:53] you would have all the gateway
+configurations completed in your UAT
+
+[00:09:55] Correct.
+
+[00:09:57] environment, right?
+
+[00:09:59] Yes, correct.
+And actually a good point since you
+
+[00:10:02] mentioned MCP server.
+So Light LLM also allows us to register
+
+[00:10:07] our MCP servers, like here, for example,
+Atlation, right? Or maybe any other ones.
+
+[00:10:13] As an admin, we configure the risk to a,
+you know, config file.
+
+[00:10:17] on the light LLM, but once that happens,
+what we do is we go to,
+
+[00:10:22] actually switching to my local because I
+have more MCPs here or option.
+
+[00:10:27] So if I go to connections,
+this is all admin managed right in Galleo
+
+[00:10:32] code, but if I go to connexions MCP,
+you can see that we are.
+
+[00:10:37] pointing to that light LLM MCP,
+I guess instance,
+
+[00:10:40] and it's using specific auth and all that
+stuff, right? So again, mainly,
+
+[00:10:45] first of all,
+it gets registered to the light LLM.
+
+[00:10:49] We register, expose it,
+and then we grant it to different teams.
+
+[00:10:53] So we can also say, hey,
+I want to grant this.
+
+[00:10:57] to another team, right,
+or another whichever team.
+
+[00:11:01] And then what happens is those users then
+able to choose those MCP while they're
+
+[00:11:07] creating new agents. Some of the MCP,
+if it requires to have a what you call a
+
+[00:11:14] authentication layer.
+
+[00:11:16] Then they have to go to the connected
+accounts and then they have to complete
+
+[00:11:20] the connected experience saying, hey,
+I want to grant my identity, you know,
+
+[00:11:25] or connect it to the MCP. It will say,
+hey, which one, which, you know,
+
+[00:11:29] tenant do you want to use?
+You choose the tenant. Actually,
+
+[00:11:32] this is a prod, so it's not working.
+
+[00:11:34] Let me see if I... Actually,
+we're in the middle of working with the
+
+[00:11:39] iteration team,
+so that's why it's not working.
+
+[00:11:42] But basically, it will say, okay,
+I accept, I connect, cancel, continue,
+
+[00:11:47] and then it will show the account is
+connected,
+
+[00:11:50] and then hence it will use that connexion
+by the agent.
+
+[00:11:54] Okay, okay. So, I mean,
+I'm just thinking from the integration
+
+[00:11:58] perspective for HCP and Galileo. Do you,
+how many use cases do you have from
+
+[00:12:03] agents perspective, like, you know,
+or agents for MCP servers?
+
+[00:12:06] But.
+
+[00:12:06] How many use cases do you think you have
+at this point for UAD?
+
+[00:12:12] I would say at least the ones that are
+going in prod are, I think, four of them,
+
+[00:12:17] but there are so many.
+There are so many that are already in dev
+
+[00:12:18] Okay.
+
+[00:12:22] environment,
+and there are a few of them that are in
+
+[00:12:25] dev that is getting promoted to UAT,
+and once...
+
+[00:12:29] Again, as every kind of, you know,
+business team has different use cases,
+
+[00:12:35] we call, we have,
+we may have like more and more agents,
+
+[00:12:36] Mhm.
+
+[00:12:39] which lets them create it on their
+self-serve basis.
+
+[00:12:44] Okay,
+do you have visibility into their LVD
+
+[00:12:45] I.
+
+[00:12:47] ratings? Like, you know,
+is it critical or is it more like
+
+[00:12:51] internal agents, things like that?
+
+[00:12:53] Yeah, they are all internal agents.
+They're all internal agents and all of
+
+[00:12:55] Oh.
+
+[00:12:57] Yep.
+
+[00:12:59] the use case that we are kind of taking
+to prod.
+
+[00:13:03] It currently doesn't have a PII data to
+it. So I don't think it has a,
+
+[00:13:09] we haven't defined the kind of SLC for
+the agent. Again,
+
+[00:13:13] it's not like a highly critical agents.
+
+[00:13:17] For now, um, but yeah, that's the...
+
+[00:13:17] Mm-hmm.
+
+[00:13:20] Okay, just one question before, Ranjula,
+I pass it over to you just to finish my
+
+[00:13:26] thought here. So,
+I'm thinking since it's a low rating and
+
+[00:13:30] it doesn't have any criticality involved
+and there isn't any PII,
+
+[00:13:35] probably you can let us know which use
+case would be a first pick that we can
+
+[00:13:40] start.
+
+[00:13:41] And I think when you onboard your use
+case, you would also see, you know,
+
+[00:13:45] the feel of how the onboarding process
+looks like. And if you are,
+
+[00:13:49] whatever capabilities that you had in
+mind, is that available in ACP, right?
+
+[00:13:53] Or is it more than that you're looking
+for?
+
+[00:13:56] I think you can pick a couple of use
+cases. That's where I'm expecting.
+
+[00:14:00] or looking up to you to say which use
+cases will be a best fit to begin with,
+
+[00:14:05] right? Of course, at the end of the day,
+you might integrate all of your use cases,
+
+[00:14:10] but just from, you know,
+testing out the initial use cases
+
+[00:14:13] perspective, and you know,
+what would the recommendation be?
+
+[00:14:17] Yeah, I'll give my kind of first shot,
+Ankit, but then please feel free to add.
+
+[00:14:24] So I guess I would think as it will be a
+gradual kind of integration to ACP.
+
+[00:14:31] So what I mean by that is we can't take
+one just use case and go from zero to
+
+[00:14:37] start with ACP, but rather...
+
+[00:14:40] We can go in an incremental fashion,
+so if, let's say, starting with, like,
+
+[00:14:45] you know, ACP offering the LLM models,
+right,
+
+[00:14:47] we can just start with that in any of the
+use cases they want to test with,
+
+[00:14:52] you know,
+our use cases that end user wants to test
+
+[00:14:54] The.
+
+[00:14:55] with it,
+we can maybe test it with dev environment,
+
+[00:14:58] right, like...
+
+[00:14:59] On the dev environment,
+it uses alongside Light LLM as a gateway.
+
+[00:15:04] We can also use ACP as a gateway because
+even in dev,
+
+[00:15:08] like it will be hard to kind of lock in
+over business user to just say, hey,
+
+[00:15:14] you're locked into through ACP,
+but if some hiccups come up.
+
+[00:15:19] then we also want to offer them like, hey,
+you can also do with the over light LLM
+
+[00:15:24] gateway just for the transition period.
+But that's what I see as a starting
+
+[00:15:29] kickoff point. Ankit,
+if you want to add anything.
+
+[00:15:33] Yeah, so like a high level,
+how we think about this integration is
+
+[00:15:37] like a platform to platform integration,
+not a use case level adoption, right?
+
+[00:15:40] The.
+
+[00:15:42] Because Pritha, if you think about,
+I mean,
+
+[00:15:45] this is an agent creation platform, right?
+Like,
+
+[00:15:48] so we cannot say new agent that creates
+has to go through ACP and.
+
+[00:15:53] The previous one will run on a kind of an
+older stack and things like that.
+
+[00:15:57] That's going to be too complicated for
+Galileo to handle that.
+
+[00:16:00] And even to run the whole ecosystem of
+Galileo in a separate environment to test
+
+[00:16:04] things, we haven't thought about that,
+right?
+
+[00:16:07] Like it's just like yet another
+installation of Galileo to test that ACP
+
+[00:16:11] integration.
+
+[00:16:11] We can go with so many different options,
+but I'll leave it to Bishan on what is
+
+[00:16:17] the best way to kind of test the
+integration out.
+
+[00:16:22] Yeah.
+
+[00:16:22] I think the integration will mimic
+something that we've seen with MDX or
+
+[00:16:22] Okay.
+
+[00:16:25] Orchestra.
+I think it's going to fall on the some of
+
+[00:16:28] the platform to platform integration.
+I'm with you, Derek.
+
+[00:16:31] The just kind of test the waters for both
+our teams,
+
+[00:16:34] just seeing the whole flow of getting the
+platform integrated and some agents to
+
+[00:16:38] test out, starting with LLM gateways,
+right?
+
+[00:16:40] I think that's where the starting point
+for whatever.
+
+[00:16:43] ambition is can we use ACP as an LLM
+enforcement KOA?
+
+[00:16:49] Yeah, I mean,
+as far as as far as we have the connexion
+
+[00:16:51] So that.
+
+[00:16:54] available,
+we our our configuration of an LLM is
+
+[00:16:58] generic. I mean,
+as long as it's an open AI kind of spec
+
+[00:17:02] Yeah.
+
+[00:17:02] supported,
+so you know we can add if we have another
+
+[00:17:04] Mm-hmm.
+
+[00:17:07] ACP.
+
+[00:17:07] URL that provides those, you know,
+LLM models, we can just provide here,
+
+[00:17:11] that's it,
+and then we can grant it to the teams or
+
+[00:17:14] whatever,
+and they can start playing alongside over
+
+[00:17:17] light LLM connections.
+
+[00:17:19] Got it, okay.
+
+[00:17:21] Yeah,
+so our gateways are open AI supported,
+
+[00:17:25] so you could use same format, right?
+My question is like mostly what you shown
+
+[00:17:30] Okay.
+
+[00:17:33] here,
+it's like your agents are running on
+
+[00:17:37] based on this.
+
+[00:17:38] skills that the user being submitted to
+the Galileo, right?
+
+[00:17:43] And you don't have any agent created,
+like, you know,
+
+[00:17:48] through strand framework or any other
+agent framework and deploy to EKS,
+
+[00:17:50] Yeah.
+
+[00:17:54] OpenShift, or like an agent code.
+
+[00:17:57] and referring those agent handler through
+Galileo, right?
+
+[00:18:03] We do, well,
+not the agent core as of our runtime
+
+[00:18:06] today, but essentially what we have,
+we have more than scores.
+
+[00:18:07] Mm-hmm.
+
+[00:18:11] I just tried to sort of simplify as we
+were kick starting, but we have kind of,
+
+[00:18:14] Okay.
+
+[00:18:17] we are almost like 3 layer for the agent,
+like see this.
+
+[00:18:21] So if you want to create an agent,
+we first need to have an AI ready data.
+
+[00:18:26] So like, you know,
+these are all the systems like Snowflake,
+
+[00:18:28] Mmh.
+
+[00:18:29] Starburst, S3, you know, Azure,
+those other things are the systems that
+
+[00:18:33] we use at SLC management, right?
+So what we do is we provide a self-serve
+
+[00:18:34] Okay.
+
+[00:18:37] option for them to also create a
+knowledge base, you know,
+
+[00:18:41] that converts whatever SQL data and
+metadata into a vector and then stores it
+
+[00:18:45] into a PG vector.
+
+[00:18:46] on RDS instance. Later on,
+if you create an AI like agent,
+
+[00:18:48] Yeah.
+
+[00:18:50] you can plug in multiple knowledge bases.
+You know, that's maybe from Snowflake,
+
+[00:18:55] maybe from Starburst,
+and maybe combination of multiple.
+
+[00:18:59] Mhm.
+
+[00:18:59] And also the skills.
+So it's not just a skill that our use
+
+[00:19:03] Okay.
+
+[00:19:03] cases are.
+It's actually very complex of combination
+
+[00:19:07] of all the others.
+
+[00:19:08] Uh, not only that, but our, our,
+our Galileo code platform,
+
+[00:19:09] Yeah, okay.
+
+[00:19:13] once there are like, you know,
+multiple agents, let's say, created,
+
+[00:19:17] right?
+I do have an example where we are testing
+
+[00:19:21] out like something called Unified Agent.
+Unified Agent is just a name that we give,
+
+[00:19:27] but...
+
+[00:19:28] Essentially,
+what it is is agent orchestrator,
+
+[00:19:31] basically. So, if I go here,
+so this is the unified agent,
+
+[00:19:35] but that also has a sub-agent which is an
+orbit agent.
+
+[00:19:38] The orbit agent furthermore has other
+sub-agents, like I don't know,
+
+[00:19:40] Mhm.
+
+[00:19:43] weather agent or you know, service agent,
+self-lake agent, and something else.
+
+[00:19:49] But then when you interact with a unified
+agent,
+
+[00:19:53] it kind of routes it to an appropriate
+sub-agent. Now,
+
+[00:19:57] while all of these happens,
+you create a session or whatnot,
+
+[00:20:01] it is running into an EKS in a container.
+So meaning this front-end UI that you see.
+
+[00:20:05] Yeah.
+
+[00:20:08] And if you submit a kind of query,
+it doesn't run within the same container.
+
+[00:20:13] It actually is a hyperscale, you know,
+horizontal scalable platform.
+
+[00:20:17] So it will say, hey,
+there's a slot available that I'll assign
+
+[00:20:21] to you.
+And then everything happens within that
+
+[00:20:24] slot environment.
+Let me see if I have it over here that
+
+[00:20:28] shows or talks about the slot.
+
+[00:20:30] Um...
+
+[00:20:38] OK, let's see.
+
+[00:20:51] Okay.
+
+[00:20:51] main container for this Gallio code.
+It's like a platform container.
+
+[00:20:57] And then beside that,
+we have like as many as we want the
+
+[00:21:01] warmed up container. So for example,
+if I go to the jobs and worker slots,
+
+[00:21:06] so these are 20 slots that are readily
+available sitting idle. So now if...
+
+[00:21:12] If, you know,
+let's say 10 business users came at the
+
+[00:21:16] same time and queried something,
+it would say, okay,
+
+[00:21:20] I'll assign one request to 1 slot,
+another user's request to another slot,
+
+[00:21:25] and hence it's, you know,
+occupied these slots readily available.
+
+[00:21:29] But if it goes beyond like a 20.
+
+[00:21:32] you know, request at the same time,
+it will create an overflow container.
+
+[00:21:34] Mhm.
+
+[00:21:36] So it will say, okay,
+I'll spin up another container,
+
+[00:21:40] 21 or 22 or 23,
+and then I will handle your requests and
+
+[00:21:44] process and complete.
+As soon as the request gets completed,
+
+[00:21:47] like I can actually try it right here,
+but if I just say.
+
+[00:21:51] go to this agent and if I just say hi,
+you will expect that, okay,
+
+[00:21:55] see there is a slot occupied.
+Now it's a container that is running my
+
+[00:21:58] Sosa.
+
+[00:22:00] request.
+It actually already completed and then
+
+[00:22:03] told me, hey, this is,
+I can help you with.
+
+[00:22:06] Okay, yeah, yeah, great. No,
+I just wanted to make sure that we are we
+
+[00:22:11] are in the we are aligning with what we
+have right now with the Luminate product
+
+[00:22:17] because we don't have the scale registry
+right now.
+
+[00:22:20] It is it is something that upcoming
+feature in the Luminate.
+
+[00:22:26] product,
+so that's why I just wanted to make sure
+
+[00:22:29] that we are aligning with our use cases,
+all the requirements.
+
+[00:22:33] Yeah, so Ranjula, I mean,
+this is what runtime is, right? Like,
+
+[00:22:37] so Galileo offers the key thing is
+runtime, where you have got everything,
+
+[00:22:41] like skills to MCP, everything,
+and agent can run that recipe,
+
+[00:22:41] Yeah.
+
+[00:22:45] what you give it to,
+and you can run it at a scale, right?
+
+[00:22:48] Mhm.
+
+[00:22:48] I just shared the screenshot what Bishan
+was looking for, like a pool of...
+
+[00:22:52] containers ready to kind of execute your
+request and it can scale. Now,
+
+[00:22:57] behind the scene, we are using Light LLM,
+right?
+
+[00:22:57] Yeah.
+
+[00:23:00] So that is gonna be replaced by Luminate.
+That's how it's gonna be, right?
+
+[00:23:04] Is yeah.
+
+[00:23:05] But what is the integration and how we
+can swip, I mean, change from, let's say,
+
+[00:23:10] Light LLM to Luminate.
+
+[00:23:12] Mhm.
+
+[00:23:12] That's where we have to start thinking,
+right?
+
+[00:23:13] Yeah.
+
+[00:23:14] Yeah.
+
+[00:23:15] So that we can do enterprise-wide control
+and we can have the observability,
+
+[00:23:19] Yep.
+
+[00:23:20] but at the same time, the orchestration,
+whether you want to run your agent in,
+
+[00:23:24] as you say, agent core or EKS,
+which is offered by Galileo,
+
+[00:23:26] Yeah.
+
+[00:23:28] you can have your own choice.
+
+[00:23:30] Yeah, yeah, sounds good. Yeah, I mean,
+definitely you could have a Luminate LLM
+
+[00:23:31] Yeah.
+
+[00:23:34] And.
+
+[00:23:38] to call the models what we have provided,
+governance models,
+
+[00:23:44] so we just a matter of providing you the
+credentials and the...
+
+[00:23:51] the URLs to call this LLM.
+So then you should be able to call those
+
+[00:23:55] Google.
+
+[00:23:57] models through the ACP from the Galileo
+system.
+
+[00:24:02] Makes sense, makes sense.
+There's one more thing,
+
+[00:24:03] Yeah, yeah.
+
+[00:24:06] I guess I was gonna ask kind of thing,
+but I want to showcase.
+
+[00:24:10] So we also have implemented the mem0 as a
+agent memory onto multiple scope of it.
+
+[00:24:16] So as you were seeing,
+I did a test over there,
+
+[00:24:20] but it was able to also.
+
+[00:24:23] consider all the memories for myself or
+as my user.
+
+[00:24:26] Mhm.
+
+[00:24:27] We have implemented memory on a three
+level, essentially.
+
+[00:24:31] One is a personal memory level,
+another is on the agent level,
+
+[00:24:36] and then the third category is to share
+on a team level.
+
+[00:24:42] So basically you can see here if I go to
+memory,
+
+[00:24:45] I can see like only my memories that is
+tied to it. If I go to team,
+
+[00:24:50] if any memory was shared with the team,
+you can also pick and choose. Again,
+
+[00:24:55] there's nothing I have shared with the
+team,
+
+[00:24:57] Yeah.
+
+[00:24:57] but it gives you a graphical or a graph
+representative like.
+
+[00:25:02] Where, what is connected like a vectors?
+So,
+
+[00:25:05] all this is stored as a vector data in a
+Postgres. Again,
+
+[00:25:09] it's just using the MEM 0 capabilities,
+and then,
+
+[00:25:13] and then that is something also that we,
+you know,
+
+[00:25:17] we are we are using as a more and more,
+so if let's say any any business team
+
+[00:25:20] Look.
+
+[00:25:22] created an agent.
+
+[00:25:25] you know, and more and more you use,
+it will have more powerful knowledge.
+
+[00:25:30] Okay,
+this is what you have you generate a,
+
+[00:25:33] let's say,
+month-end AUM report or the financial
+
+[00:25:34] The.
+
+[00:25:36] Mmh.
+
+[00:25:37] quarter end results or whatever it is,
+right? But it will have more like, okay,
+
+[00:25:42] I like to have results into US.
+
+[00:25:45] Dollars,
+and you should always use this FX rate
+
+[00:25:48] table from Snowflake.
+It can always do that next time user uses
+
+[00:25:53] this, but yeah, go ahead, Lalit,
+you have a question.
+
+[00:25:57] Yeah, great summary. To start,
+we just want to be tactical for both of
+
+[00:26:01] our teams in terms of what we're doing
+next, right? So I hear you loud and clear,
+
+[00:26:06] the LLM inferencing through ACP check,
+right?
+
+[00:26:08] The long-term goal is to have the
+platforms integrated so the agents that
+
+[00:26:13] show up on Calileo, show up on ACP,
+and we can have...
+
+[00:26:16] kind of integration between the two.
+Are there,
+
+[00:26:19] what does success look like for you?
+So if you've done the LLM inferencing,
+
+[00:26:22] do you want to,
+do you need to kind of test a couple of
+
+[00:26:25] your agents to see with an ACP,
+how they're performing,
+
+[00:26:28] how they look and feel?
+Like what does that look like in the
+
+[00:26:31] first few weeks?
+
+[00:26:33] Yeah, I mean, you know,
+you kind of capture that, right? So,
+
+[00:26:35] Go ahead.
+
+[00:26:38] I mean, let's define that scope.
+How much we have, 4 minutes? Okay. So,
+
+[00:26:43] like, according to me,
+how it looks like is like right now,
+
+[00:26:47] Galileo and Light LM integration, you can,
+I mean, you can use.
+
+[00:26:52] The team level budget,
+you can do agent level budget,
+
+[00:26:56] you can have roles and responsibility and
+the virtual key concept.
+
+[00:27:00] So if I want to just say shut this down,
+right? So one click button in Light LLM,
+
+[00:27:04] I can stop things in Galileo, right?
+So same thing, right?
+
+[00:27:05] Surely.
+
+[00:27:08] These are three things at a high level.
+The 4th and 5th is.
+
+[00:27:10] Yeah.
+
+[00:27:12] If I want to kind of do a deep research
+on the logs,
+
+[00:27:14] Okay.
+
+[00:27:15] what's being generated by agent
+interaction,
+
+[00:27:17] I want to put some guardrails or things
+like that.
+
+[00:27:20] ACP should be able to support that, right?
+Like I know probably we say we don't have
+
+[00:27:24] PII information right now,
+but there is a use case popping up which
+
+[00:27:28] will handle PII.
+So let's say if we prioritise that,
+
+[00:27:31] that's going to be a good use case to
+test because ACP should, and you must be.
+
+[00:27:35] trying your PII implementation outside,
+right? So if there is any PII,
+
+[00:27:39] Yeah.
+
+[00:27:39] Yeah.
+
+[00:27:39] how does it screen?
+So let's say if I ask for a send number,
+
+[00:27:43] it comes encrypted and it doesn't go to
+any LLM infrastructure with the PII.
+
+[00:27:48] It encrypts with the small language model
+or anything offered within ACP, right?
+
+[00:27:52] That's the expectation.
+
+[00:27:54] Because if you use the agent core or
+Bedrock to encrypt your data that's going
+
+[00:27:59] into another model,
+you're actually sending your data to a
+
+[00:28:03] model, right? Which is what we don't want.
+So how can ACP manage that? And of course,
+
+[00:28:08] Birt.
+
+[00:28:09] we want to use the LLM auto,
+which is what a feature of Light LLM that
+
+[00:28:14] we have used,
+like a fallback modelling and the LLM
+
+[00:28:18] auto.
+
+[00:28:18] So what does that do is it automatically
+determines the user's request and pass it
+
+[00:28:23] to automatically which model to route to
+the model which is good for their ask.
+
+[00:28:27] And that's done like a GEV.
+I don't know if you have heard about GEV,
+
+[00:28:29] The.
+
+[00:28:31] which is a new kind of a way of
+identifying whether you give a bigger
+
+[00:28:35] thing, it just gives you yes, no,
+or the options. Like, okay,
+
+[00:28:39] this is the right option for you.
+And then it routes further, right?
+
+[00:28:40] Okay.
+
+[00:28:43] So we are not exactly using Joe,
+but we are using something very similar
+
+[00:28:48] in light LLM, right?
+So how can we do that,
+
+[00:28:50] like an auto routing of LLMs?
+That's the key at a starting point.
+
+[00:28:56] So,
+LLM inferencing plus how the costs and
+
+[00:28:59] tokens are broken down in ACP with what
+Galileo is doing. Second,
+
+[00:29:04] the tracing of logs and if has redacted
+within ACP,
+
+[00:29:08] if they're redacted in Galileo,
+and the third one.
+
+[00:29:11] And then you can switch, can switch,
+right?
+
+[00:29:12] Mhm.
+
+[00:29:14] No subject.
+
+[00:29:14] BI management, kill switch,
+and auto routing. Those are...
+
+[00:29:17] Okay. Auto LLM routing.
+
+[00:29:21] Or, yes.
+
+[00:29:22] Okay. Okay. Okay.
+
+[00:29:23] Right.
+And I know you have been working on the
+
+[00:29:26] LLM toxicity and allowing all the models
+and whatnot, right? So right now,
+
+[00:29:29] Yep.
+
+[00:29:31] most of our LLM use is coming from AWS
+Bedrock, right?
+
+[00:29:35] We are not hitting snowflake cortex for
+any of the LLMs,
+
+[00:29:38] Mm-hmm.
+
+[00:29:38] Yep.
+
+[00:29:39] but we have that in light LLM,
+but we are not.
+
+[00:29:42] Using it,
+so we don't need that to start with.
+
+[00:29:43] Got it.
+
+[00:29:45] Okay, that's a good place to start,
+I think, Pritha.
+
+[00:29:48] I think we've got quite good requirements
+there. Thank you for that.
+
+[00:29:48] Yeah.
+
+[00:29:49] Mhm.
+
+[00:29:49] Yeah, so that's next steps, right?
+We are right on time, so as next steps,
+
+[00:29:53] what I'll do is grab these transcripts
+and update our D zeros,
+
+[00:29:57] so that way we have latest information,
+and once we have the design in place,
+
+[00:30:01] we'll have the review with your team,
+Ankit. That way, we are all in sync,
+
+[00:30:03] Yeah.
+
+[00:30:04] Yeah.
+
+[00:30:05] and then we can, you know...
+
+[00:30:07] Ranjula will help your team on board to
+ACP, OK?
+
+[00:30:10] Yeah, sounds good. Thank you.
+
+[00:30:11] No.
+
+[00:30:11] Thank you, Tina. This is helpful.
+
+[00:30:12] Thank you so much.
+It was such a productive call. Thank you.
+
+[00:30:13] Makes sense.
+
+[00:30:15] Thank you, everyone. Appreciate it. Bye.
+
+[00:30:15] Right, bye.
+
+[00:30:15] Thank you.
+
+[00:30:16] Tang you.

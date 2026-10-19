@@ -1,0 +1,73 @@
+component: governance-intake-ui
+title: Governance Intake UI & AI-Assisted Triage
+description: "The user-facing surface of governance intake, split out of governance-intake\
+  \ (EACPP-877) so the UI flow and API handoff get their own design and implementation\
+  \ discussion. Covers the front-door decision (does the Governance-by-Design UI remain\
+  \ the entry point, or do users move into ACP/Luminate), target personas and the\
+  \ end-to-end journey, the frontend-agnostic API handoff contract, the intake form\
+  \ specification, auto-population from the Luminate catalog, and how AI assistance\
+  \ is delivered on Luminate.\n\nPredecessor: T1KACP/acp-specs/specs/ui-governance-intake\
+  \ (EACPP-375), which specified a React module inside the internal ACP Management\
+  \ UI with an advisory assistant panel \u2014 11 sections, 120+ fields, a 12-question\
+  \ risk form and a bias assessment. That content is largely still valid; its host\
+  \ and its assistance mechanism are what changed.\n\nScope boundary: governance-intake\
+  \ owns how risk is assessed (questionnaire, bands, obligations, gates, evidence)\
+  \ and keeps the API contract. This spec owns the surface. The UI renders and submits;\
+  \ scoring stays in the engine.\n\nh2. Problem Statement\n\u2022 No agreed front\
+  \ door \u2014 whether the GbD UI stays the entry point with ACP reached via APIs,\
+  \ or users move into Luminate, is undecided and has build consequences for both\
+  \ teams\n\u2022 Target personas undefined \u2014 the end-to-end experience is not\
+  \ mapped to requester, reviewer, or 1LoD/2LoD/3LoD approver\n\u2022 The API handoff\
+  \ is unspecified \u2014 what is called, when, with what payload, and what returns\
+  \ does not exist as a contract\n\u2022 The AI-assisted triage form may need updating\
+  \ \u2014 designed against the internal build; flagged in the alignment session,\
+  \ changes unconfirmed\n\u2022 Redundant data entry persists \u2014 teams re-enter\
+  \ agent, model and tool metadata the registries already hold\n\u2022 Assistance\
+  \ has no agreed delivery mechanism on Luminate \u2014 the internal build brokered\
+  \ to an externalised agent; Amazon Quick was proposed then flagged as uncertain\n\
+  \nh2. Opportunity\n\u2022 One decision unblocks two teams building in parallel\n\
+  \u2022 Auto-population from the Luminate catalog removes most manual entry\n\u2022\
+  \ Assistance as an enhancement, not a dependency \u2014 deterministic-first, consistent\
+  \ with governance-intake NFR-6\n\u2022 A frontend-agnostic contract proves governance-intake\
+  \ FR-1 rather than asserting it\n\u2022 Reuse of real design work \u2014 the predecessor's\
+  \ form content, conditional logic and risk questions remain valid\n\nh2. Acceptance\
+  \ Criteria\n\u2022 Front-door decision recorded as an ADR with both teams signed\
+  \ up\n\u2022 Personas and end-to-end journey documented\n\u2022 API handoff contract\
+  \ published and drivable by a client that is not the reference UI\n\u2022 Form specification\
+  \ re-confirmed against current obligations and content packs\n\u2022 Auto-population\
+  \ working from the Luminate catalog for registered assets\n\u2022 Assistance degrades\
+  \ gracefully \u2014 the form is fully usable with the assistant unavailable\n\u2022\
+  \ A submission drives the engine \u2014 band, required gates and lifecycle state\
+  \ returned and surfaced\n\nh2. In Scope\n\u2022 Front-door decision (ADR)\n\u2022\
+  \ Persona and journey definition\n\u2022 Frontend-agnostic API handoff contract\n\
+  \u2022 Intake form specification \u2014 sections, fields, conditional logic\n\u2022\
+  \ Registry auto-population from the Luminate catalog\n\u2022 AI assistance mechanism\
+  \ decision \u2014 advisory only, graceful degradation\n\u2022 Risk and bias assessment\
+  \ surfaces over the engine's scoring\n\u2022 Artifact upload and evidence linkage\n\
+  \u2022 Lifecycle and gate feedback to the user\n\u2022 Content-pack version surfaced\
+  \ on the assessment\n\nh2. Out of Scope\n\u2022 The risk engine itself \u2014 scoring,\
+  \ bands, obligations, gates, evidence (governance-intake)\n\u2022 Questionnaire\
+  \ and threshold content (governance-content-packs; CMRM and GbD author it)\n\u2022\
+  \ GbD's assessment module / risk-scoring engine \u2014 GbD's own build\n\u2022 Archer\
+  \ and ServiceNow form design \u2014 consumed via API (archer-grc-sync)\n\u2022 Onboarding\
+  \ GbD's agents onto ACP (gbd-acp-integration)\n\u2022 Other risk-domain forms beyond\
+  \ making the shell extensible\n\u2022 Collibra metamodel changes\n"
+current_gate: D0
+status: draft
+spec_type: onboarding
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-1076
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113222943422"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- governance-intake
+- governance-content-packs
+- sunlife-deployment
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []

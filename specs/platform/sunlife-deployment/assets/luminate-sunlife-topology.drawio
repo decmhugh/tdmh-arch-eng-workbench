@@ -1,0 +1,195 @@
+<mxfile host="acp-product-specs" agent="copilot" version="1">
+  <diagram id="slf-luminate-topology" name="Sun Life Luminate Deployment Topology">
+    <mxGraphModel dx="1960" dy="1080" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1980" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="ghe" value="AI Consortium GHE&#10;ghcr.io/acp-consortium/*" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="210" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="slfnet" value="Sun Life network" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FAFAFA;strokeColor=#546E7A;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontSize=11;fontStyle=1;fontColor=#37474F;" vertex="1" parent="1">
+          <mxGeometry x="20" y="180" width="210" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="artifactory" value="Artifactory&#10;consortium-docker&#10;GHCR pull-through mirror" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="slfnet">
+          <mxGeometry x="12" y="34" width="186" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="jenkins" value="Jenkins&#10;luminate-deploy · luminate-smoke&#10;helm upgrade + post-deploy checks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="slfnet">
+          <mxGeometry x="12" y="116" width="186" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="vault" value="HashiCorp Vault&#10;secrets via VSO&#10;AWS Secrets Manager = fallback only" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="slfnet">
+          <mxGeometry x="12" y="198" width="186" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="tfc" value="HCP Terraform&#10;elasticache · langfuse stacks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="slfnet">
+          <mxGeometry x="12" y="264" width="186" height="54" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge" value="Edge identity&#10;Entra ID · Okta&#10;API Platform light-proxy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="545" width="210" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aws" value="AWS Cloud" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="40" width="1680" height="862" as="geometry" />
+        </mxCell>
+        <mxCell id="region" value="Region · ca-central-1" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_region;strokeColor=#147EBA;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=1;" vertex="1" parent="aws">
+          <mxGeometry x="30" y="50" width="1620" height="782" as="geometry" />
+        </mxCell>
+
+        <mxCell id="axisA_label" value="AXIS A · platform environments — each one is a separate install of Luminate itself, owned by the ACP platform team. Promotion here upgrades the product, not a workload." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#37474F;" vertex="1" parent="region">
+          <mxGeometry x="30" y="30" width="1560" height="30" as="geometry" />
+        </mxCell>
+
+        <mxCell id="acct_dev" value="Account · ACP dev · 360967146904" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FFFFFF;strokeColor=#6C8EBF;verticalAlign=top;align=center;fontSize=12;fontStyle=1;fontColor=#4472A8;spacingTop=4;" vertex="1" parent="region">
+          <mxGeometry x="30" y="72" width="372" height="482" as="geometry" />
+        </mxCell>
+        <mxCell id="eks_dev" value="EKS · slf-eks-t1k-ca-dev" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_ecs;strokeColor=#D86613;fillColor=#FFF8F3;verticalAlign=top;align=left;spacingLeft=26;fontColor=#D86613;dashed=0;" vertex="1" parent="acct_dev">
+          <mxGeometry x="14" y="30" width="344" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_lum" value="ns luminate&#10;backend · frontend · gateway · dbos-worker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_dev">
+          <mxGeometry x="16" y="44" width="312" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_idp" value="ns keycloak&#10;internal M2M issuer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_dev">
+          <mxGeometry x="16" y="112" width="312" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_obs" value="ns luminate-observability&#10;Langfuse web + worker · ClickHouse + Keeper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_dev">
+          <mxGeometry x="16" y="168" width="312" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_plat" value="ns traefik · ns vault-secrets-operator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=10;verticalAlign=middle;" vertex="1" parent="eks_dev">
+          <mxGeometry x="16" y="230" width="312" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_svc" value="RDS Postgres · S3 · ElastiCache Valkey" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#147EBA;fontSize=10;verticalAlign=middle;fontColor=#147EBA;" vertex="1" parent="eks_dev">
+          <mxGeometry x="16" y="276" width="312" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_state" value="LIVE · reference deployment&#10;also hosts demo agents (claims, underwriting, slm-analyst)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#999999;dashed=1;fontSize=9;fontColor=#555555;verticalAlign=middle;" vertex="1" parent="eks_dev">
+          <mxGeometry x="16" y="322" width="312" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="dev_role" value="Sandbox · restart churn lands here&#10;Target: also runs the DEV workload gateways" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#4472A8;" vertex="1" parent="acct_dev">
+          <mxGeometry x="14" y="428" width="344" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="acct_uat" value="Account · ACP test · 692797214700" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FFFFFF;strokeColor=#6C8EBF;verticalAlign=top;align=center;fontSize=12;fontStyle=1;fontColor=#4472A8;spacingTop=4;" vertex="1" parent="region">
+          <mxGeometry x="422" y="72" width="372" height="482" as="geometry" />
+        </mxCell>
+        <mxCell id="eks_uat" value="EKS · slf-eks-t1k-ca-uat" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_ecs;strokeColor=#D86613;fillColor=#FFF8F3;verticalAlign=top;align=left;spacingLeft=26;fontColor=#D86613;dashed=0;" vertex="1" parent="acct_uat">
+          <mxGeometry x="14" y="30" width="344" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_lum" value="ns luminate&#10;backend · frontend · gateway · dbos-worker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_uat">
+          <mxGeometry x="16" y="44" width="312" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_idp" value="ns keycloak&#10;internal M2M issuer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_uat">
+          <mxGeometry x="16" y="112" width="312" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_obs" value="ns luminate-observability&#10;Langfuse web + worker · ClickHouse + Keeper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_uat">
+          <mxGeometry x="16" y="168" width="312" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_plat" value="ns traefik · ns vault-secrets-operator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=10;verticalAlign=middle;" vertex="1" parent="eks_uat">
+          <mxGeometry x="16" y="230" width="312" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_svc" value="RDS Postgres · S3 · ElastiCache Valkey" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#147EBA;fontSize=10;verticalAlign=middle;fontColor=#147EBA;" vertex="1" parent="eks_uat">
+          <mxGeometry x="16" y="276" width="312" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_state" value="LIVE · in-account Bedrock verified" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#999999;dashed=1;fontSize=9;fontColor=#555555;verticalAlign=middle;" vertex="1" parent="eks_uat">
+          <mxGeometry x="16" y="322" width="312" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="uat_role" value="Platform verification · P1 pilot&#10;Target: also runs the SIT workload gateways" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#4472A8;" vertex="1" parent="acct_uat">
+          <mxGeometry x="14" y="428" width="344" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="acct_stg" value="Account · ACP stage · 775755739292" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FFFFFF;strokeColor=#6C8EBF;verticalAlign=top;align=center;fontSize=12;fontStyle=1;fontColor=#4472A8;spacingTop=4;" vertex="1" parent="region">
+          <mxGeometry x="814" y="72" width="372" height="482" as="geometry" />
+        </mxCell>
+        <mxCell id="eks_stg" value="EKS · slf-eks-t1k-ca-stage" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_ecs;strokeColor=#D86613;fillColor=#FFF8F3;verticalAlign=top;align=left;spacingLeft=26;fontColor=#D86613;dashed=0;" vertex="1" parent="acct_stg">
+          <mxGeometry x="14" y="30" width="344" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_lum" value="ns luminate&#10;backend · frontend · gateway · dbos-worker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_stg">
+          <mxGeometry x="16" y="44" width="312" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_idp" value="ns keycloak&#10;internal M2M issuer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_stg">
+          <mxGeometry x="16" y="112" width="312" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_obs" value="ns luminate-observability&#10;Langfuse web + worker · ClickHouse + Keeper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_stg">
+          <mxGeometry x="16" y="168" width="312" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_plat" value="ns traefik · ns vault-secrets-operator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=10;verticalAlign=middle;" vertex="1" parent="eks_stg">
+          <mxGeometry x="16" y="230" width="312" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_svc" value="RDS Postgres · S3 · ElastiCache Valkey HA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#147EBA;fontSize=10;verticalAlign=middle;fontColor=#147EBA;" vertex="1" parent="eks_stg">
+          <mxGeometry x="16" y="276" width="312" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_state" value="LIVE · production-shaped verification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#999999;dashed=1;fontSize=9;fontColor=#555555;verticalAlign=middle;" vertex="1" parent="eks_stg">
+          <mxGeometry x="16" y="322" width="312" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="stg_role" value="Last gate before prod&#10;Target: also runs the STAGE workload gateways" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#4472A8;" vertex="1" parent="acct_stg">
+          <mxGeometry x="14" y="428" width="344" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="acct_prd" value="Account · ACP prod · 035722575935" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FFFFFF;strokeColor=#B85450;verticalAlign=top;align=center;fontSize=12;fontStyle=1;fontColor=#B85450;spacingTop=4;" vertex="1" parent="region">
+          <mxGeometry x="1206" y="72" width="384" height="482" as="geometry" />
+        </mxCell>
+        <mxCell id="eks_prd" value="EKS · slf-eks-t1k-ca-prod" style="sketch=0;outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=11;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_ecs;strokeColor=#D86613;fillColor=#FFF8F3;verticalAlign=top;align=left;spacingLeft=26;fontColor=#D86613;dashed=0;" vertex="1" parent="acct_prd">
+          <mxGeometry x="14" y="30" width="356" height="388" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_lum" value="ns luminate&#10;backend · frontend · gateway · dbos-worker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_prd">
+          <mxGeometry x="16" y="44" width="324" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_idp" value="ns keycloak&#10;internal M2M issuer — deployed and usable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_prd">
+          <mxGeometry x="16" y="112" width="324" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_obs" value="ns luminate-observability&#10;Langfuse web + worker · ClickHouse + Keeper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;fontSize=10;fontStyle=1;verticalAlign=middle;" vertex="1" parent="eks_prd">
+          <mxGeometry x="16" y="168" width="324" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_plat" value="ns traefik · ns vault-secrets-operator" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#999999;fontSize=10;verticalAlign=middle;" vertex="1" parent="eks_prd">
+          <mxGeometry x="16" y="230" width="324" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_svc" value="RDS Postgres · S3 · ElastiCache Valkey HA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#147EBA;fontSize=10;verticalAlign=middle;fontColor=#147EBA;" vertex="1" parent="eks_prd">
+          <mxGeometry x="16" y="276" width="324" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_state" value="LIVE · direct Entra ID SSO&#10;this install carries the business workloads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAFAFA;strokeColor=#999999;dashed=1;fontSize=9;fontColor=#555555;verticalAlign=middle;" vertex="1" parent="eks_prd">
+          <mxGeometry x="16" y="322" width="324" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="prd_role" value="Axis B lives in here — see note below&#10;The one control plane, and the PROD gateways" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#B85450;" vertex="1" parent="acct_prd">
+          <mxGeometry x="14" y="428" width="356" height="34" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bedrock" value="Bedrock — in-account, in every environment" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#FAFAFA;strokeColor=#546E7A;dashed=1;verticalAlign=top;align=left;spacingLeft=10;fontSize=11;fontStyle=1;fontColor=#37474F;" vertex="1" parent="region">
+          <mxGeometry x="30" y="584" width="760" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="bedrock_note" value="Each gateway calls Bedrock in the account and region it runs in, with its own role (hub role luminate-gateway-irsa; -us in us-east-1). No keys and no shared spoke account. The SCP permits only approved models, so a model that is registered but not approved fails at AWS." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;fontColor=#37474F;" vertex="1" parent="bedrock">
+          <mxGeometry x="14" y="32" width="732" height="66" as="geometry" />
+        </mxCell>
+
+        <mxCell id="axisB" value="AXIS B · workload environments — where business teams actually deploy" style="rounded=1;html=1;whiteSpace=wrap;container=1;collapsible=0;fillColor=#F6F3FB;strokeColor=#4527A0;verticalAlign=top;align=left;spacingLeft=12;fontSize=11;fontStyle=1;fontColor=#4527A0;" vertex="1" parent="region">
+          <mxGeometry x="818" y="584" width="772" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="axisB_note" value="The four accounts above are installs of the product, not where a business team promotes a workload. DEV · SIT · STAGE · PROD are rows inside the prod install: one control plane, one catalogue, one audit trail. Target: each environment's gateways run in that environment's account above, in ca-central-1 and us-east-1, and reach the prod control plane over an outbound TLS control link. Today all eight run in the prod account. Owned by the gateway-environment-strategy spec." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=top;fontSize=10;fontColor=#4527A0;" vertex="1" parent="axisB">
+          <mxGeometry x="14" y="32" width="744" height="66" as="geometry" />
+        </mxCell>
+
+        <mxCell id="regionnote" value="Serving regions are ca-central-1 and us-east-1, and the list is open. A region adds gateways in each environment's account — never another set of these installs, which stay in ca-central-1. Deploying the whole application per region is an anti-pattern: it forks the catalogue, the governance record and the audit trail." style="text;html=1;whiteSpace=wrap;align=left;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#147EBA;" vertex="1" parent="region">
+          <mxGeometry x="30" y="712" width="1560" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_ghe" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ghe" target="slfnet">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_jen" value="helm upgrade&#10;values-{env}.yaml" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#4472A8;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" edge="1" parent="1" source="jenkins" target="acct_dev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_edge" value="user SSO" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#666666;dashed=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.9;entryDx=0;entryDy=0;" edge="1" parent="1" source="edge" target="acct_dev">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" value="promote the platform" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#4472A8;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="region" source="acct_dev" target="acct_uat">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#4472A8;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="region" source="acct_uat" target="acct_stg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeColor=#4472A8;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="region" source="acct_stg" target="acct_prd">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

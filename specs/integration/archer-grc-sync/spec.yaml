@@ -1,0 +1,52 @@
+component: archer-grc-sync
+title: "Archer GRC Sync \u2014 Evidence Publication, Synthetic Archer & APM Pass-Through"
+description: 'The Sun Life publication path from Luminate''s governance subsystem into
+  Archer, the enterprise GRC system of record. Re-based on Luminate in September 2026:
+  Luminate now owns obligation profiles, an append-only evidence contract, a published
+  governance status that denies at the access layer, and a compliance export, and its
+  Governance Mode D2 rules an Archer sync out of core and constrains it to one-way-out.
+  This spec therefore stops specifying an evidence store and specifies a publisher: it
+  carries the Archer and APM identifiers as member attributes, projects Luminate''s two
+  lifecycle axes onto Archer''s single field, publishes the compliance pack and governance
+  status by export/attach and later by API, and refuses to write scope, band or verdict
+  back into the platform. It also records the registry-content gaps RG-1..RG-12 that
+  Archer needs and Luminate does not yet carry.'
+current_gate: D3
+status: draft
+spec_type: integration
+gate_status: "Re-based on Luminate 9 Sep 2026 \u2014 D1/D2/D3 rewritten against luminate@a0d31c10e; blocked on OQ-A1 (external identifier shape) and OQ-A3 (band authorship), not on Archer API access"
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-1003
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113134371260"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- governance-intake
+- luminate-control-plane
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

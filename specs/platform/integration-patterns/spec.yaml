@@ -1,0 +1,92 @@
+component: integration-patterns
+title: "ACP / Luminate Integration Patterns"
+description: |
+  The catalogue of supported patterns for integrating an existing application with ACP / Luminate: how it authenticates, how it reaches models, MCP tools and other agents, and where model inference actually executes.
+
+  Seven use cases are specced for onboarding and each is rediscovering the same integration decisions. This spec gives them a decision tree and one page per pattern, so an onboarding spec references a pattern rather than inventing one.
+
+  Covers the four credential shapes the gateway accepts, the portal client-credentials exchange and its rate limit, the three invocation surfaces (/llm, /mcp, /a2a), and the two model inference patterns. Inference is separated into two axes: where the Bedrock call executes and therefore who AWS bills (consumer-account, where the gateway assumes a role provisioned into the consumer's account by the published acp-aws-service-catalog product; or centralized, where Bedrock is enabled in the ACP workload account and ACP fronts the spend), and where the workload runs (team AWS account, Bedrock AgentCore runtime, or OpenShift/Kubernetes). In both billing patterns the gateway makes the call; the workload never holds a Bedrock credential.
+
+  Every pattern carries a maturity label - works today, partial, or blocked - because a catalogue that does not distinguish working from aspirational is worse than no catalogue. Mechanics live in luminate-user-guides; this spec owns which patterns exist.
+
+  h2. Problem Statement
+  • No pattern catalogue exists - a team asking how to call a governed model gets a conversation, not a page, and the answer varies by who they ask
+  • The credential story is non-obvious - a credential belongs to a (resource, gateway) pair, is shown once, and does not exist until the resource is deployed
+  • Registration and invocation have different answers today: the gateway data path works with a machine credential, the catalogue path does not, because registry machine-to-machine auth is default-off
+  • The gateway accepts four credential shapes with different validation and different eligibility per endpoint; an MCP delegated endpoint refuses an API key with a 403 that looks like a policy denial
+  • Two model inference billing patterns are conflated with where the workload runs, and which applies decides who AWS bills and whether chargeback is needed at all
+  • Teams without an AWS workload account - Strands agents on OpenShift being the motivating case - have no documented path; only centralized serves them, which is why chargeback gates it
+  • The ACP hub account is SCP-denied from bedrock:*, which is why role-chaining into a consumer spoke exists at all, and why centralized needs an organisation-level SCP change rather than configuration
+
+  h2. Opportunity
+  • One page per pattern, chosen by a decision tree
+  • The onboarding specs stop re-deriving and their D1s get shorter
+  • The non-AWS path becomes real - centralized inference gives OpenShift and Kubernetes workloads a supported route to Bedrock
+  • Chargeback gets a stated position rather than an assumption
+  • The harness SDK makes call sites portable between builds and between environments as configuration, not code
+
+  h2. Acceptance Criteria
+  • A team can pick its pattern from a diagram without asking the platform team
+  • Each pattern states its credential shape, invocation path, failure modes and maturity label
+  • The two inference billing patterns are distinguished, with who AWS bills and whether chargeback is needed
+  • A workload with no AWS account has a documented, supported route to a governed model
+  • The chargeback position is explicit - what exists, what does not, what would be needed
+  • The onboarding specs reference this catalogue instead of re-deriving
+  • Every gap is a named consortium ask, not a local workaround
+
+  h2. In Scope
+  • Pattern catalogue with a decision tree
+  • Identity and credentials - the four shapes, Keycloak and portal flows, token exchange, TTL, caching, storage
+  • Gateway invocation - /llm, /mcp, /a2a paths, authorization, failure modes
+  • MCP patterns including the delegated on-behalf-of path
+  • Model inference patterns - consumer-account (gateway assumes into the consumer's account, AWS bills the consumer) and centralized (Bedrock in the ACP workload account, chargeback required), plus the hosting shapes that compose with them
+  • Cost attribution and chargeback - what exists and what does not
+  • Adoption paths - harness SDK versus raw HTTP, and what registration actually requires today
+  • Gaps and the consortium asks that unblock them
+
+  h2. Out of Scope
+  • Environment and gateway topology - gateway-environment-strategy (EACPP-1089)
+  • Onboarding any specific use case - each has its own spec
+  • Governance intake and risk classification - governance-intake (EACPP-877)
+  • Building the SDK - acp-harness-sdk (EACPP-791) and aws-harness-integration (EACPP-707)
+  • Gateway internals - routing, guardrails and the proxy data path are consortium-owned
+  • Deploying Luminate - sunlife-deployment (EACPP-596)
+  • Authoring the end-user guides - luminate-user-guides is the canonical home
+
+current_gate: D3
+status: draft
+spec_type: platform
+owner: "Sun Life ACP Product Team"
+team: "EDAE ACP"
+
+jira_epic: "EACPP-1112"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113164845121"
+repo: "EDAEACP/acp-product-specs"
+
+depends_on:
+  - gateway-environment-strategy
+  - aws-harness-integration
+  - sunlife-deployment
+
+gates:
+  d0:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []

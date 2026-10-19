@@ -1,0 +1,43 @@
+component: sunlife-deployment
+title: Sun Life Deployment of Luminate
+description: Deploying the consortium Luminate platform into the Sun Life environment
+  -- Helm chart fork, managed EKS, Traefik/Gateway API, Vault, Okta, Langfuse tier,
+  Bedrock adapter integration, and API Platform onboarding. Sun Life Product Team
+  work breakdown.
+current_gate: D3
+status: draft
+spec_type: platform
+owner: Sun Life Product Team
+team: EDAE ACP
+jira_epic: EACPP-596
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113014080333"
+repo: luminate-sunlife-deploy
+depends_on:
+- gateway-environment-strategy
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

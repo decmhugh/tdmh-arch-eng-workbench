@@ -1,0 +1,63 @@
+component: self-service-onboarding
+title: Self-Service Onboarding — Automating ACP Platform Administration
+description: >-
+  Turn the ACP Product Team's manual platform administration into automated, auditable
+  pipelines. Every team adopting ACP today is provisioned by hand — folder, project, role
+  bindings, deployment onto a gateway, OAuth credential, machine identity, promotion to the
+  next environment — each a runbook in acp-product-devkit driven by `kubectl exec ...
+  manage.py shell`. Deployment in particular cannot be delegated to any role, not even a
+  project Owner, so it is a mandatory hand-off for every resource a team registers. This spec
+  defines one request contract behind three front doors (Jira, ServiceNow catalog item, an
+  ACP-governed chatbot), eight Jenkins JTE pipelines that execute those requests, verification
+  as a pipeline stage rather than a follow-up, and credential custody that writes the secret to
+  the requester's secret store instead of handing it to a person.
+
+current_gate: D3
+status: draft
+spec_type: platform
+gate_status: >-
+  D0–D3 drafted 2026-09-16 against luminate origin/main 91f57d500 and
+  luminate-sunlife-deploy origin/main e7f469e. Nine gaps open (G-1..G-9); G-1 (no machine
+  authentication on the administrative REST surfaces) is what forces the interim
+  `kubectl exec` executor and is the one consortium ask. Unreviewed — D3 tasks not yet
+  created in Jira.
+
+owner: Seth Chalmers
+team: EDAE ACP Product Team
+
+jira_epic: EACPP-1325
+agileplace_card: ''
+confluence_page: https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113258987659/Self-Service+Onboarding
+repo: acp-product-devkit
+
+depends_on:
+- acp-customer-journey
+- sunlife-deployment
+- gateway-environment-strategy
+
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

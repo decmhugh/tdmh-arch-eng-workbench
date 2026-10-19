@@ -1,0 +1,51 @@
+component: governance-content-packs
+title: "Governance Content Packs \u2014 CMRM/GbD Content as Versioned Configuration"
+description: The Sun Life pipeline that turns governance content authored by CMRM
+  and Governance-by-Design (the GenAI Model Risk Classification Field Guide, the 40
+  MBCT validation obligations across 9 domains, the GenAI Evaluation Metric Selection
+  Guide, and the band-to-Model-Risk-tier map) into versioned, schema- validated configuration
+  that Luminate loads as seed data. Authors keep Confluence and Excel; ACP Product
+  owns conversion, schema validation and release. Everything ships as a numbered content
+  pack so an approval can record exactly which questionnaire, obligation set and thresholds
+  it was judged against. Resolves the "who maintains this artifact" question consistently
+  across the risk-classification module, the obligation registry, per-band validation
+  gates and the evaluation metric guide.
+current_gate: D3
+status: draft
+spec_type: governance
+gate_status: "Discovery drafted from the 12 Aug 2026 alignment session \u2014 awaiting\
+  \ CMRM/GbD confirmation of the authoring contract"
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-990
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113134928186"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- governance-intake
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

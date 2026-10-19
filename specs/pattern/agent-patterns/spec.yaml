@@ -1,0 +1,100 @@
+component: agent-patterns
+title: "Agent Patterns — Building, Hosting, Registering and Invoking an Agent"
+description: |
+  The generalized pattern for how an agent is built, hosted, registered, governed and invoked on ACP / Luminate, and the conformance requirements an agent must meet before the platform will serve it.
+
+  An MCP server is only ever a callee. An agent is both, and the two directions are separate registrations with separate requirements. **Egress** — the agent as caller, reaching models over `/llm`, tools over `/mcp` and other agents over `/a2a` — is what most teams mean by "onboard my agent". **Ingress** — the agent as callee, invoked by another agent over `/a2a` — is a different endpoint, a different credential and a different authorization question. A team that registers for egress and assumes its agent is now callable is the failure mode this pattern exists to prevent.
+
+  Covers the catalogue and lifecycle model, the egress governance surface (source policies, credential shapes, where credentials actually hang), the ingress A2A lane as it now runs (route translation, the on-behalf-of exchange, RFC 9728 discovery, withholding), four hosting substrates with a requirements annex each, the approved Jenkins JTE build path, and the operational surface — audit, tracing, run correlation and the stop path.
+
+  Every requirement carries an enforcement point and a verification method, and every absence is a search that returned nothing.
+
+  h2. Problem Statement
+  • Egress and ingress are conflated. Registering an agent and granting it a model makes it a governed caller; it does not make it callable. Nothing in the product or the guidance says so, and eight of the ten agents registered in dev are egress-only without anyone having decided that
+  • The stop control is asymmetric and nobody has stated it. Setting an agent inactive denies every A2A call *to* it, and denies nothing it does: the rego matches a source policy on the JWT subject alone and never consults the agent's status. Deactivating a misbehaving agent does not stop it reaching a model
+  • Governance state is modelled, audited and inert — zero references in the policy engine, the access-policy app, the gateway and every Rego package. The suspension module says so itself: "the state is real and the denial is not"
+  • Guardrails cannot be attached to an agent as a callee. There is no target-agent scope and no agent branch in the Rego, so content control on the A2A lane exists only if every caller happens to carry one
+  • The two environments disagree about what an A2A call even is. Dev serves both A2A routes with an on-behalf-of token exchange; prod runs a build that predates it and serves the same shape with no credential at all
+  • The A2A discovery contract cannot be met through the gateway — nothing in the platform serves or proxies an agent card, and `/.well-known/` is answered locally
+  • The adoption path does not reach the lane it advertises. The harness SDK's A2A method sends no credential, and its default gateway credential is the one shape a delegated A2A endpoint refuses
+  • Substrate is unbounded — OpenShift, EKS, Bedrock AgentCore and Lambda each have a different reachability, TLS, identity and cold-start story, written down nowhere
+  • There is no ETAB or ISRA artefact for the agent lane
+
+  h2. Opportunity
+  • One conformance profile — ASR-1 to ASR-38 — assessed once per agent and reusable for every ISRA
+  • Egress and ingress become two named decisions with two requirement sets, so "is my agent callable" stops being a support question
+  • The stop control becomes honest: what it reaches, what it does not, and what an operator must do instead
+  • A decision tree by substrate, so a team picks its shape without a meeting
+  • ETAB gets one architecture, one control table and a named residual-risk set
+  • The onboarding specs stop re-deriving the agent half of their design
+
+  h2. Acceptance Criteria
+  • A team can determine, from one page, what its agent must satisfy in each direction it operates
+  • Each hosting substrate states its reachability, TLS, identity, egress and build requirements
+  • The stop path is stated with what it does and does not reach, and its propagation is measured rather than quoted
+  • Every conformance requirement has an enforcement point, a verification method and an owner
+  • Any hosting platform outside the four specified substrates has a published set of criteria it is assessed against, and an open criterion rather than a refusal where it falls short
+  • assurance.md is sufficient on its own for the ETAB submission and the ISRA control table
+
+  h2. In Scope
+  • The agent conformance profile — direction, catalogue, identity, authorization, supply chain, runtime, data, observability and lifecycle
+  • Registration and deployment: what the catalogue requires, what makes an agent reachable, and where credentials hang
+  • Egress governance — source access policies, credential shapes, the guardrail and quota position
+  • Ingress / A2A — route translation, the delegated exchange, withholding, RFC 9728 discovery, and the agent-card gap
+  • Hosting substrates S1 OpenShift, S2 EKS, S3 Bedrock AgentCore, S4 AWS Lambda, plus the SUB-E / SUB-I admission criteria any other platform is assessed against
+  • The approved Jenkins JTE build path and its scanning gates
+  • Operations — audit, tracing, run correlation, cost attribution and the stop path
+  • The ETAB architecture and the ISRA control table
+
+  h2. Out of Scope
+  • Building any specific agent — this spec states requirements, not implementations
+  • The MCP server an agent calls — mcp-server-patterns (EACPP-1176)
+  • The credential, invocation and inference patterns shared with every lane — integration-patterns (EACPP-1112)
+  • Gateway and environment topology — gateway-environment-strategy (EACPP-1089)
+  • Re-specifying the harness SDK — acp-harness-sdk (EACPP-791) is referenced, not redesigned
+  • Agent framework selection — LangGraph, Strands, Bedrock AgentCore and the rest are substrate, not governance
+  • Gateway internals — routing, guardrail evaluation and the proxy data path are consortium-owned
+  • Authoring the end-user guides — luminate-user-guides is the canonical home
+
+current_gate: D3
+status: draft
+spec_type: pattern
+owner: "Sun Life ACP Product Team"
+team: "EDAE ACP"
+
+jira_epic: "EACPP-1290"
+atg_reference: "ATG0005678"
+isra_reference: "26-1956"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113225826875"
+repo: "EDAEACP/acp-product-specs"
+
+depends_on:
+  - mcp-server-patterns
+  - integration-patterns
+  - gateway-environment-strategy
+  - acp-harness-sdk
+  - sunlife-deployment
+  - governance-intake
+
+gates:
+  d0:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []

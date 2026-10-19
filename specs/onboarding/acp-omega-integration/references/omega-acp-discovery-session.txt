@@ -1,0 +1,1517 @@
+WEBVTT
+
+
+[00:00:03] Lalit Summan: why it exists, what we, what's the intent.
+Before we get into the product demo,
+
+
+[00:00:07] Lalit Summan: Andy and Mahmood,
+in terms of any questions about the
+
+
+[00:00:10] Lalit Summan: product itself.
+
+
+[00:00:17] Mahmoud Khalil: For me, I have no questions.
+
+
+[00:00:20] Andy Zhu: Yeah,
+I think Robert last week gave us a pretty
+
+
+[00:00:23] Andy Zhu: decent kind of overview of what's what we
+should expect.
+
+
+[00:00:27] Lalit Summan: Yeah.
+
+
+[00:00:28] Andy Zhu: So I think some questions I think will
+come after we heard the training. So,
+
+
+[00:00:34] Andy Zhu: all right, thanks.
+
+
+[00:00:36] Lalit Summan: Yeah, we have the ACP,
+we call it Luminate,
+
+
+[00:00:40] Lalit Summan: up and running within our dev environment.
+So that's what Seth will showcase today
+
+
+[00:00:46] Lalit Summan: for us.
+
+
+[00:00:50] Lalit Summan: Whenever you're ready, Sid, no pleasure.
+
+
+[00:00:51] Seth Chalmers: Let me see.
+
+
+[00:01:05] Seth Chalmers: OK, so while that's going up,
+we'll just open up the portal here.
+
+
+[00:01:17] Seth Chalmers: So this is the Luminate portal today.
+It's got basically agents, MCP servers,
+
+
+[00:01:26] Seth Chalmers: models, applications. So we've got a, oh,
+there it is. We've got a interactive.
+
+
+[00:01:36] Seth Chalmers: UI where you can go and register your
+agents, your MCP servers, models, apps,
+
+
+[00:01:42] Seth Chalmers: that sort of thing.
+
+
+[00:01:48] Seth Chalmers: And...
+
+
+[00:01:51] Seth Chalmers: This is the beauty of doing stuff in dev.
+It looks like a bunch of stuff was
+
+
+[00:01:58] Seth Chalmers: deleted.
+But so we've got basically models here.
+
+
+[00:02:03] Seth Chalmers: These are being synced from Bedrock.
+We also have some stuff underway for like
+
+
+[00:02:09] Seth Chalmers: self-hosted.
+
+
+[00:02:11] Seth Chalmers: models within the Sun Life environment.
+So we've actually,
+
+
+[00:02:15] Seth Chalmers: we're working on a pattern to establish
+like pulling small language models or
+
+
+[00:02:21] Seth Chalmers: essentially any language models that have
+gone through legal review over into our
+
+
+[00:02:28] Seth Chalmers: Sun Life environment.
+So we deploy them on.
+
+
+[00:02:31] Seth Chalmers: EKS, serve them.
+And the advantage of the ACP is that once
+
+
+[00:02:36] Seth Chalmers: all the traffic is going through one of
+our gateways,
+
+
+[00:02:41] Seth Chalmers: we can set policies on agents,
+MCP servers,
+
+
+[00:02:45] Seth Chalmers: and models and applications to allow that
+connection to take place if the right
+
+
+[00:02:52] Seth Chalmers: policies are there.
+
+
+[00:02:55] Seth Chalmers: So if I take a look at this one.
+
+
+[00:02:58] Seth Chalmers: You can kind of see how this works out.
+But we have various agents and policies
+
+
+[00:03:04] Seth Chalmers: that govern their action.
+So you can see this policy assistant has
+
+
+[00:03:10] Seth Chalmers: access to Claude 3 Haiku.
+It's got access to an MCP server called
+
+
+[00:03:15] Seth Chalmers: Claims Tools. And so let's just see.
+
+
+[00:03:19] Seth Chalmers: if it's just a UI glitch.
+
+
+[00:03:30] Seth Chalmers: So what I've got here is just a local
+kind of chat bot wrapper around some of
+
+
+[00:03:37] Seth Chalmers: the stuff registered in Luminate.
+So all of this is running in Bedrock.
+
+
+[00:03:43] Seth Chalmers: So there's an orchestrator agent which
+makes agent to agent calls over to
+
+
+[00:03:50] Seth Chalmers: other agents that are also deployed in
+Bedrock Agent Core.
+
+
+[00:03:54] Seth Chalmers: So they're deployed as Agent Core runtime
+environments.
+
+
+[00:03:58] Seth Chalmers: And so the claims intake agent,
+when I make a request over,
+
+
+[00:04:03] Seth Chalmers: it first goes to the orchestrator agent,
+makes a call over to one of its worker
+
+
+[00:04:09] Seth Chalmers: agents.
+
+
+[00:04:10] Seth Chalmers: all of the interactions like the agent to
+agent call, discovering the MCP tools,
+
+
+[00:04:17] Seth Chalmers: actually making the call to Cloud 3 Haiku
+in Bedrock,
+
+
+[00:04:22] Seth Chalmers: all of this is kind of governed through
+Luminate. And so basically this agent and.
+
+
+[00:04:29] Seth Chalmers: the models are only able to be called
+with associated access policies.
+
+
+[00:04:35] Seth Chalmers: And so hopefully this works as well. Yeah.
+So what I've done behind the scenes is
+
+
+[00:04:41] Seth Chalmers: kind of demo a blocked request.
+And so I tried to make internally within
+
+
+[00:04:47] Seth Chalmers: the agent code.
+
+
+[00:04:48] Seth Chalmers: This is essentially just trying to get it
+to call an Opus model.
+
+
+[00:04:53] Seth Chalmers: And if I go back to the policy,
+this only has access to Cloud 3 IQ
+
+
+[00:04:58] Seth Chalmers: running in Bedrock.
+So when I go and try and make a call to
+
+
+[00:05:02] Seth Chalmers: an Opus level model, it's banned.
+So essentially when it makes the call to
+
+
+[00:05:08] Seth Chalmers: the gateway,
+
+
+[00:05:09] Seth Chalmers: There's a policy that says you can't
+access this model,
+
+
+[00:05:14] Seth Chalmers: and so the access is denied and no
+further requests go through.
+
+
+[00:05:19] Seth Chalmers: And that's kind of the basic operation of
+the ACP.
+
+
+[00:05:23] Seth Chalmers: And this kind of allows us to implement
+many types of guardrails.
+
+
+[00:05:29] Seth Chalmers: So it could be trying to call an agent
+that doesn't have access to,
+
+
+[00:05:34] Seth Chalmers: another model that doesn't have access to,
+an MCP server it doesn't have access to,
+
+
+[00:05:39] Seth Chalmers: or there can be like bedrock guardrails
+which are applied.
+
+
+[00:05:43] Seth Chalmers: Let's say we want to filter some of the
+output, or it's trying to make a...
+
+
+[00:05:48] Seth Chalmers: a request or leak some secrets.
+These are sorts of things that we can
+
+
+[00:05:53] Seth Chalmers: control because all of the interaction
+for the agent is going through the
+
+
+[00:05:58] Seth Chalmers: gateway.
+It can also be a budgeting constraint or
+
+
+[00:06:02] Seth Chalmers: any types of token limits we might want
+to place on this agent.
+
+
+[00:06:06] Seth Chalmers: So all of these are features.
+
+
+[00:06:08] Seth Chalmers: that we can set within Luminate.
+And you can kind of have a visual of like
+
+
+[00:06:14] Seth Chalmers: what usage is going through.
+You can see the requests that I just made
+
+
+[00:06:20] Seth Chalmers: in here. So you can see the token usage,
+the model calls, that sort of thing.
+
+
+[00:06:28] Seth Chalmers: And then coming soon is also all the
+evaluations.
+
+
+[00:06:32] Seth Chalmers: So you can see any tests that were done,
+like using tools like LangFuse or
+
+
+[00:06:38] Seth Chalmers: OpenLayer, open source tooling as well.
+And because everything's going through
+
+
+[00:06:44] Seth Chalmers: the gateway,
+we can also see all of these metrics and
+
+
+[00:06:48] Seth Chalmers: stuff per agent model.
+
+
+[00:06:50] Seth Chalmers: MCP server as well.
+
+
+[00:06:56] Seth Chalmers: And that's kind of the basic gist of it.
+I'm not sure if there's any questions.
+
+
+[00:07:04] Andy Zhu: Yeah, and again,
+thanks for the for the presentation.
+
+
+[00:07:07] Andy Zhu: I guess I just have a quick question. So,
+you basically the demo is around this
+
+
+[00:07:13] Andy Zhu: Asian core and, like,
+is a usage case of an Asian core and plus
+
+
+[00:07:18] Andy Zhu: the MCP server combined in this use case,
+and we're just wondering...
+
+
+[00:07:23] Andy Zhu: Is that kind of like a mandatory thing to
+work with ACP?
+
+
+[00:07:27] Andy Zhu: It has to do with MCP or MCP with Agent
+Core, that kind of stuff, or it's just,
+
+
+[00:07:34] Andy Zhu: you know, this use case.
+
+
+[00:07:37] Seth Chalmers: Just this use case,
+so it also works like with OpenShift
+
+
+[00:07:42] Seth Chalmers: deployed MCP servers,
+any type of Kubernetes environment as
+
+
+[00:07:46] Seth Chalmers: well are all also supported.
+So the goal of the ACP is essentially to
+
+
+[00:07:52] Seth Chalmers: integrate with any type of agent tech
+platform.
+
+
+[00:07:57] Andy Zhu: I see. And the other, sorry,
+the other question I had was around,
+
+
+[00:08:04] Andy Zhu: so one of the playing point we're trying
+to resolve with Omega is that the...
+
+
+[00:08:15] Andy Zhu: Sorry, I hit the mute button,
+but the access problem we were having was
+
+
+[00:08:21] Andy Zhu: a lot of tools were invoking,
+and right now we're operating on a
+
+
+[00:08:27] Andy Zhu: functional ID-based access. Sorry,
+give me a second.
+
+
+[00:08:32] Seth Chalmers: Good.
+
+
+[00:08:37] Andy Zhu: All right, sorry guys. So,
+so first we're we're we're operating on
+
+
+[00:08:41] Andy Zhu: the functionality based. So, for example,
+right now we're accessing tools like
+
+
+[00:08:47] Andy Zhu: Jenkins or Bitbuckets or even OpenShift
+sometimes,
+
+
+[00:08:51] Andy Zhu: but those are based on the access of the
+of the functionality itself instead of
+
+
+[00:08:56] Andy Zhu: the actual access of the users,
+which raised the concern of security
+
+
+[00:09:01] Andy Zhu: issues.
+
+
+[00:09:02] Andy Zhu: and potentially allowing 1 user to have
+access to some places that they're not
+
+
+[00:09:08] Andy Zhu: supposed to have access to.
+And we were told kind of in their last
+
+
+[00:09:13] Andy Zhu: meeting that potentially,
+potentially that ACP can resolve this.
+
+
+[00:09:18] Andy Zhu: Do you have anything to add on that?
+
+
+[00:09:22] Seth Chalmers: Yep, yeah,
+so this is one of the main problems that
+
+
+[00:09:27] Seth Chalmers: the ACP is meant to solve.
+So what you're describing is like an on
+
+
+[00:09:33] Seth Chalmers: behalf of flow where a user invokes an
+agent which invokes a tool and you want
+
+
+[00:09:40] Seth Chalmers: that.
+
+
+[00:09:41] Seth Chalmers: users access to be delegated to that
+agent to basically restrict least
+
+
+[00:09:46] Seth Chalmers: privilege,
+like whatever that MCP server tool is
+
+
+[00:09:50] Seth Chalmers: exposing to the user's access.
+So there's a few moving pieces that need
+
+
+[00:09:52] Andy Zhu: Ohh.
+
+
+[00:09:54] Andy Zhu: Yeah.
+
+
+[00:09:55] Seth Chalmers: to be done to make that happen,
+but the ACP has all the back-end plumbing
+
+
+[00:10:01] Seth Chalmers: to do those on behalf of.
+
+
+[00:10:03] Seth Chalmers: flows now.
+So if you have a application or something
+
+
+[00:10:07] Seth Chalmers: like that, like Omega,
+and you have users signing in through SSO,
+
+
+[00:10:12] Seth Chalmers: they invoke an agent or MCP tool,
+which is integrated with the ACP,
+
+
+[00:10:17] Seth Chalmers: we can do that token exchange on behalf
+of the user.
+
+
+[00:10:22] Seth Chalmers: pass that on to the agent on the MCP
+server in kind, kind of along that chain.
+
+
+[00:10:29] Seth Chalmers: But that requires those tools that you're
+getting access to. So Jenkins, Bitbucket,
+
+
+[00:10:37] Seth Chalmers: these sorts of things as MCP servers.
+And there's a...
+
+
+[00:10:41] Andy Zhu: I see.
+
+
+[00:10:42] Seth Chalmers: There's work across the organization to
+make these kinds of MCP servers available.
+
+
+[00:10:48] Seth Chalmers: So those obviously I don't think are
+developed at this point,
+
+
+[00:10:52] Seth Chalmers: but once they're developed and registered
+in the ECP,
+
+
+[00:10:56] Seth Chalmers: we can handle all of those concerns in
+that on behalf of flow.
+
+
+[00:11:01] Andy Zhu: Ohh, that sounds that sounds great,
+because right now we're we're facing kind
+
+
+[00:11:07] Andy Zhu: of a kind of confusing situation right
+now,
+
+
+[00:11:10] Andy Zhu: which right now we're not onboarded like
+every all the tools we're having is still
+
+
+[00:11:16] Andy Zhu: like direct invoking instead of an MCP
+server for our agent for Omega.
+
+
+[00:11:23] Andy Zhu: And the reason behind it is that we
+learned that MCP internally within
+
+
+[00:11:27] Andy Zhu: SunLife is not allowed to make internal
+API codes, just which is kind of the case,
+
+
+[00:11:33] Andy Zhu: but if we like,
+if we have the like company approved MCP
+
+
+[00:11:36] Andy Zhu: for, you know, tools like Bitbuckets,
+and that would be a...
+
+
+[00:11:41] Andy Zhu: That would be great to enforce,
+but I guess the last question I have is
+
+
+[00:11:47] Andy Zhu: how does the integration of the ACP looks
+like and what kind of efforts need to be
+
+
+[00:11:55] Andy Zhu: put in there? Yeah.
+
+
+[00:11:57] Seth Chalmers: Yeah,
+so we have a few kind of bits of
+
+
+[00:12:01] Seth Chalmers: documentation to get you started.
+So we have a harness that we provide.
+
+
+[00:12:07] Seth Chalmers: It's A Python kind of client that you can
+import that will help you along,
+
+
+[00:12:14] Seth Chalmers: basically switching your
+
+
+[00:12:17] Seth Chalmers: current agent or deployment over to using
+the ACP. So essentially,
+
+
+[00:12:22] Seth Chalmers: how do you route to the ACP's gateway?
+So there's some changes you need to make
+
+
+[00:12:28] Seth Chalmers: to your code if you're not already using
+some type of gateway.
+
+
+[00:12:32] Seth Chalmers: And so we have like full user guides and
+everything like that.
+
+
+[00:12:37] Seth Chalmers: And then once we get you onboarded to the
+platform itself,
+
+
+[00:12:41] Seth Chalmers: we have a set of user guides for
+interacting with the platform,
+
+
+[00:12:45] Seth Chalmers: registering MCP servers,
+all that good stuff.
+
+
+[00:12:52] Andy Zhu: I see, perfect. So it's,
+I'm hearing about something related to
+
+
+[00:12:57] Andy Zhu: deployments around this,
+or do we need to add ACP as part of the
+
+
+[00:13:02] Andy Zhu: deployment,
+or do we need to deploy why ACP? Like,
+
+
+[00:13:05] Andy Zhu: what's that part relationship look like?
+
+
+[00:13:09] Seth Chalmers: Yeah,
+so the biggest part is registering like
+
+
+[00:13:12] Seth Chalmers: agents and MCP servers particularly.
+So if you have a new MCP server as part
+
+
+[00:13:17] Andy Zhu: Yeah.
+
+
+[00:13:18] Seth Chalmers: of your application that you want to
+integrate with the ACP,
+
+
+[00:13:22] Seth Chalmers: it'll need to be registered.
+And if you have like existing agents,
+
+
+[00:13:27] Seth Chalmers: those also need to be registered.
+
+
+[00:13:29] Seth Chalmers: And so that's done today through the UI.
+And then once those things are registered,
+
+
+[00:13:36] Seth Chalmers: Luminate will give you like OAuth
+credentials and things like that to
+
+
+[00:13:42] Seth Chalmers: connect.
+And then the biggest change is just
+
+
+[00:13:45] Seth Chalmers: within your actual agent. So your agent.
+
+
+[00:13:48] Seth Chalmers: Well,
+instead of like making a direct call to
+
+
+[00:13:51] Seth Chalmers: Bedrock or a particular MCP tool or
+server,
+
+
+[00:13:54] Seth Chalmers: it'll instead be routing all of its
+traffic through the ACP's gateway.
+
+
+[00:13:59] Seth Chalmers: So that's something we deploy and
+maintain.
+
+
+[00:14:02] Seth Chalmers: You don't have to deploy it yourself,
+but you have to make a slight code change,
+
+
+[00:14:08] Seth Chalmers: basically point your agent at.
+
+
+[00:14:10] Seth Chalmers: the gateway. MCP servers,
+it just follows all of the regular,
+
+
+[00:14:14] Seth Chalmers: if you have a custom MCP server deployed
+today,
+
+
+[00:14:17] Seth Chalmers: it's basically just the registration step
+and then getting some credentials issued
+
+
+[00:14:23] Seth Chalmers: through the Luminate portal.
+So not really any code change that needs
+
+
+[00:14:27] Seth Chalmers: to happen for your MCP server.
+
+
+[00:14:31] Andy Zhu: Sounds good, sounds good.
+I guess the final question I have, well,
+
+
+[00:14:36] Andy Zhu: it was,
+it sounds like everything is very
+
+
+[00:14:39] Andy Zhu: buildable and great and just less bit of
+concern, which is like,
+
+
+[00:14:44] Andy Zhu: so right now we don't have MCP and then
+it feels like the whole point of ACP is
+
+
+[00:14:51] Andy Zhu: to build was.
+
+
+[00:14:53] Andy Zhu: So guarantees and guard rules on the MCP.
+So we first,
+
+
+[00:14:57] Andy Zhu: I guess we first need to integrate with
+the MCP first if we need, you know,
+
+
+[00:15:04] Andy Zhu: to actually apply the ACP. And also,
+if we, like right now,
+
+
+[00:15:09] Andy Zhu: I'm just a bit concerned about the
+latencies and everything because right
+
+
+[00:15:16] Andy Zhu: now.
+
+
+[00:15:17] Andy Zhu: It's a direct tool calling for us,
+and it's really pretty time consuming,
+
+
+[00:15:22] Andy Zhu: and if you're integrating with ACP,
+I think it serves like a middle layer in
+
+
+[00:15:28] Andy Zhu: between the function calling and the
+backlog calls.
+
+
+[00:15:32] Andy Zhu: Will it introduce a greater kind of
+latency, because if we reintegrate?
+
+
+[00:15:38] Andy Zhu: Originally,
+it was just a regular to calling,
+
+
+[00:15:41] Andy Zhu: and it will then become like the code
+invoking the backrock and calling the MCP
+
+
+[00:15:47] Andy Zhu: API, but in the middle layer,
+there's also an ACP in between them,
+
+
+[00:15:52] Andy Zhu: which kind of raised me a little bit
+concerns about the latencies.
+
+
+[00:15:58] Andy Zhu: Just want to see how things are you guys
+are observing right now. Like,
+
+
+[00:16:03] Andy Zhu: is it bad or it's okay?
+
+
+[00:16:05] Seth Chalmers: Yeah,
+it's like routing through the gateway
+
+
+[00:16:08] Seth Chalmers: does add latency if you're not already
+routing through a different type of
+
+
+[00:16:14] Seth Chalmers: gateway.
+So it's about like 50 milliseconds to 100
+
+
+[00:16:17] Seth Chalmers: milliseconds,
+which is pretty immaterial if you're
+
+
+[00:16:21] Seth Chalmers: already making like a bedrock LLM call.
+
+
+[00:16:25] Seth Chalmers: So you could see there in the local host,
+the...
+
+
+[00:16:32] Seth Chalmers: the call is not like too much added
+latency.
+
+
+[00:16:36] Seth Chalmers: The biggest bottleneck is still the LLM
+call itself.
+
+
+[00:16:43] Andy Zhu: Ohh, that's perfect. Uh, well,
+this whole question that I have,
+
+
+[00:16:47] Andy Zhu: and thanks for that. Um, this Chris.
+
+
+[00:16:48] Robert Chin: What, when you had mentioned guardrails,
+Andy,
+
+
+[00:16:52] Robert Chin: are you using an existing bedrock
+guardrails today?
+
+
+[00:16:56] Andy Zhu: No, not really.
+We're simply invoking them right now.
+
+
+[00:17:00] Andy Zhu: And by guard rails, I'm not,
+actually I'm not that familiar with all
+
+
+[00:17:04] Andy Zhu: the background guard rails.
+Do you mind if you explain a little bit,
+
+
+[00:17:08] Andy Zhu: like what kind of guard rails are there?
+
+
+[00:17:09] Robert Chin: Yeah, like, like,
+are you like looking for general
+
+
+[00:17:12] Robert Chin: guardrails, like, you know,
+filtering out toxicity,
+
+
+[00:17:15] Robert Chin: that kind of stuff?
+
+
+[00:17:18] Andy Zhu: I don't think that.
+
+
+[00:17:18] Robert Chin: Are you talking about,
+are you guardrailing your content in
+
+
+[00:17:22] Robert Chin: terms of what gets, you know,
+your responses are like right now?
+
+
+[00:17:27] Robert Chin: I think your Omega,
+are you using a PG vector on Postgres?
+
+
+[00:17:31] Robert Chin: Is that where your knowledge base is
+today?
+
+
+[00:17:32] Andy Zhu: Yeah, yeah.
+
+
+[00:17:35] Robert Chin: And are you using Bedrock Knowledge Base
+today?
+
+
+[00:17:39] Robert Chin: Or OK.
+
+
+[00:17:39] Andy Zhu: No,
+it's PG Victor and it's all customized.
+
+
+[00:17:42] Andy Zhu: I think there are some cart rails,
+but not exactly like bad rock cart rails,
+
+
+[00:17:47] Robert Chin: Okay.
+
+
+[00:17:47] Andy Zhu: but like over personally defined cart
+rails and stuff like that, yeah.
+
+
+[00:17:48] Robert Chin: Okay.
+
+
+[00:17:52] Robert Chin: Okay,
+and then you're hitting that and then
+
+
+[00:17:55] Robert Chin: you're doing your retrieve and then you
+send your retrieve results to Bedrock
+
+
+[00:18:00] Robert Chin: today for processing and summarization,
+then you return it to the React UI.
+
+
+[00:18:02] Andy Zhu: Right, right, yeah, so, yeah,
+so most of the backlog interaction we
+
+
+[00:18:06] Robert Chin: Okay.
+
+
+[00:18:07] Andy Zhu: have is really just invoking the the end,
+you know,
+
+
+[00:18:11] Andy Zhu: and LMs instead of like actually
+performing all the backlog kind of and
+
+
+[00:18:16] Andy Zhu: features like guardrails and stuff like
+that, yeah.
+
+
+[00:18:18] Robert Chin: Okay.
+
+
+[00:18:21] Andy Zhu: Right now, I need that right now.
+
+
+[00:18:21] Robert Chin: Okay, so with the ACP then,
+you're really just looking to hit...
+
+
+[00:18:26] Robert Chin: It's really the LLM call that you're
+looking for the ACP to do.
+
+
+[00:18:30] Robert Chin: Like you don't have multi-agents or
+anything happening in this Omega solution,
+
+
+[00:18:34] Robert Chin: right?
+
+
+[00:18:35] Andy Zhu: We are looking for, ohh,
+we're looking forward to that. Yeah, well,
+
+
+[00:18:39] Andy Zhu: right now we're having a lot of tools.
+Here's some Bitbuckets, Artifactory,
+
+
+[00:18:44] Andy Zhu: I mean,
+Artifactory by Jenkins and potentially
+
+
+[00:18:47] Andy Zhu: OpenShift in the future.
+CCD is coming too,
+
+
+[00:18:49] Andy Zhu: so all of those are in separate tool sets
+right now,
+
+
+[00:18:52] Andy Zhu: but we can't we could definitely make it
+them into separate agents,
+
+
+[00:18:56] Andy Zhu: and it does make sense to make.
+
+
+[00:18:58] Andy Zhu: them into separate agents in the long run.
+So, but right now, yeah,
+
+
+[00:19:03] Andy Zhu: it's a single agent kind of architecture
+right now. But yeah, that's the situation,
+
+
+[00:19:09] Andy Zhu: yes.
+
+
+[00:19:11] Robert Chin: Okay, so, okay, so I guess the first step,
+I guess if you wanted to,
+
+
+[00:19:15] Robert Chin: if you look for ACP capabilities, I guess,
+like the first thing is moving your,
+
+
+[00:19:20] Robert Chin: is it moving the bedrock stuff then, Seth,
+over to the AI gateway,
+
+
+[00:19:23] Robert Chin: is that like would be the first
+transition,
+
+
+[00:19:26] Robert Chin: because I'm trying to think from a
+registration perspective,
+
+
+[00:19:30] Robert Chin: it's not really a...
+
+
+[00:19:31] Robert Chin: agent that you have here.
+It's like a knowledge chatbot solution.
+
+
+[00:19:36] Robert Chin: Is that correct?
+
+
+[00:19:37] Andy Zhu: Yeah, well, it does have agentic features,
+but most of them are still...
+
+
+[00:19:44] Seth Chalmers: Oh.
+
+
+[00:19:45] Andy Zhu: Like, direct to go, like, no, no,
+like bad rock agents,
+
+
+[00:19:48] Andy Zhu: but like customized agents kind of stuff,
+yeah.
+
+
+[00:19:53] Seth Chalmers: So yeah,
+we have a full user guides for chat bots
+
+
+[00:19:56] Seth Chalmers: as well.
+So we'll get you looped in with Ranjula
+
+
+[00:20:00] Seth Chalmers: and the product team who's kind of moved
+over their chat bot solution to the ACP.
+
+
+[00:20:06] Seth Chalmers: So we also have all the user guides for
+those as well.
+
+
+[00:20:10] Seth Chalmers: This broader question of the MCP servers
+though for tools like.
+
+
+[00:20:14] Seth Chalmers: Bitbucket and Jenkins.
+I'm reaching out right now to like Greg O.
+
+
+[00:20:19] Seth Chalmers: on the Enterprise Architecture team.
+I think we'll have to talk with like
+
+
+[00:20:25] Seth Chalmers: DevOps,
+Enterprise DevOps and stuff for what
+
+
+[00:20:28] Seth Chalmers: their plans are for MCP servers for
+Jenkins and Bitbucket.
+
+
+[00:20:33] Seth Chalmers: Because it probably doesn't make sense
+for like you guys to implement that you'd
+
+
+[00:20:39] Seth Chalmers: want to make use of their MCP server just
+within your chat body or agent solution.
+
+
+[00:20:46] Andy Zhu: Yeah,
+that's kind of what we've been thinking.
+
+
+[00:20:49] Andy Zhu: Yeah, we want an MCP for Bitbucket,
+and we want MCP for stuff like OpenShift
+
+
+[00:20:55] Andy Zhu: or an artifactory,
+and but those stuff customized solutions
+
+
+[00:20:59] Andy Zhu: are really limited on, you know,
+stuff like access, and especially on the,
+
+
+[00:21:04] Andy Zhu: yeah,
+it's purely on the personal credentials
+
+
+[00:21:07] Andy Zhu: and all this stuff, yeah.
+
+
+[00:21:09] Andy Zhu: That, if you can reach out to to Greg,
+that will be definitely very helpful.
+
+
+[00:21:13] Andy Zhu: Thanks.
+
+
+[00:21:14] Seth Chalmers: Absolutely, yeah.
+So we'll get that off to the side,
+
+
+[00:21:16] Seth Chalmers: but yeah,
+we can get you started with like the
+
+
+[00:21:19] Seth Chalmers: basic,
+like moving over your chat bot to the ACP
+
+
+[00:21:21] Seth Chalmers: and then those like generalized MCP
+servers will probably be a later addition
+
+
+[00:21:25] Seth Chalmers: after we sync with DevOps.
+
+
+[00:21:30] Andy Zhu: Sounds good.
+
+
+[00:21:33] Lalit Summan: So then set as the next item to,
+at some point next week,
+
+
+[00:21:36] Lalit Summan: set up the review,
+the design review calls with the team.
+
+
+[00:21:41] Seth Chalmers: Yeah,
+so I guess you might have already passed
+
+
+[00:21:44] Seth Chalmers: this along, Andy,
+but do you guys have like a high level
+
+
+[00:21:47] Seth Chalmers: architecture document or something you
+can pass over to us?
+
+
+[00:21:52] Andy Zhu: Yep, let me find it for you.
+
+
+[00:21:56] Seth Chalmers: Yeah, it doesn't need to be right now,
+but whenever you get a chance,
+
+
+[00:22:00] Seth Chalmers: just send that over.
+And then what we'll do on our side is
+
+
+[00:22:03] Seth Chalmers: like just map out what the integration
+will look like.
+
+
+[00:22:05] Andy Zhu: Really?
+
+
+[00:22:05] Seth Chalmers: Then we can present it back to you,
+just make sure everything's good,
+
+
+[00:22:09] Seth Chalmers: and then we can get you onto the
+onboarding queue to get you hooked in
+
+
+[00:22:12] Seth Chalmers: with the product team to go and test it
+out.
+
+
+[00:22:16] Andy Zhu: And maybe, yeah,
+I'll send it to to you later,
+
+
+[00:22:19] Andy Zhu: but definitely we I'll bring it back to
+my team as well to to the senior more
+
+
+[00:22:24] Andy Zhu: senior members of the team,
+and then as well as the manager to
+
+
+[00:22:28] Andy Zhu: discuss the, you know,
+the migration and all the efforts and
+
+
+[00:22:31] Andy Zhu: planning,
+and I'll get back on to you and see if we.
+
+
+[00:22:35] Andy Zhu: ..
+
+
+[00:22:35] Andy Zhu: Actually going to make that migration
+happening,
+
+
+[00:22:38] Andy Zhu: or we gotta wait till like all the MCPS
+from the enterprise side is ready,
+
+
+[00:22:42] Andy Zhu: then then we can proceed with the
+migration, then we can have find a,
+
+
+[00:22:45] Andy Zhu: you know, more proper and better plans,
+but yeah, but that's fine.
+
+
+[00:22:49] Mahmoud Khalil: I have a question about the ACP.
+Is it environment agnostic or it has to
+
+
+[00:22:56] Mahmoud Khalil: be production environment for it to
+accept like migration of a product to it?
+
+
+[00:23:05] Seth Chalmers: We'll map to all the SDLC environments,
+so dev set, stage, prod.
+
+
+[00:23:10] Mahmoud Khalil: Okay, excellent.
+
+
+[00:23:14] Robert Chin: And then I'm going to end off with a
+question to ask everybody.
+
+
+[00:23:18] Robert Chin: How did you come about engaging us for
+ACP? It's kind of like, who referred you?
+
+
+[00:23:22] Robert Chin: And what was the driver?
+
+
+[00:23:28] Andy Zhu: I guess this question needs to be
+referred to Chris. I think, Chris,
+
+
+[00:23:31] Andy Zhu: you brought it up for...
+
+
+[00:23:32] Mahmoud Khalil: Yeah. Well,
+you told us about it in the other meeting
+
+
+[00:23:37] Mahmoud Khalil: about the synchronization in the chatbot.
+You explained a little about the ACP and
+
+
+[00:23:39] Robert Chin: Oh, the knowledge.
+
+
+[00:23:41] Robert Chin: Yes, okay, okay, okay.
+
+
+[00:23:45] Robert Chin: Yes.
+
+
+[00:23:46] Mahmoud Khalil: Walter talked about it.
+Then I always been interested in security
+
+
+[00:23:47] Robert Chin: Okay, gotcha.
+
+
+[00:23:53] Mahmoud Khalil: and secure coding.
+
+
+[00:23:55] Mahmoud Khalil: And we were looking up for a solution.
+
+
+[00:23:59] Mahmoud Khalil: For the access,
+because every time we try to invoke a
+
+
+[00:24:03] Mahmoud Khalil: tool,
+it's like you have to get API keys and we
+
+
+[00:24:06] Mahmoud Khalil: cannot get a super user,
+it's just not safe.
+
+
+[00:24:10] Mahmoud Khalil: So we were looking for a solution for
+governance.
+
+
+[00:24:11] Robert Chin: Mhm.
+
+
+[00:24:13] Mahmoud Khalil: Turns out that you guys already have one.
+
+
+[00:24:17] Robert Chin: Yeah,
+like when we talk about the MCP servers,
+
+
+[00:24:20] Robert Chin: things like that,
+we have to just keep in mind that,
+
+
+[00:24:23] Robert Chin: you know, the service owners,
+they'll be the ones that, you know,
+
+
+[00:24:27] Robert Chin: like Seth's going to talk to the owners,
+like Bitbucket and people want to get
+
+
+[00:24:29] Mahmoud Khalil: Mhm.
+
+
+[00:24:31] Robert Chin: into MCP servers, like ServiceNow,
+Athlasian, so those owners actually...
+
+
+[00:24:36] Robert Chin: They own the governance,
+they own the setup and enabling of those
+
+
+[00:24:40] Robert Chin: MCP servers.
+We don't actually have any control over
+
+
+[00:24:43] Robert Chin: that,
+but with the ACP is going to be that
+
+
+[00:24:45] Robert Chin: integration bridge to say, you know what,
+here's an approved MCP server out there.
+
+
+[00:24:50] Robert Chin: Come through here, the ACP,
+to get that connection through.
+
+
+[00:24:52] Mahmoud Khalil: Mhm.
+
+
+[00:24:54] Robert Chin: But we don't have any control over
+enabling any MCP servers.
+
+
+[00:24:58] Robert Chin: The service owners ultimately have to
+enable that. It's like, we can't,
+
+
+[00:25:02] Robert Chin: you know, it's like Atlasian,
+we've been trying to get access to,
+
+
+[00:25:06] Robert Chin: you know, the MCP servers,
+things like that,
+
+
+[00:25:08] Robert Chin: but then there's blocks limitations.
+So you still have to kind of wait for
+
+
+[00:25:13] Robert Chin: those owners to step up and say, yep,
+I'm going to.
+
+
+[00:25:16] Robert Chin: make an MCP server available to the
+organization,
+
+
+[00:25:18] Robert Chin: we won't be able to solve that because
+we're not those service owners we can,
+
+
+[00:25:22] Mahmoud Khalil: Yeah.
+
+
+[00:25:22] Robert Chin: right?
+
+
+[00:25:23] Mahmoud Khalil: That makes sense, yeah.
+If the team that owns each tool,
+
+
+[00:25:25] Robert Chin: Right.
+
+
+[00:25:28] Mahmoud Khalil: they made the MCP,
+then everybody can reuse them.
+
+
+[00:25:32] Robert Chin: Yeah,
+I think some folks are thinking that we
+
+
+[00:25:34] Robert Chin: have the ASP has enough power to kind of
+turn on those MCP servers,
+
+
+[00:25:38] Robert Chin: which we would love to do,
+because we too would like access to them,
+
+
+[00:25:41] Robert Chin: but yeah,
+that's kind of where our power stops,
+
+
+[00:25:44] Robert Chin: but we can definitely govern which ones
+are approved and have access to them and
+
+
+[00:25:48] Robert Chin: make it, you know.
+
+
+[00:25:50] Robert Chin: have a single access through the ACP
+gateways.
+
+
+[00:25:55] Mahmoud Khalil: Can you govern like access to API
+directly? Why it's exclusively MCB?
+
+
+[00:26:03] Robert Chin: Who would, let's say,
+own that API or like, what's an example?
+
+
+[00:26:03] Seth Chalmers: And.
+
+
+[00:26:06] Robert Chin: What are you thinking?
+
+
+[00:26:08] Mahmoud Khalil: Like any API, like MCP is just at the end,
+probably gonna be either connected to a
+
+
+[00:26:13] Robert Chin: Mhm.
+
+
+[00:26:15] Mahmoud Khalil: database because there is no API exist,
+or is the calling API again,
+
+
+[00:26:20] Robert Chin: Mhm.
+
+
+[00:26:21] Mahmoud Khalil: which creates latency.
+So why do we need MCP server?
+
+
+[00:26:25] Mahmoud Khalil: Can we just govern that call to API?
+
+
+[00:26:30] Seth Chalmers: So you can,
+but all of these like the on behalf of
+
+
+[00:26:34] Seth Chalmers: like token exchange,
+it's built for agentic communication and
+
+
+[00:26:39] Seth Chalmers: MCPs. So within that MCP server,
+you can make a direct API call and like
+
+
+[00:26:45] Seth Chalmers: we're doing similar things in the data
+space where.
+
+
+[00:26:46] Mahmoud Khalil: Mhm.
+
+
+[00:26:49] Seth Chalmers: It's all ultimately APIs behind the
+scenes making the request to Snowflake or
+
+
+[00:26:54] Seth Chalmers: AWS or whatever the tool is,
+but the MCP server is kind of just a
+
+
+[00:26:59] Seth Chalmers: wrapper around it that allows us to kind
+of do this token exchange and follow the
+
+
+[00:27:03] Mahmoud Khalil: Mm-hmm.
+
+
+[00:27:04] Seth Chalmers: agentic concepts.
+
+
+[00:27:08] Mahmoud Khalil: Okay, makes sense.
+Just for organization purposes,
+
+
+[00:27:11] Mahmoud Khalil: it's just easier to manage.
+
+
+[00:27:16] Mahmoud Khalil: Hey.
+
+
+[00:27:17] Mahmoud Khalil: Well,
+thank you guys so much for taking the
+
+
+[00:27:20] Mahmoud Khalil: time to present this to us.
+It's very interesting.
+
+
+[00:27:21] Robert Chin: No, thanks.
+
+
+[00:27:25] Seth Chalmers: Of course, yep.
+
+
+[00:27:26] Robert Chin: Awesome.
+
+
+[00:27:27] Lalit Summan: Thanks, everyone. Thank you, Seth.
+
+
+[00:27:28] Robert Chin: Hey, thanks everybody.
+
+
+[00:27:29] Mahmoud Khalil: Okay, thank you. Bye.
+
+
+[00:27:29] Seth Chalmers: Thanks all.
+
+
+[00:27:30] Andy Zhu: Chris, take care.

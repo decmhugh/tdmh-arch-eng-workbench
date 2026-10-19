@@ -1,0 +1,171 @@
+<mxfile host="app.diagrams.net" agent="acp-product-specs" version="24.7.17">
+  <diagram id="risk-classification-computation" name="How a band is computed">
+    <mxGraphModel dx="1800" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1820" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="How a band is computed — two instruments, one vocabulary" style="text;html=0;align=left;verticalAlign=middle;fontSize=17;fontStyle=1;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="40" y="24" width="900" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Both paths end in the same four values. That is what makes a resource band comparable to a use-case band at all." style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontColor=#546e7a;" vertex="1" parent="1">
+          <mxGeometry x="40" y="52" width="1200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PATH A — questionnaire ===== -->
+        <mxCell id="qLane" value="" style="rounded=1;arcSize=6;html=0;fillColor=#ede7f6;strokeColor=#5e35b1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="96" width="840" height="352" as="geometry" />
+        </mxCell>
+        <mxCell id="qLaneT" value="A · USE CASE — a questionnaire someone answers" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#5e35b1;" vertex="1" parent="1">
+          <mxGeometry x="58" y="108" width="500" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="qLaneS" value="Asks what could happen to a person if this goes wrong." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#7e57c2;" vertex="1" parent="1">
+          <mxGeometry x="58" y="126" width="600" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q1" value="1 · Answers" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#5e35b1;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="62" y="152" width="192" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="q1S" value="Impact questions&#10;+ likelihood questions&#10;&#10;Each option carries a&#10;score of 1 – 4." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="62" y="174" width="192" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q2" value="2 · Aggregate each axis" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#5e35b1;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="282" y="152" width="200" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="q2S" value="impact = MAX&#10;likelihood = MEAN&#10;&#10;MAX because the worst&#10;credible outcome is the&#10;impact — averaging hides it." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="282" y="174" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q3" value="3 · Matrix lookup" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#5e35b1;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="510" y="152" width="172" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="q3S" value="impact × likelihood&#10;→ a level&#10;&#10;Must be monotonic:&#10;raising an axis can&#10;never lower the level." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="510" y="174" width="172" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="q4" value="4 · Rules" style="rounded=1;arcSize=10;html=0;fillColor=#fff8e1;strokeColor=#f9a825;fontSize=11;fontStyle=1;fontColor=#8d6e00;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="710" y="152" width="152" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="q4S" value="Cross-question rules&#10;the matrix cannot hold:&#10;&#10;force an answer,&#10;or set a floor the&#10;level cannot go below." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#8d6e00;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="174" width="152" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="qNote" value="The rules are not decoration. A single answer — &quot;the user base is external&quot; — can force three other answers to their&#10;maximum and put a floor under the whole assessment, moving it two levels without touching the matrix." style="rounded=1;arcSize=8;html=0;fillColor=#fbfaf5;strokeColor=#e6dcc0;fontSize=10;fontColor=#8d6e00;align=left;verticalAlign=middle;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="62" y="278" width="800" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="qWho" value="Answered by a person — it is a business judgement the platform cannot observe." style="text;html=0;align=left;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#7e57c2;" vertex="1" parent="1">
+          <mxGeometry x="62" y="340" width="800" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="qPre" value="At the promotion gate these answers arrive pre-populated from the exported use-case pack, not blank." style="rounded=1;arcSize=8;html=0;fillColor=#e8f5e9;strokeColor=#2e7d32;fontSize=10;fontStyle=1;fontColor=#1b5e20;align=left;verticalAlign=middle;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="62" y="366" width="800" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ===== PATH B — signals ===== -->
+        <mxCell id="sLane" value="" style="rounded=1;arcSize=6;html=0;fillColor=#f5f9ff;strokeColor=#1565c0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="96" width="860" height="352" as="geometry" />
+        </mxCell>
+        <mxCell id="sLaneT" value="B · AGENT / MODEL / MCP SERVER — signals the platform observes" style="text;html=0;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1565c0;" vertex="1" parent="1">
+          <mxGeometry x="938" y="108" width="600" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="sLaneS" value="Asks what it can reach and what authority it holds." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#1976d2;" vertex="1" parent="1">
+          <mxGeometry x="938" y="126" width="600" height="16" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s1" value="1 · Signals" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="942" y="152" width="200" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="s1S" value="data reach · autonomy&#10;destructive capability&#10;exposure · credentials&#10;tools · model tier&#10;&#10;Read, not asked." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="942" y="174" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2" value="2 · Normalise" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="152" width="190" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="s2S" value="Each signal → 0.0 – 1.0&#10;&#10;ordered value → position&#10;count → saturates&#10;yes / no → 1 or 0" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="174" width="190" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3" value="3 · Weight and sum" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1388" y="152" width="190" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="s3S" value="weight × level, summed&#10;&#10;Weights total 100, so the&#10;score reads as a share of&#10;maximum exposure." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1388" y="174" width="190" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4" value="4 · Threshold" style="rounded=1;arcSize=10;html=0;fillColor=#ffffff;strokeColor=#1565c0;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1606" y="152" width="152" height="104" as="geometry" />
+        </mxCell>
+        <mxCell id="s4S" value="0 – 100 → a level&#10;&#10;Bands are set per&#10;instrument, as&#10;configuration." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1606" y="174" width="152" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sNote" value="Every signal here is observable without asking anyone. That is the property that lets an unregistered resource&#10;be classified from what it is doing, rather than waiting for an owner who is not going to fill in a form." style="rounded=1;arcSize=8;html=0;fillColor=#fafafa;strokeColor=#e0e0e0;fontSize=10;fontColor=#546e7a;align=left;verticalAlign=middle;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="942" y="278" width="816" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sWho" value="Computed, not answered — no human in the path." style="text;html=0;align=left;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#1976d2;" vertex="1" parent="1">
+          <mxGeometry x="942" y="340" width="816" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sSplit" value="ONLY INHERENT SIGNALS FEED THE SCORE. Controls — registration, inbound authentication, human review,&#10;evaluations, guardrails — are carried beside the band as mitigations, never netted off it." style="rounded=1;arcSize=8;html=0;fillColor=#ffebee;strokeColor=#c62828;fontSize=10;fontStyle=1;fontColor=#b71c1c;align=left;verticalAlign=middle;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="942" y="366" width="816" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ===== CONVERGENCE ===== -->
+        <mxCell id="band" value="ONE BAND VOCABULARY  —  low  ·  medium  ·  high  ·  critical" style="rounded=1;arcSize=6;html=0;fillColor=#fff8e1;strokeColor=#f9a825;strokeWidth=2;fontSize=14;fontStyle=1;fontColor=#8d6e00;verticalAlign=top;spacingTop=14;" vertex="1" parent="1">
+          <mxGeometry x="40" y="496" width="1740" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="bandS" value="A member may keep its own level names for its committees — those stay in the record. The band is what crosses the boundary,&#10;because a platform gate can only compare something it can rank." style="text;html=0;align=center;verticalAlign=top;fontSize=10;fontColor=#8d6e00;" vertex="1" parent="1">
+          <mxGeometry x="40" y="538" width="1740" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#5e35b1;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="qLane" target="band">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;strokeColor=#1565c0;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.75;entryY=0;" edge="1" parent="1" source="sLane" target="band">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ===== WHAT IT IS FOR ===== -->
+        <mxCell id="useBox" value="" style="rounded=1;arcSize=4;html=0;fillColor=#eceff1;strokeColor=#607d8b;" vertex="1" parent="1">
+          <mxGeometry x="40" y="612" width="1740" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="useT" value="WHAT THE BAND IS THEN USED FOR" style="text;html=0;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#37474f;" vertex="1" parent="1">
+          <mxGeometry x="58" y="622" width="400" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="u1" value="Containment" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#607d8b;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="58" y="648" width="418" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="u1S" value="Is the resource at or below its use case's band?" style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="58" y="670" width="418" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="u2" value="Rigor" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#607d8b;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="496" y="648" width="418" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="u2S" value="Which obligations, approvals and evaluations apply." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="496" y="670" width="418" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="u3" value="Promotion" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#607d8b;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="934" y="648" width="418" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="u3S" value="Whether it may move to a higher environment." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="934" y="670" width="418" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="u4" value="Reproducibility" style="rounded=1;arcSize=12;html=0;fillColor=#ffffff;strokeColor=#607d8b;fontSize=11;fontStyle=1;fontColor=#37474f;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1372" y="648" width="390" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="u4S" value="Every band names the exact question set and thresholds&#10;it was judged against, so a past decision still explains itself." style="text;html=0;align=left;verticalAlign=top;fontSize=10;fontColor=#78909c;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="1372" y="670" width="390" height="32" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

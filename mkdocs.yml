@@ -1,0 +1,305 @@
+site_name: ACP Specs — Spec-Driven Development
+site_description: Component-level specifications for the Enterprise Agentic Control Plane
+site_author: EDAE ACP Team
+repo_url: https://bitbucket.sunlifecorp.com/projects/EDAEACP/repos/acp-product-specs
+repo_name: acp-product-specs
+remote_branch: bb-pages
+
+docs_dir: mkdocs-content
+
+theme:
+  name: material
+  palette:
+    - scheme: slate
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    - scheme: default
+      primary: deep purple
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  icon:
+    logo: material/shield-check
+
+nav:
+  - Home: index.md
+  - Capability Map:
+      - At a Glance: capability-map-summary.md
+      - Full Catalogue: capability-map.md
+      - Future Roadmap: capability-roadmap.md
+  - Process:
+      - D0→D4 Overview: process/d0-d4-overview.md
+      - Capability Gap Escalation: process/capability-gap-escalation.md
+      - Assurance Records: assurance-records.md
+      - Design Review Guide: process/design-review-guide.md
+      - GitOps Workflow: process/gitops-workflow.md
+      - Confluence Sync: process/confluence-sync.md
+      - Portal Onboarding Ticket: process/portal-onboarding-ticket.md
+  - Reference:
+      - Overview: reference/README.md
+      - OSFI B-10 Third-Party Risk: reference/osfi-b10-third-party-risk-management.md
+      - OSFI B-13 Technology & Cyber Risk: reference/osfi-b13-technology-cyber-risk.md
+      - OSFI E-13 Regulatory Compliance: reference/osfi-e13-regulatory-compliance-management.md
+      - OSFI E-21 Operational Resilience: reference/osfi-e21-operational-resilience.md
+      - OSFI E-23 Model Risk Management: reference/osfi-e23-model-risk-management.md
+  - Specs:
+      - Status Dashboard: specs/README.md
+      - Onboarding:
+          - "ORCC — Operational Risk & Compliance Committee Reporting Agent (Corp IT)":
+              - D0 Discovery: specs/onboarding/orcc-acp-integration/d0-discovery.md
+          - ACP & Galileo Integration:
+              - D0 Discovery: specs/onboarding/acp-galileo-integration/d0-discovery.md
+          - ACP & Omega Integration:
+              - D0 Discovery: specs/onboarding/acp-omega-integration/d0-discovery.md
+          - ACP & orQEstra Integration:
+              - D0 Discovery: specs/onboarding/acp-orqestra-integration/d0-discovery.md
+          - ACP GRS Accelerator for Axion:
+              - D0 Discovery: specs/onboarding/acp-grs-accelerator-axion/d0-discovery.md
+          - Agentic Cloud Provisioning Platform (CAH):
+              - D0 Discovery: specs/onboarding/agentic-cloud-provisioning/d0-discovery.md
+              - D1 Requirements: specs/onboarding/agentic-cloud-provisioning/d1-requirements.md
+              - D2 Design: specs/onboarding/agentic-cloud-provisioning/d2-design.md
+              - D3 Tasks: specs/onboarding/agentic-cloud-provisioning/d3-tasks.md
+          - Anthropic Client Products:
+              - D0 Discovery: specs/onboarding/anthropic-client-acp-integration/d0-discovery.md
+              - D1 Requirements: specs/onboarding/anthropic-client-acp-integration/d1-requirements.md
+              - D2 Design: specs/onboarding/anthropic-client-acp-integration/d2-design.md
+              - D3 Implementation Plan: specs/onboarding/anthropic-client-acp-integration/d3-tasks.md
+          - CoArchitect — Enterprise Architecture:
+              - D0 Discovery: specs/onboarding/coarchitect-onboarding/d0-discovery.md
+              - D1 Requirements: specs/onboarding/coarchitect-onboarding/d1-requirements.md
+              - D2 Design: specs/onboarding/coarchitect-onboarding/d2-design.md
+              - D3 Tasks: specs/onboarding/coarchitect-onboarding/d3-tasks.md
+              - D1 Requirements: specs/onboarding/corpit-tprm-usecase/d1-requirements.md
+              - D2 Design: specs/onboarding/corpit-tprm-usecase/d2-design.md
+              - D3 Tasks: specs/onboarding/corpit-tprm-usecase/d3-tasks.md
+          - Corp IT Use Case — AIMS:
+              - D0 Discovery: specs/onboarding/aims-acp-integration/d0-discovery.md
+              - D1 Requirements: specs/onboarding/aims-acp-integration/d1-requirements.md
+              - D2 Design: specs/onboarding/aims-acp-integration/d2-design.md
+              - D3 Tasks: specs/onboarding/aims-acp-integration/d3-tasks.md
+          - Corp IT Use Case — TPRM:
+              - D0 Discovery: specs/onboarding/corpit-tprm-usecase/d0-discovery.md
+          - Engineer Onboarding for the ACP Program:
+              - D0 Discovery: specs/onboarding/engineer-onboarding/d0-discovery.md
+              - D1 Requirements: specs/onboarding/engineer-onboarding/d1-requirements.md
+              - D2 Design: specs/onboarding/engineer-onboarding/d2-design.md
+              - D3 Tasks: specs/onboarding/engineer-onboarding/d3-tasks.md
+          - Governance Intake UI & AI-Assisted Triage:
+              - D0 Discovery: specs/onboarding/governance-intake-ui/d0-discovery.md
+          - MDx — AI-Native SDLC Platform:
+              - D0 Discovery: specs/onboarding/mdx-acp-integration/d0-discovery.md
+              - D1 Requirements: specs/onboarding/mdx-acp-integration/d1-requirements.md
+              - D2 Design: specs/onboarding/mdx-acp-integration/d2-design.md
+              - D2 Integration Brief: specs/onboarding/mdx-acp-integration/d2-integration-brief.md
+              - D3 Implementation Plan: specs/onboarding/mdx-acp-integration/d3-tasks.md
+          - Onboard Governance-by-Design Agents to ACP:
+              - D0 Discovery: specs/onboarding/gbd-acp-integration/d0-discovery.md
+          - Onboard the AI-Ready Data Use Case to ACP:
+              - D0 Discovery: specs/onboarding/ai-ready-data-acp-integration/d0-discovery.md
+              - D1 Requirements: specs/onboarding/ai-ready-data-acp-integration/d1-requirements.md
+              - D2 Design: specs/onboarding/ai-ready-data-acp-integration/d2-design.md
+              - D3 Tasks: specs/onboarding/ai-ready-data-acp-integration/d3-tasks.md
+          - Onboard US team members to test ACP:
+              - D0 Discovery: specs/onboarding/us-acp-deployment-operations/d0-discovery.md
+          - Onboard Waldo Use Case to ACP:
+              - D0 Discovery: specs/onboarding/waldo-acp-integration/d0-discovery.md
+          - RA&S Dealer Transfer-in Xpress:
+              - D0 Discovery: specs/onboarding/acp-ras-dealer-transfer-in-xpress/d0-discovery.md
+          - Vulcan — Vulnerability Remediation as a Service:
+              - D0 Discovery: specs/onboarding/vulcan-onboarding/d0-discovery.md
+              - D1 Requirements: specs/onboarding/vulcan-onboarding/d1-requirements.md
+              - D2 Design: specs/onboarding/vulcan-onboarding/d2-design.md
+              - D3 Implementation Plan: specs/onboarding/vulcan-onboarding/d3-tasks.md
+      - Integration:
+          - Archer GRC Sync:
+              - D0 Discovery: specs/integration/archer-grc-sync/d0-discovery.md
+              - D1 Requirements: specs/integration/archer-grc-sync/d1-requirements.md
+              - Architecture Overview: specs/integration/archer-grc-sync/d2-architecture-overview.md
+              - D2 Design: specs/integration/archer-grc-sync/d2-design.md
+              - D3 Tasks: specs/integration/archer-grc-sync/d3-tasks.md
+          - AWS Harness Integration with Luminate:
+              - D0 Discovery: specs/integration/aws-harness-integration/d0-discovery.md
+              - D1 Requirements: specs/integration/aws-harness-integration/d1-requirements.md
+              - D2 Design: specs/integration/aws-harness-integration/d2-design.md
+              - D3 Tasks: specs/integration/aws-harness-integration/d3-tasks.md
+          - NOVA & ACP Integration:
+              - D0 Discovery: specs/integration/nova-acp-integration/d0-discovery.md
+              - D1 Requirements: specs/integration/nova-acp-integration/d1-requirements.md
+              - D2 Design: specs/integration/nova-acp-integration/d2-design.md
+      - Platform:
+          - ACP / Luminate Integration Patterns:
+              - D0 Discovery: specs/platform/integration-patterns/d0-discovery.md
+              - D1 Requirements: specs/platform/integration-patterns/d1-requirements.md
+              - D2 Design:
+                  - Pattern Catalogue: specs/platform/integration-patterns/d2-design/index.md
+                  - Identity: specs/platform/integration-patterns/d2-design/identity.md
+                  - Invocation: specs/platform/integration-patterns/d2-design/invocation.md
+                  - Model Inference: specs/platform/integration-patterns/d2-design/inference.md
+                  - Adoption: specs/platform/integration-patterns/d2-design/adoption.md
+                  - Gaps & Asks: specs/platform/integration-patterns/d2-design/gaps.md
+              - D3 Tasks: specs/platform/integration-patterns/d3-tasks.md
+          - ACP AWS Harness SDK:
+              - D0 Discovery: specs/platform/acp-harness-sdk/d0-discovery.md
+              - D1 Requirements: specs/platform/acp-harness-sdk/d1-requirements.md
+              - D2 Design: specs/platform/acp-harness-sdk/d2-design.md
+              - D3 Tasks: specs/platform/acp-harness-sdk/d3-tasks.md
+          - ACP Customer Journey (Phase 1):
+              - D0 Discovery: specs/platform/acp-customer-journey/d0-discovery.md
+              - D1 Requirements: specs/platform/acp-customer-journey/d1-requirements.md
+              - D2 Design:
+                  - Overview: specs/platform/acp-customer-journey/d2-design/index.md
+                  - The Journey: specs/platform/acp-customer-journey/d2-design/journey.md
+                  - Interactions & RACI: specs/platform/acp-customer-journey/d2-design/interactions.md
+                  - Artefacts: specs/platform/acp-customer-journey/d2-design/artefacts.md
+                  - Design Decisions: specs/platform/acp-customer-journey/d2-design/decisions.md
+                  - Gaps & Open Questions: specs/platform/acp-customer-journey/d2-design/gaps.md
+          - Define ACP Financial Model:
+              - D0 Discovery: specs/platform/define-acp-financial-model/d0-discovery.md
+          - Define ACP Operating Model:
+              - D0 Discovery: specs/platform/define-operating-model/d0-discovery.md
+          - Developer Automations:
+              - D0 Discovery: specs/platform/developer-automations/d0-discovery.md
+              - D1 Requirements: specs/platform/developer-automations/d1-requirements.md
+              - D2 Design: specs/platform/developer-automations/d2-design.md
+              - D3 Tasks: specs/platform/developer-automations/d3-tasks.md
+          - Feature Build / Capability Requests:
+              - D0 Discovery: specs/platform/feature-build-capability-requests/d0-discovery.md
+          - Guardrails Enablement:
+              - D0 Discovery: specs/platform/guardrails-enablement/d0-discovery.md
+              - D1 Requirements: specs/platform/guardrails-enablement/d1-requirements.md
+              - D2 Design: specs/platform/guardrails-enablement/d2-design.md
+              - D3 Tasks: specs/platform/guardrails-enablement/d3-tasks.md
+          - Luminate Gateway & Environment Strategy:
+              - D0 Discovery: specs/platform/gateway-environment-strategy/d0-discovery.md
+              - D1 Requirements: specs/platform/gateway-environment-strategy/d1-requirements.md
+              - D2 Design:
+                  - Overview: specs/platform/gateway-environment-strategy/d2-design/index.md
+                  - Architecture: specs/platform/gateway-environment-strategy/d2-design/architecture.md
+                  - Topology: specs/platform/gateway-environment-strategy/d2-design/topology.md
+                  - Segregation of duties: specs/platform/gateway-environment-strategy/d2-design/segregation-of-duties.md
+                  - Promotion: specs/platform/gateway-environment-strategy/d2-design/promotion.md
+                  - Governance: specs/platform/gateway-environment-strategy/d2-design/governance.md
+                  - Connectivity: specs/platform/gateway-environment-strategy/d2-design/connectivity.md
+                  - Data isolation: specs/platform/gateway-environment-strategy/d2-design/data-isolation.md
+                  - One control plane: specs/platform/gateway-environment-strategy/d2-design/one-control-plane.md
+                  - Environments, quotas & credentials: specs/platform/gateway-environment-strategy/d2-design/access-and-quotas.md
+                  - Assurance: specs/platform/gateway-environment-strategy/d2-design/assurance.md
+                  - Roadmap: specs/platform/gateway-environment-strategy/d2-design/roadmap.md
+              - D3 Tasks: specs/platform/gateway-environment-strategy/d3-tasks.md
+          - Self-Service Onboarding — Automating ACP Platform Administration:
+              - D0 Discovery: specs/platform/self-service-onboarding/d0-discovery.md
+              - D1 Requirements: specs/platform/self-service-onboarding/d1-requirements.md
+              - D2 Design: specs/platform/self-service-onboarding/d2-design.md
+              - D3 Implementation Plan: specs/platform/self-service-onboarding/d3-tasks.md
+          - SLM Pipeline:
+              - D0 Discovery: specs/platform/slm-pipeline/d0-discovery.md
+              - D1 Requirements: specs/platform/slm-pipeline/d1-requirements.md
+              - D2 Design: specs/platform/slm-pipeline/d2-design.md
+              - D3 Tasks: specs/platform/slm-pipeline/d3-tasks.md
+          - Sun Life Deployment of Luminate:
+              - D0 Discovery: specs/platform/sunlife-deployment/d0-discovery.md
+              - D1 Requirements: specs/platform/sunlife-deployment/d1-requirements.md
+              - D2 Design: specs/platform/sunlife-deployment/d2-design.md
+              - D3 Tasks: specs/platform/sunlife-deployment/d3-tasks.md
+      - Patterns:
+          - Agent Patterns:
+              - D0 Discovery: specs/pattern/agent-patterns/d0-discovery.md
+              - D1 Requirements: specs/pattern/agent-patterns/d1-requirements.md
+              - D2 Design:
+                  - Overview: specs/pattern/agent-patterns/d2-design/index.md
+                  - Registration: specs/pattern/agent-patterns/d2-design/registration.md
+                  - Hosting: specs/pattern/agent-patterns/d2-design/hosting.md
+                  - Identity: specs/pattern/agent-patterns/d2-design/identity.md
+                  - Authorization: specs/pattern/agent-patterns/d2-design/authorization.md
+                  - Reaching a REST API: specs/pattern/agent-patterns/d2-design/api-access.md
+                  - Build pipeline: specs/pattern/agent-patterns/d2-design/pipeline.md
+                  - Operations: specs/pattern/agent-patterns/d2-design/operations.md
+                  - Assurance — ETAB & ISRA: specs/pattern/agent-patterns/d2-design/assurance.md
+                  - Gaps: specs/pattern/agent-patterns/d2-design/gaps.md
+              - D3 Tasks: specs/pattern/agent-patterns/d3-tasks.md
+              - Design Pattern (SLF): specs/pattern/agent-patterns/pattern.md
+          - MCP Server Patterns:
+              - D0 Discovery: specs/pattern/mcp-server-patterns/d0-discovery.md
+              - D1 Requirements: specs/pattern/mcp-server-patterns/d1-requirements.md
+              - D2 Design:
+                  - Overview: specs/pattern/mcp-server-patterns/d2-design/index.md
+                  - Registration: specs/pattern/mcp-server-patterns/d2-design/registration.md
+                  - Hosting: specs/pattern/mcp-server-patterns/d2-design/hosting.md
+                  - Identity: specs/pattern/mcp-server-patterns/d2-design/identity.md
+                  - Authorization: specs/pattern/mcp-server-patterns/d2-design/authorization.md
+                  - Build pipeline: specs/pattern/mcp-server-patterns/d2-design/pipeline.md
+                  - Operations: specs/pattern/mcp-server-patterns/d2-design/operations.md
+                  - Assurance — ETAB & ISRA: specs/pattern/mcp-server-patterns/d2-design/assurance.md
+                  - Gaps: specs/pattern/mcp-server-patterns/d2-design/gaps.md
+              - D3 Tasks: specs/pattern/mcp-server-patterns/d3-tasks.md
+              - Design Pattern (SLF): specs/pattern/mcp-server-patterns/pattern.md
+          - Model Inference Patterns:
+              - D0 Discovery: specs/pattern/model-inference-patterns/d0-discovery.md
+              - D1 Requirements: specs/pattern/model-inference-patterns/d1-requirements.md
+              - D2 Design:
+                  - Overview: specs/pattern/model-inference-patterns/d2-design/index.md
+                  - Topology: specs/pattern/model-inference-patterns/d2-design/topology.md
+                  - Provider portability: specs/pattern/model-inference-patterns/d2-design/provider-portability.md
+                  - Attribution: specs/pattern/model-inference-patterns/d2-design/attribution.md
+                  - Budgets: specs/pattern/model-inference-patterns/d2-design/budgets.md
+                  - Model access: specs/pattern/model-inference-patterns/d2-design/model-access.md
+                  - Operations: specs/pattern/model-inference-patterns/d2-design/operations.md
+                  - Assurance — ETAB & ISRA: specs/pattern/model-inference-patterns/d2-design/assurance.md
+                  - Gaps: specs/pattern/model-inference-patterns/d2-design/gaps.md
+              - D3 Tasks: specs/pattern/model-inference-patterns/d3-tasks.md
+              - Design Pattern (SLF): specs/pattern/model-inference-patterns/pattern.md
+      - Governance:
+          - Governance and compliance requirements for Luminate from US:
+              - D0 Discovery: specs/governance/luminate-control-plane/d0-discovery.md
+          - Governance Content Packs:
+              - D0 Discovery: specs/governance/governance-content-packs/d0-discovery.md
+              - D1 Requirements: specs/governance/governance-content-packs/d1-requirements.md
+              - D2 Design: specs/governance/governance-content-packs/d2-design.md
+              - D3 Tasks: specs/governance/governance-content-packs/d3-tasks.md
+          - Governance Intake & Risk Classification (Sun Life):
+              - D0 Discovery: specs/governance/governance-intake/d0-discovery.md
+              - D1 Requirements: specs/governance/governance-intake/d1-requirements.md
+              - D2 Design: specs/governance/governance-intake/d2-design.md
+              - Architecture Overview: specs/governance/governance-intake/d2-architecture-overview.md
+              - D3 Tasks: specs/governance/governance-intake/d3-tasks.md
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
+  - tables
+  - attr_list
+  - def_list
+  - toc:
+      permalink: true
+
+plugins:
+  - search

@@ -1,0 +1,56 @@
+component: slm-pipeline
+title: "Small Local Model (SLM) Pipeline"
+description: "Self-hosted open-weight Small Local Models served through ACP. A governed Hugging Face mirror in JFrog Artifactory is the single vetted pull-through source; only models that pass GenAI Risk Triage + Legal review and are registered/approved in the ACP Model Registry may be mirrored, pulled, and served from EKS via the AI Gateway. Phased delivery: an interim dev POC (Netskope unblock scoped to Artifactory, restricted to Gemma 3n E2B/E4B) under the in-flight ISRA, followed by a generalized self-service pipeline (separate ISRA + ATG submission) with a registry-gated model allowlist."
+
+# Current gate status
+current_gate: D3
+status: draft
+spec_type: platform
+
+# Ownership
+owner: "EDAE ACP Team"
+team: "EDAE ACP / DevOps / InfoSec"
+
+# External links
+jira_epic: "EACPP-557"                  # Created from D3 task table (EACPP-558..570, 717..721)
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/112908173386"
+repo: "acp-slm-harness"                 # PoC implementation + evidence; manifests promote to acp-deploy
+
+gate_status: "D3 in delivery — Phase 0 substantially delivered (governed inference verified in eks-dev, 2026-08). Two governance controls remain open and externally blocked: Sonatype Repository Firewall screening (needs a DSTM request, T19) and LLM observability (Langfuse dropping traces, T24). Cost conclusion reversed: batched GPU serving is $0.53/1M output tokens on NVIDIA L4 vs Bedrock Haiku $1.25 (re-measured 2026-08-25; the earlier $0.82/1M figure did not reproduce and is withdrawn)."
+
+# Dependencies (other component specs this depends on)
+depends_on:
+  - model-registry
+  - ai-gateway
+  - deployment-infrastructure
+  - observability-monitoring
+  - governance-integration
+
+# Gate history (filled as gates are completed)
+gates:
+  d0:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ""
+    approved_date: ""
+    reviewers: []

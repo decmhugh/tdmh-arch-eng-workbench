@@ -1,0 +1,52 @@
+component: engineer-onboarding
+title: "Engineer Onboarding for the ACP Program"
+description: >-
+  Retroactive spec for the ACP product-team engineer enablement track (EACPP-896).
+  Brings each new engineer to productive contribution on the in-flight specs by
+  way of three sequenced tasks per person: access and environment onboarding,
+  running both the Alpha (internal agent-control-plane) and Beta (Luminate)
+  stacks locally, and a hands-on ramp on the acp-harness-sdk plus the two
+  driving product specs. Deliberately NOT infrastructure build-out — the dev/test
+  environments, Jenkins JTE pipelines and DevOps tooling already exist; this is
+  enablement onto them. Feeds the delivery work already specced at D3 in
+  aws-harness-integration (EACPP-707), acp-harness-sdk (EACPP-791) and
+  sunlife-deployment (EACPP-596).
+current_gate: D3
+status: draft
+spec_type: onboarding
+gate_status: "Retroactive — epic and 12 tickets were created 2026-08-12 and are in flight; spec written 2026-08-18 to close the mapping gap"
+owner: Lalit Summan
+team: EDAE ACP
+jira_epic: EACPP-896
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113135124895"
+repo: EDAEACP/acp-onboarding-guide
+depends_on:
+- sunlife-deployment
+- acp-harness-sdk
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

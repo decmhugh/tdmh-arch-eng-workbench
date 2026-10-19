@@ -1,0 +1,66 @@
+component: aims-acp-integration
+title: 'Onboarding Corp IT''s use case: AIMS (AI-Powered Incident Management System)'
+description: "AIMS (AI-Powered Incident Management System) is an operations intelligence\
+  \ platform designed to reduce the time engineers spend diagnosing and resolving\
+  \ data platform failures. Currently detects AWS Glue job failures, collects diagnostics,\
+  \ uses generative AI for root cause analysis, and creates notifications. \n\nAs\
+  \ a multi-agent system, AIMS evolves to include RCA Agent, Incident-Aware Agent,\
+  \ and Remediation Agent within a governed ACP control plane with MCP-based access\
+  \ to enterprise tools (Teams, Jira, knowledge repos, AWS operations). Goal is to\
+  \ transform reactive troubleshooting into intelligent, governed, and increasingly\
+  \ autonomous operations through ACP integration.\n\nh2. Problem Statement\n\u2022\
+  \ AIMS currently lacks centralized governance, registration, and observability for\
+  \ its multi-agent architecture\n\u2022 Agents (RCA, Incident Correlation, Remediation)\
+  \ operate without standardized policy enforcement or audit trails\n\u2022 No unified\
+  \ platform for managing foundation models, requiring direct integrations instead\
+  \ of registry-based consumption\n\u2022 MCP servers for enterprise tools (Jira,\
+  \ Knowledge Base, AWS Ops) lack centralized governance and control\n\u2022 Operational\
+  \ costs and usage metrics for AIMS agents are not tracked or visible\n\u2022 Each\
+  \ new agent capability requires custom governance implementation rather than inheriting\
+  \ ACP controls\n\u2022 Risk: autonomous remediation agents lack sufficient oversight\
+  \ and approval workflows for production execution\n\nh2. Success Criteria\n\u2022\
+  \ All AIMS agents (RCA, Incident Correlation, Remediation) successfully registered\
+  \ and managed through ACP agent registries\n\u2022 Foundation models consumed through\
+  \ ACP model registries instead of direct integrations\n\u2022 Cost and usage metrics\
+  \ for AIMS agents visible and tracked through ACP observability\n\u2022 MCP servers\
+  \ for Jira, Knowledge Base, AWS Operations registered and governed through ACP MCP\
+  \ registries\n\u2022 100% audit trail coverage for all agent actions and model invocations\n\
+  \u2022 AIMS leverages ACP for governance, policy enforcement, and execution monitoring\n\
+  \u2022 New AIMS capabilities onboarded via ACP configuration and registration (no\
+  \ custom governance builds)\n\u2022 Remediation agent recommendations and executions\
+  \ subject to ACP approval workflows\n\nh2. Acceptance Criteria\n\u2022 AIMS multi-agent\
+  \ architecture fully integrated with ACP agent registry API\n\u2022 Agent registration,\
+  \ lifecycle, and deregistration workflows operational\n\u2022 Foundation model registry\
+  \ integration tested with current models\n\u2022 MCP server registry operational\
+  \ with Jira, Knowledge Base, AWS Ops connectors\n\u2022 Agent observability dashboard\
+  \ showing execution metrics, latency, costs\n\u2022 Audit trail captures all agent\
+  \ decisions and remediation actions\n\u2022 Approval workflow enforced for remediation\
+  \ actions\n\u2022 Cost attribution per agent per week/month visible\n\u2022 Documentation\
+  \ for onboarding new AIMS agents to ACP\n\nh2. In Scope (MVP)\n\u2022 RCA Agent\
+  \ registration and observability through ACP\n\u2022 Incident Correlation Agent\
+  \ registration through ACP\n\u2022 Foundation model registry consumption (replacing\
+  \ direct integrations)\n\u2022 MCP server registration for Jira, Knowledge Base,\
+  \ AWS Operations\n\u2022 Cost tracking and attribution for agent usage\n\u2022 Audit\
+  \ trail for all agent executions and decisions\n\u2022 Basic approval workflow for\
+  \ remediation recommendations\n\u2022 Observability dashboard showing agent health\
+  \ and metrics\n\u2022 Documentation and runbooks for AIMS-ACP integration\n\nh2.\
+  \ Out of Scope (Backlog)\n\u2022 Remediation Agent autonomous execution (stage 2)\n\
+  \u2022 Self-healing automation based on confidence scoring\n\u2022 Advanced approval\
+  \ workflows with multiple stakeholder gates\n\u2022 Cross-product incident correlation\
+  \ (only within AIMS scope initially)\n\u2022 Predictive failure detection (phase\
+  \ 2 roadmap)\n\u2022 Integration with external ticketing systems beyond Jira\n\u2022\
+  \ Multi-region AIMS deployment and coordination\n\u2022 Real-time policy enforcement\
+  \ (reactive monitoring initially)\n"
+created_at: '2026-08-12'
+last_updated: '2026-08-28'
+current_gate: D3
+status: draft
+spec_type: onboarding
+gate_status: D0 awaiting approval; D1/D2/D3 drafted 2026-08-28 from references/ACP-AIMS.docx.
+  Capability selection is reconstructed, not yet confirmed with the use case (D3 T1).
+jira_epic: EACPP-909
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113134764364"
+owner: "Sam Mamelli"
+confluence_url: ''
+reviewers:
+- pavithra.viswanathan@sunlife.com

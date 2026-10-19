@@ -1,0 +1,70 @@
+component: guardrails-enablement
+title: 'Guardrails Enablement: turning on content inspection at the Luminate gateway'
+description: "Luminate ships a complete guardrails subsystem \u2014 catalogue, eight\
+  \ attachment scopes,\nstrictest-wins resolution in the policy engine, and block /\
+  \ redact / warn enforcement at the\ngateway on both the request and the response\
+  \ side. The images Sun Life already runs contain all\nof it. None of it is switched\
+  \ on.\n\nMeasured 2026-09-11: the DEV install holds zero Guardrail rows, zero attachments\
+  \ and zero\nevaluations; all four PROD-install gateways carry a six-key gateway ConfigMap\
+  \ with no\nGATEWAY_GUARDRAIL_* entry; and luminate-sunlife-deploy contains no guardrail,\
+  \ PII-detector or\nModel Armor configuration in any values file or template. CAP-10\
+  \ is graded Available and\nMandatory, which is true of Luminate and not true of our\
+  \ deployment.\n\nThree properties of the implementation decide the rollout. Only\
+  \ banned_words runs in-process;\npii_detection and model_armor are HTTP sidecars\
+  \ that must be named in\nGATEWAY_GUARDRAIL_REMOTE_ENDPOINTS, and that map defaults\
+  \ to empty. A guardrail whose evaluator\ncannot be resolved fails OPEN by default,\
+  \ so attaching a PII control before its sidecar exists\nproduces a portal that reads\
+  \ \"attached\" over traffic that is not scanned. And streamed\nresponses are exempt\
+  \ by default, which the upstream D2 records as an unmet requirement (NFR-7).\n\n\
+  Phase 1 is Sun Life enablement: deploy the evaluators, wire the configuration, set\
+  \ the fail\nposture deliberately, author a first control set, and prove enforcement\
+  \ end to end in DEV before\nPROD. Phase 2 is an AWS Bedrock Guardrails evaluator,\
+  \ which has no upstream existence in any\nform and needs a consortium ballot idea\
+  \ before it can be ranked.\n"
+current_gate: D3
+status: draft
+gate_status: D0-D3 drafted together in one pass and unreviewed. Phase 2 (content safety
+  beyond banned words and PII) is specified to D2 depth across three routes - an in-cluster
+  open-source classifier, llm_judge routed to a self-hosted safety model, and AWS Bedrock -
+  with the recommendation being in-cluster and open-source first. Its D3 tasks are limited to
+  the ballot submission, an evaluator bake-off and two measurement spikes, because the build
+  is gated on a consortium decision Sun Life does not control. 2026-10-05 - Phase 1 T4-T8
+  built and running on both DEV-install gateways (luminate-sunlife-deploy PR 28); T3 done
+  for DEV only. D2 DD-4, DD-6, 4.1, 4.2 and 4.4 revised from what the build measured. See
+  the D3 Progress section.
+spec_type: platform
+owner: "Seth Chalmers"
+team: EDAE ACP Product Team
+jira_epic: EACPP-1295
+agileplace_card: ''
+confluence_page: ''
+repo: luminate-sunlife-deploy
+depends_on:
+  - sunlife-deployment
+  - gateway-environment-strategy
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

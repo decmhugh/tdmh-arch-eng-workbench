@@ -1,0 +1,91 @@
+component: luminate-control-plane
+title: "Governance and compliance requirements for Luminate from US"
+description: |
+  Luminate Control Plane is the enterprise-wide AI governance and compliance platform consolidating 27+ regulatory frameworks (NAIC, OSFI E-23, Colorado CAIA, EU AI Act, HIPAA, NIST, OWASP, Texas TRAIGA, NYDFS, PIPEDA) and 14+ Sun Life internal policies (MBCT, IT Risk, Technology Architecture, AppSec, Privacy, Logical Access, Data Classification, Business Continuity, Records Management) into a unified control plane for scaled AI agent deployment.
+
+  The platform implements five core compliance primitives: (1) unified compliance requirement registry mapping all regulatory/policy obligations to product controls with unique CR-IDs; (2) automated compliance passport workflows routing agent registrations through required governance tracks (ATG, ISRA, MBCT, PIA, TPRM, Records) with blocking gates; (3) risk-tier-driven enforcement (AA/A/B/C/D risk levels) automatically gating killswitches, PIAs, validation workflows, and audit fidelity; (4) immutable compliance audit ledger recording all governance decisions and agent actions; and (5) graduated governance primitives (killswitches, HITL, key recertification, purpose-based access control) preventing uncontrolled agent proliferation.
+
+  This D0 consolidates compliance strategy for the first production release to US DCP, with blockers and required-before-scale work identified and prioritized.
+
+  h2. Problem Statement
+  • Sun Life's AI governance is fragmented across 27+ regulatory frameworks and 14+ internal policies with no unified platform consolidating requirements into actionable controls
+  • Manual compliance passport process requires hand-offs across six governance tracks (ATG, ISRA, MBCT, PIA, TPRM, Records) with no automated workflow confirmation before activation
+  • Without automated risk classification (AA/A/B/C/D), the platform cannot enforce that high-risk agents have killswitches, HITL, full-fidelity audit, and PIAs while low-risk agents have lighter controls
+  • Compliance reporting requires manual assembly of logs and evidence from disparate systems; no unified audit ledger for regulatory discovery
+  • No platform-enforced mechanisms for multi-gateway killswitches, HITL holds, key recertification, or purpose-based access control
+  • AI agents provisioned as human-like accounts rather than governed non-human identities (NHIs) with controlled lifecycles
+  • Compliance decisions not recorded in immutable audit trail discoverable by regulators for incident investigation and compliance reviews
+
+  h2. Opportunity
+  • Unified compliance registry consolidating all 27+ regulatory and 14+ policy requirements into platform-enforced controls
+  • Automated compliance passport workflows with T0 triage gating and evidence collection across all tracks
+  • Risk-tier-driven enforcement automatically scaling controls (killswitch, PIA, audit fidelity) based on agent risk classification
+  • Immutable compliance audit ledger supporting regulatory discovery and audit evidence export
+  • Graduated governance primitives (killswitch, HITL, recertification, PBAC) enabling scaled deployment of L1-L4 agents
+  • Non-human identity lifecycle management integrated with enterprise IAM (Okta, Azure AD)
+  • Regulatory evidence dashboard and exportable compliance packs for OSFI, NAIC, state insurance commissioners
+  • Multi-jurisdiction policy enforcement for Colorado, Texas, Canada, EU regulatory requirements
+
+  h2. Acceptance Criteria
+  • All 40+ compliance requirement sources (CR-EXT, CR-MBCT, CR-ITR, CR-ARC, CR-APP, CR-IPNSD, CR-ASM, CR-CHG, CR-POG, CR-LAS, CR-ICP, CR-BCM, CR-IMR, CR-GEN, CR-PBAC, CR-CC) mapped to unique CR-IDs and platform primitives
+  • Compliance passport workflow fully automated: agent registration triggers T0 triage; ATG, ISRA, MBCT, PIA, TPRM, Records evidence collected via platform; activation blocked until all tracks complete
+  • Risk tier field (AA/A/B/C/D) on Agent model with automatic gating of killswitch attachment, PIA requirements, validation_status, audit fidelity, key rotation cadence
+  • Killswitch primitive: atomic multi-gateway halt (per-agent/per-project/per-org); tested and exercised in security drill; SLA <5 seconds to global suspension
+  • HITL primitive: hold/review/decision/release workflow for agent responses; Level A/AA agents cannot be deployed without HITL capability
+  • Key recertification workflow: tier-driven rotation schedule (L1=365d, L2=180d, L3/L4=90d); automated reminders; auto-revoke on expiry; zero keys active past expiration
+  • Output guardrails: PII detection/redaction and bias/discrimination classification on model responses; 95%+ precision on PII redaction
+  • Full-fidelity audit for Level A/AA: AuditEvent records with plane, event_class, sensitivity, fidelity, outcome, protocol type
+  • PBAC enforcement: purpose declaration on invocations; purpose-driven data access gates; purpose drift detection alerts
+  • Non-human identity integration: agent API keys registered as service accounts in Okta/Azure AD; NHI inventory queryable by IAM team; zero human accounts used for agents
+  • Regulatory evidence dashboard: exportable compliance packs for OSFI E-23, NAIC, Colorado CAIA, HIPAA within 1 business day
+  • Multi-jurisdiction constraints: Colorado consumer notification, Texas discrimination prohibitions, Canadian data residency, HIPAA safeguards auto-enforced per deployment location
+
+  h2. In Scope (MVP)
+  • Compliance requirement registry (CR-ID mapping for 40+ sources)
+  • Risk tier field and tier-driven governance enforcement
+  • Killswitch primitive (atomic suspension)
+  • HITL primitive (hold/review/release)
+  • Key recertification lifecycle
+  • Output guardrails (PII + bias/discrimination)
+  • Full-fidelity audit enforcement for high-risk agents
+  • Purpose-based access control (PBAC)
+  • Non-human identity provisioning to Okta/Azure AD
+  • Compliance passport automation (T0 triage + track routing)
+  • Regulatory evidence collection and export
+  • Multi-jurisdiction policy enforcement
+  • Okta/Azure Entra ID IDP validation
+  • Data residency enforcement and topology validation
+  • Cost attribution for SOX ITGC compliance
+  • Capture governance policy
+  • Provider risk diversification dashboard
+
+  h2. Out of Scope (Backlog)
+  • Confidential computing / TEE attestation for SL Restricted workloads
+  • Inference governance (separate retention for AI-generated inferences)
+  • Cross-jurisdiction advanced orchestration (Delaware, Colorado, Texas, EU, Canada multi-region)
+  • Agentic operations directive authorship
+  • Memory governance sidecar and session context recording
+  • Advanced drift detection and automated remediation
+  • Multi-BG consolidation (Canada, SLC, MFS policy carve-outs)
+  • AI-generated regulatory reporting (quarterly compliance summaries to regulators)
+
+jira_epic: EACPP-913
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113134043490"
+current_gate: D0
+status: draft
+spec_type: governance
+gate_status: Discovery in progress — stakeholder review phase
+reviewers:
+  - eric.robson@sunlife.com
+  - pavithra.viswanathan@sunlife.com
+created_at: '2026-08-12'
+confluence_url: ''
+last_updated: '2026-08-12'
+notes: |
+  This D0 consolidates compliance strategy from the Luminate Control Plane Compliance Requirements Reference (v1.0, 2026-08-10). The CR-ID registry (§3) is the authoritative source for all 260+ individual compliance requirements mapped to Luminate primitives.
+
+  Blockers (5): Killswitch, HITL, risk_tier field, key recertification, licensing.
+  Required-before-scale (4): Agent memory governance, IDP validation, data residency attestation, PBAC.
+  Recommended (2): Confidential computing, inference governance.
+
+  Next review: 2026-08-25 post-stakeholder alignment.

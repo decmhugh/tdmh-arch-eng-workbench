@@ -1,0 +1,50 @@
+component: coarchitect-onboarding
+title: "CoArchitect Onboarding \u2014 Enterprise Architecture on Luminate"
+description: Onboard Enterprise Architecture's CoArchitect (AI4EA) architecture assistant
+  onto ACP (Luminate), dev install only. Folder Enterprise Architecture, project CoArchitect
+  owned by Razi Chaudhry, Tony Xu as project Administrator, Partho Mondal and Anirban
+  Ukil as Editors; then inventory, model access path, network reachability and the
+  first governed call through the Dev gateway. Production onboarding is a separate,
+  later decision.
+current_gate: D3
+status: draft
+spec_type: onboarding
+gate_status: "D0\u2013D3 drafted 2026-10-01. T1 (tenancy on the dev install) done\
+  \ and verified at row, Rego and viewset level with a negative control. Capability\
+  \ selection (T4) not yet confirmed with the team."
+owner: Seth Chalmers
+team: EDAE ACP Product Team
+jira_epic: EACPP-1427
+agileplace_card: ''
+confluence_page: ''
+repo: acp-product-devkit
+depends_on:
+- sunlife-deployment
+- gateway-environment-strategy
+- self-service-onboarding
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

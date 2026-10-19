@@ -1,0 +1,1914 @@
+WEBVTT
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/6-0
+00:00:03.201 --> 00:00:04.241
+<v Justin Collery>Alrighty.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/8-0
+00:00:08.001 --> 00:00:14.997
+<v Seth Chalmers>Yeah, Cliff's Notes, I got it working.
+All running through the gateway,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/8-1
+00:00:14.997 --> 00:00:19.661
+<v Seth Chalmers>have a sample harness that we can use for
+that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/8-2
+00:00:19.661 --> 00:00:24.909
+<v Seth Chalmers>I also synced with Greg on the
+authentication method.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/8-3
+00:00:24.909 --> 00:00:27.921
+<v Seth Chalmers>And reason like pure CLI based.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/10-0
+00:00:29.681 --> 00:00:37.452
+<v Seth Chalmers>authentication for cloud code and doing
+entra federation into our internal key</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/10-1
+00:00:37.452 --> 00:00:42.273
+<v Seth Chalmers>cloak.
+So it's ultimately key cloak that's doing</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/10-2
+00:00:42.273 --> 00:00:50.241
+<v Seth Chalmers>the authentication for cloud code for the
+gateway, but it hits a entra provider.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/11-0
+00:00:50.561 --> 00:00:54.207
+<v Seth Chalmers>that I set up in Keycloak behind the
+scenes,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/11-1
+00:00:54.207 --> 00:00:58.014
+<v Seth Chalmers>which will hopefully give us user
+attribution.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/11-2
+00:00:58.014 --> 00:01:04.090
+<v Seth Chalmers>I needed the Azure SSO team to set up
+that additional redirect URL for the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/11-3
+00:01:04.090 --> 00:01:09.761
+<v Seth Chalmers>portal for the Keycloak entry provider.
+And then I should be able to.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/13-0
+00:01:10.001 --> 00:01:15.306
+<v Seth Chalmers>fully test and that we're actually
+getting like the user within the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/13-1
+00:01:15.306 --> 00:01:19.831
+<v Seth Chalmers>authentication.
+And then we'll be able to kind of do user</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/13-2
+00:01:19.831 --> 00:01:24.356
+<v Seth Chalmers>attribution of the calls that we're going
+to the gateway.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/13-3
+00:01:24.356 --> 00:01:27.321
+<v Seth Chalmers>So it's kind of the clips notes. Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/12-0
+00:01:25.401 --> 00:01:25.841
+<v Justin Collery>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/15-0
+00:01:28.401 --> 00:01:34.365
+<v Justin Collery>I could nearly cry what Joy Seth.
+That's really good. Okay,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/15-1
+00:01:34.365 --> 00:01:38.241
+<v Justin Collery>so that's great news. That's brilliant.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/16-0
+00:01:39.441 --> 00:01:40.321
+<v Justin Collery>So...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/17-0
+00:01:41.441 --> 00:01:44.268
+<v Justin Collery>The method then,
+so that works for clawed code and you're</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/17-1
+00:01:44.268 --> 00:01:45.681
+<v Justin Collery>able to validate clawed code.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/18-0
+00:01:46.561 --> 00:01:46.841
+<v Seth Chalmers>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/19-0
+00:01:47.601 --> 00:01:53.146
+<v Justin Collery>Okay, any concerns? So the script is fine.
+You're developing on a Mac or a Windows</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/19-1
+00:01:53.146 --> 00:01:53.681
+<v Justin Collery>machine?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/20-0
+00:01:54.321 --> 00:01:55.201
+<v Seth Chalmers>I was on a Mac.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/21-0
+00:01:55.521 --> 00:01:58.770
+<v Justin Collery>You're on a Mac, okay.
+Do we have any concerns that the method</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/21-1
+00:01:58.770 --> 00:02:02.586
+<v Justin Collery>won't work on Windows or is it just a
+fairly simple script that should be</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/21-2
+00:02:02.586 --> 00:02:04.081
+<v Justin Collery>portable from Mac to Windows?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/22-0
+00:02:04.721 --> 00:02:07.281
+<v Seth Chalmers>Should be portable. Yeah, no concerns.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/23-0
+00:02:06.641 --> 00:02:11.083
+<v Justin Collery>Brilliant. Okay.
+I'm actually very confident that the same</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/23-1
+00:02:11.083 --> 00:02:16.580
+<v Justin Collery>method will work to get the desktop
+products working as well. So to get,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/23-2
+00:02:16.580 --> 00:02:20.420
+<v Justin Collery>you know,
+Claude Chat and Claude Cowork working on</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/23-3
+00:02:20.420 --> 00:02:24.561
+<v Justin Collery>the machine on a machine,
+I think that will work also.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/24-0
+00:02:26.881 --> 00:02:31.375
+<v Justin Collery>If you, okay, cloud.
+ai is blocked at the moment,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/24-1
+00:02:31.375 --> 00:02:34.521
+<v Justin Collery>so I'm not sure how we can test it.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/25-0
+00:02:37.041 --> 00:02:41.314
+<v Justin Collery>I'll have a chat with some people to see.
+I would love to, Seth, if you want to,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/25-1
+00:02:41.314 --> 00:02:44.057
+<v Justin Collery>by the way,
+if you want to cheque user attribution,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/25-2
+00:02:44.057 --> 00:02:47.855
+<v Justin Collery>I mean, by all means, tell me,
+add me to the AD group and I'll point my</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/25-3
+00:02:47.855 --> 00:02:51.970
+<v Justin Collery>Claude instance at it and you can get 2
+users going through it to see if that</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/25-4
+00:02:51.970 --> 00:02:55.082
+<v Justin Collery>works. If you want to do that,
+I'm more than open to that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/25-5
+00:02:55.082 --> 00:02:56.401
+<v Justin Collery>And then my only other...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/27-0
+00:02:57.121 --> 00:03:02.422
+<v Justin Collery>My only other concern, so I'm comfortable,
+more than comfortable that your method</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/27-1
+00:03:02.422 --> 00:03:05.331
+<v Justin Collery>will work well for the desktop
+applications.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/27-2
+00:03:05.331 --> 00:03:09.274
+<v Justin Collery>And the last piece of the puzzle then is
+the Office add-ins.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/27-3
+00:03:09.274 --> 00:03:13.218
+<v Justin Collery>And you can set those to use SSO,
+so I think they will work,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/27-4
+00:03:13.218 --> 00:03:17.161
+<v Justin Collery>but I'm not as confident on that as I am
+with the other two.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/28-0
+00:03:17.281 --> 00:03:18.801
+<v Justin Collery>But that's a really good start.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/29-0
+00:03:19.441 --> 00:03:24.401
+<v Seth Chalmers>Yeah, yeah, we can test that as well.
+I didn't get into the office plugins yet.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/30-0
+00:03:24.721 --> 00:03:27.124
+<v Justin Collery>Yeah,
+it's they're going to be difficult to</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/30-1
+00:03:27.124 --> 00:03:28.161
+<v Justin Collery>test set because...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/31-0
+00:03:29.921 --> 00:03:32.987
+<v Justin Collery>They won't enable the Office plugins on
+your regular account.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/31-1
+00:03:32.987 --> 00:03:36.696
+<v Justin Collery>They'll only do it on a test account,
+or at least they wouldn't when I was</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/31-2
+00:03:36.696 --> 00:03:39.415
+<v Justin Collery>doing my POC.
+And then we have to get a couple of URLs</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/31-3
+00:03:39.415 --> 00:03:42.185
+<v Justin Collery>enabled, unblocked,
+in order to be able to download the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/31-4
+00:03:42.185 --> 00:03:45.350
+<v Justin Collery>plugin, or the add-in, I should say,
+in order to get it set up.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/31-5
+00:03:45.350 --> 00:03:47.921
+<v Justin Collery>So there's a little bit of work for me to
+do there.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/32-0
+00:03:49.841 --> 00:03:53.723
+<v Justin Collery>Okay, so is there, do you need, I mean,
+on the face of it, Seth,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/32-1
+00:03:53.723 --> 00:03:58.321
+<v Justin Collery>you made amazing progress. I mean,
+it seems great. What do you need from me?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/33-0
+00:04:00.081 --> 00:04:05.118
+<v Seth Chalmers>Well, not much honestly.
+So we'll need to do the office plugins.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/33-1
+00:04:05.118 --> 00:04:10.311
+<v Seth Chalmers>So when we can figure that out,
+we can test that. Other than that,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/33-2
+00:04:10.311 --> 00:04:15.658
+<v Seth Chalmers>everything seems to be working.
+So I just have that Azure SSO ticket</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/33-3
+00:04:15.658 --> 00:04:17.441
+<v Seth Chalmers>opened as of yesterday.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/34-0
+00:04:19.121 --> 00:04:24.909
+<v Seth Chalmers>So I'd like to do the end-to-end again,
+make sure we're actually getting the user</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/34-1
+00:04:24.909 --> 00:04:28.156
+<v Seth Chalmers>attribution and kind of redo this whole
+flow.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/34-2
+00:04:28.156 --> 00:04:31.262
+<v Seth Chalmers>This last bit on the bottom is out of
+date.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/34-3
+00:04:31.262 --> 00:04:36.345
+<v Seth Chalmers>We got all the models available in the
+account to work with Cloud Code.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/34-4
+00:04:36.345 --> 00:04:40.721
+<v Seth Chalmers>So I need to take this out at the bottom
+of the architecture.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/36-0
+00:04:41.521 --> 00:04:45.674
+<v Seth Chalmers>Yeah, everything seems to be good.
+So I'd just like to test that last piece,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/35-0
+00:04:43.521 --> 00:04:44.001
+<v Justin Collery>All right.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/36-1
+00:04:45.674 --> 00:04:46.321
+<v Seth Chalmers>essentially.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/37-0
+00:04:46.881 --> 00:04:50.614
+<v Justin Collery>All right, Seth,
+so a couple of questions then. As I said,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/37-1
+00:04:50.614 --> 00:04:54.854
+<v Justin Collery>I'm so free today with a weird head,
+so it's all coming to me now.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/37-2
+00:04:54.854 --> 00:04:58.207
+<v Justin Collery>The model list,
+how does the model list get updated?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/37-3
+00:04:58.207 --> 00:05:03.016
+<v Justin Collery>Is that like maintained by you guys?
+Is it a human or does it update itself</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/37-4
+00:05:03.016 --> 00:05:05.041
+<v Justin Collery>automatically? So as you know...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/38-0
+00:05:05.281 --> 00:05:08.826
+<v Justin Collery>Opus 5.2 is added next week.
+Does that automatically appear or how</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/38-1
+00:05:08.826 --> 00:05:10.361
+<v Justin Collery>does that model list managed?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/39-0
+00:05:11.161 --> 00:05:15.144
+<v Seth Chalmers>It's all through Bedrock.
+So whatever we have available in our</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/39-1
+00:05:15.144 --> 00:05:18.432
+<v Seth Chalmers>account essentially for Bedrock,
+the Claude models,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/39-2
+00:05:18.432 --> 00:05:20.961
+<v Seth Chalmers>that's what's available for Claude code.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/40-0
+00:05:21.721 --> 00:05:27.488
+<v Justin Collery>Brilliant. Okay. So, I mean, awesome. Now,
+then the next question I have is the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/40-1
+00:05:27.488 --> 00:05:33.183
+<v Justin Collery>account or accounts in the background.
+Do in order when we operationalize this</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/40-2
+00:05:33.183 --> 00:05:37.581
+<v Justin Collery>and roll this out,
+do we need to get more accounts set up to</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/40-3
+00:05:37.581 --> 00:05:41.041
+<v Justin Collery>point at or are we just going on your
+accounts?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/43-0
+00:05:42.161 --> 00:05:46.183
+<v Seth Chalmers>Just our accounts should, yeah,
+just ours should be fine.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/41-0
+00:05:42.201 --> 00:05:43.761
+<v Justin Collery>This is the bedrock instances.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/43-1
+00:05:46.183 --> 00:05:51.246
+<v Seth Chalmers>I think we are going to hit limits
+eventually once we get enough traffic</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/43-2
+00:05:51.246 --> 00:05:54.505
+<v Seth Chalmers>through this,
+but AWS has some account limits.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/43-3
+00:05:54.505 --> 00:06:00.053
+<v Seth Chalmers>You can kind of increase on your account
+once you're consistently hitting that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/42-0
+00:05:57.081 --> 00:05:57.281
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/43-4
+00:06:00.053 --> 00:06:03.521
+<v Seth Chalmers>And then there's also like bedrock token
+scaling.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/45-0
+00:06:03.921 --> 00:06:08.832
+<v Seth Chalmers>guidance from AWS that we can even
+further scale and maybe get a bunch of</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/45-1
+00:06:08.832 --> 00:06:12.682
+<v Seth Chalmers>other accounts that we can kind of float
+traffic through.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/45-2
+00:06:12.682 --> 00:06:15.801
+<v Seth Chalmers>So there's strategies to mitigate all of
+that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/44-0
+00:06:13.041 --> 00:06:13.361
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/46-0
+00:06:16.401 --> 00:06:19.720
+<v Justin Collery>Yeah, very good.
+So we can use the SP account. Okay,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/46-1
+00:06:19.720 --> 00:06:23.164
+<v Justin Collery>and then the last really important
+question I have is,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/46-2
+00:06:23.164 --> 00:06:27.736
+<v Justin Collery>there's going to be a requirement here
+that at some point in the future,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/46-3
+00:06:27.736 --> 00:06:32.871
+<v Justin Collery>there's a thing that we cannot talk about,
+but there's going to be all the latest</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/46-4
+00:06:32.871 --> 00:06:36.441
+<v Justin Collery>models are going to be available in the
+Canadian region.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/47-0
+00:06:37.201 --> 00:06:41.652
+<v Justin Collery>So we will want to have two endpoints.
+So the Canadian users go to the Canadian</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/47-1
+00:06:41.652 --> 00:06:46.047
+<v Justin Collery>endpoints, their data never leaves Canada,
+and everybody else can go to the US</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/47-2
+00:06:46.047 --> 00:06:49.775
+<v Justin Collery>endpoint. That one is fine.
+How does that fit in with your overall</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/47-3
+00:06:49.775 --> 00:06:52.278
+<v Justin Collery>scheme of things?
+It could be two endpoints,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/47-4
+00:06:52.278 --> 00:06:55.561
+<v Justin Collery>it could be two, whatever.
+We can do anything, but just...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/48-0
+00:06:55.681 --> 00:06:58.450
+<v Justin Collery>To solve the technical thing,
+we can have any, you know,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/48-1
+00:06:58.450 --> 00:07:01.315
+<v Justin Collery>it's an open field,
+but we do need to be able to segregate</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/48-2
+00:07:01.315 --> 00:07:05.201
+<v Justin Collery>the traffic based on the user's AD group,
+or let's say, or something like that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/50-0
+00:07:06.161 --> 00:07:10.466
+<v Seth Chalmers>Yeah, we should be able to do that.
+On the ACP end,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/50-1
+00:07:10.466 --> 00:07:15.434
+<v Seth Chalmers>we maintain kind of the models and what
+region they're for.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/50-2
+00:07:15.434 --> 00:07:22.223
+<v Seth Chalmers>So it would probably be a configuration
+within the harness that we've made to say</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/50-3
+00:07:22.223 --> 00:07:25.121
+<v Seth Chalmers>like this user is coming from a US.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/49-0
+00:07:25.841 --> 00:07:26.161
+<v Justin Collery>Yep.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/52-0
+00:07:26.241 --> 00:07:28.489
+<v Seth Chalmers>This used to come from US,
+direct them to US models,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/52-1
+00:07:28.489 --> 00:07:30.651
+<v Seth Chalmers>that type of thing.
+I think it should be possible,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/51-0
+00:07:29.761 --> 00:07:30.161
+<v Justin Collery>Yep.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/52-2
+00:07:30.651 --> 00:07:31.881
+<v Seth Chalmers>but we need to test it, yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/53-0
+00:07:32.401 --> 00:07:36.643
+<v Justin Collery>Okay, that's cool. So actually, and then,
+so do you use, in my head,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/53-1
+00:07:36.643 --> 00:07:41.315
+<v Justin Collery>I was thinking we might have to give a
+different URL or a different path or</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/53-2
+00:07:41.315 --> 00:07:45.618
+<v Justin Collery>something to the end user.
+Are you saying that you think that within,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/53-3
+00:07:45.618 --> 00:07:50.721
+<v Justin Collery>oh, there's a trouble, I see a flat, well,
+no, no, tell me, are you saying that...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/54-0
+00:07:51.841 --> 00:07:54.680
+<v Justin Collery>The ACP,
+we just have one ACP and it will route</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/54-1
+00:07:54.680 --> 00:07:59.295
+<v Justin Collery>the traffic to a geography based on where
+the user is coming from rather than</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/54-2
+00:07:59.295 --> 00:08:00.241
+<v Justin Collery>having two ACPs.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/56-0
+00:08:01.761 --> 00:08:05.474
+<v Seth Chalmers>Yeah,
+so we have like a multi-gateway model per</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/56-1
+00:08:05.474 --> 00:08:09.186
+<v Seth Chalmers>region.
+So we have like full dev set stage prod</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/56-2
+00:08:09.186 --> 00:08:15.065
+<v Seth Chalmers>per like region gateways essentially.
+So we can just point US users at a US</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/56-3
+00:08:15.065 --> 00:08:15.761
+<v Seth Chalmers>instance.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/55-0
+00:08:16.241 --> 00:08:17.121
+<v Justin Collery>Yep, perfect.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/57-0
+00:08:18.001 --> 00:08:19.041
+<v Seth Chalmers>So it should be fine.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/58-0
+00:08:19.601 --> 00:08:22.189
+<v Justin Collery>Yeah, yeah, great. Okay,
+so now I am going to cry. Seth,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/58-1
+00:08:22.189 --> 00:08:22.961
+<v Justin Collery>that's beautiful.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/59-0
+00:08:26.481 --> 00:08:31.151
+<v Lalit Summan>And just to add to that, Justin, as well,
+the alignment from enterprise</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/59-1
+00:08:31.151 --> 00:08:35.367
+<v Lalit Summan>architecture is to have one portal for
+ACP, right, not multiple.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/59-2
+00:08:35.367 --> 00:08:39.324
+<v Lalit Summan>And like Seth mentioned,
+multiple gateways for the different</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/59-3
+00:08:39.324 --> 00:08:40.881
+<v Lalit Summan>regions that require it.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-0
+00:08:41.881 --> 00:08:45.326
+<v Justin Collery>So one portal but multiple gateways, yes,
+yeah, yeah. So the concern,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-1
+00:08:45.326 --> 00:08:49.213
+<v Justin Collery>as I was sort of saying is the concern
+was that you don't want a Canadian user</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-2
+00:08:49.213 --> 00:08:53.101
+<v Justin Collery>to be typing on their keyboard and then
+for that traffic to go to the US and a</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-3
+00:08:53.101 --> 00:08:55.463
+<v Justin Collery>gateway in the US to say, oh,
+you're in Canada,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-4
+00:08:55.463 --> 00:08:58.760
+<v Justin Collery>let's send you back up to Canada because
+the data would have left,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-5
+00:08:58.760 --> 00:09:01.516
+<v Justin Collery>you know what I mean?
+You needed to stay in Canada. So,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/60-0
+00:08:59.761 --> 00:09:00.081
+<v Lalit Summan>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/63-6
+00:09:01.516 --> 00:09:03.681
+<v Justin Collery>but it sounds like you've got that in
+hand.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/61-0
+00:09:01.601 --> 00:09:01.761
+<v Lalit Summan>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/62-0
+00:09:05.201 --> 00:09:05.521
+<v Lalit Summan>Yep.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/64-0
+00:09:06.561 --> 00:09:12.121
+<v Justin Collery>All right. Beautiful. Okay,
+so in terms of next steps, then if you,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/64-1
+00:09:12.121 --> 00:09:17.435
+<v Justin Collery>if there's anything in particular you
+need from me, let me know.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/64-2
+00:09:17.435 --> 00:09:23.404
+<v Justin Collery>It's obvious to me now that I need to get
+you, I need to get the claude.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/64-3
+00:09:23.404 --> 00:09:25.121
+<v Justin Collery>ai URLs unblocked and</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/65-0
+00:09:25.281 --> 00:09:28.401
+<v Justin Collery>to enable you to get your hands on some
+of this software.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/67-0
+00:09:30.081 --> 00:09:33.864
+<v Justin Collery>I'm going to work on that.
+The problem is that I'm not sure that</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/67-1
+00:09:33.864 --> 00:09:38.346
+<v Justin Collery>they'll give that to us until the ATG
+goes through and I'm not sure when I'm</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/67-2
+00:09:38.346 --> 00:09:42.362
+<v Justin Collery>slated to bring this to ATG.
+I'm sort of fighting for a slot as soon</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/67-3
+00:09:42.362 --> 00:09:46.960
+<v Justin Collery>as I can. As soon as we get that ATG,
+that'll be fine. They'll open it all up,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/67-4
+00:09:46.960 --> 00:09:48.241
+<v Justin Collery>but that's probably...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/68-0
+00:09:48.921 --> 00:09:50.961
+<v Justin Collery>I don't know that I can get it opened up
+before that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/69-0
+00:09:52.881 --> 00:09:56.014
+<v Seth Chalmers>Okay, yeah,
+we've done just Israel's before and then</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/69-1
+00:09:56.014 --> 00:09:59.619
+<v Seth Chalmers>get the unblock depending.
+Sometimes they're okay with that,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/69-2
+00:09:59.619 --> 00:10:00.801
+<v Seth Chalmers>but up to you, yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/70-0
+00:10:01.361 --> 00:10:04.103
+<v Justin Collery>Yeah, yeah, okay, okay.
+That's good to know, right? I'll,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/70-1
+00:10:04.103 --> 00:10:07.743
+<v Justin Collery>because I can't bring the ATG won't get
+approved until the user is done. So,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/70-2
+00:10:07.743 --> 00:10:10.343
+<v Justin Collery>and the user is on my list to get that
+done. So maybe,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/70-3
+00:10:10.343 --> 00:10:12.470
+<v Justin Collery>and I've done a lot of work on that
+already.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/70-4
+00:10:12.470 --> 00:10:15.968
+<v Justin Collery>So if we can get that over the line quick
+enough, maybe that unblocks us,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/70-5
+00:10:15.968 --> 00:10:16.961
+<v Justin Collery>which would be great.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/71-0
+00:10:17.521 --> 00:10:21.203
+<v Seth Chalmers>Yeah, yeah,
+because I noticed that I was trying to</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/71-1
+00:10:21.203 --> 00:10:24.813
+<v Seth Chalmers>test the cloud code with our AI
+consortium Slack,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/71-2
+00:10:24.813 --> 00:10:29.361
+<v Seth Chalmers>and it goes to that cloud.
+ai URL and then blocks us, so yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/72-0
+00:10:30.801 --> 00:10:31.841
+<v Seth Chalmers>But yeah, that sounds good.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/73-0
+00:10:32.641 --> 00:10:33.201
+<v Justin Collery>All right.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/74-0
+00:10:33.721 --> 00:10:36.597
+<v Pavithra Viswanathan>So as next steps, right?
+So while you are away, Seth,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/74-1
+00:10:36.597 --> 00:10:40.910
+<v Pavithra Viswanathan>is there anything else that we can do to
+make progress while we are also waiting</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/74-2
+00:10:40.910 --> 00:10:42.721
+<v Pavithra Viswanathan>on the strand ATG to be completed?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/75-0
+00:10:44.001 --> 00:10:47.435
+<v Seth Chalmers>Yep,
+I'm hoping the ticket I put through today</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/75-1
+00:10:47.435 --> 00:10:52.405
+<v Seth Chalmers>will be unblocked. If not,
+I'll pass everything over to Ranjula for</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/75-2
+00:10:52.405 --> 00:10:56.935
+<v Seth Chalmers>another item on his list while I'm gone.
+But it's all set up.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/75-3
+00:10:56.935 --> 00:11:03.000
+<v Seth Chalmers>It's just basically running a test script
+that I have to make sure that we get the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/75-4
+00:11:03.000 --> 00:11:04.681
+<v Seth Chalmers>user attribution there.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/80-0
+00:11:04.801 --> 00:11:11.486
+<v Seth Chalmers>then we should be basically all set up
+until we're ready Justin to test like</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/80-1
+00:11:11.486 --> 00:11:15.827
+<v Seth Chalmers>office tools or whatever next steps.
+On our side,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/77-0
+00:11:12.081 --> 00:11:12.401
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/80-2
+00:11:15.827 --> 00:11:21.036
+<v Seth Chalmers>we still have the kind of cost chargeback
+thing to work on.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/80-3
+00:11:21.036 --> 00:11:23.641
+<v Seth Chalmers>So that would be the big item.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/78-0
+00:11:21.601 --> 00:11:21.961
+<v Pavithra Viswanathan>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/81-0
+00:11:24.001 --> 00:11:26.161
+<v Seth Chalmers>That, yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/79-0
+00:11:24.081 --> 00:11:24.401
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/82-0
+00:11:26.241 --> 00:11:26.561
+<v Pavithra Viswanathan>Hello.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/83-0
+00:11:27.841 --> 00:11:31.856
+<v Robert Chin>Is Rob Granstein going to be owning
+Claude similar to GitHub Copilot</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/83-1
+00:11:31.856 --> 00:11:32.961
+<v Robert Chin>chargeback, Justin?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/84-0
+00:11:34.561 --> 00:11:35.921
+<v Justin Collery>Sorry, say that again.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/85-0
+00:11:35.281 --> 00:11:36.961
+<v Robert Chin>Ohh, it's for like a...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/88-0
+00:11:38.241 --> 00:11:42.120
+<v Robert Chin>I guess this is Cowork, not Claude Code.
+Is Rob Grant's, you know,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/87-0
+00:11:41.921 --> 00:11:42.081
+<v Justin Collery>But.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/88-1
+00:11:42.120 --> 00:11:46.519
+<v Robert Chin>Rob Grant owns all the GitHub, Copilot,
+Chargeback, all that kind of stuff.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/88-2
+00:11:46.519 --> 00:11:49.761
+<v Robert Chin>Is he going to be owning this Claude Code
+tool as well?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/91-0
+00:11:51.161 --> 00:11:54.078
+<v Robert Chin>From an operational perspective,
+like if that, you know,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/89-0
+00:11:51.361 --> 00:11:51.841
+<v Justin Collery>That's good.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/91-1
+00:11:54.078 --> 00:11:58.223
+<v Robert Chin>then that would make sense if we send all
+the data to him to kind of incorporate</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/91-2
+00:11:58.223 --> 00:12:01.601
+<v Robert Chin>into his current chargeback approach,
+that would be kind of good.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/90-0
+00:12:00.841 --> 00:12:00.961
+<v Justin Collery>At.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/96-0
+00:12:02.041 --> 00:12:05.955
+<v Justin Collery>Yeah, let me have a chat with Rob,
+because I was about to have a chat with</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/96-1
+00:12:05.955 --> 00:12:10.339
+<v Justin Collery>Shane Rin and the desktop people to see,
+to see, okay, Rob, here's the deal, right?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/96-2
+00:12:10.339 --> 00:12:14.618
+<v Justin Collery>This one is a little bit awkward, right?
+And I was on the hunt to find the owner.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/92-0
+00:12:10.961 --> 00:12:11.081
+<v Robert Chin>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/96-3
+00:12:14.618 --> 00:12:18.376
+<v Justin Collery>Rob Gant is absolutely the correct person
+when it comes to Claude code,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/96-4
+00:12:18.376 --> 00:12:21.977
+<v Justin Collery>but then there's co-work,
+which is kind of like Claude code for non.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/93-0
+00:12:19.841 --> 00:12:20.081
+<v Robert Chin>Mm.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/94-0
+00:12:21.841 --> 00:12:22.241
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/96-5
+00:12:21.977 --> 00:12:22.081
+<v Justin Collery>..</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/98-0
+00:12:22.241 --> 00:12:26.276
+<v Justin Collery>techie type people and then it becomes
+more of a desktop and I was about to have</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/95-0
+00:12:23.601 --> 00:12:24.081
+<v Robert Chin>Mhm.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/97-0
+00:12:25.441 --> 00:12:25.761
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/98-1
+00:12:26.276 --> 00:12:28.817
+<v Justin Collery>those conversations,
+see well who wants to own it.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/98-2
+00:12:28.817 --> 00:12:30.561
+<v Justin Collery>So I'll have a chat first with Rob.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/100-0
+00:12:29.121 --> 00:12:33.274
+<v Robert Chin>Yeah, because once you find that owner,
+yeah, once you find that owner,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/100-1
+00:12:33.274 --> 00:12:37.312
+<v Robert Chin>then we'll just tag them in the telemetry
+data to say, you know what,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/99-0
+00:12:33.961 --> 00:12:34.161
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/100-2
+00:12:37.312 --> 00:12:41.695
+<v Robert Chin>send data and the cost to this group,
+and then they can consolidate all the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/100-3
+00:12:41.695 --> 00:12:45.041
+<v Robert Chin>recovery that they want to do.
+So it keeps it consistent.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/103-0
+00:12:45.441 --> 00:12:48.891
+<v Justin Collery>Yeah, and actually within that as well,
+I'm guessing for both groups,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/103-1
+00:12:48.891 --> 00:12:52.833
+<v Justin Collery>there is this requirement where like AVPs
+or people who in the call centre will</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/103-2
+00:12:52.833 --> 00:12:56.776
+<v Justin Collery>want some form of a report so that they
+can see the big spenders and the people</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/103-3
+00:12:56.776 --> 00:13:00.817
+<v Justin Collery>who maybe aren't making enough use of the
+tools and you know, that sort of thing.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/101-0
+00:13:00.521 --> 00:13:00.801
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/103-4
+00:13:00.817 --> 00:13:03.133
+<v Justin Collery>So,
+and it'd be the same requirement for both.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/103-5
+00:13:03.133 --> 00:13:03.281
+<v Justin Collery>So,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/102-0
+00:13:04.641 --> 00:13:05.041
+<v Seth Chalmers>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/104-0
+00:13:05.961 --> 00:13:06.401
+<v Justin Collery>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/107-0
+00:13:08.161 --> 00:13:11.361
+<v Justin Collery>Awesome. Awesome. Okay,
+so what are we missing then?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/106-0
+00:13:09.961 --> 00:13:10.721
+<v Robert Chin>Pretty cool.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/105-0
+00:13:10.161 --> 00:13:10.561
+<v Pavithra Viswanathan>Ohh.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/107-1
+00:13:11.361 --> 00:13:14.561
+<v Justin Collery>What else do we think?
+Anything that I'm forgetting?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/109-0
+00:13:18.161 --> 00:13:21.053
+<v Seth Chalmers>Technically sound,
+I think just the chargeback model is</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/109-1
+00:13:21.053 --> 00:13:23.841
+<v Seth Chalmers>going to be the biggest thing,
+so we'll work on that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/108-0
+00:13:22.721 --> 00:13:23.121
+<v Justin Collery>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/111-0
+00:13:24.881 --> 00:13:29.059
+<v Robert Chin>Yeah, but yeah, yeah. Well,
+now the chargeback model, Justin, like,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/110-0
+00:13:25.041 --> 00:13:25.841
+<v Justin Collery>It's brilliant.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/111-1
+00:13:29.059 --> 00:13:32.929
+<v Robert Chin>are you looking for,
+you think these folks look for real time,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/111-2
+00:13:32.929 --> 00:13:36.001
+<v Robert Chin>like very real time,
+or just because the whole...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-0
+00:13:37.441 --> 00:13:40.553
+<v Robert Chin>the way that AWS builds,
+like you get the real time like pricing,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-1
+00:13:40.553 --> 00:13:42.864
+<v Robert Chin>what we get from like Bedrock,
+things like that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-2
+00:13:42.864 --> 00:13:46.542
+<v Robert Chin>And then at the end of the month is when
+they run all their big processing of</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-3
+00:13:46.542 --> 00:13:50.456
+<v Robert Chin>actual financial transactions where they
+add in tax and then there's an enterprise</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-4
+00:13:50.456 --> 00:13:53.757
+<v Robert Chin>discount factor that gets added at the
+month end and stuff like that.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-5
+00:13:53.757 --> 00:13:57.671
+<v Robert Chin>So do we need it to match exactly what's
+hitting the financial books or is it just</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/112-6
+00:13:57.671 --> 00:13:58.001
+<v Robert Chin>more...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/114-0
+00:13:58.801 --> 00:13:59.601
+<v Robert Chin>Notional.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/115-0
+00:14:00.561 --> 00:14:01.841
+<v Robert Chin>Spend that we're looking for.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/113-0
+00:14:00.921 --> 00:14:01.041
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/118-0
+00:14:02.321 --> 00:14:04.681
+<v Justin Collery>Alright,
+so they they they will get the OK,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/118-1
+00:14:04.681 --> 00:14:08.758
+<v Justin Collery>so I'm working through it, Rob. OK,
+so think of my think of my thing right,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/116-0
+00:14:05.921 --> 00:14:06.401
+<v Robert Chin>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/118-2
+00:14:08.758 --> 00:14:12.781
+<v Justin Collery>so they they will need I guess some
+report at the end which gives them the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/117-0
+00:14:12.521 --> 00:14:13.121
+<v Robert Chin>Mm-hmm.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/118-3
+00:14:12.781 --> 00:14:16.965
+<v Justin Collery>actuals right, just for information,
+but it's the day-to-day is like just the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/118-4
+00:14:16.965 --> 00:14:20.881
+<v Justin Collery>notional thing of just keep you know
+managing your team, yeah, yeah, so.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/119-0
+00:14:17.601 --> 00:14:20.104
+<v Robert Chin>Okay, how many tokens they've been using?
+Okay, okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/119-1
+00:14:20.104 --> 00:14:22.561
+<v Robert Chin>And then the month end they'll get their
+final bill.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-0
+00:14:22.881 --> 00:14:25.374
+<v Justin Collery>Yeah, exactly. Yeah.
+So if you think about it, you know,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-1
+00:14:25.374 --> 00:14:29.135
+<v Justin Collery>you've got a team of developers, you know,
+if somebody isn't using any tokens at all,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-2
+00:14:29.135 --> 00:14:31.628
+<v Justin Collery>well, you know,
+is it a thing that we need to train them</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-3
+00:14:31.628 --> 00:14:34.776
+<v Justin Collery>up on how to use the tools, right?
+And then if somebody else is burning</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-4
+00:14:34.776 --> 00:14:38.275
+<v Justin Collery>through $1,000 worth of tokens a day, or,
+you know, some sort of massive thing,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-5
+00:14:38.275 --> 00:14:40.593
+<v Justin Collery>you know, maybe it's like, here,
+what are you doing?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/121-6
+00:14:40.593 --> 00:14:42.561
+<v Justin Collery>There's going to be a better way to do
+this.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/120-0
+00:14:40.641 --> 00:14:40.961
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/122-0
+00:14:43.521 --> 00:14:46.755
+<v Justin Collery>So it doesn't have to be totally accurate,
+it's just a feel for, you know,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/122-1
+00:14:46.755 --> 00:14:49.041
+<v Justin Collery>who's burning lots of tokens and who's
+burning none.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/123-0
+00:14:51.201 --> 00:14:53.199
+<v Robert Chin>Yeah, no, that makes sense.
+out-of-the-box,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/123-1
+00:14:53.199 --> 00:14:56.241
+<v Robert Chin>what does Cloud Code offer for that kind
+of reporting, or do they?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/125-0
+00:14:56.721 --> 00:14:58.685
+<v Justin Collery>They don't,
+unless you go with the enterprise plan</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/125-1
+00:14:58.685 --> 00:15:01.420
+<v Justin Collery>and then you can see it all,
+but in Claude Code itself it doesn't give</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/124-0
+00:15:00.241 --> 00:15:00.641
+<v Robert Chin>Ohh.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/125-2
+00:15:01.420 --> 00:15:01.921
+<v Justin Collery>you anything.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/126-0
+00:15:02.321 --> 00:15:04.198
+<v Robert Chin>Okay,
+so it's not like GitHub Copilot where</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/126-1
+00:15:04.198 --> 00:15:05.521
+<v Robert Chin>there's some kind of mechanism.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/129-0
+00:15:06.081 --> 00:15:09.928
+<v Justin Collery>I think there is a tool there where you
+can say cost and you can see yourself and</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/129-1
+00:15:09.928 --> 00:15:13.024
+<v Justin Collery>it will tell you per session,
+like how much you've burned through</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/129-2
+00:15:13.024 --> 00:15:16.637
+<v Justin Collery>tokens and how much money you've used.
+But that's not, that just is for you.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/127-0
+00:15:14.881 --> 00:15:15.281
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/129-3
+00:15:16.637 --> 00:15:20.108
+<v Justin Collery>It's not something that you could share
+with the manager easily, I think,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/129-4
+00:15:20.108 --> 00:15:21.281
+<v Justin Collery>which is the requirement.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/128-0
+00:15:22.161 --> 00:15:23.201
+<v Robert Chin>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/130-0
+00:15:25.521 --> 00:15:27.681
+<v Justin Collery>Are you, what are you thinking about Rob?
+You're thinking from the...</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/131-0
+00:15:28.401 --> 00:15:31.527
+<v Robert Chin>Well, I'm just curious, like, yeah,
+like GitHub CodePala,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/131-1
+00:15:31.527 --> 00:15:35.784
+<v Robert Chin>how do we get that data today? Like,
+who does that analysis today in terms of,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/131-2
+00:15:35.784 --> 00:15:38.640
+<v Robert Chin>you know, who's using it,
+who's not using it enough?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/131-3
+00:15:38.640 --> 00:15:41.281
+<v Robert Chin>Where do we get that?
+How do they do that today?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/132-0
+00:15:39.681 --> 00:15:45.750
+<v Pavithra Viswanathan>GitHub Copilot has an API for cost and it
+provides all the details of the user and</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/132-1
+00:15:45.750 --> 00:15:51.746
+<v Pavithra Viswanathan>the usage and then we map it with the AD
+groups to see who the manager is and all</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/132-2
+00:15:51.746 --> 00:15:55.475
+<v Pavithra Viswanathan>of that.
+But GitHub Copilot offers an API just for</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/132-3
+00:15:55.475 --> 00:15:55.841
+<v Pavithra Viswanathan>cost.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/134-0
+00:15:56.081 --> 00:15:59.025
+<v Robert Chin>Yeah, so, like,
+is there a system today then that manager</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/134-1
+00:15:59.025 --> 00:16:02.680
+<v Robert Chin>is going to see how their team is using
+GitHub Copilot on a day-to-day,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/134-2
+00:16:02.680 --> 00:16:06.894
+<v Robert Chin>where they can get that trend analysis to
+see whether or not there's anything that</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/133-0
+00:16:05.921 --> 00:16:06.201
+<v Pavithra Viswanathan>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/134-3
+00:16:06.894 --> 00:16:08.721
+<v Robert Chin>needs to be done to change behavior?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/137-0
+00:16:07.641 --> 00:16:10.986
+<v Pavithra Viswanathan>Yeah, from what it last, yeah,
+from what it last remember,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/137-1
+00:16:10.986 --> 00:16:14.274
+<v Pavithra Viswanathan>it's not on a day-to-day basis that is
+getting published.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/137-2
+00:16:14.274 --> 00:16:17.903
+<v Pavithra Viswanathan>It's more like a retrofit of a monthly
+usage, things like that,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/137-3
+00:16:17.903 --> 00:16:20.851
+<v Pavithra Viswanathan>that gets published.
+But things might have changed.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/137-4
+00:16:20.851 --> 00:16:25.103
+<v Pavithra Viswanathan>I'm not sure what's the latest process.
+Dunal might be the right person to</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/136-0
+00:16:24.641 --> 00:16:26.561
+<v Robert Chin>Was that who who ran that?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/137-5
+00:16:25.103 --> 00:16:27.201
+<v Pavithra Viswanathan>connect for GitHub code. Dunal, yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/138-0
+00:16:27.601 --> 00:16:29.441
+<v Pavithra Viswanathan>I can the name in the chat.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/139-0
+00:16:29.201 --> 00:16:31.179
+<v Robert Chin>Yeah,
+because I'm wondering if we could</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/139-1
+00:16:31.179 --> 00:16:33.601
+<v Robert Chin>leverage that and push the data to that
+process.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/141-0
+00:16:35.361 --> 00:16:38.321
+<v Seth Chalmers>I think they're looking to remove that
+process.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/140-0
+00:16:35.881 --> 00:16:36.881
+<v Robert Chin>Push the cloud data.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/142-0
+00:16:39.841 --> 00:16:42.961
+<v Seth Chalmers>It's a very manual, not good process.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/143-0
+00:16:43.841 --> 00:16:46.881
+<v Robert Chin>They want to evolve and take our data
+then.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/145-0
+00:16:48.561 --> 00:16:51.153
+<v Seth Chalmers>Yeah,
+like this will use the exact model we</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/145-1
+00:16:51.153 --> 00:16:55.041
+<v Seth Chalmers>need to work through for our other
+centralised imprints patterns.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/144-0
+00:16:54.721 --> 00:16:55.121
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/146-0
+00:16:56.041 --> 00:16:59.811
+<v Robert Chin>Like if they're owning the dev tools,
+I'm wondering if they want to,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/146-1
+00:16:59.811 --> 00:17:03.308
+<v Robert Chin>when it's part of their, you know,
+rebuild, they take our data,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/146-2
+00:17:03.308 --> 00:17:06.532
+<v Robert Chin>take their current data,
+and then build a target solution.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/146-3
+00:17:06.532 --> 00:17:10.685
+<v Robert Chin>I just don't want them building a new
+solution, us building a new solution,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/146-4
+00:17:10.685 --> 00:17:14.729
+<v Robert Chin>Kin's group building a new solution.
+We should centralise all that usage.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/146-5
+00:17:14.729 --> 00:17:16.641
+<v Robert Chin>And what I'm kind of like end user.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/147-0
+00:17:17.041 --> 00:17:20.692
+<v Robert Chin>End user LLM usage, I guess.
+Like one team should want to charge back</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/147-1
+00:17:20.692 --> 00:17:24.499
+<v Robert Chin>for that, right? And whether it's,
+you know, the majority is, let's say,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/147-2
+00:17:24.499 --> 00:17:27.681
+<v Robert Chin>in the dev tools operation,
+maybe they should. I don't know.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/148-0
+00:17:28.321 --> 00:17:31.475
+<v Justin Collery>I brought it out to that, Rob.
+It's not just end users, right?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/148-1
+00:17:31.475 --> 00:17:33.777
+<v Justin Collery>Let's say in the individual or the GRS
+space,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/148-2
+00:17:33.777 --> 00:17:37.832
+<v Justin Collery>I come up with 10 different agents and
+they're running and they're going through</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/148-3
+00:17:37.832 --> 00:17:40.134
+<v Justin Collery>the ACP.
+You might want to have a chargeback,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/148-4
+00:17:40.134 --> 00:17:44.289
+<v Justin Collery>a way to charge back those agents as well.
+And it could follow the same pattern if</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/148-5
+00:17:44.289 --> 00:17:45.841
+<v Justin Collery>you build it with that in mind.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/150-0
+00:17:47.481 --> 00:17:50.561
+<v Seth Chalmers>Yeah, and that's what we're building, Rob,
+on the Lemonade end.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/149-0
+00:17:50.161 --> 00:17:50.561
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/151-0
+00:17:51.681 --> 00:17:55.251
+<v Robert Chin>And do we think, okay, okay,
+so we'll figure out if who that best</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/151-1
+00:17:55.251 --> 00:17:59.416
+<v Robert Chin>belongs. If it is an eDay function,
+we can talk to Ellis through that to see</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/151-2
+00:17:59.416 --> 00:18:03.419
+<v Robert Chin>if, are we building a new product?
+Are we building a new Sun Life product</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/151-3
+00:18:03.419 --> 00:18:06.881
+<v Robert Chin>here that needs to be built out in the
+whole chargeback scheme?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/154-0
+00:18:09.441 --> 00:18:14.828
+<v Seth Chalmers>So all of the attribution should be
+happening like in Luminate, like our ACP.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/153-0
+00:18:13.681 --> 00:18:18.081
+<v Robert Chin>Yeah. And I know we'll have all the data.
+We'll have all the data. Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/154-1
+00:18:14.828 --> 00:18:18.488
+<v Seth Chalmers>The mechanism,
+the mechanism of chargeback is what's</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/152-0
+00:18:18.321 --> 00:18:18.721
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/154-2
+00:18:18.488 --> 00:18:19.041
+<v Seth Chalmers>missing.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-0
+00:18:19.281 --> 00:18:21.370
+<v Robert Chin>Yeah,
+so we got to figure out where that</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-1
+00:18:21.370 --> 00:18:23.664
+<v Robert Chin>mechanism falls, Justin,
+because ultimately,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-2
+00:18:23.664 --> 00:18:26.925
+<v Robert Chin>the owner of each of these tools are
+responsible for, you know,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-3
+00:18:26.925 --> 00:18:30.238
+<v Robert Chin>owning their product to the consumer to
+say, hey, you know what,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/155-0
+00:18:27.521 --> 00:18:27.921
+<v Lalit Summan>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-4
+00:18:30.238 --> 00:18:33.245
+<v Robert Chin>this is the product we're offering.
+This is support. Like,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-5
+00:18:33.245 --> 00:18:36.863
+<v Robert Chin>if you look at Cowork, well,
+can the CTO organisation be providing the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-6
+00:18:36.863 --> 00:18:39.768
+<v Robert Chin>support? Like,
+are they going to have resources assigned</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/156-7
+00:18:39.768 --> 00:18:39.921
+<v Robert Chin>to?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/157-0
+00:18:40.041 --> 00:18:40.561
+<v Robert Chin>Cork.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/159-0
+00:18:41.521 --> 00:18:43.681
+<v Justin Collery>Yeah,
+they will have to the desktop team are</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/158-0
+00:18:42.961 --> 00:18:44.241
+<v Robert Chin>The OK.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/159-1
+00:18:43.681 --> 00:18:44.881
+<v Justin Collery>pushing it down, so yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/162-0
+00:18:45.401 --> 00:18:48.799
+<v Robert Chin>So they're going to have a chargeback to
+the clients to say, hey,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/162-1
+00:18:48.799 --> 00:18:52.352
+<v Robert Chin>if I want to sign up for Cowork,
+CTO is going to charge me whatever,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/162-2
+00:18:52.352 --> 00:18:56.214
+<v Robert Chin>$10 a month plus usage. So in that case,
+they would own the product from a</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/162-3
+00:18:56.214 --> 00:18:59.251
+<v Robert Chin>financial perspective to do the monthly
+chargeback, right?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/162-4
+00:18:59.251 --> 00:19:03.061
+<v Robert Chin>So I think you just have to find an owner
+of the service from a financial</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/160-0
+00:19:02.481 --> 00:19:02.881
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/162-5
+00:19:03.061 --> 00:19:05.121
+<v Robert Chin>perspective, and we'll provide them the.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/161-0
+00:19:04.481 --> 00:19:04.721
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/165-0
+00:19:05.161 --> 00:19:08.325
+<v Robert Chin>data telemetry,
+which Seth is going to have all the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/163-0
+00:19:08.241 --> 00:19:08.721
+<v Justin Collery>Gotcha.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/165-1
+00:19:08.325 --> 00:19:11.185
+<v Robert Chin>details and then they can deal with it,
+right?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/164-0
+00:19:10.321 --> 00:19:10.881
+<v Justin Collery>Yeah, yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/165-2
+00:19:11.185 --> 00:19:15.201
+<v Robert Chin>But then plot code wouldn't be Kins,
+it would be maybe Rob Grant.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/166-0
+00:19:15.521 --> 00:19:17.041
+<v Justin Collery>Yeah, yeah, another chat with Rob.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/167-0
+00:19:17.521 --> 00:19:21.501
+<v Robert Chin>Yeah, so you just have to work out,
+figure that out, so that we, um,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/167-1
+00:19:21.501 --> 00:19:22.481
+<v Robert Chin>that's all clean.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/168-0
+00:19:22.881 --> 00:19:26.011
+<v Justin Collery>Yeah, okay, cool,
+but you guys have the technical stuff in</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/168-1
+00:19:26.011 --> 00:19:27.921
+<v Justin Collery>hand here at the back, so brilliant.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/170-0
+00:19:27.201 --> 00:19:30.125
+<v Robert Chin>Yes, we have all the data.
+Whoever wants the data that can use the</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/170-1
+00:19:30.125 --> 00:19:31.041
+<v Robert Chin>data, that'd be good.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/169-0
+00:19:30.641 --> 00:19:31.001
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/171-0
+00:19:32.241 --> 00:19:32.881
+<v Justin Collery>Awesome.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/172-0
+00:19:33.921 --> 00:19:36.857
+<v Justin Collery>Okay,
+anything else then that we're missing or</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/172-1
+00:19:36.857 --> 00:19:38.481
+<v Justin Collery>I need to get to you guys?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/173-0
+00:19:40.801 --> 00:19:41.521
+<v Seth Chalmers>I think that's it.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/174-0
+00:19:43.201 --> 00:19:44.481
+<v Justin Collery>How long are you off for Seth?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/175-0
+00:19:45.441 --> 00:19:48.521
+<v Seth Chalmers>Ten days, I'll be back on the 30th. Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/176-0
+00:19:46.801 --> 00:19:49.512
+<v Justin Collery>Oh gosh, not too bad.
+They said I thought you were gone for</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/176-1
+00:19:49.512 --> 00:19:51.681
+<v Justin Collery>months.
+I thought Ranjula was going to be busy.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/178-0
+00:19:53.041 --> 00:19:56.635
+<v Ranjula Rowel>Oh yes,
+I was going to tell that since the code</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/178-1
+00:19:56.635 --> 00:20:01.128
+<v Ranjula Rowel>is going through ACP,
+the only requirement I have is I need</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/178-2
+00:20:01.128 --> 00:20:02.401
+<v Ranjula Rowel>unlimited access.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/177-0
+00:20:03.081 --> 00:20:03.601
+<v Pavithra Viswanathan>What?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/179-0
+00:20:03.761 --> 00:20:04.081
+<v Seth Chalmers>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/183-0
+00:20:04.041 --> 00:20:06.081
+<v Robert Chin>That's OK. We on the day to talk to Seth.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/180-0
+00:20:04.761 --> 00:20:04.881
+<v Pavithra Viswanathan>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/188-0
+00:20:05.281 --> 00:20:09.437
+<v Ranjula Rowel>That's all, that's all.
+I will make myself and set have them</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/182-0
+00:20:07.121 --> 00:20:07.521
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/181-0
+00:20:07.601 --> 00:20:07.641
+<v Seth Chalmers>I.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/188-1
+00:20:09.437 --> 00:20:13.525
+<v Ranjula Rowel>unlimited tokens,
+so then I don't have to request any extra</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/188-2
+00:20:13.525 --> 00:20:15.841
+<v Ranjula Rowel>token, go through that pain again.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/184-0
+00:20:15.041 --> 00:20:15.441
+<v Robert Chin>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/185-0
+00:20:16.761 --> 00:20:16.961
+<v Seth Chalmers>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/186-0
+00:20:16.961 --> 00:20:17.121
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/187-0
+00:20:18.201 --> 00:20:19.721
+<v Pavithra Viswanathan>Nice try, Ranjula.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/189-0
+00:20:19.841 --> 00:20:20.041
+<v Justin Collery>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/190-0
+00:20:24.001 --> 00:20:24.441
+<v Ranjula Rowel>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/192-0
+00:20:24.641 --> 00:20:27.660
+<v Justin Collery>Yeah, yeah, so Justin,
+you're using 10 billion tokens a day.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/191-0
+00:20:24.681 --> 00:20:24.801
+<v Ranjula Rowel>Okay.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/195-0
+00:20:25.081 --> 00:20:29.344
+<v Robert Chin>We'll use that,
+we'll use that as a test case. OK, Justin,</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/192-1
+00:20:27.660 --> 00:20:28.601
+<v Justin Collery>What are you doing?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/193-0
+00:20:28.841 --> 00:20:29.201
+<v Ranjula Rowel>Yeah.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/195-1
+00:20:29.344 --> 00:20:31.801
+<v Robert Chin>you're on vacation. What the heck?</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/196-0
+00:20:38.681 --> 00:20:39.441
+<v Pavithra Viswanathan>Thank you, everyone.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/197-0
+00:20:43.481 --> 00:20:44.121
+<v Ranjula Rowel>Thank you.</v>
+
+7a7b534a-0b9f-47b3-8e04-516886f6e7c5/198-0
+00:20:45.481 --> 00:20:46.201
+<v Seth Chalmers>Thank you, Justin.</v>

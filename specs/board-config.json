@@ -1,0 +1,77 @@
+{
+  "project": {
+    "key": "EACPP",
+    "id": "20221"
+  },
+  "product_team_label": "acp-product-team",
+  "epic_board": {
+    "id": 28925,
+    "name": "EACPP Product Team Epic Board",
+    "type": "kanban",
+    "filter_id": "87884",
+    "jql": "project in (20221) AND issuetype in (10000) AND labels = \"acp-product-team\" ORDER BY Rank ASC",
+    "columns": {
+      "strategy": "One column per D0-D4 SDD gate. An epic's Jira status IS its gate.",
+      "generator": "scripts/manage_board_columns.py",
+      "gate_source": "specs/epic-mapping.json on origin/main (a gate counts once merged), synced by scripts/sync_epic_gates.py",
+      "constraint": "Jira board columns can only map to statuses, and the EACPP Epic workflow has exactly these six. Real D0-D4 statuses would need a Jira site admin.",
+      "api": {
+        "note": "Column layout is not exposed by the public REST API; use the internal greenhopper endpoints.",
+        "read": "GET /rest/greenhopper/1.0/rapidviewconfig/editmodel.json?rapidViewId=28925",
+        "write": "PUT /rest/greenhopper/1.0/rapidviewconfig/columns {rapidViewId, mappedColumns, currentStatisticsField}",
+        "verify": "GET /rest/agile/1.0/board/28925/configuration"
+      },
+      "mapped": [
+        { "name": "Backlog", "statuses": [], "kanplan": true },
+        { "name": "D0 · Discovery", "gates": ["D0"], "statuses": [{ "id": "10043", "name": "Funnel" }] },
+        { "name": "D1 · Requirements", "gates": ["D1"], "statuses": [{ "id": "10163", "name": "In Analysis" }] },
+        { "name": "D2 · Design", "gates": ["D2"], "statuses": [{ "id": "12128", "name": "Ready for PI" }] },
+        { "name": "D3 · Implementation", "gates": ["D3"], "statuses": [{ "id": "10576", "name": "Implementing" }] },
+        { "name": "D4 · Verification", "gates": ["D4", "done"], "statuses": [{ "id": "10002", "name": "Done" }] },
+        { "name": "Cancelled", "statuses": [{ "id": "10055", "name": "Cancelled" }] }
+      ]
+    }
+  },
+  "stories_board": {
+    "id": 28926,
+    "name": "EACPP Product Team Stories",
+    "type": "kanban",
+    "filter_id": "87885",
+    "jql": "project in (20221) AND issuetype in (10002, 10003) AND labels = \"acp-product-team\" ORDER BY Rank ASC"
+  },
+  "issue_types": {
+    "epic": "10000",
+    "task": "10002",
+    "subtask": "10003"
+  },
+  "fields": {
+    "epic_name": "customfield_10011",
+    "epic_link": "customfield_10014",
+    "story_points": "customfield_10026"
+  },
+  "swimlanes": {
+    "board_id": 28926,
+    "strategy": "custom",
+    "matching": "top-down, first match wins",
+    "ordering_rules": "Expedite stays first; one lane per epic in the middle; the empty-query 'Everything Else' default stays last.",
+    "generator": "scripts/manage_swimlanes.py",
+    "setup_doc": "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113053565824/EDAE+ACP+Product+Team+-+Jira+Boards+Setup",
+    "api": {
+      "note": "Swimlanes are not exposed by the public Jira REST API; use the internal greenhopper endpoints.",
+      "list": "GET /rest/greenhopper/1.0/swimlanes/28926",
+      "create": "POST /rest/greenhopper/1.0/swimlanes/28926 {name, query, description}",
+      "delete": "DELETE /rest/greenhopper/1.0/swimlanes/28926/{swimlaneId}",
+      "reorder": "no reorder endpoint — new lanes insert at the top; delete + recreate in reverse order to reorder"
+    },
+    "fixed_lanes": [
+      { "name": "Expedite", "query": "priority = Urgent", "position": "first" },
+      { "name": "Everything Else", "query": "", "default": true, "position": "last" }
+    ],
+    "epic_lanes": {
+      "rule": "One lane per open epic carrying the product_team_label, ascending by key, between the two fixed lanes.",
+      "name_format": "EACPP-XXX · <epic summary, capped at 60 chars>",
+      "query_format": "parent = EACPP-XXX",
+      "excludes": "Epics whose status category is 'done' (Cancelled / Done) — a closed epic gets no lane."
+    }
+  }
+}

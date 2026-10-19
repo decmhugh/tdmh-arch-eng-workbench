@@ -1,0 +1,36 @@
+{
+  "actor_email": "seth.chalmers@sunlife.com",
+  "folder": {
+    "name": "Enterprise Architecture",
+    "description": "Enterprise Architecture business area. Holds the CoArchitect (AI4EA) project. Owner: Razi Chaudhry."
+  },
+  "project": {
+    "name": "CoArchitect",
+    "description": "CoArchitect - Enterprise Architecture's AI architecture assistant (AI4EA): Knowledge Studio, architecture agents and their models/MCP servers. Owner Razi Chaudhry; tech lead Tony Xu. Spec: acp-product-specs specs/onboarding/coarchitect-onboarding."
+  },
+  "owner": {
+    "email": "razi.chaudhry@sunlife.com",
+    "first_name": "Razi",
+    "last_name": "Chaudhry"
+  },
+  "members": [
+    {
+      "email": "tony.xu@sunlife.com",
+      "first_name": "Tony",
+      "last_name": "Xu",
+      "roles": ["Administrator"]
+    },
+    {
+      "email": "partho.mondal@sunlife.com",
+      "first_name": "Partho",
+      "last_name": "Mondal",
+      "roles": ["Editor"]
+    },
+    {
+      "email": "a.ukil@sunlife.com",
+      "first_name": "Anirban",
+      "last_name": "Ukil",
+      "roles": ["Editor"]
+    }
+  ]
+}

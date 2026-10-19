@@ -1,0 +1,43 @@
+component: developer-automations
+title: Developer Automations
+description: 'Scheduled automations that reduce routine reporting and coordination
+  work for the ACP Product Team. First automation: a weekly summary of pull requests
+  merged across selected EDAEACP repositories, posted to a Microsoft Teams channel
+  by a Jenkins job.'
+current_gate: D3
+status: draft
+spec_type: platform
+gate_status: D0-D3 drafted for pr-weekly-summary; 14 tasks in Jira (EACPP-1389 to EACPP-1402)
+owner: Sam Mamelli
+team: ACP Product Team
+jira_epic: EACPP-1388
+agileplace_card: ''
+confluence_page: ''
+repo: acp-developer-automations
+depends_on: []
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

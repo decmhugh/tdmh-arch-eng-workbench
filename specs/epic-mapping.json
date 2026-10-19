@@ -1,0 +1,362 @@
+[
+  {
+    "component": "acp-customer-journey",
+    "title": "ACP Customer Journey (Phase 1) \u2014 Intake, Pattern Assessment & Enablement",
+    "card_id": "",
+    "jira_key": "EACPP-1134",
+    "spec_dir": "platform/acp-customer-journey",
+    "spec_type": "platform",
+    "current_gate": "D2"
+  },
+  {
+    "component": "acp-galileo-integration",
+    "title": "ACP & Galileo Integration",
+    "card_id": "",
+    "jira_key": "EACPP-1378",
+    "spec_dir": "onboarding/acp-galileo-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "acp-grs-accelerator-axion",
+    "title": "ACP GRS Accelerator for Axion",
+    "card_id": "",
+    "jira_key": "EACPP-1443",
+    "spec_dir": "onboarding/acp-grs-accelerator-axion",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "acp-harness-sdk",
+    "title": "ACP Harness SDK",
+    "card_id": "",
+    "jira_key": "EACPP-791",
+    "spec_dir": "platform/acp-harness-sdk",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "acp-omega-integration",
+    "title": "ACP & Omega Integration",
+    "card_id": "",
+    "jira_key": "EACPP-1379",
+    "spec_dir": "onboarding/acp-omega-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "acp-orqestra-integration",
+    "title": "ACP & orQEstra Integration",
+    "card_id": "",
+    "jira_key": "EACPP-1377",
+    "spec_dir": "onboarding/acp-orqestra-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "acp-ras-dealer-transfer-in-xpress",
+    "title": "RA&S Dealer Transfer-in Xpress",
+    "card_id": "",
+    "jira_key": "EACPP-1446",
+    "spec_dir": "onboarding/acp-ras-dealer-transfer-in-xpress",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "agent-patterns",
+    "title": "Agent Patterns \u2014 Building, Hosting, Registering and Invoking an Agent",
+    "card_id": "",
+    "jira_key": "EACPP-1290",
+    "spec_dir": "pattern/agent-patterns",
+    "spec_type": "pattern",
+    "current_gate": "D3"
+  },
+  {
+    "component": "agentic-cloud-provisioning",
+    "title": "Onboarding the Agentic Cloud Provisioning Platform to ACP: governing four traffic classes across a business-unit gateway",
+    "card_id": "",
+    "jira_key": "EACPP-1163",
+    "spec_dir": "onboarding/agentic-cloud-provisioning",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "ai-ready-data-acp-integration",
+    "title": "Onboard the AI-Ready Data Use Case to ACP",
+    "card_id": "",
+    "jira_key": "EACPP-1077",
+    "spec_dir": "onboarding/ai-ready-data-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "aims-acp-integration",
+    "title": "Onboarding Corp IT's use case: AIMS (AI-Powered Incident Management System)",
+    "card_id": "",
+    "jira_key": "EACPP-909",
+    "spec_dir": "onboarding/aims-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "anthropic-client-acp-integration",
+    "title": "Anthropic Client Product & ACP Integration",
+    "card_id": "",
+    "jira_key": "EACPP-1319",
+    "spec_dir": "onboarding/anthropic-client-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "archer-grc-sync",
+    "title": "Archer GRC Sync \u2014 Evidence Publication, Synthetic Archer & APM Pass-Through",
+    "card_id": "",
+    "jira_key": "EACPP-1003",
+    "spec_dir": "integration/archer-grc-sync",
+    "spec_type": "integration",
+    "current_gate": "D3"
+  },
+  {
+    "component": "aws-harness-integration",
+    "title": "AWS Harness Integration with Luminate",
+    "card_id": "",
+    "jira_key": "EACPP-707",
+    "spec_dir": "integration/aws-harness-integration",
+    "spec_type": "integration",
+    "current_gate": "D3"
+  },
+  {
+    "component": "coarchitect-onboarding",
+    "title": "CoArchitect Onboarding \u2014 Enterprise Architecture on Luminate",
+    "card_id": "",
+    "jira_key": "EACPP-1427",
+    "spec_dir": "onboarding/coarchitect-onboarding",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "corpit-tprm-usecase",
+    "title": "Corp IT TPRM Use Case",
+    "card_id": "",
+    "jira_key": "EACPP-1318",
+    "spec_dir": "onboarding/corpit-tprm-usecase",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "define-acp-financial-model",
+    "title": "Define ACP Financial Model",
+    "card_id": "",
+    "jira_key": "EACPP-1376",
+    "spec_dir": "platform/define-acp-financial-model",
+    "spec_type": "platform",
+    "current_gate": "D0"
+  },
+  {
+    "component": "define-operating-model",
+    "title": "Define ACP Operating Model",
+    "card_id": "",
+    "jira_key": "EACPP-1375",
+    "spec_dir": "platform/define-operating-model",
+    "spec_type": "platform",
+    "current_gate": "D0"
+  },
+  {
+    "component": "developer-automations",
+    "title": "Developer Automations",
+    "card_id": "",
+    "jira_key": "EACPP-1388",
+    "spec_dir": "platform/developer-automations",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "engineer-onboarding",
+    "title": "Engineer Onboarding for the ACP Program",
+    "card_id": "",
+    "jira_key": "EACPP-896",
+    "spec_dir": "onboarding/engineer-onboarding",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "feature-build-capability-requests",
+    "title": "Feature Build / Capability Requests",
+    "card_id": "",
+    "jira_key": "EACPP-1386",
+    "spec_dir": "platform/feature-build-capability-requests",
+    "spec_type": "platform",
+    "current_gate": "D0"
+  },
+  {
+    "component": "gateway-environment-strategy",
+    "title": "Luminate Gateway & Environment Strategy",
+    "card_id": "",
+    "jira_key": "EACPP-1089",
+    "spec_dir": "platform/gateway-environment-strategy",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "gbd-acp-integration",
+    "title": "Onboard Governance-by-Design Agents to ACP",
+    "card_id": "",
+    "jira_key": "EACPP-1075",
+    "spec_dir": "onboarding/gbd-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "governance-content-packs",
+    "title": "Governance Content Packs \u2014 CMRM/GbD Content as Versioned Configuration",
+    "card_id": "",
+    "jira_key": "EACPP-990",
+    "spec_dir": "governance/governance-content-packs",
+    "spec_type": "governance",
+    "current_gate": "D3"
+  },
+  {
+    "component": "governance-intake",
+    "title": "Governance Intake & Risk Classification (Sun Life) \u2014 Product Spec",
+    "card_id": "",
+    "jira_key": "EACPP-877",
+    "spec_dir": "governance/governance-intake",
+    "spec_type": "governance",
+    "current_gate": "D3"
+  },
+  {
+    "component": "governance-intake-ui",
+    "title": "Governance Intake UI & AI-Assisted Triage",
+    "card_id": "",
+    "jira_key": "EACPP-1076",
+    "spec_dir": "onboarding/governance-intake-ui",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "guardrails-enablement",
+    "title": "Guardrails Enablement: turning on content inspection at the Luminate gateway",
+    "card_id": "",
+    "jira_key": "EACPP-1295",
+    "spec_dir": "platform/guardrails-enablement",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "integration-patterns",
+    "title": "ACP / Luminate Integration Patterns",
+    "card_id": "",
+    "jira_key": "EACPP-1112",
+    "spec_dir": "platform/integration-patterns",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "luminate-control-plane",
+    "title": "Governance and compliance requirements for Luminate from US",
+    "card_id": "",
+    "jira_key": "EACPP-913",
+    "spec_dir": "governance/luminate-control-plane",
+    "spec_type": "governance",
+    "current_gate": "D0"
+  },
+  {
+    "component": "mcp-server-patterns",
+    "title": "MCP Server Patterns \u2014 Registration, Deployment and Utilization",
+    "card_id": "",
+    "jira_key": "EACPP-1176",
+    "spec_dir": "pattern/mcp-server-patterns",
+    "spec_type": "pattern",
+    "current_gate": "D3"
+  },
+  {
+    "component": "mdx-acp-integration",
+    "title": "Onboarding SL Canada's MDx use case: AI-Native SDLC Platform with ACP Governance",
+    "card_id": "",
+    "jira_key": "EACPP-912",
+    "spec_dir": "onboarding/mdx-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "model-inference-patterns",
+    "title": "Model Inference Patterns \u2014 Centralized Inference, Cost Attribution and Model Access Governance",
+    "card_id": "",
+    "jira_key": "EACPP-1320",
+    "spec_dir": "pattern/model-inference-patterns",
+    "spec_type": "pattern",
+    "current_gate": "D3"
+  },
+  {
+    "component": "nova-acp-integration",
+    "title": "NOVA & ACP Integration",
+    "card_id": "",
+    "jira_key": "EACPP-895",
+    "spec_dir": "integration/nova-acp-integration",
+    "spec_type": "integration",
+    "current_gate": "D2"
+  },
+  {
+    "component": "orcc-acp-integration",
+    "title": "Onboarding Corp IT's use case: ORCC (Operational Risk & Compliance Committee Reporting Agent)",
+    "card_id": "",
+    "jira_key": "EACPP-911",
+    "spec_dir": "onboarding/orcc-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "self-service-onboarding",
+    "title": "Self-Service Onboarding \u2014 Automating ACP Platform Administration",
+    "card_id": "",
+    "jira_key": "EACPP-1325",
+    "spec_dir": "platform/self-service-onboarding",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "slm-pipeline",
+    "title": "Small Local Model (SLM) Pipeline",
+    "card_id": "",
+    "jira_key": "EACPP-557",
+    "spec_dir": "platform/slm-pipeline",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "sunlife-deployment",
+    "title": "Sun Life Deployment of Luminate",
+    "card_id": "",
+    "jira_key": "EACPP-596",
+    "spec_dir": "platform/sunlife-deployment",
+    "spec_type": "platform",
+    "current_gate": "D3"
+  },
+  {
+    "component": "us-acp-deployment-operations",
+    "title": "Onboard US team members to test ACP",
+    "card_id": "",
+    "jira_key": "EACPP-914",
+    "spec_dir": "onboarding/us-acp-deployment-operations",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  },
+  {
+    "component": "vulcan-onboarding",
+    "title": "Onboarding Vulcan to ACP: governed inference and tool access for remediation-as-a-service",
+    "card_id": "",
+    "jira_key": "EACPP-1133",
+    "spec_dir": "onboarding/vulcan-onboarding",
+    "spec_type": "onboarding",
+    "current_gate": "D3"
+  },
+  {
+    "component": "waldo-acp-integration",
+    "title": "Onboard Waldo Use Case to ACP",
+    "card_id": "",
+    "jira_key": "EACPP-987",
+    "spec_dir": "onboarding/waldo-acp-integration",
+    "spec_type": "onboarding",
+    "current_gate": "D0"
+  }
+]

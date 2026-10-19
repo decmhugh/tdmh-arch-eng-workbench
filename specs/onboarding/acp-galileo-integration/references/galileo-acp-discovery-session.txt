@@ -1,0 +1,2968 @@
+WEBVTT
+
+
+[00:00:09] Seth Chalmers: Hey, man.
+
+
+[00:00:10] Robert Chin: ASAP.
+
+
+[00:00:12] Robert Chin: All right,
+let's set up his recording and
+
+
+[00:00:14] Robert Chin: transcription to start.
+
+
+[00:00:19] Robert Chin: Erik.
+
+
+[00:00:21] Robert Chin: I Bishan.
+
+
+[00:00:21] Rushik Patel: Yes, then my vision, my robot.
+
+
+[00:00:23] Seth Chalmers: Yeah.
+
+
+[00:00:23] Bishan Moteria: Hey, guys.
+
+
+[00:00:26] Bishan Moteria: How are you guys doing?
+
+
+[00:00:28] Robert Chin: Not too bad, not too bad. Hey, yank it.
+
+
+[00:00:33] Ankit Virparia: Yeah.
+
+
+[00:00:34] Robert Chin: Hey, he joined, he joined early,
+so you got a 15-minute free time.
+
+
+[00:00:38] Ankit Virparia: Yeah, I process my emails, right?
+Good time.
+
+
+[00:00:45] Robert Chin: Hey, David.
+
+
+[00:00:47] Ankit Virparia: Hey, guys.
+
+
+[00:00:50] Robert Chin: Let's see.
+
+
+[00:00:52] Robert Chin: So yeah,
+Lalit isn't able to make it today,
+
+
+[00:00:55] Robert Chin: so Seth and I will be.
+
+
+[00:00:57] Robert Chin: Running the call.
+
+
+[00:00:59] Ankit Virparia: That's perfect.
+
+
+[00:01:01] Seth Chalmers: Stuck with us.
+
+
+[00:01:06] Robert Chin: Are we waiting? Let's see,
+I think we can get started.
+
+
+[00:01:10] Robert Chin: Not sure who was able to join the DBTS or
+who was on Laura's DBTS call this morning.
+
+
+[00:01:16] Robert Chin: All discussions all around AI as expected,
+safety, they talked about the ACP,
+
+
+[00:01:21] Robert Chin: things like that,
+and how we're learning along the way and
+
+
+[00:01:25] Robert Chin: trying to
+
+
+[00:01:27] Robert Chin: figure out on this journey how to keep
+Sun Life safe.
+
+
+[00:01:29] Robert Chin: So a lot of focus on the ACP and making
+sure that we support the business and
+
+
+[00:01:33] Robert Chin: ensuring that things are safe at the same
+time.
+
+
+[00:01:36] Robert Chin: We don't want to slow things down too
+much.
+
+
+[00:01:38] Robert Chin: So that kind of takes us to the whole ACP
+discussion.
+
+
+[00:01:41] Robert Chin: I'm not going to go through the typical
+overview that we go through because I
+
+
+[00:01:45] Robert Chin: think everybody here
+
+
+[00:01:47] Robert Chin: It was about the agentic control plane
+concepts.
+
+
+[00:01:51] Robert Chin: I think we already had a meeting on this
+pre-meeting on this before, right?
+
+
+[00:01:55] Ankit Virparia: Yeah, I mean, I was part of, I mean,
+we both were,
+
+
+[00:01:59] Ankit Virparia: me and Bishan were part of like ACP from
+the get go, the first demo itself.
+
+
+[00:02:01] Robert Chin: Perfect, yeah.
+
+
+[00:02:05] Ankit Virparia: But yeah, today,
+like me and Lalit were chit chatting last
+
+
+[00:02:10] Ankit Virparia: month.
+And I saw that you guys are focused on.
+
+
+[00:02:14] Ankit Virparia: at least 10 use cases and Galileo is not
+on the list. Somewhat I was happy, like,
+
+
+[00:02:17] Robert Chin: Mm.
+
+
+[00:02:19] Seth Chalmers: But.
+
+
+[00:02:19] Ankit Virparia: okay, I can go on my own, but I was like,
+okay,
+
+
+[00:02:22] Ankit Virparia: if something is already prepared and then
+if I ask for a change in ACP,
+
+
+[00:02:26] Ankit Virparia: that's going to be hard, right?
+So why don't we just get started with
+
+
+[00:02:28] Robert Chin: Yeah.
+
+
+[00:02:31] Ankit Virparia: some discussion and how Galileo
+integrates with Light LLM as of now.
+
+
+[00:02:31] Robert Chin: For sure, no, for sure, yeah.
+
+
+[00:02:35] Ankit Virparia: And if you guys want to know more about
+that, we can use this session.
+
+
+[00:02:35] Robert Chin: Mhm.
+
+
+[00:02:41] Robert Chin: I think so.
+
+
+[00:02:41] Ankit Virparia: And if there are some features which are..
+.
+
+
+[00:02:46] Ankit Virparia: I don't know if you guys already know,
+like LLM doesn't offer any ACP offers.
+
+
+[00:02:51] Ankit Virparia: I want to know about that as well.
+I think Rushik and Seth are partnering on
+
+
+[00:02:53] Robert Chin: Yeah, no.
+
+
+[00:02:56] Ankit Virparia: ACP.
+
+
+[00:02:58] Ankit Virparia: So, I mean, they are in the sync;
+it is just for others to gonna be the
+
+
+[00:03:00] Robert Chin: Excellent. Nope, this is a very timed in.
+No, I didn't know Galileo was on there.
+
+
+[00:03:01] Ankit Virparia: sync page right, so.
+
+
+[00:03:05] Robert Chin: I thought it was, but okay, makes well.
+That's good that you caught it that time.
+
+
+[00:03:09] Robert Chin: We definitely want you to be on the 1st
+wave as we start exploring.
+
+
+[00:03:13] Robert Chin: And good point on the, you know,
+your discussion on the light LLM.
+
+
+[00:03:16] Robert Chin: As we've been going through a lot of the
+
+
+[00:03:19] Robert Chin: folks that have come forward to say,
+could I be a use case?
+
+
+[00:03:23] Robert Chin: We're seeing a lot of opportunities for
+capabilities that weren't necessarily,
+
+
+[00:03:27] Robert Chin: you know, fully pure scope for ACP,
+like agentic stuff.
+
+
+[00:03:30] Robert Chin: There's some solutions coming forward
+that aren't necessarily agentic,
+
+
+[00:03:34] Robert Chin: but they want to use an LLM gateway.
+They want to be able to have better
+
+
+[00:03:39] Robert Chin: tracking on token usage so that that
+could, you know, trigger alerts,
+
+
+[00:03:43] Robert Chin: things like that.
+
+
+[00:03:44] Robert Chin: So all those things that may not have
+been part of, you know,
+
+
+[00:03:47] Robert Chin: a pure agentic requirement,
+it's coming forward now.
+
+
+[00:03:50] Robert Chin: And as part of the whole ACP initiative,
+it's given us this opportunity now to
+
+
+[00:03:55] Robert Chin: build out some of those capabilities,
+like the LLM gateway, things like that.
+
+
+[00:03:58] Ankit Virparia: Mhm.
+
+
+[00:03:59] Robert Chin: So we're definitely working towards that.
+And, you know,
+
+
+[00:04:02] Robert Chin: if that's something that we can work with
+you on that could help you.
+
+
+[00:04:07] Robert Chin: To make your life easier, for sure,
+and you know,
+
+
+[00:04:10] Robert Chin: Seth is going to take you through some of
+the capabilities and open session back
+
+
+[00:04:14] Robert Chin: and forth, share what you have,
+and we'll see what we have and see if
+
+
+[00:04:18] Robert Chin: there's any intersection where we can
+help you out.
+
+
+[00:04:21] Ankit Virparia: Yeah, sounds like a plan.
+
+
+[00:04:21] Seth Chalmers: So what do you want to get into?
+I'll let you guys drive it.
+
+
+[00:04:25] Seth Chalmers: Do you want like a architecture overview
+to see the current state of Luminate or?
+
+
+[00:04:33] Ankit Virparia: Yeah, so a couple of questions, right?
+Are we thinking of like one single
+
+
+[00:04:36] Ankit Virparia: installation of Luminate or like it's
+going to be BG specific?
+
+
+[00:04:39] Ankit Virparia: Did we make any conclusion on that?
+
+
+[00:04:42] Seth Chalmers: Yeah, so the direction is 1 portal,
+one control plane.
+
+
+[00:04:50] Seth Chalmers: but many gateway deployments.
+So let me get to the gateway.
+
+
+[00:04:56] Seth Chalmers: deployment topology just to give you kind
+of what it looks like.
+
+
+[00:05:01] Seth Chalmers: So we have many deployments of Luminate
+internally,
+
+
+[00:05:04] Seth Chalmers: but these are mostly going to be used to
+promote and test versions of Luminate,
+
+
+[00:05:10] Seth Chalmers: the app itself, along.
+And what teams will interact with is our
+
+
+[00:05:14] Seth Chalmers: prod instance,
+so they'll have one portal to sign into,
+
+
+[00:05:18] Seth Chalmers: they'll register their agents model.
+
+
+[00:05:21] Seth Chalmers: MCP servers, et cetera, once,
+and then just promote them along the SLC
+
+
+[00:05:26] Seth Chalmers: environment,
+which correspond to 1 gateway.
+
+
+[00:05:29] Seth Chalmers: We're working on even more granularity,
+so like a federated gateway deployment
+
+
+[00:05:34] Seth Chalmers: model,
+where kind of like the API platform side
+
+
+[00:05:38] Seth Chalmers: card today,
+where you can go and deploy your own
+
+
+[00:05:41] Seth Chalmers: gateway for certain use cases.
+
+
+[00:05:44] Seth Chalmers: But right now it's like a SLC environment
+and regional split of the gateways and
+
+
+[00:05:49] Seth Chalmers: that's what you'll interact with
+depending on where your workload is at.
+
+
+[00:05:55] Ankit Virparia: Right, and no, that's helpful, sir,
+like a from...
+
+
+[00:06:02] Ankit Virparia: perspective of like multiple agent hosted
+in one platform, right?
+
+
+[00:06:07] Ankit Virparia: Like so you might have one of a use case
+which connects to Luminate,
+
+
+[00:06:11] Ankit Virparia: but in our case,
+it's a little bit different, right?
+
+
+[00:06:15] Ankit Virparia: Think about how MDX and Galileo are going
+to connect is always like,
+
+
+[00:06:19] Ankit Virparia: we're going to have multiple groups.
+
+
+[00:06:22] Ankit Virparia: like groups in the sense teams.
+One team can have multiple agents.
+
+
+[00:06:24] Seth Chalmers: Yep.
+
+
+[00:06:28] Ankit Virparia: We want LLM control by teams, by agent,
+by those splits as well. So.
+
+
+[00:06:35] Ankit Virparia: Did we check that feasibility or not yet?
+
+
+[00:06:39] Seth Chalmers: Yep, so that's pretty well supported.
+So there's like folder and project
+
+
+[00:06:44] Seth Chalmers: concepts within Luminate where you can
+organize your agents, models, MCP servers.
+
+
+[00:06:49] Seth Chalmers: We have like RBAC control on the various
+forms of this.
+
+
+[00:06:53] Seth Chalmers: So you can search basically like at
+project level,
+
+
+[00:06:56] Seth Chalmers: these can be organized into.
+
+
+[00:06:59] Seth Chalmers: folders so we can just as an example have
+an SLC higher level folder.
+
+
+[00:07:04] Seth Chalmers: If I go to the project view,
+it's a little bit easier.
+
+
+[00:07:08] Seth Chalmers: But you can basically just have the UI's
+moved around since I did this.
+
+
+[00:07:14] Seth Chalmers: But either way,
+you can basically have like project level.
+
+
+[00:07:19] Seth Chalmers: like this.
+So we're basically organizing these
+
+
+[00:07:22] Seth Chalmers: projects at a use case level right now.
+So we have things like aims and
+
+
+[00:07:26] Seth Chalmers: governance by design and DPEP that are
+working on various use cases.
+
+
+[00:07:31] Seth Chalmers: And then when you go into the view,
+these are only the agents that correspond
+
+
+[00:07:36] Seth Chalmers: to that use case.
+
+
+[00:07:37] Seth Chalmers: And we can do folders within folders and
+projects within those.
+
+
+[00:07:41] Seth Chalmers: So we can kind of get to whatever level
+of segmentation or organization you want
+
+
+[00:07:46] Seth Chalmers: to get to.
+
+
+[00:07:48] Ankit Virparia: Right. I don't know, Bishan or Rushik,
+if you have any question, feel free,
+
+
+[00:07:53] Ankit Virparia: but I'll continue.
+So all these tool calls around these
+
+
+[00:07:55] Bishan Moteria: Yeah.
+
+
+[00:07:56] Ankit Virparia: agents also routes through the gateway or
+that's not mandatory.
+
+
+[00:08:01] Seth Chalmers: Everything needs to go through the
+gateway. Yeah,
+
+
+[00:08:05] Seth Chalmers: that's kind of the raison d'etre of the
+ACP.
+
+
+[00:08:08] Seth Chalmers: So that's how we're getting all of the
+observability, the token tracking, cost,
+
+
+[00:08:14] Seth Chalmers: governance, etc.
+So basically all the calls go through
+
+
+[00:08:15] Ankit Virparia: Mhm.
+
+
+[00:08:18] Seth Chalmers: there. So MCP, A2A.
+
+
+[00:08:20] Seth Chalmers: LLM and it's all just open AI format.
+
+
+[00:08:25] Ankit Virparia: Right, so if I want like a Jira connector,
+like Jira is already a solved problem,
+
+
+[00:08:31] Ankit Virparia: but let's say I want a Snowflake
+connector, I have to have MCP only.
+
+
+[00:08:36] Ankit Virparia: Can I not use any other mechanism to
+connect to?
+
+
+[00:08:41] Ankit Virparia: Aditi.
+
+
+[00:08:41] Seth Chalmers: Right now it's, yeah, right now it's MCP,
+but we're adding in API governance as
+
+
+[00:08:45] Ankit Virparia: Mm-hmm.
+
+
+[00:08:48] Seth Chalmers: well.
+And then what's being worked on on the
+
+
+[00:08:51] Seth Chalmers: Luminate side as well as agent skills
+registry. So like a plug-in type system.
+
+
+[00:08:58] Seth Chalmers: So it doesn't have to be through MCP in
+the future.
+
+
+[00:09:03] Seth Chalmers: So right now we kind of have most teams
+are just doing direct API access to
+
+
+[00:09:08] Seth Chalmers: things right now.
+So it's kind of a black box,
+
+
+[00:09:11] Seth Chalmers: but we're bringing those things into
+government.
+
+
+[00:09:17] Ankit Virparia: Right.
+
+
+[00:09:20] Bishan Moteria: Yeah, sorry, I have a couple questions,
+but since you're on the MCP, like,
+
+
+[00:09:26] Bishan Moteria: so the MCP, does it support the newest,
+like, auth model, like, you know, OAuth,
+
+
+[00:09:32] Bishan Moteria: you know, pass-through authentication,
+like DCR? And what is the experience,
+
+
+[00:09:35] Seth Chalmers: Yep.
+
+
+[00:09:38] Bishan Moteria: I guess, overall? So, second question is..
+.
+
+
+[00:09:41] Bishan Moteria: What does the experience look like for
+the end business user or any end user to
+
+
+[00:09:46] Bishan Moteria: either create a new MCP or even an agent,
+right? Simple as say, oh, I want to today,
+
+
+[00:09:52] Bishan Moteria: I want to create a new agent.
+So is that business user supposed to go
+
+
+[00:09:56] Bishan Moteria: into any of these platforms like gateway
+or?
+
+
+[00:10:00] Bishan Moteria: Disdominate platform to do anything
+introductory stuff.
+
+
+[00:10:04] Seth Chalmers: Yeah, so I'll go over the,
+I'll just quickly go over the IDP
+
+
+[00:10:08] Seth Chalmers: internally just to answer your first
+questions.
+
+
+[00:10:11] Seth Chalmers: So we have a key cloak internal to the
+ACP.
+
+
+[00:10:14] Seth Chalmers: This is implementing all the latest RFCs
+for on behalf of flows and everything
+
+
+[00:10:19] Seth Chalmers: like that.
+So all that's supported and then key
+
+
+[00:10:23] Seth Chalmers: cloak in between is just used for machine
+to machine.
+
+
+[00:10:26] Seth Chalmers: So we can do it for API calls,
+MCP servers, et cetera, agents,
+
+
+[00:10:31] Seth Chalmers: all of that.
+And so the general experience is we'll
+
+
+[00:10:35] Seth Chalmers: set you up on the ACP product team side
+with a bunch of this project and folder
+
+
+[00:10:41] Seth Chalmers: structure according to how you want it,
+basically.
+
+
+[00:10:46] Seth Chalmers: You'll provide us basically the team
+members that you want to onboard,
+
+
+[00:10:51] Seth Chalmers: some personas,
+then you'll be organized into like users
+
+
+[00:10:54] Seth Chalmers: and groups.
+
+
+[00:10:57] Seth Chalmers: And then you'll be able to self-serve
+essentially all of the actions,
+
+
+[00:11:02] Seth Chalmers: except the final deployment onto the
+gateway,
+
+
+[00:11:06] Seth Chalmers: which will give you like your OAuth
+credentials and things like that.
+
+
+[00:11:11] Seth Chalmers: So we'll send that over to you after
+that's done. And then for stage and.
+
+
+[00:11:17] Seth Chalmers: Then basically everything's self-serve
+after that. Yeah.
+
+
+[00:11:17] Bishan Moteria: So, sorry.
+
+
+[00:11:20] Bishan Moteria: Sorry,
+going back to the how the IM works that
+
+
+[00:11:24] Bishan Moteria: you said you mentioned users and groups,
+so each user.
+
+
+[00:11:27] Seth Chalmers: Yeah.
+
+
+[00:11:29] Bishan Moteria: has to be registered on Luminate,
+like even if it's a business user.
+
+
+[00:11:34] Bishan Moteria: Is that correct understanding?
+
+
+[00:11:36] Seth Chalmers: It's single sign-on,
+so you just log into the portal,
+
+
+[00:11:40] Seth Chalmers: but we have to sign up with the roles.
+
+
+[00:11:40] Bishan Moteria: Yeah, yeah, yeah,
+but but each business user, let's say,
+
+
+[00:11:44] Bishan Moteria: what's I'm thinking from what the
+experience looked like for the end
+
+
+[00:11:48] Bishan Moteria: business user from a Galileo platform
+perspective,
+
+
+[00:11:52] Bishan Moteria: so we have a onboarding process for them
+on Galileo,
+
+
+[00:11:55] Bishan Moteria: but now they're also required to single
+sign on to eliminate, is that what?
+
+
+[00:12:00] Bishan Moteria: They're expecting.
+
+
+[00:12:03] Seth Chalmers: So this is just the typical,
+like I'm developing an agent flow.
+
+
+[00:12:07] Seth Chalmers: We can work out like specific app
+integrations that might differ from this.
+
+
+[00:12:13] Seth Chalmers: So we can also register apps which can do
+different different credentials and oh,
+
+
+[00:12:19] Seth Chalmers: this is prod. We can also do apps.
+
+
+[00:12:22] Seth Chalmers: which you can use and register like chat
+bots and things like that,
+
+
+[00:12:26] Seth Chalmers: or other applications that you want to
+integrate with Luminate.
+
+
+[00:12:30] Seth Chalmers: And we can work out like provisioning
+pipelines and things like that behind the
+
+
+[00:12:35] Seth Chalmers: scenes that would differ from just a,
+I'm a team who wants to onboard my agent
+
+
+[00:12:39] Seth Chalmers: core agent or something like that to the
+ACP.
+
+
+[00:12:42] Seth Chalmers: That's what I'm kind of describing to you.
+
+
+[00:12:46] Seth Chalmers: But generally, that's the flow.
+So we set you up with some roles in the
+
+
+[00:12:50] Seth Chalmers: Luminate portal itself so you can log in
+and do whatever you need to do.
+
+
+[00:12:55] Seth Chalmers: So for you as platform administrators of
+Galileo,
+
+
+[00:12:58] Seth Chalmers: this might look a little different.
+We'll probably onboard Galileo as a
+
+
+[00:13:03] Seth Chalmers: platform to Luminate.
+
+
+[00:13:04] Seth Chalmers: And we also provide access to the back
+end APIs if you need to be doing anything
+
+
+[00:13:09] Seth Chalmers: else.
+Those are also like scoped service
+
+
+[00:13:12] Seth Chalmers: principles,
+which we can give to you to perform
+
+
+[00:13:15] Seth Chalmers: whatever actions you need to take.
+And we can kind of make that experience a
+
+
+[00:13:19] Seth Chalmers: bit different for Galileo versus just a
+typical development team or whatever.
+
+
+[00:13:24] Seth Chalmers: When I got on board and made him.
+
+
+[00:13:27] Bishan Moteria: Yeah, no, yeah,
+that that's because the first thing comes
+
+
+[00:13:31] Bishan Moteria: to my mind,
+like I don't think any any business user
+
+
+[00:13:34] Bishan Moteria: wants to or cares about your our even
+gateway or any other gateway like
+
+
+[00:13:39] Bishan Moteria: Luminate, right?
+They care about the experience and the
+
+
+[00:13:42] Seth Chalmers: Yeah.
+
+
+[00:13:43] Bishan Moteria: self-serve, that's the two topmost thing.
+
+
+[00:13:46] Bishan Moteria: would they look forward to. Okay, cool.
+Yeah, I mean, they have so many questions,
+
+
+[00:13:50] Seth Chalmers: Yeah.
+
+
+[00:13:51] Bishan Moteria: but I'll hold on.
+
+
+[00:13:53] Seth Chalmers: Yeah, for platforms like yours,
+our desire is the ACP is just supposed to
+
+
+[00:13:58] Seth Chalmers: be the plumbing underneath that does all
+the governance routing to the gateway,
+
+
+[00:14:03] Seth Chalmers: et cetera.
+So the idea is experience platforms like
+
+
+[00:14:06] Seth Chalmers: yours are a layer on top of the ACP,
+and you can kind of tailor your
+
+
+[00:14:11] Seth Chalmers: experience however you want.
+
+
+[00:14:13] Seth Chalmers: So an example of this in the consortium
+is Telus also uses this ACP,
+
+
+[00:14:18] Seth Chalmers: but they have like a business facing
+application called Gizmos,
+
+
+[00:14:23] Seth Chalmers: which allows business leaders to kind of
+just have a graphical interface to prompt
+
+
+[00:14:30] Seth Chalmers: and it will dynamically spin up
+Cloudflare workers for them.
+
+
+[00:14:35] Seth Chalmers: all integrated with the ACP so they can
+go and just quickly experiment and create
+
+
+[00:14:40] Seth Chalmers: an agentic application without needing to
+host any software or do anything like
+
+
+[00:14:45] Seth Chalmers: that. So that for Galileo,
+that's probably what will work towards
+
+
+[00:14:49] Seth Chalmers: that type of integration.
+
+
+[00:14:53] Bishan Moteria: That,
+and in things like I'm not seeing on the
+
+
+[00:14:57] Bishan Moteria: screen so far,
+maybe it's on different page,
+
+
+[00:15:01] Bishan Moteria: but like does it have, like, what, what,
+what is it to let's say if somebody wants
+
+
+[00:15:08] Bishan Moteria: to add a skills for agent or...
+
+
+[00:15:13] Bishan Moteria: Trying to think of, or memory, right,
+for the agent.
+
+
+[00:15:17] Bishan Moteria: Is it something Luminate is offering
+out-of-the-box?
+
+
+[00:15:22] Seth Chalmers: So you're talking like the agent runtime
+and things like that?
+
+
+[00:15:25] Bishan Moteria: Like agent skills, like skills in general,
+like let's say somebody is, you know,
+
+
+[00:15:30] Bishan Moteria: let's say somehow the agents are created
+here,
+
+
+[00:15:33] Bishan Moteria: whether it's through platform to platform
+or a user creating it directly,
+
+
+[00:15:37] Bishan Moteria: agent over here,
+but let's say it's created, where are,
+
+
+[00:15:41] Bishan Moteria: what is the possibility of adding a skill
+to an agent? Let's say I want to create a.
+
+
+[00:15:46] Bishan Moteria: ..
+
+
+[00:15:47] Bishan Moteria: very specific skill to generate doc X
+document or XLSX document or something
+
+
+[00:15:53] Seth Chalmers: Yeah, so that's what I, yeah, that I,
+I got you.
+
+
+[00:15:54] Bishan Moteria: else, you know, or...
+
+
+[00:15:56] Seth Chalmers: That's what the what I mentioned before,
+so that's in the works on Luminate.
+
+
+[00:16:01] Seth Chalmers: That is going to be the skills registry,
+so we're that's still in active
+
+
+[00:16:06] Seth Chalmers: development, so not supported today,
+but we're working with like the Nova team
+
+
+[00:16:11] Seth Chalmers: and things like that.
+They're also working on a skills registry.
+
+
+[00:16:15] Seth Chalmers: for Sun Life and the goal is that these
+other skills registries will eventually
+
+
+[00:16:20] Seth Chalmers: just feed into the ACP as well.
+So that should all be supported but not
+
+
+[00:16:25] Seth Chalmers: supported today.
+
+
+[00:16:27] Bishan Moteria: And does it,
+does it offer human in the loop for the
+
+
+[00:16:30] Bishan Moteria: skills?
+There were other things in my mind,
+
+
+[00:16:33] Bishan Moteria: but I just lost the track, but yeah,
+those are those are the key things that
+
+
+[00:16:38] Bishan Moteria: our current business users have it,
+like they are doing a self-serve where
+
+
+[00:16:43] Bishan Moteria: they they come up with their skills,
+they onboard into Galileo platform.
+
+
+[00:16:49] Bishan Moteria: But Galileo is storing that skills into a
+kind of Git repo in an automated fashion
+
+
+[00:16:56] Bishan Moteria: on its own. It's managing everything,
+keeping track of what is changing when a
+
+
+[00:17:02] Bishan Moteria: user is changing even a single thing in a
+skill. And then that skills get.
+
+
+[00:17:09] Bishan Moteria: You know,
+inject it into at the runtime within an
+
+
+[00:17:13] Bishan Moteria: isolated environment, so you know,
+only you know,
+
+
+[00:17:17] Bishan Moteria: specific or very limited things can be
+done from a skills running a runner
+
+
+[00:17:22] Bishan Moteria: perspective,
+so that's something I mean our business
+
+
+[00:17:26] Bishan Moteria: partners.
+
+
+[00:17:28] Bishan Moteria: And I look forward to.
+
+
+[00:17:30] Seth Chalmers: Yep, makes sense. Yeah,
+Nova's doing the same thing.
+
+
+[00:17:33] Seth Chalmers: So they have like the Git repo managing
+the skills and all that.
+
+
+[00:17:37] Seth Chalmers: So how we're managing that interaction is
+they're continuing with their platform
+
+
+[00:17:42] Seth Chalmers: today.
+Once we get the skills registry
+
+
+[00:17:44] Seth Chalmers: implemented and Luminate to the ACP,
+will be the source of truth for all the
+
+
+[00:17:49] Seth Chalmers: skills.
+
+
+[00:17:50] Seth Chalmers: So platforms will integrate with us for
+the skills and kind of do that management
+
+
+[00:17:55] Seth Chalmers: of the skills with the repository like
+you're talking about behind the scenes.
+
+
+[00:18:00] Seth Chalmers: But you provisioning your runtimes,
+moving those skills in like that,
+
+
+[00:18:04] Seth Chalmers: those would be kind of back end API
+interactions that we'd provide an
+
+
+[00:18:09] Seth Chalmers: experience platform.
+So you would continue to do all of that.
+
+
+[00:18:14] Seth Chalmers: We do have like human in the loop for
+approvals and policy decisions and things
+
+
+[00:18:19] Seth Chalmers: like that.
+But all of that can also be done through
+
+
+[00:18:22] Seth Chalmers: the back end APIs if you want to keep
+that at the experience layer.
+
+
+[00:18:27] Seth Chalmers: So for a lot of these projects,
+we're doing like a multi-phase approach
+
+
+[00:18:32] Seth Chalmers: for.
+
+
+[00:18:32] Seth Chalmers: integration,
+we might just start with getting you onto
+
+
+[00:18:36] Seth Chalmers: the gateway and doing the inference for
+you. And then as we bring in the skills,
+
+
+[00:18:41] Seth Chalmers: we can substitute that piece in and just
+do like a multi-phase rollout. But yeah,
+
+
+[00:18:46] Seth Chalmers: all those items are basically on the
+docket, but not implemented today.
+
+
+[00:18:51] Seth Chalmers: We have no.
+
+
+[00:18:52] Seth Chalmers: concept of a skills registry yet.
+
+
+[00:18:57] Bishan Moteria: Thanks, um, I don't,
+I'll get her for checking.
+
+
+[00:18:58] Ankit Virparia: Yeah.
+
+
+[00:18:59] Ankit Virparia: No,
+I feel like so much of duplication of
+
+
+[00:19:02] Ankit Virparia: efforts are going on across the org. Okay,
+I'll talk to write forum, right?
+
+
+[00:19:08] Ankit Virparia: And then we can circle back on that.
+We already have the skills registry.
+
+
+[00:19:14] Ankit Virparia: We already have the runtime and other
+integration that.
+
+
+[00:19:19] Ankit Virparia: Lumia doesn't offer.
+
+
+[00:19:23] Ankit Virparia: I don't know how much you're contributing
+to Luminate Seth.
+
+
+[00:19:27] Ankit Virparia: Like what is our contribution on Luminate?
+Are we building any feature currently or
+
+
+[00:19:33] Ankit Virparia: we are just deploying what Consortium
+offers?
+
+
+[00:19:37] Seth Chalmers: Personally,
+I'm very heavy into the development.
+
+
+[00:19:40] Ankit Virparia: Okay.
+
+
+[00:19:40] Seth Chalmers: I've been most of the new commits.
+I'm integrated pretty well with the new
+
+
+[00:19:46] Seth Chalmers: team.
+I've been working mostly on all of the
+
+
+[00:19:49] Seth Chalmers: governance integration at this point,
+getting like model evaluations, the whole
+
+
+[00:19:55] Seth Chalmers: Ops fee and NIST compliance for the
+Luminate platform in general and working
+
+
+[00:20:00] Seth Chalmers: on like a governance framework agnostic
+approach where we can work with like our
+
+
+[00:20:06] Seth Chalmers: governance by design partners and
+everything to come up with policies as
+
+
+[00:20:11] Seth Chalmers: code that kind of gate agents moving
+along the.
+
+
+[00:20:14] Seth Chalmers: development environments and integrating
+with the approval processes and all that
+
+
+[00:20:21] Seth Chalmers: stuff.
+So most of that's pretty much implemented
+
+
+[00:20:24] Seth Chalmers: at this point. I've got all my changes in.
+We're just now on the Sun Life side going
+
+
+[00:20:31] Seth Chalmers: through and testing it with them. So.
+
+
+[00:20:34] Seth Chalmers: where he just voted essentially on a
+roadmap or are voting on a roadmap in the
+
+
+[00:20:39] Seth Chalmers: skills registry and things like that,
+made it into the docket.
+
+
+[00:20:39] Ankit Virparia: Yes.
+
+
+[00:20:43] Seth Chalmers: So these can all be items that we
+collaborate on together to get it just
+
+
+[00:20:48] Seth Chalmers: the registry parts basically into the ACP,
+because it's important for the registries
+
+
+[00:20:54] Seth Chalmers: to be an ACP,
+not any of the runtime or experience
+
+
+[00:20:57] Seth Chalmers: layer.
+
+
+[00:20:58] Seth Chalmers: bits,
+like we don't want to get into that
+
+
+[00:21:00] Seth Chalmers: builder platform business, essentially,
+just the governance.
+
+
+[00:21:04] Seth Chalmers: And so to have the registry centralized
+is kind of the purpose of that.
+
+
+[00:21:09] Seth Chalmers: And then we can kind of share all these
+things across the enterprise because yeah,
+
+
+[00:21:14] Seth Chalmers: there is a ton of duplication happening
+we're finding with the ACP.
+
+
+[00:21:19] Seth Chalmers: Tons of teams are doing their own
+implementations of basically all the
+
+
+[00:21:19] Ankit Virparia: Okay.
+
+
+[00:21:24] Seth Chalmers: pieces here.
+
+
+[00:21:26] Ankit Virparia: Yeah.
+
+
+[00:21:26] Robert Chin: Yeah,
+we're definitely a driver in the
+
+
+[00:21:27] Seth Chalmers: Exactly.
+
+
+[00:21:28] Robert Chin: consortium,
+we're not just a passenger source.
+
+
+[00:21:31] Ankit Virparia: Okay, cool.
+
+
+[00:21:31] Robert Chin: And they recognize that, you know,
+like when Seth brings a lot of the stuff
+
+
+[00:21:35] Robert Chin: there, they recognize that,
+like tell us they don't have the
+
+
+[00:21:39] Robert Chin: financial services, experience, needs,
+things like that.
+
+
+[00:21:42] Robert Chin: Scotia is ramping up slowly.
+
+
+[00:21:44] Robert Chin: So they realize that, you know,
+whatever we're bringing to the consortium,
+
+
+[00:21:48] Robert Chin: it's going to benefit any future
+consortium members of the financial
+
+
+[00:21:51] Robert Chin: services. So that's why whatever you need,
+you know,
+
+
+[00:21:54] Robert Chin: from SLC or across all the different
+regions,
+
+
+[00:21:56] Robert Chin: we're getting all those requests and
+we're going to funnel them into the
+
+
+[00:21:59] Robert Chin: consortium.
+And we're not getting questioned.
+
+
+[00:22:01] Robert Chin: You haven't been questioned anything,
+Seth. It's like, oh, okay,
+
+
+[00:22:05] Robert Chin: they're learning from you basically.
+
+
+[00:22:08] Ankit Virparia: Right, yeah, I know I,
+that's what I heard,
+
+
+[00:22:11] Ankit Virparia: like me and Adam were actually chatting
+sometimes back and he's like, yeah,
+
+
+[00:22:12] Robert Chin: Yeah.
+
+
+[00:22:16] Ankit Virparia: we have implemented our own agent gateway
+pretty decent way and.
+
+
+[00:22:18] Robert Chin: Yeah.
+
+
+[00:22:21] Ankit Virparia: They are a little bit behind, right? Like,
+okay, let's like, yes, it's like,
+
+
+[00:22:24] Robert Chin: And.
+
+
+[00:22:24] Seth Chalmers: Yeah.
+
+
+[00:22:26] Ankit Virparia: that's the only best way, because anyway,
+we want to partner.
+
+
+[00:22:30] Ankit Virparia: It's not about we don't want to partner,
+but then who is gonna burn more calories,
+
+
+[00:22:36] Seth Chalmers: Yeah.
+
+
+[00:22:36] Ankit Virparia: right? Okay, all good stuff, right? Like,
+so in terms of...
+
+
+[00:22:40] Ankit Virparia: Like the operating model, right? So, like,
+so, or Rob, right? Who, sir, right? So,
+
+
+[00:22:45] Ankit Virparia: who is gonna be managing like the whole
+instance? Is it just your team, or like,
+
+
+[00:22:47] Robert Chin: Yeah.
+
+
+[00:22:49] Ankit Virparia: no, it's gonna be at scale,
+like all the different IT teams gonna be
+
+
+[00:22:50] Robert Chin: For that, yeah, I know that.
+
+
+[00:22:53] Ankit Virparia: managing this, because onboarding,
+doing infrastructure as a code,
+
+
+[00:22:54] Robert Chin: I know, yeah.
+
+
+[00:22:56] Ankit Virparia: as like a early kind of configuration,
+everything within Sun Life.
+
+
+[00:23:00] Ankit Virparia: If it creates a bottleneck,
+I think there will be a huge pushback
+
+
+[00:23:03] Robert Chin: Oh, Fisher.
+
+
+[00:23:04] Ankit Virparia: from CIOs and even I even cannot control
+the emotions of like our business users.
+
+
+[00:23:09] Ankit Virparia: Like I want everything yesterday.
+It's like, sure. So that's.
+
+
+[00:23:09] Robert Chin: I know.
+
+
+[00:23:11] Robert Chin: I know, yeah,
+and then let's building that out.
+
+
+[00:23:14] Robert Chin: Let's say I'm product owner for ACP,
+and as we start onboarding and we start
+
+
+[00:23:16] Ankit Virparia: Okay.
+
+
+[00:23:18] Robert Chin: understanding,
+that's why we're working with everybody
+
+
+[00:23:21] Robert Chin: to understand what their needs are.
+I know,
+
+
+[00:23:24] Robert Chin: even just a base infrastructure
+requirements, you know,
+
+
+[00:23:27] Robert Chin: what LVT levels do you need for
+reliability, availability,
+
+
+[00:23:30] Robert Chin: things like that.
+
+
+[00:23:31] Robert Chin: All those things are going to be pulled
+in. And yeah,
+
+
+[00:23:34] Robert Chin: it's going to have to go up to the
+leadership guy. You know what?
+
+
+[00:23:37] Robert Chin: You've asked us to invest in this core
+foundation for AI safety.
+
+
+[00:23:40] Robert Chin: This is what our business partners need.
+This is the resiliency.
+
+
+[00:23:44] Robert Chin: This is how we're building it.
+And this is a team that needs to be put
+
+
+[00:23:47] Robert Chin: in place.
+So that's all being built now in terms of
+
+
+[00:23:50] Robert Chin: going operates. Technical stuff.
+
+
+[00:23:52] Robert Chin: you know,
+comfortable with everything that's being
+
+
+[00:23:54] Robert Chin: built.
+Seth is driving a lot of that with the
+
+
+[00:23:57] Robert Chin: team, but the operations, to your point,
+is a big part,
+
+
+[00:23:59] Robert Chin: and Lalit is building that out to make
+sure that it meets everybody's needs.
+
+
+[00:24:04] Ankit Virparia: Right, OK. No, thank you. So,
+another question, a little technical,
+
+
+[00:24:05] Robert Chin: Yeah.
+
+
+[00:24:08] Ankit Virparia: is like,
+so let's say if I have mix and match,
+
+
+[00:24:11] Ankit Virparia: right? So, for example,
+I'm using some of the AWS tech stack,
+
+
+[00:24:15] Ankit Virparia: some of the snowflake data,
+some of the snowflake models,
+
+
+[00:24:18] Ankit Virparia: and also want to leverage memory from
+bedrock and want to want to store some
+
+
+[00:24:23] Ankit Virparia: data in Postgres in RDS and whatnot,
+right? So, the whole...
+
+
+[00:24:27] Ankit Virparia: Runtime creation is going to be outside,
+right?
+
+
+[00:24:30] Ankit Virparia: And all these integration to these
+underlying sources and systems has to be
+
+
+[00:24:35] Ankit Virparia: registered as per the concept,
+what you are talking, right?
+
+
+[00:24:38] Ankit Virparia: So it has to be here.
+And all these connection doesn't exist,
+
+
+[00:24:42] Ankit Virparia: but before that,
+I cannot even think about that use case,
+
+
+[00:24:45] Ankit Virparia: right?
+
+
+[00:24:48] Seth Chalmers: So you're basically just setting up
+either the app or whatever is making the
+
+
+[00:24:55] Seth Chalmers: agentic calls, like LLM, MCP, A2A,
+through the gateway.
+
+
+[00:24:59] Seth Chalmers: So all internal traffic is supported.
+I've done PSCs across like Snowflake, AWS,
+
+
+[00:25:06] Seth Chalmers: OpenShift.
+
+
+[00:25:07] Seth Chalmers: EKS,
+all the platforms essentially you can
+
+
+[00:25:10] Seth Chalmers: just set up with the gateway.
+We provide an SDK,
+
+
+[00:25:14] Seth Chalmers: Python SDK on how to do that for general
+use cases.
+
+
+[00:25:18] Seth Chalmers: Usually just a few changes and as long as
+it's serving internal traffic,
+
+
+[00:25:24] Seth Chalmers: you're good to go. So there's no.
+
+
+[00:25:26] Seth Chalmers: like complicated setup or anything after
+you go through this onboarding either at
+
+
+[00:25:32] Seth Chalmers: an app or agent level.
+You essentially get your gateway
+
+
+[00:25:36] Seth Chalmers: deployment credentials after you register
+your agent, applications, models,
+
+
+[00:25:41] Seth Chalmers: MCP servers.
+You make the policies between them.
+
+
+[00:25:44] Seth Chalmers: I'll try and give you just a...
+
+
+[00:25:47] Seth Chalmers: Good example.
+
+
+[00:25:50] Seth Chalmers: You make the policies between them,
+and then this essentially turns into a
+
+
+[00:25:54] Seth Chalmers: gateway deployment with a set of OAuth
+credentials.
+
+
+[00:25:57] Seth Chalmers: You receive those OAuth credentials from
+us, set it up in your secret store,
+
+
+[00:26:01] Seth Chalmers: and you're good to go.
+And the gateway is actually brokering the
+
+
+[00:26:05] Seth Chalmers: connection between your tools,
+your agents, and your models.
+
+
+[00:26:09] Seth Chalmers: So basically everything Sun Life internal
+is good to go.
+
+
+[00:26:14] Bishan Moteria: So.
+
+
+[00:26:17] Bishan Moteria: So I guess I have a related question to
+that. So does the runtime, it sounds like,
+
+
+[00:26:22] Bishan Moteria: or it looks like the runtime is being
+hosted or provided by the Luminate
+
+
+[00:26:27] Bishan Moteria: platform. And if it does,
+how does it scale up? Where does it run?
+
+
+[00:26:32] Bishan Moteria: So today we want to have a runtime,
+like let's say Gabriel has a runtime of.
+
+
+[00:26:37] Bishan Moteria: EKS.
+Tomorrow we want to have a runtime of
+
+
+[00:26:41] Bishan Moteria: Snowflake where we want to run the whole
+compute and everything on the Snowflake
+
+
+[00:26:47] Bishan Moteria: cloud.
+Does Luminate do that or is it running or
+
+
+[00:26:51] Bishan Moteria: the runtime is being ran on the Luminate
+itself?
+
+
+[00:26:53] Seth Chalmers: No, so no, we...
+
+
+[00:26:56] Seth Chalmers: We only supply the gateway,
+so no agent runtime,
+
+
+[00:26:59] Seth Chalmers: no MCP server runtime, any of that.
+It's just we deploy the gateway and the
+
+
+[00:27:04] Seth Chalmers: gateway brokers the connection between
+those things. So you as a team,
+
+
+[00:27:07] Bishan Moteria: No.
+
+
+[00:27:08] Seth Chalmers: you'd have an MCP server,
+just as an example, you would host that,
+
+
+[00:27:13] Seth Chalmers: let's say in OpenShift,
+you onboard that MCP server to our
+
+
+[00:27:14] Bishan Moteria: Yeah.
+
+
+[00:27:16] Seth Chalmers: platform.
+
+
+[00:27:17] Seth Chalmers: And then when people want to make a
+connection to that MCP server,
+
+
+[00:27:22] Seth Chalmers: they set up basically the policy and
+their project to the agent or app or
+
+
+[00:27:26] Seth Chalmers: whatever wants to call it.
+And then they basically post that up as a
+
+
+[00:27:31] Seth Chalmers: deployment for the gateway,
+but then it needs to be like approved
+
+
+[00:27:35] Seth Chalmers: through us.
+And then for stage in production,
+
+
+[00:27:38] Seth Chalmers: there's extra governance on top.
+
+
+[00:27:40] Seth Chalmers: and things like that to make sure it's
+properly approved and things like that.
+
+
+[00:27:46] Seth Chalmers: But essentially,
+we're not doing any runtime for agents or
+
+
+[00:27:50] Seth Chalmers: MCP servers.
+We're just basically supplying the
+
+
+[00:27:53] Seth Chalmers: gateways.
+And then we also provide the inferencing
+
+
+[00:27:57] Seth Chalmers: as well.
+
+
+[00:27:59] Bishan Moteria: Chill, chill.
+
+
+[00:28:02] Bishan Moteria: Yeah,
+and what does the experience look like
+
+
+[00:28:05] Bishan Moteria: for the onboarding? So,
+if today there is like, let's say,
+
+
+[00:28:09] Bishan Moteria: you know, you know, 3 MCP servers,
+you know,
+
+
+[00:28:12] Bishan Moteria: we need two models and it requires 2
+agents involved in doing that. So,
+
+
+[00:28:17] Bishan Moteria: what does the experience look like? Like,
+let's say I get it,
+
+
+[00:28:21] Bishan Moteria: there's SDK and there's things.
+
+
+[00:28:23] Bishan Moteria: agent get created, app get created,
+but as you mentioned,
+
+
+[00:28:27] Bishan Moteria: it gets to be evaluated by the team or
+the forum before it gets approved.
+
+
+[00:28:32] Bishan Moteria: So what does that Expense look like?
+
+
+[00:28:36] Seth Chalmers: So right now,
+just like the onboarding experience while
+
+
+[00:28:39] Seth Chalmers: we're getting things set up,
+we set up like a direct,
+
+
+[00:28:42] Seth Chalmers: after we do like these types of discovery
+sessions,
+
+
+[00:28:44] Seth Chalmers: typically we'll get an idea of your use
+case at this point.
+
+
+[00:28:48] Seth Chalmers: If it's something complex like Galileo,
+we'll go through all the architecture,
+
+
+[00:28:52] Seth Chalmers: do a design review with you and go over
+the integration points.
+
+
+[00:28:55] Seth Chalmers: But for just like a typical.
+
+
+[00:28:57] Seth Chalmers: MCP server, agent type flow, whatever.
+We'll still do that quick discovery
+
+
+[00:29:02] Seth Chalmers: session, but it finishes pretty quickly.
+And then we'll do open up a Teams chat,
+
+
+[00:29:08] Seth Chalmers: get you onboarded to the portal,
+and then actually registering agents,
+
+
+[00:29:13] Seth Chalmers: applications, models,
+MCP servers within your project is all
+
+
+[00:29:17] Seth Chalmers: self-serve.
+
+
+[00:29:19] Seth Chalmers: So we'll set you up with our back roles.
+You can even add other people to your
+
+
+[00:29:23] Seth Chalmers: project with appropriate roles.
+So let's say, Bishan,
+
+
+[00:29:26] Seth Chalmers: if I add you to a new Galileo project,
+I'd make you essentially the owner.
+
+
+[00:29:31] Seth Chalmers: And you can,
+as people sign into the portal,
+
+
+[00:29:33] Seth Chalmers: you can go and add them to your project,
+give them agent administrator,
+
+
+[00:29:38] Seth Chalmers: MCP server administrator,
+whatever they need to do to get working.
+
+
+[00:29:42] Seth Chalmers: But to actually get that credential that
+brokers the connection, the gateway,
+
+
+[00:29:46] Seth Chalmers: that comes back to us on the platform
+team.
+
+
+[00:29:49] Seth Chalmers: And then we'll basically review and then
+send you the credential on here off to
+
+
+[00:29:54] Seth Chalmers: the races.
+So it's pretty quick interaction,
+
+
+[00:29:56] Seth Chalmers: mostly self-serve.
+
+
+[00:29:58] Bishan Moteria: So, is that can,
+so I guess I'll give a context in a
+
+
+[00:30:02] Bishan Moteria: second,
+but is that is that timeline like in
+
+
+[00:30:05] Bishan Moteria: terms of like a matter of, I don't know,
+half an hour, one hour, one week,
+
+
+[00:30:10] Bishan Moteria: four weeks? Like,
+what is the what does it look like to set
+
+
+[00:30:14] Bishan Moteria: up those broker connections and stuff?
+
+
+[00:30:17] Seth Chalmers: Right now, it's like extra time.
+We're just trying to get the product team
+
+
+[00:30:22] Seth Chalmers: stood up.
+But it's basically all automated.
+
+
+[00:30:25] Seth Chalmers: So this whole getting you set up in the
+portal and things like that take a few
+
+
+[00:30:26] Bishan Moteria: No.
+
+
+[00:30:30] Seth Chalmers: minutes.
+And if you instantly registered your MCP
+
+
+[00:30:33] Seth Chalmers: servers and everything like that,
+and then comes back to us for the actual
+
+
+[00:30:38] Seth Chalmers: credential.
+
+
+[00:30:39] Seth Chalmers: Again, it's all just API calls,
+and we send off the credentials to you.
+
+
+[00:30:44] Seth Chalmers: So a few minutes.
+
+
+[00:30:46] Bishan Moteria: Okay, okay, okay. Our,
+just for every base context, right?
+
+
+[00:30:52] Bishan Moteria: Our MVP for the Galileo platform is in
+matter of minutes,
+
+
+[00:30:57] Bishan Moteria: business team is supposed to be able to
+create the knowledge bases and spin up
+
+
+[00:31:04] Bishan Moteria: the agent or.
+
+
+[00:31:05] Bishan Moteria: multi-orchestrated agent kind of
+architecture and then get the insights on
+
+
+[00:31:10] Bishan Moteria: their whatever use case it is.
+But of course,
+
+
+[00:31:13] Bishan Moteria: use case has to be approved from the
+intake process wise,
+
+
+[00:31:17] Bishan Moteria: which is again not that difficult,
+but that's what it is set up in the
+
+
+[00:31:20] Seth Chalmers: Yeah.
+
+
+[00:31:22] Bishan Moteria: historical, you know,
+
+
+[00:31:24] Bishan Moteria: use cases we have ran,
+it used to take like from three to four
+
+
+[00:31:28] Bishan Moteria: months for one particular agent to be
+functional, right?
+
+
+[00:31:31] Bishan Moteria: And we're trying to break that barrier.
+We want is within 15 minutes,
+
+
+[00:31:35] Bishan Moteria: a matter of 15 minutes,
+you're up and running.
+
+
+[00:31:38] Bishan Moteria: You have your own agent and it's serving
+your needs. So anyways,
+
+
+[00:31:42] Bishan Moteria: that's why the question was coming from.
+
+
+[00:31:45] Bishan Moteria: Like, appreciated.
+
+
+[00:31:45] Seth Chalmers: Absolutely, yeah.
+So like the previous comments,
+
+
+[00:31:48] Seth Chalmers: for your use case,
+we can basically keep everything in the
+
+
+[00:31:52] Seth Chalmers: experience layer that you already have.
+And we'd set you up with service
+
+
+[00:31:55] Bishan Moteria: Mm.
+
+
+[00:31:57] Seth Chalmers: principles scope to whatever project or
+folder structure you need to implement
+
+
+[00:32:03] Seth Chalmers: for Galileo.
+So let's say you need to be able to
+
+
+[00:32:06] Seth Chalmers: dynamically spin up projects within your
+folder and or.
+
+
+[00:32:10] Seth Chalmers: folders within your folder with projects
+inside.
+
+
+[00:32:13] Seth Chalmers: And then you need to go and provision
+agents automatically, applications,
+
+
+[00:32:17] Seth Chalmers: models, MCP servers, that sort of thing.
+We'd essentially set you up with scoped
+
+
+[00:32:22] Seth Chalmers: service principles that would allow you
+to do all the back-end interactions you
+
+
+[00:32:27] Seth Chalmers: need to do,
+but just scope to your workloads.
+
+
+[00:32:30] Seth Chalmers: So all of that is part of the like
+detailed integration we'd work through
+
+
+[00:32:35] Seth Chalmers: and essentially set you up with the
+permissions you need.
+
+
+[00:32:39] Seth Chalmers: Because all that is great stuff that's
+not like our business.
+
+
+[00:32:43] Seth Chalmers: So for most of the experience layer
+integrations,
+
+
+[00:32:46] Seth Chalmers: like we just want to be the plumbing for
+you.
+
+
+[00:32:49] Seth Chalmers: And you keep your experience layer as it
+is.
+
+
+[00:32:55] Bishan Moteria: Yeah, that makes sense. Thank you.
+It would be worth at one point, not today,
+
+
+[00:33:00] Bishan Moteria: I'm expecting, but you know,
+maybe having a working session,
+
+
+[00:33:04] Bishan Moteria: like just creating A1 simple, you know,
+having an agent with some connections and
+
+
+[00:33:10] Bishan Moteria: using our Galileo experience there just
+to do a POC or proof of concept on how.
+
+
+[00:33:16] Bishan Moteria: Does it kind of connect things together
+to give some actual realistic idea for
+
+
+[00:33:22] Bishan Moteria: the team?
+
+
+[00:33:22] Seth Chalmers: Yeah, I'd love to do that. Yeah,
+we can get the architecture and map out
+
+
+[00:33:26] Seth Chalmers: the integration points and to sell all
+that. That'd be great.
+
+
+[00:33:31] Ankit Virparia: Yeah, for sure.
+So it's all about we want to be in the
+
+
+[00:33:35] Ankit Virparia: same experience, right?
+So Galileo is the experience for SLC.
+
+
+[00:33:37] Bishan Moteria: Yes.
+
+
+[00:33:39] Ankit Virparia: Right now, nobody logs into Light LLM.
+It's like it's behind the scenes, right?
+
+
+[00:33:45] Ankit Virparia: You don't need to know.
+And everything gets shipped on the one
+
+
+[00:33:49] Ankit Virparia: single experience layer.
+
+
+[00:33:51] Ankit Virparia: Um, Rob, or said, like,
+did you guys see Galileo UI or not yet?
+
+
+[00:33:56] Robert Chin: No, I haven't.
+
+
+[00:33:57] Ankit Virparia: You haven't? Okay, that's like, okay,
+so why don't we use like 5 minutes over
+
+
+[00:33:59] Robert Chin: But I guess it's like, yeah,
+Galileo is your cap, you turn it on,
+
+
+[00:34:02] Ankit Virparia: there? Bishan, do you want to go for it?
+
+
+[00:34:03] Robert Chin: the water comes out,
+that's all people want, right?
+
+
+[00:34:07] Bishan Moteria: Yeah.
+
+
+[00:34:09] Ankit Virparia: Okay, okay, I can share.
+So this is how it goes basically, right?
+
+
+[00:34:09] Robert Chin: Yeah.
+
+
+[00:34:10] Rushik Patel: Ivan.
+
+
+[00:34:12] Ankit Virparia: So if you log in single sign in,
+of course, you have got teams,
+
+
+[00:34:15] Ankit Virparia: you can select whatever part team you are
+part of, right? And if I'm admin,
+
+
+[00:34:19] Ankit Virparia: I can see all teams and I can see the
+whole dashboard,
+
+
+[00:34:22] Ankit Virparia: how many apps are running,
+what's going on,
+
+
+[00:34:24] Ankit Virparia: what particular app got created when.
+
+
+[00:34:27] Ankit Virparia: And usage if you want to track behind the
+scenes, right, it goes to light LLM.
+
+
+[00:34:31] Ankit Virparia: Of course, split by per app, per group,
+per model, whatever split you want,
+
+
+[00:34:36] Ankit Virparia: like a daily request to other like model
+spend, token mix, right?
+
+
+[00:34:40] Ankit Virparia: And inflow versus outflow of like tokens,
+whatever you want to see split.
+
+
+[00:34:46] Ankit Virparia: by time frame, you can do that.
+And I can put this in whiteboard in my
+
+
+[00:34:50] Ankit Virparia: office and then say I can keep an eye,
+no problem.
+
+
+[00:34:53] Ankit Virparia: And there's a system health which keeps
+an eye off like underlying databases,
+
+
+[00:34:58] Ankit Virparia: everything. If it is healthy,
+the orchestration layer,
+
+
+[00:35:01] Ankit Virparia: it comes up with this.
+If there are some delays or some latency,
+
+
+[00:35:05] Ankit Virparia: it might show is as degraded.
+
+
+[00:35:07] Ankit Virparia: And then activities per team,
+like which team is doing the most
+
+
+[00:35:11] Ankit Virparia: activity and whatnot. So within SLC,
+you think about we have got front office,
+
+
+[00:35:16] Ankit Virparia: back office, and within front office,
+15 teams, back office, 15 teams.
+
+
+[00:35:20] Ankit Virparia: So we are scoped to like 40, 45 teams,
+right?
+
+
+[00:35:23] Ankit Virparia: And then we want to compartmentalize
+those areas and then.
+
+
+[00:35:26] Ankit Virparia: roll it out. So if I want to create a,
+if I go to the app registry,
+
+
+[00:35:31] Ankit Virparia: this all comes from a combination, right?
+Like the back end of Galileo and also
+
+
+[00:35:37] Ankit Virparia: comes from the gateway. So if I,
+if I simply go to a particular example,
+
+
+[00:35:42] Ankit Virparia: so let's say if I go to one agent.
+
+
+[00:35:45] Ankit Virparia: It can say this is the agent,
+a type of agent. It can be a Cortex agent,
+
+
+[00:35:50] Ankit Virparia: it can be deployed on Snowflake,
+but right now it's Galileo agent.
+
+
+[00:35:54] Ankit Virparia: That means it's running on EKS.
+Who created that,
+
+
+[00:35:57] Ankit Virparia: which team it belongs to,
+when it got created,
+
+
+[00:36:00] Ankit Virparia: and right now this looks like it's dead.
+Nobody's using it, right?
+
+
+[00:36:04] Ankit Virparia: So it's like $200 budget with.
+
+
+[00:36:06] Ankit Virparia: by default given to that agent and if it
+goes out of the kind of budget and the
+
+
+[00:36:11] Ankit Virparia: request comes to the admin,
+we can change it and we can approve it,
+
+
+[00:36:15] Ankit Virparia: right? That's how it's structured.
+You can also say where your models are
+
+
+[00:36:19] Ankit Virparia: coming.
+You can have multiple kind of gateways,
+
+
+[00:36:22] Ankit Virparia: right?
+And you can pick your gateway for this
+
+
+[00:36:25] Ankit Virparia: particular.
+
+
+[00:36:26] Ankit Virparia: agent to run.
+You can of course set the personality
+
+
+[00:36:28] Ankit Virparia: around, like what is your system prompt,
+what model you want to use,
+
+
+[00:36:32] Ankit Virparia: what is your human in the loop approval,
+and you can attach skills,
+
+
+[00:36:35] Ankit Virparia: you can attach MCP servers,
+you can attach sub agents,
+
+
+[00:36:38] Ankit Virparia: and you can say what are your memories
+you want to connect to,
+
+
+[00:36:42] Ankit Virparia: and the whole thing, like okay,
+who all has access to and what is the
+
+
+[00:36:45] Ankit Virparia: connection. And if you open up an agent,
+you can start chit chatting.
+
+
+[00:36:49] Ankit Virparia: I just open something random.
+
+
+[00:36:51] Ankit Virparia: But let's say if I go to a general
+purpose agent,
+
+
+[00:36:55] Ankit Virparia: because the chat is the easiest interface,
+right?
+
+
+[00:36:58] Ankit Virparia: And you can all connect the dots and then
+say, experience-wise,
+
+
+[00:37:03] Ankit Virparia: you run the EKS containers behind the
+scene. It has the memory and it runs.
+
+
+[00:37:10] Ankit Virparia: kind of an orchestration layer in this
+platform,
+
+
+[00:37:12] Ankit Virparia: and it has access to all these tools and
+skills what you can configure,
+
+
+[00:37:16] Ankit Virparia: and it offers so many different
+experiences.
+
+
+[00:37:19] Ankit Virparia: So if I want to create a new agent,
+the flow is very simple,
+
+
+[00:37:22] Ankit Virparia: as Bishan was saying, right?
+So let's say if I'm in one particular
+
+
+[00:37:26] Ankit Virparia: team, if I go to Sonic, right?
+So the experience is I want to...
+
+
+[00:37:30] Ankit Virparia: convert my data into vector store.
+That's the first thing anyone has to do
+
+
+[00:37:34] Ankit Virparia: because I want to ask the right question.
+I want live connections.
+
+
+[00:37:38] Ankit Virparia: I want to get the S3 data.
+I want to do data automation like bedrock
+
+
+[00:37:42] Ankit Virparia: data automation.
+I want to do scan my Git repositories,
+
+
+[00:37:46] Ankit Virparia: any HTTP calls,
+S3 unstructured or structured.
+
+
+[00:37:49] Ankit Virparia: With Starburst,
+you have access to all over 180 databases,
+
+
+[00:37:52] Ankit Virparia: which is your SQLs and other thing.
+But once approved,
+
+
+[00:37:55] Ankit Virparia: then and then a user can continue this.
+If you don't have access,
+
+
+[00:37:59] Ankit Virparia: this will be grayed out like this, locked,
+and you cannot continue, right?
+
+
+[00:38:03] Ankit Virparia: So it's the governance process,
+which this team,
+
+
+[00:38:06] Ankit Virparia: as in like architecture function,
+kind of manages that.
+
+
+[00:38:09] Ankit Virparia: We complete the ATG and.
+
+
+[00:38:10] Ankit Virparia: that has to be done right for use case.
+And of course, ETab these days,
+
+
+[00:38:15] Ankit Virparia: because LoRa is like every UI or AI thing
+has to go to ETab.
+
+
+[00:38:19] Ankit Virparia: So we complete that and then we enable
+that and then start creating some new
+
+
+[00:38:24] Ankit Virparia: experiences over here.
+And nobody needs to go to the back end,
+
+
+[00:38:28] Ankit Virparia: right, which is your light LLM.
+
+
+[00:38:30] Ankit Virparia: in our case. This is the skills registry,
+which is what I was worried about. Like,
+
+
+[00:38:34] Ankit Virparia: yeah,
+we are creating so much of duplication.
+
+
+[00:38:38] Ankit Virparia: So let's say if I want our mini credit
+research analysts,
+
+
+[00:38:41] Ankit Virparia: like how this is working.
+So this is the skill,
+
+
+[00:38:44] Ankit Virparia: this is how people wrote it.
+These are the reference files,
+
+
+[00:38:47] Ankit Virparia: reference MD files.
+These are some assets and how it is
+
+
+[00:38:50] Ankit Virparia: structured, what to use, when.
+And if somebody want to kind of upload a
+
+
+[00:38:54] Ankit Virparia: new skill, they can come here,
+upload a skill.
+
+
+[00:38:57] Ankit Virparia: And boom, right?
+There is the whole approval cycle which
+
+
+[00:39:00] Ankit Virparia: goes behind the scene.
+You can also review the pull request here.
+
+
+[00:39:04] Ankit Virparia: You don't have to log into Git repository.
+You can just say, okay,
+
+
+[00:39:08] Ankit Virparia: what are the changes coming up in this
+new version?
+
+
+[00:39:10] Ankit Virparia: I'm okay with those changes or not.
+This is actually a Git UI, right? Like,
+
+
+[00:39:15] Ankit Virparia: you know, on Gayl your code.
+
+
+[00:39:16] Ankit Virparia: And then you can say who approved it
+before, and it's already merged.
+
+
+[00:39:20] Ankit Virparia: But if you upload a new package,
+of course,
+
+
+[00:39:22] Ankit Virparia: it has to go through that cycle,
+and it's managed in the Git repository.
+
+
+[00:39:26] Ankit Virparia: So I think what Nova platform,
+I think you mentioned, right? Like,
+
+
+[00:39:29] Ankit Virparia: so they are supposed to build something
+similar.
+
+
+[00:39:31] Ankit Virparia: And then it also goes through checkmark
+scan and all of those scans,
+
+
+[00:39:35] Ankit Virparia: which has to be done, right?
+
+
+[00:39:37] Ankit Virparia: That's all done.
+You can manage your own memory.
+
+
+[00:39:39] Ankit Virparia: Like it knows some of the things I want
+to remove. Like, okay,
+
+
+[00:39:42] Ankit Virparia: don't remember this.
+You can do memory management within this
+
+
+[00:39:46] Ankit Virparia: platform. And then of course,
+the bigger thing is like,
+
+
+[00:39:49] Ankit Virparia: I want to generate some output,
+which are my template or report,
+
+
+[00:39:52] Ankit Virparia: not just the chat experience.
+You want to integrate,
+
+
+[00:39:55] Ankit Virparia: gather your code from outside.
+So I have a web.
+
+
+[00:39:57] Ankit Virparia: portal,
+I have an agent created over here because
+
+
+[00:40:00] Ankit Virparia: this is my orchestration layer, right?
+So if I were to trigger this agent from
+
+
+[00:40:05] Ankit Virparia: outside,
+like a web application calling this,
+
+
+[00:40:08] Ankit Virparia: then we offer API connection integrations
+and those points, right?
+
+
+[00:40:12] Ankit Virparia: So you can easily go to like teams
+management,
+
+
+[00:40:15] Ankit Virparia: you can grant all the team accesses.
+
+
+[00:40:18] Ankit Virparia: You can of course manage a few platform
+level things.
+
+
+[00:40:21] Ankit Virparia: You can also have the nerve system,
+like what is connected to what.
+
+
+[00:40:24] Ankit Virparia: And the API keys offer like external
+integration,
+
+
+[00:40:27] Ankit Virparia: which is what I was talking about.
+We also do intake review,
+
+
+[00:40:30] Ankit Virparia: like if a new request comes in,
+it has a workflow. This is dev.
+
+
+[00:40:34] Ankit Virparia: I can show in production,
+there are many other things.
+
+
+[00:40:38] Ankit Virparia: This is document extraction pipeline.
+So it already integrates with the Bedrock
+
+
+[00:40:42] Ankit Virparia: data automation.
+So how you can write the pipeline with
+
+
+[00:40:45] Ankit Virparia: data automation and then integrate it
+from here.
+
+
+[00:40:47] Ankit Virparia: So these are the high level connections,
+single sign-ons and other thing that it
+
+
+[00:40:51] Ankit Virparia: offers.
+You can also register some MCPs and you
+
+
+[00:40:54] Ankit Virparia: can also come up with your own connected
+account.
+
+
+[00:40:56] Ankit Virparia: So let's say if I want to connect my
+Snowflake account.
+
+
+[00:40:59] Ankit Virparia: I can use this. Sorry,
+I have log into and.
+
+
+[00:41:01] Bishan Moteria: This is there, yeah,
+I was gonna say this is there,
+
+
+[00:41:05] Bishan Moteria: so it's it's try try application or
+nebula. Nebula works too.
+
+
+[00:41:06] Ankit Virparia: Yeah, OK.
+
+
+[00:41:08] Ankit Virparia: Yeah.
+
+
+[00:41:10] Ankit Virparia: Yeah, yeah,
+so basically it offers like invalid scope.
+
+
+[00:41:14] Ankit Virparia: OK, I don't know my,
+but we are using similar concept, right?
+
+
+[00:41:18] Ankit Virparia: So our agentic control plane has all
+these kill switch, everything.
+
+
+[00:41:19] Seth Chalmers: Yeah.
+
+
+[00:41:22] Ankit Virparia: If you want to go into like a gateway,
+you can go and then see very detailed app
+
+
+[00:41:28] Ankit Virparia: view, everything.
+
+
+[00:41:29] Ankit Virparia: They have got so much of audit kind of in
+other layers, of course, far in detail,
+
+
+[00:41:36] Ankit Virparia: but we don't go to this portal at all,
+right?
+
+
+[00:41:40] Ankit Virparia: We just manage everything through our
+Galileo interface.
+
+
+[00:41:46] Ankit Virparia: Does it make sense?
+Or what do you guys think?
+
+
+[00:41:49] Seth Chalmers: Yep.
+
+
+[00:41:51] Seth Chalmers: Yeah, so the.
+
+
+[00:41:52] Robert Chin: This is good. You've been busy.
+
+
+[00:41:55] Seth Chalmers: Yeah, like most of this,
+we'd keep on your end,
+
+
+[00:41:58] Seth Chalmers: except like there is obviously a lot of
+overlap.
+
+
+[00:42:02] Seth Chalmers: Like we're collecting all the tokens as
+well.
+
+
+[00:42:05] Seth Chalmers: We'd probably want to be brokering the
+OAuth credentials, things like that.
+
+
+[00:42:09] Ankit Virparia: Yeah.
+
+
+[00:42:10] Seth Chalmers: So we'd probably phase some of this out
+in.
+
+
+[00:42:14] Seth Chalmers: Baby steps, I would say,
+and then a lot of the guardrails and
+
+
+[00:42:18] Seth Chalmers: stuff,
+we have like very specific mappings to
+
+
+[00:42:22] Seth Chalmers: the framework and NIST and things like
+that.
+
+
+[00:42:25] Seth Chalmers: I think the governance features would be
+a bit more robust,
+
+
+[00:42:29] Seth Chalmers: but I'd love to see like us integrated
+with.
+
+
+[00:42:33] Seth Chalmers: Galileo and then the bridge that we can
+provide is kind of bringing in the rest
+
+
+[00:42:38] Seth Chalmers: of the organization into this experience
+platform because I think you guys are by
+
+
+[00:42:43] Seth Chalmers: far way ahead of everyone else on the
+experience layer because that's all great
+
+
+[00:42:47] Ankit Virparia: Yeah.
+
+
+[00:42:49] Seth Chalmers: stuff.
+
+
+[00:42:50] Ankit Virparia: Okay, cool. No,
+what I see as a starting point set is
+
+
+[00:42:51] Seth Chalmers: So.
+
+
+[00:42:54] Ankit Virparia: like just use the gateway functionality
+offered by Luminate extension, right?
+
+
+[00:43:00] Ankit Virparia: So that you can track what LM calls are
+happening.
+
+
+[00:43:03] Ankit Virparia: If you want to do governance around
+agents and things like that,
+
+
+[00:43:08] Ankit Virparia: we can just send the telemetry. So.
+
+
+[00:43:10] Ankit Virparia: It has to be another approach.
+You cannot just say,
+
+
+[00:43:14] Ankit Virparia: I want to apply OSFI here because we
+don't regulate it by OSFI sometimes
+
+
+[00:43:19] Ankit Virparia: because we are not insurance, okay?
+So we are in a very much different side
+
+
+[00:43:24] Ankit Virparia: of the business. That's number one.
+Number 2, our integration challenges,
+
+
+[00:43:28] Ankit Virparia: if I talk about,
+I have to integrate with some external
+
+
+[00:43:32] Ankit Virparia: partners which are like.
+
+
+[00:43:34] Ankit Virparia: BGO and Crescent and AM and others,
+which are not part of the Sun Life
+
+
+[00:43:39] Ankit Virparia: network and we are thinking around that,
+which is like our mandate to kind of
+
+
+[00:43:44] Ankit Virparia: think through, right,
+how AI can be enabled across SLC
+
+
+[00:43:45] Seth Chalmers: Yep.
+
+
+[00:43:48] Ankit Virparia: affiliates.
+So if we try to muddy the water right now,
+
+
+[00:43:52] Ankit Virparia: like how ACP can be customized for that.
+
+
+[00:43:55] Ankit Virparia: That's going to be a very long story.
+So let's be mindful on how we want to
+
+
+[00:44:00] Ankit Virparia: prioritize and then say what governance
+we need.
+
+
+[00:44:04] Ankit Virparia: We can also implement that similar thing
+in Galileo and kind of create the wrapper
+
+
+[00:44:09] Ankit Virparia: and send the telemetry out.
+So if it is possible, there are active.
+
+
+[00:44:14] Ankit Virparia: kind of like a firewall kind of thing
+what I saw Seth you presenting, right?
+
+
+[00:44:19] Ankit Virparia: Everything has to go through this
+particular system.
+
+
+[00:44:22] Ankit Virparia: And then other thing is like a send me
+the telemetry.
+
+
+[00:44:25] Ankit Virparia: And if there is any red flag,
+there is a global pool which kind of sees
+
+
+[00:44:29] Ankit Virparia: that as a guardian and kind of validates
+and kind of push the Gallio platform to
+
+
+[00:44:34] Ankit Virparia: fix those errors and messages, right?
+
+
+[00:44:36] Ankit Virparia: There, there are other options, too.
+
+
+[00:44:39] Seth Chalmers: Yep,
+so what I'd like to do is just do this
+
+
+[00:44:42] Seth Chalmers: detailed mapping.
+You guys are game and just map out what
+
+
+[00:44:46] Seth Chalmers: the specific steps we do first.
+Just start with the gateways,
+
+
+[00:44:51] Seth Chalmers: how telemetry flows, etc.
+And just your note on the different
+
+
+[00:44:55] Seth Chalmers: frameworks,
+that's kind of what a built-in.
+
+
+[00:44:59] Seth Chalmers: Luminate is a framework agnostic approach
+for guardrails and all of that.
+
+
+[00:45:04] Seth Chalmers: So you can kind of specify what
+frameworks need to apply to what agents,
+
+
+[00:45:09] Seth Chalmers: MCP servers, et cetera,
+and do that governance.
+
+
+[00:45:13] Seth Chalmers: You can assign personas for human in the
+loop interactions and all that.
+
+
+[00:45:18] Seth Chalmers: So it should be pretty generic, but we.
+
+
+[00:45:21] Seth Chalmers: That would be a later stage integration,
+like you're saying.
+
+
+[00:45:26] Ankit Virparia: Yeah, sounds like a plan.
+
+
+[00:45:34] Seth Chalmers: So, we'll tell what's happening.
+
+
+[00:45:38] Ankit Virparia: Yeah, alright.
+
+
+[00:45:38] Robert Chin: He's got a good,
+he's got a good transcript here to kind
+
+
+[00:45:41] Robert Chin: of drive what's needed. Very, very clear.
+And yeah, you know,
+
+
+[00:45:43] Ankit Virparia: Let's see how we how we digest.
+
+
+[00:45:44] Seth Chalmers: Anand.
+
+
+[00:45:45] Robert Chin: we want to make sure that we make this as
+easy as possible. Like you said, you know,
+
+
+[00:45:49] Robert Chin: everybody's asking for this,
+this approved governance thing.
+
+
+[00:45:52] Robert Chin: So it'll be an easier way for you to get
+your stuff through.
+
+
+[00:45:55] Robert Chin: So we just want to make sure that what we
+have in here will work for you.
+
+
+[00:45:59] Robert Chin: So you haven't,
+
+
+[00:46:00] Robert Chin: easier path through to production because
+there is a lot of governance happening
+
+
+[00:46:05] Robert Chin: and increasing in this organization.
+So we're here to help people get through
+
+
+[00:46:09] Robert Chin: that.
+
+
+[00:46:10] Ankit Virparia: Yeah, OK.
+
+
+[00:46:11] Seth Chalmers: Yeah, just a quick next step.
+So do you have like an architecture,
+
+
+[00:46:15] Seth Chalmers: like high level architecture document or
+even detailed in like markdown that you
+
+
+[00:46:19] Seth Chalmers: could send me and then I'll prepare the
+integrations from the ACP end and then we
+
+
+[00:46:24] Seth Chalmers: can all go over it together next time.
+
+
+[00:46:27] Bishan Moteria: Yep, no, sure.
+I'll try to get that sorted for you.
+
+
+[00:46:31] Seth Chalmers: Perfect. Thank you.
+
+
+[00:46:33] Ankit Virparia: Great, thanks Ivan.
+
+
+[00:46:34] Robert Chin: Awesome, this is great. Thanks, everybody.
+
+
+[00:46:35] Ankit Virparia: Okay, goodbye.
+
+
+[00:46:36] Seth Chalmers: Thanks.
+
+
+[00:46:36] Bishan Moteria: Thank you, everyone.
+
+
+[00:46:37] Rushik Patel: Thank you.

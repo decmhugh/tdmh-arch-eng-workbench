@@ -1,0 +1,49 @@
+component: acp-ras-dealer-transfer-in-xpress
+title: RA&S Dealer Transfer-in Xpress
+description: Onboard the production Dealer Transfer-in Xpress application to ACP so
+  its AWS Lambda inference calls route through the governed ACP gateway, while
+  retaining its existing transfer-form validation workflow.
+current_gate: D0
+status: draft
+spec_type: onboarding
+gate_status: Discovery drafted from the session transcript, the RA&S architecture diagram and
+  the team's follow-up answers, and checked against Luminate, Harness SDK and deployment source;
+  design review (capability walk-through) and business sign-off outstanding
+owner: Kalev Gonvick
+team: EDAE ACP
+jira_epic: EACPP-1446
+agileplace_card: '2527312471'
+confluence_page: ''
+repo: RA&S Dealer Transfer-in Xpress application (repository TBD)
+depends_on:
+- acp-harness-sdk
+- integration-patterns
+- gateway-environment-strategy
+- aws-harness-integration
+- sunlife-deployment
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d3:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

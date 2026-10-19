@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-09-14T00:00:00.000Z" agent="acp-product-specs" version="24.0.0" type="device">
+  <diagram id="anthropic-client-architecture" name="Anthropic client through ACP">
+    <mxGraphModel dx="1800" dy="1100" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1460" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Anthropic client products through ACP — governed inference with per-user attribution" style="text;html=0;fontSize=17;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="10" width="1100" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="D2 DD-1: the identity on the request decides BOTH access and cost attribution. Measured against dev, 2026-09-14." style="text;html=0;fontSize=12;align=left;verticalAlign=middle;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="30" y="36" width="1100" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="laneB" value="Enterprise identity" style="swimlane;html=0;startSize=26;fontSize=12;fontStyle=1;fillColor=none;strokeColor=#d6b656;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="72" width="260" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="Desktop SSO token" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="laneB">
+          <mxGeometry x="20" y="42" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="AD group&#10;ENTITLEMENT ONLY (DD-2)" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="laneB">
+          <mxGeometry x="20" y="116" width="220" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="A group does not travel&#10;on a request, so it cannot&#10;attribute. No device flow&#10;(RFC 8628) either. (DD-3)" style="rounded=0;html=0;whiteSpace=wrap;fontSize=10;fillColor=#f5f5f5;strokeColor=#999999;dashed=1;" vertex="1" parent="laneB">
+          <mxGeometry x="20" y="190" width="220" height="74" as="geometry" />
+        </mxCell>
+
+        <mxCell id="laneA" value="Managed laptop" style="swimlane;html=0;startSize=26;fontSize=12;fontStyle=1;fillColor=none;strokeColor=#6c8ebf;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="320" y="72" width="290" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="apiKeyHelper&#10;re-runs on TTL below 300 s" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="laneA">
+          <mxGeometry x="20" y="42" width="250" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Claude Code CLI&#10;ANTHROPIC_BASE_URL = {gw}/llm" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="laneA">
+          <mxGeometry x="20" y="116" width="250" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="x-api-key blanked (DD-5)&#10;the CLI sends the credential&#10;twice; the gateway 401s on&#10;the second one" style="rounded=0;html=0;whiteSpace=wrap;fontSize=10;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;" vertex="1" parent="laneA">
+          <mxGeometry x="20" y="190" width="250" height="74" as="geometry" />
+        </mxCell>
+
+        <mxCell id="laneC" value="Agentic Control Plane" style="swimlane;html=0;startSize=26;fontSize=12;fontStyle=1;fillColor=none;strokeColor=#9673a6;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="640" y="72" width="400" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="Portal — token exchange&#10;returns a delegated token, sub = the user" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="laneC">
+          <mxGeometry x="20" y="42" width="360" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="Gateway — Bearer token, SSE streams&#10;authn: JWT sub becomes the principal&#10;authz: access policy, caller to model  [GATE 1]" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="laneC">
+          <mxGeometry x="20" y="116" width="360" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Provider account binding  [GATE 2]&#10;per (offering, project) — picks the AWS account&#10;STS session name luminate-{project}" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="laneC">
+          <mxGeometry x="20" y="196" width="360" height="62" as="geometry" />
+        </mxCell>
+
+        <mxCell id="laneD" value="Model AWS account" style="swimlane;html=0;startSize=26;fontSize=12;fontStyle=1;fillColor=none;strokeColor=#b85450;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="72" width="350" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="IAM allow-list  [GATE 3]&#10;InvokeApprovedBedrockModels" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="laneD">
+          <mxGeometry x="20" y="42" width="310" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="Marketplace subscription  [GATE 4]" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="laneD">
+          <mxGeometry x="20" y="116" width="310" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="Bedrock model" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="laneD">
+          <mxGeometry x="20" y="180" width="310" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="d4" value="Gates 3 and 4 have DRIFTED (DD-6)" style="text;html=0;fontSize=10;align=center;fontColor=#b85450;fontStyle=1" vertex="1" parent="laneD">
+          <mxGeometry x="20" y="240" width="310" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="laneE" value="Attribution — the same principal, all the way to finance (DD-7)" style="swimlane;html=0;startSize=26;fontSize=12;fontStyle=1;fillColor=none;strokeColor=#82b366;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="30" y="422" width="1390" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="Gateway principal&#10;user:uuid" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="laneE">
+          <mxGeometry x="20" y="48" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Langfuse trace&#10;user_id" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="laneE">
+          <mxGeometry x="295" y="48" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="ProjectUsageDaily ledger&#10;user_id, user_email, cost_centre" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="laneE">
+          <mxGeometry x="570" y="48" width="250" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Chargeback API&#10;filter by user_ids" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="laneE">
+          <mxGeometry x="870" y="48" width="225" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="CloudTrail and Cost &amp; Usage Report&#10;STS session name, optional project tag" style="rounded=1;html=0;whiteSpace=wrap;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="laneE">
+          <mxGeometry x="1145" y="48" width="225" height="52" as="geometry" />
+        </mxCell>
+
+        <mxCell id="warn" value="BLOCKED TODAY: no model is both IAM-approved and Marketplace-subscribed except Claude 3 Haiku, which has no prompt caching — which Claude Code requires." style="rounded=0;html=0;whiteSpace=wrap;fontSize=12;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;spacingLeft=12;" vertex="1" parent="1">
+          <mxGeometry x="30" y="574" width="1390" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="A shared machine credential would make every user the same principal, so the ledger would hold one row per day for the whole population. Attribution is lost at capture, not downstream." style="text;html=0;fontSize=11;align=left;verticalAlign=middle;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="30" y="620" width="1390" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eB2A2" value="signs in" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#d6b656;fontSize=10;fontColor=#777777;" edge="1" parent="1" source="b2" target="a2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eB1A1" value="entitles" style="edgeStyle=orthogonalEdgeStyle;html=0;dashed=1;endArrow=block;strokeColor=#d6b656;fontSize=10;fontColor=#777777;" edge="1" parent="1" source="b1" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eA2A1" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#6c8ebf;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="a2" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eA2C1" value="exchange" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#9673a6;fontSize=10;fontColor=#777777;" edge="1" parent="1" source="a2" target="c1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eA1C2" value="POST /llm/v1/messages" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeWidth=2;strokeColor=#333333;fontSize=10;fontColor=#333333;" edge="1" parent="1" source="a1" target="c2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eC2C3" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#9673a6;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="c2" target="c3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eC3D1" value="AssumeRole" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeWidth=2;strokeColor=#333333;fontSize=10;fontColor=#777777;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="c3" target="d1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1055" y="299" /><mxPoint x="1055" y="140" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eD1D2" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#b85450;" edge="1" parent="1" source="d1" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eD2D3" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#b85450;" edge="1" parent="1" source="d2" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="eC2E1" style="edgeStyle=orthogonalEdgeStyle;html=0;dashed=1;endArrow=block;strokeColor=#82b366;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="c2" target="e1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="625" y="219" /><mxPoint x="625" y="396" /><mxPoint x="162" y="396" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eE1E2" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#82b366;" edge="1" parent="1" source="e1" target="e2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eE2E3" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#82b366;" edge="1" parent="1" source="e2" target="e3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eE3E4" style="edgeStyle=orthogonalEdgeStyle;html=0;endArrow=block;strokeColor=#82b366;" edge="1" parent="1" source="e3" target="e4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eC3E5" style="edgeStyle=orthogonalEdgeStyle;html=0;dashed=1;endArrow=block;strokeColor=#d6b656;exitX=1;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="c3" target="e5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="1287" y="396" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

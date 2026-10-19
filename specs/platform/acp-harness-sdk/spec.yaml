@@ -1,0 +1,37 @@
+component: "acp-harness-sdk"
+title: "ACP Harness SDK"
+description: "Python SDK for agent runtimes to register with, and route governed MCP/LLM/A2A traffic through, Luminate or the internal ACP gateway"
+
+# Current gate status
+current_gate: D3
+status: draft
+spec_type: platform
+
+# Ownership
+owner: "Ranjula Rowel"
+team: "ACP Engineering"
+
+# External links
+jira_epic: "EACPP-791"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113135092073"
+repo: "acp-harness-sdk"
+
+# Dependencies (other component specs this depends on)
+depends_on:
+  - "aws-harness-integration"
+
+# Gate history
+gates:
+  d0:
+    status: approved
+    pr: ""
+  d1:
+    status: draft
+    pr: ""
+  d2:
+    status: draft
+    pr: ""
+  d3:
+    status: draft
+    pr: ""

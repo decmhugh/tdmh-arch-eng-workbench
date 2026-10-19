@@ -1,0 +1,81 @@
+component: gbd-acp-integration
+title: Onboard Governance-by-Design Agents to ACP
+description: "Governance-by-Design (GbD) ACP Integration is the strategy to onboard\
+  \ GbD's own agents \u2014 and the AI4EA agent estate \u2014 onto the Agentic Control\
+  \ Plane running on Luminate: register the agents, register and route their MCP servers\
+  \ through the governed gateway, establish the gateway access pattern, track promotion\
+  \ across environments, capture audit logging, and obtain formal architectural approval\
+  \ of the integration pattern. Targets a GbD pilot in mid-October.\n\nGbD runs the\
+  \ agents that assess everyone else's AI workloads, but those agents are not themselves\
+  \ registered, routed or audited by ACP. This D0 defines the scope, dependencies,\
+  \ stakeholders and success criteria for closing that gap.\n\nScope boundary: this\
+  \ spec covers how GbD's agents get onto the platform. How risk is assessed \u2014\
+  \ questionnaire, obligations, bands, evidence \u2014 stays in governance-intake\
+  \ (EACPP-877) and governance-content-packs. The AI-assisted intake UI is specified\
+  \ separately in governance-intake-ui.\n\nh2. Problem Statement\n\u2022 GbD and AI4EA\
+  \ agents call models and tools directly \u2014 no registration, no gateway routing,\
+  \ no audit ledger entry for the agents performing governance\n\u2022 No named agent\
+  \ inventory exists \u2014 specific agents, owners and onboarding requirements are\
+  \ not enumerated, so nothing can be converted into engineering tickets\n\u2022 MCP\
+  \ server routing undefined \u2014 GbD agents reach ServiceNow, Archer and knowledge\
+  \ sources through unregistered tooling; tool calls are neither clearance-scoped\
+  \ nor audited\n\u2022 Gateway access has no agreed path \u2014 harness SDK vs first-party\
+  \ workload identity vs delegated service identity is undecided and changes the work\
+  \ materially\n\u2022 Architectural review not started \u2014 ACP communication patterns\
+  \ not documented in ServiceNow, ETG assignment outstanding, formal pattern approval\
+  \ required before production\n\u2022 Two front doors, no decision \u2014 whether\
+  \ users stay in the GbD UI or move into ACP/Luminate is unsettled, so the onboarding\
+  \ surface is unknown\n\u2022 Pilot has a date, dependencies do not \u2014 mid-October\
+  \ pilot targeted against an unsequenced dependency chain\n\nh2. Opportunity\n\u2022\
+  \ Governance that is itself governed \u2014 the assessing agents run on the same\
+  \ control plane as the workloads they assess\n\u2022 Reference onboarding for a\
+  \ governance workload \u2014 first use case whose agents read and write regulated\
+  \ systems of record (ServiceNow, Archer)\n\u2022 A single approved integration pattern\
+  \ that later use cases inherit rather than re-litigate\n\u2022 Closes the loop with\
+  \ governance-intake \u2014 GbD becomes both producer and consumer of the governance\
+  \ data product (FR-12)\n\u2022 Mid-October pilot as a forcing function proving registration,\
+  \ routing, audit and UI handoff end to end\n\nh2. Acceptance Criteria\n\u2022 Named\
+  \ GbD and AI4EA agent inventory delivered and converted into engineering tickets\n\
+  \u2022 In-scope agents registered in Luminate with owner, environment and lifecycle\
+  \ state visible in the catalog\n\u2022 MCP servers registered and tool traffic routed\
+  \ through the governed gateway; no unaudited tool calls for onboarded agents\n\u2022\
+  \ One documented gateway authentication path implemented and working in dev\n\u2022\
+  \ Agent promotion between environments demonstrated with the transition recorded\n\
+  \u2022 Audit ledger populated \u2014 invocations and tool calls retrievable per\
+  \ agent\n\u2022 Integration pattern formally approved \u2014 ServiceNow documentation\
+  \ complete, ETG assigned, approval obtained\n\u2022 Front-door decision recorded\
+  \ and the API handoff specified\n\u2022 Mid-October pilot live with the named agent\
+  \ subset under ACP governance\n\nh2. In Scope (MVP)\n\u2022 GbD + AI4EA agent inventory\
+  \ with owners, contacts and per-agent onboarding requirements\n\u2022 Agent registration\
+  \ in Luminate across promotion environments\n\u2022 MCP server registration and\
+  \ governed gateway routing\n\u2022 Gateway access pattern decision and implementation\n\
+  \u2022 Promotion lifecycle states and transition authority\n\u2022 Audit logging\
+  \ for agent invocations and tool calls\n\u2022 Architectural review package \u2014\
+  \ ServiceNow pattern documentation, ETG assignment, formal approval\n\u2022 UI handoff\
+  \ decision (design tracked in governance-intake-ui)\n\u2022 Mid-October pilot with\
+  \ a named agent subset\n\nh2. Out of Scope (Backlog)\n\u2022 The risk-assessment\
+  \ process itself \u2014 governance-intake and governance-content-packs\n\u2022 Archer\
+  \ bi-directional sync \u2014 archer-grc-sync\n\u2022 Building GbD's assessment module\
+  \ or risk-scoring engine \u2014 GbD's own build; ACP integrates via API\n\u2022\
+  \ Imagineers integration pattern \u2014 separate workshop, explicitly non-blocking\n\
+  \u2022 Onboarding non-GbD use cases \u2014 aims, mdx, nova, orcc, waldo have their\
+  \ own specs\n\u2022 Multi-region deployment of GbD agents\n"
+current_gate: D0
+status: draft
+spec_type: onboarding
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-1075
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113223205544"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- sunlife-deployment
+- governance-intake
+- aws-harness-integration
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []

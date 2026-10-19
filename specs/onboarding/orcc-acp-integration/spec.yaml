@@ -1,0 +1,73 @@
+component: orcc-acp-integration
+title: "Onboarding Corp IT's use case: ORCC (Operational Risk & Compliance Committee Reporting Agent)"
+description: |
+  ORCC (Operational Risk & Compliance Committee) Reporting Agent is an AI-powered reporting solution that automates the creation of Sun Life's quarterly ORCC risk reporting deck. Risk teams currently spend significant effort collecting data from multiple sources, analyzing results, drafting narratives, and assembling executive-ready PowerPoint presentations under tight reporting timelines.
+  
+  The solution uses a multi-agent architecture built on AgentCore and LangGraph. An orchestrator agent coordinates specialized worker agents responsible for data ingestion, slide mapping, content generation, and report assembly. MVP1 focuses on AI-assisted generation of quarterly reporting decks and conversational refinement of slide content. Future phases introduce RDR integration, trend analysis, enhanced reasoning, and deeper governance controls.
+  
+  h2. Problem Statement
+  • Risk teams spend significant effort collecting data from multiple enterprise systems (Archer, ServiceNow, BGRO, SharePoint, S3)
+  • Manual analysis, narrative drafting, and PowerPoint assembly consume weeks under tight reporting deadlines
+  • No centralized governance for ORCC reporting agents operating independently
+  • Lack of observability into agent-generated content quality and execution metrics
+  • No audit trail for report creation, content generation, and human approvals
+  • Each agent operates without unified policy controls or data access restrictions
+  • Model usage and associated costs for report generation are not tracked or visible
+  
+  h2. Success Criteria
+  • All ORCC reporting agents (orchestrator, data ingestion, slide mapping, content generation) registered and managed through ACP agent registries
+  • Foundation models for content generation, summarization, and report authoring sourced through ACP model registries
+  • MCP servers for data sources (SharePoint, Archer, ServiceNow, BGRO, RDR) registered and governed through ACP MCP registries
+  • Quarterly reporting deck generation time reduced by 70 percent vs manual process
+  • 100 percent audit trail for all report generation, content review, and approval actions
+  • ORCC gains unified observability of agent execution, compliance status, and operational health through ACP dashboard
+  • Cost visibility for model invocations and agent usage per reporting cycle
+  • Risk team can onboard new reporting agents in under 1 day using ACP framework
+  
+  h2. Acceptance Criteria
+  • ORCC multi-agent orchestration fully integrated with ACP agent registry API
+  • Agent registration, lifecycle, and monitoring workflows operational
+  • Foundation model registry integration tested with current models (GPT-4, Claude, etc.)
+  • MCP server registry operational with key data source connectors (SharePoint, Archer, ServiceNow)
+  • Agent observability dashboard showing execution metrics, content generation latency, approval workflows
+  • Audit trail captures all data access, agent decisions, model invocations, and human approvals
+  • Human review and approval workflows enforced through ACP governance controls
+  • Cost attribution per agent per reporting cycle visible
+  • Documentation for onboarding new reporting agents to ACP framework
+  
+  h2. In Scope (MVP)
+  • ORCC orchestrator agent registration and monitoring through ACP
+  • Data ingestion agent registration through ACP
+  • Slide mapping and content generation agent registration
+  • Report assembly agent registration
+  • Foundation model registry consumption (GPT-4, Claude, Anthropic models)
+  • MCP server registration for SharePoint, Archer, ServiceNow, BGRO
+  • Baseline narrative generation with AI assistance
+  • Conversational slide content refinement (human-in-the-loop)
+  • Observability dashboard for agent execution and content metrics
+  • Audit trail for all generated content and human approvals
+  • Cost tracking and attribution for model usage
+  • Documentation and runbooks for ORCC-ACP integration
+
+  h2. Out of Scope (Backlog)
+  • Risk Data Repository (RDR) deep integration (phase 2)
+  • Quarter-over-quarter trend analysis and comparative insights
+  • Enhanced reasoning and explainability for risk narratives
+  • Autonomous report generation and distribution without review
+  • Multi-stakeholder approval workflows with escalation paths
+  • Integration with downstream risk management and capital systems
+  • Predictive risk pattern detection and forward-looking analysis
+  • Real-time data synchronization with source systems
+
+created_at: '2026-08-12'
+last_updated: '2026-08-12'
+current_gate: D0
+status: draft
+spec_type: onboarding
+gate_status: Discovery in progress
+jira_epic: EACPP-911
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113134338485"
+owner: "Sam Mamelli"
+confluence_url: ''
+reviewers:
+  - pavithra.viswanathan@sunlife.com

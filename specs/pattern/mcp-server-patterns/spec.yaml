@@ -1,0 +1,95 @@
+component: mcp-server-patterns
+title: "MCP Server Patterns — Registration, Deployment and Utilization"
+description: |
+  The generalized pattern for building, deploying, registering and consuming an MCP server on ACP / Luminate, and the conformance requirements a server must meet before it is served.
+
+  MCP servers are already appearing across the estate on different substrates — FastMCP on OpenShift, Bedrock AgentCore runtimes, in-cluster services on EKS — and each team is getting a different answer about what is required. This spec gives one decision tree by substrate, one conformance profile (MSR-1 to MSR-30) assessed once per server, and one control table an ISRA can be written against.
+
+  Covers the catalogue model (server, tool, resource, prompt records and what registration actually requires), the deployment substrates and what each must satisfy to be reachable, the five outbound identity modes and the inbound credential eligibility they imply, authorization and its server-granularity boundary, the approved Jenkins JTE build path with SonarQube / Snyk / Checkmarx, and the operational surface — audit, tracing, session correlation and lifecycle.
+
+  Every requirement carries a verification method, because a conformance profile that cannot be evidenced is a wish list.
+
+  h2. Problem Statement
+  • No stated requirement set — a team building a FastMCP server on OpenShift, one building on AgentCore Runtime and one fronting a vendor SaaS endpoint each get a different answer, from a conversation rather than a page
+  • The whole live estate sits on one identity mode nobody chose: all four MCP servers registered in dev are gateway_identity, so the backend receives no credential at all, and two of them are reached over plain in-cluster HTTP
+  • Luminate's authorization stops at the server, not the tool — AccessPolicyTargetType has no tool member, AccessPolicy.allowed_tool_ids has no runtime consumer, and the gateway parses the JSON-RPC method only after the access decision, for telemetry. The server is the trust boundary and nothing says so to the team designing one
+  • The tool catalogue is hand-entered and is not evidence — there is no discovery on main, and a live production-path server carries zero tool records
+  • Security scanning is not attached to MCP servers as a class: the approved JTE gates default to on, every ACP repo turns them off, and the Checkmarx step does not scan at all — it reads the latest merged-PR scan and skips silently when a repo has none
+  • Substrate is unbounded and each shape has a different reachability, TLS and credential story that is written down nowhere
+  • There is no ETAB or ISRA artefact — no single architecture to present and no control set per deployment shape to assess
+
+  h2. Opportunity
+  • One conformance profile, assessed once per server and reusable for every ISRA
+  • A decision tree by substrate, so a team picks its shape without a meeting
+  • The identity-mode choice becomes a documented decision with stated consequences instead of an untouched default
+  • Security scanning becomes a named gate with a named owner and an evidence path
+  • ETAB gets one architecture and one control table; the onboarding specs stop re-deriving the MCP half of their design
+
+  h2. Acceptance Criteria
+  • A team can determine, from one page, what its MCP server must satisfy before it will be served
+  • Each deployment substrate states its reachability, TLS, identity and scanning requirements
+  • The identity-mode decision is presented as a matrix with the inbound credential eligibility each mode implies
+  • The server-granularity authorization boundary is stated explicitly, with the compensating control teams must implement
+  • Every conformance requirement has a verification method and an owner
+  • The build path names the exact JTE libraries, steps and configuration keys
+  • Every gap is a named ask against a named owner, not a local workaround
+
+  h2. In Scope
+  • The MCP server conformance profile — protocol, transport, identity, authorization, supply chain, runtime, data and lifecycle requirements
+  • The catalogue model and what registration requires, including the tool / resource / prompt records
+    • Deployment substrates — OpenShift, EKS, Bedrock AgentCore, vendor-hosted, AWS Lambda — and what each must meet
+  • Outbound identity modes and inbound credential eligibility
+  • Authorization, guardrails and the tool-granularity boundary
+  • The approved Jenkins JTE build path and the SonarQube / Snyk / Checkmarx gates
+  • Observability, audit, session correlation and lifecycle governance for the MCP lane
+  • The ETAB architecture and the ISRA control table
+
+  h2. Out of Scope
+  • Building any specific MCP server — this spec states requirements, not implementations
+  • The credential, invocation and inference patterns shared with every lane — integration-patterns (EACPP-1112)
+  • Gateway and environment topology — gateway-environment-strategy (EACPP-1089)
+  • The standalone ACP MCP Registry service — a separate component with its own governance scope
+  • Designing tool-granular authorization — a consortium ask raised here, not solved here
+  • Gateway internals — routing, guardrail evaluation and the proxy data path are consortium-owned
+  • Authoring the end-user guides — luminate-user-guides is the canonical home
+
+current_gate: D3
+status: draft
+spec_type: pattern
+owner: "Sun Life ACP Product Team"
+team: "EDAE ACP"
+
+jira_epic: "EACPP-1176"
+atg_reference: "ATG0005648"
+isra_reference: "26-1904"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113199218851"
+repo: "EDAEACP/acp-product-specs"
+
+depends_on:
+  - integration-patterns
+  - gateway-environment-strategy
+  - sunlife-deployment
+  - governance-intake
+
+gates:
+  d0:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d1:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d2:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []
+  d3:
+    status: draft
+    pr: ""
+    approved_date: ""
+    reviewers: []

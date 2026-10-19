@@ -1,0 +1,38 @@
+component: aws-harness-integration
+title: AWS Harness Integration with Luminate
+description: "Product-team spec for the updates the AWS Harness SDK (acp-harness-sdk)\
+  \ and its consumers need to work against the Luminate stack: repoint GatewayClient\
+  \ to Luminate's OpenAI-compatible gateway under /llm with Bearer-JWT auth (replacing\
+  \ x-acp-agent-id), repoint RegistryClient to Luminate's catalog viewsets (/api/v1/catalog/{agents,\
+  \ mcp-servers,models}) with the project/scope_tokens/mandatory-tags schema, add\
+  \ a Luminate token provider hitting the portal client-credentials endpoint (/api/v1/iam/auth/token,\
+  \ Authentik-backed), and drop the cross-account Bedrock assume-role since Luminate's\
+  \ gateway invokes Bedrock via its own pod role. Sun Life-specific infrastructure\
+  \ \u2014 product-team spec."
+current_gate: D3
+status: draft
+spec_type: integration
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-707
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113029120453"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- sunlife-deployment
+gates:
+  d0:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d1:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d2:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []

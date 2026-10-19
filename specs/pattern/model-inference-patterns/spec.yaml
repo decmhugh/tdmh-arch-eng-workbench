@@ -1,0 +1,69 @@
+component: model-inference-patterns
+title: "Model Inference Patterns — Centralized Inference, Cost Attribution and Model Access Governance"
+description: |
+  The target-state pattern for where a model call executes, who may make it, and who pays for it on ACP / Luminate.
+
+  Inference executes in the ACP production workload account, through the gateway serving the calling workload's environment and region — one gateway per environment per region, per gateway-environment-strategy DD-3. The workload names a model and holds no provider credential; which provider serves it, in which account and which region, are platform decisions resolved through the catalogue.
+
+  Centralized inference is the target state for three reasons. It is the only shape that serves a workload with no cloud account. It presents a single measured enterprise demand to a provider, which is the precondition for committed-spend agreements and negotiated inference deals. And it keeps the provider replaceable, because moving a model between providers is a catalogue change rather than a migration per consuming team. Bedrock is the provider today; the pattern does not assume it is the provider tomorrow.
+
+  Aggregating the bill is only safe if it stays decomposable. In a distributed shape the cloud account boundary attributes spend for free; centralizing removes that boundary, so ACP becomes the attribution authority — a daily ledger at (project, entity, user, model, provider) grain carrying a cost centre, reconciled against the provider invoice before anything is charged, delivered into the enterprise chargeback pipeline finance already runs. A single bill the platform cannot decompose is not leverage, it is a liability.
+
+  Covers the topology and the decision behind it, the attribution chain end to end, budgets enforced at the call, model access governance — which agent, user, application or project may call which model in which region — and the ETAB architecture with an ISRA control table.
+
+  Every requirement carries a verification method. D2 states the target state; the delta between it and the platform as it stands is D3, so approving the pattern and scheduling the work are separate decisions.
+
+  h2. Problem Statement
+  • The centralized-versus-distributed decision is unmade and load-bearing — integration-patterns T16 (EACPP-1128) says in terms "decide and record whether centralized is offered, and to whom", and seven onboarding use cases are waiting on the answer
+  • Without a centralized call path the enterprise has no aggregate inference volume, only many small ones, so committed-spend agreements and negotiated rates are not available to it
+  • A workload that calls a provider endpoint directly has hard-wired that provider into itself, so changing provider later costs a migration per team rather than a catalogue change
+  • Centralizing inference removes the cloud account boundary that attributes spend today, so without a deliberate attribution design the model costs of every business unit land undifferentiated on the platform's budget
+  • A workload with no cloud account — an agent on OpenShift, a desktop client product, an Office add-in — has no governed route to a model at all
+  • There is no stated position on how spend is limited, who may call which model in which region, or what a business owner is promised about either
+  • There is no ETAB or ISRA artefact for the inference lane — no single architecture to present and no control set to assess
+
+  h2. Opportunity
+  • One recorded decision on centralized inference, discharging T16 and unblocking the onboarding specs waiting on it
+  • Inference becomes a negotiable commercial position rather than a distributed cost
+  • The provider becomes replaceable without touching a consuming workload
+  • An attribution chain that keeps an aggregated bill decomposable to project, user, model and cost centre
+  • A chargeback design that feeds the existing enterprise pipeline rather than competing with it, so finance keeps one view of cost-centre spend
+  • Spend bounded by budgets enforced at the call, bound to the accountable owner, with what is promised equal to what is enforced
+  • Model access governance expressed once: agent, user, user group, application and project as sources; model, region and environment as the scoping dimensions
+  • ETAB gets one architecture and one control table, and the onboarding specs stop re-deriving the inference half of their design
+
+  h2. In Scope
+  • The inference topology — where a call executes, which gateway serves it, and the decision behind it
+  • The attribution chain — token capture, pricing, ledger, cost centre, reconciliation, and the hand-off to the enterprise chargeback pipeline
+  • Measurement integrity as a control, including complete token-dimension capture and pricing-catalogue currency
+  • Budgets — what is limited, how it is enforced, who owns a limit, and what a business owner is promised
+  • Model access governance — sources, targets, region and project scoping, and lifecycle
+  • The ETAB architecture and the ISRA control table for the inference lane
+
+  h2. Out of Scope
+  • Onboarding any specific workload — this spec states the pattern; anthropic-client-acp-integration and the other use cases consume it
+  • The credential, invocation and hosting patterns shared with every lane — integration-patterns (EACPP-1112)
+  • Gateway and environment topology, and which gateway serves which environment — gateway-environment-strategy (EACPP-1089)
+  • Agent registration, ingress and the agent conformance profile — agent-patterns (EACPP-1290)
+  • MCP server registration and the tool lane — mcp-server-patterns (EACPP-1176)
+  • Building the enforcement mechanism — a consortium dependency raised here (AIC-20, AIC-43, EACPP-834), not solved here
+  • Intelligent routing, semantic caching and cost-aware model selection — EACPP-20, deliberately excluded so the governance question is settled first
+
+current_gate: D3
+status: draft
+spec_type: pattern
+owner: "Sun Life ACP Product Team"
+team: "EDAE ACP"
+
+jira_epic: "EACPP-1320"
+atg_reference: "ATG0005693"
+atg_url: "https://sunlife.service-now.com/nav_to.do?uri=x_sulfc_atg_request.do?sys_id=9f3f3f0acf978314a77ab1ad5d851c38"
+isra_reference: "26-1978"
+isra_url: "https://sunlife.service-now.com/nav_to.do?uri=x_sulfc_vendor_ass_vendor_assessment.do?sys_id=61de005ecf9f8314a77ab1ad5d851c20"
+agileplace_card: ""
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113247126093"
+repo: "EDAEACP/acp-product-specs"
+
+depends_on:
+  - integration-patterns
+  - gateway-environment-strategy

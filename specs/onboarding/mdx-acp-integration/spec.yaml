@@ -1,0 +1,98 @@
+component: mdx-acp-integration
+title: "Onboarding SL Canada's MDx use case: AI-Native SDLC Platform with ACP Governance"
+description: |
+  MDx is an AI-native software development platform focused on governed software development and agent-assisted engineering. Forge, the core capability, enables users to define outcomes and automatically clone repositories, plan work, build code, execute tests, and create pull requests. Currently piloted with 5 squads across SL Canada.
+  
+  The highest-value ACP integration is routing Forge model traffic through the ACP gateway to gain centralized governance, observability, auditability, and cost-control capabilities. This PoC validates agent traffic routing, model governance, CLI activity governance, and cost tracking for future multi-unit deployment across Canada.
+  
+  h2. Problem Statement
+  • MDx Forge directly invokes Bedrock models, leaving organizations without centralized policy enforcement or approval gates
+  • Model invocations leave compliance gaps without audit trails or regulatory evidence for OSFI and NIST requirements
+  • Model token usage remains untracked and unattributed, preventing cost attribution to teams, projects, or business units
+  • Forge's agent-based code execution creates risk by operating outside governance frameworks
+  • Model consumption patterns across teams and business units remain hidden, preventing cost optimization
+  • Regulatory compliance evidence is not automatically collected, creating audit trail and reporting gaps
+  • Each governance requirement forces custom audit/logging solutions, creating inconsistent controls and technical debt
+  
+  h2. Success Criteria
+  • All Forge model traffic successfully routed through ACP gateway with governance enforcement
+  • Model invocations governed through ACP policies with full audit trail
+  • Cost tracking per model invocation with attribution by business unit and project
+  • Audit trail captures model usage, decisions, and compliance evidence for OSFI and NIST
+  • PoC validates agent traffic routing, observability, and governance effectiveness
+  • Regulatory compliance reporting available without custom development
+  • CLI-based activity governance evaluated and roadmap established
+  • Future MDx users inherit ACP governance framework without rebuilding audit solutions
+  
+  h2. Acceptance Criteria
+  • Forge model invocations routed through ACP gateway successfully
+  • ACP governance policies enforced on model selection and usage
+  • Cost tracking dashboard shows token usage by squad and business unit
+  • Audit trail captures all model invocations with decision context
+  • Observability dashboard provides real-time visibility into Forge model consumption
+  • CLI governance evaluation complete with technical feasibility documented
+  • Integration documentation and runbooks for future MDx onboarding
+  • Performance impact of ACP gateway routing measured and acceptable
+  
+  h2. In Scope (MVP)
+  • Route Forge model traffic through ACP gateway
+  • Implement model governance and policy enforcement
+  • Basic cost tracking and attribution by squad and business unit
+  • Audit trail collection for all model invocations
+  • Observability dashboard for Forge model usage and performance
+  • Ledger integration between MDx and ACP for comprehensive audit
+  • PoC validation of agent traffic routing through ACP
+  • Documentation and onboarding runbooks
+  
+  h2. Out of Scope (Backlog)
+  • CLI-based activity governance (requires further architectural evaluation)
+  • Kill switch and graduated termination capabilities (future production needs)
+  • Advanced cost governance with budget controls and spend limits
+  • Team-level spending limits and cost governance policies
+  • MCP tool governance and tool-level policy enforcement
+  • Multi-agent governance for Forge Fleet (future capability)
+  • Production deployment and multi-region MDx scaling
+  • Integration with downstream cost management and chargeback systems
+
+created_at: '2026-08-12'
+last_updated: '2026-09-08'
+current_gate: D3
+status: draft
+spec_type: onboarding
+gate_status: "D0-D2 approved by MDx 2026-09-08 - design agreed, proceeding to PoC against dev Luminate (slf-eks-t1k-ca-dev). D3 active: spikes T1-T5 for ramp and unblock, PoC T6-T14 for governed Forge and Twin traffic, future-state spikes T15-T18 feeding a D2 update. T3 (gateway seam, OQ-4) gates the PoC. G-F closed by project chargeback, so DD-7 is settled and OQ-2 is now only a squad-to-project mapping question."
+owner: Sun Life ACP Product Team
+team: EDAE ACP
+jira_epic: EACPP-912
+agileplace_card: ''
+confluence_page: "https://sunlife.atlassian.net/wiki/spaces/T1KACP/pages/113135616278"
+repo: EDAEACP/acp-product-specs
+depends_on:
+- sunlife-deployment
+- governance-intake
+gates:
+  d0:
+    status: approved
+    pr: ''
+    approved_date: '2026-09-08'
+    reviewers:
+    - pavithra.viswanathan@sunlife.com
+  d1:
+    status: approved
+    pr: ''
+    approved_date: '2026-09-08'
+    reviewers: []
+  d2:
+    status: approved
+    pr: ''
+    approved_date: '2026-09-08'
+    reviewers: []
+  d3:
+    status: draft
+    pr: ''
+    approved_date: ''
+    reviewers: []
+  d4:
+    status: not-started
+    pr: ''
+    approved_date: ''
+    reviewers: []

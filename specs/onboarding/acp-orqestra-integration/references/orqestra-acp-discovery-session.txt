@@ -1,0 +1,2151 @@
+WEBVTT
+
+
+[00:00:03] Lalit Summan: we go through with our users in terms of
+requirements,
+
+
+[00:00:07] Lalit Summan: in terms of what your use case is.
+So we'll go through those,
+
+
+[00:00:11] Lalit Summan: but before we dive into anything with any
+requirements,
+
+
+[00:00:15] Lalit Summan: are you aware of what the ACP is in terms
+of have you seen it?
+
+
+[00:00:19] Lalit Summan: Do you have an overview?
+We want to meet you where you are,
+
+
+[00:00:23] Lalit Summan: so I'd love to know.
+
+
+[00:00:25] Lalit Summan: How are you thinking about this? Like,
+what do you know about the AC?
+
+
+[00:00:29] Kulas Angeles: I was part of the initial team that was
+looking at ACP right before it went to
+
+
+[00:00:35] Kulas Angeles: the consortium. So yeah,
+but Anuj and Usha might probably just
+
+
+[00:00:38] Lalit Summan: Okay, right, right, right, right, yeah,
+yeah, right about this.
+
+
+[00:00:40] Kulas Angeles: have very high level understanding of it.
+So if you have like, you know,
+
+
+[00:00:45] Kulas Angeles: a quick five minute intro as to what it
+is and what it can do,
+
+
+[00:00:50] Kulas Angeles: that will be beneficial for them.
+
+
+[00:00:52] Kulas Angeles: Yeah, I've seen the demo,
+like I think a couple of months back,
+
+
+[00:00:55] Kulas Angeles: I think said later demo in one of the EDA
+meetings, but beyond that,
+
+
+[00:00:58] Kulas Angeles: I haven't seen it. OK.
+
+
+[00:01:00] Lalit Summan: Got it,
+and it's probably evolved since then.
+
+
+[00:01:03] Lalit Summan: Ernest said, if you want to do a quick,
+like,
+
+
+[00:01:03] Kulas Angeles: Ohh yeah, for sure,
+and the week it evolves.
+
+
+[00:01:05] Lalit Summan: quick five-minute demo just to get folks
+familiar with it,
+
+
+[00:01:08] Lalit Summan: so that we were all talking apples and
+oranges for apples and apples.
+
+
+[00:01:13] Seth Chalmers: Yep,
+I'll just link some pages here so you can
+
+
+[00:01:17] Seth Chalmers: follow along. These are just like 101,
+what is the ACP overview page.
+
+
+[00:01:22] Seth Chalmers: So what is the agentic control plane?
+It's essentially a governance layer for
+
+
+[00:01:29] Seth Chalmers: agentic solutions.
+So how that works in practice is we have
+
+
+[00:01:34] Seth Chalmers: the...
+
+
+[00:01:35] Seth Chalmers: Illuminate portal.
+It's kind of like the front end UI and
+
+
+[00:01:39] Seth Chalmers: all interactions agentic communication
+goes through one of our governed gateways.
+
+
+[00:01:45] Seth Chalmers: That allows us to gather all the metrics,
+the observability,
+
+
+[00:01:50] Seth Chalmers: placed guardrails on actions, etc.
+So that's kind of the.
+
+
+[00:01:54] Seth Chalmers: the heart of how all this works together.
+How it's deployed here,
+
+
+[00:02:00] Seth Chalmers: we have a set of environments that have
+some fundamental kind of architecture
+
+
+[00:02:06] Seth Chalmers: pieces in the back end that make
+everything work.
+
+
+[00:02:10] Seth Chalmers: So it has key cloak as an identity
+provider.
+
+
+[00:02:15] Seth Chalmers: underneath this does machine to machine
+and also allows federation of our other
+
+
+[00:02:21] Seth Chalmers: identity providers like Entra and Okta
+into it.
+
+
+[00:02:24] Seth Chalmers: So we can integrate with chatbots and all
+that good stuff and enable the on behalf
+
+
+[00:02:31] Seth Chalmers: of flow. So a user signing into.
+
+
+[00:02:33] Seth Chalmers: a chat bot as an example and delegating
+some work over to an agent to make that
+
+
+[00:02:39] Seth Chalmers: token exchange pass through happen.
+You need a identity provider that
+
+
+[00:02:43] Seth Chalmers: properly implements a few RFCs with that
+token exchange and Key Cloak is that.
+
+
+[00:02:49] Seth Chalmers: The other identity providers we have at
+Sun Life don't necessarily fulfill that.
+
+
+[00:02:54] Seth Chalmers: today and this is a consortium decision
+what we brought in.
+
+
+[00:02:58] Seth Chalmers: So this is the major change from the
+internal build. Other than that,
+
+
+[00:03:02] Seth Chalmers: we have a lot of cool stuff like the
+gateway.
+
+
+[00:03:05] Seth Chalmers: There's kind of like a proxy sidecar in
+front of it,
+
+
+[00:03:08] Seth Chalmers: which does authentication and
+authorization. And then agent gateway,
+
+
+[00:03:13] Seth Chalmers: the open source package is what's
+essentially used for the routing behind.
+
+
+[00:03:18] Seth Chalmers: We have an internal lang fuse,
+which grabs traces, tokens, cost metrics.
+
+
+[00:03:23] Seth Chalmers: We also have like model and agent
+evaluation frameworks,
+
+
+[00:03:27] Seth Chalmers: which can run out this.
+So if you don't have your own evaluation
+
+
+[00:03:32] Seth Chalmers: tool or anything like that,
+you can use our centrally hosted
+
+
+[00:03:37] Seth Chalmers: length views instance for LLM as a judge
+in these various evaluation flows.
+
+
+[00:03:43] Seth Chalmers: We integrate with essentially all of the
+platforms as Sun Life, Open Shift,
+
+
+[00:03:50] Seth Chalmers: Bedrock Agent Core, EKS,
+all those platforms,
+
+
+[00:03:54] Seth Chalmers: essentially internal traffic is
+
+
+[00:03:57] Seth Chalmers: good to go. Snowflake as well,
+but not like currently officially
+
+
+[00:04:03] Seth Chalmers: supported. But to make all this happen,
+we have a Python SDK,
+
+
+[00:04:09] Seth Chalmers: a harness that you can utilize, import,
+makes the general communication much
+
+
+[00:04:16] Seth Chalmers: easier.
+
+
+[00:04:17] Seth Chalmers: So switching over your current code,
+a lot of people are just making direct
+
+
+[00:04:22] Seth Chalmers: calls over to Bedrock or whatever. This,
+the SDK kind of allows you to quickly
+
+
+[00:04:27] Seth Chalmers: switch over your traffic to basically
+using the gateway and the credentials
+
+
+[00:04:33] Seth Chalmers: that we issue you from the portal.
+So that's the.
+
+
+[00:04:36] Seth Chalmers: basic shape of it,
+what the Luminate portal looks like today.
+
+
+[00:04:42] Seth Chalmers: Go back.
+
+
+[00:04:45] Seth Chalmers: So we have agents, MCP servers,
+models registered.
+
+
+[00:04:49] Seth Chalmers: We're hooked in with all the existing
+bedrock models.
+
+
+[00:04:53] Seth Chalmers: So we'll set you up in the portal.
+I already sent over the configuration to
+
+
+[00:04:59] Seth Chalmers: Kulas.
+We can add everyone else over to that
+
+
+[00:05:03] Seth Chalmers: project.
+
+
+[00:05:04] Seth Chalmers: But you essentially get access to the
+portal,
+
+
+[00:05:07] Seth Chalmers: you have sunlifeservice access to do most
+of the things you need to do.
+
+
+[00:05:12] Seth Chalmers: That final action,
+which after you register some agents,
+
+
+[00:05:16] Seth Chalmers: applications, models, or MCP servers,
+you finally want to get all that deployed
+
+
+[00:05:21] Seth Chalmers: and get a credential back so you can
+actually
+
+
+[00:05:24] Seth Chalmers: interact.
+That's the final step that requires us on
+
+
+[00:05:28] Seth Chalmers: the product team. So you'll say,
+I'm ready to deploy,
+
+
+[00:05:32] Seth Chalmers: we'll get you set up on the gateway,
+you'll get a credential back,
+
+
+[00:05:37] Seth Chalmers: and then you can start working.
+For all the interactions which are not
+
+
+[00:05:42] Seth Chalmers: like a direct.
+
+
+[00:05:43] Seth Chalmers: agent calling a model or anything like
+that,
+
+
+[00:05:46] Seth Chalmers: those kind of fall into an application
+flow. So things like a chat bot,
+
+
+[00:05:51] Seth Chalmers: we're also doing like a cloud code POC.
+I think orchestra is local,
+
+
+[00:05:55] Seth Chalmers: so this is probably the path you would
+take as well.
+
+
+[00:05:59] Seth Chalmers: So you can register your application and
+then you'll make a policy between.
+
+
+[00:06:04] Seth Chalmers: your application and a model,
+like whatever you want to call
+
+
+[00:06:07] Seth Chalmers: essentially.
+And that's how the kind of interaction
+
+
+[00:06:10] Seth Chalmers: works. And then you'll just, again,
+route everything through your application
+
+
+[00:06:15] Seth Chalmers: through the gateway to make that LLM call.
+
+
+[00:06:18] Kulas Angeles: Okay.
+
+
+[00:06:20] Kulas Angeles: Good question. Yeah, I mean,
+the question was more around the models.
+
+
+[00:06:23] Kulas Angeles: Like, when you say models, say,
+is it that I have to configure my own AWS
+
+
+[00:06:27] Kulas Angeles: account? Like,
+I'll take a simple use case.
+
+
+[00:06:29] Kulas Angeles: Let's say we have a chart board and I
+have a Lambda in which I'm running the,
+
+
+[00:06:33] Kulas Angeles: like, bedroll inference.
+So does it mean that I have to use your
+
+
+[00:06:37] Kulas Angeles: SDK within my Lambda board?
+
+
+[00:06:38] Kulas Angeles: And then is it like,
+because I'm using Red Bedrock right with
+
+
+[00:06:42] Kulas Angeles: their APIs,
+so is it like you will be providing after
+
+
+[00:06:45] Kulas Angeles: that the models like through ACP or is it
+like still it stays within my AWS account
+
+
+[00:06:50] Kulas Angeles: and plus like I'm trying to understand
+the integration piece of that.
+
+
+[00:06:51] Seth Chalmers: Yeah.
+
+
+[00:06:54] Seth Chalmers: Yeah, great question.
+So we support both models.
+
+
+[00:06:57] Seth Chalmers: So A centralized inference model where we
+do all the LLM inferencing on your behalf,
+
+
+[00:07:03] Seth Chalmers: those go through our accounts.
+That's also how,
+
+
+[00:07:06] Seth Chalmers: I know Kulas we were talking,
+we're also doing the small language model
+
+
+[00:07:10] Seth Chalmers: hosting on ACP. That goes to...
+
+
+[00:07:13] Seth Chalmers: us as well. So we have, as an example,
+Gemma 4 E to be hosted in our dev
+
+
+[00:07:17] Seth Chalmers: instance and EKS clusters,
+we're serving that as a model.
+
+
+[00:07:19] Kulas Angeles: Yeah.
+
+
+[00:07:21] Seth Chalmers: So you can similarly register your
+application, make a policy to that model.
+
+
+[00:07:26] Seth Chalmers: And depending on whatever route you want
+to choose,
+
+
+[00:07:29] Seth Chalmers: you can also use your own Bedrock account.
+
+
+[00:07:32] Seth Chalmers: as well. So we can set that up.
+We have a service catalog policy that
+
+
+[00:07:36] Seth Chalmers: gets deployed into your account and then
+our gateway role assumes into your
+
+
+[00:07:41] Seth Chalmers: account to make the better call or it's
+centrally and we do it for you.
+
+
+[00:07:46] Kulas Angeles: I do have a question on the central one.
+Will that be the setup for the
+
+
+[00:07:51] Kulas Angeles: foreseeable future?
+Meaning because tokens is always an issue,
+
+
+[00:07:55] Kulas Angeles: right?
+You're using it and people have to pay
+
+
+[00:07:58] Kulas Angeles: for the token.
+So how does that costing look like?
+
+
+[00:08:02] Seth Chalmers: Yep, that's our go forward model.
+We're still working out the full
+
+
+[00:08:06] Seth Chalmers: chargeback to cost centers and all that.
+But that's in the works right now,
+
+
+[00:08:11] Seth Chalmers: going through the next ETAB approval for
+October 9th.
+
+
+[00:08:14] Seth Chalmers: And then we have to develop that
+chargeback model,
+
+
+[00:08:17] Seth Chalmers: but that is the go forward direction.
+
+
+[00:08:21] Seth Chalmers: It has a host of advantages,
+like you don't obviously need a Bedrock
+
+
+[00:08:24] Seth Chalmers: account. We're doing that for you.
+And then the consortium directions,
+
+
+[00:08:28] Seth Chalmers: we can just hot swap providers in the
+future.
+
+
+[00:08:31] Seth Chalmers: So let's say we want to move away from
+Bedrock or whatever, do anthropic direct.
+
+
+[00:08:36] Seth Chalmers: That allows us to do that pretty simply.
+
+
+[00:08:39] Kulas Angeles: Okay, nice.
+So I'm assuming this won't work for our
+
+
+[00:08:43] Kulas Angeles: current implementation of Orchestra
+because we use GitHub Copilot right now.
+
+
+[00:08:48] Kulas Angeles: So if for us to be able to onboard our
+application here, we have to use the bed,
+
+
+[00:08:53] Kulas Angeles: for now, Bedrock as our LLM provider,
+right?
+
+
+[00:08:55] Seth Chalmers: That's right, yeah.
+
+
+[00:08:56] Kulas Angeles: So we can move on from language mode.
+
+
+[00:08:59] Kulas Angeles: I would probably just use the free one
+for now, right? So,
+
+
+[00:09:03] Kulas Angeles: it's technically free for now.
+
+
+[00:09:06] Seth Chalmers: Yeah, the small language model,
+we have no like chargeback mechanism,
+
+
+[00:09:11] Seth Chalmers: so it'll just be us kind of getting the
+cost on that if you want to try that one
+
+
+[00:09:17] Seth Chalmers: out. Otherwise,
+most of our testing is like with the
+
+
+[00:09:18] Kulas Angeles: Thank you.
+
+
+[00:09:20] Seth Chalmers: lower very cheap models,
+Haiku and things like that.
+
+
+[00:09:24] Kulas Angeles: How about the bedrock, right?
+
+
+[00:09:29] Kulas Angeles: How do you have a call center mechanism
+detection right now?
+
+
+[00:09:36] Kulas Angeles: Yeah.
+
+
+[00:09:36] Seth Chalmers: So most of the use cases are using their
+own Bedrock account still,
+
+
+[00:09:41] Seth Chalmers: so all those charges still just go back
+to the account owner.
+
+
+[00:09:44] Kulas Angeles: Okay.
+
+
+[00:09:46] Kulas Angeles: So, you can just map it, right? OK,
+just found this link with that. Hello,
+
+
+[00:09:50] Seth Chalmers: But afterwards.
+
+
+[00:09:51] Lalit Summan: It's not.
+
+
+[00:09:53] Kulas Angeles: sorry, this is.
+
+
+[00:10:02] Kulas Angeles: Thanks, sir.
+
+
+[00:10:03] Seth Chalmers: So once that's all in place,
+you'll be able to see like your project,
+
+
+[00:10:06] Seth Chalmers: what the spend is, that sort of thing.
+
+
+[00:10:09] Kulas Angeles: So,
+the question might be the token cost
+
+
+[00:10:11] Kulas Angeles: which you're seeing on right now on ACP,
+like on this UI,
+
+
+[00:10:14] Kulas Angeles: is it the real token cost coming from
+directly from the Bell Rock API or
+
+
+[00:10:18] Kulas Angeles: entropy or anything which I'm using,
+or is it the estimated upgraded on your
+
+
+[00:10:22] Kulas Angeles: end, like at the ACP level?
+
+
+[00:10:24] Seth Chalmers: It's the exact cost.
+
+
+[00:10:27] Kulas Angeles: Exact cost,
+because they have exposed the endpoint.
+
+
+[00:10:28] Lalit Summan: It is,
+if you won't calculate any new costs,
+
+
+[00:10:30] Lalit Summan: right?
+We're just gonna leverage where they're
+
+
+[00:10:32] Lalit Summan: coming from.
+
+
+[00:10:33] Seth Chalmers: Yeah.
+
+
+[00:10:34] Kulas Angeles: Yeah, I mean, I was just asking that,
+let's say I invoke agent,
+
+
+[00:10:37] Kulas Angeles: I'm sending a prompt.
+Is that your counting,
+
+
+[00:10:40] Kulas Angeles: like what is going in and coming out,
+or is it like you are directly getting it
+
+
+[00:10:44] Kulas Angeles: from the way to all?
+
+
+[00:10:46] Seth Chalmers: Right from Bedrock,
+so it's by the provider.
+
+
+[00:10:47] Lalit Summan: Yeah.
+
+
+[00:10:47] Kulas Angeles: Yeah, actual actual values here.
+
+
+[00:10:50] Seth Chalmers: Yeah.
+
+
+[00:10:53] Lalit Summan: Because part of what we want to avoid is
+chasing our tail for validation of token
+
+
+[00:10:56] Lalit Summan: cons,
+but you're used to one layer with your
+
+
+[00:10:58] Kulas Angeles: Yeah.
+
+
+[00:10:58] Lalit Summan: workload accounts. We have our own.
+We don't want to play that game.
+
+
+[00:11:01] Lalit Summan: It's just going to be a waste of money
+for everybody.
+
+
+[00:11:04] Lalit Summan: So just referencing it with the best way.
+
+
+[00:11:08] Kulas Angeles: In the future, the back end for this one,
+since, you know,
+
+
+[00:11:12] Kulas Angeles: consortium is the consortium players are
+also using the same implementation, right?
+
+
+[00:11:18] Kulas Angeles: Will we be using the same back end for
+everyone or Sun Life will have its own
+
+
+[00:11:23] Kulas Angeles: instance? Scotia will have one.
+
+
+[00:11:27] Seth Chalmers: So yeah,
+so we maintain it all on the Sun Life
+
+
+[00:11:31] Seth Chalmers: side.
+So the code base is in a shared like
+
+
+[00:11:32] Kulas Angeles: Mookken.
+
+
+[00:11:34] Seth Chalmers: GitHub enterprise,
+but we have our own like deployment
+
+
+[00:11:36] Kulas Angeles: Okay.
+
+
+[00:11:38] Seth Chalmers: pipelines and everything.
+And so we maintain and create and support
+
+
+[00:11:44] Seth Chalmers: all of that on the.
+
+
+[00:11:45] Seth Chalmers: Something outside.
+
+
+[00:11:47] Kulas Angeles: So infrastructure stays with Sun Life and
+the different consortium players
+
+
+[00:11:52] Seth Chalmers: Yeah, yeah, exactly.
+
+
+[00:11:52] Kulas Angeles: basically.
+
+
+[00:11:53] Lalit Summan: Yeah, translated you.
+
+
+[00:11:54] Kulas Angeles: OK, all right.
+
+
+[00:11:55] Seth Chalmers: Yeah,
+because everyone has a pretty different
+
+
+[00:11:59] Seth Chalmers: environment.
+So we found there's no way to even really
+
+
+[00:12:03] Seth Chalmers: do a shared infrastructure.
+Because like the consortium members,
+
+
+[00:12:08] Seth Chalmers: they are like the consulting team that
+kind of runs Luminate Lightworks.
+
+
+[00:12:15] Seth Chalmers: they have like a reference deployment,
+but we couldn't make use of most of it at
+
+
+[00:12:19] Seth Chalmers: Sun Life just because some things are
+done by the CCOE,
+
+
+[00:12:22] Seth Chalmers: other things are done by DMS for Postgres
+and things like that.
+
+
+[00:12:25] Kulas Angeles: Yeah.
+
+
+[00:12:26] Seth Chalmers: So basically just made our own deployment
+template.
+
+
+[00:12:29] Seth Chalmers: And this is kind of the topology.
+We have a dev test stage prod.
+
+
+[00:12:29] Kulas Angeles: OK, nice.
+
+
+[00:12:33] Seth Chalmers: Our lower environments,
+after we go through these initial
+
+
+[00:12:36] Seth Chalmers: onboardings, we'll.
+
+
+[00:12:37] Seth Chalmers: what I onboarded you on is our Illuminate
+DevOps like our sandbox instance.
+
+
+[00:12:42] Seth Chalmers: In the future,
+everything's just going through the
+
+
+[00:12:45] Seth Chalmers: production instance.
+So we have this stood up.
+
+
+[00:12:48] Seth Chalmers: We just haven't run any real use cases
+through all of the stages.
+
+
+[00:12:52] Seth Chalmers: We've done our own internal testing on
+all of this, but this is kind of the...
+
+
+[00:12:57] Seth Chalmers: topology. It'll be SDLC environment,
+but those are gateways which you interact
+
+
+[00:13:02] Seth Chalmers: with as a consumer,
+and then you promote your workloads along
+
+
+[00:13:06] Seth Chalmers: that.
+And there's various guardrails differing
+
+
+[00:13:09] Seth Chalmers: depending on what gateway you're
+interacting with.
+
+
+[00:13:15] Kulas Angeles: And we are still using spec driven, right,
+to develop this.
+
+
+[00:13:19] Kulas Angeles: So are you using GitHub Copilot still for
+development or you have plugged into
+
+
+[00:13:21] Seth Chalmers: Yeah.
+
+
+[00:13:25] Kulas Angeles: Bedrock for the LLMs for development?
+
+
+[00:13:29] Seth Chalmers: Still GitHub Copilot.
+We just got a use case though on Cloud
+
+
+[00:13:30] Kulas Angeles: Get a compiler.
+
+
+[00:13:33] Seth Chalmers: Code integration.
+So Justin Colin is running with that one.
+
+
+[00:13:37] Seth Chalmers: So we're testing that everything works
+through the ACP and running the inference
+
+
+[00:13:43] Seth Chalmers: through our gateway.
+So at least personally,
+
+
+[00:13:46] Seth Chalmers: I'd like to switch over to that once it's
+good to go.
+
+
+[00:13:52] Kulas Angeles: All right.
+
+
+[00:13:54] Lalit Summan: Any, any, any more questions, team on PCP?
+
+
+[00:13:59] Kulas Angeles: I think it's like,
+I'd like to go through documentation and
+
+
+[00:14:02] Kulas Angeles: then, yeah, yeah,
+so I think Seth sent out a few
+
+
+[00:14:05] Kulas Angeles: documentation, which is pretty good, yeah,
+yeah, I think this is good, yeah,
+
+
+[00:14:08] Seth Chalmers: Yeah, Niall would want to.
+
+
+[00:14:10] Kulas Angeles: so we for in addition for...
+
+
+[00:14:10] Seth Chalmers: Yeah, all of the specs, ohh, go ahead,
+sorry.
+
+
+[00:14:14] Kulas Angeles: No,
+I was just saying that for integration
+
+
+[00:14:16] Kulas Angeles: now we'll use dev environment, right?
+And then in future we'll do the product,
+
+
+[00:14:21] Kulas Angeles: right? Yeah,
+so we are supposed to just do the POC for
+
+
+[00:14:24] Kulas Angeles: dev for now.
+
+
+[00:14:26] Kulas Angeles: And then separate onboarding,
+I'm assuming, once we go stage and frog.
+
+
+[00:14:31] Seth Chalmers: Yeah,
+once you're good on the sandbox instance,
+
+
+[00:14:34] Seth Chalmers: we're promoting everyone over.
+We'll take what you got in sandbox,
+
+
+[00:14:36] Kulas Angeles: Ohh, okay, nice.
+
+
+[00:14:39] Seth Chalmers: move it over to the prod instance,
+and then you'll have to follow the SDLC
+
+
+[00:14:43] Seth Chalmers: environments,
+as you guys are used to on QE.
+
+
+[00:14:46] Seth Chalmers: But those are just different gateways
+which you interact with.
+
+
+[00:14:51] Seth Chalmers: And then particularly stage and
+production of a lot of extra controls,
+
+
+[00:14:56] Seth Chalmers: integrations with governance by design,
+bottle risk, all that good stuff.
+
+
+[00:14:58] Kulas Angeles: Mm.
+
+
+[00:15:00] Seth Chalmers: So those are kind of enforced within
+these environment layers.
+
+
+[00:15:07] Kulas Angeles: Seth, is there a cost to onboard,
+you know, once we are in operational mode?
+
+
+[00:15:14] Lalit Summan: There, there will be.
+
+
+[00:15:15] Seth Chalmers: Talk a little bit.
+
+
+[00:15:15] Kulas Angeles: The first onboard and use uh, illuminate.
+
+
+[00:15:17] Lalit Summan: Yes.
+
+
+[00:15:19] Lalit Summan: Yes, there will be one, Kulas,
+and something that we're working on the
+
+
+[00:15:23] Lalit Summan: chargeback model.
+It's one thing for our customers to know
+
+
+[00:15:26] Lalit Summan: their token and LLM cost.
+There's a cost to a onboard and there's a
+
+
+[00:15:30] Lalit Summan: cost to keep the thing running.
+We just haven't baselined the team's cost
+
+
+[00:15:34] Lalit Summan: yet, whether it'll be a tower,
+whether it'll be a subscription cost,
+
+
+[00:15:38] Lalit Summan: we haven't figured that out.
+That's part of what the Q4.
+
+
+[00:15:42] Lalit Summan: priorities will be,
+but you can imagine there'll be compute
+
+
+[00:15:45] Lalit Summan: costs that the ACP has that we have to
+pay for, let alone the personnel costs,
+
+
+[00:15:49] Kulas Angeles: That's right, yeah.
+
+
+[00:15:49] Lalit Summan: let alone the operational costs.
+So those ones will have to be articulated.
+
+
+[00:15:53] Lalit Summan: We're working on that in Q4 as one of the
+priorities.
+
+
+[00:15:58] Kulas Angeles: Okay, is there an early bird discount,
+though? All right, okay.
+
+
+[00:16:01] Lalit Summan: Always, always, always, always.
+I give you a discount if I need the
+
+
+[00:16:04] Lalit Summan: number. Right now,
+we just get onto the sandbox.
+
+
+[00:16:06] Kulas Angeles: Okay, alright, I hold you to that, Lalit.
+
+
+[00:16:10] Lalit Summan: Yeah, yeah, I mean, I don't,
+we're trying to onboard as many as we can
+
+
+[00:16:14] Lalit Summan: for two reasons. One,
+to get our end users comfortable with
+
+
+[00:16:18] Lalit Summan: what it is and get their toes wet.
+But also for us,
+
+
+[00:16:20] Lalit Summan: the product team is probably a month,
+a little over a month old.
+
+
+[00:16:24] Lalit Summan: So we're trying to put all the bearings
+in place, all the process in place.
+
+
+[00:16:28] Lalit Summan: Seth and team,
+Ranjula and team have done a great job of
+
+
+[00:16:32] Lalit Summan: just
+
+
+[00:16:32] Lalit Summan: assembling the Luminate code base within
+Sun Life from the consortium.
+
+
+[00:16:37] Lalit Summan: And we've onboarded above 5 or 6 use
+cases already.
+
+
+[00:16:40] Lalit Summan: So lightning speed for sure.
+None in prod yet though,
+
+
+[00:16:44] Lalit Summan: but there are candidates for us to go
+into production with a few that are
+
+
+[00:16:49] Lalit Summan: coming up and probably going to hit
+
+
+[00:16:51] Lalit Summan: production onboarding in mid-October-ish.
+
+
+[00:16:58] Kulas Angeles: So, when we say chargeback model,
+say chargeback to the development, right?
+
+
+[00:17:02] Kulas Angeles: Let's say who is...
+
+
+[00:17:06] Kulas Angeles: Or is it there would be a way to charge
+back to our users, for example,
+
+
+[00:17:10] Lalit Summan: To talk.
+
+
+[00:17:10] Kulas Angeles: in a way that's a different one.
+I think the charge back is the use of
+
+
+[00:17:14] Lalit Summan: That's right, yes.
+
+
+[00:17:15] Kulas Angeles: Luminate, right?
+And then the charge back for the use of
+
+
+[00:17:18] Kulas Angeles: the LLMs is separate, right?
+So the use of Luminate is on top of the
+
+
+[00:17:19] Lalit Summan: It's separate, yeah, yeah, so.
+
+
+[00:17:23] Kulas Angeles: charge. OK, let's say.
+
+
+[00:17:24] Lalit Summan: So your business unit would be paying to
+use the services of ACP.
+
+
+[00:17:24] Kulas Angeles: We have orchestra, right?
+
+
+[00:17:29] Kulas Angeles: That's right. OK.
+
+
+[00:17:29] Lalit Summan: Your individual consumption of tokens and
+LLMs, that is on you,
+
+
+[00:17:35] Lalit Summan: that is not something that we're going to
+charge additionally.
+
+
+[00:17:43] Kulas Angeles: You'll figure out the accounting in the
+backend, basically, right?
+
+
+[00:17:45] Lalit Summan: No, nice. It's fun work.
+
+
+[00:17:48] Seth Chalmers: Yeah, hold on, yep, yeah,
+we'd like to get to a like a user level,
+
+
+[00:17:49] Kulas Angeles: Right, that's right.
+
+
+[00:17:53] Seth Chalmers: especially for things like cloud code,
+like GitHub Copilot, sure you're aware,
+
+
+[00:18:00] Seth Chalmers: has a lot of issues with the chargeback
+today,
+
+
+[00:18:01] Kulas Angeles: Yeah.
+
+
+[00:18:03] Seth Chalmers: so we're think looking to solve that,
+so Greggo.
+
+
+[00:18:07] Seth Chalmers: and that is trying to help with getting
+this going with cloud code as well.
+
+
+[00:18:10] Kulas Angeles: Thanks.
+
+
+[00:18:12] Seth Chalmers: So we'll have to figure out all these
+issues when we go through this use case.
+
+
+[00:18:19] Kulas Angeles: Mhm.
+
+
+[00:18:22] Lalit Summan: Just from an orchestra,
+so any other questions you could listen
+
+
+[00:18:25] Lalit Summan: to?
+
+
+[00:18:25] Kulas Angeles: I have other questions,
+so are we are there requests once we have
+
+
+[00:18:30] Kulas Angeles: to that the for the onboarding?
+Usha was asking if is there an expected
+
+
+[00:18:36] Kulas Angeles: timeline for your for the people doing
+TOC on this one? Like,
+
+
+[00:18:41] Kulas Angeles: because we are expecting you might be
+asking us for some feedback as well,
+
+
+[00:18:46] Kulas Angeles: right?
+
+
+[00:18:50] Seth Chalmers: Yeah,
+no expected timeline or milestones right
+
+
+[00:18:53] Seth Chalmers: now.
+It's so I started up those teams chats.
+
+
+[00:18:57] Seth Chalmers: We're doing that for all of our use cases,
+working through any issues on this. Yeah,
+
+
+[00:19:01] Kulas Angeles: We manage it there, OK.
+
+
+[00:19:03] Seth Chalmers: so that's how we're gathering feedback
+right now. In the future.
+
+
+[00:19:08] Seth Chalmers: All new onboardings will just be going
+through that prod instance.
+
+
+[00:19:12] Seth Chalmers: So all the early birds are in our dev
+sandbox instance. Yeah,
+
+
+[00:19:16] Seth Chalmers: we're just working with your timelines.
+
+
+[00:19:22] Lalit Summan: In the ACP Orchestra chat, the Teams chat,
+I think Kulas here, you're part of that.
+
+
+[00:19:28] Lalit Summan: You've got the onboarding instructions
+there.
+
+
+[00:19:36] Kulas Angeles: Yeah, I think with my screen is hanging,
+the internet is failing.
+
+
+[00:19:41] Lalit Summan: Mm.
+
+
+[00:19:46] Kulas Angeles: Yeah, how do we?
+
+
+[00:19:52] Kulas Angeles: Good morning.
+
+
+[00:19:55] Kulas Angeles: Sorry, our internet, the three of us,
+is failing us.
+
+
+[00:19:59] Lalit Summan: Dear.
+
+
+[00:19:59] Seth Chalmers: Yeah, I'll robo. I'll.
+
+
+[00:20:04] Seth Chalmers: I'll add everyone I can see on the chat
+right now.
+
+
+[00:20:11] Lalit Summan: I think they're completely frozen now.
+
+
+[00:20:14] Lalit Summan: We love them.
+
+
+[00:20:17] Lalit Summan: Anuj, can you guys hear us?
+
+
+[00:20:25] Robert Chin: I'm still here.
+
+
+[00:20:26] Kulas Angeles: Yes, please.
+
+
+[00:20:33] Lalit Summan: And the corporate networks down,
+what's happening?
+
+
+[00:20:39] Kulas Angeles: Okay,
+I was fair enough to see if it saves us a
+
+
+[00:20:42] Kulas Angeles: bit. This is bad.
+The two of us is experiencing this issue.
+
+
+[00:20:48] Seth Chalmers: Someone call AT.
+
+
+[00:20:53] Lalit Summan: Just from a from a business lens
+perspective.
+
+
+[00:20:56] Kulas Angeles: In us.
+
+
+[00:21:04] Kulas Angeles: That's right, that's true.
+
+
+[00:21:06] Kulas Angeles: Okay, is it better now? Can you hear us?
+
+
+[00:21:08] Lalit Summan: Yeah, I can hear you now. We can hear you.
+
+
+[00:21:10] Seth Chalmers: Yep.
+
+
+[00:21:11] Kulas Angeles: OK, perfect. Yeah.
+
+
+[00:21:14] Lalit Summan: And just from a use case perspective,
+Kulas and team, like,
+
+
+[00:21:17] Lalit Summan: what are we trying to achieve by
+onboarding this to the ACP? Like,
+
+
+[00:21:21] Lalit Summan: what are the some success criteria?
+What are the requirements that you have
+
+
+[00:21:25] Lalit Summan: to onboard this?
+
+
+[00:21:31] Kulas Angeles: Yeah,
+so that's a very good question and
+
+
+[00:21:34] Kulas Angeles: actually a timely one.
+So we are in the process of deciding on
+
+
+[00:21:39] Kulas Angeles: what Orchestra 2.0 will look like.
+And it's looking like it will be devoid
+
+
+[00:21:45] Kulas Angeles: of just using GitHub Copilot as a LLM
+provider and probably using Bedrock or
+
+
+[00:21:51] Kulas Angeles: Cloud Code.
+
+
+[00:21:52] Kulas Angeles: Or, at a, atropic directly, right? So,
+what we are thinking is that we can have
+
+
+[00:21:58] Kulas Angeles: two use cases.
+One is for the test case generator,
+
+
+[00:22:03] Kulas Angeles: which is ready now. So,
+that's our agent that just generates test
+
+
+[00:22:08] Kulas Angeles: cases.
+It also all have its own bedrock account.
+
+
+[00:22:12] Kulas Angeles: which is probably easier to onboard.
+And then for Orchestra,
+
+
+[00:22:17] Kulas Angeles: we are working on moving it out of GitHub
+Copilot as a POC.
+
+
+[00:22:21] Kulas Angeles: So that could be the second use case that
+we'll have for our team.
+
+
+[00:22:26] Kulas Angeles: And there I think we'll try to use the
+models provided by. That's right.
+
+
+[00:22:32] Kulas Angeles: That's right,
+so you don't have to run the API. Okay,
+
+
+[00:22:36] Kulas Angeles: yeah,
+that's why we are excited about this,
+
+
+[00:22:39] Kulas Angeles: because the gateway that you are
+providing will definitely save us a lot
+
+
+[00:22:44] Kulas Angeles: of coding time or analysis time,
+which we'll just probably be reusing. So,
+
+
+[00:22:49] Kulas Angeles: yeah, I think...
+
+
+[00:22:51] Kulas Angeles: Two use cases are what we are thinking of.
+The POC for Orchestra is totally
+
+
+[00:22:56] Kulas Angeles: exploratory as of the moment,
+but the test case generator,
+
+
+[00:23:00] Kulas Angeles: which has been in existence for more than
+a year,
+
+
+[00:23:04] Kulas Angeles: is stable enough for it to be an actual
+application onboarded to illuminate.
+
+
+[00:23:12] Seth Chalmers: Yes.
+
+
+[00:23:12] Lalit Summan: So one is a POC use case,
+and so I just want to make sure it
+
+
+[00:23:15] Lalit Summan: captured the second one.
+What's the second use case code?
+
+
+[00:23:19] Kulas Angeles: The first use case is the POC for
+orchestra.
+
+
+[00:23:23] Kulas Angeles: The second one is the test case generator.
+
+
+[00:23:28] Lalit Summan: Got it. Okay.
+
+
+[00:23:28] Kulas Angeles: Right,
+so that that was our first tab at using
+
+
+[00:23:32] Kulas Angeles: Bedrock for generating AI components,
+AI tests, right? So,
+
+
+[00:23:36] Lalit Summan: Got it.
+
+
+[00:23:37] Kulas Angeles: that's that stable already,
+while Orchestra needs a bit of work for
+
+
+[00:23:43] Kulas Angeles: it to be more...
+
+
+[00:23:45] Kulas Angeles: You know, free of GitHub Copilot, yeah,
+that's right.
+
+
+[00:23:48] Lalit Summan: Got it.
+
+
+[00:23:49] Lalit Summan: And, and.
+
+
+[00:23:51] Lalit Summan: And I recall and seeing some demos and
+some overviews of orchestra.
+
+
+[00:23:55] Lalit Summan: Usha and Greg have kind of provided a lot
+of overviews on this great overview,
+
+
+[00:24:00] Lalit Summan: but there are about 14 agents that are
+within the workflow, if I'm honest.
+
+
+[00:24:05] Kulas Angeles: Oh, we have 27 agents now,
+but when we do move,
+
+
+[00:24:07] Lalit Summan: Oh, good. Okay, 27.
+
+
+[00:24:08] Kulas Angeles: when we probably onboard to Luminate,
+we'll just go back to the basics, right?
+
+
+[00:24:14] Kulas Angeles: Like starting with the test strategies,
+planner cases, and execution,
+
+
+[00:24:15] Lalit Summan: Okay.
+
+
+[00:24:19] Kulas Angeles: and defect trial probably about.
+
+
+[00:24:22] Kulas Angeles: And 12, yeah.
+
+
+[00:24:23] Lalit Summan: Okay,
+and is the goal to onboard each of those
+
+
+[00:24:27] Lalit Summan: agents onto the ACP for kind of
+monitoring and oversight?
+
+
+[00:24:32] Kulas Angeles: Yes, that's right. Oh,
+one question that I have is that since
+
+
+[00:24:35] Kulas Angeles: orchestra has always been spec.
+
+
+[00:24:38] Kulas Angeles: in terms of the skills and instructions,
+where do you keep the agent instructions?
+
+
+[00:24:44] Kulas Angeles: Do you keep it in Luminate or do you
+still keep it in an empty file or a flat
+
+
+[00:24:49] Kulas Angeles: file?
+
+
+[00:24:52] Seth Chalmers: So this Luminate today does not support
+the skills registry.
+
+
+[00:24:57] Seth Chalmers: So this is like Bedrock agents or agent
+core agents or like a Kubernetes deployed
+
+
+[00:24:58] Kulas Angeles: Mhm.
+
+
+[00:25:03] Seth Chalmers: agent.
+And typically you'll keep your skills and
+
+
+[00:25:07] Seth Chalmers: all that within the agent code.
+
+
+[00:25:10] Seth Chalmers: So let's say within Python or whatever,
+you can also reference them from your
+
+
+[00:25:11] Kulas Angeles: Okay.
+
+
+[00:25:14] Kulas Angeles: Okay, no.
+
+
+[00:25:16] Seth Chalmers: container as well.
+So that would be just like basically
+
+
+[00:25:20] Seth Chalmers: contained within your agent runtime,
+which you maintain and deploy.
+
+
+[00:25:25] Seth Chalmers: But we are coming out with the skills
+registry. It's just an idea.
+
+
+[00:25:30] Seth Chalmers: phase right now. So in the future,
+this AI catalog will have a skills
+
+
+[00:25:35] Seth Chalmers: registry, plug-in registry,
+that sort of thing, but not built yet.
+
+
+[00:25:39] Seth Chalmers: So that's to come.
+And that'll integrate with the Nova
+
+
+[00:25:43] Seth Chalmers: skills registry that they're coming out
+with as well, so that we can share those.
+
+
+[00:25:46] Kulas Angeles: Ha.
+
+
+[00:25:49] Seth Chalmers: skill files and instructions and prompts
+and things like that.
+
+
+[00:25:54] Kulas Angeles: So in a nutshell,
+we are looking at probably integrating
+
+
+[00:25:59] Kulas Angeles: with the Bitbucket or in the future
+GitHub skills.
+
+
+[00:26:04] Kulas Angeles: Right.
+
+
+[00:26:05] Seth Chalmers: Yeah,
+get based skills registry is likely how
+
+
+[00:26:09] Seth Chalmers: it will be implemented.
+That's the standard way to do those. Yep.
+
+
+[00:26:15] Kulas Angeles: OK, and Lalit, like,
+like we have been working with you to
+
+
+[00:26:18] Kulas Angeles: integrate open layer as well,
+so how does that fit in in the whole
+
+
+[00:26:22] Kulas Angeles: ecosystem? Like, like if we start with CP,
+would ACP would have integration with
+
+
+[00:26:23] Lalit Summan: Yeah.
+
+
+[00:26:26] Kulas Angeles: open layer,
+or is it like that would be independent?
+
+
+[00:26:29] Lalit Summan: Yeah, that's a great question.
+So when we talk about evaluator services,
+
+
+[00:26:34] Lalit Summan: right, within the ACP,
+so ACP is going to do a lot more than
+
+
+[00:26:38] Lalit Summan: what Open Air does today.
+
+
+[00:26:40] Kulas Angeles: Yeah.
+
+
+[00:26:41] Lalit Summan: When you talk about evaluations in terms
+of how your agents are performing, bias,
+
+
+[00:26:47] Lalit Summan: toxicity, task completion metrics,
+those today can be done within the
+
+
+[00:26:52] Lalit Summan: Luminate product,
+because LangFuse is an option,
+
+
+[00:26:56] Lalit Summan: but we want to extend that and test that
+out with OpenLayer as well.
+
+
+[00:27:01] Lalit Summan: So when we talk about the ways of
+evaluating what these agents are doing,
+
+
+[00:27:06] Lalit Summan: open there would be one of those elements
+that would be within the ACP to help you
+
+
+[00:27:11] Lalit Summan: figure out how to do it.
+It's a pilot phase right now.
+
+
+[00:27:15] Lalit Summan: The direction from the consortium at the
+moment in terms of how we're going to
+
+
+[00:27:20] Lalit Summan: evaluate
+
+
+[00:27:21] Lalit Summan: and because create metrics on evaluations
+is through Lang views.
+
+
+[00:27:26] Lalit Summan: What you'll see is we'll work on the next
+quarter of integrating OpenLayer and ACP
+
+
+[00:27:29] Kulas Angeles: Thank you.
+
+
+[00:27:32] Lalit Summan: in the dev environment to see if Lang
+views or OpenLayer says one's better than
+
+
+[00:27:38] Lalit Summan: the other or not.
+
+
+[00:27:40] Kulas Angeles: Yeah, so, so the idea is that we would,
+like, we would integrate with ACP,
+
+
+[00:27:44] Kulas Angeles: and ACP will provide us the service,
+right? I mean, nice.
+
+
+[00:27:45] Lalit Summan: Exactly.
+
+
+[00:27:47] Lalit Summan: Yeah, yeah, that's the idea, right?
+Because you want to make this modular
+
+
+[00:27:50] Seth Chalmers: Yeah.
+
+
+[00:27:51] Lalit Summan: overtime, right? Tomorrow, if there is,
+I don't know,
+
+
+[00:27:54] Lalit Summan: like ragas you want to use or another
+framework or SDK you want to use for
+
+
+[00:27:55] Kulas Angeles: Yep.
+
+
+[00:27:58] Lalit Summan: monitoring,
+you should be able to flip and switch to
+
+
+[00:28:01] Lalit Summan: those.
+And not all teams are going to use the
+
+
+[00:28:03] Lalit Summan: same SDKs for evaluation.
+So we'll kind of add those features
+
+
+[00:28:07] Lalit Summan: within the ACP overtime.
+
+
+[00:28:10] Seth Chalmers: Yeah, yeah,
+it's built to basically turn an open
+
+
+[00:28:13] Seth Chalmers: layer into an evidence producer alongside
+any other platform like Lalit mentioned.
+
+
+[00:28:21] Kulas Angeles: All right, fair. This is exciting,
+just in time, right,
+
+
+[00:28:25] Kulas Angeles: for everything that we are,
+we will be working on.
+
+
+[00:28:29] Kulas Angeles: I think those are all the questions that
+we have,
+
+
+[00:28:32] Kulas Angeles: and I think you've sent the documentation
+out to one board out to move forward with
+
+
+[00:28:38] Kulas Angeles: the POC, right?
+
+
+[00:28:41] Lalit Summan: I did have a couple more questions,
+if that's okay, Kulas and team.
+
+
+[00:28:44] Lalit Summan: I just want to get closer to,
+as you prioritize internally,
+
+
+[00:28:45] Kulas Angeles: Yeah.
+
+
+[00:28:46] Kulas Angeles: Sure.
+
+
+[00:28:48] Lalit Summan: there's a set of questions we want to
+just get clarity on intent and kind of
+
+
+[00:28:52] Lalit Summan: urgency.
+Is this expected to go into production
+
+
+[00:28:55] Lalit Summan: anytime soon?
+Are you seeing this as a productionized
+
+
+[00:28:58] Lalit Summan: use case?
+
+
+[00:29:01] Kulas Angeles: For, yes, for, yeah, for both use cases,
+yes, yeah.
+
+
+[00:29:07] Lalit Summan: Would you know the timing by any chance?
+Like is this this quarter, next quarter,
+
+
+[00:29:11] Lalit Summan: last week, like what are we talking about?
+
+
+[00:29:14] Kulas Angeles: Yeah, end of year is probably our target.
+
+
+[00:29:17] Lalit Summan: OK,
+to have both use cases in production by
+
+
+[00:29:20] Lalit Summan: the end of end of the year.
+
+
+[00:29:22] Kulas Angeles: The first use case is already in
+production, right?
+
+
+[00:29:25] Kulas Angeles: So it's just really integrating it with
+ACP. But yeah, for both use cases,
+
+
+[00:29:30] Kulas Angeles: we are looking at the end of year.
+
+
+[00:29:33] Lalit Summan: And do you know the LVT rating on the use
+cases here or no?
+
+
+[00:29:38] Kulas Angeles: It's still not. Okay, well, yeah,
+it's tricky when we say production
+
+
+[00:29:39] Lalit Summan: Tell Willsie.
+
+
+[00:29:44] Kulas Angeles: because we have endorsed the dev
+environment to our users as if it's
+
+
+[00:29:49] Kulas Angeles: production, right?
+So people are using it already.
+
+
+[00:29:50] Lalit Summan: Okay.
+
+
+[00:29:53] Lalit Summan: Got it.
+
+
+[00:29:53] Kulas Angeles: When we talk about production,
+it's people using it already, yeah.
+
+
+[00:29:58] Kulas Angeles: Yeah,
+it's not like that's probably a problem,
+
+
+[00:29:59] Lalit Summan: Birt.
+
+
+[00:30:00] Kulas Angeles: yeah, right?
+So that's more like a work in progress.
+
+
+[00:30:03] Kulas Angeles: We want to target, um, like that.
+
+
+[00:30:06] Lalit Summan: But those 10 to 12 agents that you'd
+onboard,
+
+
+[00:30:08] Lalit Summan: you'd want to have monitoring on that and
+assessments.
+
+
+[00:30:11] Lalit Summan: That would be kind of a production state
+for ACP.
+
+
+[00:30:15] Kulas Angeles: I think for now it will be dev when we
+are doing POC,
+
+
+[00:30:18] Kulas Angeles: but the idea is that we want to move the
+orchestra to production and we are
+
+
+[00:30:22] Kulas Angeles: already working on like having all the
+governance approved. Yes, ATG and Israel.
+
+
+[00:30:27] Kulas Angeles: Once we have that,
+then it will be production. Yeah.
+
+
+[00:30:27] Lalit Summan: Something.
+
+
+[00:30:31] Lalit Summan: And the timeline is still Q4 for that,
+right?
+
+
+[00:30:34] Kulas Angeles: End of Q4, yeah.
+
+
+[00:30:37] Lalit Summan: And are there any regulatory or any like
+cost fee or requirements that we have to
+
+
+[00:30:41] Lalit Summan: be aware of when we're doing this?
+
+
+[00:30:45] Kulas Angeles: Well,
+we are in contact with our process person
+
+
+[00:30:48] Kulas Angeles: on this one,
+and the only requirement for the testing
+
+
+[00:30:51] Kulas Angeles: or quality engineering is really having
+proof that testing happened.
+
+
+[00:30:56] Kulas Angeles: So that's the only OSPHI requirement for
+us.
+
+
+[00:31:04] Lalit Summan: Um...
+
+
+[00:31:04] Kulas Angeles: And it's incorporated into the agents
+that we have, yeah.
+
+
+[00:31:08] Lalit Summan: Do you know, Seth, if, if I don't,
+I don't understand,
+
+
+[00:31:11] Lalit Summan: is this baked into the Gov by Design
+process?
+
+
+[00:31:14] Lalit Summan: I don't know if Orchestra is part of the
+testing phase or anything.
+
+
+[00:31:17] Lalit Summan: Do any artifacts have you produced out of
+Orchestra as part of Gov by Design?
+
+
+[00:31:25] Seth Chalmers: The go by design process is like
+generally for all agents and models.
+
+
+[00:31:25] Lalit Summan: David.
+
+
+[00:31:34] Seth Chalmers: I don't know if if you're referring to
+anything else, will it? Like,
+
+
+[00:31:39] Seth Chalmers: do you mean orchestra integrating with
+governments?
+
+
+[00:31:39] Lalit Summan: Um...
+
+
+[00:31:41] Lalit Summan: Like, like,
+for Orchestra helps you create test cases
+
+
+[00:31:45] Lalit Summan: for your use cases for your applications.
+If they're Gen. AI or AI use cases,
+
+
+[00:31:50] Lalit Summan: does Orchestra have to produce any test
+cases so Gov and Design can say, yep,
+
+
+[00:31:56] Lalit Summan: that's good? Do you know?
+
+
+[00:31:59] Lalit Summan: Katharine.
+
+
+[00:32:00] Seth Chalmers: They might use orchestra to generate the
+test cases for sure,
+
+
+[00:32:04] Seth Chalmers: but the evidence that governments by
+design and like Illuminate were building
+
+
+[00:32:09] Seth Chalmers: towards is more around like the
+evaluations typically,
+
+
+[00:32:13] Seth Chalmers: so that's what they have their policies
+set up, and then evidence of testing.
+
+
+[00:32:19] Seth Chalmers: to Kulas point.
+So all that's recorded as evidence within
+
+
+[00:32:24] Seth Chalmers: Archer.
+
+
+[00:32:28] Lalit Summan: Those are all the big questions that I
+had. Rob or Mark,
+
+
+[00:32:32] Lalit Summan: any questions before we start kind of
+taking on?
+
+
+[00:32:37] Lalit Summan: Next steps.
+
+
+[00:32:39] Mark Hanson: Well, for me, that was good.
+
+
+[00:32:41] Robert Chin: Yeah, that's good.
+
+
+[00:32:43] Lalit Summan: So just next steps as well.
+So based on this conversation,
+
+
+[00:32:47] Lalit Summan: we'll create what we call a D0 or
+requirements document.
+
+
+[00:32:50] Lalit Summan: You're familiar with SCD anyway.
+The team will set up a design review to
+
+
+[00:32:54] Lalit Summan: make sure based on the specs we've
+gathered,
+
+
+[00:32:56] Lalit Summan: we have a design review that we can agree
+upon,
+
+
+[00:32:59] Lalit Summan: and then we'll assign this to our product
+team.
+
+
+[00:33:02] Lalit Summan: To start onboarding into the environment,
+I think you have what you need to get
+
+
+[00:33:07] Lalit Summan: started based on what said said in our in
+our ACP orchestra chat. Keep me honest,
+
+
+[00:33:12] Lalit Summan: I think they can get started without too
+much of our help, but...
+
+
+[00:33:16] Kulas Angeles: Yeah.
+
+
+[00:33:19] Kulas Angeles: Yeah, I started a bit, so I think we can.
+
+
+[00:33:22] Lalit Summan: Okay.
+
+
+[00:33:23] Seth Chalmers: Yep,
+so as soon as Anuj and Usharani sign in,
+
+
+[00:33:26] Seth Chalmers: you can just basically call us you have
+the permissions to add them to your
+
+
+[00:33:31] Seth Chalmers: project. All of the guides are in there,
+yep. Or we can do it for you,
+
+
+[00:33:33] Kulas Angeles: Okay.
+
+
+[00:33:37] Seth Chalmers: just send a ping over.
+
+
+[00:33:39] Kulas Angeles: Yeah,
+we do have the chat for support anyway,
+
+
+[00:33:42] Kulas Angeles: so thank you for setting this up.
+
+
+[00:33:43] Seth Chalmers: Yep.
+
+
+[00:33:45] Lalit Summan: Awesome.
+So the next step from the team is we'll
+
+
+[00:33:47] Lalit Summan: set up a design review call based on what
+we've gathered here today on the call.
+
+
+[00:33:51] Lalit Summan: That's why transcription is important.
+And then we can kind of figure out next
+
+
+[00:33:55] Lalit Summan: steps after then once we get assigned to
+our team.
+
+
+[00:34:00] Kulas Angeles: Alright, but on our end,
+we can we can start exploring, right?
+
+
+[00:34:04] Lalit Summan: Yeah.
+
+
+[00:34:05] Lalit Summan: Yeah, absolutely.
+
+
+[00:34:07] Kulas Angeles: All right, perfect.
+
+
+[00:34:09] Kulas Angeles: Okay.
+
+
+[00:34:10] Kulas Angeles: Thank you very much, everyone.
+This is very exciting.
+
+
+[00:34:14] Lalit Summan: Indeed, it is a setting.
+
+
+[00:34:14] Kulas Angeles: Thank you.
+
+
+[00:34:15] Seth Chalmers: Yeah, thanks all.
+
+
+[00:34:17] Lalit Summan: Thank you, team.
+
+
+[00:34:17] Kulas Angeles: Okay, bye.

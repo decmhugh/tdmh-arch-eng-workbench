@@ -1,0 +1,341 @@
+[00:00:03] @1: why I asked for it. So we have an agentic solution, deterministic, that helps us with provisioning, making all the decisions required, and then kicking off our automation to provision. The LM itself isn't doing any provisioning. But we're blocked right now because we're using Agent Gateway to do that because we want policies and we need it to be. super locked into just what we want it to do, so it doesn't go rogue. And it was asked that we wait for the agenda control plane and use that instead before we even go to ETAB for approval. So we have it all running in test. It's really about can we start using the agenda control plane at that point? And our comfort level you have with what we've done in terms of saying, hey, yeah, we're aligned with the agenda control plane. And we can start going ahead and when certain features are ready on the control plane, we just migrate to that. So that's really where I want to get alignment on so that you guys can say thumbs up at ETAB, we're good, and there's no issues.
+
+[00:01:04] Seth Chalmers: Absolutely. So I guess what are those types of controls you're looking for out of the gateway?
+
+[00:01:11] @1: But Sri, maybe that's where you can help. Can you show how we're using the agent gateway today to do control functions and then that probably how you can probably say this is ready or this not ready, et cetera.
+
+[00:01:24] Srikanth Ramasubramanian: Yeah, for sure. Unfortunately, I have no clean way of really showing this in one place. There's a lot of stuff going on. But more or less, Seth, you've seen some of the work that we were
+
+[00:01:32] Seth Chalmers: Yep.
+
+[00:01:36] Srikanth Ramasubramanian: doing in the lab cluster with the aging gateway already.
+
+[00:01:39] Seth Chalmers: Yeah.
+
+[00:01:40] Srikanth Ramasubramanian: My take on this is we're already using. like vanilla agent gateway to go LLM, to go to MCP, to do agent to agent. It seems like it will be a clean replacement or an addition on top of this. Like, hey, you don't go to bedrock, you go to the ACP plane instead. This, everything that goes today to our agent gateway deployment. just goes to Luminate, comes back in, and then we get all of our regular functionality. Seems that way, seems fairly straightforward to me,
+
+[00:02:09] Seth Chalmers: Yeah.
+
+[00:02:11] Srikanth Ramasubramanian: but if you have any questions about how everything else is working, I'm happy to answer.
+
+[00:02:17] Seth Chalmers: Nope, that's it. And so just from your picture here, yeah, we have Agent Gateway, we have a custom proxy out in front that does authorization, authentication, all that good stuff. It'll handle all the routing as Agent Gateway does today for agents, models, MCP tools, etc. But like you mentioned, I'll just hit the ACP for registered MCP servers, agents, models, et cetera. We also handle a lot of the cross-cutting concerns. So I see you have length views kind of dotted out. Is that currently in your stack or?
+
+[00:02:56] Srikanth Ramasubramanian: It is, it has some problems with deployment DMS because it wants to deploy to the main, sorry, the public schema. So we have to kind of fix it before it gets into the stack. But it was part of where we envisioned observability would live.
+
+[00:03:11] Seth Chalmers: Okay, yeah, and so a lot of that observability is
+
+[00:03:13] Srikanth Ramasubramanian: Yeah.
+
+[00:03:14] Seth Chalmers: being handled in the ACP. So that's another component you could probably swap out. So we have our internal line views, which is because you're routing everything through the gateway, we're taking in all those traces, observability metrics, et cetera. and then also integrating with governance platforms that you can do your evaluations and things like that. And it's all cataloged within the ACP. So you can eventually, and this is a feature we're working on, but produce like compliance reports for offs fee or NIST or things like that.
+
+[00:03:49] Srikanth Ramasubramanian: Perfect, so we wouldn't need to have a standalone
+
+[00:03:50] @1: Ah.
+
+[00:03:52] Srikanth Ramasubramanian: deployment here, we'll just leverage yours and we get like a project in there saying, "Hey, this is the infra-platforms line fuse project. We'll get all of our judge set up, we'll get the observability metrics, traces, everything that works. I have a I have a question for you, which is maybe slightly...
+
+[00:04:04] Seth Chalmers: Yeah.
+
+[00:04:08] Srikanth Ramasubramanian: Deviating away from how ACP was in the architecture diagrams that I saw today. Agent Gateway is also doing an internal lot for us, so some consumer comes to us from Nova, from VS Code, from A to A. We're sending them to our agent gateway because our agent gateway is enrolled with Entra, and we can see, hey, this person's a valid cloud Automation member. they can go in and use these tools. Is that where ACP would also fit in or can we continue to use this and then only route to you for MCP, Agent, and Bedrock?
+
+[00:04:38] Seth Chalmers: So our proxy in front of Agent Gateway is handling a lot of those concerns. Once you kind of get into like the on behalf of flows and things like that, tools like Entra can fall short. And we're also doing a lot of the other cross-cutting concerns within that. essentially sidecar in front of Agent Gateway before, like the guardrails, rate limiting, some of the cost and budgeting, things like that. That's all happening within our ACP implementation. So you wouldn't want to be doing your own authentication to any of those.
+
+[00:05:13] Srikanth Ramasubramanian: So the front door is also ACP then. So any client comes in, they come in through ACP.
+
+[00:05:17] Seth Chalmers: Yep. Yeah.
+
+[00:05:20] @1: So, you're not integrated with Entra?
+
+[00:05:22] Seth Chalmers: So we are, so we do like Entra for SSO, but ACP has its internal key cloak
+
+[00:05:24] @1: Bell.
+
+[00:05:29] Seth Chalmers: deployment.
+
+[00:05:30] @1: Okay.
+
+[00:05:32] Seth Chalmers: So yeah, well basically the other identity providers federate into key cloak.
+
+[00:05:39] @1: So, we would then, I think, Srikanth, as you asked, I just want to make sure I'm clear. So, we want to do an entra off token setup. We would get the token through the ACP versus our own. OK, that's cool. OK, yeah,
+
+[00:05:50] Seth Chalmers: Yep, yep. So you can also register apps as well
+
+[00:05:52] @1: which is fine.
+
+[00:05:53] Seth Chalmers: within the ACP. So this is a feature of the new like AI consortium, Luminate. So you can register your app, whether that be a chat bot or whatever, your application here. And then you can basically create policies between agents, models, MCP servers as you would just with. agents and things like that. And we manage the credentials for you. You can go into the UI, generate new ones, etc.
+
+[00:06:21] @1: OK, and then yeah, we would. Do we add our own policies or do we have to go through like a request, hey, can you update this policy? Do you have any idea on the operational aspects yet?
+
+[00:06:31] Seth Chalmers: You can update policies as well. So we have concepts of project administrators, owners, et cetera. So yeah, you can administer your own project. Yeah.
+
+[00:06:39] @1: That's cool.
+
+[00:06:41] Matthew David Andrew Clark: With key cloak being used, how are we going to rotate the client secret in a timely fashion? Like, we're going to have to store this in our vault, I'm guessing. And then how do we have, is it in the backlog to have some automated rotation so it's not stuff that
+
+[00:06:55] Seth Chalmers: Yeah.
+
+[00:06:55] Matthew David Andrew Clark: we're doing all the time?
+
+[00:06:57] Seth Chalmers: It is, yeah. So that's all supported within the new AI consortium, like ACP today. So they do credential rotation within Secrets Manager, Google, Azure, and we're working on the HashiCorp Vault integration. So we're going to be working with that team as well to get that working in Sun Life.
+
+[00:07:19] Srikanth Ramasubramanian: And is there something we can do in like the next couple of weeks to like put something into our cluster, route it through? I know you offered a package up to the MDX folks to do the same thing.
+
+[00:07:30] Seth Chalmers: Yep, we got everything going in DEV. So if you're comfortable with a bit of a rougher experience, I can pass you along the documentation we got right now. Lalit and product team will get you looped in on the use case. So create the spec documents and everything for the final integration, but we can get you up and running in DEV. We can work offline on that.
+
+[00:07:53] Srikanth Ramasubramanian: Okay, that's perfect.
+
+[00:07:59] @1: From our implementation perspective, it looks like we're pretty much aligned though. Is that fair to say? Like there's no gotchas. I've heard at least. Okay.
+
+[00:08:06] Seth Chalmers: Yeah. Swap the gateway, essentially. Yep.
+
+[00:08:10] @1: Yeah, okay. When's your production date for the gateway?
+
+[00:08:18] Seth Chalmers: This week, we're just waiting on SSO for the website.
+
+[00:08:18] Lalit Summan: Bye.
+
+[00:08:21] Seth Chalmers: So I've got it deployed in production. So we're basically just waiting on SSO
+
+[00:08:21] @1: Okay.
+
+[00:08:25] Seth Chalmers: for the website.
+
+[00:08:28] Matthew David Andrew Clark: In all night.
+
+[00:08:28] Seth Chalmers: Change windows until next week though.
+
+[00:08:29] @1: Um...
+
+[00:08:31] Matthew David Andrew Clark: We're expecting everything like...
+
+[00:08:31] @1: Yeah, that's fine. We got to get DEV cooked in anyways, so but that's cool.
+
+[00:08:34] Seth Chalmers: Yeah.
+
+[00:08:35] Matthew David Andrew Clark: Well, our DEV agents, would they connect to your prod though? I'm hoping they would versus what we've done with Vault where we have SID connected to SID. I hope it's not like that. Yeah, okay.
+
+[00:08:44] Seth Chalmers: Yeah, yeah, our product will manage all environments,
+
+[00:08:47] Matthew David Andrew Clark: Ukil.
+
+[00:08:47] Seth Chalmers: all regions, that sort of thing. Yeah. But we'll get you on the DEV first,
+
+[00:08:48] Matthew David Andrew Clark: Okay, makes sense.
+
+[00:08:52] Seth Chalmers: obviously, just to test stuff out.
+
+[00:08:52] @1: Yeah, for. Yeah, that's cool. I think the ask really was like, we want to be one of the use cases. Do you think this is a good fit for your, because I think you're approved for only so many use cases at ETAB when you went through. Can we be one of those use cases then?
+
+[00:09:07] Lalit Summan: Ohh. Yeah, so we are coming up with two artifacts that we have to make internally is what constitutes something to be registered in the ACP, right? Not everything has to go into ACP, so we're kind of scratching our heads on that, to be honest, in terms of what that would look and feel like.
+
+[00:09:21] @1: Oh, really? What would be an exception? Do you have an example of what an exception would be?
+
+[00:09:25] Lalit Summan: If if I'm creating my own core build agent and that's creating slides for me, is it that business critical that I need to do that? I don't know. I think some of the things happening in the agentic builder is not.
+
+[00:09:34] @1: Okay.
+
+[00:09:36] Lalit Summan: Things like your use case definitely qualify. I just we have to put some rigor around what that looks and feels like. And second, how do we prioritize what is? at the top of the list, right? So far, the use cases,
+
+[00:09:46] @1: Yeah.
+
+[00:09:47] Lalit Summan: we've got about 12 already that have come our way. The ones we're starting off with, because this is the first new batch of kind of onboarding we're doing, starting with the low complexity, low risks ones, just to get us kind of get our feet wet in terms of what this looks and feels like, but also kind of build a rigor around how we want to take this on going forward. DEV, I think we've got a pretty good handle on it with the work that Seth, Mark, and Rob have been doing. So yeah, definitely, I do see this as a value add in terms of adding to the ACP. The initial replacing, swapping the gateway, we can start there in DEV, and then the longer term onboarding into DEV, SID, prod, we can have that as a spec created within our backlog, and we'll work through that with your teams. Oh.
+
+[00:10:29] @1: What does that mean for timing? Longer term concerns, right?
+
+[00:10:31] Lalit Summan: No.
+
+[00:10:33] @1: We've been delayed because Melisa wants us to really go through the ACP. So prod's gonna be ready next week. Like we could be ready to go to prod once
+
+[00:10:38] Lalit Summan: Yeah.
+
+[00:10:42] @1: your prod's ready. What would prevent us from doing that or what do we need to do that?
+
+[00:10:45] Lalit Summan: To uh, Seth.
+
+[00:10:46] Mark Hanson: Thank you.
+
+[00:10:48] Lalit Summan: I don't think we have any, like we haven't stood up the operational kind of op model yet. SLAs, if something does go awry, the remediation, we have to figure that out still.
+
+[00:10:58] @1: I'm good. I'm good with whatever it is. Like we have Karen on the ops side, so we have added and invested in the consortium as well. So I'm like,
+
+[00:11:02] Lalit Summan: Okay. Perfect, okay.
+
+[00:11:05] @1: like trying to figure out how we can be a first class citizen because of our shared investment. It really is where I'm going at.
+
+[00:11:12] Lalit Summan: I got it, I got it.
+
+[00:11:12] Robert Chin: Okay, so your driver, which is good, your driver is Melisa wants you in there. And that's kind of what we're trying to prioritize, saying what's your big driver? So you, that's your driver, that's good. So we have.
+
+[00:11:21] @1: Yeah, like we're not allowed to go to ETAB until we get this conversation done. Like, so we wanted to present at ETAB and I'm
+
+[00:11:25] Robert Chin: Ah, okay, okay, okay.
+
+[00:11:27] @1: like, well, Lisa, like everybody else is going, why not us?
+
+[00:11:27] Lalit Summan: Yeah.
+
+[00:11:28] Robert Chin: Got it. Okay.
+
+[00:11:30] @1: But for some reason, she really wants the infrastructure stuff
+
+[00:11:31] Robert Chin: Yeah, no, no, that's good. Okay.
+
+[00:11:33] @1: going through it. So I'm like, fine, no problem. So speed is kind of,
+
+[00:11:35] Robert Chin: That's perfect.
+
+[00:11:36] @1: we've been sitting and waiting for, I don't know, most in a while and like, we've been waiting for a while for this, so we're really excited to like even.
+
+[00:11:39] Robert Chin: Yeah. OK, yeah.
+
+[00:11:43] @1: help out test it. We're okay if things break. I get not worried about that because I know it's all about a learning journey.
+
+[00:11:46] Robert Chin: Yeah. Okay, well, that's good. Because, yeah, we work with the other folks as well and
+
+[00:11:49] Lalit Summan: Two.
+
+[00:11:52] Robert Chin: trying to figure out, you know, like the US, they have business needs to go there for compliance and stuff, so we're just trying to prioritize everybody, but it's good that you have a need.
+
+[00:11:58] @1: Yeah.
+
+[00:12:01] Robert Chin: A sanction need.
+
+[00:12:02] Lalit Summan: Yeah.
+
+[00:12:03] @1: And we're good to help out as needed. Like we're not just, obviously we're,
+
+[00:12:06] Robert Chin: Yeah.
+
+[00:12:07] @1: we have similar knowledge and skill set. So anything that we can do to make it
+
+[00:12:11] Robert Chin: No, for sure.
+
+[00:12:11] @1: easier resource wise or what's capable, like allowed to do, we're good to partner there as well.
+
+[00:12:18] Seth Chalmers: Awesome.
+
+[00:12:19] Robert Chin: Sounds good.
+
+[00:12:22] Lalit Summan: True.
+
+[00:12:22] @1: Three.
+
+[00:12:24] Srikanth Ramasubramanian: This one's probably for Seth. Seth, is there a link or a document that you can send me that lists out the versions of each component? We're attached to a specific version. Well, actually the latest version of AEG, we're on 1.4. 1 because I had issues with bedrock routing for specific endpoints. in previous versions. I just wanted to see if there's any... legroom to move versions or if it's going to be fixed at something.
+
+[00:12:53] Seth Chalmers: Yeah, I'll pass that along to you. I have to, I don't have like a ready to give you a document right now, but I'll put that.
+
+[00:13:02] Srikanth Ramasubramanian: Thank you.
+
+[00:13:06] @1: So, so next step is what lead the. Who talks to who or how do we get going on the techie side of it?
+
+[00:13:10] Lalit Summan: Yeah. Yeah, for sure. I think the first step, Seth, is the kind of getting them access to DEV with replacing the gateway. Quickly, we can do that relatively quickly in the DEV environment. The next steps there is, we'll have an engineer, sounds like Karen is already there, assigned to this spec that we create out of this call, and we'll do the back and forth of getting you up and running in. In the other environments as well, so I mean, it's gonna be a little clunky, but we'll get through it together as a team.
+
+[00:13:41] @1: Awesome. That's great. So then Sri and Seth and Matt,
+
+[00:13:42] Lalit Summan: I.
+
+[00:13:44] @1: most of you guys just work it out. And then Mohsen, maybe, I don't know, inside the architecture community,
+
+[00:13:47] Seth Chalmers: Sounds good.
+
+[00:13:51] @1: if we can maybe finally get on the agenda for any tab saying we're going forward with it. And I want all the other stuff. Like we have temporal and other things that are not the organization layer. That's really the primary focus of what we're trying to do, not in scope of the ACP. So I really want to get that moving forward, Mohsen, now that we're at this point.
+
+[00:14:06] Mohsen Norouzi: Yeah, yeah, like temporal is in move. I'm just waiting for the ETAB schedule to assign to it. Mary was telling me that, like, it's going to be at the end of September or early October, but everything else is ready, so...
+
+[00:14:27] @1: Okay, I'll figure that out. If that's, I don't know why we're getting delayed,
+
+[00:14:29] Mohsen Norouzi: Chow.
+
+[00:14:31] @1: but try to jump in, see if Melisa can help us.
+
+[00:14:33] Mohsen Norouzi: And, yeah, and that temporal is not just for us, it's basically a general use case, like we have temporal approved for the prod use case for our for our work.
+
+[00:14:43] @1: Yeah, I'm not worried about the temporal specific, just trying to highlight for Seth and
+
+[00:14:46] Mohsen Norouzi: Yeah, yeah, yeah.
+
+[00:14:47] @1: team, like we have our whole orchestration
+
+[00:14:49] Mohsen Norouzi: Exactly.
+
+[00:14:49] @1: layer that this is kind of we want to show, hey,
+
+[00:14:51] Mohsen Norouzi: Chow.
+
+[00:14:51] Matthew David Andrew Clark: Yeah.
+
+[00:14:51] @1: our layers integrating with ACP and we're good.
+
+[00:14:53] Mohsen Norouzi: Mm-hmm.
+
+[00:14:54] @1: So that piece is what I'm talking about, not one, it's not one tool for us.
+
+[00:14:55] Mohsen Norouzi: Yep, yep.
+
+[00:14:57] @1: This stuff isn't one tool.
+
+[00:14:57] Mohsen Norouzi: Right.
+
+[00:14:57] Matthew David Andrew Clark: Yeah, the interesting part though is because I was talking to Seth briefly the other day, it was key cloak aspect because on temporal we'll have to do similar things with machine credentials and things like that with authentication where it does OAuth. So that's where I was. I know we were thinking maybe we just do something custom versus use Noctur or Entra and then key cloak was the other option out there. So I don't know if maybe this is a future conversation, but I was talking to Greg a little bit about it too. And he's like, well, maybe you could leverage the ACP's key cloak. And I'm like, well. Maybe, but is that then sprawl to the ACP and getting them outside their kind of their focus area too? Yes, it can be done, but does it make sense to do? Yeah.
+
+[00:15:41] @1: So I'll leave those conversations to you techies. I, hey, make it secure. Don't break security rules. I think that's number one.
+
+[00:15:47] Matthew David Andrew Clark: That's the plan.
+
+[00:15:47] @1: So if it's custom and version two is key cloak or whatever, like I don't, like just do we have to do right now and think about it in versions versus perfection at the gate, but the perfection part is be secure how you do it.
+
+[00:15:59] Mark Hanson: No.
+
+[00:15:59] @1: Kinda can go in stages, I would say.
+
+[00:16:02] Seth Chalmers: Yeah.
+
+[00:16:03] @1: Okay.
+
+[00:16:03] Matthew David Andrew Clark: close.
+
+[00:16:06] @1: Mhm.
+
+[00:16:06] Lalit Summan: And just from a for you to be unblocked for ETAP, the work that we do in getting you started in DEV, does that do the trick for you, Shayne? Does that get you to have the ETAP conversations or does something else that's required?
+
+[00:16:19] @1: I'll find out most and I'll take that forward. This is the last piece of our box of investigation. We have all the mark to your point, Gen. A triage. We're doing all the paperwork, PAA. We've got all that stuff lined up. This was the last piece.
+
+[00:16:28] Mohsen Norouzi: Chin.
+
+[00:16:32] Seth Chalmers: Worth getting lined up with Colin and Anirban or?
+
+[00:16:35] @1: Yeah, all the Anirban booked me a meeting as
+
+[00:16:36] Mohsen Norouzi: Yeah, yeah.
+
+[00:16:37] @1: well to have a conversation about something different.
+
+[00:16:39] Seth Chalmers: Good.
+
+[00:16:40] @1: So on this same topic, so we're lined up there. Just want to make sure the questions are we technically lined up. We always said we were on paper before something came out and this kind of just does that check mark that yeah, we are lined up.
+
+[00:16:54] Seth Chalmers: Awesome.
+
+[00:16:54] @1: Awesome, so I'll leave it with the techies to get stuff done, and Matt, most of you guys have things on our side process wise you need, just let me know, but appreciate the partnership, guys.
+
+[00:17:02] Mohsen Norouzi: Sure.
+
+[00:17:03] Mark Hanson: The.
+
+[00:17:05] Lalit Summan: Appreciate it. Thank you.
+
+[00:17:05] @1: I can say, guys, all guys in a room. Oh, we failed the diversity check. All right.
+
+[00:17:09] Seth Chalmers: Yeah.
+
+[00:17:10] Lalit Summan: Ah.
+
+[00:17:11] Mohsen Norouzi: So.
+
+[00:17:11] @1: All right, thanks all. Have a great weekend. Thank you.
+
+[00:17:12] Lalit Summan: Thank you. Thanks. Yeah, thanks. Bye.
+
+[00:17:12] Seth Chalmers: Thanks, guys. See ya.
+
+[00:17:12] Robert Chin: Thanks, everybody. Bye.

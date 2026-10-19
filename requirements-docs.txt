@@ -1,0 +1,5 @@
+--index-url https://artifactory.sunlifecorp.com/artifactory/api/pypi/pypi-virtual/simple
+--trusted-host artifactory.sunlifecorp.com
+mkdocs-material>=9.5
+pymdown-extensions>=10.0
+PyYAML>=6.0

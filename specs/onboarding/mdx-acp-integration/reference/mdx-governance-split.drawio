@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="mdx-governance-split" name="MDx governance split">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1140" pageHeight="670" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="acpBox" value="ACP / Luminate — governance owner" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFBEA;strokeColor=#D4A700;strokeWidth=2;verticalAlign=top;fontSize=15;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="280" y="40" width="300" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="mdxBox" value="MDx — enforcement point only" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#EEF3F8;strokeColor=#4A6FA5;strokeWidth=2;verticalAlign=top;fontSize=15;fontStyle=1;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="710" y="120" width="300" height="310" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pol" value="Policy authorship&#10;model access · execution · budget" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D4A700;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="90" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="pdp" value="Policy Decision Point&#10;authz middleware" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D4A700;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="175" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="gwy" value="agentgateway&#10;/llm/v1/chat/completions" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFF3C4;strokeColor=#D4A700;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="260" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="sor" value="System of record&#10;capture events · evidence · audit" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D4A700;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="345" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="met" value="Governance surface&#10;portal · metrics · chargeback" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#D4A700;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="420" width="240" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pep" value="ConstraintEvaluator (PEP)&#10;evaluates ACP bundles, authors nothing" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#4A6FA5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="175" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mg" value="ModelGateway&#10;in-process client, holds the token" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#DCE7F3;strokeColor=#4A6FA5;strokeWidth=2;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="260" width="240" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="buf" value="Emit buffer&#10;durable, drains to ACP" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#4A6FA5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="345" width="240" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sbBox" value="Execution sandbox — Seatbelt · env scrub · path rules" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FDEDED;strokeColor=#C0392B;strokeWidth=2;verticalAlign=top;fontSize=13;fontStyle=1;spacingTop=6;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="490" width="300" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="sub" value="Forge build subprocess&#10;no credentials · no egress" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#C0392B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="740" y="548" width="240" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="br" value="Bedrock&#10;model providers" style="rounded=1;html=0;whiteSpace=wrap;fillColor=#EDEDED;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="180" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" style="html=0;rounded=0;strokeColor=#D4A700;strokeWidth=2;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="pol" target="pdp"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="html=0;rounded=0;strokeColor=#D4A700;strokeWidth=2;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="pdp" target="gwy"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="html=0;rounded=0;strokeColor=#D4A700;strokeWidth=2;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="gwy" target="sor"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="html=0;rounded=0;strokeColor=#D4A700;strokeWidth=2;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="sor" target="met"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="x1" value="signed bundle (TTL)" style="html=0;rounded=0;strokeColor=#2E7D32;strokeWidth=2;endArrow=block;exitX=1;exitY=0.5;entryX=0;entryY=0.5;fontSize=11;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;" edge="1" parent="1" source="pdp" target="pep"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x2" value="Bearer JWT" style="html=0;rounded=0;strokeColor=#2E7D32;strokeWidth=2;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;fontSize=11;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;" edge="1" parent="1" source="mg" target="gwy"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="x3" value="governance events" style="html=0;rounded=0;strokeColor=#2E7D32;strokeWidth=2;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;fontSize=11;fontColor=#1B5E20;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;" edge="1" parent="1" source="buf" target="sor"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e8" value="upstream call" style="html=0;rounded=0;strokeColor=#666666;strokeWidth=2;endArrow=block;exitX=0;exitY=0.5;entryX=1;entryY=0.5;fontSize=11;labelBackgroundColor=#FFFFFF;verticalAlign=bottom;" edge="1" parent="1" source="gwy" target="br"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e9" style="html=0;rounded=0;strokeColor=#4A6FA5;strokeWidth=2;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="pep" target="mg"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="html=0;rounded=0;strokeColor=#4A6FA5;strokeWidth=2;endArrow=block;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="mg" target="buf"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="e11" value="asks the server&#10;for a completion" style="edgeStyle=orthogonalEdgeStyle;html=0;rounded=1;strokeColor=#C0392B;strokeWidth=2;endArrow=block;dashed=1;fontSize=11;fontColor=#8E2A20;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="sub" target="mg">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1070" y="573" /><mxPoint x="1070" y="288" /></Array></mxGeometry>
+        </mxCell>
+
+        <mxCell id="note" value="Every arrow into MDx carries a decision ACP made.&#10;Every arrow out carries evidence of what MDx enforced." style="text;html=0;whiteSpace=wrap;align=center;fontSize=13;fontStyle=2;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="400" width="240" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
